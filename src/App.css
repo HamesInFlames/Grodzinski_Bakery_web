@@ -1,4 +1,5 @@
-/*src\App.css
+/*src\App.css*/
+
 /* RESET / BASE */
 *,
 *::before,
@@ -29,68 +30,7 @@ a {
 
 main {
   flex: 1;
-}
-
-/* NAVBAR */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 40;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 5vw;
-  background: rgba(250, 247, 242, 0.94);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-}
-
-.navbar__logo {
-  display: flex;
-  flex-direction: column;
-}
-
-.navbar__logo-main {
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-}
-
-.navbar__logo-sub {
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #9f7b41;
-}
-
-.navbar__links {
-  display: flex;
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.navbar__link {
-  background: none;
-  border: none;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  color: #374151;
-  text-decoration: none;
-  transition: background-color 0.15s ease, transform 0.1s ease,
-    color 0.15s ease;
-}
-
-.navbar__link:hover {
-  background-color: rgba(159, 123, 65, 0.08);
-  transform: translateY(-1px);
-}
-
-.navbar__link--active {
-  background-color: #c3924a;
-  color: #fdfaf4;
+  padding-top: 80px; /* FIX: space below fixed Tailwind navbar */
 }
 
 /* HERO */
@@ -493,7 +433,7 @@ main {
   gap: 0.35rem;
 }
 
-.menu-item__price {
+menu-item__price {
   font-weight: 600;
   font-size: 0.95rem;
   color: #7a4f1d;
@@ -552,17 +492,6 @@ main {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .navbar__links {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-
   .hero {
     padding: 3.5rem 5vw 3rem;
     min-height: 60vh;
