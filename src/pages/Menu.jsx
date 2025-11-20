@@ -1,3 +1,4 @@
+//src\pages\Menu.jsx
 import React from "react";
 import { menuCategories } from "../menuData.js";
 
