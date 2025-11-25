@@ -1,3 +1,4 @@
+//src\pages\Locations.jsx
 import React from "react";
 
 function Locations() {
