@@ -68,6 +68,7 @@ main {
   font-size: clamp(2.4rem, 4vw, 3.2rem);
   margin-bottom: 1rem;
   line-height: 1.1;
+  letter-spacing: 0.11rem;
 }
 
 .hero__content p {
@@ -75,6 +76,7 @@ main {
   max-width: 32rem;
   line-height: 1.5;
   opacity: 0.95;
+  letter-spacing: 0.11rem;
 }
 
 .hero__actions {
@@ -509,3 +511,167 @@ menu-item__price {
     padding-inline: 5vw;
   }
 }
+
+/* Aniko */
+.about-divider {
+  margin: 2rem 0;
+  border: none;
+  border-top: 0px solid rgba(0,0,0,0.1);
+  width: 100%;
+}
+
+/* ABOUT HERO (TOP BANNER LIKE TOUS les JOURS) */
+.about-hero {
+  position: relative;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fdfaf4;
+
+
+  background-image:
+    linear-gradient(
+      135deg,
+      rgba(31, 25, 18, 0.40),
+      rgba(70, 41, 15, 0.35)
+    ),
+    url("https://images.pexels.com/photos/6287295/pexels-photo-6287295.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(31, 25, 18, 0.7),
+    rgba(70, 41, 15, 0.6)
+  );
+}
+
+.about-hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  width: 100%;
+  padding: 4rem 5vw 3.5rem;
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-hero__breadcrumb {
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0.9;
+}
+
+.about-hero__breadcrumb-link, .about-hero__breadcrumb-about{
+  text-decoration: none;
+  color: #f9fafb;
+  font-size: .90rem;
+}
+
+.about-hero__breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.about-hero__breadcrumb-separator {
+  opacity: 0.8;
+}
+
+.about-hero__kicker {
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-size: .95rem;
+  margin: 0 0 0.5rem;
+  opacity: 0.9;
+}
+
+.about-hero__title {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2.1rem, 3.4vw, 2.6rem);
+  line-height: 1.1;
+  letter-spacing: 0.11em;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  line-height: 1.15;
+}
+
+.about-hero__subtitle {
+  margin: 0;
+  max-width: 32rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.about-hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;        /* centers horizontally */
+  text-align: center;         /* centers text in block */
+  max-width: 650px;           /* keeps everything aligned nicely */
+  margin: 0 auto;             /* centers the block itself */
+}
+
+
+/* small tweak so About content has breathing room under hero */
+/* ABOUT PAGE SPLIT LAYOUT */
+.about-page__split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); /* text a bit wider */
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-page__content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about-page__content .section__text {
+  margin-bottom: 0.8rem;
+}
+
+/* RIGHT-SIDE IMAGE */
+.about-page__image {
+  border-radius: 1rem;
+  min-height: 450px;
+  background-image: url("https://images.pexels.com/photos/6605194/pexels-photo-6605194.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.18);
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 768px) {
+  .about-page__split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about-page__image {
+    min-height: 260px;
+    order: -1; /* image on top on mobile; remove this if you want text first */
+  }
+}
+
+
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 300px;
+  }
+
+  .about-hero__inner {
+    padding: 3rem 5vw 2.5rem;
+  }
+}
+

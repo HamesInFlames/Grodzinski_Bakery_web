@@ -32,7 +32,7 @@ function Home() {
       <section id="hero" className="hero">
         <div className="hero__overlay" />
         <div className="hero__content">
-          <h1>Freshly Baked, Every Single Day.</h1>
+          <h1>Fresh From Our Oven.</h1>
           <p>
             Traditional recipes, handcrafted loaves, and warm hospitality —
             Grodzinski Bakery has been part of your family table for generations.
