@@ -1,18 +1,19 @@
-import React from "react";
+// src/App.jsx
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
+import About from "./pages/About";
+import Catering from "./pages/Catering";
+import Locations from "./pages/Locations";
+import Contact from "./pages/Contact";
+
 import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home.jsx";
-import Menu from "./pages/Menu.jsx";
-import About from "./pages/About.jsx";
-import Catering from "./pages/Catering.jsx";
-import Locations from "./pages/Locations.jsx";
-import Contact from "./pages/Contact.jsx";
-
-function App() {
+export default function App() {
   return (
-    <div className="app">
-      {/* NEW NAVBAR */}
+    <div className="app bg-main text-text">
       <Navbar />
 
       <main>
@@ -26,14 +27,7 @@ function App() {
         </Routes>
       </main>
 
-      <footer className="footer">
-        <p>© {new Date().getFullYear()} Grodzinski Bakery. All rights reserved.</p>
-        <p className="footer__note">
-          Fresh bread, family traditions, and a warm welcome — every day.
-        </p>
-      </footer>
+      <Footer />
     </div>
   );
 }
-
-export default App;

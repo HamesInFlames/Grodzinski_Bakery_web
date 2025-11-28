@@ -2,84 +2,195 @@
 import React from "react";
 
 export default function Catering() {
-  return (
-    <div className="catering-page bg-[#faf7f2] pb-20">
+  const cateringOptions = [
+    {
+      title: "Breakfast & Brunch Platters",
+      description: "Start your morning event with our fresh breakfast selection: assorted bagels with cream cheese and spreads, danishes, muffins, croissants, and fresh fruit platters. Add yogurt parfaits or mini quiches for a complete spread.",
+      idealFor: "morning meetings, brunch events, office gatherings",
+      image: "/images/home/thumbnail_assorted_bagles_creamcheese.jpg"
+    },
+    {
+      title: "Sandwich & Wrap Platters",
+      description: "Freshly prepared sandwiches and wraps made with our signature breads. Choose from a variety of fillings: deli meats, vegetarian, dairy, or vegan options. All sandwiches include fresh vegetables and are cut for easy serving.",
+      idealFor: "lunch meetings, picnics, casual events",
+      image: "/images/home/thumbnail_assorted_wraps.jpg"
+    },
+    {
+      title: "Baked Goods & Cookie Trays",
+      description: "Impress your guests with beautifully arranged trays of our finest cookies, rugelach, brownies, and mini pastries. Perfect for dessert tables, afternoon gatherings, or as a sweet finish to any meal.",
+      idealFor: "dessert tables, celebrations, office parties",
+      image: "/images/home/thumbnail_large_cookie_platter.jpg"
+    },
+    {
+      title: "Challah & Bread Baskets",
+      description: "Beautifully arranged baskets featuring our famous challahs, specialty loaves, dinner rolls, and artisan breads. Perfect for Shabbat dinners, holiday meals, or any gathering where fresh bread is a must.",
+      idealFor: "Shabbat dinners, holiday tables, family gatherings",
+      image: "/images/home/thumbnail_challahs.jpg"
+    },
+    {
+      title: "Fruit & Vegetable Platters",
+      description: "Fresh, colorful fruit platters and vegetable crudité arrangements with dips. A healthy and refreshing addition to any event, beautifully presented and ready to serve.",
+      idealFor: "health-conscious events, buffets, summer gatherings",
+      image: "/images/home/thumbnail_fruit_platter.jpg"
+    },
+    {
+      title: "Custom Event Packages",
+      description: "Planning a large event or need something specific? We'll work with you to create a custom catering package that fits your needs, budget, and dietary requirements. Just give us a call to discuss the details.",
+      idealFor: "weddings, bar/bat mitzvahs, corporate events",
+      image: "/images/home/thumbnail_gift_basket.jpg"
+    }
+  ];
 
+  return (
+    <div className="catering-page">
       {/* HERO */}
-      <section className="pt-28 pb-16 px-6 bg-gradient-to-br from-amber-100 to-amber-200">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">
-            Catering & Platters
-          </h1>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-2xl mx-auto">
-            From business meetings to family celebrations, Grodzinski Bakery 
-            offers a wide range of platters and catering options to make your event 
-            memorable and delicious. Fresh, beautifully arranged, and always kosher.
+      <section className="catering-hero">
+        <div className="catering-hero__image-wrapper">
+          <img 
+            src="/images/home/thumbnail_large_danish_platter.jpg" 
+            alt="Catering platters at Grodzinski Bakery"
+            className="catering-hero__image"
+          />
+          <div className="catering-hero__overlay"></div>
+        </div>
+        <div className="catering-hero__content">
+          <h1>Catering & Event Platters</h1>
+          <p className="catering-hero__subtitle">
+            From intimate family gatherings to large corporate events, Grodzinski Bakery 
+            brings fresh, beautifully presented baked goods and catering platters to your 
+            table. Every item is prepared fresh, arranged with care, and delivered with 
+            the same quality and tradition we've maintained for generations.
           </p>
         </div>
       </section>
 
-      {/* CONTENT */}
-      <section className="max-w-5xl mx-auto mt-12 px-6">
+      {/* CATERING OPTIONS */}
+      <section className="section">
+        <div className="section__inner">
+          <h2>Our Catering Options</h2>
+          <p className="section__subtitle">
+            All platters are available in various sizes to accommodate gatherings from 
+            10 to 100+ guests. Perfect for business meetings, family celebrations, holiday 
+            tables, shivas, and community events. We're happy to customize any order to 
+            meet your dietary needs and preferences.
+          </p>
 
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-          Our Catering Options
-        </h2>
-        <p className="text-gray-600 mb-8 leading-relaxed">
-          All platters are available in various sizes. Perfect for offices, 
-          parties, holidays, and community events. Contact us to customize any order.
-        </p>
-
-        {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          {/* PLATTER CARD */}
-          <div className="bg-white rounded-xl p-6 shadow-md border border-amber-200">
-            <h3 className="text-xl font-semibold text-amber-700">Breakfast Platters</h3>
-            <p className="text-gray-600 mt-2">
-              Includes pastries, danishes, muffins, and fresh rolls. 
-              A perfect way to start any morning event.
-            </p>
+          <div className="catering-grid">
+            {cateringOptions.map((option, index) => (
+              <div key={index} className="catering-card">
+                <div className="catering-card__image">
+                  <img 
+                    src={option.image} 
+                    alt={option.title}
+                    className="catering-card__img"
+                  />
+                </div>
+                <div className="catering-card__content">
+                  <h3>{option.title}</h3>
+                  <p className="catering-card__description">
+                    {option.description}
+                  </p>
+                  <p className="catering-card__ideal">
+                    <strong>Ideal for:</strong> {option.idealFor}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-md border border-amber-200">
-            <h3 className="text-xl font-semibold text-amber-700">Sandwich Platters</h3>
-            <p className="text-gray-600 mt-2">
-              Freshly prepared sandwiches made with our signature breads. 
-              Available vegetarian or deli-style.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-md border border-amber-200">
-            <h3 className="text-xl font-semibold text-amber-700">Baked Goods Trays</h3>
-            <p className="text-gray-600 mt-2">
-              Cookies, brownies, rugelach, and more. Great for dessert tables 
-              or afternoon gatherings.
-            </p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-md border border-amber-200">
-            <h3 className="text-xl font-semibold text-amber-700">Challah & Bread Baskets</h3>
-            <p className="text-gray-600 mt-2">
-              Beautifully arranged baskets featuring our famous challah, 
-              specialty loaves, and rolls.
-            </p>
-          </div>
-
         </div>
-
-        {/* CONTACT BUTTON */}
-        <div className="text-center mt-12">
-          <a
-            href="/contact"
-            className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-full text-lg shadow-md transition"
-          >
-            Request Catering
-          </a>
-        </div>
-
       </section>
 
+      {/* HOW TO ORDER */}
+      <section className="section section--light">
+        <div className="section__inner">
+          <div className="catering-order-info">
+            <div className="catering-order-info__content">
+              <h2>How to Order</h2>
+              <div className="catering-order-steps">
+                <div className="catering-order-step">
+                  <div className="catering-order-step__number">1</div>
+                  <div className="catering-order-step__content">
+                    <h3>Contact Us</h3>
+                    <p>
+                      Call us at <a href="tel:4167890785" className="catering-link">(416) 789-0785</a> or 
+                      email <a href="mailto:info@grodzinskibakery.com" className="catering-link">info@grodzinskibakery.com</a> to 
+                      discuss your event needs.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="catering-order-step">
+                  <div className="catering-order-step__number">2</div>
+                  <div className="catering-order-step__content">
+                    <h3>Plan Ahead</h3>
+                    <p>
+                      We recommend ordering at least 48-72 hours in advance for catering orders. 
+                      For large events or custom requests, more notice is appreciated.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="catering-order-step">
+                  <div className="catering-order-step__number">3</div>
+                  <div className="catering-order-step__content">
+                    <h3>Pickup or Delivery</h3>
+                    <p>
+                      Choose pickup from our Thornhill location or inquire about delivery options 
+                      for your area. Delivery fees may apply based on distance and order size.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="catering-order-step">
+                  <div className="catering-order-step__number">4</div>
+                  <div className="catering-order-step__content">
+                    <h3>Dietary Needs</h3>
+                    <p>
+                      Let us know about any dietary restrictions or preferences. We offer dairy, 
+                      pareve, vegetarian, and vegan options, and everything is baked in our 100% 
+                      nut-free facility.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="catering-order-info__image">
+              <img 
+                src="/images/home/thumbnail_large_cookie_danish_platter.jpg" 
+                alt="Beautiful catering platter"
+                className="catering-order-info__img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA SECTION */}
+      <section className="section">
+        <div className="section__inner">
+          <div className="catering-cta">
+            <h2>Ready to Plan Your Event?</h2>
+            <p className="catering-cta__text">
+              Our team will respond within 24 hours to discuss your needs and provide a custom quote.
+            </p>
+            <div className="catering-cta__actions">
+              <a
+                href="/contact"
+                className="btn btn--primary"
+              >
+                Request Catering Quote
+              </a>
+              <a
+                href="tel:4167890785"
+                className="btn btn--ghost"
+              >
+                Call (416) 789-0785
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
