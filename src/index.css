@@ -1,9 +1,10 @@
-/*src\index.css*/
+/* src/index.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-[#FAF7F2] text-[#222222] antialiased;
+  @apply bg-[#FAF8F4] text-[#1A1A1A] antialiased;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
