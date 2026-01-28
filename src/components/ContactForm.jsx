@@ -5,7 +5,8 @@ export default function ContactForm({
   onSubmit,
   showExtendedFields = false,
   submitButtonText = "Send Message",
-  successMessage = "Thank you for reaching out! We'll get back to you soon."
+  successMessage = "Thank you for reaching out! We'll get back to you soon.",
+  title = "Send Us a Message"
 }) {
   const [formState, setFormState] = useState({
     name: "",
@@ -56,8 +57,10 @@ export default function ContactForm({
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
+      {title && <h3>{title}</h3>}
+      
       <label>
-        Name*
+        Name *
         <input
           type="text"
           name="name"
@@ -70,7 +73,7 @@ export default function ContactForm({
       </label>
 
       <label>
-        Email*
+        Email *
         <input
           type="email"
           name="email"
@@ -85,7 +88,7 @@ export default function ContactForm({
       {showExtendedFields && (
         <>
           <label>
-            Phone Number*
+            Phone Number *
             <input
               type="tel"
               name="phone"
@@ -111,20 +114,27 @@ export default function ContactForm({
 
           <label>
             Enquiry Type
-            <input
-              type="text"
+            <select
               name="details"
               value={formState.details}
               onChange={handleChange}
               disabled={isSubmitting}
-              placeholder="Pick-up, delivery, catering, product question..."
-            />
+            >
+              <option value="">Select an enquiry type...</option>
+              <option value="General Question">General Question</option>
+              <option value="Custom Cake Order">Custom Cake Order</option>
+              <option value="Catering Inquiry">Catering Inquiry</option>
+              <option value="Product Availability">Product Availability</option>
+              <option value="Wholesale/Business">Wholesale/Business</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Other">Other</option>
+            </select>
           </label>
         </>
       )}
 
       <label>
-        Message*
+        Message *
         <textarea
           name="message"
           rows="4"
@@ -137,13 +147,13 @@ export default function ContactForm({
       </label>
 
       {submitStatus === 'success' && (
-        <div className="p-3 mb-3 bg-green-50 border border-green-200 rounded-lg text-green-800 text-sm">
+        <div className="contact-form__alert contact-form__alert--success">
           {successMessage}
         </div>
       )}
 
       {submitStatus === 'error' && (
-        <div className="p-3 mb-3 bg-red-50 border border-red-200 rounded-lg text-red-800 text-sm">
+        <div className="contact-form__alert contact-form__alert--error">
           There was an error submitting your message. Please try again or call us directly.
         </div>
       )}

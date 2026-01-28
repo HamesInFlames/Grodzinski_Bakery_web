@@ -138,7 +138,7 @@ function Menu() {
           </p>
           <div className="menu-footer__actions">
             <a href="/contact" className="btn btn--primary">Contact Us</a>
-            <a href="tel:4167890785" className="btn btn--ghost">Call (416) 789-0785</a>
+            <a href="tel:4167890785" className="btn btn--secondary">Call (416) 789-0785</a>
           </div>
         </div>
       </section>

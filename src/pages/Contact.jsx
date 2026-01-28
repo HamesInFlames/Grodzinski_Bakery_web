@@ -107,6 +107,7 @@ function Contact() {
                 showExtendedFields={true}
                 submitButtonText="Send Message"
                 successMessage="Thank you for contacting us. A team member will follow up shortly."
+                title="Send Us a Message"
               />
             </div>
           </div>

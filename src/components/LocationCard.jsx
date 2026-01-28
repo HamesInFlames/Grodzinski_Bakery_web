@@ -10,44 +10,58 @@ export default function LocationCard({
   className = ""
 }) {
   return (
-    <article className={`card card--location ${className}`}>
-      <h3 className="text-xl font-semibold text-gray-800 mb-2">{name}</h3>
+    <article className={`location-card ${className}`}>
+      <h3 className="location-card__name">{name}</h3>
       
       {address && (
-        <p className="text-gray-700 mb-2 leading-relaxed">{address}</p>
-      )}
-      
-      {hours && (
-        <div className="card__detail mb-2">
-          <strong className="text-gray-800">Hours:</strong>
-          <div className="mt-1 text-gray-600 text-sm leading-relaxed">
-            {typeof hours === 'string' ? (
-              <p>{hours}</p>
-            ) : (
-              hours.map((line, idx) => (
-                <p key={idx}>{line}</p>
-              ))
-            )}
+        <div className="location-card__item">
+          <span className="location-card__icon">📍</span>
+          <div className="location-card__content">
+            <strong>Address</strong>
+            <p>{address}</p>
           </div>
         </div>
       )}
       
       {phone && (
-        <p className="card__detail">
-          <strong className="text-gray-800">Phone:</strong>{" "}
-          <a 
-            href={`tel:${phone.replace(/[^0-9]/g, '')}`}
-            className="text-amber-700 hover:text-amber-800 transition"
-          >
-            {phone}
-          </a>
-        </p>
+        <div className="location-card__item">
+          <span className="location-card__icon">📞</span>
+          <div className="location-card__content">
+            <strong>Phone</strong>
+            <p>
+              <a 
+                href={`tel:${phone.replace(/[^0-9]/g, '')}`}
+                className="location-card__link"
+              >
+                {phone}
+              </a>
+            </p>
+          </div>
+        </div>
+      )}
+      
+      {hours && (
+        <div className="location-card__item">
+          <span className="location-card__icon">🕐</span>
+          <div className="location-card__content">
+            <strong>Hours</strong>
+            <div className="location-card__hours">
+              {typeof hours === 'string' ? (
+                <p>{hours}</p>
+              ) : (
+                hours.map((line, idx) => (
+                  <p key={idx}>{line}</p>
+                ))
+              )}
+            </div>
+          </div>
+        </div>
       )}
       
       {additionalInfo && (
-        <p className="card__detail mt-3 text-gray-600 text-sm leading-relaxed border-t border-gray-200 pt-3">
+        <div className="location-card__note">
           {additionalInfo}
-        </p>
+        </div>
       )}
     </article>
   );
