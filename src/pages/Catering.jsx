@@ -112,7 +112,7 @@ export default function Catering() {
                   <div className="catering-order-step__content">
                     <h3>Contact Us</h3>
                     <p>
-                      Call us at <a href="tel:4167890785" className="catering-link">(416) 789-0785</a> or 
+                      Call us at <a href="tel:9058821350" className="catering-link">(905) 882-1350</a> or 
                       email <a href="mailto:info@grodzinskibakery.com" className="catering-link">info@grodzinskibakery.com</a> to 
                       discuss your event needs.
                     </p>
@@ -182,10 +182,10 @@ export default function Catering() {
                 Request Catering Quote
               </a>
               <a
-                href="tel:4167890785"
+                href="tel:9058821350"
                 className="btn btn--ghost"
               >
-                Call (416) 789-0785
+                Call (905) 882-1350
               </a>
             </div>
           </div>

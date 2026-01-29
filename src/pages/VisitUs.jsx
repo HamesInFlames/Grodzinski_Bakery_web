@@ -12,19 +12,19 @@ function VisitUs() {
   const bakeryInfo = {
     name: "Grodzinski North",
     address: "1118 Centre St #3, Thornhill, ON L4J 7R9",
-    phone: "(416) 789-0785",
+    phone: "(905) 882-1350",
     email: "info@grodzinskibakery.com",
     // Google Maps specific location data
     placeId: "0x882b2c25a865754b:0xdd3938687e717ea9",
     coordinates: { lat: 43.8089597, lng: -79.4622583 },
     mapsUrl: "https://www.google.com/maps/place/Grodzinski+North/@43.8091451,-79.4624408,165m",
     hours: [
-      { day: "Sunday", time: "7:00 AM – 5:00 PM" },
-      { day: "Monday", time: "7:00 AM – 6:00 PM" },
-      { day: "Tuesday", time: "7:00 AM – 6:00 PM" },
-      { day: "Wednesday", time: "7:00 AM – 6:00 PM" },
-      { day: "Thursday", time: "7:00 AM – 9:00 PM" },
-      { day: "Friday", time: "7:00 AM – 3:00 PM" },
+      { day: "Sunday", time: "6:00 AM – 3:00 PM" },
+      { day: "Monday", time: "6:00 AM – 4:00 PM" },
+      { day: "Tuesday", time: "6:00 AM – 4:00 PM" },
+      { day: "Wednesday", time: "6:00 AM – 4:00 PM" },
+      { day: "Thursday", time: "6:00 AM – 5:00 PM" },
+      { day: "Friday", time: "6:00 AM – 3:00 PM" },
       { day: "Saturday", time: "Closed" }
     ]
   };

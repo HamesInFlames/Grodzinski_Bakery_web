@@ -16,7 +16,7 @@ function Locations() {
       "Friday: 7:00 AM – 3:00 PM (seasonal)",
       "Saturday: Closed"
     ],
-    phone: "(416) 789-0785",
+    phone: "(905) 882-1350",
     additionalInfo: "Free parking available. Hours may vary during Jewish holidays. We recommend calling ahead for holiday schedules and to confirm product availability."
   };
 
@@ -193,7 +193,7 @@ function Locations() {
               <div className="locations-visit-info__contact">
                 <p>
                   <strong>Questions about hours, products, or availability?</strong><br />
-                  Call us at <a href="tel:4167890785" className="locations-link">(416) 789-0785</a> or 
+                  Call us at <a href="tel:9058821350" className="locations-link">(905) 882-1350</a> or 
                   email <a href="mailto:info@grodzinskibakery.com" className="locations-link">info@grodzinskibakery.com</a>
                 </p>
               </div>

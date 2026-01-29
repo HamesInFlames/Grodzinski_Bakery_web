@@ -243,7 +243,7 @@ export default function Home() {
                   <div>
                     <div className="contact-card__label">Phone</div>
                     <div className="contact-card__value">
-                      <a href="tel:4167890785">(416) 789-0785</a>
+                      <a href="tel:9058821350">(905) 882-1350</a>
                     </div>
                   </div>
                 </div>

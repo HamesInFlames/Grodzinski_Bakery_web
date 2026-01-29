@@ -11,7 +11,7 @@ function Contact() {
   };
 
   const bakeryAddress = "1118 Centre St #3, Thornhill, ON L4J 7R9";
-  const bakeryPhone = "(416) 789-0785";
+  const bakeryPhone = "(905) 882-1350";
   const bakeryEmail = "info@grodzinskibakery.com";
 
   return (

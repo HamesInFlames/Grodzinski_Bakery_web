@@ -45,7 +45,7 @@ export default function Footer() {
           <div>
             <h4 className="footer__title">Contact</h4>
             <ul className="footer__links">
-              <li><a href="tel:4167890785" className="footer__link">(416) 789-0785</a></li>
+              <li><a href="tel:9058821350" className="footer__link">(905) 882-1350</a></li>
               <li><a href="mailto:info@grodzinskibakery.com" className="footer__link">info@grodzinskibakery.com</a></li>
               <li><span className="footer__link">1118 Centre St #3</span></li>
               <li><span className="footer__link">Thornhill, ON L4J 7R9</span></li>

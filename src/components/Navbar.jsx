@@ -66,9 +66,9 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className="navbar__actions">
-            <a href="tel:4167890785" className="navbar__phone">
+            <a href="tel:9058821350" className="navbar__phone">
               <AiOutlinePhone />
-              <span>(416) 789-0785</span>
+              <span>(905) 882-1350</span>
             </a>
             
             <button 
@@ -119,9 +119,9 @@ export default function Navbar() {
         </nav>
 
         <div className="mobile-menu__footer">
-          <a href="tel:4167890785" className="mobile-menu__phone">
+          <a href="tel:9058821350" className="mobile-menu__phone">
             <AiOutlinePhone />
-            <span>(416) 789-0785</span>
+            <span>(905) 882-1350</span>
           </a>
           <p className="mobile-menu__hours">Open Daily • Sun-Thu 7AM-6PM</p>
         </div>
