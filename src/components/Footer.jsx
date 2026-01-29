@@ -37,8 +37,7 @@ export default function Footer() {
             <h4 className="footer__title">Information</h4>
             <ul className="footer__links">
               <li><Link to="/about" className="footer__link">About Us</Link></li>
-              <li><Link to="/locations" className="footer__link">Locations</Link></li>
-              <li><Link to="/contact" className="footer__link">Contact</Link></li>
+              <li><Link to="/visit" className="footer__link">Visit Us</Link></li>
             </ul>
           </div>
 

@@ -5,10 +5,9 @@ import Home from "./pages/Home";
 import Menu from "./pages/Menu";
 import About from "./pages/About";
 import Catering from "./pages/Catering";
-import Locations from "./pages/Locations";
-import Contact from "./pages/Contact";
+import VisitUs from "./pages/VisitUs";
 import Gallery from "./pages/Gallery";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 export default function App() {
   return (
@@ -20,9 +19,11 @@ export default function App() {
           <Route path="/menu" element={<Menu />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/catering" element={<Catering />} />
-          <Route path="/locations" element={<Locations />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/visit" element={<VisitUs />} />
+          {/* Redirect old routes to new Visit Us page */}
+          <Route path="/locations" element={<Navigate to="/visit" replace />} />
+          <Route path="/contact" element={<Navigate to="/visit" replace />} />
         </Routes>
       </main>
       <Footer />

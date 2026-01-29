@@ -30,9 +30,8 @@ export default function Navbar() {
     ["Menu", "/menu"],
     ["Gallery", "/gallery"],
     ["Catering", "/catering"],
-    ["Locations", "/locations"],
     ["About", "/about"],
-    ["Contact", "/contact"],
+    ["Visit Us", "/visit"],
   ];
 
   return (
