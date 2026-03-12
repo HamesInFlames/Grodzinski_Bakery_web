@@ -1,151 +1,553 @@
-plu_code,name,price,barcode,weight,serving_size,package_size,ingredients
-20093,BAGEL EVERYTHING,1.1,01234567891100,100g,Per 100g,1 Bagel (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, poppy seeds, sesame seeds, onions"
-20072,MARGARITAS STRAWBERRY,9.99,07674083308500,200g,Per 70g,1 Box (200g),"Unbleached wheat flour, whole eggs, water, sugar, shortening, salt, baking powder, strawberry jam"
-20004,CHOCOLATE THREE STRIP,13.75,07674083306400,700g,1 Piece (70g),1 Tray (700g),"Wheat flour, pastry flour, vegetable shortening, margarine, eggs, salt, yeast, sugar, baking powder, water, chocolate spread, chocolate chunks"
-20010,HAMANTASCHEN CARAMEL,1.95,07674083309500,390g,1 Piece (70g),1 Box (390g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, caramel filling"
-20011,HAMANTASCHEN CHOCOLATE,1.95,07674083309300,390g,1 Piece (70g),1 Box (390g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, chocolate filling"
-20012,HAMANTASCHEN POPPY,1.95,07674083309400,390g,1 Piece (70g),1 Box (390g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, poppy seed paste"
-20074,MOON COOKIES POPPY SEEDS,9.99,07674083308200,200g,Per 70g,1 Box (200g),"Unbleached wheat flour, whole eggs, water, sugar, shortening, salt, baking powder, poppy seeds"
-20075,SPRINKLE DELIGHTS COOKIES,9.99,07674083308800,200g,Per 100g,1 Box (200g),"Unbleached wheat flour, margarine, icing sugar, egg whites, sprinkles"
-20076,SPRINKLES COOKIES,9.99,07674083306500,200g,Per 100g,1 Box (200g),"Unbleached wheat flour, shortening, water, icing sugar, whole eggs, vanilla, sprinkles"
-20015,HAMANTASCHEN STRAWBERRY,1.95,07674083309500,390g,1 Piece (70g),1 Box (390g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, strawberry jam"
-20016,HAMANTASCHEN APRICOT,1.95,07674083309200,390g,1 Piece (70g),1 Box (390g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, apricot jam"
-20017,APPLE STRUDEL,12.95,01234567891000,950g,1 Piece (100g),1 Strudel (950g),"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, fresh apples, ground cinnamon, raisins"
-20077,JAM DROPS COOKIES,9.99,07674083306600,200g,Per 100g,1 Box (200g),"Unbleached wheat flour, shortening, water, icing sugar, whole eggs, vanilla, strawberry jam"
-20026,PRETZEL CHOCOLATE,6.0,07674083306800,300g,1 Piece (50g),1 Pretzel (300g),"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, chocolate filling"
-20025,PRETZEL STRAWBERRY,6.0,07674083306800,300g,1 Piece (50g),1 Pretzel (300g),"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, strawberry filling"
-20078,TWO TONES COOKIES,9.99,07674083306700,200g,Per 100g,1 Box (200g),"Unbleached wheat flour, shortening, water, icing sugar, whole eggs, vanilla, cocoa powder"
-20029,LOAF CAKE APPLE,11.99,07674083308400,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, apples"
-20028,LOAF CAKE HONEY,15.5,07674083306800,700g,1 Slice (100g),1 Loaf (700g),"Rye flour, Honey, cake flour, orange juice, brown sugar, eggs, cinnamon, ginger, salt, baking soda, vegetable oil"
-20079,GINGERBREAD COOKIES,9.99,07674083307900,200g,Per 70g,1 Box (200g),"Unbleached wheat flour, pastry flour, shortening, white sugar, brown sugar, baking powder, baking soda, ginger powder, cinnamon powder, glucose, eggs, water"
-20038,LARGE BUNDT CHOCOLATE,21.95,07674083308300,1500g,1 Piece (50g),1 Bundt (1500g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20039,LARGE BUNDT MARBLE,21.95,07674083308300,1500g,1 Piece (50g),1 Bundt (1500g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20081,CHOCOLATE DROPS COOKIES,9.99,07674083307900,200g,Per 100g,1 Box (200g),"Unbleached wheat flour, shortening, water, icing sugar, whole eggs, vanilla, chocolate chips"
-20082,OATMEAL RAISINS COOKIES,9.99,07674083307900,200g,Per 70g,1 Box (200g),"Unbleached wheat flour, shortening, brown sugar, whole eggs, vanilla, baking soda, oats, chocolate chips"
-20035,LOAF CAKE CHOCOLATE CHIPS,11.99,07674083308400,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, chocolate chips"
-20043,SMALL BUNDT MARBLE,17.5,07674083307600,850g,1 Piece (50g),1 Bundt (850g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20085,PIE APPLE,21.0,07674083308300,900g,1 Piece (70g),1 Pie (900g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, prune filling"
-20086,PIE BLUEBERRY,21.0,07674083308300,900g,1 Piece (70g),1 Pie (900g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, blueberry filing"
-20089,BAGEL PLAIN,1.1,01234567891100,100g,Per 100g,1 Bagel (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence"
-20037,LARGE BUNDT APPLE,21.95,07674083308300,1500g,1 Piece (50g),1 Bundt (1500g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, apples"
-20087,PIE CHERRY,21.0,07674083308300,900g,1 Piece (70g),1 Pie (900g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, cherry filling"
-20088,PIE LEMON,21.0,07674083308300,900g,1 Piece (70g),1 Pie (900g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, lemon filling"
-20033,LOAF CAKE MIXED BERRIES,11.99,07674083308400,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cranberries, blueberries, cherries"
-20057,6 HAMBURGER BUNS SESAME,6.6,07674083309400,,1 Piece (60g),,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, sesame seeds"
-20071,LADY FINGERS COOKIES,9.99,07674083307200,200g,Per 100g,1 Box (200g),"Unbleached wheat flour, margarine, icing sugar, egg whites, chocolate chips"
-20103,NAPOLEON CUSTARD,4.5,07674083308000,100g,1 Piece (100g),1 Cake (100g),"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, custard"
-20059,6 HOT DOG BUNS SESAME,6.6,07674083309400,,1 Piece (60g),,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, sesame seeds"
-20097,MOCHA ROLL CAKE,4.5,07674083308000,100g,Per 100g,1 Cake (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, vanilla, coffee"
-20062,BAGEL EGG SALAD,6.5,07674083307800,250g,1 Piece (125g),1 Bagel (250g),"Whole wheat flour, sugar, whole eggs, canola oil, salt, yeast, mayonnaise, pepper"
-20063,MEZONOT EGG SANDWICH,6.5,07674083307800,,1 Piece (125g),,"Whole wheat flour, orange juice, sugar, whole eggs, canola oil, salt, yeast, mayonnaise, pepper"
-20064,MEZONOT EGG WRAP,7.5,07674083307800,,1 Piece (125g),,"Whole wheat flour, orange juice, sugar, whole eggs, canola oil, salt, yeast, mayonnaise, pepper"
-20061,5 SLIDER BUNS SESAME,3.99,07674083307300,,1 Piece (60g),,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, sesame seeds"
-20066,MEZONOT LOX SANDWICH,8.5,07674083307800,,1 Piece (30g),,"Whole wheat flour, orange juice, sugar, whole eggs, canola oil, salt, yeast, lox, dairy-free cream cheese"
-20068,BAGEL TUNA,7.5,07674083307800,200g,1 Piece (100g),1 Bagel (200g),"Whole wheat flour, sugar, whole eggs, canola oil, salt, yeast, tuna, mayonnaise, pepper"
-20098,CAKE POP CHOCOLATE,4.5,07674083308000,30g,1 Piece (30g),1 Cake Pop (30g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20095,DOMINOS,4.5,07674083308000,100g,Per 100g,1 Cake (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20099,CAKE POP VANILLA,4.5,07674083308000,30g,1 Piece (30g),1 Cake Pop (30g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, vanilla"
-20031,LOAF CAKE MARBLE,12.95,07674083309000,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20096,MARBLE CAKE,4.5,07674083308000,100g,Per 100g,1 Cake (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20104,CARAMEL CAKE,4.5,07674083308000,100g,1 Piece (100g),1 Cake (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, vanilla, caramel filling"
-20105,LEMON CAKE,4.5,07674083308000,100g,1 Piece (100g),1 Cake (100g),"Unbleached wheat flour, sugar, eggs, salt, margarine, lemon, vanilla"
-20009,KOKOSH CHOCOLATE,20.95,07674083308700,,1 Piece (100g),,"Wheat flour, pastry flour, cocoa powder, vegetable shortening, margarine, eggs, salt, yeast, sugar, baking powder, water, chocolate filling, chocolate chunks"
-20109,RYE BREAD SMALL,5.75,07674083309600,400g,1 Piece (50g),1 Loaf (400g),"Unbleached wheat flour, water, salt, rye flour, yeast, may contain eggs"
-20107,CHOCOLATE ROLL,4.5,07674083308000,100g,1 Piece (100g),1 Cake (100g),"Unbleached wheat flour, sugar, eggs, baking powder, lemon, dairy-free cream, shortening, margarine, cocoa powder"
-20049,JAM ROGALACH,4.75,07674083310100,,1 Piece (70g),,"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, strawberry jam, cinnamon, pumpkin seeds"
-20111,RYE BREAD KIMMEL,7.5,00220998767500,600g,1 Piece (50g),1 Loaf (600g),"Unbleached wheat flour, water, salt, rye flour, yeast, kimmel, may contain eggs"
-20112,RYE BREAD PUMPERNICKEL,7.5,07674083309900,600g,1 Piece (50g),1 Loaf (600g),"Unbleached wheat flour, water, salt, rye flour, rye meal, molasses, yeast, kimmel"
-20113,RYE BREAD MARBLE,7.5,07674083309800,600g,1 Piece (50g),1 Loaf (600g),"Unbleached wheat flour, water, salt, rye flour, rye meal, molasses, yeast, kimmel"
-20020,TURNOVER BLUEBERRY,4.95,01234567891000,,1 Piece (100g),,"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, blueberry filling"
-20114,WHITE BREAD,5.75,00220998767600,,1 Piece (50g),,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20116,CHALLAH BREAD WHOLE WHEAT,5.75,00220998767700,,1 Piece (50g),,"Whole wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20121,NUT FREE CAKE CHOCOLATE,32.5,07674083308000,1000g,1 Slice (75g),1 Cake (1000g),"All purpose flour, eggs, water, fine sugar, vegetable oil, baking soda, cocoa powder, salt, baking powder, apple juice, dairy-free whipped cream, chocolate fudge"
-20117,WHOLE WHEAT BREAD,5.75,00220998767800,,1 Piece (50g),,"Whole wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20118,CHALLAH BREAD MULTIGRAIN,7.5,00220998767900,,1 Piece (60g),,"Unbleached wheat flour, whole wheat flour, water, eggs, honey, canola oil, rye flour, oats, sunflower seeds, wheat bran, salt, millet, sesame seeds, rye meal, poppy seeds, flaxseed, cornmeal, yeast"
-20140,LOAF CAKE ORANGE,11.99,00000000000000,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs apple juice, baking powder, water, oranges"
-20124,SMALL BABKA CHOCOLATE,12.95,07674083307100,,1 Piece (50g),,"Unbleached wheat flour, water, whole eggs, sugar, shortening, yeast, salt, margarine, cocoa powder, chocolate chunks"
-20123,NUT FREE CAKE BLACK WHITE,32.5,07674083308100,1000g,1 Slice (75g),1 Cake (1000g),"All purpose flour, eggs, water, fine sugar, vegetable oil, baking soda, cocoa powder, salt, baking powder, apple juice, lemon juice, dairy-free whipped cream, chocolate fudge"
-20070,MEZONOT TUNA WRAP,8.5,07674083307800,,1 Piece (100g),,"Whole wheat flour, orange juice, sugar, whole eggs, canola oil, salt, yeast, tuna, mayonnaise, pepper"
-20126,COOKIES CHRISTMAS,25.95,07674083306900,480g,1 Piece (70g),1 Box (480g),"Unbleached wheat flour, shortening, water, whole eggs, sugar, salt, baking powder, royal icing, edible print"
-20141,CARROT CAKE,4.5,00000000000000,,1 Cake (100g),,"Unbleached wheat flour, sugar, eggs apple juice, baking powder, water, lemon escense, carrots, coconut."
-20128,SQUARE CHALLAH PLAIN,7.95,07674083306400,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20132,CHALLAH BREAD PLAIN,7.95,07674083308900,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20134,FRENCH BREAD,5.75,00220998768000,600g,1 Piece (50g),1 Loaf (600g),"Unbleached wheat flour, water, pastry flour, sugar, shortening, salt"
-20133,CROWN CHALLAH SESAME,16.95,07674083308600,1900g,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20131,CHALLAH BREAD RAISINS,7.95,07674083307900,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, raisins"
-20143,CUPCAKE VANILLA,4.5,00000000000000,,1 Cake 100g,,"Unbleached flour, sugar, eggs apple juice, baking powder, water, lemon escense, butter cream PARVE)"
-20137,SUFGANIYOT CUSTARD,2.95,07674083309800,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, custard"
-20144,BROWNIE,4.5,00000000000000,100g,1 Cake (100g),1 Cake (100g),"Cocoa powder, Cake flour, shortening sugar, eggs"
-20048,MINI LOAF CHOCOLATE,6.95,01234567891100,200g,1 Piece (50g),1 Loaf (200g),"Wheat flour, pastry flour, vegetable shortening, margarine, eggs, salt, yeast, sugar, baking powder, water, chocolate spread, chocolate chunks"
-20013,HAMANTASCHEN PRUNE,1.95,07674083309500,390g,1 Piece (70g),1 Box (390g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, prune filling"
-20091,BAGEL POPPY,1.1,01234567891100,100g,Per 100g,1 Bagel (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, poppy seeds"
-20051,JAM COOKIE ROGALACH,9.99,07674083307900,285g,1 Piece (70g),1 Box (285g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, raspberry jam, cinnamon, raisins, pumpkin seeds, coconut"
-20056,6 HAMBURGER BUNS NO SEEDS,6.6,07674083309400,,1 Piece (60g),,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20058,6 HOT DOG BUNS NO SEEDS,6.6,07674083309400,,1 Piece (60g),,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20142,CUPCAKE CHOCOLATE,4.5,00000000000000,,1 Cake 100g,,"Unbleached wheat flour, sugar,eggs apple juice, baking powder, water, lemon escense, cocoa powder, chocolate fudge"
-20014,HAMANTASCHEN RASPBERRY,1.95,07674083309500,390g,1 Piece (70g),1 Box (390g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, raspberry jam"
-20101,RUM BALL VANILLA,4.5,07674083308000,,1 Piece (15g),,"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, vanilla, rum"
-20108,TART,4.5,07674083308000,,1 Piece (100g),,"Unbleached wheat flour, sugar, salt, )margarine, vanilla, lemon, custard, fruit"
-20067,MEZONOT LOX WRAP,7.5,07674083307800,,1 Piece (30g),,"Whole wheat flour, orange juice, sugar, whole eggs, canola oil, salt, yeast, lox, dairy-free cream cheese"
-20115,BAGUETTE,4.5,01234567891100,,1 Piece (50g),,"Unbleached wheat flour, salt, yeast, canola oil, water"
-20092,BAGEL SESAME,1.1,01234567891100,100g,Per 100g,1 Bagel (100g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, sesame seeds"
-20100,RUM BALL CHOCOLATE,4.5,07674083308000,,1 Piece (15g),,"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder, rum"
-20065,BAGEL LOX AND CHEESE,7.5,07674083307800,160g,1 Piece (125g),1 Bagel (160g),"Whole wheat flour, sugar, whole eggs, canola oil, salt, yeast, lox, dairy-free cream cheese"
-20069,MEZONOT TUNA SANDWICH,7.5,07674083307800,,1 Piece (100g),,"Whole wheat flour, orange juice, sugar, whole eggs, canola oil, salt, yeast, tuna, mayonnaise, pepper"
-20145,MINI BILKA 2 PACK,1.99,07220998767600,,,,"Unbleched wheat flour, water, eggs, sugar, canola oil yeast, salt, sesame seeds, strusel"
-20119,CROISSANT,4.25,01234567891100,50g,1 Piece (50g),1 Croissant (50g),"Unbleached wheat flour, salt, yeast, sugar, water, oil, margarine"
-20073,CHOCOLATE CRINKLE COOKIES,9.99,07674083307700,200g,Per 100g,1 Box (200g),"Unbleached wheat flour, whole eggs, cocoa powder, water, icing sugar, oil, vanilla extract"
-20130,CHALLAH BREAD SESAME,7.95,07674083307800,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, sesame seeds"
-20002,RUGELACH CINNAMON,1.75,07674083310200,,1 Piece (50g),,"Unbleached wheat flour, water, whole eggs, sugar, shortening, yeast, salt, margarine, cinnamon powder, raisins"
-20129,SQUARE CHALLAH SESAME,7.95,07674083307300,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, sesame seeds"
-20001,RUGELACH CHOCOLATE,1.75,07674083310300,,1 Piece (50g),,"Unbleached wheat flour, water, whole eggs, sugar, shortening, yeast, salt, margarine, cocoa powder, chocolate chunks"
-20006,CHOCOLATE BUBKA,24.95,07674083307400,1000g,1 Piece (50g),,"Unbleached wheat flour, water, whole eggs, sugar, shortening, yeast, salt, margarine, cocoa powder, chocolate chunks"
-20005,ICY BUNS CINNAMON,12.95,01234567891000,670g,1 Piece (70g),1 Tray (670g),"Wheat flour, pastry flour, vegetable shortening, margarine, eggs, salt, yeast, sugar, baking powder, water, cinnamon spread, icing sugar"
-20146,MIXED BOX COOKIES Net. wt. 450g,19.99,07674083309600,450g,Per 100g,1 Box (450g),"Unbleached wheat flour, Margarine, Icing sugar Sprinkles, Egg whites, cocoa powder strawberry Jam"
-20060,5 SLIDER BUNS NO SEEDS,3.99,07674083307300,,1 Piece (60g),,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20021,TURNOVER APPLE,4.95,01234567891000,,1 Piece (100g),,"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, apple filling"
-20147,CAPUCCINO DIPPED COOKIES,9.99,07674083306600,200g,Per 100g,1 Box (200g),"Unbleached wheat flour,shortening water, icing sugar, whole eggs, vanilla, chocolate, coffee"
-20084,ICING CHANUKAH COOKIES HOLIDAY,3.99,07674083307000,60g,1 Piece (60g),1 Cookie (60g),"Unbleached wheat flour, shortening, water, sugar, whole eggs, salt, baking powder, royal icing"
-20027,HORSESHOE POPPY,4.95,01234567891000,,1 Piece (100g),,"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, poppy seeds"
-20083,ICING XMAS COOKIES,2.99,07674083306900,60g,1 Piece (60g),1 Cookie (60g),"Unbleached wheat flour, shortening, water, sugar, whole eggs, salt, baking powder, royal icing"
-20030,LOAF CAKE CHOCOLATE,11.99,07674083309100,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20053,JAM SWIRL COOKIES,9.99,07674083307700,285g,1 Piece (70g),1 Box (285g),"Wheat flour, vegetable shortening, sugar, eggs, baking powder, salt, water, raspberry jam, vanilla"
-20036,LOAF CAKE DOUBLE CHOCOLATE,11.99,07674083308400,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon )essence, chocolate fudge, chocolate chips"
-20034,LOAF CAKE CINNAMON,11.99,07674083308400,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, ground cinnamon"
-20032,LOAF CAKE LEMON,12.95,07674083308400,700g,1 Slice (100g),1 Loaf (700g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, lemon zest"
-20040,LARGE BUNDT MIXED BERRIES,21.95,07674083308300,1500g,1 Piece (50g),1 Bundt (1500g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cranberries, blueberries, cherries"
-20041,SMALL BUNDT APPLE,17.5,07674083307600,850g,1 Piece (50g),1 Bundt (850g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, apples"
-20019,TURNOVER CHERRY,4.95,01234567891000,,1 Piece (100g),,"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, cherry filling"
-20042,SMALL BUNDT CHOCOLATE,17.5,07674083307600,850g,1 Piece (50g),1 Bundt (850g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cocoa powder"
-20044,SMALL BUNDT MIXED BERRIES,17.5,07674083307600,850g,1 Piece (50g),1 Bundt (850g),"Unbleached wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence, cranberries, blueberries, cherries"
-20149,ICING XMAS BOX COOKIES 16 UNITS,48.0,20220998767600,60g,1 Piece (60g),1 Cookie (60g),"Unbleached wheat flour, shortening, water, sugar, whole eggs, salt, baking powder, royal icing"
-20150,ICING CHANUKAH BOX COOKIES HOLIDAY 16 UNITS,48.0,20220998767500,60g,1 Piece (60g),1 Cookie (60g),"Unbleached wheat flour, shortening, water, sugar, whole eggs, salt, baking powder, royal icing"
-20135,SUFGANIYOT BLUEBERRY,2.95,07674083309600,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, blueberry filling"
-20138,SUFGANIYOT STRAWBERRY,2.95,07674083309900,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, strawberry filling"
-20154,DONUT,1.39,07674083309800,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast,"
-20155,CHANUKAH COOKIES,10.99,07674083309700,200g,Per 70g,1 Box (200g),"Unbleached wheat flour, whole eggs, water, sugar, shortening, salt, baking powder, sprinkles"
-20156,CHANUKAH DREIDEL COOKIES,7.5,07740833099200,200g,Per 70g,1 Box (200g),"Unbleached wheat flour, pastry flour, shortening, white sugar, brown sugar, baking powder, baking soda, ginger powder, cinnamon powder, glucose, eggs, water"
-20152,SUFGANIYOT 4 PACK CUSTARD,10.0,07674083309600,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, custard"
-20159,SUFGANIYOT 4 PACK CHOCOLATE,10.0,07674083309600,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, chocolate filling"
-20158,SMALL CHALLAH BREAD PLAIN,7.95,07674083308000,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt"
-20157,SMALL CHALLAH BREAD SESAME,5.95,07674083308000,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, sesame seeds"
-20164,MULTIGRAIN BREAD,7.5,37674083307600,,1 Piece (60g),,"Unbleached wheat flour, whole wheat flour, water, eggs, honey, canola oil, rye flour, oats, sunflower seeds, wheat bran, salt, millet, sesame seeds, rye meal, poppy seeds, flaxseed, cornmeal, yeast"
-20165,RYE BREAD KIMMEL SMALL,5.75,07674083309600,400g,1 Piece (50g),1 Loaf (400g),"Unbleached wheat flour, water, salt, rye flour, yeast, kimmel,"
-20080,CHOCOLATE CHIPS COOKIES,9.99,07674083307900,200g,Per 70g,1 Box (200g),"Unbleached wheat flour, brown sugar, white sugar, corn syrup, whole eggs, margarine, vanilla extract, salt, baking powder, chocolate chips"
-20151,SUFGANIYOT 4 PACK STRAWBERRY,10.0,07674083309600,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, strawberry filling"
-20166,SMALL CHALLAH RAISINS,7.95,77674083308100,,,,"Unbleached wheat flour, water, whole eggs, sugar, canola oil, yeast, salt, raisins"
-20090,BAGEL WHOLE WHEAT,1.1,01234567891100,100g,Per 100g,1 Bagel (100g),"Whole wheat flour, sugar, eggs, apple juice, baking powder, water, lemon essence"
-20160,SUFGANIYOT STRAWBERRY X4,2.95,07674083309700,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, strawberry filling"
-20163,SUFGANIYOT LEMON X4,2.95,07674083309900,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, lemon filling"
-20094,BAGEL MULTIGRAIN,1.15,01234567891100,100g,Per 100g,1 Bagel (100g),"Unbleached wheat flour, whole wheat flour, water, eggs, honey, canola oil, rye flour, oats, sunflower seeds, wheat bran, salt, millet, sesame seeds, rye meal, poppy seeds, flaxseed, cornmeal, yeast"
-20161,SUFGANIYOT CUSTARD X4,2.95,07674083309800,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, custard"
-20162,SUFGANIYOT CHOCOLATE X4,2.95,07674083309600,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, chocolate filling"
-20102,NAPOLEON DAIRY-FREE WHIPPED CREAM,4.5,07674083308000,100g,1 Piece (100g),1 Cake (100g),"Unbleached wheat flour, pastry flour, shortening, water, sugar, salt, dairy-free whipped cream"
-20153,SUFGANIYOT 4 PACK CARAMEL,10.0,07674083309600,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, caramel"
-20106,SWISS ROLL,4.5,07674083308000,100g,1 Piece (100g),1 Cake (100g),"Unbleached wheat flour, sugar, eggs, baking powder, lemon, dairy-free cream, shortening, margarine, vanilla"
-20110,RYE BREAD PLAIN,7.5,07674083309700,600g,1 Piece (50g),1 Loaf (600g),"Unbleached wheat flour, water, salt, rye flour, yeast, may contain eggs"
-20120,CROISSANT CHEESE,4.65,01234567891100,60g,1 Piece (60g),1 Croissant (60g),"Unbleached wheat flour, salt, yeast, sugar, water, oil, margarine, cheese"
-20122,NUT FREE CAKE VANILLA CREAM,32.5,07674083307600,1000g,1 Slice (75g),1 Cake (1000g),"All purpose flour, eggs, water, fine sugar, vegetable oil, baking powder, lemon juice, dairy-free whipped cream, sprinkles"
-20125,SMALL BABKA CINNAMON,12.95,07674083307500,,1 Piece (50g),,"Unbleached wheat flour, water, whole eggs, sugar, shortening, yeast, salt, margarine, cinnamon powder, raisins"
-20136,SUFGANIYOT RASPBERRY,2.95,07674083309700,,1 Piece (50g),,"Unbleached wheat flour, pastry flour, water, whole eggs, shortening, sugar, salt, yeast, raspberry filling"
-20139,APPLE FLAN,35.0,07674083310000,,1 Piece (70g),,"Unbleached wheat flour, cake flour, shortening, sugar, eggs, water, baking powder, apples, apple filling"
+Token,Item Name,Variation Name,Unit and Precision,SKU,Description,Categories,Reporting Category,SEO Title,SEO Description,Permalink,GTIN,Square Online Item Visibility,Item Type,Weight (kg),Social Media Link Title,Social Media Link Description,Shipping Enabled,Self-Serve Ordering Enabled,Delivery Enabled,Pickup Enabled,Price,Online Sale Price,Archived,Sellable,Contains Alcohol,Stockable,Skip Detail Screen in POS,Option Name 1,Option Value 1,Current Quantity GRODZINSKI NORTH,New Quantity GRODZINSKI NORTH,Stock Alert Enabled GRODZINSKI NORTH,Stock Alert Count GRODZINSKI NORTH,Tax - Sales Tax (13%)
+JYQKXTB3WGJV4SYTWFUYCDCF,Bagels,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,1.10,,N,,N,,N,,,,,,,N
+KCYCYJSVZJGKGAW2WT7LYP7O,Bagels,Multigrain,,,,,,,,,,visible,Physical good,,,,,,,,1.15,,N,,,,N,,,,,,,N
+I3JKBHRSHG2FPO4HCAZBGGBN,Bagels,Mini Bagels,,,,,,,,,,visible,Physical good,,,,,,,,0.80,,N,,,,N,,,,,,,N
+VSPH2FKTRF5MUM22TH47OXIA,Bagels,Bagel Sliced,,,,,,,,,,visible,Physical good,,,,,,,,1.15,,N,,,,N,,,,,,,N
+XGZIHATRIVMD7RFBAP44WAZV,Bagels,Bagel Mezanot,,,,,,,,,,visible,Physical good,,,,,,,,1.55,,N,,,,N,,,,,,,N
+43UE3JBRFH3YDA2KX7RC7OWI,Bagels,Dozen/regular bagels,,,,,,,,,,visible,Physical good,,,,,,,,13.20,,N,,,,N,,,,,,,N
+U3PBAXGB6HU4AN2KOMHHEEYN,Bagels,Dozen/reg sliced bagel,,,,,,,,,,visible,Physical good,,,,,,,,13.80,,N,,,,N,,,,,,,N
+Z6UO6JVDE6R4TYBO6NX2HT6T,Baguettes/Rolls/Buns,Hamburger/Hotdog buns,,,,,,,,,,visible,Physical good,,,,Y,,,,1.10,,N,,N,,N,,,,,,,N
+LHQL3Q3HHPUTNAH5JSUEYOVK,Baguettes/Rolls/Buns,Rolls/OnionBuns,,,,,,,,,,visible,Physical good,,,,,,,,1.15,,N,,,,N,,,,,,,N
+KV5I6T67FPDDGWI2UY35VZH7,Baguettes/Rolls/Buns,hot dog/burger sliced,,,,,,,,,,visible,Physical good,,,,,,,,1.15,,N,,,,N,,,,,,,N
+4YYXZLCRTS73QEA6COGCYIQO,Baguettes/Rolls/Buns,Baguettes Large,,,,,,,,,,visible,Physical good,,,,,,,,4.50,,N,,,,N,,,,,,,N
+TAF3C6MG3ISO222JK3CSII32,Baguettes/Rolls/Buns,Baguettes Small,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+EV5WLXE6GIHJQZ2G2LJTLBZ7,Baguettes/Rolls/Buns,Dinner rolls/dozen,,,,,,,,,,visible,Physical good,,,,,,,,12.00,,N,,,,N,,,,,,,N
+THMDNDEOWIWF27KJLJAGHXZW,Baguettes/Rolls/Buns,sub buns 8”,,,,,,,,,,visible,Physical good,,,,,,,,1.50,,N,,,,N,,,,,,,N
+YEBCFZSD2QQNDHP2I7LHEEIL,Baguettes/Rolls/Buns,onion pocket,,,,,,,,,,visible,Physical good,,,,,,,,1.35,,N,,,,N,,,,,,,N
+UKABZHLW3V56SCCT55RNC2KN,Baguettes/Rolls/Buns,mini onion pockets,,,,,,,,,,visible,Physical good,,,,,,,,1.05,,N,,,,N,,,,,,,N
+CVIH5LI7CBO7Q3UQQ562UI6R,Baguettes/Rolls/Buns,Sour Dough Rolls,,,,,,,,,,visible,Physical good,,,,,,,,1.50,,N,,,,N,,,,,,,N
+PTDLT47IYZRRAHMH6NWDDUWO,Baguettes/Rolls/Buns,3” Hotdog Buns,,,,,,,,,,visible,Physical good,,,,,,,,1.00,,N,,,,N,,,,,,,N
+XGE3IO5YZBDRA7S753TTPREQ,Baguettes/Rolls/Buns,mezanot burger/hotdog,,,,,,,,,,visible,Physical good,,,,,,,,1.75,,N,,,,N,,,,,,,N
+7I4SU27UGW3O7KWINSYWBUHU,Baguettes/Rolls/Buns,Mezanot burger/hot dog CUT,,,,,,,,,,visible,Physical good,,,,,,,,1.80,,N,,,,N,,,,,,,N
+B2EUNEZKRSE544MRI44ACAKX,Baguettes/Rolls/Buns,Jumbo burger,,,,,,,,,,visible,Physical good,,,,,,,,1.25,,N,,,,N,,,,,,,N
+55MWRQ5HLND4K5HH3URAWJTX,Baguettes/Rolls/Buns,jumbo burger sliced,,,,,,,,,,visible,Physical good,,,,,,,,1.30,,N,,,,N,,,,,,,N
+PW6NDOW7VVXSBE5KD4FEGF6Z,Bilka,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,1.60,,N,,N,,N,,,,,,,N
+PANNGIUGYILSWAC4D76DIKJ7,Bilka,Square,,,,,,,,,,visible,Physical good,,,,,,,,2.40,,N,,,,N,,,,,,,N
+FHVUMSS5TNICVCPQVVXCQNS5,Bilka,Long,,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,N
+3MTKWYNA3ZCHU3AQUY2AD2UO,Bilka,Regular Multigrain,,,,,,,,,,visible,Physical good,,,,,,,,1.70,,N,,,,N,,,,,,,N
+VBPYKH54K2WUTXQBYUYJXYBJ,Bilka,Square Multigrain,,,,,,,,,,visible,Physical good,,,,,,,,2.45,,N,,,,N,,,,,,,N
+IFFZGQCQPIF7J5QRT4TTUWZ5,Bilka,Long Multigrain,,,,,,,,,,visible,Physical good,,,,,,,,2.05,,N,,,,N,,,,,,,N
+J3RQOJVIQ6FAIEDSQ3RQJPDB,Bilka,Cocktail,,,,,,,,,,visible,Physical good,,,,,,,,1.15,,N,,,,N,,,,,,,N
+Z77MOIPWN7JICZSI64NPMYIE,Bilka,Spelt,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,N
+DDLF6CPE44RV3FJDTNOJMTIZ,Bilka,Square Chocolate Chips,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+CAQNJBJTQLTBDOZYMYWMFSDF,Bilka,Challah 8”,,,,,,,,,,visible,Physical good,,,,,,,,2.45,,N,,,,N,,,,,,,N
+PJPD5FNZWE53OUETFUJIGRKW,Bow ties/kichels,bowties/nothings,,,,,,,,,,visible,Physical good,,,,Y,,,,4.50,,N,,N,,N,,,,,,,N
+AO6M427JSHKNRMVRLUQ2TYDS,Bow ties/kichels,kichels,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+3VSH2FBV6G7CRS65DPVRNT25,Boxed cookies,Boxed cookies,,,,,,,,,,visible,Physical good,,,,Y,,,,10.50,,N,,N,,N,,,,,,,N
+3VKEJ4QFAWQIHMELIBPCPVYE,Boxed cookies,Chocolate Drop with Pumpkin,,,,,,,,,,visible,Physical good,,,,,,,,11.25,,N,,,,N,,,,,,,N
+7U27NWLDRMRHXL7SPPUC2NNC,Boxed cookies,Jam Regallach,,,,,,,,,,visible,Physical good,,,,,,,,13.50,,N,,,,N,,,,,,,N
+HIBAWR77QYGW3GYFHZULOIQE,Boxed cookies,Pumpkin seed Mandel bread cookies,,,,,,,,,,visible,Physical good,,,,,,,,11.70,,N,,,,N,,,,,,,N
+DM7HWOUEVM4CKE2BBGW5PHFJ,Boxed cookies,Chocolate Chip Cookies,,,,,,,,,,visible,Physical good,,,,,,,,11.25,,N,,,,N,,,,,,,N
+VHABS56THVEKHTPFQOQZEMNK,Boxed cookies,Choco Alfajor,,,,,,,,,,visible,Physical good,,,,,,,,12.95,,N,,,,N,,,,,,,N
+OA6XFATRJSRB4WFYF576C6J7,Bread,Multigrain/Rye large,,,,,,,,,,visible,Physical good,,,,Y,,,,7.50,,N,,N,,N,,,,,,,N
+BWGZDPWOKEO3LJDY2BRAI2AA,Bread,Sour Dough,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,N
+TUYJZZ4JV5DX5KAVGQHAEPUZ,Bread,French//White/Whole Wheat,,,,,,,,,,visible,Physical good,,,,,,,,5.75,,N,,,,N,,,,,,,N
+XUAPSTJ3UTSNRJZGWNIY6CXC,Bread,Flat Bread 2xbag,,,,,,,,,,visible,Physical good,,,,,,,,4.00,,N,,,,N,,,,,,,N
+JY3HRNVFHH7Z25NFNAHEM2WC,Bread,1/2 Rye,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+GFQP4ABHD4XGX6FK5ZYUBPH3,Bread,Small Rye,,,,,,,,,,visible,Physical good,,,,,,,,5.75,,N,,,,N,,,,,,,N
+U4RAKIFOENVKOVMAHMA3P4WW,Bread,Flat Bread-Box,,,,,,,,,,visible,Physical good,,,,,,,,7.00,,N,,,,N,,,,,,,N
+2PM3QD6FLC26HA25DPLF75XR,Bread,Mezanot Bread,,,,,,,,,,visible,Physical good,,,,,,,,6.95,,N,,,,N,,,,,,,N
+ALW53BPIKHXWEIDSBIKZCCD3,Bread,Custom,,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,N
+6T3OE7MNP7WTYGGPIAMUE3ZQ,Bread,Croutons,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,N
+MS4MCQIFABY4ST2CTEIY2NB4,Bread,Sour dough challah,,,,,,,,,,visible,Physical good,,,,,,,,8.50,,N,,,,N,,,,,,,N
+I2BXBPZTDAXJEIRSZSNEDYKO,Bread,1/2 mezanot bread,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,N
+KAWMIUHZO6P2HSIHTIULP33I,Bread,Sour dough TOVAS,,,,,,,,,,visible,Physical good,,,,,,,,12.00,,N,,,,N,,,,,,,N
+2VSAYKEZOPE2PJI3X7LIFCO3,Bread,Sour dough rolls,,,,,,,,,,visible,Physical good,,,,,,,,2.25,,N,,,,N,,,,,,,N
+CNJNZIFOXWPKAOWUPBGALZ7X,Bread,Sour dough plain TOVAs,,,,,,,,,,visible,Physical good,,,,,,,,9.99,,N,,,,N,,,,,,,N
+S4SSN6OLV5L2Z4PN2P3U2K6F,Bread Items,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+E3DR3LFXCGLCJVVAOQRRFVKM,Bread Items,Toonie Buns,,,,,,,,,,visible,Physical good,,,,,,,,0.50,,N,,,,N,,,,,,,N
+ZUL4AQU4HDQP5O4TSVQWJUB6,Bread Items,Dome Slider Buns,,,,,,,,,,visible,Physical good,,,,,,,,0.55,,N,,,,N,,,,,,,N
+RXN7AC3FEP47PS5LTYPQH3Q5,Bread Items,Rolls,,,,,,,,,,visible,Physical good,,,,,,,,1.15,,N,,,,N,,,,,,,N
+K6QRLEQEGRXVESWQG7NPTRGE,Bread Items,3” (Medium) Hamburger Buns,,,,,,,,,,visible,Physical good,,,,,,,,1.25,,N,,,,N,,,,,,,N
+GB3E6A5WXGV56IWDU4KKRY35,Bread Items,Mezonot Hamburger Buns,,,,,,,,,,visible,Physical good,,,,,,,,1.85,,N,,,,N,,,,,,,N
+KU3GW4XV666A4JMYEQFAUEFL,Bread Items,Mezonot Hotdog Buns,,,,,,,,,,visible,Physical good,,,,,,,,1.85,,N,,,,N,,,,,,,N
+VG27LDTIRHYNBQS4QVOWUSK5,Bread Items,Mezanot dome slider bun,,,,,,,,,,visible,Physical good,,,,,,,,1.10,,N,,,,N,,,,,,,N
+IMQWOPIBCPVV4NSHQE4IODD2,Bread Items,Mezanot toonie buns,,,,,,,,,,visible,Physical good,,,,,,,,0.85,,N,,,,N,,,,,,,N
+STE2L3WKCHXF4NOPDVQCLE6D,Bread Items,Pita bread,,,,,,,,,,visible,Physical good,,,,,,,,0.90,,N,,,,N,,,,,,,N
+TT42USNLH64CH32X2Z32TW6W,Bread Items,Dinner rolls-Dozen,,,,,,,,,,visible,Physical good,,,,,,,,12.00,,N,,,,N,,,,,,,N
+JGEYZVV7O77H6YZO72LIMNNC,Bubka\Chocolatestrip\,Crown Bubka,,,,,,,,,,visible,Physical good,,,,Y,,,,24.95,,N,,N,,N,,,,,,,N
+CXJVD2XXHD5KPULWEYQIITIC,Bubka\Chocolatestrip\,Chocolate Strip/Kokosh,,,,,,,,,,visible,Physical good,,,,,,,,20.95,,N,,,,N,,,,,,,N
+AWKEAY3ZBBF2ZU5R3CJNJ5JO,Bubka\Chocolatestrip\,Chocolate Loaf Bubka,,,,,,,,,,visible,Physical good,,,,,,,,13.75,,N,,,,N,,,,,,,N
+BS5RKVSVFOVZD45DVN52BC53,Bubka\Chocolatestrip\,3 Strip Chocolate Tray,,,,,,,,,,visible,Physical good,,,,,,,,13.75,,N,,,,N,,,,,,,N
+2KEKUVX73XO4SATGZNMTEHMF,Bubka\Chocolatestrip\,Icy Bun Tray,,,,,,,,,,visible,Physical good,,,,,,,,12.95,,N,,,,N,,,,,,,N
+FF2J2UEVWEEHJTKM62B5NFDL,Bubka\Chocolatestrip\,Round Choco/cheese/poppy/cinnamon,,,,,,,,,,visible,Physical good,,,,,,,,12.95,,N,,,,N,,,,,,,N
+IPOFXIFRCBBW4HATBZ3I5UPK,Bubka\Chocolatestrip\,Personal bubkah,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,N
+4J5S4HJTOFNTCHXTMMKGCEXL,Bubka\Chocolatestrip\,"Bubkah weddingcake 14,10,7",,,,,,,,,,visible,Physical good,,,,,,,,595.00,,N,,,,N,,,,,,,N
+VHYAXKXOSQRKUCIGRCICAE4G,Bubka\Chocolatestrip\,Mini bubkah,,,,,,,,,,visible,Physical good,,,,,,,,4.99,,N,,,,N,,,,,,,N
+HVI3FCDLTWT3LCCVR43CUXCS,Cakes,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+OOIOFSJNWKONHQOPYA2MZZSY,Cakes,Brownie 1/4 Slab,,,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,Y
+SBMJVQHNPOK64NQBLC7UQ7RL,Cakes,Brownie 1/2 Slab,,,,,,,,,,visible,Physical good,,,,,,,,80.00,,N,,,,N,,,,,,,Y
+UFYZ6SWCJJBUQEAGW7SMUNCC,Cakes,Brownie Full Slab,,,,,,,,,,visible,Physical good,,,,,,,,130.00,,N,,,,N,,,,,,,Y
+Q4VW3V5BUZ4FBWR77K7X344W,Cakes,Napoleon 1/4 Slab,,,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,Y
+5VRQWVXEBDRTWZFURNS3E5UN,Cakes,Napoleon 1/2 Slab,,,,,,,,,,visible,Physical good,,,,,,,,80.00,,N,,,,N,,,,,,,Y
+JW32S64VVD324LDIMCLXPJIL,Cakes,Napoleon Full Slab,,,,,,,,,,visible,Physical good,,,,,,,,130.00,,N,,,,N,,,,,,,Y
+LSKKNDVPOBRG6AXCV7DKUXW2,Challah,Large,,,,,,,,,,visible,Physical good,,,,Y,,,,7.95,,N,,N,,N,,,,,,,N
+AU4DYHIEA7LJD4OHIH4REFV3,Challah,Small,,,,,,,,,,visible,Physical good,,,,,,,,5.50,,N,,,,N,,,,,,,N
+TYD7LFW6WAYPBJ7YU2EABWRA,Challah,Holiday Challah,,,,,,,,,,visible,Physical good,,,,,,,,14.00,,N,,,,N,,,,,,,N
+YI6BUJ2GVDF2BOBLCLQLKHNJ,Challah,Frozen challah large,,,,,,,,,,visible,Physical good,,,,,,,,5.95,,N,,,,N,,,,,,,N
+4375GQ4WLW25T2TSO3NFRXQ7,Challah Multigrain,Large,,,,,,,,,,visible,Physical good,,,,Y,,,,8.50,,N,,N,,N,,,,,,,N
+4IUMAFUSSYNVPEPC7EZXHKN7,Challah Multigrain,Small,,,,,,,,,,visible,Physical good,,,,,,,,6.50,,N,,,,N,,,,,,,N
+4MKYVKGTERXDG2FQ63A6NOWX,Challah Spelt,Large,,,,,,,,,,visible,Physical good,,,,Y,,,,11.00,,N,,N,,N,,,,,,,N
+XEPKFX7CRXXCOFJIZXGGIYRW,Challah Spelt,Small,,,,,,,,,,visible,Physical good,,,,,,,,9.00,,N,,,,N,,,,,,,N
+2G7XLLMTOULQGYNYXV7NZ77R,Chan-Cookies,Large Dreidel/Menorah Cookie,,,,,,,,,,visible,Physical good,,,,Y,,,,3.50,,N,,N,,N,,,,,,,Y
+J4QIFSBE3IXSZEETKT7HFD6M,Chan-Cookies,Small Menorah/Dreidel Cookie,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,Y
+6NNGKAVLAWPMX6QM3MGNXD2P,Chan-Cookies,Chanukah written cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,Y
+XTCNG4ZESBVMU6EOM5XTBZMD,Chan-Cookies,Chocolate&Sprinkle menorah/Dreidel,,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,Y
+NMNN6FXY5ISV3OPWV7H7FZYM,Chan-Cookies,Rectang gift box,,,,,,,,,,visible,Physical good,,,,,,,,25.95,,N,,,,N,,,,,,,Y
+Z6TO3PJEK2LCYVXIGNQ6CGCR,Chan-Cookies,Square gift box,,,,,,,,,,visible,Physical good,,,,,,,,19.95,,N,,,,N,,,,,,,Y
+CL32XDQBICF3OQVGPUSCCLUJ,Chan-Cookies,Dreidel-Menorah Cookie Pack,,,,,,,,,,visible,Physical good,,,,,,,,5.00,,N,,,,N,,,,,,,Y
+UC5FHL5CE4MYZIIEQDTI23JA,Chan-Cookies,Chanukah cookie kit,,,,,,,,,,visible,Physical good,,,,,,,,34.95,,N,,,,N,,,,,,,Y
+AS2ODGNBYWVO7KCTDXS42LS2,Chan-Cookies,4 dreidel pack,,,,,,,,,,visible,Physical good,,,,,,,,9.50,,N,,,,N,,,,,,,Y
+I2GGPX7SQBULDNBEV3IJL3LN,Chan-Cookies,Cookie box,,,,,,,,,,visible,Physical good,,,,,,,,10.50,,N,,,,N,,,,,,,Y
+6XDSDII6A5Z6P3EGS3MYG2HX,Chan-Cookies,Chanukah Cookie bite cup,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+W4HU5RFBRTBBTJVCDNKXPZFY,Chan-Cookies,Chanukah cookie kit,,,,,,,,,,visible,Physical good,,,,,,,,27.96,,N,,,,N,,,,,,,Y
+KZIASXYFSGCX3IJ5H7PKYCW6,Chan-Cookies,Chanukah printed picture,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,Y
+TDUZ3VEOXN6TGGIGHGN6RUZP,Chanukah,Sufganiyot/Jelly Donuts,,,,,,,,,,visible,Physical good,,,,Y,,,,2.95,,N,,N,,N,,,,,,,N
+BG7SMFOI2OJQ74QYCMQEM76P,Chanukah,Donuts-Assorted Iced,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,N
+RVA3MTPKS42KRPNALLMCNGPC,Churros/Donuts,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,,,N,,,,,,,N
+Z2REPIT356PCE2OJRRDUGCIE,Churros/Donuts,Churros pack,,,,,,,,,,visible,Physical good,,,,,,,,3.99,,N,,,,N,,,,,,,N
+YG35ST7NJB7PTWK7FFD44LVA,Churros/Donuts,Donuts,,,,,,,,,,visible,Physical good,,,,,,,,1.40,,N,,,,N,,,,,,,N
+WE73UUGFN6FWZGK55Z2552UL,Churros/Donuts,Cinnamon&sugar single,,,,,,,,,,visible,Physical good,,,,,,,,1.20,,N,,,,N,,,,,,,N
+O5WIXY5W5KBRGC5BVXKMI7UX,Churros/Donuts,Churro platter 100pcs,,,,,,,,,,visible,Physical good,,,,,,,,120.00,,N,,,,N,,,,,,,N
+IUVUM33T5RARKSVEK74YUNHV,Churros/Donuts,Mini churros,,,,,,,,,,visible,Physical good,,,,,,,,0.90,,N,,,,N,,,,,,,N
+JB2ZOVJJ6C3QM5ZVOFU477OH,Churros/Donuts,Churro regular,,,,,,,,,,visible,Physical good,,,,,,,,1.25,,N,,,,N,,,,,,,N
+RHP5XNB4Q3PGTHQBKHOW23QX,Coffee/Tea,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,1.95,,N,,N,,N,,,,,,,Y
+KEBJHBGF7V7EBSSQ56M22YN5,Cookies,Regular Iced Cookies,,,,,,,,,,visible,Physical good,,,,Y,,,,2.75,,N,,N,,N,,,,,,,N
+TKZ4APLHCK36GAUJXJQNLVPK,Cookies,Hand Written Cookies,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+WCHDAR2NDD5E7GVTOTYE54VQ,Cookies,Ginger Bread  PeopleX2,,,,,,,,,,visible,Physical good,,,,,,,,5.00,,N,,,,N,,,,,,,N
+LFRKRXKETCV6ORAE4PHAQCMA,Cookies,Bear Cookie,,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,N
+5W7PQDZGLEJO5SDURTDRORRJ,Cookies,Cookies With Ribbon,,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,N
+TZGYGY74M3DRCMZMTF32I56D,Cookies,Smiley Face Cookie,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,N
+JP6RCOF2PWH7QHE2V5WXB6DH,Cookies,Chocolate Chip /Oatmeal/Raisin,,,,,,,,,,visible,Physical good,,,,,,,,4.75,,N,,,,N,,,,,,,N
+4WBOTTIYASWQXXA3P2CHXRHN,Cookies,Biscotti,,,,,,,,,,visible,Physical good,,,,,,,,2.75,,N,,,,N,,,,,,,N
+UY6JSZ27Q75UAXX25MZHYPVK,Cookies,Assorted,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,20.00,,N,,,,N,,,,,,,N
+JUUGGAVMISQYZWNV7TYXDQ57,Cookies,Printed picture cookie,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+5LKX43ART5WOKEQHUXCCK6UP,Cookies,Custom Cookies,,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,N
+FDACNVSUFZNXGNKQD7OC63WF,Cookies,Baby Cookies,,,,,,,,,,visible,Physical good,,,,,,,,3.00,,N,,,,N,,,,,,,N
+66Q6CNK7BXWIBJXW22AUZOZY,Cookies,Ginger Bread Bride &Groom,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+J5HL3H6ZDNLSYQ6K3ME2OX6Q,Cookies,Square Proposal Cookie,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+J74BOMPEZ65YBU72V4YXPISH,Cookies,Plain Cookies,,,,,,,,,,visible,Physical good,,,,,,,,1.50,,N,,,,N,,,,,,,N
+OROCB7L3EPTP727Y253SDVI2,Cookies,Wedding Cookies,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,N
+S3TYA4SLJ3RCK7ZHQ3TWSBKB,Cookies,Cookie on a Stick,,,,,,,,,,visible,Physical good,,,,,,,,3.45,,N,,,,N,,,,,,,N
+SWEJWBOGQTNP5DNLTQBG5Z7M,Cookies,Small Decorated Cookies,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,N
+BS4ETRLC57WI6CICHFD3BHLI,Cookies,Medium Size Cookies,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,N
+VVVUDHAJWX42FNSCOPLYSW4J,Cookies,Larger Cookies,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+T2CEILJHWKTZRQSJNSM3VIV3,Cookies,written Israel flag,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,N
+N6NQBBKQDTZ4I2I247BMXSN7,Cookies,iced cookie GF,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,N
+TYAYQAXRKS4T7RYPLTCLS2XP,Cookies,Written cookie GF,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+N7HL3LOPQZZYWCXHAJLYJQG6,Cookies,Happy Bites,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,N
+FO43F4MNLZHILHW7S5FJV2DO,Cookies,Individually wrapped,,,,,,,,,,visible,Physical good,,,,,,,,0.25,,N,,,,N,,,,,,,N
+EONC3HTK6L335DEKNUI5S2AT,Cupcake- NO Icying,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,3.25,,N,,N,,N,,,,,,,Y
+EBLYBOYLFT45EH6MYXIGXOLQ,Cust.Cookie,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+LHSJ654VOI4WLBZGCM4TBGQ3,Cust.Cookie,Fancy Cookies,,,,,,,,,,visible,Physical good,,,,,,,,1.00,,N,,,,N,,,,,,,N
+PPPFEN7VUA3UYFQF5NHKJG2Z,Cust.Cookie,Printed/Logo Cookies,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+DHILHL6YKQ3QFAT2X4XKKYNO,Cust.Cookie,Chocolate Chip Cookie - Store Size,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+G62NBCAP4WJBORDFVWKV45QR,Cust.Cookie,Chocolate Chip Cookie 7”,,,,,,,,,,visible,Physical good,,,,,,,,35.00,,N,,,,N,,,,,,,N
+M6IXXYM6IUJFQ2AOGQ4IDRGM,Cust.Cookie,Chocolate Chip Cookie 9”,,,,,,,,,,visible,Physical good,,,,,,,,45.00,,N,,,,N,,,,,,,N
+5WRXNMISMEWQITECKNZGLYG6,Cust.Cookie,Chocolate Chip Cookie 10”,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,N
+B7CBKF6MLDWIQWCDFA7IBOJQ,Cust.Cookie,Chocolate Chip Cookie 12”,,,,,,,,,,visible,Physical good,,,,,,,,55.00,,N,,,,N,,,,,,,N
+GJAKVB4LM7XBDZMCAKQY4GEZ,Cust.Cookie,Chocolate Chip Cookie 14”,,,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,N
+PZM6VRE2YAO2AC6ZAZ4UIIKP,Cust.Cookie,Chocolate Chip Cookie 1/2 Slab,,,,,,,,,,visible,Physical good,,,,,,,,95.00,,N,,,,N,,,,,,,N
+4A7WM2U6U3PNYIJNL5BVRNNA,Cust.Cookie,Shortbread Cookie Decorated 7”,,,,,,,,,,visible,Physical good,,,,,,,,30.00,,N,,,,N,,,,,,,N
+4EBQAOZ43HSLTBISLNLZNL5V,Cust.Cookie,Shortbread Cookie Decorated 9”,,,,,,,,,,visible,Physical good,,,,,,,,35.00,,N,,,,N,,,,,,,N
+ZHJZQP666AW7M53FAH2TYQC6,Cust.Cookie,Shortbread Cookie Decorated 10”,,,,,,,,,,visible,Physical good,,,,,,,,40.00,,N,,,,N,,,,,,,N
+LG7FW6BBTQ6JTXFTGAM4OP4E,Cust.Cookie,Shortbread Cookie Decorated 12”,,,,,,,,,,visible,Physical good,,,,,,,,45.00,,N,,,,N,,,,,,,N
+YCXHWUCZHCIGSXLVVISXY4Y6,Danish/Croissant/Bun,Croissant/Danish/BlueB/Cherry Bun/choco bufalo,,,Medium size,,,,,,,visible,Physical good,,,,Y,,,,4.25,,N,,N,,N,,,,,,,N
+5SH53J52TP5OCZZEFECT6BXM,Danish/Croissant/Bun,Small Croissant/ mini danishes,,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,N
+DFAKA3PYUL2KXDMRBEPHVRDZ,Danish/Croissant/Bun,Small Cheese Danish,,,,,,,,,,visible,Physical good,,,,,,,,2.25,,N,,,,N,,,,,,,N
+7P6JN47KAEL5JOXF5QUERNNV,Danish/Croissant/Bun,Cheese Danish&cheese croassaint,,,,,,,,,,visible,Physical good,,,,,,,,4.65,,N,,,,N,,,,,,,N
+NLP4BU5SX6ACNO4STPYQLONO,Danish/Croissant/Bun,Mini cheese,,,,,,,,,,visible,Physical good,,,,,,,,1.75,,N,,,,N,,,,,,,N
+X5G6RKZQ3PIQWVOFQ42MMJLD,Danish/Croissant/Bun,Cheese pastry,,,,,,,,,,visible,Physical good,,,,,,,,4.75,,N,,,,N,,,,,,,N
+Q2PWASZVCECCHBQUEKSXTGDM,Danish/Croissant/Bun,Danish Medium size,,,,,,,,,,visible,Physical good,,,,,,,,2.75,,N,,,,N,,,,,,,N
+LID2SX6ROT3KJQNFPGVXFPRZ,Elite salads,Manzanilla olive dip,,,,,,,,,,visible,Physical good,,,,Y,,,,4.30,,N,,,,N,,,8,,,,Y
+VRZVYDDETS43BLQVSOAOPYFY,Elite salads,Black olive tapenade,,,,,,,,,,visible,Physical good,,,,,,,,4.30,,N,,,,N,,,7,,,,Y
+DJZWFHDWN2BQKEN66LYCN7OA,Elite salads,Spanish eggplant,,,,,,,,,,visible,Physical good,,,,,,,,6.70,,N,,,,N,,,5,,,,Y
+U3GM5NZKNTN2E2MP5WFNMZGP,Elite salads,White fish,,,,,,,,,,visible,Physical good,,,,,,,,9.00,,N,,,,N,,,7,,,,Y
+OPP4ENGHZGX5IO4MWG2UDFVC,Fancy Cakes,5” Round Cake,,,"Checkerboard (Chocolate & White sponge with butter cream)
+Chocolate Mouse (Chocolate sponge with mouse filling)
+Chocolate Cake (Chocolate Sponge, Chocolate Filling covered in Chocolate ganache)
+Chocolate Cake (Covered with white Chocolate)
+Strawberry Shortcake
+Caramel Crunch ( Chocolate sponge, caramel buttercream filling, butter cream all over, caramel and pumpkin seed brittle on top)
+Lemon Mouse ( White sponge, lemon filling and buttercream)
+1/2 and 1/2 Cake (White & chocolate sponge, buttercream, chocolate on top)
+Mocha cake (chocolate sponge, mocha buttercream filling, chocolate on top)
+Black Forest cake ( chocolate sponge, buttercream, cherry filling)
+Cookie cake (chocolate sponge, buttercream, chocolate cookie crumbs)
+Raspberries mouse cake ( chocolate sponge, raspberries buttercream)
+Doboush/7 layers (chocolate",,,,,,,visible,Physical good,,,,Y,,,,25.00,,N,,N,,N,,,,,,,N
+OUTNVPUNX5CPXKW53SF6VGAM,Fancy Cakes,5” Round Cake Caramel/Strawshort/BlackForest,,,,,,,,,,visible,Physical good,,,,,,,,28.00,,N,,,,N,,,,,,,N
+DB2VQZNVBBTRCLNFNJMKVBLU,Fancy Cakes,7” Round Cake,,,,,,,,,,visible,Physical good,,,,,,,,32.50,,N,,,,N,,,,,,,N
+6ZUL4IHCHSM74TE6M5OTLADP,Fancy Cakes,7” R Cake Caramel/Strawshort/BlackForest,,,,,,,,,,visible,Physical good,,,,,,,,37.50,,N,,,,N,,,,,,,N
+SFZTDBZPHAH5J6TOFZEX73A5,Fancy Cakes,10” Round Cake,,,,,,,,,,visible,Physical good,,,,,,,,70.00,,N,,,,N,,,,,,,N
+OMLQW7RJV22U65C5HZPYAYOM,Fancy Cakes,9” Round Cake,,,,,,,,,,visible,Physical good,,,,,,,,55.00,,N,,,,N,,,,,,,N
+E76RIEJV3BMP5QAU2HJ5RO63,Fancy Cakes,9” Round Cake Caramel/Strawshort/BlackForest,,,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,N
+QTK5Z7UG67KYKG3VEY6EXEXO,Fancy Cakes,10” Round Cake Caramel/Strawshort/BlackForest,,,,,,,,,,visible,Physical good,,,,,,,,75.00,,N,,,,N,,,,,,,N
+Y3Z5KDFG6AVCQOXU4QJH2ZVR,Fancy Cakes,12” Round Cake,,,,,,,,,,visible,Physical good,,,,,,,,85.00,,N,,,,N,,,,,,,N
+HFX5W6LGBUMGIPTY7CTUYFF2,Fancy Cakes,12 “ Round Cake Caramel/Strawshort/BlackForest,,,,,,,,,,visible,Physical good,,,,,,,,95.00,,N,,,,N,,,,,,,N
+3XPZXKICNY7ME5WAYQTNOC64,Fancy Cakes,Seven Layer,,,,,,,,,,visible,Physical good,,,,,,,,22.50,,N,,,,N,,,,,,,N
+AP5S6NTJWENTMMDT7F24KB3P,Fancy Cakes,seven layer straw/caramel/blackforest,,,,,,,,,,visible,Physical good,,,,,,,,25.00,,N,,,,N,,,,,,,N
+X5OS6UDDB3U5NJJHJ6NYVMCW,Fancy Cakes,1/4 Slab,,,,,,,,,,visible,Physical good,,,,,,,,70.00,,N,,,,N,,,,,,,N
+S6GNWORUXOYSTFK4UZFMS5RH,Fancy Cakes,1/4 Slab straw/caramel/blackf,,,,,,,,,,visible,Physical good,,,,,,,,80.00,,N,,,,N,,,,,,,N
+BVIV7KZTIDMP6JWPNQPDR5C7,Fancy Cakes,1/2 Slab,,,,,,,,,,visible,Physical good,,,,,,,,90.00,,N,,,,N,,,,,,,N
+5PFZK5T6ERNHR75LPHQ7EIM5,Fancy Cakes,1/2 Slab  straw/caramel/blackf,,,,,,,,,,visible,Physical good,,,,,,,,110.00,,N,,,,N,,,,,,,N
+SZSGVFVOL7VXV7LSXSV3HD2I,Fancy Cakes,Full Slab,,,,,,,,,,visible,Physical good,,,,,,,,175.00,,N,,,,N,,,,,,,N
+NRW4BIHJXX5G7M734YB3XK6R,Fancy Cakes,Full Slab straw/caramel/blackf,,,,,,,,,,visible,Physical good,,,,,,,,225.00,,N,,,,N,,,,,,,N
+ZRYKKUOAJTRDTDGJQSDTRZ6Z,Fancy Cakes,printed picture,,,,,,,,,,visible,Physical good,,,,,,,,20.00,,N,,,,N,,,,,,,N
+3FWASZV3UTKOXT2LCKYTMDKO,Fancy Cakes,1/4 Slab Brownie/napoleon,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,N
+366CU3NEI2ZMJDEHXK5LM7OW,Fancy Cakes,1/2 Slab Brownie/napoleon,,,,,,,,,,visible,Physical good,,,,,,,,75.00,,N,,,,N,,,,,,,N
+IC4NLZPBXEHFHEPA2B25LZVD,Fancy Cakes,Full Slab Brownie/napoleon,,,,,,,,,,visible,Physical good,,,,,,,,130.00,,N,,,,N,,,,,,,N
+OGK7RBHFYJZTEXC4M4LLGRQW,Fancy Cakes,Swiss Roll Cake Strawberry/Mousse,,,,,,,,,,visible,Physical good,,,,,,,,22.50,,N,,,,N,,,,,,,N
+CSR6EJTKAXGOJOH5VNFRU7OY,Fancy Cakes,7” Purim Cake,,,,,,,,,,visible,Physical good,,,,,,,,40.00,,N,,,,N,,,,,,,N
+ZGMT7234B4LY66QJKW7TCI3Q,Fancy Cakes,Full Slab  Choco&marble,,,,,,,,,,visible,Physical good,,,,,,,,100.00,,N,,,,N,,,,,,,N
+6LFH7FTO46HHGNBMJJMAELEY,Fancy Cakes,1/2 Slab Choco&Marble,,,,,,,,,,visible,Physical good,,,,,,,,55.00,,N,,,,N,,,,,,,N
+OJB26ZSVLIIF2NCAHUQED4SR,Fancy Cakes,Caramel  brittle small,,,,,,,,,,visible,Physical good,,,,,,,,80.00,,N,,,,N,,,,,,,N
+GPDTJRV3ZZRLD3IV42RFKTTZ,Fancy Cakes,Caramel brittle 1/2size,,,,,,,,,,visible,Physical good,,,,,,,,45.00,,N,,,,N,,,,,,,N
+I3S7A4FYUWXCTSE6UWJHEZLB,Fancy Cakes,Caramel brittle Large,,,,,,,,,,visible,Physical good,,,,,,,,110.00,,N,,,,N,,,,,,,N
+2USEMAVKJNQ7IMMMQXVCRV4J,Fancy Cakes,fullslab icing Torah scroll,,#3 in the website,,,,,,,,visible,Physical good,,,,,,,,325.00,,N,,,,N,,,,,,,N
+ALG6SDINKP3OEZ5FQAW5JMB6,Fancy Cakes,fullslab fondant torah scroll,,#3 in website,,,,,,,,visible,Physical good,,,,,,,,475.00,,N,,,,N,,,,,,,N
+Z6N3USLAMPKXYCDLOGC2YDZQ,Fancy Cakes,Custom Cake,,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,N
+YET37A7BTFPWIAFR7XYTL6EB,Fancy Cakes,FS Barmitzvah buttercream/fondantdetails,,,,,,,,,,visible,Physical good,,,,,,,,485.00,,N,,,,N,,,,,,,N
+2KTMRRI77SGCR7UGZPC3AEF5,Father’s Day,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+6S7DM5O65NRWGCHBUYWRURIF,Father’s Day,Heart/square Written cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,Y
+OF3AZLRMG42VJHQGMFRKODIE,Father’s Day,heart cookie,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,Y
+3DIWEITNN2R62AWVREETF5R6,Full Slab Focaccia,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,85.00,,N,,N,,N,,,,,,,Y
+IUEEHFWAYTZ2Z6FYMJCYLFQS,Gluten Free,GF Cookies Chocolate Chip/Sprinkle/Poppy Seeds,,,,,,,,,,visible,Physical good,,,,Y,,,,9.99,,N,,N,,N,,,,,,,N
+IQMPLS5LX2EX7KTVHDCS3HIH,Gluten Free,GF Bites,,,,,,,,,,visible,Physical good,,,,,,,,11.50,,N,,,,N,,,,,,,N
+7HXB5B5IS2ZI7OHIBY7QGIUW,Gluten Free,GF Pies Blueberry/Cherry/Apple Raspberry,,,,,,,,,,visible,Physical good,,,,,,,,21.50,,N,,,,N,,,,,,,N
+HFBFLE4HVTSMKKXJFUMIS6RC,Gluten Free,Large challah,,,,,,,,,,visible,Physical good,,,,,,,,25.00,,N,,,,N,,,,,,,N
+PI46R6U6QMBR2SZTI64JAHKK,Gluten Free,small challah,,,,,,,,,,visible,Physical good,,,,,,,,17.00,,N,,,,N,,,,,,,N
+X25USZYAJ4VOU2VO4XHM357E,Gluten Free,Bilka,,,,,,,,,,visible,Physical good,,,,,,,,10.00,,N,,,,N,,,,,,,N
+EHO5I3GAPCATCRWN3CDSTXI5,Gluten Free,GF hamentashen,,,,,,,,,,visible,Physical good,,,,,,,,2.25,,N,,,,N,,,,,,,N
+CUHFV72EYXDVKXYXLYLSW7II,Gluten Free,GF hamentashen x6,,,,,,,,,,visible,Physical good,,,,,,,,13.50,,N,,,,N,,,,,,,N
+K2IAGATKZFCCKUJNULMORMIW,Graduation cookie,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+G2V5NK4DHZRYK6EDFEZ7AY3Z,Graduation cookie,hat,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,Y
+6H7DPOZL2QF22NIW737ZBDPS,Graduation cookie,badge/diploma,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,Y
+NFNKMQEHE7TP5C3RZRZC6YXF,Graduation cookie,boy/girl,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,Y
+2IXBGKV7I2PM2BXYFCPC33N4,Graduation cookie,2x pack,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+Q3F3RGCK52BDLWHO44Z3KRMJ,Graduation cookie,rectangle large cookie,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,Y
+CFJ5WKOTEDHFDQYLECYBCOWG,Graduation cookie,written round,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,Y
+XENCBEPM7YWSLUJR6YWPMFHX,Ingredients,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+STSHUPVOAH4P2QFTMB2FAVOV,Ingredients,Sweet Challa Dough - Bilkha Size - RAW,,,,,,,,,,visible,Physical good,,,,,,,,0.80,,N,,,,N,,,,,,,Y
+L57KSRRN3C6RVBHLDJ5Z6WMO,Ingredients,Water Challa Dough - Bilkha Size - RAW,,,,,,,,,,visible,Physical good,,,,,,,,0.80,,N,,,,N,,,,,,,Y
+3RK2UF4RCJBDZM2D6AI3Y4QF,Ingredients,Sweet Challah Dough  - SM - 12oz,,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,Y
+ICIK4OB2JTOGOMA4HJCLNHG4,Ingredients,Bread Dough - White - LB - Ball,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,2.00,,N,,,,N,,,,,,,Y
+DL5XO7F3J75VZ33RBH6BWS7N,Ingredients,Bread Dough - Whole Wheat - LB - Ball,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,2.00,,N,,,,N,,,,,,,Y
+4IHMGA47ESDUVTTTW6LJ4TIU,Ingredients,Challa Dough - Whole Wheat - LB - Ball,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,2.00,,N,,,,N,,,,,,,Y
+USJ4FLJVHAWHTNULR2FYHBLT,Ingredients,Cookie Dough - LB,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+TIFTRLSMYPI2A77EMTS2TLNY,Ingredients,Cookie Dough Oatmeal LB,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,8.50,,N,,,,N,,,,,,,Y
+BB3OBVRJ6VJ4TIASVY45MLHC,Ingredients,Croissant Dough - LB,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,8.00,,N,,,,N,,,,,,,Y
+C6ZQFOM2B2OFYQPZTHRQBMYK,Ingredients,Danish Dough - LB,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,8.00,,N,,,,N,,,,,,,Y
+QHOYXRYD6HSZPDQLP25HGKN5,Ingredients,French Dough - LB,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,9.00,,N,,,,N,,,,,,,Y
+SAQE3IDZBVL7M2HTKU2OGNR6,Ingredients,Pizza Dough - White,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,Y
+H2SK4L7NIHJRSK75NSUW4KBN,Ingredients,Pizza Dough - Whole Wheat,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,Y
+ZZB2EW24MPJPS46GZGOYVQKR,Ingredients,Butter - Whipped,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,9.75,,N,,,,N,,,,,,,Y
+H6XZPU7UF6O563YFTDU5TH3H,Ingredients,Chocolate Chips,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,8.50,,N,,,,N,,,,,,,Y
+AEN2BVJ24VITCUWZMLFMIYB2,Ingredients,Chocolate Chunks,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+PG4JWKNZSA64PKUFS6FAWI45,Ingredients,Cream Cheese - Small Container,,,,,,,,,,visible,Physical good,,,,,,,,10.95,,N,,,,N,,,,,,,Y
+VE7ANXPFSVLKJ6FH6GO4IRRS,Ingredients,Cup Yogurt/Parfait Cup & Lid,,,,,,,,,,visible,Physical good,,,,,,,,1.00,,N,,,,N,,,,,,,Y
+B3BVFG7C6M3AFPZIV66MQFAV,Ingredients,Custard Creme,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,13.00,,N,,,,N,,,,,,,Y
+VLI4V55UX4ZLOAXP5SPQVUG2,Ingredients,Cutlery Set,,,,,,,,,,visible,Physical good,,,,,,,,1.00,,N,,,,N,,,,,,,Y
+DNZTS34YS6VNMYOZGHU7T5Q5,Ingredients,Filling Apple,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,Y
+GVAZVHYJTA5MXGZQ7DEWOZTW,Ingredients,Filling Blueberry,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.50,,N,,,,N,,,,,,,Y
+BKFP4G66YZU662TEL6XG6ZHX,Ingredients,Filling Cherry,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.50,,N,,,,N,,,,,,,Y
+S2TNCHQ4TOE54BOPQ376BHQY,Ingredients,Filling Date,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.50,,N,,,,N,,,,,,,Y
+CTLQEX5JMYQIOVW47MOEQUBS,Ingredients,Filling Lemon,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,Y
+TD25B266XH5FCA6CT3XEZJOK,Ingredients,Filling Poppyseed,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,7.95,,N,,,,N,,,,,,,Y
+VRMFJM4TVYP3XTSC73QB4LW6,Ingredients,Filling Prune,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,6.50,,N,,,,N,,,,,,,Y
+NDNRVOHAM3C7N2UITV3LBL2Z,Ingredients,Filling Strawberry Jam,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.95,,N,,,,N,,,,,,,Y
+B2U47WNRJ3ZFXCBCFJM25OCU,Ingredients,Flour - White/Bread/Five Roses,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,Y
+YFAQGOCGQ3KYNBJVOG63TXG6,Ingredients,Flour - Wholewheat,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,Y
+3DQ6QLHZSHRFWFBIM65GX5KY,Ingredients,Granola - Bulk - lb,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,9.95,,N,,,,N,,,,,,,Y
+47LU2AFVW4ZNUZKKLZG7I53F,Ingredients,Honey - Bulk Liquid,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,9.95,,N,,,,N,,,,,,,Y
+RZALCDGCUNDDJINBNYTM2YP4,Ingredients,Icing (Buttercream),Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+3RRNBEJKEMHZC6CJKGISD2PO,Ingredients,Cupcake Icing,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,10.00,,N,,,,N,,,,,,,Y
+MY2K3ZTJTWTZ6DIW7IDTAD4D,Ingredients,Milk 2% - 2L Jug,,,,,,,,,,visible,Physical good,,,,,,,,7.95,,N,,,,N,,,,,,,Y
+MLGZ3RKAZZKXHNWJ74VT7ZIH,Ingredients,Pareve Wipped Topping - lb,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,6.95,,N,,,,N,,,,,,,Y
+GCJNIGQX75U7PN65BBC2RIFG,Ingredients,Poppy Seeds,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,8.95,,N,,,,N,,,,,,,Y
+DDZPVVXZYP23AWLTFZ2AEUDI,Ingredients,Pumpkin Seeds,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,8.95,,N,,,,N,,,,,,,Y
+SSZSUMKZ2LJL232C2FRKENZZ,Ingredients,Rainbow Sprinkles - Non Pareils - lb,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,6.95,,N,,,,N,,,,,,,Y
+AZG6IP2O4V3D2EM7XRB2ELK5,Ingredients,Raisins,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,Y
+HCV3OTNYISPRO2GOK2JCYQ24,Ingredients,Sesame Seeds,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.95,,N,,,,N,,,,,,,Y
+QKDGUGUW467E4Z63E7ARYL4K,Ingredients,Sprinkles,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,5.00,,N,,,,N,,,,,,,Y
+ODODLE7KGVFM7PRHLKZLDJMX,Ingredients,Yeast 1 lb-,,,,,,,,,,visible,Physical good,,,,,,,,16.00,,N,,,,N,,,,,,,Y
+7BB66ERYY4PQC2R4OLPPBVBP,Ingredients,chocolate icing 1lb,,,,,,,,,,visible,Physical good,,,,,,,,10.00,,N,,,,N,,,,,,,Y
+5TSEVIA7EBICHKHB7WGPY2AG,Ingredients,L&S tray plastic container,,,,,,,,,,visible,Physical good,,,,,,,,5.00,,N,,,,N,,,,,,,Y
+APX5JLXGX2BHY65TO7EZ2YFF,Ingredients,Sweet Challah Dough - LG - 1.5lb - ball,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,Y
+6U4NNADJGZPOTLGCD34E4TDK,Ingredients,piping bag 4oz,,,,,,,,,,visible,Physical good,,,,,,,,2.25,,N,,,,N,,,,,,,Y
+SNSUHDZEA4YHFFJGIKDAJXCX,Ingredients,Whipped cream,,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,Y
+GMUA3JLUE2SYQ2I4TH7JZLVH,Invigo Coffee,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+UGZXJSVBLDTMTHJBE62WWTB7,Invigo Coffee,Egg sandwich,,,,,,,,,,visible,Physical good,,,,,,,,4.55,,N,,,,N,,,,,,,Y
+3MDD7CNBNEUUDKNAQN6KZPAG,Invigo Coffee,Tuna sandwich,,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,Y
+VOEUAZUVILI3TPLIOAILUTVJ,Invigo Coffee,Cream cheese&lox Sandwich,,,,,,,,,,visible,Physical good,,,,,,,,5.95,,N,,,,N,,,,,,,Y
+OP6CYVMI674UOMIHFZQ5T6FQ,Invigo Coffee,Boxed cookie,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+OHPZHZNLPDXG7UVBTCXRZUEZ,Invigo Coffee,Omelette Sandwich,,,,,,,,,,visible,Physical good,,,,,,,,6.95,,N,,,,N,,,,,,,Y
+LW4UX7FDJOAGDQ4ITXGY3DRN,La Briut Salads,Spicy Carrot,,,,,,,,,,visible,Physical good,,,,Y,,,,3.99,,N,,,,N,,,,,,,Y
+YTXZUHQ7NL6LNM7VHZNCPIZM,La Briut Salads,Coleslaw,,,,,,,,,,visible,Physical good,,,,,,,,5.99,,N,,,,N,,,,,,,Y
+XHUN2SQGBTBWYQ5M57NIIIZT,La Briut Salads,Eggplant,,,,,,,,,,visible,Physical good,,,,,,,,3.99,,N,,,,N,,,,,,,Y
+IGVMKV3VAEOFH7HEGZDENGSG,La Briut Salads,Salmon pate,,,,,,,,,,visible,Physical good,,,,,,,,4.39,,N,,,,N,,,,,,,Y
+CN2NWYZOIBIV3XRGA7324BSP,La Briut Salads,Hummus,,,,,,,,,,visible,Physical good,,,,,,,,2.99,,N,,,,N,,,,,,,Y
+PPP3IKNS27U5EBLWM2YD5SKU,La Briut Salads,Babaganough,,,,,,,,,,visible,Physical good,,,,,,,,3.99,,N,,,,N,,,,,,,Y
+73IZEWVE4MKO5OKB2X7UTI2M,Loaf/Bundt Cakes,Loaf Cakes,,,,,,,,,,visible,Physical good,,,,Y,,,,12.95,,N,,N,,N,,,,,,,N
+2OPLMS66V4HPKGBBDANTO4J3,Loaf/Bundt Cakes,M Bundt Cake,,,,,,,,,,visible,Physical good,,,,,,,,17.50,,N,,,,N,,,,,,,N
+GC22GUMSVMT6SBO2JIYV6CUB,Loaf/Bundt Cakes,L Bundt Cake,,,,,,,,,,visible,Physical good,,,,,,,,21.95,,N,,,,N,,,,,,,N
+I7IUMZIU3GB2ARQVYI6QUXJV,Loaf/Bundt Cakes,Bundt  10inch,,,,,,,,,,visible,Physical good,,,,,,,,19.50,,N,,,,N,,,,,,,N
+F4YS64TNUDPAJ3MKDVUVI735,Loaf/Bundt Cakes,mini loaf cake,,,,,,,,,,visible,Physical good,,,,,,,,6.95,,N,,,,N,,,,,,,N
+HKX4XWCTCXFBZECD6NJE6FV3,Meringue powder,Regular,Pound 1.00,,,,,,,,,visible,Physical good,,,,Y,,,,35.00,,N,,N,,N,,,,,,,Y
+OPAOLTAMXRUJVGXG2AZDVO6Q,Miscellaneous,Patty Shells,,,,,,,,,,visible,Physical good,,,,Y,,,,2.25,,N,,N,,N,,,,,,,Y
+PO2EUCC4J2HJ4WMYVMKYX7FQ,Miscellaneous,Patty Shells,,,,,,,,,,visible,Physical good,,,,,,,,2.75,,N,,,,N,,,,,,,Y
+BK4YBK73SGJSAMTQVL57X7LE,Miscellaneous,Patty Shells,,,,,,,,,,visible,Physical good,,,,,,,,3.00,,N,,,,N,,,,,,,Y
+DY75JYP3SVAKVB7TS7GNSW6D,Miscellaneous,Yeast-  1lb,,,,,,,,,,visible,Physical good,,,,,,,,16.00,,N,,,,N,,,,,,,Y
+OPYMLAQTA7OYZKF5I6SI2POD,Miscellaneous,Herring Matjes,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,17.60,,N,,,,N,,,,,,,Y
+DAB4U5CLZF5K45RBBQH4R3IH,Miscellaneous,Herring Schmaltz,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,9.60,,N,,,,N,,,,,,,Y
+ZHMNSCIQFUJOA2P77XM7SH4S,Miscellaneous,5 Inch Sponge Cake Plain,,,,,,,,,,visible,Physical good,,,,,,,,5.00,,N,,,,N,,,,,,,Y
+OOKT2FTJL6EDGVLLHKH2DIUC,Miscellaneous,7 Inch Sponge Cake Plain,,,,,,,,,,visible,Physical good,,,,,,,,7.00,,N,,,,N,,,,,,,Y
+KOCI7ISYO2FPT6YXENG4GYFI,Miscellaneous,10 Inch Sponge Cake Plain,,,,,,,,,,visible,Physical good,,,,,,,,10.00,,N,,,,N,,,,,,,Y
+HHU3E7FVR43D6P7FPCO5BHDB,Miscellaneous,Loose Tuna,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,14.00,,N,,,,N,,,,,,,Y
+2WCRNZLREGA2DHR2C6KULZXB,Miscellaneous,Loose Egg,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,13.50,,N,,,,N,,,,,,,Y
+SWM6ND7CB6WQ7XWZBAO52HSW,Miscellaneous,Pie Box,,,,,,,,,,visible,Physical good,,,,,,,,1.00,,N,,,,N,,,,,,,Y
+HGJIUY7F2Q3G5TEC27VRUEPO,Miscellaneous,Cake Box,,,,,,,,,,visible,Physical good,,,,,,,,1.00,,N,,,,N,,,,,,,Y
+UH54RYWFQ6R4ATAPZO3SBVR5,Miscellaneous,1 pack lox (4 pieces),,,,,,,,,,visible,Physical good,,,,,,,,8.00,,N,,,,N,,,,,,,Y
+H4TWYZGXTBVL4IDA7XTHXZI2,Mishloach Manot,Bag w/juice,,,,,,,,,,visible,Physical good,,,,Y,,,,10.00,,N,,N,,N,,,,,,,Y
+F4CUMBIXHHCSZN2ZTKIGPW3F,Mishloach Manot,Small Bowl,,,,,,,,,,visible,Physical good,,,,,,,,18.50,,N,,,,N,,,,,,,Y
+HSOZXXPQPWBVV6ZVI2YLX7IN,Mishloach Manot,Medium Bowl,,,,,,,,,,visible,Physical good,,,,,,,,27.50,,N,,,,N,,,,,,,Y
+CLKWZKWE5DZCPA7B5D6QAXAY,Mishloach Manot,Large Bowl,,,,,,,,,,visible,Physical good,,,,,,,,37.50,,N,,,,N,,,,,,,Y
+ONPSU7MIXQI4UEVNZD5VTCAV,Mishloach Manot,small basket,,,,,,,,,,visible,Physical good,,,,,,,,49.00,,N,,,,N,,,,,,,Y
+ESZMRQ4UXT6RR3B36TEHKGS6,Mishloach Manot,medium Basket,,,,,,,,,,visible,Physical good,,,,,,,,69.00,,N,,,,N,,,,,,,Y
+UFHNRZAZVEGSL52MKRLVLOAI,Mishloach Manot,Big Basket,,,,,,,,,,visible,Physical good,,,,,,,,95.00,,N,,,,N,,,,,,,Y
+6Q6LUGOEPPLJIKWXIYD7PC7J,Mishloach Manot,Hamentashen Kit,,,,,,,,,,visible,Physical good,,,,,,,,34.50,,N,,,,N,,,,,,,Y
+5DFTA4AUGJOIPTTKQQP47HBH,Mishloach Manot,Pack assorted x4,,,,,,,,,,visible,Physical good,,,,,,,,7.80,,N,,,,N,,,,,,,Y
+C3H2PEBUABCZDVEW2CDQTS7V,Mishloach Manot,Assorted x6,,,,,,,,,,visible,Physical good,,,,,,,,11.70,,N,,,,N,,,,,,,Y
+OAYNS77XS5CQPNQLDCMEKEUQ,Mishloach Manot,Purim Cookie Kit,,,,,,,,,,visible,Physical good,,,,,,,,35.00,,N,,,,N,,,,,,,Y
+ENRIQXYR2SC2OHVAPC7H5T7S,Mother’s Day,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+YQPWU5YLWOTQIVACIVC3HHVU,Mother’s Day,Ribbon cookie,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+XNWJKIDR62A5R2ZX454UTA2F,Mother’s Day,Square/heart written,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,N
+6IHPUQBPWACTJHZLMDL7HUIK,Mother’s Day,7” choco chip cookie,,,,,,,,,,visible,Physical good,,,,,,,,12.00,,N,,,,N,,,,,,,N
+3ORGMXHXOUDPCB3NVN6SFXDG,Mother’s Day,Cupcake bouquet,,,,,,,,,,visible,Physical good,,,,,,,,38.50,,N,,,,N,,,,,,,N
+X2FKLBSOP4Z7XTBJJR73O7OY,Muffins/Cupcakes,Muffin/Spelt&Sugar free Muffins,,,,,,,,,,visible,Physical good,,,,Y,,,,3.50,,N,,N,,N,,,,,,,N
+6H3F5GHIK7XKZ2LNQ7ZHM7HK,Muffins/Cupcakes,Small Muffin,,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,N
+ZQSE7I45ZFJIWHUHFCCIPU6B,Muffins/Cupcakes,Cupcake,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,N
+6FHSA37PX7X4645BSYVFS7LI,Muffins/Cupcakes,Small Cupcakes,,,,,,,,,,visible,Physical good,,,,,,,,1.75,,N,,,,N,,,,,,,N
+FJCPDXFI4Z5VWR6L6IOSM3CQ,Muffins/Cupcakes,cupcake no icing,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,N
+EDA74N25AWIJAQKNXVG634O4,Muffins/Cupcakes,Printed picture cupcake,,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,N
+RKOQGNDO452XUUXUPOC6YQZQ,Pastries,Pastries,,,"Pastries-Brownie, Corn Flake Cluster, Cream Horn, Cream Puff and Éclair, Domino & Hockey Puck, Swiss Rolls, Napoleon, Strawberry Tart, Tarts & Bells, Upside Down Cupcake, Large Ishler cookie.",,,,,,,visible,Physical good,,,,Y,,,,4.50,,N,,N,,N,,,,,,,N
+4ONNMSP7EQBU67MIWZN2KWLY,Pastries,Cake Pops/marshmellows,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+J3ISUM5AKGIO6GXPRE22G4G6,Pastries,Ishler cookie,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,N
+UVLTCP7N7YACQKWP2DGSMIWQ,Pastries,Scone/fruit tart/éclairs,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,N
+WP2ZGVMZLQOHEVACRKERYUPB,Pastries,Rum Ball,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+QKRMUB6T22ZC7BWRUF6BIRVT,Pastries,4’Inch fruit Tarts,,,,,,,,,,visible,Physical good,,,,,,,,7.95,,N,,,,N,,,,,,,N
+SXKR6B3VZZHYS4CM4FYTJYPS,Pastries,7’Inch Fruit Flan,,,,,,,,,,visible,Physical good,,,,,,,,35.00,,N,,,,N,,,,,,,N
+LFHCAZG5LVAPSBFQFDVGB2ZH,Pastries,9”fruit tart,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,N
+IFANRI43RKZ7EIFMERHUPBMN,Pastries,Chocolate Cigar,,,,,,,,,,visible,Physical good,,,,,,,,4.50,,N,,,,N,,,,,,,N
+YUYSMRXIS5K6JSEDGRUX7F77,Pastries,1/2 sliced napoleon,,,,,,,,,,visible,Physical good,,,,,,,,2.25,,N,,,,N,,,,,,,N
+TBIOKBOGBJ2PF245XBTEC2WF,Pastries,Single marshmallow,,,,,,,,,,visible,Physical good,,,,,,,,1.95,,N,,,,N,,,,,,,N
+3CVODEKBHZ44C53U2Y5UZI3A,Pastries,Triffle cake cups/shooters,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,N
+KQC4TYOMKTUZRN4B65IZIL4X,Pastries,Mini round cake,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+5RPCGMRWMTAPAU65PLTCP7F2,Petit Fours & Desserts,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+OHLQ46KLF2ALZN4FHKHHGNMW,Petit Fours & Desserts,Assorted Petit Fours - from,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,N
+5S4E3OVWK26KPQINXANP5BYY,Petit Fours & Desserts,Brownie PF Size 1/3 Size,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,N
+AXDD642K6EG657E6OHKO4VXU,Petit Fours & Desserts,Chocolate Dipped Strawberries,,,,,,,,,,visible,Physical good,,,,,,,,3.35,,N,,,,N,,,,,,,N
+OYYYLSJCZMNG7WWPOMQOQITP,Petit Fours & Desserts,Tuxedo Strawberries,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,N
+GBPW4URDJ5Q7CRA3X53DKGOS,Petit Fours & Desserts,Swiss Roll PF Size,,,,,,,,,,visible,Physical good,,,,,,,,2.75,,N,,,,N,,,,,,,N
+5ZOUJECKOBXAL4EXZF4IB7V4,Pies/Apple Strudel,Apple Strudel,,,,,,,,,,visible,Physical good,,,,Y,,,,12.95,,N,,N,,N,,,,,,,N
+IKSDKK5BUECBAQ4J72CH22OF,Pies/Apple Strudel,Apple Strudel Sugar Free,,,,,,,,,,visible,Physical good,,,,,,,,12.00,,N,,,,N,,,,,,,N
+VZANYY2X4Y27MCYSQJ2GO424,Pies/Apple Strudel,Crumble & Fruit Pies,,,,,,,,,,visible,Physical good,,,,,,,,21.00,,N,,,,N,,,,,,,N
+SNEMOBZUOL6GCHCMKUAXOEXB,Pies/Apple Strudel,Apple Cranberry,,,,,,,,,,visible,Physical good,,,,,,,,21.00,,N,,,,N,,,,,,,N
+EY562LYP53VFS6ED4674ATBP,Pies/Apple Strudel,Chocolate or caramelChip Cookie Pie,,,,,,,,,,visible,Physical good,,,,,,,,27.50,,N,,,,N,,,,,,,N
+MTXEA5PD43746GAXUHLVZFO3,Pies/Apple Strudel,Lemon Meringue Pie,,,,,,,,,,visible,Physical good,,,,,,,,21.00,,N,,,,N,,,,,,,N
+J7FATHKQGV6YSX7FQ5Z7AM6Z,Pies/Apple Strudel,Sugar Free Pies,,,,,,,,,,visible,Physical good,,,,,,,,24.95,,N,,,,N,,,,,,,N
+TGC6OOAP5IPTAPTHNWVG26PQ,Pies/Apple Strudel,Small pie,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,N
+RMRDAFTCYEMIBBDJBBU4U3PN,Pies/Apple Strudel,Full Slab Pie,,,,,,,,,,visible,Physical good,,,,,,,,130.00,,N,,,,N,,,,,,,N
+AKEGXI23NAK6CO6DQFISA3AY,Pies/Apple Strudel,9”lemon  merengue,,,,,,,,,,visible,Physical good,,,,,,,,35.00,,N,,,,N,,,,,,,N
+S6PWXIRHDRPTQFVG53ZVB3RZ,Pies/Apple Strudel,Small apple strudel,,,,,,,,,,visible,Physical good,,,,,,,,6.95,,N,,,,N,,,,,,,N
+HJWRMDIEKQQ4KIFD3YZS4ZD4,Pies/Apple Strudel,Full slab applestrudel,,,,,,,,,,visible,Physical good,,,,,,,,175.00,,N,,,,N,,,,,,,N
+RZDUU2ZIDS5ZUYS4NLCXYJ46,Pies/Apple Strudel,1/2 slab applestrudel,,,,,,,,,,visible,Physical good,,,,,,,,80.00,,N,,,,N,,,,,,,N
+EB5EOHT6LVQWXE6JYT25GEMR,Platters - 2 Scoops per Portion,Regular,,,Bagels and Rolls are Extra,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+MPT2KXR7E7EEYIQEQSTCBOU7,Platters - 2 Scoops per Portion,Egg Salad,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,Y
+PBGMZWSQUNUGEIRQR76N5TPG,Platters - 2 Scoops per Portion,Tuna Salad,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,Y
+ICCQREZZX3XRKWK5JWL3TSOS,Platters - 2 Scoops per Portion,Cream Cheese,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,Y
+TJSYZQJQZ6CEOXNXZZTJF3P2,Platters - 2 Scoops per Portion,Cream Cheese & Lox,,,,,,,,,,visible,Physical good,,,,,,,,5.95,,N,,,,N,,,,,,,Y
+G77DZVVMLHG7TTA6OUKX3GU2,Platters - 2 Scoops per Portion,Lox,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,Y
+EI37RKXBI6CMHMFVCUJIK7MC,Pretzel Challah,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+LANG42R2DO3GSJLKERNFRNSL,Pretzel Challah,Pretzel buns,,,,,,,,,,visible,Physical good,,,,,,,,1.55,,N,,,,N,,,,,,,N
+AQK3ROMPX3P5ZHOUHIAILHJ2,Pretzel Challah,Pretzel challah,,,,,,,,,,visible,Physical good,,,,,,,,8.95,,N,,,,N,,,,,,,N
+VXLE3GAXSSL7K6W7PSMSSMSY,Pretzel Challah,Pretzel Demi baguette,,,,,,,,,,visible,Physical good,,,,,,,,1.55,,N,,,,N,,,,,,,N
+G43EEO6X5X6XLT7NULM4BUB7,Pretzel Challah,pretzel bread,,,,,,,,,,visible,Physical good,,,,,,,,2.05,,N,,,,N,,,,,,,N
+S5JI4ZI46IRTWPBVUPBQIQDI,Printedpicture Cupcake,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,4.25,,N,,N,,N,,,,,,,Y
+I22IRLYMWIGJBDEQYEMAKWJ6,Purim,Hamentashen,,,,,,,,,,visible,Physical good,,,,Y,,,,1.95,,N,,N,,N,,,,,,,N
+6R77ETB3BEW6WTYKEHEWZPWQ,Purim,Yeast hamantaschen,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+VHDHBJH4OQ3LW5GBNJKHPGYZ,Purim,Fancy hamentashen,,,,,,,,,,visible,Physical good,,,,,,,,2.25,,N,,,,N,,,,,,,N
+MLNJZXWE2HRGFVKTU42EFDTS,Purim,Regular,,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,N
+WVJFTLARBUFW4Z6NC6KASNNQ,Purim,Large Clown/Mask/Crown,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+QDKASSWQTVV4EK3HREMSSUNG,Purim,Small Clown/mask,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,N
+SCJL3W4QX5UP4A4KEDK4GIUH,Purim,Hand Written - Square/Round/Star,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,N
+SXA7HBBUP7DZP56O26X2CHJW,Purim,Printed cookie,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+CSUXWOJ6O7W7X3RB636SQESF,Purim,Individually packed hamentashen,,,,,,,,,,visible,Physical good,,,,,,,,2.20,,N,,,,N,,,,,,,N
+L4CMCRVTW4UQS7NTYT6E4XLF,Purim,Hamantosh,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+RSKKAQJJWINMXGQVRQLRREFW,Purim,Purim Kit,,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,N
+XGNDBOALC5XHWJXILF6TNDXP,Purim,Bag w/ juice,,,,,,,,,,visible,Physical good,,,,,,,,11.95,,N,,,,N,,,,,,,N
+QYFCAKJ44KM4JTV5RPUC5KOY,Purim,Small Bowl,,,,,,,,,,visible,Physical good,,,,,,,,18.95,,N,,,,N,,,,,,,N
+MT2FUS73OOWAQGVY35FCVZML,Purim,Medium  bowl,,,,,,,,,,visible,Physical good,,,,,,,,21.95,,N,,,,N,,,,,,,N
+S7GAFBFAFACFC5TQENVPRLER,Purim,Large Bowl,,,,,,,,,,visible,Physical good,,,,,,,,29.95,,N,,,,N,,,,,,,N
+NB43IMCJKQLTVN6FGY3DVQQ6,Purim,Basket,,,,,,,,,,visible,Physical good,,,,,,,,45.00,,N,,,,N,,,,,,,N
+PLOQWYZ432HJBWMU7XZI56ZI,Purim,Big Basket,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,N
+KM7TFWDHCZZXT4ACYBA7DGK4,Rogallach/Jam & Chocolate Twist,Rogallach Choc & Cinnamon,,,,,,,,,,visible,Physical good,,,,Y,,,,1.75,,N,,N,,N,,,,,,,N
+EJB7OVK2YS4VRKP5VZ4F2K7T,Rogallach/Jam & Chocolate Twist,Jam Twist,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,20.00,,N,,,,N,,,,,,,N
+LPYL3RU4WD33BX4LKRTI6LEQ,Rogallach/Jam & Chocolate Twist,Jam Rogallach,,,,,,,,,,visible,Physical good,,,,,,,,4.75,,N,,,,N,,,,,,,N
+ODC7CJ6KLQXEDDGVUDEYRRY2,Rosh-baskets,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+QE5FURIYWDVGLGQPJSAQ45FZ,Rosh-baskets,Mini honey jars,,,,,,,,,,visible,Physical good,,,,,,,,14.95,,N,,,,N,,,,,,,Y
+A5YBDBXURTETDGAZJVNW47EE,Rosh-baskets,Square cookie box,,,,,,,,,,visible,Physical good,,,,,,,,21.00,,N,,,,N,,,,,,,Y
+JKINT66BRKNHPAF25NH5JZHN,Rosh-baskets,Rectangle cookie box,,,,,,,,,,visible,Physical good,,,,,,,,27.50,,N,,,,N,,,,,,,Y
+GFCQH7A5SROEEROVS6QLJPRL,Rosh-baskets,Small plate,,,,,,,,,,visible,Physical good,,,,,,,,44.95,,N,,,,N,,,,,,,Y
+CQKNW5FKHRZ4SMZUKZK2B4GX,Rosh-baskets,Large plate,,,,,,,,,,visible,Physical good,,,,,,,,59.95,,N,,,,N,,,,,,,Y
+EGVVCJAIE53VW2EANVFJL7CQ,Rosh-baskets,Small gift basket,,,,,,,,,,visible,Physical good,,,,,,,,75.00,,N,,,,N,,,,,,,Y
+26EK6WGWFNH2IBW7DDVDNPC5,Rosh-baskets,12” Choco chip Cookie gram,,,,,,,,,,visible,Physical good,,,,,,,,45.00,,N,,,,N,,,,,,,Y
+7MCATTOI6LXQW5EMEF4VQ2EQ,Rosh-baskets,Cookie kit,,,,,,,,,,visible,Physical good,,,,,,,,37.50,,N,,,,N,,,,,,,Y
+XI3ZX5NROPEDGZR3BUZBXQGP,Rosh-baskets,Big basket,,,,,,,,,,visible,Physical good,,,,,,,,95.00,,N,,,,N,,,,,,,Y
+PJJDKBIZ4VYGYL4KRAUOGFZX,Rosh-baskets,7” graham cookie,,,,,,,,,,visible,Physical good,,,,,,,,30.75,,N,,,,N,,,,,,,Y
+JMIOFKBLF3PXFYXIGCBXSWIT,Roshashana,Regular,,,,,,,,,,,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+246FVSW4Q7BKY2SC4HDNSRTY,Roshashana,Mini Honey Jars,,,,,,,,,,,Physical good,,,,,,,,12.95,,N,,,,N,,,,,,,Y
+ZY2F2Z7PG22IJPNVSHSB6ZNA,Roshashana,Square Cookie Box,,,,,,,,,,,Physical good,,,,,,,,18.95,,N,,,,N,,,,,,,Y
+PWYLYUNKOWPURC6RRQ2UIDXA,Roshashana,Rectangle Cookie Box,,,,,,,,,,,Physical good,,,,,,,,24.95,,N,,,,N,,,,,,,Y
+6KRMZJRWUI7ILLUDM3USTUME,Roshashana,Small Plate,,,,,,,,,,,Physical good,,,,,,,,39.95,,N,,,,N,,,,,,,Y
+AGL7UZB6P7PONW2A72RYRKVI,Roshashana,Large Plate,,,,,,,,,,,Physical good,,,,,,,,54.95,,N,,,,N,,,,,,,Y
+XMZZ34NXJA3PBBDPONYQT375,Roshashana,Gift Basket,,,,,,,,,,,Physical good,,,,,,,,74.95,,N,,,,N,,,,,,,Y
+UNUL2TW4Y7JUR74UU3CLVC7C,Roshashana,"12"" Inch Choco Cookie",,,,,,,,,,,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,Y
+YDMPDTSJZNNULZG5LCRMER7D,Roshashana,Cookie Kit,,,,,,,,,,,Physical good,,,,,,,,29.95,,N,,,,N,,,,,,,Y
+4JO44V364ATJASQLAZQRGWET,Roshashana,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+6QVPONHGUOXOWBVFZFRZRRCI,Roshashana,Crown Challah,,,,,,,,,,visible,Physical good,,,,,,,,16.95,,N,,,,N,,,,,,,N
+OLWMB34HDOBDHPZ2LVHIQWGB,Roshashana,Small Round Challah,,,,,,,,,,visible,Physical good,,,,,,,,5.50,,N,,,,N,,,,,,,N
+KKNGFC5DQ33SXF3QALHP6I4C,Roshashana,Large round challah,,,,,,,,,,visible,Physical good,,,,,,,,7.95,,N,,,,N,,,,,,,N
+MUH76QRV6EVCS3GU6T77FXF3,Roshashana,Honey jar cookie,,,,,,,,,,visible,Physical good,,,,,,,,4.20,,N,,,,N,,,,,,,N
+CR23W5L3OXO3MI5SE6PKJ4BH,Roshashana,Pack of 2 apple cookie,,,,,,,,,,visible,Physical good,,,,,,,,5.00,,N,,,,N,,,,,,,N
+3OZ6D4O3AWBBVQERTKSP4XEJ,Roshashana,Bee cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,N
+XYDAXFRZU32XVQHNKSVFTQXA,Roshashana,Written cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,N
+BVJDXB6B2RRGIMJE44PWWHY2,Roshashana,Printed picture,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+KGK6Q6A2W7TSJ4A2LWZIMGBX,Roshashana,Honey Loaf  S,,,,,,,,,,visible,Physical good,,,,,,,,9.95,,N,,,,N,,,,,,,N
+HT3V5UQ4CXVEKLYXX2RZ2RHD,Roshashana,Honey Loaf  L,,,,,,,,,,visible,Physical good,,,,,,,,15.50,,N,,,,N,,,,,,,N
+XBLQVN6QQQOY45B25HTZFAZX,Roshashana,Honey bundt  L,,,,,,,,,,visible,Physical good,,,,,,,,24.00,,N,,,,N,,,,,,,N
+6FBMOHCABA43TKTX26ANQZF3,Roshashana,Honey bundt M,,,,,,,,,,visible,Physical good,,,,,,,,21.00,,N,,,,N,,,,,,,N
+6ICARRVLHZXBSAJ2Q3NZT4YP,Roshashana,10 inch honey bundt,,,,,,,,,,visible,Physical good,,,,,,,,26.00,,N,,,,N,,,,,,,N
+OASXYZSZIFUC6BGZWPWSVTQN,Roshashana,AppleCupcakes,,,,,,,,,,visible,Physical good,,,,,,,,3.95,,N,,,,N,,,,,,,N
+IFXTBCFLE2DC5CZ7BOOO63FI,Roshashana,7” Choc Mousse cake,,,,,,,,,,visible,Physical good,,,,,,,,37.50,,N,,,,N,,,,,,,N
+UUUCZOAG3OTUX4BL6F7XOM4T,Roshashana,9”  Choc mousse cake,,,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,N
+LKLGLFTFGGJ3K3WXDH5KF25B,Roshashana,7” Mixed fruit mousse,,,,,,,,,,visible,Physical good,,,,,,,,45.00,,N,,,,N,,,,,,,N
+RMXMQ2Z4FRV4Z3GDLOX37ULQ,Roshashana,9” Mixed fruit mousse,,,,,,,,,,visible,Physical good,,,,,,,,67.95,,N,,,,N,,,,,,,N
+KRFZQQM4BVAW7QXS373CI3K4,Roshashana,7” Lady finger Choc cake,,,,,,,,,,visible,Physical good,,,,,,,,37.50,,N,,,,N,,,,,,,N
+YRVUIPHVWDWSB6YJSJ3DYTBG,Roshashana,9” Lady finger Choc cake,,,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,N
+PYHFSKDBUH5J5JKSUEFYQBTM,Roshashana,Mixed fruit PUFF cake,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,N
+F2VPJBND6XQD7URHLZ4YVYXE,Roshashana,9” fruit tart,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,N
+AOPXBIEKZSLJWAQG2XK3I3SJ,Roshashana,fancy Honey cakes,,,,,,,,,,visible,Physical good,,,,,,,,45.00,,N,,,,N,,,,,,,N
+UZVC7UXUCYZQ6JJVFD5Z75AI,Roshashana,Mixed fruit honey cake,,,,,,,,,,visible,Physical good,,,,,,,,55.00,,N,,,,N,,,,,,,N
+KEQKPUAPKHEBJBTCPZVVOAFX,Roshashana,1/4 slab honey,,,,,,,,,,visible,Physical good,,,,,,,,80.00,,N,,,,N,,,,,,,N
+E3FVEIBH567S6KHQMFBJPJFK,Roshashana,1/2slab honey,,,,,,,,,,visible,Physical good,,,,,,,,110.00,,N,,,,N,,,,,,,N
+S5KS2X26WTK25VOUZDIH5Q67,Roshashana,fullslab honey,,,,,,,,,,visible,Physical good,,,,,,,,225.00,,N,,,,N,,,,,,,N
+4OWPCFUEWCWNYV7TXJS7MMX5,Roshashana,seven layer long,,,,,,,,,,visible,Physical good,,,,,,,,38.00,,N,,,,N,,,,,,,N
+FSDGMDKYCBNJZOBNQOAK42ZM,Roshashana,apple loaf,,,,,,,,,,visible,Physical good,,,,,,,,12.95,,N,,,,N,,,,,,,N
+5QIZIEM5ONAAKPAXFFZ2AF6H,Roshashana,sliced honey cake,,,,,,,,,,visible,Physical good,,,,,,,,5.95,,N,,,,N,,,,,,,N
+PQQHO7XQWTJESRDK5737WWVN,Sandwich&Fillings,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+4VNSROROOBI4OFN7OQSJ3POU,Sandwich&Fillings,Croissant Sandwiches,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+SNWOD3EQUDLSOY645GKDXJ64,Sandwich&Fillings,Baguette Sandwiches,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,Y
+QZLM5SYNI4MDIVOBHNTFEKEK,Sandwich&Fillings,Egg Salad,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,Y
+5FI6UYSSMWQSMQE6VG7N73JE,Sandwich&Fillings,Tuna Salad,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,Y
+KCUGRQ37ZKGDK6CRRBKU4J27,Sandwich&Fillings,12 Party Sandwiches triangle,,,,,,,,,,visible,Physical good,,,,,,,,21.95,,N,,,,N,,,,,,,Y
+X5I5HQIZA7J3QMJY4YJHFQMC,Sandwich&Fillings,12party sandwiches strips,,,,,,,,,,visible,Physical good,,,,,,,,28.00,,N,,,,N,,,,,,,Y
+4AS4ETT425KA4IRBL6DG6XIN,Sandwich&Fillings,12swirl party sandwiches,,,,,,,,,,visible,Physical good,,,,,,,,18.95,,N,,,,N,,,,,,,Y
+CXSB5OWWJNKDRTQFYFOQWZAU,Sandwiches,Butter on a Bagel,,,,,,,,,,visible,Physical good,,,,Y,,,,3.25,,N,,N,,N,,,,,,,Y
+FIMOQZVBQD5YROZAHQNZNVUH,Sandwiches,Cream cheese,,,,,,,,,,visible,Physical good,,,,,,,,4.50,,N,,,,N,,,,,,,Y
+74M7BZ52LVUEEOFJKNFF5S2G,Sandwiches,Avocado,,,,,,,,,,visible,Physical good,,,,,,,,6.50,,N,,,,N,,,,,,,Y
+VFINFZGMK33TLC3AWVXNYCDT,Sandwiches,Cream cheese & vegetables,,,,,,,,,,visible,Physical good,,,,,,,,5.50,,N,,,,N,,,,,,,Y
+GZRYMDAIOOVFA3INFDES2FEK,Sandwiches,Egg,,,,,,,,,,visible,Physical good,,,,,,,,6.50,,N,,,,N,,,,,,,Y
+JRARE2WE6UCNJ5V6SC5D2QYR,Sandwiches,Lox and cream cheese,,,,,,,,,,visible,Physical good,,,,,,,,8.50,,N,,,,N,,,,,,,Y
+3DA5L5P73O65ZDFRYXCTTYQU,Sandwiches,Tuna,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+BJUA5NLI7HD6T6VKVDCLCITD,Sandwiches,Veggie wrap,,,,,,,,,,visible,Physical good,,,,,,,,8.50,,N,,,,N,,,,,,,Y
+BFRVEHWD36B36JFTBSTNWYFF,Sandwiches,party sandwich x9,,,,,,,,,,visible,Physical good,,,,,,,,12.75,,N,,,,N,,,,,,,Y
+5HLUQJRL2R6BWY223I3MTIHT,Sandwiches,party sandwich x12,,,,,,,,,,visible,Physical good,,,,,,,,17.95,,N,,,,N,,,,,,,Y
+4QJHWNACSBPCK5V4VTYTXO4W,Sandwiches,Tuna wrap,,,,,,,,,,visible,Physical good,,,,,,,,8.50,,N,,,,N,,,,,,,Y
+LBLWQ3GVYAKYC5GUW3OWT5C2,Sandwiches,Egg Wrap,,,,,,,,,,visible,Physical good,,,,,,,,7.50,,N,,,,N,,,,,,,Y
+UXEVOP5SUVY7AALVS55ZEGNL,Sandwiches,Whole egg,,,,,,,,,,visible,Physical good,,,,,,,,1.20,,N,,,,N,,,,,,,Y
+ERQ33SUR7YMQZVYTDQL66Z4K,Sandwiches,Toppings,,,,,,,,,,visible,Physical good,,,,,,,,0.50,,N,,,,N,,,,,,,Y
+SRM2NV6QXNCZHSBT35K6FNBX,Savouries,Mushroom,,,,,,,,,,visible,Physical good,,,,Y,,,,3.50,,N,,N,,N,,,,,,,N
+PGMNK7APGQFXG7DTWUJMVGLN,Savouries,Potato,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+UOL3UGQG3GJQO62ZNU7SOO4B,Savouries,small mushroom,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,N
+THM2M2ZFHWVJST6PZ3KVUMLZ,Savouries,small potato,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,N
+4ATQAY5P6JHZCRQN4JUJUIRC,Savouries,Cheese buroka,,,,,,,,,,visible,Physical good,,,,,,,,4.75,,N,,,,N,,,,,,,N
+QBOZUXB5RWN3KARAB7XNMDHF,Savouries,Cheese sticks,,,,,,,,,,visible,Physical good,,,,,,,,3.75,,N,,,,N,,,,,,,N
+PUFFJBO33ZOCX5MHWSR5THP4,Savouries,Round pastry,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,N
+TCMOFDL3ORRBQYY4GT4IQLDH,Shavuot,cheesecake,,,,,,,,,,visible,Physical good,,,,Y,,,,50.00,,N,,N,,N,,,,,,,Y
+2R47JTXIYOOAJN7URJBCAV5B,Shavuot,marble cheescake,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,Y
+HVJCPT7D3IMKTU5C5PWS2HL4,Shavuot,Fruit filling cheesecake,,,,,,,,,,visible,Physical good,,,,,,,,55.00,,N,,,,N,,,,,,,Y
+KKNRI55UDJLEH27KNJQQCXI2,Shavuot,Mixed fruit cheescake,,,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,Y
+FDSQHFRFJA365REYU3CVWOPZ,Shavuot,Loaf cheesecake,,,,,,,,,,visible,Physical good,,,,,,,,25.00,,N,,,,N,,,,,,,Y
+WHYIT7GAK32S23DOWB2IXACX,Shavuot,Filling loaf cheesecake,,,,,,,,,,visible,Physical good,,,,,,,,30.00,,N,,,,N,,,,,,,Y
+PWUSKN66DF7JLBU44CKFELFG,Shavuot,Fruit loaf cheesecake,,,,,,,,,,visible,Physical good,,,,,,,,35.00,,N,,,,N,,,,,,,Y
+G5XCTYAE2IGTEAR64EQVIIAM,Shavuot,Torah scroll cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,Y
+QBSUC5GEPPO4TTPFSZYW3NT3,Shavuot,round written cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,Y
+H6NJ2AKK2RESQ2LC72N7SIOM,Shavuot,Cheese cake slice,,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,Y
+KEB6ZOJRQB5QVJNYXNVGEY56,Shavuot,Cheesecake /piece,,,,,,,,,,visible,Physical good,,,,,,,,variable,,N,,,,N,,,,,,,Y
+AHNKDN4IBA4GD66QDQOCUXIN,Shavuot,Printed Picture,,,,,,,,,,visible,Physical good,,,,,,,,4.25,,N,,,,N,,,,,,,Y
+RPKTPVF4TJIQBP4ZRGI4CWZ5,Shavuot,Crumble cheesecake,,,,,,,,,,visible,Physical good,,,,,,,,55.00,,N,,,,N,,,,,,,Y
+EZYVDF57MNFT65GOKUEHVRXT,Simcha Challa,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,N
+FX6P2BLFU7HBVT5SXYED227W,Simcha Challa,2 lb. Simcha 25people,,,,,,,,,,visible,Physical good,,,,,,,,30.00,,N,,,,N,,,,,,,N
+ZG3DA3DD2QGV2ZUAEROBZDQ6,Simcha Challa,3 lb. Simcha 50 people,,,,,,,,,,visible,Physical good,,,,,,,,35.00,,N,,,,N,,,,,,,N
+RV7W5DMC7OGUH4BE4SK33LFP,Simcha Challa,5 lb. Simcha 100 people,,,,,,,,,,visible,Physical good,,,,,,,,55.00,,N,,,,N,,,,,,,N
+23HKFBWDXHZHUXKKQ4SYW5ZS,Simcha Challah,3 lb.,,,,,,,,,,visible,Physical good,,,,Y,,,,30.00,,N,,N,,N,,,,,,,N
+TPAWFSSDGKPFDONIPHTFDHBC,Simcha Challah,2 lb.,,,,,,,,,,visible,Physical good,,,,,,,,25.00,,N,,,,N,,,,,,,N
+6B3AWC2XRK7OMB3LGDHB2CWH,Simcha Challah,5 lb.,,,,,,,,,,visible,Physical good,,,,,,,,50.00,,N,,,,N,,,,,,,N
+LQA2NI7OIX32EESPUYYKR2QY,Soft Drinks/Water,Water/Juice box,,,,,,,,,,visible,Physical good,,,,Y,,,,1.00,,N,,N,,N,,,,,,,Y
+ATUYX3OKXUNELG764TWRIGBW,Soft Drinks/Water,Nestea/Sprite/coke/Fresca/Gingerale,,,,,,,,,,visible,Physical good,,,,,,,,1.50,,N,,,,N,,,,,,,Y
+N2AMCSMS3H76IH64D7F4NJYW,Soft Drinks/Water,Grape juice,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,Y
+CENCI6D344RXOWCYECDQUBDT,Soft Drinks/Water,Large Grape juice,,,,,,,,,,visible,Physical good,,,,,,,,8.00,,N,,,,N,,,,,,,Y
+MPKMR6J5FIIUNCNEBBOWIRVR,Soft Drinks/Water,medium grape juice,,,,,,,,,,visible,Physical good,,,,,,,,5.00,,N,,,,N,,,,,,,Y
+GOT735VY5XVBMGNJGJYUW5MT,Special Challah,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,4.50,,N,,N,,N,,,,,,,N
+J26NFFV3LOS3X4F4V33HHKKX,Special Challah,Large challah,,,,,,,,,,visible,Physical good,,,,,,,,4.50,,N,,,,N,,,,,,,N
+TFSAUWOTITJ7SU5RZLPWYHMD,Special Challah,Shlisel challah,,,,,,,,,,visible,Physical good,,,,,,,,8.50,,N,,,,N,,,,,,,N
+N5FS24XDARAACQCUZYMJ66GO,Special Challah,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,4.50,,N,,N,,N,,,,,,,Y
+NWYCDNI53JZKFQPP6AZ3GLAN,Spelt bread,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,10.95,,N,,N,,N,,,,,,,N
+CNDPISMX4N2OUADA6IOVQDU3,Spelt bread,Spelt Rolls,,,,,,,,,,visible,Physical good,,,,,,,,2.50,,N,,,,N,,,,,,,N
+AQ247EYRE4K5DRQXXDZJPWYG,Sufganiyot&Latkes,Boston cream,,,,,,,,,,visible,Physical good,,,,Y,,,,4.50,,N,,N,,N,,,,,,,N
+I6RYB46LJO7SHWK6IQ6PKUGA,Sufganiyot&Latkes,Regular,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+MV2FPD3YKG2SRB5YWHB456BE,Sufganiyot&Latkes,Fancy,,,,,,,,,,visible,Physical good,,,,,,,,6.95,,N,,,,N,,,,,,,N
+BE7XKVU4VZGHCG6WC2VSOG6N,Sufganiyot&Latkes,Latkes,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+5K5LNBWGZX6YFKX33SWQVIGA,Sugar Free,fruit Pies,,,,,,,,,,visible,Physical good,,,,Y,,,,24.95,,N,,N,,N,,,,,,,N
+5IGLNJFELDDWIFQ7O4VM5XXY,Sugar Free,Turnover,,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,N
+52L6KHEOEBBYX22B63MKPBT7,Sugar Free,Jam rogollach,,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,N
+3D3UE42CAZQHLGXJHN5NJYN6,Sugar Free,Apple Strudel,,,,,,,,,,visible,Physical good,,,,,,,,12.50,,N,,,,N,,,,,,,N
+HBEI5S46G3P5GBFNDJQ7AN3W,Sugar Free,Choco Swirll,,,,,,,,,,visible,Physical good,,,,,,,,11.50,,N,,,,N,,,,,,,N
+Y47BXXCOO3EO2EGUC6BNXONG,Sugar Free,Choco drop Pumkin seed cookie,,,,,,,,,,visible,Physical good,,,,,,,,11.50,,N,,,,N,,,,,,,N
+LCUS4MMIN3FQCGNZA2XQRDQL,Sugar Free,Jam Swrill,,,,,,,,,,visible,Physical good,,,,,,,,11.50,,N,,,,N,,,,,,,N
+QZRR7KDHQYRVMW4TD7SXT3G5,Sugar Free,Jam Rogollach cookie,,,,,,,,,,visible,Physical good,,,,,,,,11.95,,N,,,,N,,,,,,,N
+PCXCXK2HWKBWSTBD26QCLYVP,Sugar Free,Mandel bread tovas,,,,,,,,,,visible,Physical good,,,,,,,,11.50,,N,,,,N,,,,,,,N
+3HR5THVZPPDJJZPCH5US5QIS,Sugar Free,SF Hamentashen,,,,,,,,,,visible,Physical good,,,,,,,,2.00,,N,,,,N,,,,,,,N
+WTOIMU7WGWBKMHWL5CWVUSQG,Sugar Free,SF Hamentashen x6,,,,,,,,,,visible,Physical good,,,,,,,,11.50,,N,,,,N,,,,,,,N
+IR3J33S6GDTJEKKEO4SEE2YP,Sugar Free,Bowties-Nothings,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,20.00,,N,,,,N,,,,,,,N
+Z3EXFHZ35YZX7WPBCNYXUPS2,Sugar Free,Kichel,Pound 1.00,,,,,,,,,visible,Physical good,,,,,,,,20.00,,N,,,,N,,,,,,,N
+OQWSYDJ43JRKFUOEOPZ445PY,Sukkot,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+4IIC2E52KSKKDZ6ESQUQ7JUM,Sukkot,Ginger house,,,,,,,,,,visible,Physical good,,,,,,,,65.00,,N,,,,N,,,,,,,Y
+PEJ6KZVCHSCMDSDL5RHZ3DXV,Sukkot,torah scroll cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,Y
+SY2GTHA4S74QOTDZ2HBGFOZD,Sukkot,Mini sukkah,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,Y
+ECABIADWOGMXD3JLCMLGFENO,Tray Items,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,variable,,N,,N,,N,,,,,,,Y
+LB5GLLZD7J2CKPZCMOID3BPF,Tray Items,Small Cookie Tray,,,,,,,,,,visible,Physical good,,,,,,,,59.95,,N,,,,N,,,,,,,Y
+E46Z5T3EQ2D7UERMA3KI65V6,Tray Items,Large Cookie Tray,,,,,,,,,,visible,Physical good,,,,,,,,84.95,,N,,,,N,,,,,,,Y
+PCZA4G5E44EQBZAJN7DC5ISX,Tray Items,Small Danish Tray,,,,,,,,,,visible,Physical good,,,,,,,,59.95,,N,,,,N,,,,,,,Y
+IJSMCOSGJHRR3SOVBWC3HNQD,Tray Items,Large Danish Tray,,,,,,,,,,visible,Physical good,,,,,,,,84.95,,N,,,,N,,,,,,,Y
+EHRO36TGOJNZSWNYYWLB5FM7,Tray Items,Small Danish & Cookie Tray,,,,,,,,,,visible,Physical good,,,,,,,,59.95,,N,,,,N,,,,,,,Y
+N2RZTBONQ5U5WRNK7NQYOJX3,Tray Items,Large Danish & Cookie Tray,,,,,,,,,,visible,Physical good,,,,,,,,84.95,,N,,,,N,,,,,,,Y
+QKJFILA3HD5GK7UTJK4XKS65,Tray Items,Small Vegetable Tray,,up to 20,,,,,,,,visible,Physical good,,,,,,,,60.00,,N,,,,N,,,,,,,Y
+RT5NEJYLQDCYBB4KZYXXQBVW,Tray Items,Medium veggie platter,,25-40,,,,,,,,visible,Physical good,,,,,,,,80.00,,N,,,,N,,,,,,,Y
+A25KBBYN6RWLVQ7SU4VWYVVK,Tray Items,Large Vegetable Tray,,45 to 60,,,,,,,,visible,Physical good,,,,,,,,100.00,,N,,,,N,,,,,,,Y
+MYYZAWO6ERMTYD5BNAYDJUJ4,Tray Items,Small Fruit Tray,,up to 20 people,,,,,,,,visible,Physical good,,,,,,,,65.00,,N,,,,N,,,,,,,Y
+KYARRHANNHMHJFS7VBUY6KYO,Tray Items,Medium fruit platter,,25-40 people,,,,,,,,visible,Physical good,,,,,,,,90.00,,N,,,,N,,,,,,,Y
+KXSMCZMDTGXKYE6WMSST2FES,Tray Items,Large Fruit Tray,,45 to 60 people,,,,,,,,visible,Physical good,,,,,,,,115.00,,N,,,,N,,,,,,,Y
+T2D72WHRAOEG3HDDZYR5KXIQ,Turnover/Horseshoe/Pretzel,Turnovers/Horseshoe/Pretzel,,,,,,,,,,visible,Physical good,,,,Y,,,,4.95,,N,,N,,N,,,,,,,N
+R54PLUBX22MMTNSZTZIEEDJN,Turnover/Horseshoe/Pretzel,large pretzel,,,,,,,,,,visible,Physical good,,,,,,,,6.00,,N,,,,N,,,,,,,N
+MIFMLOWYNSSVNXFY2QJQSHAL,Turnover/Horseshoe/Pretzel,Pam Leaves L/Choco strip,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+XP4YKFB4TQGUJEIVVL5R5KLO,Turnover/Horseshoe/Pretzel,2xpack Palm Leave,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,N
+GCBUO6SSUDMDJZZWD6PQPPJ7,Valentine’s Day,Heart written with ribbon,,,,,,,,,,visible,Physical good,,,,Y,,,,4.25,,N,,N,,N,,,,,,,N
+2PAVULITTW6KN4NXVXJAKD2H,Valentine’s Day,Heart written Cookie,,,,,,,,,,visible,Physical good,,,,,,,,3.25,,N,,,,N,,,,,,,N
+HHDOJYHAX22SWUQH5AT43PQP,Valentine’s Day,2 hearts cookie,,,,,,,,,,visible,Physical good,,,,,,,,2.95,,N,,,,N,,,,,,,N
+3VMZFWRYQDEA7QK4B3Z3SLYU,Valentine’s Day,Heart strawberry jam filled,,,,,,,,,,visible,Physical good,,,,,,,,3.50,,N,,,,N,,,,,,,N
+XI3H6MM2RPJQNIM6GNHGK3E5,Valentine’s Day,Cookie Cup,,,,,,,,,,visible,Physical good,,,,,,,,4.95,,N,,,,N,,,,,,,N
+IUUCD33MWBDMOAYYXNEXCBK4,Whipped cream,Regular,,,,,,,,,,visible,Physical good,,,,Y,,,,8.25,,N,,N,,N,,,,,,,Y
+PS3TS52LPB5F4WNE4SULW7E5,Yogurt Parfaits,yogurt,,,,,,,,,,visible,Physical good,,,,Y,,,,7.50,,N,,N,,N,,,,,,,Y
+UX3UCPBMTSOVZ27A4OECIVRH,Yogurt Parfaits,Granola Cups - Small,,,,,,,,,,visible,Physical good,,,,,,,,5.25,,N,,,,N,,,,,,,Y
