@@ -1,7 +1,9 @@
-//src\pages\VisitUs.jsx
+//src/pages/VisitUs.jsx
 import React from "react";
 import ContactForm from "../components/ContactForm";
 import GoogleMap from "../components/GoogleMap";
+import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
+import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, Store, ShoppingCart, Handshake } from "lucide-react";
 
 function VisitUs() {
   const handleContactSubmit = async (formData) => {
@@ -14,7 +16,6 @@ function VisitUs() {
     address: "1118 Centre St #3, Thornhill, ON L4J 7R9",
     phone: "(905) 882-1350",
     email: "info@grodzinskibakery.com",
-    // Google Maps specific location data
     placeId: "0x882b2c25a865754b:0xdd3938687e717ea9",
     coordinates: { lat: 43.8089597, lng: -79.4622583 },
     mapsUrl: "https://www.google.com/maps/place/Grodzinski+North/@43.8091451,-79.4624408,165m",
@@ -34,61 +35,61 @@ function VisitUs() {
       {/* HERO SECTION */}
       <section className="visit-hero">
         <div className="visit-hero__image-wrapper">
-          <img 
-            src="/images/home/thumbnail_slider.jpg" 
+          <img
+            src="/images/home/thumbnail_slider.jpg"
             alt="Grodzinski Bakery"
             className="visit-hero__image"
           />
           <div className="visit-hero__overlay"></div>
         </div>
         <div className="visit-hero__content">
-          <h1>Visit Us</h1>
-          <p className="visit-hero__subtitle">
-            Stop by our Thornhill bakery to browse our selection, place a custom order, 
-            or simply enjoy the warm aroma of fresh bread. We'd love to hear from you!
-          </p>
+          <FadeIn delay={0.2}>
+            <h1>Visit Us</h1>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <p className="visit-hero__subtitle">
+              Stop by our Thornhill bakery to browse our selection, place a custom order,
+              or simply enjoy the warm aroma of fresh bread. We'd love to hear from you!
+            </p>
+          </FadeIn>
         </div>
       </section>
 
-      {/* MAIN CONTENT - Location + Contact Form Side by Side */}
+      {/* MAIN CONTENT */}
       <section className="section">
         <div className="section__inner">
           <div className="visit-main">
             {/* LEFT COLUMN: Location Info */}
-            <div className="visit-main__location">
-              {/* Map */}
+            <ScrollReveal direction="left" className="visit-main__location">
               <div className="visit-map">
-              <GoogleMap 
-                address={bakeryInfo.address}
-                title="Grodzinski North Location"
-                height="350px"
-                placeId={bakeryInfo.placeId}
-                coordinates={bakeryInfo.coordinates}
-                placeName={bakeryInfo.name}
-              />
+                <GoogleMap
+                  address={bakeryInfo.address}
+                  title="Grodzinski North Location"
+                  height="350px"
+                  placeId={bakeryInfo.placeId}
+                  coordinates={bakeryInfo.coordinates}
+                  placeName={bakeryInfo.name}
+                />
               </div>
 
-              {/* Location Details Card */}
               <div className="visit-info-card">
                 <h2 className="visit-info-card__title">{bakeryInfo.name}</h2>
-                
-                {/* Address */}
+
                 <div className="visit-info-item">
-                  <div className="visit-info-item__icon">📍</div>
+                  <div className="visit-info-item__icon"><MapPin size={20} /></div>
                   <div className="visit-info-item__content">
                     <strong>Address</strong>
                     <p>{bakeryInfo.address}</p>
                   </div>
                 </div>
 
-                {/* Phone */}
                 <div className="visit-info-item">
-                  <div className="visit-info-item__icon">📞</div>
+                  <div className="visit-info-item__icon"><Phone size={20} /></div>
                   <div className="visit-info-item__content">
                     <strong>Phone</strong>
                     <p>
-                      <a 
-                        href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`} 
+                      <a
+                        href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
                         className="visit-link"
                       >
                         {bakeryInfo.phone}
@@ -97,14 +98,13 @@ function VisitUs() {
                   </div>
                 </div>
 
-                {/* Email */}
                 <div className="visit-info-item">
-                  <div className="visit-info-item__icon">✉️</div>
+                  <div className="visit-info-item__icon"><Mail size={20} /></div>
                   <div className="visit-info-item__content">
                     <strong>Email</strong>
                     <p>
-                      <a 
-                        href={`mailto:${bakeryInfo.email}`} 
+                      <a
+                        href={`mailto:${bakeryInfo.email}`}
                         className="visit-link"
                       >
                         {bakeryInfo.email}
@@ -113,15 +113,14 @@ function VisitUs() {
                   </div>
                 </div>
 
-                {/* Hours */}
                 <div className="visit-info-item visit-info-item--hours">
-                  <div className="visit-info-item__icon">🕐</div>
+                  <div className="visit-info-item__icon"><Clock size={20} /></div>
                   <div className="visit-info-item__content">
                     <strong>Hours</strong>
                     <div className="visit-hours-grid">
                       {bakeryInfo.hours.map(({ day, time }) => (
-                        <div 
-                          key={day} 
+                        <div
+                          key={day}
                           className={`visit-hours-row ${day === 'Saturday' ? 'visit-hours-row--closed' : ''}`}
                         >
                           <span className="visit-hours-day">{day}</span>
@@ -133,27 +132,26 @@ function VisitUs() {
                 </div>
               </div>
 
-              {/* Quick Action Buttons */}
               <div className="visit-actions">
-                <a 
+                <a
                   href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
                   className="visit-action-btn visit-action-btn--primary"
                 >
-                  📞 Call Now
+                  <Phone size={16} /> Call Now
                 </a>
-                <a 
+                <a
                   href={`https://www.google.com/maps/place/?q=place_id:${bakeryInfo.placeId}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="visit-action-btn visit-action-btn--secondary"
                 >
-                  🗺️ Get Directions
+                  <Map size={16} /> Get Directions
                 </a>
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* RIGHT COLUMN: Contact Form */}
-            <div className="visit-main__form">
+            <ScrollReveal direction="right" delay={0.15} className="visit-main__form">
               <ContactForm
                 onSubmit={handleContactSubmit}
                 showExtendedFields={true}
@@ -162,25 +160,24 @@ function VisitUs() {
                 title="Send Us a Message"
               />
 
-              {/* Quick Info Boxes */}
               <div className="visit-info-boxes">
                 <div className="visit-info-box visit-info-box--catering">
-                  <h3>🎉 Catering & Large Orders</h3>
+                  <h3><Sparkles size={20} /> Catering & Large Orders</h3>
                   <p>
-                    Include your event date, guest count, and preferred products. 
+                    Include your event date, guest count, and preferred products.
                     We recommend 48-72 hours advance notice for catering orders.
                   </p>
                 </div>
 
                 <div className="visit-info-box visit-info-box--cakes">
-                  <h3>🎂 Custom Cakes</h3>
+                  <h3><Cake size={20} /> Custom Cakes</h3>
                   <p>
-                    For custom cake designs, call us directly to discuss flavours, 
+                    For custom cake designs, call us directly to discuss flavours,
                     sizes, and decorations for your special celebration.
                   </p>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -189,41 +186,33 @@ function VisitUs() {
       <section className="section section--alt">
         <div className="section__inner">
           <div className="visit-planning">
-            <div className="visit-planning__content">
+            <ScrollReveal direction="left" className="visit-planning__content">
               <h2>Planning Your Visit</h2>
               <p className="visit-planning__intro">
-                We're always happy to welcome customers to our Thornhill bakery! 
+                We're always happy to welcome customers to our Thornhill bakery!
                 Here's what you should know:
               </p>
               <ul className="visit-planning__list">
-                <li>
-                  <span className="visit-planning__icon">🅿️</span>
-                  <span>Free parking available on-site</span>
-                </li>
-                <li>
-                  <span className="visit-planning__icon">⏰</span>
-                  <span>Busiest times: Thursday evenings & Friday mornings</span>
-                </li>
-                <li>
-                  <span className="visit-planning__icon">📞</span>
-                  <span>For custom cakes or large orders, please call ahead</span>
-                </li>
-                <li>
-                  <span className="visit-planning__icon">✡️</span>
-                  <span>Closed Saturdays in observance of Shabbat</span>
-                </li>
-                <li>
-                  <span className="visit-planning__icon">📅</span>
-                  <span>Holiday hours vary — call to confirm before visiting</span>
-                </li>
+                {[
+                  { icon: <Car size={20} />, text: "Free parking available on-site" },
+                  { icon: <Clock size={20} />, text: "Busiest times: Thursday evenings & Friday mornings" },
+                  { icon: <Phone size={20} />, text: "For custom cakes or large orders, please call ahead" },
+                  { icon: <Star size={20} />, text: "Closed Saturdays in observance of Shabbat" },
+                  { icon: <Calendar size={20} />, text: "Holiday hours vary — call to confirm before visiting" },
+                ].map((item, i) => (
+                  <li key={i}>
+                    <span className="visit-planning__icon">{item.icon}</span>
+                    <span>{item.text}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
-            <div className="visit-planning__image">
-              <img 
-                src="/images/home/thumbnail_challahs.jpg" 
+            </ScrollReveal>
+            <ScrollReveal direction="right" delay={0.15} className="visit-planning__image">
+              <img
+                src="/images/home/thumbnail_challahs.jpg"
                 alt="Fresh challahs at Grodzinski Bakery"
               />
-            </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
@@ -231,42 +220,31 @@ function VisitUs() {
       {/* FIND OUR PRODUCTS NEARBY */}
       <section className="section">
         <div className="section__inner">
-          <div className="section__header">
-            <h2 className="section__title">Find Our Products Near You</h2>
-            <p className="section__subtitle">
-              Grodzinski products are also available at select stores, markets, 
-              and cafés throughout the Greater Toronto Area.
-            </p>
-          </div>
-
-          <div className="visit-partners">
-            <div className="visit-partner-card">
-              <div className="visit-partner-card__icon">🏪</div>
-              <h3>Thornhill Area Markets</h3>
-              <p>
-                Find our challahs, breads, and pastries at select supermarkets and 
-                kosher markets along Bathurst and Centre Street.
+          <ScrollReveal>
+            <div className="section__header">
+              <h2 className="section__title">Find Our Products Near You</h2>
+              <p className="section__subtitle">
+                Grodzinski products are also available at select stores, markets,
+                and cafés throughout the Greater Toronto Area.
               </p>
             </div>
+          </ScrollReveal>
 
-            <div className="visit-partner-card">
-              <div className="visit-partner-card__icon">🛒</div>
-              <h3>North York & York Region</h3>
-              <p>
-                Our fresh baked goods are available at independent grocery stores 
-                and specialty food shops throughout North York.
-              </p>
-            </div>
-
-            <div className="visit-partner-card">
-              <div className="visit-partner-card__icon">🤝</div>
-              <h3>Become a Partner</h3>
-              <p>
-                Interested in carrying Grodzinski products at your store? 
-                Contact us to discuss wholesale opportunities.
-              </p>
-            </div>
-          </div>
+          <StaggerContainer className="visit-partners" staggerDelay={0.12}>
+            {[
+              { icon: <Store size={28} />, title: "Thornhill Area Markets", desc: "Find our challahs, breads, and pastries at select supermarkets and kosher markets along Bathurst and Centre Street." },
+              { icon: <ShoppingCart size={28} />, title: "North York & York Region", desc: "Our fresh baked goods are available at independent grocery stores and specialty food shops throughout North York." },
+              { icon: <Handshake size={28} />, title: "Become a Partner", desc: "Interested in carrying Grodzinski products at your store? Contact us to discuss wholesale opportunities." },
+            ].map((partner, i) => (
+              <StaggerItem key={i}>
+                <div className="visit-partner-card">
+                  <div className="visit-partner-card__icon">{partner.icon}</div>
+                  <h3>{partner.title}</h3>
+                  <p>{partner.desc}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
         </div>
       </section>
     </div>

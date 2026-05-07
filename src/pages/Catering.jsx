@@ -1,5 +1,6 @@
-//src\pages\Catering.jsx
+//src/pages/Catering.jsx
 import React from "react";
+import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 
 export default function Catering() {
   const cateringOptions = [
@@ -46,57 +47,63 @@ export default function Catering() {
       {/* HERO */}
       <section className="catering-hero">
         <div className="catering-hero__image-wrapper">
-          <img 
-            src="/images/home/thumbnail_large_danish_platter.jpg" 
+          <img
+            src="/images/home/thumbnail_large_danish_platter.jpg"
             alt="Catering platters at Grodzinski Bakery"
             className="catering-hero__image"
           />
           <div className="catering-hero__overlay"></div>
         </div>
         <div className="catering-hero__content">
-          <h1>Catering & Event Platters</h1>
-          <p className="catering-hero__subtitle">
-            From intimate family gatherings to large corporate events, Grodzinski Bakery 
-            brings fresh, beautifully presented baked goods and catering platters to your 
-            table. Every item is prepared fresh, arranged with care, and delivered with 
-            the same quality and tradition we've maintained for generations.
-          </p>
+          <FadeIn delay={0.2}>
+            <h1>Catering & Event Platters</h1>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <p className="catering-hero__subtitle">
+              From intimate family gatherings to large corporate events, Grodzinski Bakery
+              brings fresh, beautifully presented baked goods and catering platters to your
+              table. Every item is prepared fresh, arranged with care, and delivered with
+              the same quality and tradition we've maintained for generations.
+            </p>
+          </FadeIn>
         </div>
       </section>
 
       {/* CATERING OPTIONS */}
       <section className="section">
         <div className="section__inner">
-          <h2>Our Catering Options</h2>
-          <p className="section__subtitle">
-            All platters are available in various sizes to accommodate gatherings from 
-            10 to 100+ guests. Perfect for business meetings, family celebrations, holiday 
-            tables, shivas, and community events. We're happy to customize any order to 
-            meet your dietary needs and preferences.
-          </p>
+          <ScrollReveal>
+            <h2>Our Catering Options</h2>
+            <p className="section__subtitle">
+              All platters are available in various sizes to accommodate gatherings from
+              10 to 100+ guests. Perfect for business meetings, family celebrations, holiday
+              tables, shivas, and community events. We're happy to customize any order to
+              meet your dietary needs and preferences.
+            </p>
+          </ScrollReveal>
 
-          <div className="catering-grid">
+          <StaggerContainer className="catering-grid" staggerDelay={0.1}>
             {cateringOptions.map((option, index) => (
-              <div key={index} className="catering-card">
-                <div className="catering-card__image">
-                  <img 
-                    src={option.image} 
-                    alt={option.title}
-                    className="catering-card__img"
-                  />
+              <StaggerItem key={index}>
+                <div className="catering-card">
+                  <div className="catering-card__image">
+                    <img
+                      src={option.image}
+                      alt={option.title}
+                      className="catering-card__img"
+                    />
+                  </div>
+                  <div className="catering-card__content">
+                    <h3>{option.title}</h3>
+                    <p className="catering-card__description">{option.description}</p>
+                    <p className="catering-card__ideal">
+                      <strong>Ideal for:</strong> {option.idealFor}
+                    </p>
+                  </div>
                 </div>
-                <div className="catering-card__content">
-                  <h3>{option.title}</h3>
-                  <p className="catering-card__description">
-                    {option.description}
-                  </p>
-                  <p className="catering-card__ideal">
-                    <strong>Ideal for:</strong> {option.idealFor}
-                  </p>
-                </div>
-              </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -105,92 +112,59 @@ export default function Catering() {
         <div className="section__inner">
           <div className="catering-order-info">
             <div className="catering-order-info__content">
-              <h2>How to Order</h2>
+              <ScrollReveal>
+                <h2>How to Order</h2>
+              </ScrollReveal>
               <div className="catering-order-steps">
-                <div className="catering-order-step">
-                  <div className="catering-order-step__number">1</div>
-                  <div className="catering-order-step__content">
-                    <h3>Contact Us</h3>
-                    <p>
-                      Call us at <a href="tel:9058821350" className="catering-link">(905) 882-1350</a> or 
-                      email <a href="mailto:info@grodzinskibakery.com" className="catering-link">info@grodzinskibakery.com</a> to 
-                      discuss your event needs.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="catering-order-step">
-                  <div className="catering-order-step__number">2</div>
-                  <div className="catering-order-step__content">
-                    <h3>Plan Ahead</h3>
-                    <p>
-                      We recommend ordering at least 48-72 hours in advance for catering orders. 
-                      For large events or custom requests, more notice is appreciated.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="catering-order-step">
-                  <div className="catering-order-step__number">3</div>
-                  <div className="catering-order-step__content">
-                    <h3>Pickup or Delivery</h3>
-                    <p>
-                      Choose pickup from our Thornhill location or inquire about delivery options 
-                      for your area. Delivery fees may apply based on distance and order size.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="catering-order-step">
-                  <div className="catering-order-step__number">4</div>
-                  <div className="catering-order-step__content">
-                    <h3>Dietary Needs</h3>
-                    <p>
-                      Let us know about any dietary restrictions or preferences. We offer dairy, 
-                      pareve, vegetarian, and vegan options, and everything is baked in our 100% 
-                      nut-free facility.
-                    </p>
-                  </div>
-                </div>
+                {[
+                  { num: "1", title: "Contact Us", text: <>Call us at <a href="tel:9058821350" className="catering-link">(905) 882-1350</a> or email <a href="mailto:info@grodzinskibakery.com" className="catering-link">info@grodzinskibakery.com</a> to discuss your event needs.</> },
+                  { num: "2", title: "Plan Ahead", text: "We recommend ordering at least 48-72 hours in advance for catering orders. For large events or custom requests, more notice is appreciated." },
+                  { num: "3", title: "Pickup or Delivery", text: "Choose pickup from our Thornhill location or inquire about delivery options for your area. Delivery fees may apply based on distance and order size." },
+                  { num: "4", title: "Dietary Needs", text: "Let us know about any dietary restrictions or preferences. We offer dairy, pareve, vegetarian, and vegan options, and everything is baked in our 100% nut-free facility." },
+                ].map((step, i) => (
+                  <ScrollReveal key={i} delay={i * 0.1}>
+                    <div className="catering-order-step">
+                      <div className="catering-order-step__number">{step.num}</div>
+                      <div className="catering-order-step__content">
+                        <h3>{step.title}</h3>
+                        <p>{step.text}</p>
+                      </div>
+                    </div>
+                  </ScrollReveal>
+                ))}
               </div>
             </div>
 
-            <div className="catering-order-info__image">
-              <img 
-                src="/images/home/thumbnail_large_cookie_danish_platter.jpg" 
-                alt="Beautiful catering platter"
-                className="catering-order-info__img"
-              />
-            </div>
+            <ScrollReveal direction="right" delay={0.2}>
+              <div className="catering-order-info__image">
+                <img
+                  src="/images/home/thumbnail_large_cookie_danish_platter.jpg"
+                  alt="Beautiful catering platter"
+                  className="catering-order-info__img"
+                />
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </section>
 
       {/* CTA SECTION */}
-      <section className="section">
-        <div className="section__inner">
-          <div className="catering-cta">
-            <h2>Ready to Plan Your Event?</h2>
-            <p className="catering-cta__text">
-              Our team will respond within 24 hours to discuss your needs and provide a custom quote.
-            </p>
-            <div className="catering-cta__actions">
-              <a
-                href="/contact"
-                className="btn btn--primary"
-              >
-                Request Catering Quote
-              </a>
-              <a
-                href="tel:9058821350"
-                className="btn btn--ghost"
-              >
-                Call (905) 882-1350
-              </a>
+      <ScrollReveal>
+        <section className="section">
+          <div className="section__inner">
+            <div className="catering-cta">
+              <h2>Ready to Plan Your Event?</h2>
+              <p className="catering-cta__text">
+                Our team will respond within 24 hours to discuss your needs and provide a custom quote.
+              </p>
+              <div className="catering-cta__actions">
+                <a href="/visit" className="btn btn--primary">Request Catering Quote</a>
+                <a href="tel:9058821350" className="btn btn--ghost">Call (905) 882-1350</a>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
     </div>
   );
 }

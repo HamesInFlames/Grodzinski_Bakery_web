@@ -1,0 +1,8 @@
+---
+description: Grodzinski Bakery project conventions
+globs: ["**/*.tsx", "**/*.ts", "**/*.css"]
+---
+# Implementation agent for Grodzinski Bakery website.
+# React + Vite, Motion, Tailwind, TypeScript, Express.
+# Check tasks/todo.md before coding. Update it after.
+# Test at 1440px and 375px. Run npm run build before commits.
