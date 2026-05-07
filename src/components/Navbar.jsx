@@ -1,7 +1,7 @@
 // src/components/Navbar.jsx
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { AiOutlineMenu, AiOutlineClose, AiOutlinePhone } from "react-icons/ai";
+import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
 export default function Navbar() {
@@ -68,7 +68,7 @@ export default function Navbar() {
           {/* Actions */}
           <div className="navbar__actions">
             <a href="tel:9058821350" className="navbar__phone">
-              <AiOutlinePhone />
+              <Phone size={18} />
               <span>(905) 882-1350</span>
             </a>
 
@@ -77,7 +77,7 @@ export default function Navbar() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {isMobileMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -114,7 +114,7 @@ export default function Navbar() {
                 className="mobile-menu__close"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <AiOutlineClose />
+                <X size={24} />
               </button>
             </div>
 
@@ -148,7 +148,7 @@ export default function Navbar() {
               transition={{ delay: 0.3, duration: 0.3 }}
             >
               <a href="tel:9058821350" className="mobile-menu__phone">
-                <AiOutlinePhone />
+                <Phone size={18} />
                 <span>(905) 882-1350</span>
               </a>
               <p className="mobile-menu__hours">Open Daily • Sun-Thu 7AM-6PM</p>
