@@ -22,3 +22,25 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Python
+__pycache__/
+*.pyc
+
+# ML weights
+*.pt
+
+# OS
+Thumbs.db
+
+# Environment
+.env
+
+# Coverage
+coverage/
+
+# Embedded repos
+Grodzinski_Bakery_web/
+
+# Audit artifacts
+cleanup-audit.md
