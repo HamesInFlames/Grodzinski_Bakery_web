@@ -1,5 +1,4 @@
 //src/pages/Catering.jsx
-import React from "react";
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 
 export default function Catering() {

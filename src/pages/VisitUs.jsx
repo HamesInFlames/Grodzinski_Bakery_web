@@ -1,5 +1,4 @@
 //src/pages/VisitUs.jsx
-import React from "react";
 import ContactForm from "../components/ContactForm";
 import GoogleMap from "../components/GoogleMap";
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
@@ -7,7 +6,6 @@ import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, S
 
 function VisitUs() {
   const handleContactSubmit = async (formData) => {
-    console.log('Contact form submitted:', formData);
     alert("Thank you for contacting us. A team member will follow up shortly.");
   };
 
@@ -18,7 +16,6 @@ function VisitUs() {
     email: "info@grodzinskibakery.com",
     placeId: "0x882b2c25a865754b:0xdd3938687e717ea9",
     coordinates: { lat: 43.8089597, lng: -79.4622583 },
-    mapsUrl: "https://www.google.com/maps/place/Grodzinski+North/@43.8091451,-79.4624408,165m",
     hours: [
       { day: "Sunday", time: "6:00 AM – 3:00 PM" },
       { day: "Monday", time: "6:00 AM – 4:00 PM" },

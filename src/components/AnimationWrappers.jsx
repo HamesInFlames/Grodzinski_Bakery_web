@@ -2,7 +2,7 @@
 // Reusable, elder-friendly animation components using Motion
 // All animations are subtle, slow, and non-jarring
 
-import { motion, useInView, AnimatePresence } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 
 // Scroll-triggered fade-in with gentle upward drift
@@ -179,5 +179,3 @@ export function ScaleReveal({
   );
 }
 
-// Re-export AnimatePresence for convenience
-export { AnimatePresence };

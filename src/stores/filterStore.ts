@@ -7,7 +7,6 @@ interface FilterState {
   searchQuery: string;
   toggleFilter: (f: DietaryAttribute) => void;
   clearFilters: () => void;
-  setSearchQuery: (q: string) => void;
 }
 
 export const useFilterStore = create<FilterState>()(
@@ -22,7 +21,6 @@ export const useFilterStore = create<FilterState>()(
             : [...s.activeFilters, f],
         })),
       clearFilters: () => set({ activeFilters: [], searchQuery: '' }),
-      setSearchQuery: (q) => set({ searchQuery: q }),
     }),
     { name: 'grodz-filters' },
   ),

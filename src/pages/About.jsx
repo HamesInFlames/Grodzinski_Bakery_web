@@ -1,4 +1,3 @@
-import React from "react";
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 import { ShieldCheck, ChefHat, Wheat, UtensilsCrossed, Cake, Heart } from "lucide-react";
 
