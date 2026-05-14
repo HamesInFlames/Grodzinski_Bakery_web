@@ -33,7 +33,7 @@ export default function MenuHub() {
               <Award size={16} /> COR-certified kosher
             </span>
             <span className="menuhub__trust-item">
-              <ShieldCheck size={16} /> Family bakers since 1888
+              <ShieldCheck size={16} /> Toronto's heritage kosher bakery
             </span>
           </div>
         </div>

@@ -22,7 +22,7 @@ export default function Home() {
     { icon: <Star size={28} />, title: "100% Kosher", desc: "COR certified kosher bakery" },
     { icon: <ShieldCheck size={28} />, title: "Nut-Free", desc: "Peanut & tree-nut free facility" },
     { icon: <Wheat size={28} />, title: "Fresh Daily", desc: "Baked fresh every morning" },
-    { icon: <Users size={28} />, title: "Since 1888", desc: "Family tradition for generations" },
+    { icon: <Users size={28} />, title: "Since 1888", desc: "A baking tradition over a century in the making" },
   ];
 
   const categoryImages = [
@@ -53,8 +53,9 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={0.6}>
               <p className="hero__subtitle">
-                Three generations of handcrafted breads, challahs, cakes, and
-                pastries. Made with love in our 100% nut-free facility.
+                Handcrafted breads, challahs, cakes, and pastries — baked
+                daily in our 100% nut-free facility. Toronto's heritage
+                kosher bakery.
               </p>
             </FadeIn>
             <FadeIn delay={0.8}>
@@ -178,14 +179,14 @@ export default function Home() {
                 What started as a small neighbourhood bakery has grown into a
                 beloved institution across the Greater Toronto Area. From the
                 earliest morning hours, our bakers are kneading dough, braiding
-                challahs, and hand-rolling pastries — just as we've done for
-                generations.
+                challahs, and hand-rolling pastries — just as the bakery has
+                done since 1888.
               </p>
               <p className="home-about__text">
                 We believe in simplicity: fresh ingredients, traditional techniques,
                 and no artificial preservatives. Every loaf of rye, every round
-                challah, and every buttery danish is made by hand using recipes
-                passed down through our family.
+                challah, and every buttery danish is made by hand using traditional
+                recipes rooted in over a century of baking.
               </p>
               <button
                 className="btn btn--secondary"
