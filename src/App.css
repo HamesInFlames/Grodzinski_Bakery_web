@@ -1350,9 +1350,9 @@ main {
 ═══════════════════════════════════════════════════════════════════════════ */
 
 .footer {
-  background: var(--brown-800);
-  color: #FFFFFF;
-  padding: 60px 0 24px;
+  background: var(--color-primary);
+  color: var(--color-bg);
+  padding: 64px 0 32px;
 }
 
 .footer__inner {
@@ -1365,50 +1365,70 @@ main {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 48px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .footer__brand {
-  max-width: 300px;
+  max-width: 320px;
 }
 
-.footer__logo {
-  height: 48px;
+.footer__wordmark {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--color-bg);
   margin-bottom: 16px;
-  filter: brightness(0) invert(1);
 }
 
 .footer__desc {
+  font-family: var(--font-sans);
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.7;
+  font-weight: 400;
+  color: rgba(250, 246, 238, 0.78);
+  line-height: 1.65;
 }
 
 .footer__title {
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin: 0 0 20px;
 }
 
 .footer__links {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.footer__link {
+.footer__link,
+.footer__links--hours li {
   display: block;
-  padding: 6px 0;
+  padding: 4px 0;
+  font-family: var(--font-sans);
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.7);
-  transition: color var(--transition);
+  font-weight: 400;
+  color: var(--color-bg);
+  transition: opacity 150ms ease-out;
 }
 
-.footer__link:hover {
-  color: #FFFFFF;
+a.footer__link { color: var(--color-bg); }
+a.footer__link:hover { opacity: 0.72; }
+
+.footer__rule {
+  height: 1px;
+  border: 0;
+  background: var(--color-gold);
+  opacity: 0.7;
+  margin: 32px 0 24px;
 }
 
 .footer__bottom {
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1417,8 +1437,9 @@ main {
 }
 
 .footer__copy {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: rgba(250, 246, 238, 0.65);
 }
 
 .footer__badges {
@@ -1428,7 +1449,8 @@ main {
 
 .footer__badge {
   height: 40px;
-  opacity: 0.8;
+  width: auto;
+  opacity: 0.9;
 }
 
 @media (max-width: 1024px) {

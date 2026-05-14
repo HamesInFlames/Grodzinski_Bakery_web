@@ -10,35 +10,36 @@ export default function Footer() {
         <div className="footer__grid">
           {/* Brand */}
           <div className="footer__brand">
-            <img
-              src="/images/home/logo.png"
-              alt="Grodzinski Bakery"
-              className="footer__logo"
-              loading="lazy"
-            />
+            <span className="footer__wordmark">Grodzinski</span>
             <p className="footer__desc">
-              Toronto's favourite kosher bakery since 1888. Fresh baked challah, 
-              breads, cakes, and pastries made daily in our nut-free facility.
+              Toronto&rsquo;s favourite kosher bakery since 1888. Fresh-baked
+              challah, breads, cakes, and pastries made daily in our nut-free
+              facility.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="footer__title">Quick Links</h4>
+            <h4 className="footer__title">Visit</h4>
             <ul className="footer__links">
               <li><Link to="/" className="footer__link">Home</Link></li>
               <li><Link to="/menu" className="footer__link">Menu</Link></li>
               <li><Link to="/gallery" className="footer__link">Gallery</Link></li>
               <li><Link to="/catering" className="footer__link">Catering</Link></li>
+              <li><Link to="/about" className="footer__link">About</Link></li>
+              <li><Link to="/visit" className="footer__link">Visit Us</Link></li>
             </ul>
           </div>
 
-          {/* Information */}
+          {/* Hours */}
           <div>
-            <h4 className="footer__title">Information</h4>
-            <ul className="footer__links">
-              <li><Link to="/about" className="footer__link">About Us</Link></li>
-              <li><Link to="/visit" className="footer__link">Visit Us</Link></li>
+            <h4 className="footer__title">Hours</h4>
+            <ul className="footer__links footer__links--hours">
+              <li>Sun 7&ndash;5</li>
+              <li>Mon&ndash;Wed 7&ndash;6</li>
+              <li>Thu 7&ndash;9</li>
+              <li>Fri 7&ndash;3</li>
+              <li>Sat closed</li>
             </ul>
           </div>
 
@@ -54,14 +55,16 @@ export default function Footer() {
           </div>
         </div>
 
+        <hr className="footer__rule" />
+
         <div className="footer__bottom">
           <p className="footer__copy">
-            © {currentYear} Grodzinski Bakery. All rights reserved.
+            &copy; {currentYear} Grodzinski Bakery. All rights reserved.
           </p>
           <div className="footer__badges">
             <img
               src="/images/home/cor_logo.png"
-              alt="COR Kosher"
+              alt="COR Kosher Certified"
               className="footer__badge"
               loading="lazy"
             />
