@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
@@ -15,7 +16,6 @@
     "autoprefixer": "^10.4.22",
     "playwright": "^1.59.1",
     "postcss": "^8.5.6",
-    "sharp": "^0.34.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^6.0.3",
     "vite": "npm:rolldown-vite@7.1.14",
