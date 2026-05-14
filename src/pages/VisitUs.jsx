@@ -5,8 +5,11 @@ import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../componen
 import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, Store, ShoppingCart, Handshake } from "lucide-react";
 
 function VisitUs() {
-  const handleContactSubmit = async (formData) => {
-    alert("Thank you for contacting us. A team member will follow up shortly.");
+  // TODO(phase-4.2): wire to Resend-backed /api/contact endpoint.
+  // For now, treat any submit as a successful no-op so ContactForm
+  // shows its built-in success banner instead of a browser alert().
+  const handleContactSubmit = async (_formData) => {
+    return;
   };
 
   const bakeryInfo = {

@@ -7,7 +7,13 @@ import {
   StaggerItem,
   ScaleReveal,
 } from "../components/AnimationWrappers";
+import ContactForm from "../components/ContactForm";
 import { Star, ShieldCheck, Wheat, Users, Heart, Baby, Cake, MapPin, Phone, Clock } from "lucide-react";
+
+// TODO(phase-4.2): wire to Resend-backed /api/contact endpoint.
+const handleHomeContactSubmit = async (_formData) => {
+  return;
+};
 
 export default function Home() {
   const navigate = useNavigate();
@@ -297,30 +303,13 @@ export default function Home() {
             </ScrollReveal>
 
             <ScrollReveal direction="right" delay={0.15}>
-              <div className="contact-form">
-                <h3 className="contact-form__title">Get in Touch</h3>
-                <form onSubmit={(e) => { e.preventDefault(); alert('Thank you! We will be in touch.'); }}>
-                  <div className="form-group">
-                    <label className="form-label">Name</label>
-                    <input type="text" className="form-input" required />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Email</label>
-                    <input type="email" className="form-input" required />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Phone</label>
-                    <input type="tel" className="form-input" />
-                  </div>
-                  <div className="form-group">
-                    <label className="form-label">Message</label>
-                    <textarea className="form-textarea" rows="4" required></textarea>
-                  </div>
-                  <button type="submit" className="btn btn--primary btn--full">
-                    Send Message
-                  </button>
-                </form>
-              </div>
+              <ContactForm
+                onSubmit={handleHomeContactSubmit}
+                showExtendedFields={true}
+                submitButtonText="Send Message"
+                successMessage="Thank you! We'll be in touch shortly."
+                title="Get in Touch"
+              />
             </ScrollReveal>
           </div>
         </div>

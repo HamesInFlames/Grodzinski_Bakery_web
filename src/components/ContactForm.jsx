@@ -1,5 +1,5 @@
 // src/components/ContactForm.jsx
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function ContactForm({ 
   onSubmit,
