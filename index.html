@@ -2,17 +2,91 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap"
-    rel="stylesheet"
-    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#faf7f2" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="description" content="Grodzinski Bakery - Fresh, handcrafted baking every single day. Traditional European-style breads, challahs, cakes, and pastries in Toronto." />
-    <title>Grodzinski Bakery</title>
+
+    <title>Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888</title>
+    <meta name="description" content="Grodzinski Bakery in Thornhill — fresh challah, babka, and traditional baked goods, daily, in a 100% nut-free facility." />
+    <link rel="canonical" href="https://grodzinskibakery.com/" />
+
+    <!-- Geo -->
+    <meta name="geo.region" content="CA-ON" />
+    <meta name="geo.placename" content="Thornhill, Ontario" />
+    <meta name="geo.position" content="43.8089597;-79.4622583" />
+    <meta name="ICBM" content="43.8089597, -79.4622583" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Grodzinski Bakery" />
+    <meta property="og:title" content="Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888" />
+    <meta property="og:description" content="Fresh challah, babka, and traditional baked goods, daily, in a 100% nut-free facility in Thornhill, Ontario." />
+    <meta property="og:url" content="https://grodzinskibakery.com/" />
+    <meta property="og:image" content="https://grodzinskibakery.com/images/home/logo.png" />
+    <meta property="og:locale" content="en_CA" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888" />
+    <meta name="twitter:description" content="Fresh challah, babka, and traditional baked goods, daily, in a 100% nut-free facility in Thornhill, Ontario." />
+    <meta name="twitter:image" content="https://grodzinskibakery.com/images/home/logo.png" />
+
+    <!--
+      Favicon suite — files generated out of band (Realfavicongenerator.net
+      from /images/home/logo.png at brand color #faf7f2). Currently only
+      vite.svg ships; the rest 404 until the favicon pack is dropped into
+      public/. See README "Production checklist" for the file list.
+    -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180x180.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LocalBusiness JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Grodzinski Bakery",
+      "image": "https://grodzinskibakery.com/images/home/logo.png",
+      "url": "https://grodzinskibakery.com/",
+      "telephone": "+1-905-882-1350",
+      "email": "info@grodzinskibakery.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1118 Centre St #3",
+        "addressLocality": "Thornhill",
+        "addressRegion": "ON",
+        "postalCode": "L4J 7R9",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.8089597,
+        "longitude": -79.4622583
+      },
+      "priceRange": "$$",
+      "servesCuisine": ["Kosher", "Jewish", "European"],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday",    "opens": "06:00", "closes": "15:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday",    "opens": "06:00", "closes": "16:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday",   "opens": "06:00", "closes": "16:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "06:00", "closes": "16:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday",  "opens": "06:00", "closes": "17:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",    "opens": "06:00", "closes": "15:00" }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>
