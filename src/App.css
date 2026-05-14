@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════════════
    GRODZINSKI BAKERY - MODERN JEWISH HERITAGE DESIGN SYSTEM
-   Levain / Eli Zabar lineage. Restrained, confident, premium.
-   Primary: #0E2A47 navy. Accent: #E8C58A marzipan. Hero gold: #B8860B.
+   Espresso ink on oat-cream — pulled from the logo backdrop + product photo
+   linen. Primary: #1F1410 espresso. Accent: #B8860B heritage gold.
 ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -124,15 +124,18 @@
 }
 
 :root {
-  /* Heritage palette */
-  --color-bg: #FAF6EE;          /* warm cream — primary background */
-  --color-ink: #2A1810;         /* deep cocoa — primary text */
-  --color-primary: #0E2A47;     /* deep navy — primary brand */
-  --color-accent: #E8C58A;      /* marzipan/honey — replaces light blue */
-  --color-gold: #B8860B;        /* hero gold — decorative rules + on dark imagery only */
-  --color-gold-text: #876205;   /* darker gold — for gold-as-text on cream (5.15:1 on #FAF6EE) */
-  --color-rule: #D9CFB8;        /* warm rule line for dividers */
-  --color-warm: #5C4033;        /* legacy brown — warm-tone surfaces (catering hero etc.) */
+  /* Heritage palette — pulled from the logo backdrop + product-photo linen */
+  --color-bg: #F0E5D5;             /* warm oat cream — primary background */
+  --color-bg-elevated: #FAF6EE;    /* lighter cream — elevated surfaces */
+  --color-ink: #1F1410;            /* deep espresso — primary text + brand */
+  --color-ink-soft: #3D2817;       /* warm mahogany — secondary text */
+  --color-primary: #1F1410;        /* espresso = primary brand colour */
+  --color-accent: #B8860B;         /* heritage gold/honey — replaces #c5dafc */
+  --color-amber: #C68642;          /* crust amber — warm hover/accent */
+  --color-gold: #B8860B;           /* alias of accent — decorative rules + on espresso */
+  --color-gold-text: #765306;      /* darker gold — gold-as-text on oat (5.60:1 on #F0E5D5) */
+  --color-rule: #D9CFB8;           /* warm rule line for dividers */
+  --color-warm: #5C4033;           /* legacy brown — warm-tone surfaces (catering hero etc.) */
 
   /* Legacy brown scale (still consumed by gallery + catering surfaces) */
   --brown-900: #3D2A22;
@@ -156,21 +159,21 @@
 
   /* Semantic */
   --primary: var(--color-primary);
-  --primary-hover: #0A2038;             /* navy darkened */
-  --primary-light: #E4E9F1;             /* navy 10% tint on cream */
+  --primary-hover: #3D2817;             /* mahogany — espresso lifted for hover */
+  --primary-light: #EDE0CB;             /* espresso tinted into oat */
   --accent: var(--color-accent);
-  --accent-light: #F4E3C2;              /* marzipan tint */
+  --accent-light: #F2DDB5;              /* gold tinted into oat */
 
   /* Backgrounds */
   --bg-page: var(--color-bg);
-  --bg-section: #F3EDE0;                /* one notch darker cream */
-  --bg-card: var(--color-bg);
+  --bg-section: #E5D6BD;                /* one notch darker oat */
+  --bg-card: var(--color-bg-elevated);  /* lighter cream for elevated cards */
   --bg-dark: var(--color-primary);
 
   /* Text */
   --text-primary: var(--color-ink);
-  --text-secondary: #574235;            /* cocoa softened — 8.95:1 on cream */
-  --text-muted: #6F5C46;                /* darker mute — 5.90:1 on cream */
+  --text-secondary: var(--color-ink-soft);  /* mahogany — 11.1:1 on oat */
+  --text-muted: #5A4632;                /* darker mahogany — 7.04:1 on oat */
   --text-inverse: var(--color-bg);
 
   /* Borders */
@@ -467,7 +470,7 @@ main {
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(14, 42, 71, 0.4);
+  background: rgba(31, 20, 16, 0.45);
   z-index: 101;
 }
 
@@ -478,7 +481,7 @@ main {
   bottom: 0;
   width: 320px;
   max-width: 100%;
-  background: var(--color-bg);
+  background: var(--color-bg-elevated);
   z-index: 102;
   display: flex;
   flex-direction: column;

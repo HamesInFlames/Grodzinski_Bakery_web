@@ -89,7 +89,7 @@
 .menuhub__card {
   display: flex;
   flex-direction: column;
-  background: var(--color-bg);
+  background: var(--color-bg-elevated);
   border: 1px solid var(--color-rule);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -200,7 +200,7 @@
 .category-page__hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(14, 42, 71, 0.7);
+  background: rgba(31, 20, 16, 0.72);
 }
 
 .category-page__hero-content {
@@ -465,7 +465,7 @@ textarea:focus-visible {
 .pcard {
   display: flex;
   flex-direction: column;
-  background: var(--color-bg);
+  background: var(--color-bg-elevated);
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--color-rule);
