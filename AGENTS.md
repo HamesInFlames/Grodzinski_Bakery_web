@@ -5,15 +5,16 @@
 - Company: Kim Consultant (kimconsultant.net)
 - Client: Chris and Carolina
 - Developer: James
-- Stack: React + Vite, Express, Railway
-- Design: Motion animations, 21st.dev components
+- Stack: React 19 + Vite (rolldown-vite) + React Router 7 + Motion + Tailwind 3 + Express + Resend; deploy on Railway
+- Icons: lucide-react (no emoji as functional icons)
 
 ## Code conventions
-- TypeScript for all new code
+- TypeScript for new code; existing .jsx kept as-is (gradual migration)
 - React functional components with hooks only
 - Motion library for animations
-- Tailwind CSS for styling
+- Tailwind utility classes for new components; legacy hand-written CSS in src/App.css being phased down
 - ESM imports, no CommonJS
+- Path alias: `@/*` resolves to `src/*`
 
 ## Workflow
 - Read tasks/todo.md before starting work

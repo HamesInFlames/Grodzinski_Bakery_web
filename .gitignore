@@ -35,6 +35,8 @@ Thumbs.db
 
 # Environment
 .env
+.env.local
+.env.*.local
 
 # Coverage
 coverage/
@@ -43,4 +45,8 @@ coverage/
 Grodzinski_Bakery_web/
 
 # Audit artifacts
-cleanup-audit.md
+cleanup-audit*.md
+.audit-cache/
+
+# Out-of-tree photoshoot source (moved from public/images/Photos/)
+_photos-source/
