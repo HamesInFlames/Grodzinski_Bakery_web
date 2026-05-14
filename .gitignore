@@ -50,3 +50,10 @@ Grodzinski_Bakery_web/
 
 # Out-of-tree photoshoot source (moved from public/images/Photos/)
 _photos-source/
+
+# QA tooling artifacts (regenerable)
+qa/playwright-results.json
+qa/lighthouse/
+.lighthouseci/
+test-results/
+playwright-report/

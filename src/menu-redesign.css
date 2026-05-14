@@ -63,7 +63,7 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-text);
 }
 
 .menuhub__grid-section {
@@ -535,7 +535,7 @@ textarea:focus-visible {
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-text);
 }
 
 /* ─── PRODUCT GRID ───────────────────────────────────── */
@@ -641,7 +641,7 @@ textarea:focus-visible {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-gold-text);
   margin: 0 0 24px;
 }
 
@@ -649,7 +649,7 @@ textarea:focus-visible {
   font-family: var(--font-sans);
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--color-gold);
+  color: var(--color-gold-text);
   margin: 0 0 24px;
 }
 

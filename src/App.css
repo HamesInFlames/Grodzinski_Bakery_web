@@ -129,7 +129,8 @@
   --color-ink: #2A1810;         /* deep cocoa — primary text */
   --color-primary: #0E2A47;     /* deep navy — primary brand */
   --color-accent: #E8C58A;      /* marzipan/honey — replaces light blue */
-  --color-gold: #B8860B;        /* hero gold — prices, wordmark, decorative rules only */
+  --color-gold: #B8860B;        /* hero gold — decorative rules + on dark imagery only */
+  --color-gold-text: #876205;   /* darker gold — for gold-as-text on cream (5.15:1 on #FAF6EE) */
   --color-rule: #D9CFB8;        /* warm rule line for dividers */
   --color-warm: #5C4033;        /* legacy brown — warm-tone surfaces (catering hero etc.) */
 
@@ -168,8 +169,8 @@
 
   /* Text */
   --text-primary: var(--color-ink);
-  --text-secondary: #574235;            /* cocoa softened */
-  --text-muted: #8A7868;
+  --text-secondary: #574235;            /* cocoa softened — 8.95:1 on cream */
+  --text-muted: #6F5C46;                /* darker mute — 5.90:1 on cream */
   --text-inverse: var(--color-bg);
 
   /* Borders */
@@ -731,7 +732,7 @@ main {
   font-style: italic;
   font-weight: 500;
   font-size: 1rem;
-  color: var(--color-gold);
+  color: var(--color-gold-text);
   margin: 0 0 40px;
   letter-spacing: 0.01em;
 }
@@ -1396,7 +1397,7 @@ main {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-accent);  /* marzipan on navy = 8.87:1 */
   margin: 0 0 20px;
 }
 
