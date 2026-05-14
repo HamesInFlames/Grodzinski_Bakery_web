@@ -7,15 +7,11 @@ interface Props {
 }
 
 export default function ProductCard({ product }: Props) {
-  const imageSrc = product.imageSlug
-    ? `/images/products/${product.imageSlug}.jpg`
-    : '/images/home/thumbnail_slider.jpg';
-
   return (
     <Link to={`/menu/p/${product.slug}`} className="pcard">
       <div className="pcard__image-wrapper">
         <img
-          src={imageSrc}
+          src="/images/home/thumbnail_slider.jpg"
           alt={product.name}
           className="pcard__image"
           loading="lazy"

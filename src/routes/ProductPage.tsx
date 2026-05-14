@@ -42,11 +42,7 @@ export default function ProductPage() {
         <div className="product-page__gallery">
           <div className="product-page__image-container">
             <img
-              src={
-                product.imageSlug
-                  ? `/images/products/${product.imageSlug}.jpg`
-                  : '/images/home/thumbnail_slider.jpg'
-              }
+              src="/images/home/thumbnail_slider.jpg"
               alt={product.name}
               className="product-page__image"
             />

@@ -1,7 +1,7 @@
 // src/pages/Gallery.jsx
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { galleryCategories } from '../productData';
+import { galleryCategories } from '../data/galleryCategories';
 import { ScrollReveal, FadeIn } from '../components/AnimationWrappers';
 import {
   LayoutGrid, Heart, Baby, Cake, Apple, Flame, Sparkles,
@@ -100,7 +100,7 @@ export default function Gallery() {
               className={`gallery-filter-btn ${activeFilter === cat.id ? 'gallery-filter-btn--active' : ''}`}
               onClick={() => setActiveFilter(cat.id)}
             >
-              <span className="gallery-filter-btn__icon">{categoryIcons[cat.id] || cat.icon}</span>
+              <span className="gallery-filter-btn__icon">{categoryIcons[cat.id]}</span>
               <span className="gallery-filter-btn__label">{cat.name}</span>
             </button>
           ))}
