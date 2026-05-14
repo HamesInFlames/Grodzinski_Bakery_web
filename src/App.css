@@ -589,91 +589,81 @@ main {
   white-space: nowrap;
 }
 
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: var(--radius-md);
+  transition: opacity 150ms ease-out, background-color 150ms ease-out, color 150ms ease-out;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
 .btn--primary {
-  color: #FFFFFF;
-  background: var(--brown-800);
-  box-shadow: var(--shadow-sm);
-  border: 2px solid var(--brown-800);
+  color: var(--color-bg);
+  background: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .btn--primary:hover {
-  background: var(--brown-900);
-  border-color: var(--brown-900);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
 }
 
-.btn--primary:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--accent), var(--shadow-md);
-}
-
-.btn--primary:active {
-  transform: translateY(0);
-  background: var(--brown-900);
-  border-color: var(--brown-900);
-  box-shadow: var(--shadow-sm);
+.btn--primary:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 .btn--primary:disabled {
   background: var(--brown-400);
   border-color: var(--brown-400);
-  color: var(--brown-200);
+  color: var(--color-bg);
   cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
 }
 
 .btn--secondary {
-  color: var(--primary);
+  color: var(--color-primary);
   background: transparent;
-  border: 2px solid var(--primary);
+  border-color: var(--color-primary);
 }
 
 .btn--secondary:hover {
-  color: #FFFFFF;
-  background: var(--primary);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  color: var(--color-bg);
+  background: var(--color-primary);
 }
 
-.btn--secondary:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px var(--accent);
-}
-
-.btn--secondary:active {
-  transform: translateY(0);
-  background: var(--primary-hover);
+.btn--secondary:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 .btn--secondary:disabled {
   color: var(--brown-300);
   border-color: var(--brown-300);
   cursor: not-allowed;
-  transform: none;
 }
 
 .btn--ghost {
-  color: #FFFFFF;
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--color-bg);
+  background: transparent;
+  border-color: rgba(250, 246, 238, 0.5);
 }
 
 .btn--ghost:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
+  background: rgba(250, 246, 238, 0.12);
+  border-color: var(--color-bg);
 }
 
-.btn--ghost:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.4);
-}
-
-.btn--ghost:active {
-  transform: translateY(0);
-  background: rgba(255, 255, 255, 0.35);
+.btn--ghost:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
 }
 
 .btn--lg {
@@ -682,9 +672,77 @@ main {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   HERO SECTION
+   HERO SECTION — Heritage
 ═══════════════════════════════════════════════════════════════════════════ */
 
+.hero--heritage {
+  position: relative;
+  background: var(--color-bg);
+  padding: 120px 0 96px;
+  overflow: hidden;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.32;
+}
+
+.hero__inner--heritage {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  text-align: center;
+}
+
+.hero__title--heritage {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--color-primary);
+  margin: 0 0 24px;
+  letter-spacing: -0.005em;
+}
+
+.hero__subtitle--heritage {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-ink);
+  max-width: 540px;
+  margin: 0 auto 24px;
+}
+
+.hero__heritage-badge {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-gold);
+  margin: 0 0 40px;
+  letter-spacing: 0.01em;
+}
+
+.hero__actions--heritage {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* Legacy hero rules kept for any non-heritage hero (e.g. catering) */
 .hero {
   position: relative;
   min-height: 600px;
@@ -692,6 +750,11 @@ main {
   align-items: center;
   background: var(--color-warm);
   overflow: hidden;
+}
+.hero--heritage {
+  min-height: 0;
+  display: block;
+  align-items: initial;
 }
 
 .hero__bg {
@@ -716,7 +779,7 @@ main {
 }
 
 .hero__content {
-  color: #FFFFFF;
+  color: var(--color-bg);
 }
 
 .hero__badge {
@@ -726,16 +789,16 @@ main {
   padding: 8px 16px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--primary);
+  color: var(--color-primary);
   background: var(--accent);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-md);
   margin-bottom: 24px;
 }
 
 .hero__title {
   font-family: var(--font-serif);
   font-size: 3.5rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
   margin-bottom: 24px;
 }
@@ -759,39 +822,17 @@ main {
 }
 
 .hero__image-main {
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-}
-
-.hero__features {
-  position: absolute;
-  bottom: -30px;
-  left: -30px;
-  right: 30px;
-  display: flex;
-  gap: 12px;
-}
-
-.hero__feature {
-  flex: 1;
-  padding: 16px;
-  background: #FFFFFF;
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  text-align: center;
+  box-shadow: var(--shadow-sm);
 }
 
-.hero__feature-icon {
-  font-size: 1.5rem;
-  margin-bottom: 8px;
-}
-
-.hero__feature-text {
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+@media (max-width: 768px) {
+  .hero--heritage {
+    padding: 96px 0 72px;
+  }
+  .hero__title--heritage {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -799,20 +840,20 @@ main {
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .hero__title {
     font-size: 2.5rem;
   }
-  
+
   .hero__subtitle {
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .hero__actions {
     justify-content: center;
   }
-  
+
   .hero__image {
     display: none;
   }

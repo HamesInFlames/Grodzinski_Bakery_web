@@ -5,7 +5,6 @@ import {
   FadeIn,
   StaggerContainer,
   StaggerItem,
-  ScaleReveal,
 } from "../components/AnimationWrappers";
 import ContactForm from "../components/ContactForm";
 import { Star, ShieldCheck, Wheat, Users, Heart, Baby, Cake, MapPin, Phone, Clock } from "lucide-react";
@@ -37,68 +36,42 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="hero">
-        <div className="hero__bg" />
-        <div className="hero__inner">
-          <div className="hero__content">
-            <FadeIn delay={0.2}>
-              <div className="hero__badge">
-                <Star size={16} /> Toronto's Favourite Kosher Bakery
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.4}>
-              <h1 className="hero__title">
-                Fresh Baked Daily<br />Since 1888
-              </h1>
-            </FadeIn>
-            <FadeIn delay={0.6}>
-              <p className="hero__subtitle">
-                Handcrafted breads, challahs, cakes, and pastries — baked
-                daily in our 100% nut-free facility. Toronto's heritage
-                kosher bakery.
-              </p>
-            </FadeIn>
-            <FadeIn delay={0.8}>
-              <div className="hero__actions">
-                <button
-                  className="btn btn--primary btn--lg"
-                  onClick={() => navigate("/menu")}
-                >
-                  View Our Menu
-                </button>
-                <button
-                  className="btn btn--ghost btn--lg"
-                  onClick={() => navigate("/gallery")}
-                >
-                  Custom Creations
-                </button>
-              </div>
-            </FadeIn>
-          </div>
-
-          <ScaleReveal delay={0.5} duration={0.9}>
-            <div className="hero__image">
-              <img
-                src="/images/home/thumbnail_slider (5).jpg"
-                alt="Fresh baked goods"
-                className="hero__image-main"
-              />
-              <div className="hero__features">
-                <div className="hero__feature">
-                  <div className="hero__feature-icon"><Star size={18} /></div>
-                  <div className="hero__feature-text">Kosher</div>
-                </div>
-                <div className="hero__feature">
-                  <div className="hero__feature-icon"><ShieldCheck size={18} /></div>
-                  <div className="hero__feature-text">Nut-Free</div>
-                </div>
-                <div className="hero__feature">
-                  <div className="hero__feature-icon"><Wheat size={18} /></div>
-                  <div className="hero__feature-text">Fresh</div>
-                </div>
-              </div>
+      <section className="hero hero--heritage">
+        <div className="hero__media">
+          <img
+            src="/images/home/thumbnail_slider (5).jpg"
+            alt="Handcrafted breads and challahs from Grodzinski Bakery"
+            className="hero__image-full"
+          />
+        </div>
+        <div className="hero__inner hero__inner--heritage">
+          <FadeIn delay={0.1}>
+            <h1 className="hero__title hero__title--heritage">
+              Fresh Baked Daily<br />Since 1888
+            </h1>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <p className="hero__subtitle hero__subtitle--heritage">
+              Handcrafted breads, challahs, cakes, and pastries &mdash; baked
+              daily in our 100% nut-free facility.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.3}>
+            <p className="hero__heritage-badge">
+              A Toronto heritage bakery &mdash; since 1888
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <div className="hero__actions hero__actions--heritage">
+              <button
+                type="button"
+                className="btn btn--primary btn--lg"
+                onClick={() => navigate("/menu")}
+              >
+                View Our Menu
+              </button>
             </div>
-          </ScaleReveal>
+          </FadeIn>
         </div>
       </section>
 
