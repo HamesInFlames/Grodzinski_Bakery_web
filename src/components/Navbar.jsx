@@ -111,8 +111,10 @@ export default function Navbar() {
             <div className="mobile-menu__header">
               <h2 className="mobile-menu__title">Menu</h2>
               <button
+                type="button"
                 className="mobile-menu__close"
                 onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close menu"
               >
                 <X size={24} />
               </button>

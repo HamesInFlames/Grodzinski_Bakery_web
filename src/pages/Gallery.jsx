@@ -64,15 +64,24 @@ export default function Gallery() {
     setImages(getGalleryImages(activeFilter));
   }, [activeFilter]);
 
+  const closeLightbox = () => {
+    setSelectedImage(null);
+    document.body.style.overflow = '';
+  };
+
   const openLightbox = (src) => {
     setSelectedImage(src);
     document.body.style.overflow = 'hidden';
   };
 
-  const closeLightbox = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = '';
-  };
+  useEffect(() => {
+    if (!selectedImage) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [selectedImage]);
 
   return (
     <div className="gallery-page">
@@ -133,7 +142,7 @@ export default function Gallery() {
                   >
                     <img
                       src={src}
-                      alt={`Custom creation ${i + 1}`}
+                      alt={`Custom ${activeFilter === 'all' ? 'creation' : activeFilter.replace('-', ' ')} ${i + 1}`}
                       className="gallery-item__image"
                       loading="lazy"
                       onError={(e) => {
@@ -185,7 +194,14 @@ export default function Gallery() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
           >
-            <button className="lightbox__close" onClick={closeLightbox}>×</button>
+            <button
+              type="button"
+              className="lightbox__close"
+              onClick={closeLightbox}
+              aria-label="Close lightbox"
+            >
+              ×
+            </button>
             <motion.div
               className="lightbox__content"
               onClick={(e) => e.stopPropagation()}

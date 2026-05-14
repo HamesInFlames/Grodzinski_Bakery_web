@@ -96,6 +96,7 @@ function About() {
                     <img
                       src={img.src}
                       alt={img.alt}
+                      loading="lazy"
                       className="about-image-card__img"
                     />
                     <p className="about-image-card__caption">{img.caption}</p>

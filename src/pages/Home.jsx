@@ -141,6 +141,7 @@ export default function Home() {
                   <img
                     src={cat.image}
                     alt={cat.name}
+                    loading="lazy"
                     className="category-card__image"
                   />
                   <div className="category-card__overlay">
@@ -197,6 +198,7 @@ export default function Home() {
               <img
                 src="/images/home/thumbnail_slider (3).jpg"
                 alt="Grodzinski Bakery"
+                loading="lazy"
               />
             </ScrollReveal>
           </div>

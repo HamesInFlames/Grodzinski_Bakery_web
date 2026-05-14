@@ -10,10 +10,11 @@ export default function Footer() {
         <div className="footer__grid">
           {/* Brand */}
           <div className="footer__brand">
-            <img 
-              src="/images/home/logo.png" 
-              alt="Grodzinski Bakery" 
+            <img
+              src="/images/home/logo.png"
+              alt="Grodzinski Bakery"
               className="footer__logo"
+              loading="lazy"
             />
             <p className="footer__desc">
               Toronto's favourite kosher bakery since 1888. Fresh baked challah, 
@@ -58,10 +59,11 @@ export default function Footer() {
             © {currentYear} Grodzinski Bakery. All rights reserved.
           </p>
           <div className="footer__badges">
-            <img 
-              src="/images/home/cor_logo.png" 
-              alt="COR Kosher" 
+            <img
+              src="/images/home/cor_logo.png"
+              alt="COR Kosher"
               className="footer__badge"
+              loading="lazy"
             />
           </div>
         </div>

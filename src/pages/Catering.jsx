@@ -89,6 +89,7 @@ export default function Catering() {
                     <img
                       src={option.image}
                       alt={option.title}
+                      loading="lazy"
                       className="catering-card__img"
                     />
                   </div>
@@ -139,6 +140,7 @@ export default function Catering() {
                 <img
                   src="/images/home/thumbnail_large_cookie_danish_platter.jpg"
                   alt="Beautiful catering platter"
+                  loading="lazy"
                   className="catering-order-info__img"
                 />
               </div>

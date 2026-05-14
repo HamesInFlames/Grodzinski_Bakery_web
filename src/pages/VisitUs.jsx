@@ -211,6 +211,7 @@ function VisitUs() {
               <img
                 src="/images/home/thumbnail_challahs.jpg"
                 alt="Fresh challahs at Grodzinski Bakery"
+                loading="lazy"
               />
             </ScrollReveal>
           </div>
