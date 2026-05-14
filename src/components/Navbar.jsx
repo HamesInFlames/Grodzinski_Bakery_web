@@ -72,8 +72,12 @@ export default function Navbar() {
       <nav className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}>
         <div className="navbar__inner">
           <div className="navbar__logo">
-            <NavLink to="/" className="navbar__wordmark" aria-label="Grodzinski Bakery — home">
-              Grodzinski
+            <NavLink to="/" className="navbar__wordmark-link" aria-label="Grodzinski Bakery — home">
+              <img
+                src="/images/home/logo.png"
+                alt="Grodzinski Bakery"
+                className="navbar__wordmark-img"
+              />
             </NavLink>
           </div>
 
@@ -142,7 +146,11 @@ export default function Navbar() {
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <div className="mobile-menu__header">
-              <span className="mobile-menu__wordmark">Grodzinski</span>
+              <img
+                src="/images/home/logo.png"
+                alt="Grodzinski Bakery"
+                className="mobile-menu__wordmark-img"
+              />
               <button
                 type="button"
                 className="mobile-menu__close"

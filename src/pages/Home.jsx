@@ -36,29 +36,24 @@ export default function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="hero hero--heritage">
-        <div className="hero__media">
-          <img
-            src="/images/home/thumbnail_slider (5).jpg"
-            alt="Handcrafted breads and challahs from Grodzinski Bakery"
-            className="hero__image-full"
-          />
-        </div>
+      <section className="hero hero--heritage" aria-labelledby="hero-tagline">
         <div className="hero__inner hero__inner--heritage">
           <FadeIn delay={0.1}>
-            <h1 className="hero__title hero__title--heritage">
-              Fresh Baked Daily<br />Since 1888
+            <h1 className="hero__logo-wrap">
+              <img
+                src="/images/home/logo.png"
+                alt="Grodzinski Bakery"
+                className="hero__logo-img"
+              />
+              <span id="hero-tagline" className="hero__tagline">
+                A Toronto Heritage Bakery &mdash; Since 1888
+              </span>
             </h1>
           </FadeIn>
           <FadeIn delay={0.2}>
             <p className="hero__subtitle hero__subtitle--heritage">
               Handcrafted breads, challahs, cakes, and pastries &mdash; baked
               daily in our 100% nut-free facility.
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.3}>
-            <p className="hero__heritage-badge">
-              A Toronto heritage bakery &mdash; since 1888
             </p>
           </FadeIn>
           <FadeIn delay={0.4}>

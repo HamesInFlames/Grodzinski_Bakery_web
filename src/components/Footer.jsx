@@ -10,7 +10,12 @@ export default function Footer() {
         <div className="footer__grid">
           {/* Brand */}
           <div className="footer__brand">
-            <span className="footer__wordmark">Grodzinski</span>
+            <img
+              src="/images/home/logo.png"
+              alt="Grodzinski Bakery"
+              className="footer__wordmark-img"
+              loading="lazy"
+            />
             <p className="footer__desc">
               Toronto&rsquo;s favourite kosher bakery since 1888. Fresh-baked
               challah, breads, cakes, and pastries made daily in our nut-free
