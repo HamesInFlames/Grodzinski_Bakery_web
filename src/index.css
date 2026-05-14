@@ -3,13 +3,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Fonts are loaded via <link> in index.html — Fraunces + DM Sans from Google Fonts. */
+/* Fonts are loaded via <link> in index.html — Cormorant Garamond + Inter +
+   Frank Ruhl Libre (Hebrew + Latin). Design tokens live in App.css :root. */
+
+html {
+  background-color: var(--color-bg, #FAF6EE);
+}
 
 body {
   margin: 0;
-  font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #1A1A1A;
-  background-color: #fdfcfa;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--color-ink, #2A1810);
+  background-color: var(--color-bg, #FAF6EE);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hebrew text: span lang="he" gets Frank Ruhl Libre + RTL handling */
+[lang="he"] {
+  font-family: var(--font-display, 'Frank Ruhl Libre', 'Cormorant Garamond', Georgia, serif);
+  font-weight: 500;
+}
+
+/* Scroll fade-in: opacity 0 -> 1, 12px translate, 600ms ease-out */
+@media (prefers-reduced-motion: no-preference) {
+  .heritage-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 600ms ease-out, transform 600ms ease-out;
+  }
+  .heritage-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

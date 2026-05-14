@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════════════
-   GRODZINSKI BAKERY - MODERN DESIGN SYSTEM
-   Clean, Professional, Well-Aligned UI
-   Colors: #c5dafc (Light Blue) + #5C4033 (Brown)
+   GRODZINSKI BAKERY - MODERN JEWISH HERITAGE DESIGN SYSTEM
+   Levain / Eli Zabar lineage. Restrained, confident, premium.
+   Primary: #0E2A47 navy. Accent: #E8C58A marzipan. Hero gold: #B8860B.
 ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -39,17 +39,17 @@
   left: 0;
   z-index: 10000;
   padding: 12px 20px;
-  background: #5C4033;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-bg);
   font-weight: 600;
   border-radius: 0 0 8px 0;
   transform: translateY(-110%);
-  transition: transform 0.2s ease;
+  transition: transform 0.15s ease-out;
 }
 .skip-link:focus,
 .skip-link:focus-visible {
   transform: translateY(0);
-  outline: 3px solid #c5dafc;
+  outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -67,7 +67,7 @@
   text-align: center;
 }
 .not-found__eyebrow {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 5rem;
   font-weight: 700;
   color: #C4AEA0;
@@ -75,7 +75,7 @@
   margin-bottom: 12px;
 }
 .not-found__title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 2.25rem;
   font-weight: 700;
   color: #1F2937;
@@ -107,7 +107,7 @@
   text-align: center;
 }
 .error-boundary__title {
-  font-family: 'Fraunces', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 2rem;
   font-weight: 700;
   color: #1F2937;
@@ -124,7 +124,16 @@
 }
 
 :root {
-  /* Brand Colors */
+  /* Heritage palette */
+  --color-bg: #FAF6EE;          /* warm cream — primary background */
+  --color-ink: #2A1810;         /* deep cocoa — primary text */
+  --color-primary: #0E2A47;     /* deep navy — primary brand */
+  --color-accent: #E8C58A;      /* marzipan/honey — replaces light blue */
+  --color-gold: #B8860B;        /* hero gold — prices, wordmark, decorative rules only */
+  --color-rule: #D9CFB8;        /* warm rule line for dividers */
+  --color-warm: #5C4033;        /* legacy brown — warm-tone surfaces (catering hero etc.) */
+
+  /* Legacy brown scale (still consumed by gallery + catering surfaces) */
   --brown-900: #3D2A22;
   --brown-800: #4A3328;
   --brown-700: #5C4033;
@@ -135,58 +144,61 @@
   --brown-200: #E5DCD6;
   --brown-100: #F5F0ED;
   --brown-50: #FAF8F6;
-  
-  --blue-500: #c5dafc;
-  --blue-400: #d4e4fd;
-  --blue-300: #e3eefe;
-  --blue-200: #f0f5ff;
-  --blue-100: #f8faff;
-  
-  /* Semantic Colors */
-  --primary: var(--brown-700);
-  --primary-hover: var(--brown-800);
-  --primary-light: var(--brown-100);
-  --accent: var(--blue-500);
-  --accent-light: var(--blue-200);
-  
+
+  /* Legacy "blue" scale — now alias the marzipan accent so any leftover refs
+     cannot reintroduce the #c5dafc / 1.33:1 WCAG fail. */
+  --blue-500: var(--color-accent);
+  --blue-400: var(--color-accent);
+  --blue-300: var(--color-accent);
+  --blue-200: var(--color-accent);
+  --blue-100: var(--color-bg);
+
+  /* Semantic */
+  --primary: var(--color-primary);
+  --primary-hover: #0A2038;             /* navy darkened */
+  --primary-light: #E4E9F1;             /* navy 10% tint on cream */
+  --accent: var(--color-accent);
+  --accent-light: #F4E3C2;              /* marzipan tint */
+
   /* Backgrounds */
-  --bg-page: #FFFFFF;
-  --bg-section: var(--brown-50);
-  --bg-card: #FFFFFF;
-  --bg-dark: var(--brown-700);
-  
-  /* Text Colors */
-  --text-primary: #1F2937;
-  --text-secondary: #4B5563;
-  --text-muted: #9CA3AF;
-  --text-inverse: #FFFFFF;
-  
+  --bg-page: var(--color-bg);
+  --bg-section: #F3EDE0;                /* one notch darker cream */
+  --bg-card: var(--color-bg);
+  --bg-dark: var(--color-primary);
+
+  /* Text */
+  --text-primary: var(--color-ink);
+  --text-secondary: #574235;            /* cocoa softened */
+  --text-muted: #8A7868;
+  --text-inverse: var(--color-bg);
+
   /* Borders */
-  --border-light: #E5E7EB;
-  --border-medium: #D1D5DB;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
+  --border-light: var(--color-rule);
+  --border-medium: #C8BCA1;
+
+  /* Shadows — anti-slop guardrail: only the subtle one is permitted */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 1px 2px rgba(0, 0, 0, 0.04);
+
   /* Typography */
-  --font-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-serif: 'Fraunces', Georgia, serif;
-  
-  /* Spacing */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Frank Ruhl Libre', 'Cormorant Garamond', Georgia, serif;
+
+  /* Layout */
   --container-max: 1200px;
   --container-padding: 1.5rem;
-  
-  /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  
-  /* Transitions */
-  --transition: 0.2s ease;
+
+  /* Border radius — capped at 12px */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 12px;
+
+  /* Transitions — hover at 150ms only */
+  --transition: 0.15s ease-out;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -691,7 +703,7 @@ main {
   min-height: 600px;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, var(--brown-700) 0%, var(--brown-800) 100%);
+  background: var(--color-warm);
   overflow: hidden;
 }
 
@@ -863,7 +875,7 @@ main {
 .category-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+  background: rgba(0, 0, 0, 0.55);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -930,7 +942,7 @@ main {
 
 .gallery-hero {
   padding: 120px 0 60px;
-  background: linear-gradient(135deg, var(--brown-700) 0%, var(--brown-800) 100%);
+  background: var(--color-warm);
   text-align: center;
 }
 
@@ -1447,7 +1459,7 @@ main {
 .catering-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(61, 42, 34, 0.85) 0%, rgba(92, 64, 51, 0.75) 100%);
+  background: rgba(61, 42, 34, 0.78);
 }
 
 .catering-hero__content {
@@ -1713,7 +1725,7 @@ main {
 .about-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(61, 42, 34, 0.85) 0%, rgba(92, 64, 51, 0.75) 100%);
+  background: rgba(61, 42, 34, 0.78);
 }
 
 .about-hero__content {
@@ -1978,7 +1990,7 @@ main {
 .visit-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(61, 42, 34, 0.85) 0%, rgba(92, 64, 51, 0.75) 100%);
+  background: rgba(61, 42, 34, 0.78);
 }
 
 .visit-hero__content {

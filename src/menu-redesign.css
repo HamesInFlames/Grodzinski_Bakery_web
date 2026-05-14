@@ -20,7 +20,7 @@
 /* ─── MENU HUB ───────────────────────────────────────── */
 .menuhub__hero {
   padding: 100px 0 48px;
-  background: linear-gradient(135deg, var(--brown-700) 0%, var(--brown-800) 100%);
+  background: var(--color-primary);
   text-align: center;
 }
 
@@ -118,7 +118,7 @@
   justify-content: flex-end;
   padding: 16px;
   width: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .menuhub__card-name {
@@ -203,7 +203,7 @@
 .category-page__hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(61, 42, 34, 0.9) 0%, rgba(61, 42, 34, 0.3) 100%);
+  background: rgba(61, 42, 34, 0.65);
 }
 
 .category-page__hero-content {
@@ -309,7 +309,7 @@
   font-size: 0.875rem;
   font-weight: 600;
   color: #fff;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  background: rgba(0, 0, 0, 0.45);
 }
 
 @media (max-width: 768px) {
