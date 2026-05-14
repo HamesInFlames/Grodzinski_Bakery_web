@@ -8,6 +8,97 @@
    CSS VARIABLES
 ═══════════════════════════════════════════════════════════════════════════ */
 
+/* Skip link — visually hidden, surfaces on keyboard focus */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  padding: 12px 20px;
+  background: #5C4033;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0 0 8px 0;
+  transform: translateY(-110%);
+  transition: transform 0.2s ease;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid #c5dafc;
+  outline-offset: 2px;
+}
+
+/* 404 page */
+.not-found {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: #FAF8F6;
+}
+.not-found__inner {
+  max-width: 560px;
+  text-align: center;
+}
+.not-found__eyebrow {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #C4AEA0;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.not-found__title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 16px;
+}
+.not-found__copy {
+  font-size: 1.1rem;
+  color: #4B5563;
+  margin-bottom: 32px;
+}
+.not-found__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Error boundary fallback */
+.error-boundary {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+  background: #FAF8F6;
+}
+.error-boundary__inner {
+  max-width: 560px;
+  text-align: center;
+}
+.error-boundary__title {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1F2937;
+  margin-bottom: 16px;
+}
+.error-boundary__copy {
+  font-size: 1.05rem;
+  color: #4B5563;
+  margin-bottom: 28px;
+}
+.error-boundary__copy a {
+  color: #5C4033;
+  text-decoration: underline;
+}
+
 :root {
   /* Brand Colors */
   --brown-900: #3D2A22;
