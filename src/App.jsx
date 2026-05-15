@@ -18,6 +18,10 @@ const MenuLayout = lazy(() => import("./routes/MenuLayout"));
 const MenuHub = lazy(() => import("./routes/MenuHub"));
 const CategoryPage = lazy(() => import("./routes/CategoryPage"));
 const ProductPage = lazy(() => import("./routes/ProductPage"));
+const HolidaysLayout = lazy(() => import("./routes/HolidaysLayout"));
+const HolidaysHub = lazy(() => import("./routes/HolidaysHub"));
+const OccasionPage = lazy(() => import("./routes/OccasionPage"));
+const HolidayProductPage = lazy(() => import("./routes/HolidayProductPage"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -45,6 +49,11 @@ export default function App() {
                   <Route index element={<MenuHub />} />
                   <Route path=":category" element={<CategoryPage />} />
                   <Route path="p/:slug" element={<ProductPage />} />
+                </Route>
+                <Route path="/holidays" element={<PageTransition><HolidaysLayout /></PageTransition>}>
+                  <Route index element={<HolidaysHub />} />
+                  <Route path=":occasion" element={<OccasionPage />} />
+                  <Route path=":occasion/p/:slug" element={<HolidayProductPage />} />
                 </Route>
                 <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
                 <Route path="/catering" element={<PageTransition><Catering /></PageTransition>} />

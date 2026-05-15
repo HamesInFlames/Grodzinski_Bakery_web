@@ -4,6 +4,9 @@ const ROUTES = [
   { path: '/', name: 'home' },
   { path: '/menu', name: 'menu' },
   { path: '/menu/challah-bilkas', name: 'category' },
+  { path: '/holidays', name: 'holidays-hub' },
+  { path: '/holidays/rosh-hashanah', name: 'holidays-occasion' },
+  { path: '/holidays/chanukah', name: 'holidays-chanukah' },
   { path: '/about', name: 'about' },
   { path: '/visit', name: 'visit' },
 ];
