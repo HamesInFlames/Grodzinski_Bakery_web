@@ -205,9 +205,15 @@ export default function Home() {
           </StaggerContainer>
 
           <ScrollReveal delay={0.2}>
-            <div className="text-center">
+            <div className="text-center" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <button
                 className="btn btn--primary btn--lg"
+                onClick={() => navigate("/holidays")}
+              >
+                See Holiday Menu
+              </button>
+              <button
+                className="btn btn--secondary btn--lg"
                 onClick={() => navigate("/gallery")}
               >
                 View Custom Gallery

@@ -7,8 +7,9 @@ import { motion, AnimatePresence } from "motion/react";
 const NAV_LINKS = [
   ["Home", "/"],
   ["Menu", "/menu"],
-  ["Gallery", "/gallery"],
+  ["Holidays", "/holidays"],
   ["Catering", "/catering"],
+  ["Gallery", "/gallery"],
   ["About", "/about"],
   ["Visit Us", "/visit"],
 ];

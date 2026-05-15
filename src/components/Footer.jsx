@@ -29,8 +29,9 @@ export default function Footer() {
             <ul className="footer__links">
               <li><Link to="/" className="footer__link">Home</Link></li>
               <li><Link to="/menu" className="footer__link">Menu</Link></li>
-              <li><Link to="/gallery" className="footer__link">Gallery</Link></li>
+              <li><Link to="/holidays" className="footer__link">Holidays</Link></li>
               <li><Link to="/catering" className="footer__link">Catering</Link></li>
+              <li><Link to="/gallery" className="footer__link">Gallery</Link></li>
               <li><Link to="/about" className="footer__link">About</Link></li>
               <li><Link to="/visit" className="footer__link">Visit Us</Link></li>
             </ul>
