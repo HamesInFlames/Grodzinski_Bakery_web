@@ -7,6 +7,8 @@ const ROUTES = [
   { path: '/menu/challah-bilkas', name: 'category' },
   { path: '/holidays', name: 'holidays-hub' },
   { path: '/holidays/rosh-hashanah', name: 'holidays-occasion' },
+  { path: '/gallery', name: 'gallery' },
+  { path: '/catering', name: 'catering' },
   { path: '/about', name: 'about' },
   { path: '/visit', name: 'visit' },
 ];
@@ -14,7 +16,6 @@ const ROUTES = [
 for (const route of ROUTES) {
   test(`axe a11y: ${route.name} (${route.path})`, async ({ page }) => {
     await page.goto(route.path, { waitUntil: 'networkidle' });
-    // Allow lazy fonts + ScrollReveal to settle.
     await page.waitForTimeout(800);
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])

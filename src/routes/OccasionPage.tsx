@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useMemo } from 'react';
+import { useMemo, useEffect } from 'react';
 import { PRODUCTS } from '@/data/products';
 import type { OccasionSlug } from '@/data/products';
 import { getOccasionBySlug, productsForOccasion } from '@/data/holidays';
@@ -37,6 +37,15 @@ export default function OccasionPage() {
     return result;
   }, [allProducts, activeFilters, activeTags]);
 
+  useEffect(() => {
+    if (meta) {
+      document.title = `${meta.name} — Grodzinski Bakery, Toronto`;
+    }
+    return () => {
+      document.title = "Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888";
+    };
+  }, [meta]);
+
   if (!meta) {
     return (
       <div className="category-page__empty">
@@ -48,9 +57,6 @@ export default function OccasionPage() {
 
   return (
     <div className="category-page">
-      <title>{meta.name} — Grodzinski Bakery, Toronto</title>
-      <meta name="description" content={meta.description} />
-
       <Breadcrumb
         items={[
           { label: 'Holidays', href: '/holidays' },

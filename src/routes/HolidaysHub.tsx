@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { HOLIDAY_OCCASIONS, PRODUCTS } from '@/data/products';
 import { HOLIDAY_OCCASION_META, productsForOccasion } from '@/data/holidays';
@@ -7,10 +8,15 @@ export default function HolidaysHub() {
   const occasions = [...HOLIDAY_OCCASIONS]
     .sort((a, b) => a.order - b.order);
 
+  useEffect(() => {
+    document.title = 'Holidays — Grodzinski Bakery, Toronto';
+    return () => {
+      document.title = "Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888";
+    };
+  }, []);
+
   return (
     <div className="holidays-hub">
-      <title>Holidays — Grodzinski Bakery, Toronto</title>
-      <meta name="description" content="Traditional baked goods for Jewish holidays and celebrations. Round challah, honey cakes, sufganiyot, hamantaschen, and more — baked fresh at Grodzinski Bakery." />
 
       <section className="holidays-hub__hero">
         <div className="holidays-hub__hero-bg">

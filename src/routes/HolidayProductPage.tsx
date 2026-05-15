@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { getProductBySlug, getProductsByOccasion } from '@/data/products';
 import type { OccasionSlug } from '@/data/products';
 import { getOccasionBySlug } from '@/data/holidays';
@@ -35,10 +36,15 @@ export default function HolidayProductPage() {
   const lede = sentenceBreak >= 0 ? description.slice(0, sentenceBreak + 1).trim() : description.trim();
   const body = sentenceBreak >= 0 ? description.slice(sentenceBreak + 1).trim() : '';
 
+  useEffect(() => {
+    document.title = `${product.name} — ${meta.name} — Grodzinski Bakery`;
+    return () => {
+      document.title = "Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888";
+    };
+  }, [product.name, meta.name]);
+
   return (
     <div className="product-page">
-      <title>{product.name} — {meta.name} — Grodzinski Bakery</title>
-      <meta name="description" content={product.description} />
 
       <Breadcrumb
         items={[
