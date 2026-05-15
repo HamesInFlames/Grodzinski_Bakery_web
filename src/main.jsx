@@ -2,6 +2,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
+import { MotionConfig } from "motion/react";
 import App from "./App.jsx";
 import "./App.css";
 import "./menu-redesign.css";
@@ -16,7 +17,9 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <MotionConfig reducedMotion="user">
+        <App />
+      </MotionConfig>
     </BrowserRouter>
   </React.StrictMode>
 );

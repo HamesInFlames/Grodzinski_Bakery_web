@@ -23,7 +23,6 @@ export interface Product {
   priceUnit?: string;
   dietary: DietaryAttribute[];
   tags?: string[];
-  imageSlug?: string;
   inStock: boolean;
   sku?: string;
   weight_g?: number;

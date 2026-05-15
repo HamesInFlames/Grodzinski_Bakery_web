@@ -1,7 +1,6 @@
 // src/components/GoogleMap.jsx
-import React from "react";
 
-export default function GoogleMap({ 
+export default function GoogleMap({
   address, 
   title = "Location Map",
   height = "400px",

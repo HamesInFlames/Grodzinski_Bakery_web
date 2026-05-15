@@ -28,6 +28,13 @@ export default function ProductPage() {
   if (product.dietary.includes('dairy')) allergens.push('Dairy');
   allergens.push('Wheat');
 
+  // Split the description so the first sentence renders as a Cormorant
+  // italic lede and the rest renders as Inter body.
+  const description = product.description || '';
+  const sentenceBreak = description.search(/[.!?](\s|$)/);
+  const lede = sentenceBreak >= 0 ? description.slice(0, sentenceBreak + 1).trim() : description.trim();
+  const body = sentenceBreak >= 0 ? description.slice(sentenceBreak + 1).trim() : '';
+
   return (
     <div className="product-page">
       <Breadcrumb
@@ -42,11 +49,7 @@ export default function ProductPage() {
         <div className="product-page__gallery">
           <div className="product-page__image-container">
             <img
-              src={
-                product.imageSlug
-                  ? `/images/products/${product.imageSlug}.jpg`
-                  : '/images/home/thumbnail_slider.jpg'
-              }
+              src="/images/coming-soon.png"
               alt={product.name}
               className="product-page__image"
             />
@@ -68,7 +71,8 @@ export default function ProductPage() {
             )}
           </p>
 
-          <p className="product-page__description">{product.description}</p>
+          {lede && <p className="product-page__description-lede">{lede}</p>}
+          {body && <p className="product-page__description">{body}</p>}
 
           <DietaryBadges attributes={product.dietary} size="md" />
 

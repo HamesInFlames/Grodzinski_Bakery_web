@@ -35,6 +35,8 @@ Thumbs.db
 
 # Environment
 .env
+.env.local
+.env.*.local
 
 # Coverage
 coverage/
@@ -42,5 +44,16 @@ coverage/
 # Embedded repos
 Grodzinski_Bakery_web/
 
-# Audit artifacts
-cleanup-audit.md
+# Audit artifacts (per-section caches, pruner scripts) - NOT the
+# top-level cleanup-audit-phase-*.md deliverables.
+.audit-cache/
+
+# Out-of-tree photoshoot source (moved from public/images/Photos/)
+_photos-source/
+
+# QA tooling artifacts (regenerable)
+qa/playwright-results.json
+qa/lighthouse/
+.lighthouseci/
+test-results/
+playwright-report/

@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const screenshotsDir = join(__dirname, '..', 'screenshots');
 mkdirSync(screenshotsDir, { recursive: true });
 
-const BASE_URL = 'http://localhost:5173';
+const BASE_URL = process.env.SCREENSHOT_BASE_URL || 'http://localhost:5173';
 
 const pages = [
   { name: 'home', path: '/' },
