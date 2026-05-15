@@ -5,9 +5,10 @@ import { useFilterStore } from '@/stores/filterStore';
 interface Props {
   products: Product[];
   categoryName?: string;
+  linkPrefix?: string;
 }
 
-export default function ProductGrid({ products, categoryName }: Props) {
+export default function ProductGrid({ products, categoryName, linkPrefix }: Props) {
   const { clearFilters } = useFilterStore();
 
   if (products.length === 0) {
@@ -27,7 +28,7 @@ export default function ProductGrid({ products, categoryName }: Props) {
   return (
     <div className="pgrid">
       {products.map((product) => (
-        <ProductCard key={product.slug} product={product} />
+        <ProductCard key={product.slug} product={product} linkPrefix={linkPrefix} />
       ))}
     </div>
   );

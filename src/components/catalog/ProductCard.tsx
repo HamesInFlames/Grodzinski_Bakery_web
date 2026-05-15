@@ -4,11 +4,12 @@ import DietaryBadges from './DietaryBadges';
 
 interface Props {
   product: Product;
+  linkPrefix?: string;
 }
 
-export default function ProductCard({ product }: Props) {
+export default function ProductCard({ product, linkPrefix = '/menu/p' }: Props) {
   return (
-    <Link to={`/menu/p/${product.slug}`} className="pcard">
+    <Link to={`${linkPrefix}/${product.slug}`} className="pcard">
       <div className="pcard__image-wrapper">
         <img
           src="/images/coming-soon.png"

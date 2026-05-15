@@ -923,3 +923,176 @@ textarea:focus-visible {
 .filter-sheet__apply:hover {
   background: var(--primary-hover);
 }
+
+/* ─── HOLIDAYS LAYOUT ────────────────────────────────── */
+.holidays-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── HOLIDAYS HUB ───────────────────────────────────── */
+.holidays-hub__hero {
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--color-rule);
+  text-align: center;
+  overflow: hidden;
+}
+
+.holidays-hub__hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.holidays-hub__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.holidays-hub__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(61, 42, 34, 0.78);
+}
+
+.holidays-hub__hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 100px var(--container-padding) 60px;
+}
+
+.holidays-hub__title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 16px;
+  letter-spacing: -0.005em;
+}
+
+.holidays-hub__subtitle {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 24px;
+}
+
+.holidays-hub__trust {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.holidays-hub__trust-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.holidays-hub__grid-section {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 48px var(--container-padding) 96px;
+}
+
+.holidays-hub__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .holidays-hub__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (min-width: 1024px) {
+  .holidays-hub__grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+}
+
+.holidays-hub__card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 150ms ease-out;
+}
+
+.holidays-hub__card:hover {
+  border-color: var(--color-primary);
+}
+
+.holidays-hub__card-content {
+  padding: 24px 20px;
+}
+
+.holidays-hub__card-name {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+
+.holidays-hub__card-hebrew {
+  display: block;
+  font-size: 1.125rem;
+  color: var(--color-gold-text);
+  margin-bottom: 8px;
+}
+
+.holidays-hub__card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: var(--color-ink-soft);
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.holidays-hub__card-count {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-gold-text);
+}
+
+@media (max-width: 480px) {
+  .holidays-hub__hero { min-height: auto; padding-top: 80px; padding-bottom: 40px; }
+  .holidays-hub__title { font-size: 2.25rem; }
+}
+
+/* ─── OCCASION PAGE — overlays on category-page styles ─ */
+.occasion-page__hebrew {
+  font-size: 0.75em;
+  color: var(--color-gold);
+  font-weight: 400;
+}
+
+.occasion-page__notice {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  margin-bottom: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  display: inline-block;
+}
