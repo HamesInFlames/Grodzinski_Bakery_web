@@ -963,7 +963,8 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Custom Order",
       "Cookies"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "simchas"
   },
   {
     slug: "wedding-cookies",
@@ -979,7 +980,8 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Custom Order",
       "Cookies"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "simchas"
   },
   {
     slug: "birthday-cookies",
@@ -995,7 +997,8 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Custom Order",
       "Cookies"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "simchas"
   },
   {
     slug: "hamantaschen-assorted",
@@ -1536,7 +1539,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Seasonal",
       "Gifts & Baskets"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "rosh-hashanah",
+    isSeasonal: true
   },
   {
     slug: "holiday-gift-basket-standard",
@@ -1672,7 +1677,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Rosh Hashanah",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "rosh-hashanah",
+    isSeasonal: true
   },
   {
     slug: "honey-cake",
@@ -1687,7 +1694,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Rosh Hashanah",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "rosh-hashanah",
+    isSeasonal: true
   },
   {
     slug: "apple-cookies-rosh-hashanah",
@@ -1702,7 +1711,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Rosh Hashanah",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "rosh-hashanah",
+    isSeasonal: true
   },
   {
     slug: "chanukah-cookies-platter",
@@ -1717,7 +1728,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Chanukah",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "chanukah",
+    isSeasonal: true
   },
   {
     slug: "sufganiyot-jelly-donuts",
@@ -1732,7 +1745,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Chanukah",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "chanukah",
+    isSeasonal: true
   },
   {
     slug: "chanukah-sugar-cookies-dozen",
@@ -1747,7 +1762,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Chanukah",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "chanukah",
+    isSeasonal: true
   },
   {
     slug: "hamantaschen-dozen",
@@ -1762,7 +1779,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Purim",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "purim",
+    isSeasonal: true
   },
   {
     slug: "purim-gift-basket",
@@ -1775,7 +1794,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Purim",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "purim",
+    isSeasonal: true
   },
   {
     slug: "passover-sponge-cake",
@@ -1791,7 +1812,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Kosher for Passover",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "pesach",
+    isSeasonal: true
   },
   {
     slug: "passover-macaroons",
@@ -1807,7 +1830,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Kosher for Passover",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "pesach",
+    isSeasonal: true
   },
   {
     slug: "passover-cookie-assortment",
@@ -1821,7 +1846,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Kosher for Passover",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "pesach",
+    isSeasonal: true
   },
   {
     slug: "shavuot-cheesecake",
@@ -1836,7 +1863,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Shavuot",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "shavuot",
+    isSeasonal: true
   },
   {
     slug: "cheese-blintzes",
@@ -1851,7 +1880,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Shavuot",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "shavuot",
+    isSeasonal: true
   },
   {
     slug: "valentines-day-cookies",
@@ -1866,7 +1897,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Valentine's Day",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "valentines",
+    isSeasonal: true
   },
   {
     slug: "mothers-day-cookie-bouquet",
@@ -1881,7 +1914,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Mother's Day",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "mothers-day",
+    isSeasonal: true
   },
   {
     slug: "fathers-day-cookies",
@@ -1896,7 +1931,9 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Father's Day",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    occasion: "fathers-day",
+    isSeasonal: true
   },
   {
     slug: "halloween-cookies",
@@ -1911,6 +1948,7 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Halloween",
       "Holiday & Seasonal Specials"
     ],
-    inStock: true
+    inStock: true,
+    isSeasonal: true
   }
 ];

@@ -4,6 +4,12 @@
  *
  * Run: node scripts/generate-products.mjs
  * Output: src/data/products.generated.ts
+ *
+ * TODO(holidays): When Carolina's review adds `occasion` and `dietary_tags`
+ * columns to grodzinski_products.csv, the column-mapping below will pass them
+ * through automatically. Until then, every product gets:
+ *   occasion: undefined   (not assigned to any holiday)
+ *   dietaryTags: []       (not yet confirmed by Carolina)
  */
 
 import { readFileSync, writeFileSync } from 'fs';
@@ -101,6 +107,29 @@ for (const cat of menuCategories) {
     const price = parsePrice(item.price);
     const tags = extractTags(item, cat.name);
 
+    // Map holiday tags to occasion slugs when present in item tags
+    const occasionMap = {
+      'rosh hashanah': 'rosh-hashanah',
+      'sukkot': 'sukkot',
+      'chanukah': 'chanukah',
+      'purim': 'purim',
+      'passover': 'pesach',
+      'pesach': 'pesach',
+      'shavuot': 'shavuot',
+      "mother's day": 'mothers-day',
+      "father's day": 'fathers-day',
+      "valentine's day": 'valentines',
+      'graduation': 'graduation',
+    };
+
+    let occasion = undefined;
+    if (item.tags) {
+      for (const t of item.tags) {
+        const mapped = occasionMap[t.toLowerCase()];
+        if (mapped) { occasion = mapped; break; }
+      }
+    }
+
     products.push({
       slug: baseSlug,
       name: item.name,
@@ -112,6 +141,9 @@ for (const cat of menuCategories) {
       tags: tags.length ? tags : undefined,
       imageSlug: undefined,
       inStock: true,
+      dietaryTags: [],
+      occasion,
+      isSeasonal: categorySlug === 'holiday-seasonal' || !!occasion,
     });
   }
 }
@@ -217,7 +249,10 @@ export const GENERATED_PRODUCTS: Product[] = ${JSON.stringify(products, null, 2)
   .replace(/"tags"/g, 'tags')
   .replace(/"inStock"/g, 'inStock')
   .replace(/"imageSlug"/g, 'imageSlug')
-  .replace(/"priceUnit"/g, 'priceUnit')};
+  .replace(/"priceUnit"/g, 'priceUnit')
+  .replace(/"dietaryTags"/g, 'dietaryTags')
+  .replace(/"occasion"/g, 'occasion')
+  .replace(/"isSeasonal"/g, 'isSeasonal')};
 `;
 
 writeFileSync(resolve(ROOT, 'src/data/products.generated.ts'), output, 'utf-8');

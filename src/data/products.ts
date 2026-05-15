@@ -1,5 +1,34 @@
 export type DietaryAttribute = 'pareve' | 'dairy' | 'contains-egg';
 
+// Extended dietary tags — Carolina will confirm these per-product via the review document.
+// Defaults to empty array, which means "no tags assigned yet" (NOT "contains nothing").
+export const DIETARY_TAGS = [
+  'pareve',
+  'dairy',
+  'eggs',
+  'nuts',
+  'sesame',
+  'sugar-free',
+  'gluten-free',
+] as const;
+export type DietaryTag = typeof DIETARY_TAGS[number];
+
+// Holiday occasions — these become /holidays/:occasion routes.
+export const HOLIDAY_OCCASIONS = [
+  { slug: 'rosh-hashanah',  name: 'Rosh Hashanah',              hebrew: 'ראש השנה',  order: 1 },
+  { slug: 'sukkot',         name: 'Sukkot',                     hebrew: 'סוכות',     order: 2 },
+  { slug: 'chanukah',       name: 'Chanukah',                   hebrew: 'חנוכה',     order: 3 },
+  { slug: 'purim',          name: 'Purim',                      hebrew: 'פורים',     order: 4 },
+  { slug: 'pesach',         name: 'Pesach',                     hebrew: 'פסח',       order: 5 },
+  { slug: 'shavuot',        name: 'Shavuot',                    hebrew: 'שבועות',    order: 6 },
+  { slug: 'simchas',        name: 'Simchas & Celebrations',     hebrew: null,        order: 7 },
+  { slug: 'fathers-day',    name: "Father's Day",               hebrew: null,        order: 8 },
+  { slug: 'mothers-day',    name: "Mother's Day",               hebrew: null,        order: 9 },
+  { slug: 'valentines',     name: "Valentine's Day",            hebrew: null,        order: 10 },
+  { slug: 'graduation',     name: 'Graduation',                 hebrew: null,        order: 11 },
+] as const;
+export type OccasionSlug = typeof HOLIDAY_OCCASIONS[number]['slug'];
+
 export type ProductCategory =
   | 'challah-bilkas'
   | 'bread-rolls'
@@ -26,6 +55,11 @@ export interface Product {
   inStock: boolean;
   sku?: string;
   weight_g?: number;
+  dietaryTags?: DietaryTag[];
+  occasion?: OccasionSlug;
+  hebrew?: string | null;
+  isSeasonal?: boolean;
+  isBestseller?: boolean;
 }
 
 export interface Category {
@@ -143,3 +177,9 @@ export const getProductBySlug = (slug: string) =>
 
 export const getCategoryBySlug = (slug: string) =>
   CATEGORIES.find((c) => c.slug === slug);
+
+export const getProductsByOccasion = (occasion: OccasionSlug) =>
+  PRODUCTS.filter((p) => p.occasion === occasion);
+
+export const getOccasionBySlug = (slug: string) =>
+  HOLIDAY_OCCASIONS.find((o) => o.slug === slug);
