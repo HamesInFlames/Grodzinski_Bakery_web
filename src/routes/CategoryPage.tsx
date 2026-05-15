@@ -6,6 +6,7 @@ import type { Product } from '@/data/products';
 import { useFilterStore } from '@/stores/filterStore';
 import ProductGrid from '@/components/catalog/ProductGrid';
 import FilterChipBar from '@/components/filters/FilterChipBar';
+import DietaryFilter from '@/components/filters/DietaryFilter';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import { ShieldCheck } from 'lucide-react';
 
@@ -28,7 +29,7 @@ export default function CategoryPage() {
   const { category } = useParams<{ category: string }>();
   const cat = getCategoryBySlug(category || '');
   const allProducts = getProductsByCategory((category || '') as any);
-  const { activeFilters, searchQuery } = useFilterStore();
+  const { activeFilters, activeTags, searchQuery } = useFilterStore();
 
   const fuse = useMemo(
     () =>
@@ -52,8 +53,14 @@ export default function CategoryPage() {
       );
     }
 
+    if (activeTags.length > 0) {
+      result = result.filter((p) =>
+        activeTags.every((tag) => p.dietaryTags?.includes(tag) ?? false),
+      );
+    }
+
     return result;
-  }, [allProducts, activeFilters, searchQuery, fuse]);
+  }, [allProducts, activeFilters, activeTags, searchQuery, fuse]);
 
   if (!cat) {
     return (
@@ -93,6 +100,11 @@ export default function CategoryPage() {
       </section>
 
       <FilterChipBar />
+      <DietaryFilter
+        totalCount={allProducts.length}
+        filteredCount={filtered.length}
+        sectionName={cat.name}
+      />
 
       <section className="category-page__products">
         <ProductGrid

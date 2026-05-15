@@ -1078,6 +1078,113 @@ textarea:focus-visible {
   .holidays-hub__title { font-size: 2.25rem; }
 }
 
+/* ─── DIETARY FILTER (PILL BAR) ─────────────────────── */
+.dietary-filter {
+  position: sticky;
+  top: 80px;
+  z-index: 50;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-rule);
+  padding: 12px 0;
+}
+
+.dietary-filter__inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.dietary-filter__pills {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dietary-filter__pills::-webkit-scrollbar { display: none; }
+
+.dietary-filter__pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  background: transparent;
+  border: 1.5px solid var(--color-rule);
+  border-radius: 999px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.dietary-filter__pill:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.dietary-filter__pill--active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-bg-elevated);
+}
+
+.dietary-filter__pill--active:hover {
+  background: var(--color-ink-soft);
+  border-color: var(--color-ink-soft);
+  color: var(--color-bg-elevated);
+}
+
+.dietary-filter__pill:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.dietary-filter__status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.dietary-filter__count {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--color-ink-soft);
+}
+
+.dietary-filter__clear {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-gold-text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.dietary-filter__clear:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 480px) {
+  .dietary-filter { top: 70px; }
+  .dietary-filter__inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
 /* ─── OCCASION PAGE — overlays on category-page styles ─ */
 .occasion-page__hebrew {
   font-size: 0.75em;

@@ -6,6 +6,7 @@ import { getOccasionBySlug, productsForOccasion } from '@/data/holidays';
 import { useFilterStore } from '@/stores/filterStore';
 import ProductGrid from '@/components/catalog/ProductGrid';
 import FilterChipBar from '@/components/filters/FilterChipBar';
+import DietaryFilter from '@/components/filters/DietaryFilter';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import { ShieldCheck } from 'lucide-react';
 
@@ -16,14 +17,25 @@ export default function OccasionPage() {
     () => productsForOccasion((occasion || '') as OccasionSlug, PRODUCTS),
     [occasion],
   );
-  const { activeFilters } = useFilterStore();
+  const { activeFilters, activeTags } = useFilterStore();
 
   const filtered = useMemo(() => {
-    if (activeFilters.length === 0) return allProducts;
-    return allProducts.filter((p) =>
-      activeFilters.every((f) => p.dietary.includes(f)),
-    );
-  }, [allProducts, activeFilters]);
+    let result = allProducts;
+
+    if (activeFilters.length > 0) {
+      result = result.filter((p) =>
+        activeFilters.every((f) => p.dietary.includes(f)),
+      );
+    }
+
+    if (activeTags.length > 0) {
+      result = result.filter((p) =>
+        activeTags.every((tag) => p.dietaryTags?.includes(tag) ?? false),
+      );
+    }
+
+    return result;
+  }, [allProducts, activeFilters, activeTags]);
 
   if (!meta) {
     return (
@@ -77,6 +89,11 @@ export default function OccasionPage() {
       </section>
 
       <FilterChipBar />
+      <DietaryFilter
+        totalCount={allProducts.length}
+        filteredCount={filtered.length}
+        sectionName={meta.name}
+      />
 
       <section className="category-page__products">
         <ProductGrid
