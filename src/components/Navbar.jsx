@@ -74,7 +74,7 @@ export default function Navbar() {
           <div className="navbar__logo">
             <NavLink to="/" className="navbar__wordmark-link" aria-label="Grodzinski Bakery — home">
               <img
-                src="/images/home/logo.png"
+                src="/images/home/logo_trensparent.png"
                 alt="Grodzinski Bakery"
                 className="navbar__wordmark-img"
               />
@@ -147,7 +147,7 @@ export default function Navbar() {
           >
             <div className="mobile-menu__header">
               <img
-                src="/images/home/logo.png"
+                src="/images/home/logo_trensparent.png"
                 alt="Grodzinski Bakery"
                 className="mobile-menu__wordmark-img"
               />

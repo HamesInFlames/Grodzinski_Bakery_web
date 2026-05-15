@@ -40,11 +40,11 @@ export default function Footer() {
           <div>
             <h4 className="footer__title">Hours</h4>
             <ul className="footer__links footer__links--hours">
-              <li>Sun 7&ndash;5</li>
-              <li>Mon&ndash;Wed 7&ndash;6</li>
-              <li>Thu 7&ndash;9</li>
-              <li>Fri 7&ndash;3</li>
-              <li>Sat closed</li>
+              <li>Sun 6&ndash;3</li>
+              <li>Mon&ndash;Wed 6&ndash;4</li>
+              <li>Thu 6&ndash;5</li>
+              <li>Fri 6&ndash;3</li>
+              <li>Sat Closed</li>
             </ul>
           </div>
 

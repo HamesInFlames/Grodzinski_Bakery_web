@@ -19,23 +19,46 @@
 
 /* ─── MENU HUB — Heritage ────────────────────────────── */
 .menuhub__hero {
-  padding: 120px 0 64px;
-  background: var(--color-bg);
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-bottom: 1px solid var(--color-rule);
   text-align: center;
+  overflow: hidden;
+}
+
+.menuhub__hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.menuhub__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menuhub__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(61, 42, 34, 0.78);
 }
 
 .menuhub__hero-inner {
+  position: relative;
+  z-index: 1;
   max-width: 720px;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 100px var(--container-padding) 60px;
 }
 
 .menuhub__title {
   font-family: var(--font-serif);
   font-size: 3rem;
   font-weight: 500;
-  color: var(--color-primary);
+  color: #fff;
   margin: 0 0 16px;
   letter-spacing: -0.005em;
 }
@@ -43,7 +66,7 @@
 .menuhub__subtitle {
   font-family: var(--font-sans);
   font-size: 1rem;
-  color: var(--color-ink);
+  color: rgba(255, 255, 255, 0.9);
   margin: 0 0 24px;
 }
 
@@ -63,7 +86,7 @@
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--color-gold-text);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .menuhub__grid-section {
@@ -133,7 +156,7 @@
 }
 
 @media (max-width: 480px) {
-  .menuhub__hero { padding: 96px 0 48px; }
+  .menuhub__hero { min-height: auto; padding-top: 80px; padding-bottom: 40px; }
   .menuhub__title { font-size: 2.25rem; }
   .menuhub__card-name { font-size: 1.125rem; }
 }

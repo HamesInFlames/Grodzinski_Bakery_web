@@ -3,18 +3,18 @@ import { CATEGORIES } from '@/data/products';
 import { ShieldCheck, Award } from 'lucide-react';
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  'challah-bilkas': '/images/home/thumbnail_challahs.jpg',
-  'bread-rolls': '/images/home/thumbnail_breaks_rolls.jpg',
-  babkas: '/images/home/thumbnail_babkas.jpg',
-  cakes: '/images/home/thumbnail_cakes.jpg',
-  'bundt-cakes': '/images/home/thumbnail_cakes.jpg',
-  'loaf-cakes': '/images/home/thumbnail_loafcakes.jpg',
-  cookies: '/images/home/thumbnail_cookies.jpg',
-  'danishes-sweets': '/images/home/thumbnail_danishes_sweets.jpg',
-  'desserts-petits-fours': '/images/home/thumbnail_personal_desserts.jpg',
-  pies: '/images/home/thumbnail_pies.jpg',
-  'gifts-baskets': '/images/home/thumbnail_gift_basket.jpg',
-  'holiday-seasonal': '/images/home/thumbnail_slider.jpg',
+  'challah-bilkas': '/images/coming-soon.png',
+  'bread-rolls': '/images/coming-soon.png',
+  babkas: '/images/coming-soon.png',
+  cakes: '/images/coming-soon.png',
+  'bundt-cakes': '/images/coming-soon.png',
+  'loaf-cakes': '/images/coming-soon.png',
+  cookies: '/images/coming-soon.png',
+  'danishes-sweets': '/images/coming-soon.png',
+  'desserts-petits-fours': '/images/coming-soon.png',
+  pies: '/images/coming-soon.png',
+  'gifts-baskets': '/images/coming-soon.png',
+  'holiday-seasonal': '/images/coming-soon.png',
 };
 
 export default function MenuHub() {
@@ -23,6 +23,14 @@ export default function MenuHub() {
   return (
     <div className="menuhub">
       <section className="menuhub__hero">
+        <div className="menuhub__hero-bg">
+          <img
+            src="/images/home/thumbnail_slider (4).png"
+            alt=""
+            className="menuhub__hero-image"
+          />
+          <div className="menuhub__hero-overlay" />
+        </div>
         <div className="menuhub__hero-inner">
           <h1 className="menuhub__title">Our Menu</h1>
           <p className="menuhub__subtitle">
@@ -49,7 +57,7 @@ export default function MenuHub() {
             >
               <div className="menuhub__card-image">
                 <img
-                  src={CATEGORY_IMAGES[cat.slug] || '/images/home/thumbnail_slider.jpg'}
+                  src={CATEGORY_IMAGES[cat.slug] || '/images/coming-soon.png'}
                   alt={cat.name}
                   loading="lazy"
                 />

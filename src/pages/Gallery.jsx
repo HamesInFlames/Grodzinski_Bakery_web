@@ -1,93 +1,27 @@
 // src/pages/Gallery.jsx
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { galleryCategories } from '../data/galleryCategories';
 import { ScrollReveal, FadeIn } from '../components/AnimationWrappers';
-import {
-  LayoutGrid, Heart, Baby, Cake, Apple, Flame, Sparkles,
-  Flower2, Gift, Ghost, TreePine, Search, Camera, Drama
-} from "lucide-react";
+import { Camera } from "lucide-react";
 
-const categoryIcons = {
-  'all': <LayoutGrid size={18} />,
-  'wedding': <Heart size={18} />,
-  'baby': <Baby size={18} />,
-  'birthday': <Cake size={18} />,
-  'rosh-hashanah': <Apple size={18} />,
-  'chanukah': <Flame size={18} />,
-  'purim': <Drama size={18} />,
-  'shavuot': <Flower2 size={18} />,
-  'fathers-day': <Gift size={18} />,
-  'mothers-day': <Flower2 size={18} />,
-  'halloween': <Ghost size={18} />,
-  'valentines': <Heart size={18} />,
-  'christmas': <TreePine size={18} />,
-  'custom': <Sparkles size={18} />,
-};
-
-const getGalleryImages = (categoryId) => {
-  const weddingImages = Array.from({ length: 10 }, (_, i) =>
-    `/images/baked_goods/Cookies/Engagement & Wedding Cookies/imgi_${14 + i}_products_thumbnail_TlFBsNuSug.jpg`
-  );
-  const babyImages = Array.from({ length: 8 }, (_, i) =>
-    `/images/baked_goods/Cookies/Baby Cookies/imgi_${14 + i}_products_thumbnail_I1D0S8y0ti.jpg`
-  );
-  const allImages = [
-    '/images/home/thumbnail_cookies.jpg',
-    '/images/home/thumbnail_cakes.jpg',
-    '/images/home/thumbnail_challahs.jpg',
-    '/images/home/thumbnail_babkas.jpg',
-    '/images/home/thumbnail_danishes_sweets.jpg',
-    '/images/home/thumbnail_loafcakes.jpg',
-    '/images/home/thumbnail_pies.jpg',
-    '/images/home/thumbnail_gift_basket.jpg',
-    '/images/home/thumbnail_large_cookie_platter.jpg',
-    '/images/home/thumbnail_assorted_danishes_muffin_tray.jpg',
-    '/images/home/thumbnail_slider (2).jpg',
-    '/images/home/thumbnail_slider (3).jpg',
-  ];
-
-  switch (categoryId) {
-    case 'wedding': return weddingImages;
-    case 'baby': return babyImages;
-    case 'all':
-    default: return allImages;
-  }
-};
+// TODO: Re-enable these imports when photos are added
+// import { useState, useEffect } from 'react';
+// import { motion, AnimatePresence } from 'motion/react';
+// import { galleryCategories } from '../data/galleryCategories';
 
 export default function Gallery() {
-  const [activeFilter, setActiveFilter] = useState('all');
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [images, setImages] = useState([]);
-
-  useEffect(() => {
-    setImages(getGalleryImages(activeFilter));
-  }, [activeFilter]);
-
-  const closeLightbox = () => {
-    setSelectedImage(null);
-    document.body.style.overflow = '';
-  };
-
-  const openLightbox = (src) => {
-    setSelectedImage(src);
-    document.body.style.overflow = 'hidden';
-  };
-
-  useEffect(() => {
-    if (!selectedImage) return;
-    const onKey = (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [selectedImage]);
 
   return (
     <div className="gallery-page">
       {/* Hero */}
       <section className="gallery-hero">
-        <div className="gallery-hero__inner">
+        <div className="gallery-hero__image-wrapper">
+          <img
+            src="/images/home/thumbnail_slider (1).png"
+            alt="Grodzinski Bakery gallery"
+            className="gallery-hero__image"
+          />
+          <div className="gallery-hero__overlay"></div>
+        </div>
+        <div className="gallery-hero__content">
           <FadeIn delay={0.2}>
             <h1>Custom Creations Gallery</h1>
           </FadeIn>
@@ -100,69 +34,23 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Filters */}
-      <div className="gallery-filters">
-        <div className="gallery-filters__inner">
-          {galleryCategories.map((cat) => (
-            <button
-              key={cat.id}
-              className={`gallery-filter-btn ${activeFilter === cat.id ? 'gallery-filter-btn--active' : ''}`}
-              onClick={() => setActiveFilter(cat.id)}
-            >
-              <span className="gallery-filter-btn__icon">{categoryIcons[cat.id]}</span>
-              <span className="gallery-filter-btn__label">{cat.name}</span>
-            </button>
-          ))}
-        </div>
-      </div>
+      {/* TODO: Re-enable gallery filters and image grid once photos are added */}
 
-      {/* Gallery Grid */}
+      {/* Coming Soon Placeholder */}
       <section className="gallery-content">
         <div className="gallery-content__inner">
-          {images.length > 0 ? (
-            <motion.div
-              className="gallery-grid"
-              layout
-            >
-              <AnimatePresence mode="popLayout">
-                {images.map((src, i) => (
-                  <motion.div
-                    key={`${activeFilter}-${src}`}
-                    className="gallery-item"
-                    onClick={() => openLightbox(src)}
-                    layout
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{
-                      duration: 0.4,
-                      delay: i * 0.05,
-                      ease: [0.25, 0.1, 0.25, 1]
-                    }}
-                  >
-                    <img
-                      src={src}
-                      alt={`Custom ${activeFilter === 'all' ? 'creation' : activeFilter.replace('-', ' ')} ${i + 1}`}
-                      className="gallery-item__image"
-                      loading="lazy"
-                      onError={(e) => {
-                        e.target.src = '/images/home/thumbnail_cookies.jpg';
-                      }}
-                    />
-                    <div className="gallery-item__overlay">
-                      <span className="gallery-item__zoom"><Search size={20} /></span>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </motion.div>
-          ) : (
-            <div className="gallery-empty">
-              <span className="gallery-empty__icon"><Camera size={32} /></span>
-              <h3>Coming Soon</h3>
-              <p>We're adding more images to this category. Check back soon!</p>
-            </div>
-          )}
+          <div className="gallery-empty">
+            <img
+              src="/images/coming-soon.png"
+              alt="Coming Soon"
+              className="gallery-empty__image"
+            />
+            <h3>Coming Soon</h3>
+            <p>
+              We're curating a beautiful collection of our custom creations —
+              cakes, cookies, platters, and more. Check back soon!
+            </p>
+          </div>
         </div>
       </section>
 
@@ -183,42 +71,7 @@ export default function Gallery() {
         </section>
       </ScrollReveal>
 
-      {/* Lightbox */}
-      <AnimatePresence>
-        {selectedImage && (
-          <motion.div
-            className="lightbox"
-            onClick={closeLightbox}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-          >
-            <button
-              type="button"
-              className="lightbox__close"
-              onClick={closeLightbox}
-              aria-label="Close lightbox"
-            >
-              ×
-            </button>
-            <motion.div
-              className="lightbox__content"
-              onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <img
-                src={selectedImage}
-                alt="Gallery preview"
-                className="lightbox__image"
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* TODO: Re-enable lightbox when photos are added */}
     </div>
   );
 }

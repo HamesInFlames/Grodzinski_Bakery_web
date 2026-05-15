@@ -8,7 +8,7 @@ function About() {
       <section className="about-hero">
         <div className="about-hero__image-wrapper">
           <img
-            src="/images/home/thumbnail_slider (2).jpg"
+            src="/images/home/thumbnail_slider (2).png"
             alt="Grodzinski Bakery - Traditional baking"
             className="about-hero__image"
           />

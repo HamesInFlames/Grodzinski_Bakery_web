@@ -1,17 +1,11 @@
 //src/pages/VisitUs.jsx
-import ContactForm from "../components/ContactForm";
+// TODO: Re-enable ContactForm once backend endpoint is wired up
+// import ContactForm from "../components/ContactForm";
 import GoogleMap from "../components/GoogleMap";
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, Store, ShoppingCart, Handshake } from "lucide-react";
 
 function VisitUs() {
-  // TODO(phase-4.2): wire to Resend-backed /api/contact endpoint.
-  // For now, treat any submit as a successful no-op so ContactForm
-  // shows its built-in success banner instead of a browser alert().
-  const handleContactSubmit = async (_formData) => {
-    return;
-  };
-
   const bakeryInfo = {
     name: "Grodzinski North",
     address: "1118 Centre St #3, Thornhill, ON L4J 7R9",
@@ -32,11 +26,11 @@ function VisitUs() {
 
   return (
     <div className="visit-page">
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="visit-hero">
         <div className="visit-hero__image-wrapper">
           <img
-            src="/images/home/thumbnail_slider.jpg"
+            src="/images/home/thumbnail_slider.png"
             alt="Grodzinski Bakery"
             className="visit-hero__image"
           />
@@ -49,156 +43,154 @@ function VisitUs() {
           <FadeIn delay={0.4}>
             <p className="visit-hero__subtitle">
               Stop by our Thornhill bakery to browse our selection, place a custom order,
-              or simply enjoy the warm aroma of fresh bread. We'd love to hear from you!
+              or simply enjoy the warm aroma of fresh bread.
             </p>
           </FadeIn>
         </div>
       </section>
 
-      {/* MAIN CONTENT */}
+      {/* MAP + INFO */}
       <section className="section">
         <div className="section__inner">
-          <div className="visit-main">
-            {/* LEFT COLUMN: Location Info */}
-            <ScrollReveal direction="left" className="visit-main__location">
-              <div className="visit-map">
-                <GoogleMap
-                  address={bakeryInfo.address}
-                  title="Grodzinski North Location"
-                  height="350px"
-                  placeId={bakeryInfo.placeId}
-                  coordinates={bakeryInfo.coordinates}
-                  placeName={bakeryInfo.name}
-                />
-              </div>
-
-              <div className="visit-info-card">
-                <h2 className="visit-info-card__title">{bakeryInfo.name}</h2>
-
-                <div className="visit-info-item">
-                  <div className="visit-info-item__icon"><MapPin size={20} /></div>
-                  <div className="visit-info-item__content">
-                    <strong>Address</strong>
-                    <p>{bakeryInfo.address}</p>
-                  </div>
-                </div>
-
-                <div className="visit-info-item">
-                  <div className="visit-info-item__icon"><Phone size={20} /></div>
-                  <div className="visit-info-item__content">
-                    <strong>Phone</strong>
-                    <p>
-                      <a
-                        href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
-                        className="visit-link"
-                      >
-                        {bakeryInfo.phone}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="visit-info-item">
-                  <div className="visit-info-item__icon"><Mail size={20} /></div>
-                  <div className="visit-info-item__content">
-                    <strong>Email</strong>
-                    <p>
-                      <a
-                        href={`mailto:${bakeryInfo.email}`}
-                        className="visit-link"
-                      >
-                        {bakeryInfo.email}
-                      </a>
-                    </p>
-                  </div>
-                </div>
-
-                <div className="visit-info-item visit-info-item--hours">
-                  <div className="visit-info-item__icon"><Clock size={20} /></div>
-                  <div className="visit-info-item__content">
-                    <strong>Hours</strong>
-                    <div className="visit-hours-grid">
-                      {bakeryInfo.hours.map(({ day, time }) => (
-                        <div
-                          key={day}
-                          className={`visit-hours-row ${day === 'Saturday' ? 'visit-hours-row--closed' : ''}`}
-                        >
-                          <span className="visit-hours-day">{day}</span>
-                          <span className="visit-hours-time">{time}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="visit-actions">
-                <a
-                  href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
-                  className="visit-action-btn visit-action-btn--primary"
-                >
-                  <Phone size={16} /> Call Now
-                </a>
-                <a
-                  href={`https://www.google.com/maps/place/?q=place_id:${bakeryInfo.placeId}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="visit-action-btn visit-action-btn--secondary"
-                >
-                  <Map size={16} /> Get Directions
-                </a>
-              </div>
-            </ScrollReveal>
-
-            {/* RIGHT COLUMN: Contact Form */}
-            <ScrollReveal direction="right" delay={0.15} className="visit-main__form">
-              <ContactForm
-                onSubmit={handleContactSubmit}
-                showExtendedFields={true}
-                submitButtonText="Send Message"
-                successMessage="Thank you for contacting us. A team member will follow up shortly."
-                title="Send Us a Message"
+          <ScrollReveal>
+            <div className="visit-map visit-map--full">
+              <GoogleMap
+                address={bakeryInfo.address}
+                title="Grodzinski North Location"
+                height="400px"
+                placeId={bakeryInfo.placeId}
+                coordinates={bakeryInfo.coordinates}
+                placeName={bakeryInfo.name}
               />
+            </div>
+          </ScrollReveal>
 
-              <div className="visit-info-boxes">
-                <div className="visit-info-box visit-info-box--catering">
-                  <h3><Sparkles size={20} /> Catering & Large Orders</h3>
-                  <p>
-                    Include your event date, guest count, and preferred products.
-                    We recommend 48-72 hours advance notice for catering orders.
-                  </p>
-                </div>
+          <ScrollReveal delay={0.1}>
+            <div className="visit-details">
+              <div className="visit-details__card">
+                <div className="visit-details__icon"><MapPin size={22} /></div>
+                <strong>Address</strong>
+                <p>{bakeryInfo.address}</p>
+              </div>
 
-                <div className="visit-info-box visit-info-box--cakes">
-                  <h3><Cake size={20} /> Custom Cakes</h3>
-                  <p>
-                    For custom cake designs, call us directly to discuss flavours,
-                    sizes, and decorations for your special celebration.
-                  </p>
+              <div className="visit-details__card">
+                <div className="visit-details__icon"><Phone size={22} /></div>
+                <strong>Phone</strong>
+                <p>
+                  <a href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`} className="visit-link">
+                    {bakeryInfo.phone}
+                  </a>
+                </p>
+              </div>
+
+              <div className="visit-details__card">
+                <div className="visit-details__icon"><Mail size={22} /></div>
+                <strong>Email</strong>
+                <p>
+                  <a href={`mailto:${bakeryInfo.email}`} className="visit-link">
+                    {bakeryInfo.email}
+                  </a>
+                </p>
+              </div>
+
+              <div className="visit-details__card visit-details__card--hours">
+                <div className="visit-details__icon"><Clock size={22} /></div>
+                <strong>Hours</strong>
+                <div className="visit-hours-grid">
+                  {bakeryInfo.hours.map(({ day, time }) => (
+                    <div
+                      key={day}
+                      className={`visit-hours-row ${day === 'Saturday' ? 'visit-hours-row--closed' : ''}`}
+                    >
+                      <span className="visit-hours-day">{day}</span>
+                      <span className="visit-hours-time">{time}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.15}>
+            <div className="visit-actions visit-actions--centered">
+              <a
+                href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
+                className="visit-action-btn visit-action-btn--primary"
+              >
+                <Phone size={16} /> Call Now
+              </a>
+              <a
+                href={`https://www.google.com/maps/place/?q=place_id:${bakeryInfo.placeId}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="visit-action-btn visit-action-btn--secondary"
+              >
+                <Map size={16} /> Get Directions
+              </a>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* PLANNING YOUR VISIT */}
+      {/* SPECIAL ORDERS & PLANNING */}
       <section className="section section--alt">
         <div className="section__inner">
+          <ScrollReveal>
+            <div className="section__header">
+              <h2 className="section__title">Special Orders</h2>
+              <p className="section__subtitle">
+                From celebration cakes to event catering, we're here to help make
+                your occasion memorable.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="visit-info-boxes visit-info-boxes--grid">
+              <div className="visit-info-box">
+                <h3><Sparkles size={20} /> Catering & Large Orders</h3>
+                <p>
+                  Hosting an event? We offer platters, breads, and pastries for
+                  gatherings of any size. Call us at least 48–72 hours in advance
+                  so we can prepare everything fresh.
+                </p>
+                <a
+                  href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
+                  className="visit-link"
+                >
+                  <Phone size={14} /> {bakeryInfo.phone}
+                </a>
+              </div>
+              <div className="visit-info-box">
+                <h3><Cake size={20} /> Custom Cakes</h3>
+                <p>
+                  Celebrating a birthday, anniversary, or milestone? Call us to
+                  discuss flavours, sizes, and decorations — we'll create
+                  something special for your occasion.
+                </p>
+                <a
+                  href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
+                  className="visit-link"
+                >
+                  <Phone size={14} /> {bakeryInfo.phone}
+                </a>
+              </div>
+            </div>
+          </ScrollReveal>
+
           <div className="visit-planning">
             <ScrollReveal direction="left" className="visit-planning__content">
-              <h2>Planning Your Visit</h2>
+              <h2>Before You Visit</h2>
               <p className="visit-planning__intro">
-                We're always happy to welcome customers to our Thornhill bakery!
-                Here's what you should know:
+                A few things to know before stopping by:
               </p>
               <ul className="visit-planning__list">
                 {[
                   { icon: <Car size={20} />, text: "Free parking available on-site" },
                   { icon: <Clock size={20} />, text: "Busiest times: Thursday evenings & Friday mornings" },
-                  { icon: <Phone size={20} />, text: "For custom cakes or large orders, please call ahead" },
+                  { icon: <Phone size={20} />, text: "Custom cakes and large orders require a phone call ahead" },
                   { icon: <Star size={20} />, text: "Closed Saturdays in observance of Shabbat" },
-                  { icon: <Calendar size={20} />, text: "Holiday hours vary — call to confirm before visiting" },
+                  { icon: <Calendar size={20} />, text: "Holiday hours may differ — give us a call to confirm" },
                 ].map((item, i) => (
                   <li key={i}>
                     <span className="visit-planning__icon">{item.icon}</span>
@@ -206,13 +198,6 @@ function VisitUs() {
                   </li>
                 ))}
               </ul>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={0.15} className="visit-planning__image">
-              <img
-                src="/images/home/thumbnail_challahs.jpg"
-                alt="Fresh challahs at Grodzinski Bakery"
-                loading="lazy"
-              />
             </ScrollReveal>
           </div>
         </div>
@@ -248,6 +233,8 @@ function VisitUs() {
           </StaggerContainer>
         </div>
       </section>
+
+      {/* TODO: Re-enable ContactForm section once backend endpoint is wired up */}
     </div>
   );
 }

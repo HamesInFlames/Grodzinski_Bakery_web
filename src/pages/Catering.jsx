@@ -47,7 +47,7 @@ export default function Catering() {
       <section className="catering-hero">
         <div className="catering-hero__image-wrapper">
           <img
-            src="/images/home/thumbnail_large_danish_platter.jpg"
+            src="/images/home/thumbnail_slider (3).png"
             alt="Catering platters at Grodzinski Bakery"
             className="catering-hero__image"
           />

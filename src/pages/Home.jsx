@@ -6,10 +6,11 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "../components/AnimationWrappers";
-import ContactForm from "../components/ContactForm";
+// TODO: Re-enable ContactForm once backend endpoint is wired up
+// import ContactForm from "../components/ContactForm";
 import { Star, ShieldCheck, Wheat, Users, Heart, Baby, Cake, MapPin, Phone, Clock } from "lucide-react";
 
-// TODO(phase-4.2): wire to Resend-backed /api/contact endpoint.
+// TODO(phase-4.2): wire to Resend-backed /api/contact endpoint, then re-enable ContactForm.
 const handleHomeContactSubmit = async (_formData) => {
   return;
 };
@@ -25,12 +26,12 @@ export default function Home() {
   ];
 
   const categoryImages = [
-    { name: "Challah & Bilkas", image: "/images/home/thumbnail_challahs.jpg", count: 14 },
-    { name: "Cakes", image: "/images/home/thumbnail_cakes.jpg", count: 20 },
-    { name: "Cookies", image: "/images/home/thumbnail_cookies.jpg", count: 30 },
-    { name: "Babkas", image: "/images/home/thumbnail_babkas.jpg", count: 10 },
-    { name: "Breads", image: "/images/home/thumbnail_breaks_rolls.jpg", count: 17 },
-    { name: "Pastries", image: "/images/home/thumbnail_danishes_sweets.jpg", count: 16 },
+    { name: "Challah & Bilkas", image: "/images/home/thumbnail_challahs.png", count: 14 },
+    { name: "Cakes", image: "/images/home/thumbnail_cakes.png", count: 20 },
+    { name: "Cookies", image: "/images/home/thumbnail_cookies.png", count: 30 },
+    { name: "Babkas", image: "/images/home/thumbnail_babkas.png", count: 10 },
+    { name: "Breads", image: "/images/home/thumbnail_breaks_rolls.png", count: 17 },
+    { name: "Pastries", image: "/images/home/thumbnail_danishes_sweets.png", count: 16 },
   ];
 
   return (
@@ -165,7 +166,7 @@ export default function Home() {
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.15} className="home-about__image">
               <img
-                src="/images/home/thumbnail_slider (3).jpg"
+                src="/images/home/thumbnail_slider (3).png"
                 alt="Grodzinski Bakery"
                 loading="lazy"
               />
@@ -219,22 +220,22 @@ export default function Home() {
       {/* LOCATION */}
       <section className="section section--alt">
         <div className="container">
-          <div className="home-contact-grid">
-            <ScrollReveal direction="left">
-              <div className="contact-card">
-                <div className="contact-card__map">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.0!2d-79.4631!3d43.8175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2c5a53c8f8e9%3A0x1234567890abcdef!2s1118%20Centre%20St%2C%20Thornhill%2C%20ON!5e0!3m2!1sen!2sca!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    allowFullScreen=""
-                    loading="lazy"
-                    title="Grodzinski Bakery Location"
-                  />
-                </div>
-                <div className="contact-card__content">
-                  <h3 className="contact-card__title">Visit Our Bakery</h3>
+          <ScrollReveal direction="up">
+            <div className="contact-card contact-card--horizontal">
+              <div className="contact-card__map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.0!2d-79.4631!3d43.8175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2c5a53c8f8e9%3A0x1234567890abcdef!2s1118%20Centre%20St%2C%20Thornhill%2C%20ON!5e0!3m2!1sen!2sca!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  allowFullScreen=""
+                  loading="lazy"
+                  title="Grodzinski Bakery Location"
+                />
+              </div>
+              <div className="contact-card__content">
+                <h3 className="contact-card__title">Visit Our Bakery</h3>
 
+                <div className="contact-card__row">
                   <div className="contact-card__item">
                     <div className="contact-card__icon"><MapPin size={20} /></div>
                     <div>
@@ -255,34 +256,28 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div className="contact-card__item">
-                    <div className="contact-card__icon"><Clock size={20} /></div>
-                    <div>
-                      <div className="contact-card__label">Hours</div>
-                      <div className="contact-card__value">
-                        Sun: 7AM - 5PM<br />
-                        Mon-Wed: 7AM - 6PM<br />
-                        Thu: 7AM - 9PM<br />
-                        Fri: 7AM - 3PM<br />
-                        Sat: Closed
-                      </div>
+                <div className="contact-card__item contact-card__item--hours">
+                  <div className="contact-card__icon"><Clock size={20} /></div>
+                  <div>
+                    <div className="contact-card__label">Hours</div>
+                    <div className="contact-card__hours-grid">
+                      <span>Sun</span><span>6AM – 3PM</span>
+                      <span>Mon</span><span>6AM – 4PM</span>
+                      <span>Tue</span><span>6AM – 4PM</span>
+                      <span>Wed</span><span>6AM – 4PM</span>
+                      <span>Thu</span><span>6AM – 5PM</span>
+                      <span>Fri</span><span>6AM – 3PM</span>
+                      <span className="contact-card__closed">Sat</span>
+                      <span className="contact-card__closed">Closed</span>
                     </div>
                   </div>
                 </div>
               </div>
-            </ScrollReveal>
-
-            <ScrollReveal direction="right" delay={0.15}>
-              <ContactForm
-                onSubmit={handleHomeContactSubmit}
-                showExtendedFields={true}
-                submitButtonText="Send Message"
-                successMessage="Thank you! We'll be in touch shortly."
-                title="Get in Touch"
-              />
-            </ScrollReveal>
-          </div>
+            </div>
+          </ScrollReveal>
+          {/* TODO: Re-enable ContactForm once backend endpoint is wired up */}
         </div>
       </section>
     </>

@@ -49,7 +49,7 @@ export default function ProductPage() {
         <div className="product-page__gallery">
           <div className="product-page__image-container">
             <img
-              src="/images/home/thumbnail_slider.jpg"
+              src="/images/coming-soon.png"
               alt={product.name}
               className="product-page__image"
             />
