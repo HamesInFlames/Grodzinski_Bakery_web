@@ -1,5 +1,33 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-15 (7-page IA: Holidays + dietary filters)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `feat/holidays-and-filters` (7 commits, based on `design/heritage-pass`)
+
+**What was done:**
+- Implemented the 7-page information architecture: Home · Menu · **Holidays** · Catering · Gallery · About · Visit
+- Added `/holidays` route tree: hub page (11 occasions), per-occasion pages, holiday product detail pages
+- Created `DietaryFilter` component with 7 dietary tag pills (pareve, dairy, eggs, nuts, sesame, sugar-free, gluten-free)
+- Extended `Product` interface with optional `dietaryTags`, `occasion`, `hebrew`, `isSeasonal`, `isBestseller` fields
+- Created `HOLIDAY_OCCASIONS` (11 occasions) and `HOLIDAY_OCCASION_META` with placeholder descriptions
+- Mapped 18 existing products to their holiday occasions based on existing tags
+- Extended `filterStore.ts` with `activeTags` (DietaryTag[]) alongside existing `DietaryAttribute` filters
+- Added Holidays to Navbar (between Menu and Catering), Footer, and Homepage CTA
+- Refactored `ProductCard` and `ProductGrid` to accept `linkPrefix` for holiday route support
+- All 66 tests pass (38 smoke + 18 a11y + 10 filter interaction) across desktop-1440 and mobile-375
+- Rollout report at `qa/holidays-rollout-report.md`
+
+**What's next:**
+1. Merge `design/heritage-pass` to `main` (PR already open)
+2. Review and merge `feat/holidays-and-filters` (PR opened, awaiting James review)
+3. Carolina's product review → populate `dietaryTags` + additional `occasion` mappings in CSV
+4. Update `generate-products.mjs` to read from CSV directly (menuData.js retired)
+5. Replace placeholder hero images on holiday occasion pages with actual photography
+6. Remaining launch blockers from `final-launch-readiness.md` (contact form, favicon, domain, logo)
+
+---
+
 ## Overnight session — 2026-05-14 (heritage redesign)
 
 **Tool:** Claude Code (Opus 4.7), overnight autonomous run

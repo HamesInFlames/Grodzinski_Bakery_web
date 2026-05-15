@@ -24,3 +24,22 @@
 - Existing pages (Home, Gallery, Catering, About, VisitUs) — untouched
 - Existing `App.css` — not modified
 - Existing `menuData.js` — kept as source data, still used by generation script
+
+## 2026-05-15: Holidays + Dietary Filters (7-page IA)
+
+### Architecture
+- Holidays hub-and-spoke mirroring Menu: `/holidays` (hub), `/holidays/:occasion`, `/holidays/:occasion/p/:slug`
+- `HolidaysLayout` wraps holiday routes with `<Outlet />` (same pattern as `MenuLayout`)
+- `OccasionPage` reuses `CategoryPage` CSS classes and patterns (shared visual grammar)
+- `ProductCard` + `ProductGrid` refactored with `linkPrefix` prop to support both `/menu/p` and `/holidays/:occasion/p` link targets
+- `DietaryFilter` component: horizontal pill bar with DIETARY_TAGS const, aria-pressed buttons, 44×44px touch targets
+- `filterStore.ts` extended with `activeTags` (DietaryTag[]) alongside existing `activeFilters` (DietaryAttribute[]) — additive, not breaking
+- Document titles set via `useEffect(() => { document.title = ... })` rather than JSX `<title>` element (React 19 JSX title hoisting inconsistent with axe a11y checks)
+- 18 existing products mapped to occasions via `occasion` field based on existing tags
+- No new packages installed
+
+### What was NOT changed
+- Existing DietaryAttribute type and activeFilters kept intact (new DietaryTag is additive)
+- FilterChipBar and FilterSheet unchanged (DietaryFilter added alongside them)
+- No colors, fonts, or design tokens changed — all CSS uses existing `--color-*` variables
+- No changes to Resend backend, About-page copy, domain references, logo, or favicon
