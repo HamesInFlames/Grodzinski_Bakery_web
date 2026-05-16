@@ -6,6 +6,7 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "../components/AnimationWrappers";
+import { VideoBackground } from "../components/VideoBackground";
 // TODO: Re-enable ContactForm once backend endpoint is wired up
 // import ContactForm from "../components/ContactForm";
 import { Star, ShieldCheck, Wheat, Users, Heart, Baby, Cake, MapPin, Phone, Clock } from "lucide-react";
@@ -165,11 +166,14 @@ export default function Home() {
               </button>
             </ScrollReveal>
             <ScrollReveal direction="right" delay={0.15} className="home-about__image">
-              <img
-                src="/images/home/thumbnail_slider (3).png"
-                alt="Grodzinski Bakery"
-                loading="lazy"
-              />
+              <div className="home-about__media-frame">
+                <VideoBackground
+                  videoSrc="/videos/showcase.mp4"
+                  posterSrc="/videos/showcase-poster.jpg"
+                  alt="Grodzinski Bakery"
+                  objectFit="cover"
+                />
+              </div>
             </ScrollReveal>
           </div>
         </div>

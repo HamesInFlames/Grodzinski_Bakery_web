@@ -7,6 +7,7 @@ import type { Product } from './products';
 export const GENERATED_PRODUCTS: Product[] = [
   {
     slug: "plain-challah-large",
+    image: "/images/products/plain-challah-large.webp",
     name: "Plain Challah (Large)",
     category: "challah-bilkas",
     description: "Our signature beautifully braided challah with a soft, slightly sweet crumb and golden crust. The classic choice for Shabbat.",
@@ -52,6 +53,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "sesame-challah",
+    image: "/images/products/sesame-challah.webp",
     name: "Sesame Challah",
     category: "challah-bilkas",
     description: "Classic braided challah generously topped with toasted sesame seeds for extra flavor and texture.",
@@ -241,6 +243,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "plain-bagel",
+    image: "/images/products/plain-bagel.webp",
     name: "Plain Bagel",
     category: "bread-rolls",
     description: "Classic chewy bagel with a crisp exterior. Baked fresh daily.",
@@ -255,6 +258,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "sesame-seed-bagel",
+    image: "/images/products/sesame-seed-bagel.webp",
     name: "Sesame Seed Bagel",
     category: "bread-rolls",
     description: "Traditional bagel generously topped with toasted sesame seeds.",
@@ -269,6 +273,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "everything-bagel",
+    image: "/images/products/everything-bagel.webp",
     name: "Everything Bagel",
     category: "bread-rolls",
     description: "Loaded with sesame, poppy seeds, onion, garlic, and salt. A flavor explosion.",
@@ -311,6 +316,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "onion-rolls-6-pack",
+    image: "/images/products/onion-rolls-6-pack.webp",
     name: "Onion Rolls (6 Pack)",
     category: "bread-rolls",
     description: "Soft rolls topped with caramelized onions. Savory and delicious.",
@@ -325,6 +331,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-crown-babka",
+    image: "/images/products/chocolate-crown-babka.webp",
     name: "Chocolate Crown Babka",
     category: "babkas",
     description: "Our showpiece babka — a magnificent crown shape with rich chocolate swirled throughout. Perfect for celebrations.",
@@ -385,6 +392,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-ring-babka",
+    image: "/images/products/chocolate-ring-babka.webp",
     name: "Chocolate Ring Babka",
     category: "babkas",
     description: "Elegant ring-shaped babka swirled with rich chocolate. A stunning centerpiece.",
@@ -430,6 +438,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "poppy-seed-twist",
+    image: "/images/products/poppy-seed-twist.webp",
     name: "Poppy Seed Twist",
     category: "babkas",
     description: "Traditional poppy seed filling twisted into flaky pastry. An old-world favourite.",
@@ -520,6 +529,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "carrot-cake",
+    image: "/images/products/carrot-cake.webp",
     name: "Carrot Cake",
     category: "cakes",
     description: "Moist, spiced carrot cake with cream cheese frosting. A timeless classic.",
@@ -565,6 +575,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "caramel-crunch-cake",
+    image: "/images/products/caramel-crunch-cake.webp",
     name: "Caramel Crunch Cake",
     category: "cakes",
     description: "Vanilla sponge with caramel between layers, white icing on the outside topped with caramel and pumpkin seeds.",
@@ -655,6 +666,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "custom-celebration-cake",
+    image: "/images/products/custom-celebration-cake.webp",
     name: "Custom Celebration Cake",
     category: "cakes",
     description: "Personalized cakes for birthdays, bar/bat mitzvahs, anniversaries, and more. Call to discuss designs.",
@@ -771,6 +783,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "apple-loaf-cake",
+    image: "/images/products/apple-loaf-cake.webp",
     name: "Apple Loaf Cake",
     category: "loaf-cakes",
     description: "Moist apple cake with cinnamon and real apple pieces throughout.",
@@ -801,6 +814,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-loaf-cake",
+    image: "/images/products/chocolate-loaf-cake.webp",
     name: "Chocolate Loaf Cake",
     category: "loaf-cakes",
     description: "Rich chocolate loaf with an intense cocoa flavor. Chocolate lover's dream.",
@@ -816,6 +830,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "marble-loaf-cake",
+    image: "/images/products/marble-loaf-cake.webp",
     name: "Marble Loaf Cake",
     category: "loaf-cakes",
     description: "Classic swirl of vanilla and chocolate cake marbled together beautifully.",
@@ -876,6 +891,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "assorted-fancy-cookies-box",
+    image: "/images/products/assorted-fancy-cookies-box.webp",
     name: "Assorted Fancy Cookies (Box)",
     category: "cookies",
     description: "Beautiful assortment of our finest decorated cookies. Perfect for entertaining or gifting.",
@@ -891,6 +907,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-chip-cookies-dozen",
+    image: "/images/products/chocolate-chip-cookies-dozen.webp",
     name: "Chocolate Chip Cookies (Dozen)",
     category: "cookies",
     description: "Classic soft-baked cookies loaded with chocolate chips. A family favourite.",
@@ -936,6 +953,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "rogalach-tray-assorted",
+    image: "/images/products/rogalach-tray-assorted.webp",
     name: "Rogalach Tray (Assorted)",
     category: "cookies",
     description: "Assorted rogalach arranged on a serving tray. Perfect for events and holidays.",
@@ -951,6 +969,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "baby-shower-cookies",
+    image: "/images/products/baby-shower-cookies.webp",
     name: "Baby Shower Cookies",
     category: "cookies",
     description: "Adorable decorated cookies in baby-themed shapes. Customizable colors available.",
@@ -985,6 +1004,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "birthday-cookies",
+    image: "/images/products/birthday-cookies.webp",
     name: "Birthday Cookies",
     category: "cookies",
     description: "Fun, colorful decorated cookies for birthday celebrations. Can be customized.",
@@ -1002,6 +1022,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "hamantaschen-assorted",
+    image: "/images/products/hamantaschen-assorted.webp",
     name: "Hamantaschen (Assorted)",
     category: "cookies",
     description: "Traditional triangular Purim cookies with various fillings: poppy, prune, apricot, or chocolate.",
@@ -1017,6 +1038,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "mandel-bread",
+    image: "/images/products/mandel-bread.webp",
     name: "Mandel Bread",
     category: "cookies",
     description: "Traditional Jewish biscotti, twice-baked for perfect crunch. Great with tea or coffee.",
@@ -1062,6 +1084,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "butter-cookies-box",
+    image: "/images/products/butter-cookies-box.webp",
     name: "Butter Cookies (Box)",
     category: "cookies",
     description: "Delicate, melt-in-your-mouth butter cookies in assorted shapes.",
@@ -1093,6 +1116,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "cheese-danish",
+    image: "/images/products/cheese-danish.webp",
     name: "Cheese Danish",
     category: "danishes-sweets",
     description: "Buttery, flaky pastry filled with sweet cream cheese. A morning favourite.",
@@ -1107,6 +1131,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "apple-danish",
+    image: "/images/products/apple-danish.webp",
     name: "Apple Danish",
     category: "danishes-sweets",
     description: "Flaky layers of pastry wrapped around cinnamon-spiced apples.",
@@ -1177,6 +1202,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "cinnamon-bun",
+    image: "/images/products/cinnamon-bun.webp",
     name: "Cinnamon Bun",
     category: "danishes-sweets",
     description: "Soft, gooey cinnamon roll with sweet glaze. Warm comfort in every bite.",
@@ -1192,6 +1218,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "croissant-plain",
+    image: "/images/products/croissant-plain.webp",
     name: "Croissant (Plain)",
     category: "danishes-sweets",
     description: "Buttery, flaky French-style croissant. Perfect for breakfast.",
@@ -1206,6 +1233,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-croissant",
+    image: "/images/products/chocolate-croissant.webp",
     name: "Chocolate Croissant",
     category: "danishes-sweets",
     description: "Flaky croissant filled with rich chocolate. Indulgent and delicious.",
@@ -1264,6 +1292,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "opera-petit-fours",
+    image: "/images/products/opera-petit-fours.webp",
     name: "Opera Petit Fours",
     category: "desserts-petits-fours",
     description: "Individual squares of almond sponge filled with mocha and heavy cream, topped with ganache.",
@@ -1309,6 +1338,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "mini-pastry-assortment",
+    image: "/images/products/mini-pastry-assortment.webp",
     name: "Mini Pastry Assortment",
     category: "desserts-petits-fours",
     description: "Selection of miniature pastries perfect for dessert platters and events.",
@@ -1324,6 +1354,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "brownie-squares",
+    image: "/images/products/brownie-squares.webp",
     name: "Brownie Squares",
     category: "desserts-petits-fours",
     description: "Rich, fudgy chocolate brownies cut into squares. Intensely chocolatey.",
@@ -1428,6 +1459,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "blueberry-pie",
+    image: "/images/products/blueberry-pie.webp",
     name: "Blueberry Pie",
     category: "pies",
     description: "Sweet, juicy blueberry filling in a golden crust. Bursting with berry flavor.",
@@ -1442,6 +1474,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "cherry-pie",
+    image: "/images/products/cherry-pie.webp",
     name: "Cherry Pie",
     category: "pies",
     description: "Tart cherry filling with a beautiful lattice top crust. A classic favourite.",
@@ -1666,6 +1699,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "rosh-hashanah-round-challah",
+    image: "/images/products/rosh-hashanah-round-challah.webp",
     name: "Rosh Hashanah Round Challah",
     category: "holiday-seasonal",
     description: "Traditional round challah symbolizing the cycle of the year. Often topped with raisins for a sweet new year.",
@@ -1700,6 +1734,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "apple-cookies-rosh-hashanah",
+    image: "/images/products/apple-cookies-rosh-hashanah.webp",
     name: "Apple Cookies (Rosh Hashanah)",
     category: "holiday-seasonal",
     description: "Decorated apple-shaped cookies for the Jewish New Year. Box of assorted designs.",
@@ -1717,6 +1752,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chanukah-cookies-platter",
+    image: "/images/products/chanukah-cookies-platter.webp",
     name: "Chanukah Cookies Platter",
     category: "holiday-seasonal",
     description: "Approximately 44 beautifully decorated cookies in dreidel, menorah, and Star of David shapes.",
@@ -1751,6 +1787,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chanukah-sugar-cookies-dozen",
+    image: "/images/products/chanukah-sugar-cookies-dozen.webp",
     name: "Chanukah Sugar Cookies (Dozen)",
     category: "holiday-seasonal",
     description: "Hand-decorated sugar cookies in festive Chanukah shapes and colors.",
@@ -1768,6 +1805,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "hamantaschen-dozen",
+    image: "/images/products/hamantaschen-dozen.webp",
     name: "Hamantaschen (Dozen)",
     category: "holiday-seasonal",
     description: "Traditional triangular Purim cookies. Available in poppy, prune, apricot, chocolate, and more.",
@@ -1836,6 +1874,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "passover-cookie-assortment",
+    image: "/images/products/passover-cookie-assortment.webp",
     name: "Passover Cookie Assortment",
     category: "holiday-seasonal",
     description: "Assorted Kosher for Passover cookies. Perfect for seders and holiday entertaining.",
@@ -1886,6 +1925,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "valentines-day-cookies",
+    image: "/images/products/valentines-day-cookies.webp",
     name: "Valentine's Day Cookies",
     category: "holiday-seasonal",
     description: "Heart-shaped decorated sugar cookies for Valentine's Day. Dozen assorted.",
@@ -1903,6 +1943,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "mothers-day-cookie-bouquet",
+    image: "/images/products/mothers-day-cookie-bouquet.webp",
     name: "Mother's Day Cookie Bouquet",
     category: "holiday-seasonal",
     description: "Beautiful arrangement of flower-shaped decorated cookies. Perfect for mom.",
@@ -1920,6 +1961,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "fathers-day-cookies",
+    image: "/images/products/fathers-day-cookies.webp",
     name: "Father's Day Cookies",
     category: "holiday-seasonal",
     description: "Fun decorated cookies for dad. Ties, tools, and sports themes available.",
@@ -1937,6 +1979,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "halloween-cookies",
+    image: "/images/products/halloween-cookies.webp",
     name: "Halloween Cookies",
     category: "holiday-seasonal",
     description: "Spooky decorated sugar cookies — pumpkins, ghosts, bats, and more!",

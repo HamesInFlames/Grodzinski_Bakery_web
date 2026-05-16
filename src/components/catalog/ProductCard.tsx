@@ -12,7 +12,7 @@ export default function ProductCard({ product, linkPrefix = '/menu/p' }: Props) 
     <Link to={`${linkPrefix}/${product.slug}`} className="pcard">
       <div className="pcard__image-wrapper">
         <img
-          src="/images/coming-soon.png"
+          src={product.image ?? '/images/coming-soon.png'}
           alt={product.name}
           className="pcard__image"
           loading="lazy"

@@ -1,5 +1,27 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-15 (portrait video layout fixes)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `feat/holidays-and-filters` (continued)
+
+**What was done:**
+- Fixed "A Toronto Tradition Since 1888" block: wrapped video in `.home-about__media-frame` with `max-height: clamp(360px, 55vh, 520px)`, `max-width: 420px`, `aspect-ratio: 4/5`, `object-fit: cover`, right-aligned with `margin-left: auto` and `align-self: center`
+- Fixed 3 About-page video cards: added `backdrop` mode to `VideoBackground` component — renders video twice (blurred cover background + contain foreground) for no sidebars while preserving full frame
+- Added CSS classes `.video-bg--backdrop`, `.video-bg__blur-layer`, `.video-bg__main-layer` with blur/scale/opacity treatment
+- Set uniform `aspect-ratio: 4/5` on all about-image-card backdrops
+- Removed fixed `height: 200px` / `height: 160px` from `.about-image-card__img` that conflicted with aspect-ratio sizing
+- Respects `prefers-reduced-motion` — falls back to poster images in backdrop mode
+- Build passes cleanly
+
+**Files changed:**
+- `src/components/VideoBackground.tsx` — added `backdrop` prop + dual-layer rendering
+- `src/pages/Home.jsx` — wrapped showcase video in `.home-about__media-frame`
+- `src/pages/About.jsx` — switched 3 video cards from `objectFit="contain"` to `backdrop`
+- `src/App.css` — media-frame constraints, backdrop layer styles, removed stale fixed heights
+
+---
+
 ## Session — 2026-05-15 (7-page IA: Holidays + dietary filters)
 
 **Tool:** Cursor Agent (Opus 4.6)

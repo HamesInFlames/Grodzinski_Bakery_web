@@ -57,3 +57,6 @@ qa/lighthouse/
 .lighthouseci/
 test-results/
 playwright-report/
+
+# Claude Code local state
+.claude/

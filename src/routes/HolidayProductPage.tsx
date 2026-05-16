@@ -58,7 +58,7 @@ export default function HolidayProductPage() {
         <div className="product-page__gallery">
           <div className="product-page__image-container">
             <img
-              src="/images/coming-soon.png"
+              src={product.image ?? '/images/coming-soon.png'}
               alt={product.name}
               className="product-page__image"
             />

@@ -60,6 +60,7 @@ export interface Product {
   hebrew?: string | null;
   isSeasonal?: boolean;
   isBestseller?: boolean;
+  image?: string;
 }
 
 export interface Category {
@@ -68,7 +69,31 @@ export interface Category {
   shortDescription: string;
   longDescription?: string;
   heroImageSlug?: string;
+  videoSlug?: string;
   itemCount: number;
+}
+
+/**
+ * Maps category slugs to their decorative background video file stem.
+ * Key = ProductCategory slug, Value = filename stem under /videos/.
+ */
+export const CATEGORY_VIDEO_MAP: Partial<Record<ProductCategory, string>> = {
+  'challah-bilkas': 'challahs',
+  'cakes': 'cakes-pastry',
+  'danishes-sweets': 'cakes-pastry',
+  'desserts-petits-fours': 'cakes-pastry',
+  'cookies': 'cookies-loaves',
+  'bread-rolls': 'cookies-loaves',
+  'loaf-cakes': 'cookies-loaves',
+};
+
+export function getVideoForCategory(slug: ProductCategory): { videoSrc: string; posterSrc: string } | null {
+  const videoFile = CATEGORY_VIDEO_MAP[slug];
+  if (!videoFile) return null;
+  return {
+    videoSrc: `/videos/${videoFile}.mp4`,
+    posterSrc: `/videos/${videoFile}-poster.jpg`,
+  };
 }
 
 export const CATEGORIES: Category[] = [

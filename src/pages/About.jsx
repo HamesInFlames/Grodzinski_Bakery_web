@@ -1,5 +1,6 @@
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 import { ShieldCheck, ChefHat, Wheat, UtensilsCrossed, Cake, Heart } from "lucide-react";
+import { VideoBackground } from "../components/VideoBackground";
 
 function About() {
   return (
@@ -84,22 +85,23 @@ function About() {
               </ScrollReveal>
             </div>
 
-            {/* RIGHT: Image Gallery */}
+            {/* RIGHT: Video Gallery */}
             <div className="about-content__images">
               {[
-                { src: "/images/home/thumbnail_challahs.jpg", alt: "Fresh challahs at Grodzinski Bakery", caption: "Fresh challahs, baked daily" },
-                { src: "/images/home/thumbnail_cakes.jpg", alt: "Celebration cakes", caption: "Celebration cakes for every occasion" },
-                { src: "/images/home/thumbnail_cookies.jpg", alt: "Handcrafted cookies", caption: "Handcrafted cookies and pastries" },
-              ].map((img, i) => (
+                { videoSrc: "/videos/challahs.mp4", posterSrc: "/videos/challahs-poster.jpg", alt: "Fresh challahs at Grodzinski Bakery", caption: "Fresh challahs, baked daily" },
+                { videoSrc: "/videos/cakes-pastry.mp4", posterSrc: "/videos/cakes-pastry-poster.jpg", alt: "Celebration cakes", caption: "Celebration cakes for every occasion" },
+                { videoSrc: "/videos/cookies-loaves.mp4", posterSrc: "/videos/cookies-loaves-poster.jpg", alt: "Handcrafted cookies", caption: "Handcrafted cookies and pastries" },
+              ].map((item, i) => (
                 <ScrollReveal key={i} direction="right" delay={i * 0.12}>
                   <div className="about-image-card">
-                    <img
-                      src={img.src}
-                      alt={img.alt}
-                      loading="lazy"
+                    <VideoBackground
+                      videoSrc={item.videoSrc}
+                      posterSrc={item.posterSrc}
+                      alt={item.alt}
                       className="about-image-card__img"
+                      backdrop
                     />
-                    <p className="about-image-card__caption">{img.caption}</p>
+                    <p className="about-image-card__caption">{item.caption}</p>
                   </div>
                 </ScrollReveal>
               ))}

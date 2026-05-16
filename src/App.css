@@ -1950,8 +1950,6 @@ a.footer__link:hover { opacity: 0.72; }
 
 .about-image-card__img {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
 }
 
 .about-image-card__caption {
@@ -2733,10 +2731,35 @@ a.footer__link:hover { opacity: 0.72; }
   margin-bottom: 24px;
 }
 
-.home-about__image img {
+.home-about__image img,
+.home-about__image .video-bg {
   width: 100%;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-lg);
+}
+
+.home-about__media-frame {
+  max-height: clamp(360px, 55vh, 520px);
+  max-width: 420px;
+  aspect-ratio: 4 / 5;
+  margin-left: auto;
+  align-self: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.home-about__media-frame .video-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.home-about__media-frame .video-bg video,
+.home-about__media-frame .video-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 @media (max-width: 1024px) {
@@ -2747,6 +2770,12 @@ a.footer__link:hover { opacity: 0.72; }
   
   .home-about__image {
     order: -1;
+  }
+
+  .home-about__media-frame {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
   }
   
   .home-about__title {
@@ -3070,10 +3099,6 @@ a.footer__link:hover { opacity: 0.72; }
     font-size: 1rem;
   }
   
-  .about-image-card__img {
-    height: 160px;
-  }
-  
   .about-features h2 {
     font-size: 1.5rem;
     margin-bottom: 32px;
@@ -3296,4 +3321,44 @@ html, body {
   .about-features__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+/* --- VideoBackground: blurred-backdrop mode --- */
+.video-bg--backdrop {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-bg__blur-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  filter: blur(20px);
+  opacity: 0.6;
+}
+
+.video-bg__main-layer {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.video-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* About-page video cards: landscape aspect to fit beside text column */
+.about-image-card .video-bg {
+  aspect-ratio: 3 / 2;
 }
