@@ -1,5 +1,21 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-21 (Visual verification of Hybrid pricing)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `chore/catalog-csv-migration` (commit a584807)
+
+**Verification results (all pass):**
+1. **19 price changes — ALL MATCH:** Playwright extracted `.pcard__price` text from each category page at 1440px viewport; all 19 rendered values match expected prices exactly.
+2. **3 zero-delta products — ALL RENDER:** `whole-wheat-challah` ($8.50, unchanged), `custom-celebration-cake` ("Call", price null), `custom-wedding-cake` ("Call", price null) — all render correctly on their respective category pages.
+3. **Image spot-check — 4/5 PASS:** `plain-challah-large`, `chocolate-crown-babka`, `chocolate-chip-cookies-dozen`, `mothers-day-cookie-bouquet` all load real `.webp` photos (naturalWidth 1122px). `lemon-meringue-pie` shows `coming-soon.png` — **not a regression** (this product has no `image` field in the catalog; it is not one of the 43 image-wired products).
+4. **Console errors — NONE:** Dev server output clean, no catalog-related warnings or errors.
+5. **Screenshots saved:** 12 full-page PNGs at `qa/screenshots/hybrid-pricing-verify/` covering all affected category pages + holiday pages + menu hub + cakes page.
+
+**No regressions detected.** Branch is visually clean for merge review.
+
+---
+
 ## Session — 2026-05-21 (Hybrid pricing model — Phase 1 wired)
 
 **Tool:** Claude Code (Opus 4.7)
