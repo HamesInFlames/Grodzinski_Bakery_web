@@ -1,5 +1,48 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-21 (catalog CSV migration to Square POS export)
+
+**Tool:** Claude Code (Opus 4.7)
+**Branch:** working tree changes — not yet committed
+
+**What was done:**
+- Took the Square POS catalog export `MLV1171MHFNF4_catalogue-2026-05-15-1828.csv` (545 rows, 36 cols) and produced a cleaned, sectioned 9-column file
+- Replaced `grodzinski_products.csv` at the repo root (old: 4 cols / 538 rows → new: 9 cols / 467 rows + section dividers)
+- **New CSV schema:** `Section, Group, Category, Item, Price, Unit, Taxable, Description, SquareToken`
+- **Three sections:** Regular Menu (296 rows, 6 families: Breads · Cakes · Cookies · Pastries · Sandwiches & Savouries · Catering) · Friday (37, all challah + bilka) · Holidays (134, Jewish calendar order + civil holidays)
+- **Cleanups applied:** curly→ASCII quotes, Square POS shorthand renamed for readability (`Chan-Cookies`→`Chanukah Cookies`, `Roshashana`→`Rosh Hashanah`, `Cust.Cookie`→`Custom Cookie`, `Bubka\Chocolatestrip\`→`Bubka / Chocolate Strip`, etc.), back-of-house dropped (Ingredients · Coffee/Tea · Soft Drinks · Whipped cream · Meringue powder · Day old bag · Miscellaneous)
+- **Catering prices blanked** (quote-only on the site)
+- **SquareToken preserved** as the stable join key for future price syncs
+
+**Pictures stay connected:** `src/data/products.generated.ts` was NOT touched — the 43 wired product images remain linked via their existing curated slugs.
+
+**What's next (Hybrid pricing model — chosen direction):**
+1. Add a `squareToken: string` field to each entry in `src/data/products.generated.ts`, mapping each of the 130 curated products to a row in the new CSV (manual matching — slugs don't overlap; start with the 43 image-wired products as the priority set)
+2. Rewrite `scripts/generate-products.mjs` (currently broken — references deleted `src/menuData.js`) to:
+   - Use the curated catalog as the source of truth for slug / name / description / image / category / dietary tags / occasion
+   - Pull `price`, `priceUnit`, and tax flag from `grodzinski_products.csv` joined by `SquareToken`
+3. Add `npm run sync-prices` wiring so the catalog stays current with Square price changes (29 price deltas already observed in this export)
+
+---
+
+## Session — 2026-05-21 (repo cleanup)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `chore/cleanup-stale-docs` (1 commit, not pushed)
+
+**What was done:**
+- Deleted root `screenshots/` directory (12 PNGs, duplicate of `qa/screenshots/`)
+- Deleted `qa/READY-TO-MERGE.md` (merge guide for `design/heritage-pass`, already merged in eb6b120)
+- Deleted `cleanup-audit-phase-0.md`, `cleanup-phase-summary.md`, `final-launch-readiness.md` (stale audit docs from completed cleanup pass)
+- 16 files removed, 807 line deletions; working tree clean
+
+**Not touched (intentionally):**
+- `copy-revision-proposal.md` — still awaiting client signoff
+- `docs/archive/` — already properly archived
+- All config, source, and test files
+
+---
+
 ## Session — 2026-05-15 (portrait video layout fixes)
 
 **Tool:** Cursor Agent (Opus 4.6)

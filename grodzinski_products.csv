@@ -1,539 +1,482 @@
-Category,Product,Price,Description
-Bagels,Regular,1.10,
-Bagels,Multigrain,1.15,
-Bagels,Mini Bagels,0.80,
-Bagels,Bagel Sliced,1.15,
-Bagels,Bagel Mezanot,1.55,
-Bagels,Dozen/regular bagels,13.20,
-Bagels,Dozen/reg sliced bagel,13.80,
-Baguettes/Rolls/Buns,Hamburger/Hotdog buns,1.10,
-Baguettes/Rolls/Buns,Rolls/OnionBuns,1.15,
-Baguettes/Rolls/Buns,hot dog/burger sliced,1.15,
-Baguettes/Rolls/Buns,Baguettes Large,4.50,
-Baguettes/Rolls/Buns,Baguettes Small,3.50,
-Baguettes/Rolls/Buns,Dinner rolls/dozen,12.00,
-Baguettes/Rolls/Buns,sub buns 8",1.50,
-Baguettes/Rolls/Buns,onion pocket,1.35,
-Baguettes/Rolls/Buns,mini onion pockets,1.05,
-Baguettes/Rolls/Buns,Sour Dough Rolls,1.50,
-Baguettes/Rolls/Buns,3" Hotdog Buns,1.00,
-Baguettes/Rolls/Buns,mezanot burger/hotdog,1.75,
-Baguettes/Rolls/Buns,Mezanot burger/hot dog CUT,1.80,
-Baguettes/Rolls/Buns,Jumbo burger,1.25,
-Baguettes/Rolls/Buns,jumbo burger sliced,1.30,
-Bilka,Regular,1.60,
-Bilka,Square,2.40,
-Bilka,Long,1.95,
-Bilka,Regular Multigrain,1.70,
-Bilka,Square Multigrain,2.45,
-Bilka,Long Multigrain,2.05,
-Bilka,Cocktail,1.15,
-Bilka,Spelt,2.50,
-Bilka,Square Chocolate Chips,4.95,
-Bilka,Challah 8",2.45,
-Bow ties/kichels,bowties/nothings,4.50,
-Bow ties/kichels,kichels,4.95,
-Boxed cookies,Boxed cookies,10.50,
-Boxed cookies,Chocolate Drop with Pumpkin,11.25,
-Boxed cookies,Jam Regallach,13.50,
-Boxed cookies,Pumpkin seed Mandel bread cookies,11.70,
-Boxed cookies,Chocolate Chip Cookies,11.25,
-Boxed cookies,Choco Alfajor,12.95,
-Bread,Multigrain/Rye large,7.50,
-Bread,Sour Dough,7.50,
-Bread,French//White/Whole Wheat,5.75,
-Bread,Flat Bread 2xbag,4.00,
-Bread,1/2 Rye,4.25,
-Bread,Small Rye,5.75,
-Bread,Flat Bread-Box,7.00,
-Bread,Mezanot Bread,6.95,
-Bread,Custom,variable,
-Bread,Croutons,2.50,
-Bread,Sour dough challah,8.50,
-Bread,1/2 mezanot bread,3.75,
-Bread,Sour dough TOVAS,12.00,
-Bread,Sour dough rolls,2.25,
-Bread,Sour dough plain TOVAs,9.99,
-Bread Items,Regular,variable,
-Bread Items,Toonie Buns,0.50,
-Bread Items,Dome Slider Buns,0.55,
-Bread Items,Rolls,1.15,
-Bread Items,3" (Medium) Hamburger Buns,1.25,
-Bread Items,Mezonot Hamburger Buns,1.85,
-Bread Items,Mezonot Hotdog Buns,1.85,
-Bread Items,Mezanot dome slider bun,1.10,
-Bread Items,Mezanot toonie buns,0.85,
-Bread Items,Pita bread,0.90,
-Bread Items,Dinner rolls-Dozen,12.00,
-Bubka/Chocolate Strip,Crown Bubka,24.95,
-Bubka/Chocolate Strip,Chocolate Strip/Kokosh,20.95,
-Bubka/Chocolate Strip,Chocolate Loaf Bubka,13.75,
-Bubka/Chocolate Strip,3 Strip Chocolate Tray,13.75,
-Bubka/Chocolate Strip,Icy Bun Tray,12.95,
-Bubka/Chocolate Strip,Round Choco/cheese/poppy/cinnamon,12.95,
-Bubka/Chocolate Strip,Personal bubkah,3.95,
-Bubka/Chocolate Strip,"Bubkah weddingcake 14,10,7",595.00,
-Bubka/Chocolate Strip,Mini bubkah,4.99,
-Cakes,Regular,variable,
-Cakes,Brownie 1/4 Slab,60.00,
-Cakes,Brownie 1/2 Slab,80.00,
-Cakes,Brownie Full Slab,130.00,
-Cakes,Napoleon 1/4 Slab,60.00,
-Cakes,Napoleon 1/2 Slab,80.00,
-Cakes,Napoleon Full Slab,130.00,
-Challah,Large,7.95,
-Challah,Small,5.50,
-Challah,Holiday Challah,14.00,
-Challah,Frozen challah large,5.95,
-Challah Multigrain,Large,8.50,
-Challah Multigrain,Small,6.50,
-Challah Spelt,Large,11.00,
-Challah Spelt,Small,9.00,
-Chanukah Cookies,Large Dreidel/Menorah Cookie,3.50,
-Chanukah Cookies,Small Menorah/Dreidel Cookie,2.50,
-Chanukah Cookies,Chanukah written cookie,3.25,
-Chanukah Cookies,Chocolate&Sprinkle menorah/Dreidel,1.95,
-Chanukah Cookies,Rectang gift box,25.95,
-Chanukah Cookies,Square gift box,19.95,
-Chanukah Cookies,Dreidel-Menorah Cookie Pack,5.00,
-Chanukah Cookies,Chanukah cookie kit,34.95,
-Chanukah Cookies,4 dreidel pack,9.50,
-Chanukah Cookies,Cookie box,10.50,
-Chanukah Cookies,Chanukah Cookie bite cup,7.50,
-Chanukah Cookies,Chanukah cookie kit,27.96,
-Chanukah Cookies,Chanukah printed picture,4.25,
-Chanukah,Sufganiyot/Jelly Donuts,2.95,
-Chanukah,Donuts-Assorted Iced,2.95,
-Churros/Donuts,Regular,variable,
-Churros/Donuts,Churros pack,3.99,
-Churros/Donuts,Donuts,1.40,
-Churros/Donuts,Cinnamon&sugar single,1.20,
-Churros/Donuts,Churro platter 100pcs,120.00,
-Churros/Donuts,Mini churros,0.90,
-Churros/Donuts,Churro regular,1.25,
-Coffee/Tea,Regular,1.95,
-Cookies,Regular Iced Cookies,2.75,
-Cookies,Hand Written Cookies,3.50,
-Cookies,Ginger Bread PeopleX2,5.00,
-Cookies,Bear Cookie,1.95,
-Cookies,Cookies With Ribbon,5.25,
-Cookies,Smiley Face Cookie,2.95,
-Cookies,Chocolate Chip/Oatmeal/Raisin,4.75,
-Cookies,Biscotti,2.75,
-Cookies,Assorted (per lb),20.00,
-Cookies,Printed picture cookie,4.25,
-Cookies,Custom Cookies,variable,
-Cookies,Baby Cookies,3.00,
-Cookies,Ginger Bread Bride & Groom,3.50,
-Cookies,Square Proposal Cookie,4.25,
-Cookies,Plain Cookies,1.50,
-Cookies,Wedding Cookies,3.95,
-Cookies,Cookie on a Stick,3.45,
-Cookies,Small Decorated Cookies,2.50,
-Cookies,Medium Size Cookies,2.95,
-Cookies,Larger Cookies,3.50,
-Cookies,written Israel flag,3.75,
-Cookies,iced cookie GF,3.75,
-Cookies,Written cookie GF,4.25,
-Cookies,Happy Bites,7.50,
-Cookies,Individually wrapped,0.25,
-Cupcake (No Icing),Regular,3.25,
-Custom Cookie,Regular,variable,
-Custom Cookie,Fancy Cookies,1.00,
-Custom Cookie,Printed/Logo Cookies,4.25,
-Custom Cookie,Chocolate Chip Cookie - Store Size,4.95,
-Custom Cookie,Chocolate Chip Cookie 7",35.00,
-Custom Cookie,Chocolate Chip Cookie 9",45.00,
-Custom Cookie,Chocolate Chip Cookie 10",50.00,
-Custom Cookie,Chocolate Chip Cookie 12",55.00,
-Custom Cookie,Chocolate Chip Cookie 14",60.00,
-Custom Cookie,Chocolate Chip Cookie 1/2 Slab,95.00,
-Custom Cookie,Shortbread Cookie Decorated 7",30.00,
-Custom Cookie,Shortbread Cookie Decorated 9",35.00,
-Custom Cookie,Shortbread Cookie Decorated 10",40.00,
-Custom Cookie,Shortbread Cookie Decorated 12",45.00,
-Danish/Croissant/Bun,Croissant/Danish/BlueB/Cherry Bun/choco bufalo,4.25,Medium size
-Danish/Croissant/Bun,Small Croissant/mini danishes,1.95,
-Danish/Croissant/Bun,Small Cheese Danish,2.25,
-Danish/Croissant/Bun,Cheese Danish & cheese croissant,4.65,
-Danish/Croissant/Bun,Mini cheese,1.75,
-Danish/Croissant/Bun,Cheese pastry,4.75,
-Danish/Croissant/Bun,Danish Medium size,2.75,
-Elite Salads,Manzanilla olive dip,4.30,
-Elite Salads,Black olive tapenade,4.30,
-Elite Salads,Spanish eggplant,6.70,
-Elite Salads,White fish,9.00,
-Fancy Cakes,5" Round Cake,25.00,"Checkerboard, Chocolate Mouse, Chocolate Cake, Strawberry Shortcake, Caramel Crunch, Lemon Mouse, 1/2 and 1/2, Mocha, Black Forest, Cookie cake, Raspberries mouse, Doboush/7 layers"
-Fancy Cakes,5" Round Cake Caramel/Strawshort/BlackForest,28.00,
-Fancy Cakes,7" Round Cake,32.50,
-Fancy Cakes,7" R Cake Caramel/Strawshort/BlackForest,37.50,
-Fancy Cakes,9" Round Cake,55.00,
-Fancy Cakes,9" Round Cake Caramel/Strawshort/BlackForest,60.00,
-Fancy Cakes,10" Round Cake,70.00,
-Fancy Cakes,10" Round Cake Caramel/Strawshort/BlackForest,75.00,
-Fancy Cakes,12" Round Cake,85.00,
-Fancy Cakes,12" Round Cake Caramel/Strawshort/BlackForest,95.00,
-Fancy Cakes,Seven Layer,22.50,
-Fancy Cakes,seven layer straw/caramel/blackforest,25.00,
-Fancy Cakes,1/4 Slab,70.00,
-Fancy Cakes,1/4 Slab straw/caramel/blackf,80.00,
-Fancy Cakes,1/2 Slab,90.00,
-Fancy Cakes,1/2 Slab straw/caramel/blackf,110.00,
-Fancy Cakes,Full Slab,175.00,
-Fancy Cakes,Full Slab straw/caramel/blackf,225.00,
-Fancy Cakes,printed picture,20.00,
-Fancy Cakes,1/4 Slab Brownie/napoleon,50.00,
-Fancy Cakes,1/2 Slab Brownie/napoleon,75.00,
-Fancy Cakes,Full Slab Brownie/napoleon,130.00,
-Fancy Cakes,Swiss Roll Cake Strawberry/Mousse,22.50,
-Fancy Cakes,7" Purim Cake,40.00,
-Fancy Cakes,Full Slab Choco&marble,100.00,
-Fancy Cakes,1/2 Slab Choco&Marble,55.00,
-Fancy Cakes,Caramel brittle small,80.00,
-Fancy Cakes,Caramel brittle 1/2size,45.00,
-Fancy Cakes,Caramel brittle Large,110.00,
-Fancy Cakes,fullslab icing Torah scroll,325.00,
-Fancy Cakes,fullslab fondant torah scroll,475.00,
-Fancy Cakes,Custom Cake,variable,
-Fancy Cakes,FS Barmitzvah buttercream/fondantdetails,485.00,
-Father's Day,Regular,variable,
-Father's Day,Heart/square Written cookie,3.75,
-Father's Day,heart cookie,2.95,
-Full Slab Focaccia,Regular,85.00,
-Gluten Free,GF Cookies Chocolate Chip/Sprinkle/Poppy Seeds,9.99,
-Gluten Free,GF Bites,11.50,
-Gluten Free,GF Pies Blueberry/Cherry/Apple Raspberry,21.50,
-Gluten Free,Large challah,25.00,
-Gluten Free,small challah,17.00,
-Gluten Free,Bilka,10.00,
-Gluten Free,GF hamentashen,2.25,
-Gluten Free,GF hamentashen x6,13.50,
-Graduation Cookie,Regular,variable,
-Graduation Cookie,hat,3.75,
-Graduation Cookie,badge/diploma,3.25,
-Graduation Cookie,boy/girl,4.25,
-Graduation Cookie,2x pack,7.50,
-Graduation Cookie,rectangle large cookie,4.25,
-Graduation Cookie,written round,3.25,
-Ingredients,Regular,variable,
-Ingredients,Sweet Challa Dough - Bilkha Size - RAW,0.80,
-Ingredients,Water Challa Dough - Bilkha Size - RAW,0.80,
-Ingredients,Sweet Challah Dough - SM - 12oz,1.95,
-Ingredients,Bread Dough - White - LB - Ball,2.00,per lb
-Ingredients,Bread Dough - Whole Wheat - LB - Ball,2.00,per lb
-Ingredients,Challa Dough - Whole Wheat - LB - Ball,2.00,per lb
-Ingredients,Cookie Dough - LB,7.50,per lb
-Ingredients,Cookie Dough Oatmeal LB,8.50,per lb
-Ingredients,Croissant Dough - LB,8.00,per lb
-Ingredients,Danish Dough - LB,8.00,per lb
-Ingredients,French Dough - LB,9.00,per lb
-Ingredients,Pizza Dough - White,5.25,per lb
-Ingredients,Pizza Dough - Whole Wheat,5.25,per lb
-Ingredients,Butter - Whipped,9.75,per lb
-Ingredients,Chocolate Chips,8.50,per lb
-Ingredients,Chocolate Chunks,7.50,per lb
-Ingredients,Cream Cheese - Small Container,10.95,
-Ingredients,Cup Yogurt/Parfait Cup & Lid,1.00,
-Ingredients,Custard Creme,13.00,per lb
-Ingredients,Cutlery Set,1.00,
-Ingredients,Filling Apple,4.95,per lb
-Ingredients,Filling Blueberry,5.50,per lb
-Ingredients,Filling Cherry,5.50,per lb
-Ingredients,Filling Date,5.50,per lb
-Ingredients,Filling Lemon,4.95,per lb
-Ingredients,Filling Poppyseed,7.95,per lb
-Ingredients,Filling Prune,6.50,per lb
-Ingredients,Filling Strawberry Jam,5.95,per lb
-Ingredients,Flour - White/Bread/Five Roses,1.95,per lb
-Ingredients,Flour - Wholewheat,1.95,per lb
-Ingredients,Granola - Bulk - lb,9.95,per lb
-Ingredients,Honey - Bulk Liquid,9.95,per lb
-Ingredients,Icing (Buttercream),7.50,per lb
-Ingredients,Cupcake Icing,10.00,per lb
-Ingredients,Milk 2% - 2L Jug,7.95,
-Ingredients,Pareve Wipped Topping - lb,6.95,per lb
-Ingredients,Poppy Seeds,8.95,per lb
-Ingredients,Pumpkin Seeds,8.95,per lb
-Ingredients,Rainbow Sprinkles - Non Pareils - lb,6.95,per lb
-Ingredients,Raisins,3.95,per lb
-Ingredients,Sesame Seeds,5.95,per lb
-Ingredients,Sprinkles,5.00,per lb
-Ingredients,Yeast 1 lb,16.00,
-Ingredients,chocolate icing 1lb,10.00,
-Ingredients,L&S tray plastic container,5.00,
-Ingredients,Sweet Challah Dough - LG - 1.5lb - ball,2.95,
-Ingredients,piping bag 4oz,2.25,
-Ingredients,Whipped cream,variable,
-Invigo Coffee,Regular,variable,
-Invigo Coffee,Egg sandwich,4.55,
-Invigo Coffee,Tuna sandwich,5.25,
-Invigo Coffee,Cream cheese&lox Sandwich,5.95,
-Invigo Coffee,Boxed cookie,7.50,
-Invigo Coffee,Omelette Sandwich,6.95,
-La Briut Salads,Spicy Carrot,3.99,
-La Briut Salads,Coleslaw,5.99,
-La Briut Salads,Eggplant,3.99,
-La Briut Salads,Salmon pate,4.39,
-La Briut Salads,Hummus,2.99,
-La Briut Salads,Babaganough,3.99,
-Loaf/Bundt Cakes,Loaf Cakes,12.95,
-Loaf/Bundt Cakes,M Bundt Cake,17.50,
-Loaf/Bundt Cakes,L Bundt Cake,21.95,
-Loaf/Bundt Cakes,Bundt 10inch,19.50,
-Loaf/Bundt Cakes,mini loaf cake,6.95,
-Meringue Powder,Regular (per lb),35.00,
-Miscellaneous,Patty Shells,2.25,
-Miscellaneous,Patty Shells (medium),2.75,
-Miscellaneous,Patty Shells (large),3.00,
-Miscellaneous,Yeast 1lb,16.00,
-Miscellaneous,Herring Matjes,17.60,per lb
-Miscellaneous,Herring Schmaltz,9.60,per lb
-Miscellaneous,5 Inch Sponge Cake Plain,5.00,
-Miscellaneous,7 Inch Sponge Cake Plain,7.00,
-Miscellaneous,10 Inch Sponge Cake Plain,10.00,
-Miscellaneous,Loose Tuna,14.00,per lb
-Miscellaneous,Loose Egg,13.50,per lb
-Miscellaneous,Pie Box,1.00,
-Miscellaneous,Cake Box,1.00,
-Miscellaneous,1 pack lox (4 pieces),8.00,
-Mishloach Manot,Bag w/juice,10.00,
-Mishloach Manot,Small Bowl,18.50,
-Mishloach Manot,Medium Bowl,27.50,
-Mishloach Manot,Large Bowl,37.50,
-Mishloach Manot,small basket,49.00,
-Mishloach Manot,medium Basket,69.00,
-Mishloach Manot,Big Basket,95.00,
-Mishloach Manot,Hamentashen Kit,34.50,
-Mishloach Manot,Pack assorted x4,7.80,
-Mishloach Manot,Assorted x6,11.70,
-Mishloach Manot,Purim Cookie Kit,35.00,
-Mother's Day,Regular,variable,
-Mother's Day,Ribbon cookie,4.95,
-Mother's Day,Square/heart written,3.95,
-Mother's Day,7" choco chip cookie,12.00,
-Mother's Day,Cupcake bouquet,38.50,
-Muffins/Cupcakes,Muffin/Spelt&Sugar free Muffins,3.50,
-Muffins/Cupcakes,Small Muffin,1.95,
-Muffins/Cupcakes,Cupcake,3.75,
-Muffins/Cupcakes,Small Cupcakes,1.75,
-Muffins/Cupcakes,cupcake no icing,3.25,
-Muffins/Cupcakes,Printed picture cupcake,5.25,
-Pastries,Pastries,4.50,"Brownie, Corn Flake Cluster, Cream Horn, Cream Puff, Éclair, Domino, Hockey Puck, Swiss Rolls, Napoleon, Strawberry Tart, Tarts & Bells, Upside Down Cupcake, Large Ishler cookie"
-Pastries,Cake Pops/marshmellows,4.25,
-Pastries,Ishler cookie,2.95,
-Pastries,Scone/fruit tart/éclairs,3.95,
-Pastries,Rum Ball,3.50,
-Pastries,4'Inch fruit Tarts,7.95,
-Pastries,7'Inch Fruit Flan,35.00,
-Pastries,9"fruit tart,50.00,
-Pastries,Chocolate Cigar,4.50,
-Pastries,1/2 sliced napoleon,2.25,
-Pastries,Single marshmallow,1.95,
-Pastries,Triffle cake cups/shooters,3.95,
-Pastries,Mini round cake,4.95,
-Petit Fours & Desserts,Regular,variable,
-Petit Fours & Desserts,Assorted Petit Fours - from,2.50,
-Petit Fours & Desserts,Brownie PF Size 1/3 Size,2.50,
-Petit Fours & Desserts,Chocolate Dipped Strawberries,3.35,
-Petit Fours & Desserts,Tuxedo Strawberries,3.95,
-Petit Fours & Desserts,Swiss Roll PF Size,2.75,
-Pies/Apple Strudel,Apple Strudel,12.95,
-Pies/Apple Strudel,Apple Strudel Sugar Free,12.00,
-Pies/Apple Strudel,Crumble & Fruit Pies,21.00,
-Pies/Apple Strudel,Apple Cranberry,21.00,
-Pies/Apple Strudel,Chocolate or caramel Chip Cookie Pie,27.50,
-Pies/Apple Strudel,Lemon Meringue Pie,21.00,
-Pies/Apple Strudel,Sugar Free Pies,24.95,
-Pies/Apple Strudel,Small pie,7.50,
-Pies/Apple Strudel,Full Slab Pie,130.00,
-Pies/Apple Strudel,9"lemon merengue,35.00,
-Pies/Apple Strudel,Small apple strudel,6.95,
-Pies/Apple Strudel,Full slab applestrudel,175.00,
-Pies/Apple Strudel,1/2 slab applestrudel,80.00,
-Platters (2 Scoops/Portion),Regular,variable,Bagels and Rolls are Extra
-Platters (2 Scoops/Portion),Egg Salad,2.95,
-Platters (2 Scoops/Portion),Tuna Salad,3.95,
-Platters (2 Scoops/Portion),Cream Cheese,2.95,
-Platters (2 Scoops/Portion),Cream Cheese & Lox,5.95,
-Platters (2 Scoops/Portion),Lox,3.50,
-Pretzel Challah,Regular,variable,
-Pretzel Challah,Pretzel buns,1.55,
-Pretzel Challah,Pretzel challah,8.95,
-Pretzel Challah,Pretzel Demi baguette,1.55,
-Pretzel Challah,pretzel bread,2.05,
-Printed Picture Cupcake,Regular,4.25,
-Purim,Hamentashen,1.95,
-Purim,Yeast hamantaschen,4.25,
-Purim,Fancy hamentashen,2.25,
-Purim,Regular,variable,
-Purim,Large Clown/Mask/Crown,4.95,
-Purim,Small Clown/mask,2.95,
-Purim,Hand Written - Square/Round/Star,3.25,
-Purim,Printed cookie,4.25,
-Purim,Individually packed hamentashen,2.20,
-Purim,Hamantosh,variable,
-Purim,Purim Kit,variable,
-Purim,Bag w/ juice,11.95,
-Purim,Small Bowl,18.95,
-Purim,Medium bowl,21.95,
-Purim,Large Bowl,29.95,
-Purim,Basket,45.00,
-Purim,Big Basket,50.00,
-Rogallach/Jam & Chocolate Twist,Rogallach Choc & Cinnamon,1.75,
-Rogallach/Jam & Chocolate Twist,Jam Twist (per lb),20.00,
-Rogallach/Jam & Chocolate Twist,Jam Rogallach,4.75,
-Rosh Hashanah Baskets,Regular,variable,
-Rosh Hashanah Baskets,Mini honey jars,14.95,
-Rosh Hashanah Baskets,Square cookie box,21.00,
-Rosh Hashanah Baskets,Rectangle cookie box,27.50,
-Rosh Hashanah Baskets,Small plate,44.95,
-Rosh Hashanah Baskets,Large plate,59.95,
-Rosh Hashanah Baskets,Small gift basket,75.00,
-Rosh Hashanah Baskets,12" Choco chip Cookie gram,45.00,
-Rosh Hashanah Baskets,Cookie kit,37.50,
-Rosh Hashanah Baskets,Big basket,95.00,
-Rosh Hashanah Baskets,7" graham cookie,30.75,
-Rosh Hashanah,Regular,variable,
-Rosh Hashanah,Mini Honey Jars,12.95,
-Rosh Hashanah,Square Cookie Box,18.95,
-Rosh Hashanah,Rectangle Cookie Box,24.95,
-Rosh Hashanah,Small Plate,39.95,
-Rosh Hashanah,Large Plate,54.95,
-Rosh Hashanah,Gift Basket,74.95,
-Rosh Hashanah,12" Inch Choco Cookie,50.00,
-Rosh Hashanah,Cookie Kit,29.95,
-Rosh Hashanah,Crown Challah,16.95,
-Rosh Hashanah,Small Round Challah,5.50,
-Rosh Hashanah,Large round challah,7.95,
-Rosh Hashanah,Honey jar cookie,4.20,
-Rosh Hashanah,Pack of 2 apple cookie,5.00,
-Rosh Hashanah,Bee cookie,3.75,
-Rosh Hashanah,Written cookie,3.25,
-Rosh Hashanah,Printed picture,4.25,
-Rosh Hashanah,Honey Loaf S,9.95,
-Rosh Hashanah,Honey Loaf L,15.50,
-Rosh Hashanah,Honey bundt L,24.00,
-Rosh Hashanah,Honey bundt M,21.00,
-Rosh Hashanah,10 inch honey bundt,26.00,
-Rosh Hashanah,AppleCupcakes,3.95,
-Rosh Hashanah,7" Choc Mousse cake,37.50,
-Rosh Hashanah,9" Choc mousse cake,60.00,
-Rosh Hashanah,7" Mixed fruit mousse,45.00,
-Rosh Hashanah,9" Mixed fruit mousse,67.95,
-Rosh Hashanah,7" Lady finger Choc cake,37.50,
-Rosh Hashanah,9" Lady finger Choc cake,60.00,
-Rosh Hashanah,Mixed fruit PUFF cake,50.00,
-Rosh Hashanah,9" fruit tart,50.00,
-Rosh Hashanah,fancy Honey cakes,45.00,
-Rosh Hashanah,Mixed fruit honey cake,55.00,
-Rosh Hashanah,1/4 slab honey,80.00,
-Rosh Hashanah,1/2slab honey,110.00,
-Rosh Hashanah,fullslab honey,225.00,
-Rosh Hashanah,seven layer long,38.00,
-Rosh Hashanah,apple loaf,12.95,
-Rosh Hashanah,sliced honey cake,5.95,
-Sandwich & Fillings,Regular,variable,
-Sandwich & Fillings,Croissant Sandwiches,7.50,
-Sandwich & Fillings,Baguette Sandwiches,2.95,
-Sandwich & Fillings,Egg Salad (per lb),variable,
-Sandwich & Fillings,Tuna Salad (per lb),variable,
-Sandwich & Fillings,12 Party Sandwiches triangle,21.95,
-Sandwich & Fillings,12 party sandwiches strips,28.00,
-Sandwich & Fillings,12 swirl party sandwiches,18.95,
-Sandwiches,Butter on a Bagel,3.25,
-Sandwiches,Cream cheese,4.50,
-Sandwiches,Avocado,6.50,
-Sandwiches,Cream cheese & vegetables,5.50,
-Sandwiches,Egg,6.50,
-Sandwiches,Lox and cream cheese,8.50,
-Sandwiches,Tuna,7.50,
-Sandwiches,Veggie wrap,8.50,
-Sandwiches,party sandwich x9,12.75,
-Sandwiches,party sandwich x12,17.95,
-Sandwiches,Tuna wrap,8.50,
-Sandwiches,Egg Wrap,7.50,
-Sandwiches,Whole egg,1.20,
-Sandwiches,Toppings,0.50,
-Savouries,Mushroom,3.50,
-Savouries,Potato,3.50,
-Savouries,small mushroom,3.25,
-Savouries,small potato,3.25,
-Savouries,Cheese buroka,4.75,
-Savouries,Cheese sticks,3.75,
-Savouries,Round pastry,4.25,
-Shavuot,cheesecake,50.00,
-Shavuot,marble cheescake,50.00,
-Shavuot,Fruit filling cheesecake,55.00,
-Shavuot,Mixed fruit cheescake,60.00,
-Shavuot,Loaf cheesecake,25.00,
-Shavuot,Filling loaf cheesecake,30.00,
-Shavuot,Fruit loaf cheesecake,35.00,
-Shavuot,Torah scroll cookie,3.50,
-Shavuot,round written cookie,3.25,
-Shavuot,Cheese cake slice,5.25,
-Shavuot,Cheesecake /piece,variable,
-Shavuot,Printed Picture,4.25,
-Shavuot,Crumble cheesecake,55.00,
-Simcha Challah,Regular,variable,
-Simcha Challah,2 lb. Simcha 25people,30.00,
-Simcha Challah,3 lb. Simcha 50 people,35.00,
-Simcha Challah,5 lb. Simcha 100 people,55.00,
-Simcha Challah,3 lb.,30.00,
-Simcha Challah,2 lb.,25.00,
-Simcha Challah,5 lb.,50.00,
-Soft Drinks/Water,Water/Juice box,1.00,
-Soft Drinks/Water,Nestea/Sprite/coke/Fresca/Gingerale,1.50,
-Soft Drinks/Water,Grape juice,2.50,
-Soft Drinks/Water,Large Grape juice,8.00,
-Soft Drinks/Water,medium grape juice,5.00,
-Special Challah,Regular,4.50,
-Special Challah,Large challah,4.50,
-Special Challah,Shlisel challah,8.50,
-Spelt Bread,Regular,10.95,
-Spelt Bread,Spelt Rolls,2.50,
-Sufganiyot & Latkes,Boston cream,4.50,
-Sufganiyot & Latkes,Regular,3.50,
-Sufganiyot & Latkes,Fancy,6.95,
-Sufganiyot & Latkes,Latkes,3.50,
-Sugar Free,fruit Pies,24.95,
-Sugar Free,Turnover,5.25,
-Sugar Free,Jam rogollach,5.25,
-Sugar Free,Apple Strudel,12.50,
-Sugar Free,Choco Swirl,11.50,
-Sugar Free,Choco drop Pumkin seed cookie,11.50,
-Sugar Free,Jam Swirl,11.50,
-Sugar Free,Jam Rogollach cookie,11.95,
-Sugar Free,Mandel bread tovas,11.50,
-Sugar Free,SF Hamentashen,2.00,
-Sugar Free,SF Hamentashen x6,11.50,
-Sugar Free,Bowties-Nothings (per lb),20.00,
-Sugar Free,Kichel (per lb),20.00,
-Sukkot,Regular,variable,
-Sukkot,Ginger house,65.00,
-Sukkot,torah scroll cookie,3.50,
-Sukkot,Mini sukkah,4.95,
-Tray Items,Regular,variable,
-Tray Items,Small Cookie Tray,59.95,
-Tray Items,Large Cookie Tray,84.95,
-Tray Items,Small Danish Tray,59.95,
-Tray Items,Large Danish Tray,84.95,
-Tray Items,Small Danish & Cookie Tray,59.95,
-Tray Items,Large Danish & Cookie Tray,84.95,
-Tray Items,Small Vegetable Tray,60.00,up to 20 people
-Tray Items,Medium veggie platter,80.00,25-40 people
-Tray Items,Large Vegetable Tray,100.00,45-60 people
-Tray Items,Small Fruit Tray,65.00,up to 20 people
-Tray Items,Medium fruit platter,90.00,25-40 people
-Tray Items,Large Fruit Tray,115.00,45-60 people
-Turnover/Horseshoe/Pretzel,Turnovers/Horseshoe/Pretzel,4.95,
-Turnover/Horseshoe/Pretzel,large pretzel,6.00,
-Turnover/Horseshoe/Pretzel,Pam Leaves L/Choco strip,4.95,
-Turnover/Horseshoe/Pretzel,2xpack Palm Leave,2.95,
-Valentine's Day,Heart written with ribbon,4.25,
-Valentine's Day,Heart written Cookie,3.25,
-Valentine's Day,2 hearts cookie,2.95,
-Valentine's Day,Heart strawberry jam filled,3.50,
-Valentine's Day,Cookie Cup,4.95,
-Whipped Cream,Regular,8.25,
-Yogurt Parfaits,yogurt,7.50,
-Yogurt Parfaits,Granola Cups - Small,5.25,
+Section,Group,Category,Item,Price,Unit,Taxable,Description,SquareToken
+Regular Menu,Breads,Bagels,Bagel Mezanot,1.55,,N,,XGZIHATRIVMD7RFBAP44WAZV
+Regular Menu,Breads,Bagels,Bagel Sliced,1.15,,N,,VSPH2FKTRF5MUM22TH47OXIA
+Regular Menu,Breads,Bagels,Dozen/reg sliced bagel,13.80,,N,,U3PBAXGB6HU4AN2KOMHHEEYN
+Regular Menu,Breads,Bagels,Dozen/regular bagels,13.20,,N,,43UE3JBRFH3YDA2KX7RC7OWI
+Regular Menu,Breads,Bagels,Mini Bagels,0.80,,N,,I3JKBHRSHG2FPO4HCAZBGGBN
+Regular Menu,Breads,Bagels,Multigrain,1.15,,N,,KCYCYJSVZJGKGAW2WT7LYP7O
+Regular Menu,Breads,Bagels,Regular,1.10,,N,,JYQKXTB3WGJV4SYTWFUYCDCF
+Regular Menu,Breads,Baguettes/Rolls/Buns,"3"" Hotdog Buns",1.00,,N,,PTDLT47IYZRRAHMH6NWDDUWO
+Regular Menu,Breads,Baguettes/Rolls/Buns,Baguettes Large,4.50,,N,,4YYXZLCRTS73QEA6COGCYIQO
+Regular Menu,Breads,Baguettes/Rolls/Buns,Baguettes Small,3.50,,N,,TAF3C6MG3ISO222JK3CSII32
+Regular Menu,Breads,Baguettes/Rolls/Buns,Dinner rolls/dozen,13.00,,N,,EV5WLXE6GIHJQZ2G2LJTLBZ7
+Regular Menu,Breads,Baguettes/Rolls/Buns,Hamburger/Hotdog buns,1.15,,N,,Z6UO6JVDE6R4TYBO6NX2HT6T
+Regular Menu,Breads,Baguettes/Rolls/Buns,hot dog/burger sliced,1.20,,N,,KV5I6T67FPDDGWI2UY35VZH7
+Regular Menu,Breads,Baguettes/Rolls/Buns,Jumbo burger,1.25,,N,,B2EUNEZKRSE544MRI44ACAKX
+Regular Menu,Breads,Baguettes/Rolls/Buns,jumbo burger sliced,1.30,,N,,55MWRQ5HLND4K5HH3URAWJTX
+Regular Menu,Breads,Baguettes/Rolls/Buns,Mezanot burger/hot dog CUT,1.80,,N,,7I4SU27UGW3O7KWINSYWBUHU
+Regular Menu,Breads,Baguettes/Rolls/Buns,mezanot burger/hotdog,1.75,,N,,XGE3IO5YZBDRA7S753TTPREQ
+Regular Menu,Breads,Baguettes/Rolls/Buns,mini onion pockets,1.05,,N,,UKABZHLW3V56SCCT55RNC2KN
+Regular Menu,Breads,Baguettes/Rolls/Buns,onion pocket,1.35,,N,,YEBCFZSD2QQNDHP2I7LHEEIL
+Regular Menu,Breads,Baguettes/Rolls/Buns,Rolls/OnionBuns,1.15,,N,,LHQL3Q3HHPUTNAH5JSUEYOVK
+Regular Menu,Breads,Baguettes/Rolls/Buns,Sour Dough Rolls,1.50,,N,,CVIH5LI7CBO7Q3UQQ562UI6R
+Regular Menu,Breads,Baguettes/Rolls/Buns,"sub buns 8""",1.50,,N,,THMDNDEOWIWF27KJLJAGHXZW
+Regular Menu,Breads,Bread,1/2 mezanot bread,3.75,,N,,I2BXBPZTDAXJEIRSZSNEDYKO
+Regular Menu,Breads,Bread,1/2 Rye,4.25,,N,,JY3HRNVFHH7Z25NFNAHEM2WC
+Regular Menu,Breads,Bread,Croutons,2.50,,N,,6T3OE7MNP7WTYGGPIAMUE3ZQ
+Regular Menu,Breads,Bread,Custom,variable,,N,,ALW53BPIKHXWEIDSBIKZCCD3
+Regular Menu,Breads,Bread,Flat Bread 2xbag,4.00,,N,,XUAPSTJ3UTSNRJZGWNIY6CXC
+Regular Menu,Breads,Bread,Flat Bread-Box,7.00,,N,,U4RAKIFOENVKOVMAHMA3P4WW
+Regular Menu,Breads,Bread,French//White/Whole Wheat,5.75,,N,,TUYJZZ4JV5DX5KAVGQHAEPUZ
+Regular Menu,Breads,Bread,Mezanot Bread,6.95,,N,,2PM3QD6FLC26HA25DPLF75XR
+Regular Menu,Breads,Bread,Multigrain/Rye large,7.55,,N,,OA6XFATRJSRB4WFYF576C6J7
+Regular Menu,Breads,Bread,Small Rye,5.75,,N,,GFQP4ABHD4XGX6FK5ZYUBPH3
+Regular Menu,Breads,Bread,Sour Dough,7.99,,N,,BWGZDPWOKEO3LJDY2BRAI2AA
+Regular Menu,Breads,Bread,Sour dough challah,9.25,,N,,MS4MCQIFABY4ST2CTEIY2NB4
+Regular Menu,Breads,Bread,Sour dough plain TOVAs,10.99,,N,,CNJNZIFOXWPKAOWUPBGALZ7X
+Regular Menu,Breads,Bread,Sour dough rolls,2.25,,N,,2VSAYKEZOPE2PJI3X7LIFCO3
+Regular Menu,Breads,Bread,Sour dough TOVAS,12.00,,N,,KAWMIUHZO6P2HSIHTIULP33I
+Regular Menu,Breads,Bread Items,"3"" (Medium) Hamburger Buns",1.25,,N,,K6QRLEQEGRXVESWQG7NPTRGE
+Regular Menu,Breads,Bread Items,Dinner rolls-Dozen,12.00,,N,,TT42USNLH64CH32X2Z32TW6W
+Regular Menu,Breads,Bread Items,Dome Slider Buns,0.55,,N,,ZUL4AQU4HDQP5O4TSVQWJUB6
+Regular Menu,Breads,Bread Items,Mezannot roll,1.25,,N,,STE2L3WKCHXF4NOPDVQCLE6D
+Regular Menu,Breads,Bread Items,Mezanot dome slider bun,1.10,,N,,VG27LDTIRHYNBQS4QVOWUSK5
+Regular Menu,Breads,Bread Items,Mezanot toonie buns,0.85,,N,,IMQWOPIBCPVV4NSHQE4IODD2
+Regular Menu,Breads,Bread Items,Mezonot Hamburger Buns,1.85,,N,,GB3E6A5WXGV56IWDU4KKRY35
+Regular Menu,Breads,Bread Items,Mezonot Hotdog Buns,1.85,,N,,KU3GW4XV666A4JMYEQFAUEFL
+Regular Menu,Breads,Bread Items,Regular,variable,,N,,S4SSN6OLV5L2Z4PN2P3U2K6F
+Regular Menu,Breads,Bread Items,Rolls,1.15,,N,,RXN7AC3FEP47PS5LTYPQH3Q5
+Regular Menu,Breads,Bread Items,Toonie Buns,0.50,,N,,E3DR3LFXCGLCJVVAOQRRFVKM
+Regular Menu,Breads,Spelt bread,Regular,10.95,,N,,NWYCDNI53JZKFQPP6AZ3GLAN
+Regular Menu,Breads,Spelt bread,Spelt Rolls,2.50,,N,,CNDPISMX4N2OUADA6IOVQDU3
+Regular Menu,Breads,Full Slab Focaccia,Regular,85.00,,Y,,3DIWEITNN2R62AWVREETF5R6
+Regular Menu,Cakes,Cakes,Brownie 1/2 Slab,80.00,,Y,,SBMJVQHNPOK64NQBLC7UQ7RL
+Regular Menu,Cakes,Cakes,Brownie 1/4 Slab,60.00,,Y,,OOIOFSJNWKONHQOPYA2MZZSY
+Regular Menu,Cakes,Cakes,Brownie Full Slab,130.00,,Y,,UFYZ6SWCJJBUQEAGW7SMUNCC
+Regular Menu,Cakes,Cakes,Napoleon 1/2 Slab,80.00,,Y,,5VRQWVXEBDRTWZFURNS3E5UN
+Regular Menu,Cakes,Cakes,Napoleon 1/4 Slab,60.00,,Y,,Q4VW3V5BUZ4FBWR77K7X344W
+Regular Menu,Cakes,Cakes,Napoleon Full Slab,130.00,,Y,,JW32S64VVD324LDIMCLXPJIL
+Regular Menu,Cakes,Cakes,Regular,variable,,Y,,HVI3FCDLTWT3LCCVR43CUXCS
+Regular Menu,Cakes,Fancy Cakes,1/2 Slab,90.00,,N,,BVIV7KZTIDMP6JWPNQPDR5C7
+Regular Menu,Cakes,Fancy Cakes,1/2 Slab  straw/caramel/blackf,110.00,,N,,5PFZK5T6ERNHR75LPHQ7EIM5
+Regular Menu,Cakes,Fancy Cakes,1/2 Slab Brownie/napoleon,75.00,,N,,366CU3NEI2ZMJDEHXK5LM7OW
+Regular Menu,Cakes,Fancy Cakes,1/2 Slab Choco&Marble,55.00,,N,,6LFH7FTO46HHGNBMJJMAELEY
+Regular Menu,Cakes,Fancy Cakes,1/4 Slab,70.00,,N,,X5OS6UDDB3U5NJJHJ6NYVMCW
+Regular Menu,Cakes,Fancy Cakes,1/4 Slab Brownie/napoleon,50.00,,N,,3FWASZV3UTKOXT2LCKYTMDKO
+Regular Menu,Cakes,Fancy Cakes,1/4 Slab straw/caramel/blackf,80.00,,N,,S6GNWORUXOYSTFK4UZFMS5RH
+Regular Menu,Cakes,Fancy Cakes,"10"" Round Cake",70.00,,N,,SFZTDBZPHAH5J6TOFZEX73A5
+Regular Menu,Cakes,Fancy Cakes,"10"" Round Cake Caramel/Strawshort/BlackForest",75.00,,N,,QTK5Z7UG67KYKG3VEY6EXEXO
+Regular Menu,Cakes,Fancy Cakes,"12 "" Round Cake Caramel/Strawshort/BlackForest",95.00,,N,,HFX5W6LGBUMGIPTY7CTUYFF2
+Regular Menu,Cakes,Fancy Cakes,"12"" Round Cake",85.00,,N,,Y3Z5KDFG6AVCQOXU4QJH2ZVR
+Regular Menu,Cakes,Fancy Cakes,"5"" Round Cake",25.00,,N,"Checkerboard (Chocolate & White sponge with butter cream)
+Chocolate Mouse (Chocolate sponge with mouse filling)
+Chocolate Cake (Chocolate Sponge, Chocolate Filling covered in Chocolate ganache)
+Chocolate Cake (Covered with white Chocolate)
+Strawberry Shortcake
+Caramel Crunch ( Chocolate sponge, caramel buttercream filling, butter cream all over, caramel and pumpkin seed brittle on top)
+Lemon Mouse ( White sponge, lemon filling and buttercream)
+1/2 and 1/2 Cake (White & chocolate sponge, buttercream, chocolate on top)
+Mocha cake (chocolate sponge, mocha buttercream filling, chocolate on top)
+Black Forest cake ( chocolate sponge, buttercream, cherry filling)
+Cookie cake (chocolate sponge, buttercream, chocolate cookie crumbs)
+Raspberries mouse cake ( chocolate sponge, raspberries buttercream)
+Doboush/7 layers (chocolate",OPP4ENGHZGX5IO4MWG2UDFVC
+Regular Menu,Cakes,Fancy Cakes,"5"" Round Cake Caramel/Strawshort/BlackForest",28.00,,N,,OUTNVPUNX5CPXKW53SF6VGAM
+Regular Menu,Cakes,Fancy Cakes,"7"" Purim Cake",40.00,,N,,CSR6EJTKAXGOJOH5VNFRU7OY
+Regular Menu,Cakes,Fancy Cakes,"7"" R Cake Caramel/Strawshort/BlackForest",37.50,,N,,6ZUL4IHCHSM74TE6M5OTLADP
+Regular Menu,Cakes,Fancy Cakes,"7"" Round Cake",32.50,,N,,DB2VQZNVBBTRCLNFNJMKVBLU
+Regular Menu,Cakes,Fancy Cakes,"9"" Round Cake",55.00,,N,,OMLQW7RJV22U65C5HZPYAYOM
+Regular Menu,Cakes,Fancy Cakes,"9"" Round Cake Caramel/Strawshort/BlackForest",60.00,,N,,E76RIEJV3BMP5QAU2HJ5RO63
+Regular Menu,Cakes,Fancy Cakes,Caramel  brittle small,80.00,,N,,OJB26ZSVLIIF2NCAHUQED4SR
+Regular Menu,Cakes,Fancy Cakes,Caramel brittle 1/2size,45.00,,N,,GPDTJRV3ZZRLD3IV42RFKTTZ
+Regular Menu,Cakes,Fancy Cakes,Caramel brittle Large,110.00,,N,,I3S7A4FYUWXCTSE6UWJHEZLB
+Regular Menu,Cakes,Fancy Cakes,Custom Cake,variable,,N,,Z6N3USLAMPKXYCDLOGC2YDZQ
+Regular Menu,Cakes,Fancy Cakes,FS Barmitzvah buttercream/fondantdetails,485.00,,N,,YET37A7BTFPWIAFR7XYTL6EB
+Regular Menu,Cakes,Fancy Cakes,Full Slab,175.00,,N,,SZSGVFVOL7VXV7LSXSV3HD2I
+Regular Menu,Cakes,Fancy Cakes,Full Slab  Choco&marble,100.00,,N,,ZGMT7234B4LY66QJKW7TCI3Q
+Regular Menu,Cakes,Fancy Cakes,Full Slab Brownie/napoleon,130.00,,N,,IC4NLZPBXEHFHEPA2B25LZVD
+Regular Menu,Cakes,Fancy Cakes,Full Slab straw/caramel/blackf,225.00,,N,,NRW4BIHJXX5G7M734YB3XK6R
+Regular Menu,Cakes,Fancy Cakes,fullslab fondant torah scroll,475.00,,N,,ALG6SDINKP3OEZ5FQAW5JMB6
+Regular Menu,Cakes,Fancy Cakes,fullslab icing Torah scroll,325.00,,N,,2USEMAVKJNQ7IMMMQXVCRV4J
+Regular Menu,Cakes,Fancy Cakes,printed picture,20.00,,N,,ZRYKKUOAJTRDTDGJQSDTRZ6Z
+Regular Menu,Cakes,Fancy Cakes,Seven Layer,22.50,,N,,3XPZXKICNY7ME5WAYQTNOC64
+Regular Menu,Cakes,Fancy Cakes,seven layer straw/caramel/blackforest,25.00,,N,,AP5S6NTJWENTMMDT7F24KB3P
+Regular Menu,Cakes,Fancy Cakes,Swiss Roll Cake Strawberry/Mousse,22.50,,N,,OGK7RBHFYJZTEXC4M4LLGRQW
+Regular Menu,Cakes,Loaf/Bundt Cakes,Bundt  10inch,19.50,,N,,I7IUMZIU3GB2ARQVYI6QUXJV
+Regular Menu,Cakes,Loaf/Bundt Cakes,L Bundt Cake,21.99,,N,,GC22GUMSVMT6SBO2JIYV6CUB
+Regular Menu,Cakes,Loaf/Bundt Cakes,Loaf Cakes,12.95,,N,,73IZEWVE4MKO5OKB2X7UTI2M
+Regular Menu,Cakes,Loaf/Bundt Cakes,M Bundt Cake,17.99,,N,,2OPLMS66V4HPKGBBDANTO4J3
+Regular Menu,Cakes,Loaf/Bundt Cakes,mini loaf cake,6.95,,N,,F4YS64TNUDPAJ3MKDVUVI735
+Regular Menu,Cakes,Muffins/Cupcakes,Cupcake,3.75,,N,,ZQSE7I45ZFJIWHUHFCCIPU6B
+Regular Menu,Cakes,Muffins/Cupcakes,cupcake no icing,3.25,,N,,FJCPDXFI4Z5VWR6L6IOSM3CQ
+Regular Menu,Cakes,Muffins/Cupcakes,Muffin/Spelt&Sugar free Muffins,3.50,,N,,X2FKLBSOP4Z7XTBJJR73O7OY
+Regular Menu,Cakes,Muffins/Cupcakes,Printed picture cupcake,5.25,,N,,EDA74N25AWIJAQKNXVG634O4
+Regular Menu,Cakes,Muffins/Cupcakes,Small Cupcakes,1.75,,N,,6FHSA37PX7X4645BSYVFS7LI
+Regular Menu,Cakes,Muffins/Cupcakes,Small Muffin,1.95,,N,,6H3F5GHIK7XKZ2LNQ7ZHM7HK
+Regular Menu,Cakes,Cupcake (No Icing),Regular,3.25,,Y,,EONC3HTK6L335DEKNUI5S2AT
+Regular Menu,Cakes,Printed Picture Cupcake,Regular,4.25,,Y,,S5JI4ZI46IRTWPBVUPBQIQDI
+Regular Menu,Cookies,Cookies,Assorted,20.00,/lb,N,,UY6JSZ27Q75UAXX25MZHYPVK
+Regular Menu,Cookies,Cookies,Baby Cookies,3.00,,N,,FDACNVSUFZNXGNKQD7OC63WF
+Regular Menu,Cookies,Cookies,Bear Cookie,1.95,,N,,LFRKRXKETCV6ORAE4PHAQCMA
+Regular Menu,Cookies,Cookies,Biscotti,2.75,,N,,4WBOTTIYASWQXXA3P2CHXRHN
+Regular Menu,Cookies,Cookies,Chocolate Chip /Oatmeal/Raisin,4.75,,N,,JP6RCOF2PWH7QHE2V5WXB6DH
+Regular Menu,Cookies,Cookies,Cookie on a Stick,3.45,,N,,S3TYA4SLJ3RCK7ZHQ3TWSBKB
+Regular Menu,Cookies,Cookies,Cookies With Ribbon,5.25,,N,,5W7PQDZGLEJO5SDURTDRORRJ
+Regular Menu,Cookies,Cookies,Custom Cookies,variable,,N,,5LKX43ART5WOKEQHUXCCK6UP
+Regular Menu,Cookies,Cookies,Ginger Bread  PeopleX2,5.00,,N,,WCHDAR2NDD5E7GVTOTYE54VQ
+Regular Menu,Cookies,Cookies,Ginger Bread Bride &Groom,3.50,,N,,66Q6CNK7BXWIBJXW22AUZOZY
+Regular Menu,Cookies,Cookies,Hand Written Cookies,3.50,,N,,TKZ4APLHCK36GAUJXJQNLVPK
+Regular Menu,Cookies,Cookies,Happy Bites,7.50,,N,,N7HL3LOPQZZYWCXHAJLYJQG6
+Regular Menu,Cookies,Cookies,iced cookie GF,3.75,,N,,N6NQBBKQDTZ4I2I247BMXSN7
+Regular Menu,Cookies,Cookies,Individually wrapped,0.25,,N,,FO43F4MNLZHILHW7S5FJV2DO
+Regular Menu,Cookies,Cookies,Larger Cookies,3.50,,N,,VVVUDHAJWX42FNSCOPLYSW4J
+Regular Menu,Cookies,Cookies,Medium Size Cookies,2.95,,N,,BS4ETRLC57WI6CICHFD3BHLI
+Regular Menu,Cookies,Cookies,Plain Cookies,1.50,,N,,J74BOMPEZ65YBU72V4YXPISH
+Regular Menu,Cookies,Cookies,Printed picture cookie,4.25,,N,,JUUGGAVMISQYZWNV7TYXDQ57
+Regular Menu,Cookies,Cookies,Regular Iced Cookies,2.75,,N,,KEBJHBGF7V7EBSSQ56M22YN5
+Regular Menu,Cookies,Cookies,Small Decorated Cookies,2.50,,N,,SWEJWBOGQTNP5DNLTQBG5Z7M
+Regular Menu,Cookies,Cookies,Smiley Face Cookie,2.95,,N,,TZGYGY74M3DRCMZMTF32I56D
+Regular Menu,Cookies,Cookies,Square Proposal Cookie,4.25,,N,,J5HL3H6ZDNLSYQ6K3ME2OX6Q
+Regular Menu,Cookies,Cookies,Wedding Cookies,3.95,,N,,OROCB7L3EPTP727Y253SDVI2
+Regular Menu,Cookies,Cookies,Written cookie GF,4.25,,N,,TYAYQAXRKS4T7RYPLTCLS2XP
+Regular Menu,Cookies,Cookies,written Israel flag,3.75,,N,,T2CEILJHWKTZRQSJNSM3VIV3
+Regular Menu,Cookies,Boxed cookies,400grms cookie mixed,17.50,,N,,2MAISCGUBGUE3YCWFWZZROCT
+Regular Menu,Cookies,Boxed cookies,Boxed cookies,10.99,,N,,3VSH2FBV6G7CRS65DPVRNT25
+Regular Menu,Cookies,Boxed cookies,Choco Alfajor,12.95,,N,,VHABS56THVEKHTPFQOQZEMNK
+Regular Menu,Cookies,Boxed cookies,Chocolate Chip Cookies,11.25,,N,,DM7HWOUEVM4CKE2BBGW5PHFJ
+Regular Menu,Cookies,Boxed cookies,Chocolate Drop with Pumpkin,11.50,,N,,3VKEJ4QFAWQIHMELIBPCPVYE
+Regular Menu,Cookies,Boxed cookies,Jam Regallach,13.50,,N,,7U27NWLDRMRHXL7SPPUC2NNC
+Regular Menu,Cookies,Boxed cookies,Pumpkin seed Mandel bread cookies,11.70,,N,,HIBAWR77QYGW3GYFHZULOIQE
+Regular Menu,Cookies,Bow Ties / Kichels,bowties/nothings,4.50,,N,,PJPD5FNZWE53OUETFUJIGRKW
+Regular Menu,Cookies,Bow Ties / Kichels,kichels,4.95,,N,,AO6M427JSHKNRMVRLUQ2TYDS
+Regular Menu,Cookies,Custom Cookie,Chocolate Chip Cookie - Store Size,4.95,,N,,DHILHL6YKQ3QFAT2X4XKKYNO
+Regular Menu,Cookies,Custom Cookie,Chocolate Chip Cookie 1/2 Slab,95.00,,N,,PZM6VRE2YAO2AC6ZAZ4UIIKP
+Regular Menu,Cookies,Custom Cookie,"Chocolate Chip Cookie 10""",50.00,,N,,5WRXNMISMEWQITECKNZGLYG6
+Regular Menu,Cookies,Custom Cookie,"Chocolate Chip Cookie 12""",55.00,,N,,B7CBKF6MLDWIQWCDFA7IBOJQ
+Regular Menu,Cookies,Custom Cookie,"Chocolate Chip Cookie 14""",60.00,,N,,GJAKVB4LM7XBDZMCAKQY4GEZ
+Regular Menu,Cookies,Custom Cookie,"Chocolate Chip Cookie 7""",35.00,,N,,G62NBCAP4WJBORDFVWKV45QR
+Regular Menu,Cookies,Custom Cookie,"Chocolate Chip Cookie 9""",45.00,,N,,M6IXXYM6IUJFQ2AOGQ4IDRGM
+Regular Menu,Cookies,Custom Cookie,Fancy Cookies,1.00,,N,,LHSJ654VOI4WLBZGCM4TBGQ3
+Regular Menu,Cookies,Custom Cookie,Printed/Logo Cookies,4.25,,N,,PPPFEN7VUA3UYFQF5NHKJG2Z
+Regular Menu,Cookies,Custom Cookie,Regular,variable,,N,,EBLYBOYLFT45EH6MYXIGXOLQ
+Regular Menu,Cookies,Custom Cookie,"Shortbread Cookie Decorated 10""",40.00,,N,,ZHJZQP666AW7M53FAH2TYQC6
+Regular Menu,Cookies,Custom Cookie,"Shortbread Cookie Decorated 12""",45.00,,N,,LG7FW6BBTQ6JTXFTGAM4OP4E
+Regular Menu,Cookies,Custom Cookie,"Shortbread Cookie Decorated 7""",30.00,,N,,4A7WM2U6U3PNYIJNL5BVRNNA
+Regular Menu,Cookies,Custom Cookie,"Shortbread Cookie Decorated 9""",35.00,,N,,4EBQAOZ43HSLTBISLNLZNL5V
+Regular Menu,Cookies,Rogallach/Jam & Chocolate Twist,Jam Rogallach,5.25,,N,,LPYL3RU4WD33BX4LKRTI6LEQ
+Regular Menu,Cookies,Rogallach/Jam & Chocolate Twist,Jam Twist,20.00,/lb,N,,EJB7OVK2YS4VRKP5VZ4F2K7T
+Regular Menu,Cookies,Rogallach/Jam & Chocolate Twist,Rogallach Choc & Cinnamon,1.75,,N,,KM7TFWDHCZZXT4ACYBA7DGK4
+Regular Menu,Cookies,Sugar Free,Apple Strudel,12.50,,N,,3D3UE42CAZQHLGXJHN5NJYN6
+Regular Menu,Cookies,Sugar Free,Bowties-Nothings,20.00,/lb,N,,IR3J33S6GDTJEKKEO4SEE2YP
+Regular Menu,Cookies,Sugar Free,Choco drop Pumkin seed cookie,11.50,,N,,Y47BXXCOO3EO2EGUC6BNXONG
+Regular Menu,Cookies,Sugar Free,Choco Swirll,11.50,,N,,HBEI5S46G3P5GBFNDJQ7AN3W
+Regular Menu,Cookies,Sugar Free,fruit Pies,24.95,,N,,5K5LNBWGZX6YFKX33SWQVIGA
+Regular Menu,Cookies,Sugar Free,Jam rogollach,5.25,,N,,52L6KHEOEBBYX22B63MKPBT7
+Regular Menu,Cookies,Sugar Free,Jam Rogollach cookie,11.50,,N,,QZRR7KDHQYRVMW4TD7SXT3G5
+Regular Menu,Cookies,Sugar Free,Jam Swrill,11.50,,N,,LCUS4MMIN3FQCGNZA2XQRDQL
+Regular Menu,Cookies,Sugar Free,Kichel,20.00,/lb,N,,Z3EXFHZ35YZX7WPBCNYXUPS2
+Regular Menu,Cookies,Sugar Free,Mandel bread tovas,11.50,,N,,PCXCXK2HWKBWSTBD26QCLYVP
+Regular Menu,Cookies,Sugar Free,SF Hamentashen,2.00,,N,,3HR5THVZPPDJJZPCH5US5QIS
+Regular Menu,Cookies,Sugar Free,SF Hamentashen x6,11.50,,N,,WTOIMU7WGWBKMHWL5CWVUSQG
+Regular Menu,Cookies,Sugar Free,Turnover,5.25,,N,,5IGLNJFELDDWIFQ7O4VM5XXY
+Regular Menu,Cookies,Gluten Free,Bilka,10.00,,N,,X25USZYAJ4VOU2VO4XHM357E
+Regular Menu,Cookies,Gluten Free,GF Bites,11.50,,N,,IQMPLS5LX2EX7KTVHDCS3HIH
+Regular Menu,Cookies,Gluten Free,GF Cookies Chocolate Chip/Sprinkle/Poppy Seeds,9.99,,N,,IUEEHFWAYTZ2Z6FYMJCYLFQS
+Regular Menu,Cookies,Gluten Free,GF hamentashen,2.25,,N,,EHO5I3GAPCATCRWN3CDSTXI5
+Regular Menu,Cookies,Gluten Free,GF hamentashen x6,13.50,,N,,CUHFV72EYXDVKXYXLYLSW7II
+Regular Menu,Cookies,Gluten Free,GF Pies Blueberry/Cherry/Apple Raspberry,21.50,,N,,7HXB5B5IS2ZI7OHIBY7QGIUW
+Regular Menu,Cookies,Gluten Free,Large challah,25.00,,N,,HFBFLE4HVTSMKKXJFUMIS6RC
+Regular Menu,Cookies,Gluten Free,small challah,17.00,,N,,PI46R6U6QMBR2SZTI64JAHKK
+Regular Menu,Pastries,Bubka / Chocolate Strip,3 Strip Chocolate Tray,13.99,,N,,BS5RKVSVFOVZD45DVN52BC53
+Regular Menu,Pastries,Bubka / Chocolate Strip,"Bubkah weddingcake 14,10,7",595.00,,N,,4J5S4HJTOFNTCHXTMMKGCEXL
+Regular Menu,Pastries,Bubka / Chocolate Strip,Chocolate Loaf Bubka,13.79,,N,,AWKEAY3ZBBF2ZU5R3CJNJ5JO
+Regular Menu,Pastries,Bubka / Chocolate Strip,Chocolate Strip/Kokosh,20.99,,N,,CXJVD2XXHD5KPULWEYQIITIC
+Regular Menu,Pastries,Bubka / Chocolate Strip,Crown Bubka,24.99,,N,,JGEYZVV7O77H6YZO72LIMNNC
+Regular Menu,Pastries,Bubka / Chocolate Strip,Icy Bun Tray,13.99,,N,,2KEKUVX73XO4SATGZNMTEHMF
+Regular Menu,Pastries,Bubka / Chocolate Strip,Mini bubkah,4.99,,N,,VHYAXKXOSQRKUCIGRCICAE4G
+Regular Menu,Pastries,Bubka / Chocolate Strip,Personal bubkah,3.99,,N,,IPOFXIFRCBBW4HATBZ3I5UPK
+Regular Menu,Pastries,Bubka / Chocolate Strip,Round Choco/cheese/poppy/cinnamon,12.99,,N,,FF2J2UEVWEEHJTKM62B5NFDL
+Regular Menu,Pastries,Danish/Croissant/Bun,Cheese Danish&cheese croassaint,4.65,,N,,7P6JN47KAEL5JOXF5QUERNNV
+Regular Menu,Pastries,Danish/Croissant/Bun,Cheese pastry,4.75,,N,,X5G6RKZQ3PIQWVOFQ42MMJLD
+Regular Menu,Pastries,Danish/Croissant/Bun,Croissant/Danish/BlueB/Cherry Bun/choco bufalo,4.25,,N,Medium size,YCXHWUCZHCIGSXLVVISXY4Y6
+Regular Menu,Pastries,Danish/Croissant/Bun,Danish Medium size,2.80,,N,,Q2PWASZVCECCHBQUEKSXTGDM
+Regular Menu,Pastries,Danish/Croissant/Bun,Mini cheese,1.75,,N,,NLP4BU5SX6ACNO4STPYQLONO
+Regular Menu,Pastries,Danish/Croissant/Bun,Small Cheese Danish,2.25,,N,,DFAKA3PYUL2KXDMRBEPHVRDZ
+Regular Menu,Pastries,Danish/Croissant/Bun,Small Croissant/ mini danishes,1.99,,N,,5SH53J52TP5OCZZEFECT6BXM
+Regular Menu,Pastries,Churros/Donuts,Churro platter 100pcs,120.00,,N,,O5WIXY5W5KBRGC5BVXKMI7UX
+Regular Menu,Pastries,Churros/Donuts,Churro regular,1.25,,N,,JB2ZOVJJ6C3QM5ZVOFU477OH
+Regular Menu,Pastries,Churros/Donuts,Churros pack,3.99,,N,,Z2REPIT356PCE2OJRRDUGCIE
+Regular Menu,Pastries,Churros/Donuts,Cinnamon&sugar single,1.20,,N,,WE73UUGFN6FWZGK55Z2552UL
+Regular Menu,Pastries,Churros/Donuts,Donuts,1.40,,N,,YG35ST7NJB7PTWK7FFD44LVA
+Regular Menu,Pastries,Churros/Donuts,Mini churros,0.90,,N,,IUVUM33T5RARKSVEK74YUNHV
+Regular Menu,Pastries,Churros/Donuts,Mini donut,1.00,,N,,KZTJTTGN6H5IWVTFO54BJNMF
+Regular Menu,Pastries,Churros/Donuts,Regular,variable,,N,,RVA3MTPKS42KRPNALLMCNGPC
+Regular Menu,Pastries,Turnover/Horseshoe/Pretzel,2xpack Palm Leave,2.95,,N,,XP4YKFB4TQGUJEIVVL5R5KLO
+Regular Menu,Pastries,Turnover/Horseshoe/Pretzel,large pretzel,6.00,,N,,R54PLUBX22MMTNSZTZIEEDJN
+Regular Menu,Pastries,Turnover/Horseshoe/Pretzel,Pam Leaves L/Choco strip,4.95,,N,,MIFMLOWYNSSVNXFY2QJQSHAL
+Regular Menu,Pastries,Turnover/Horseshoe/Pretzel,Turnovers/Horseshoe/Pretzel,4.99,,N,,T2D72WHRAOEG3HDDZYR5KXIQ
+Regular Menu,Pastries,Pastries,1/2 sliced napoleon,2.25,,N,,YUYSMRXIS5K6JSEDGRUX7F77
+Regular Menu,Pastries,Pastries,4'Inch fruit Tarts,7.95,,N,,QKRMUB6T22ZC7BWRUF6BIRVT
+Regular Menu,Pastries,Pastries,7'Inch Fruit Flan,35.00,,N,,SXKR6B3VZZHYS4CM4FYTJYPS
+Regular Menu,Pastries,Pastries,"9""fruit tart",50.00,,N,,LFHCAZG5LVAPSBFQFDVGB2ZH
+Regular Menu,Pastries,Pastries,Cake Pops/marshmellows,4.25,,N,,4ONNMSP7EQBU67MIWZN2KWLY
+Regular Menu,Pastries,Pastries,Chocolate Cigar,4.50,,N,,IFANRI43RKZ7EIFMERHUPBMN
+Regular Menu,Pastries,Pastries,Ishler cookie,2.95,,N,,J3ISUM5AKGIO6GXPRE22G4G6
+Regular Menu,Pastries,Pastries,Mini cupcake pop,2.49,,N,,6QARRT66OLDJMZJILFIZODZS
+Regular Menu,Pastries,Pastries,Mini round cake,4.95,,N,,KQC4TYOMKTUZRN4B65IZIL4X
+Regular Menu,Pastries,Pastries,Pastries,4.50,,N,"Pastries-Brownie, Corn Flake Cluster, Cream Horn, Cream Puff and Éclair, Domino & Hockey Puck, Swiss Rolls, Napoleon, Strawberry Tart, Tarts & Bells, Upside Down Cupcake, Large Ishler cookie.",RKOQGNDO452XUUXUPOC6YQZQ
+Regular Menu,Pastries,Pastries,Rum Ball,3.50,,N,,WP2ZGVMZLQOHEVACRKERYUPB
+Regular Menu,Pastries,Pastries,Scone/fruit tart/éclairs,3.95,,N,,UVLTCP7N7YACQKWP2DGSMIWQ
+Regular Menu,Pastries,Pastries,Single marshmallow,1.95,,N,,TBIOKBOGBJ2PF245XBTEC2WF
+Regular Menu,Pastries,Pastries,Triffle cake cups/shooters,3.95,,N,,3CVODEKBHZ44C53U2Y5UZI3A
+Regular Menu,Pastries,Petit Fours & Desserts,Assorted Petit Fours - from,2.50,,N,,OHLQ46KLF2ALZN4FHKHHGNMW
+Regular Menu,Pastries,Petit Fours & Desserts,Brownie PF Size 1/3 Size,2.50,,N,,5S4E3OVWK26KPQINXANP5BYY
+Regular Menu,Pastries,Petit Fours & Desserts,Chocolate Dipped Strawberries,3.35,,N,,AXDD642K6EG657E6OHKO4VXU
+Regular Menu,Pastries,Petit Fours & Desserts,Regular,variable,,N,,5RPCGMRWMTAPAU65PLTCP7F2
+Regular Menu,Pastries,Petit Fours & Desserts,Swiss Roll PF Size,2.75,,N,,GBPW4URDJ5Q7CRA3X53DKGOS
+Regular Menu,Pastries,Petit Fours & Desserts,Tuxedo Strawberries,3.95,,N,,OYYYLSJCZMNG7WWPOMQOQITP
+Regular Menu,Pastries,Pies/Apple Strudel,1/2 slab applestrudel,80.00,,N,,RZDUU2ZIDS5ZUYS4NLCXYJ46
+Regular Menu,Pastries,Pies/Apple Strudel,"9""lemon  merengue",35.00,,N,,AKEGXI23NAK6CO6DQFISA3AY
+Regular Menu,Pastries,Pies/Apple Strudel,Apple Cranberry,21.00,,N,,SNEMOBZUOL6GCHCMKUAXOEXB
+Regular Menu,Pastries,Pies/Apple Strudel,Apple Strudel,12.95,,N,,5ZOUJECKOBXAL4EXZF4IB7V4
+Regular Menu,Pastries,Pies/Apple Strudel,Apple Strudel Sugar Free,12.00,,N,,IKSDKK5BUECBAQ4J72CH22OF
+Regular Menu,Pastries,Pies/Apple Strudel,Chocolate or caramelChip Cookie Pie,27.50,,N,,EY562LYP53VFS6ED4674ATBP
+Regular Menu,Pastries,Pies/Apple Strudel,Crumble & Fruit Pies,21.00,,N,,VZANYY2X4Y27MCYSQJ2GO424
+Regular Menu,Pastries,Pies/Apple Strudel,Full slab applestrudel,175.00,,N,,HJWRMDIEKQQ4KIFD3YZS4ZD4
+Regular Menu,Pastries,Pies/Apple Strudel,Full Slab Pie,130.00,,N,,RMRDAFTCYEMIBBDJBBU4U3PN
+Regular Menu,Pastries,Pies/Apple Strudel,Lemon Meringue Pie,21.00,,N,,MTXEA5PD43746GAXUHLVZFO3
+Regular Menu,Pastries,Pies/Apple Strudel,Small apple strudel,6.95,,N,,S6PWXIRHDRPTQFVG53ZVB3RZ
+Regular Menu,Pastries,Pies/Apple Strudel,Small pie,7.50,,N,,TGC6OOAP5IPTAPTHNWVG26PQ
+Regular Menu,Pastries,Pies/Apple Strudel,Sugar Free Pies,24.95,,N,,J7FATHKQGV6YSX7FQ5Z7AM6Z
+Regular Menu,Sandwiches & Savouries,Sandwiches,Cream cheese & vegetables,5.50,,Y,,VFINFZGMK33TLC3AWVXNYCDT
+Regular Menu,Sandwiches & Savouries,Sandwiches,Cream cheese counter,5.25,,Y,,FIMOQZVBQD5YROZAHQNZNVUH
+Regular Menu,Sandwiches & Savouries,Sandwiches,Egg pkg,6.50,,Y,,GZRYMDAIOOVFA3INFDES2FEK
+Regular Menu,Sandwiches & Savouries,Sandwiches,Egg Wrap,7.50,,Y,,LBLWQ3GVYAKYC5GUW3OWT5C2
+Regular Menu,Sandwiches & Savouries,Sandwiches,Lox and cream cheese pkg,8.50,,Y,,JRARE2WE6UCNJ5V6SC5D2QYR
+Regular Menu,Sandwiches & Savouries,Sandwiches,party sandwich x12,17.95,,Y,,5HLUQJRL2R6BWY223I3MTIHT
+Regular Menu,Sandwiches & Savouries,Sandwiches,party sandwich x9,12.75,,Y,,BFRVEHWD36B36JFTBSTNWYFF
+Regular Menu,Sandwiches & Savouries,Sandwiches,Toppings,0.50,,Y,,ERQ33SUR7YMQZVYTDQL66Z4K
+Regular Menu,Sandwiches & Savouries,Sandwiches,Tuna custom,7.50,,Y,,RLDSUOIEZABGDMZJJRPVOFRL
+Regular Menu,Sandwiches & Savouries,Sandwiches,Tuna pkg,7.50,,Y,,3DA5L5P73O65ZDFRYXCTTYQU
+Regular Menu,Sandwiches & Savouries,Sandwiches,Tuna wrap,8.50,,Y,,4QJHWNACSBPCK5V4VTYTXO4W
+Regular Menu,Sandwiches & Savouries,Sandwiches,Veggie wrap,8.50,,Y,,BJUA5NLI7HD6T6VKVDCLCITD
+Regular Menu,Sandwiches & Savouries,Sandwiches,Whole egg,1.20,,Y,,UXEVOP5SUVY7AALVS55ZEGNL
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,12 Party Sandwiches triangle,21.95,,Y,,KCUGRQ37ZKGDK6CRRBKU4J27
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,12party sandwiches strips,28.00,,Y,,X5I5HQIZA7J3QMJY4YJHFQMC
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,12swirl party sandwiches,18.95,,Y,,4AS4ETT425KA4IRBL6DG6XIN
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,Baguette Sandwiches,2.95,,Y,,SNWOD3EQUDLSOY645GKDXJ64
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,Croissant Sandwiches,7.50,,Y,,4VNSROROOBI4OFN7OQSJ3POU
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,Egg Salad,variable,/lb,Y,,QZLM5SYNI4MDIVOBHNTFEKEK
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,Regular,variable,,Y,,PQQHO7XQWTJESRDK5737WWVN
+Regular Menu,Sandwiches & Savouries,Sandwich & Fillings,Tuna Salad,variable,/lb,Y,,5FI6UYSSMWQSMQE6VG7N73JE
+Regular Menu,Sandwiches & Savouries,Savouries,Cheese buroka,4.75,,N,,4ATQAY5P6JHZCRQN4JUJUIRC
+Regular Menu,Sandwiches & Savouries,Savouries,Cheese sticks,3.25,,N,,QBOZUXB5RWN3KARAB7XNMDHF
+Regular Menu,Sandwiches & Savouries,Savouries,Mushroom,3.50,,N,,SRM2NV6QXNCZHSBT35K6FNBX
+Regular Menu,Sandwiches & Savouries,Savouries,Potato,3.50,,N,,PGMNK7APGQFXG7DTWUJMVGLN
+Regular Menu,Sandwiches & Savouries,Savouries,Round pastry,4.25,,N,,PUFFJBO33ZOCX5MHWSR5THP4
+Regular Menu,Sandwiches & Savouries,Savouries,small mushroom,3.25,,N,,UOL3UGQG3GJQO62ZNU7SOO4B
+Regular Menu,Sandwiches & Savouries,Savouries,small potato,3.25,,N,,THM2M2ZFHWVJST6PZ3KVUMLZ
+Regular Menu,Sandwiches & Savouries,Elite salads,Black olive tapenade,4.30,,Y,,VRZVYDDETS43BLQVSOAOPYFY
+Regular Menu,Sandwiches & Savouries,Elite salads,Manzanilla olive dip,4.30,,Y,,LID2SX6ROT3KJQNFPGVXFPRZ
+Regular Menu,Sandwiches & Savouries,Elite salads,Spanish eggplant,6.70,,Y,,DJZWFHDWN2BQKEN66LYCN7OA
+Regular Menu,Sandwiches & Savouries,Elite salads,White fish,9.00,,Y,,U3GM5NZKNTN2E2MP5WFNMZGP
+Regular Menu,Sandwiches & Savouries,La Briut Salads,Babaganough,3.99,,Y,,PPP3IKNS27U5EBLWM2YD5SKU
+Regular Menu,Sandwiches & Savouries,La Briut Salads,Coleslaw,5.99,,Y,,YTXZUHQ7NL6LNM7VHZNCPIZM
+Regular Menu,Sandwiches & Savouries,La Briut Salads,Eggplant,3.99,,Y,,XHUN2SQGBTBWYQ5M57NIIIZT
+Regular Menu,Sandwiches & Savouries,La Briut Salads,Hummus,2.99,,Y,,CN2NWYZOIBIV3XRGA7324BSP
+Regular Menu,Sandwiches & Savouries,La Briut Salads,Salmon pate,4.39,,Y,,IGVMKV3VAEOFH7HEGZDENGSG
+Regular Menu,Sandwiches & Savouries,La Briut Salads,Spicy Carrot,3.99,,Y,,LW4UX7FDJOAGDQ4ITXGY3DRN
+Regular Menu,Sandwiches & Savouries,Yogurt Parfaits,Granola Cups - Small,5.25,,Y,,UX3UCPBMTSOVZ27A4OECIVRH
+Regular Menu,Sandwiches & Savouries,Yogurt Parfaits,yogurt,5.75,,Y,,PS3TS52LPB5F4WNE4SULW7E5
+Regular Menu,Catering,Tray Items,Large Cookie Tray,,,Y,,E46Z5T3EQ2D7UERMA3KI65V6
+Regular Menu,Catering,Tray Items,Large Danish & Cookie Tray,,,Y,,N2RZTBONQ5U5WRNK7NQYOJX3
+Regular Menu,Catering,Tray Items,Large Danish Tray,,,Y,,IJSMCOSGJHRR3SOVBWC3HNQD
+Regular Menu,Catering,Tray Items,Large Fruit Tray,,,Y,,KXSMCZMDTGXKYE6WMSST2FES
+Regular Menu,Catering,Tray Items,Large Vegetable Tray,,,Y,,A25KBBYN6RWLVQ7SU4VWYVVK
+Regular Menu,Catering,Tray Items,Medium fruit platter,,,Y,,KYARRHANNHMHJFS7VBUY6KYO
+Regular Menu,Catering,Tray Items,Medium veggie platter,,,Y,,RT5NEJYLQDCYBB4KZYXXQBVW
+Regular Menu,Catering,Tray Items,Regular,,,Y,,ECABIADWOGMXD3JLCMLGFENO
+Regular Menu,Catering,Tray Items,Small Cookie Tray,,,Y,,LB5GLLZD7J2CKPZCMOID3BPF
+Regular Menu,Catering,Tray Items,Small Danish & Cookie Tray,,,Y,,EHRO36TGOJNZSWNYYWLB5FM7
+Regular Menu,Catering,Tray Items,Small Danish Tray,,,Y,,PCZA4G5E44EQBZAJN7DC5ISX
+Regular Menu,Catering,Tray Items,Small Fruit Tray,,,Y,,MYYZAWO6ERMTYD5BNAYDJUJ4
+Regular Menu,Catering,Tray Items,Small Vegetable Tray,,,Y,,QKJFILA3HD5GK7UTJK4XKS65
+Regular Menu,Catering,Platters (2 Scoops per Portion),Cream Cheese,,,Y,,ICCQREZZX3XRKWK5JWL3TSOS
+Regular Menu,Catering,Platters (2 Scoops per Portion),Cream Cheese & Lox,,,Y,,TJSYZQJQZ6CEOXNXZZTJF3P2
+Regular Menu,Catering,Platters (2 Scoops per Portion),Egg Salad,,,Y,,MPT2KXR7E7EEYIQEQSTCBOU7
+Regular Menu,Catering,Platters (2 Scoops per Portion),Lox,,,Y,,G77DZVVMLHG7TTA6OUKX3GU2
+Regular Menu,Catering,Platters (2 Scoops per Portion),Regular,,,Y,Bagels and Rolls are Extra,EB5EOHT6LVQWXE6JYT25GEMR
+Regular Menu,Catering,Platters (2 Scoops per Portion),Tuna Salad,,,Y,,PBGMZWSQUNUGEIRQR76N5TPG
+,,,,,,,,
+Friday,Challah & Bilka,Challah,Frozen challah large,5.95,,N,,YI6BUJ2GVDF2BOBLCLQLKHNJ
+Friday,Challah & Bilka,Challah,Holiday Challah,14.00,,N,,TYD7LFW6WAYPBJ7YU2EABWRA
+Friday,Challah & Bilka,Challah,Large,7.99,,N,,LSKKNDVPOBRG6AXCV7DKUXW2
+Friday,Challah & Bilka,Challah,Small,5.79,,N,,AU4DYHIEA7LJD4OHIH4REFV3
+Friday,Challah & Bilka,Challah,Sour Dough Challa,8.75,,N,,EDGTWXUYD6GKP3OX4I5QURXX
+Friday,Challah & Bilka,Challah,Square challa,7.99,,N,,ZHAL4JXAEEE4ILFEEKCJWGSM
+Friday,Challah & Bilka,Challah,Water challa,7.99,,N,,LRKLRDC264KV4B2SXACBDAMA
+Friday,Challah & Bilka,Challah Multigrain,Large,8.50,,N,,4375GQ4WLW25T2TSO3NFRXQ7
+Friday,Challah & Bilka,Challah Multigrain,Small,6.50,,N,,4IUMAFUSSYNVPEPC7EZXHKN7
+Friday,Challah & Bilka,Challah Spelt,Large,11.00,,N,,4MKYVKGTERXDG2FQ63A6NOWX
+Friday,Challah & Bilka,Challah Spelt,Small,9.00,,N,,XEPKFX7CRXXCOFJIZXGGIYRW
+Friday,Challah & Bilka,Special Challah,Large challah,4.50,,N,,J26NFFV3LOS3X4F4V33HHKKX
+Friday,Challah & Bilka,Special Challah,Regular,4.50,,Y,,N5FS24XDARAACQCUZYMJ66GO
+Friday,Challah & Bilka,Special Challah,Regular,4.50,,N,,GOT735VY5XVBMGNJGJYUW5MT
+Friday,Challah & Bilka,Special Challah,Shlisel challah,8.50,,N,,TFSAUWOTITJ7SU5RZLPWYHMD
+Friday,Challah & Bilka,Pretzel Challah,pretzel bread,2.05,,N,,G43EEO6X5X6XLT7NULM4BUB7
+Friday,Challah & Bilka,Pretzel Challah,Pretzel buns,1.60,,N,,LANG42R2DO3GSJLKERNFRNSL
+Friday,Challah & Bilka,Pretzel Challah,Pretzel challah,8.95,,N,,AQK3ROMPX3P5ZHOUHIAILHJ2
+Friday,Challah & Bilka,Pretzel Challah,Pretzel Demi baguette,1.55,,N,,VXLE3GAXSSL7K6W7PSMSSMSY
+Friday,Challah & Bilka,Pretzel Challah,Regular,variable,,N,,EI37RKXBI6CMHMFVCUJIK7MC
+Friday,Challah & Bilka,Simcha Challah,2 lb.,25.00,,N,,TPAWFSSDGKPFDONIPHTFDHBC
+Friday,Challah & Bilka,Simcha Challah,2 lb. Simcha 25people,30.00,,N,,FX6P2BLFU7HBVT5SXYED227W
+Friday,Challah & Bilka,Simcha Challah,3 lb.,30.00,,N,,23HKFBWDXHZHUXKKQ4SYW5ZS
+Friday,Challah & Bilka,Simcha Challah,3 lb. Simcha 50 people,35.00,,N,,ZG3DA3DD2QGV2ZUAEROBZDQ6
+Friday,Challah & Bilka,Simcha Challah,5 lb.,50.00,,N,,6B3AWC2XRK7OMB3LGDHB2CWH
+Friday,Challah & Bilka,Simcha Challah,5 lb. Simcha 100 people,55.00,,N,,RV7W5DMC7OGUH4BE4SK33LFP
+Friday,Challah & Bilka,Simcha Challah,Regular,variable,,N,,EZYVDF57MNFT65GOKUEHVRXT
+Friday,Challah & Bilka,Bilka,"Challah 8""",2.45,,N,,CAQNJBJTQLTBDOZYMYWMFSDF
+Friday,Challah & Bilka,Bilka,Cocktail,1.15,,N,,J3RQOJVIQ6FAIEDSQ3RQJPDB
+Friday,Challah & Bilka,Bilka,Long,1.99,,N,,FHVUMSS5TNICVCPQVVXCQNS5
+Friday,Challah & Bilka,Bilka,Long Multigrain,2.05,,N,,IFFZGQCQPIF7J5QRT4TTUWZ5
+Friday,Challah & Bilka,Bilka,Regular,1.65,,N,,PW6NDOW7VVXSBE5KD4FEGF6Z
+Friday,Challah & Bilka,Bilka,Regular Multigrain,1.70,,N,,3MTKWYNA3ZCHU3AQUY2AD2UO
+Friday,Challah & Bilka,Bilka,Spelt,2.50,,N,,Z77MOIPWN7JICZSI64NPMYIE
+Friday,Challah & Bilka,Bilka,Square,2.45,,N,,PANNGIUGYILSWAC4D76DIKJ7
+Friday,Challah & Bilka,Bilka,Square Chocolate Chips,4.99,,N,,DDLF6CPE44RV3FJDTNOJMTIZ
+Friday,Challah & Bilka,Bilka,Square Multigrain,2.50,,N,,VBPYKH54K2WUTXQBYUYJXYBJ
+,,,,,,,,
+Holidays,Rosh Hashanah,Rosh Hashanah,1/2slab honey,110.00,,N,,E3FVEIBH567S6KHQMFBJPJFK
+Holidays,Rosh Hashanah,Rosh Hashanah,1/4 slab honey,80.00,,N,,KEQKPUAPKHEBJBTCPZVVOAFX
+Holidays,Rosh Hashanah,Rosh Hashanah,10 inch honey bundt,26.00,,N,,6ICARRVLHZXBSAJ2Q3NZT4YP
+Holidays,Rosh Hashanah,Rosh Hashanah,"12"" Inch Choco Cookie",50.00,,Y,,UNUL2TW4Y7JUR74UU3CLVC7C
+Holidays,Rosh Hashanah,Rosh Hashanah,"7"" Choc Mousse cake",37.50,,N,,IFXTBCFLE2DC5CZ7BOOO63FI
+Holidays,Rosh Hashanah,Rosh Hashanah,"7"" Lady finger Choc cake",37.50,,N,,KRFZQQM4BVAW7QXS373CI3K4
+Holidays,Rosh Hashanah,Rosh Hashanah,"7"" Mixed fruit mousse",45.00,,N,,LKLGLFTFGGJ3K3WXDH5KF25B
+Holidays,Rosh Hashanah,Rosh Hashanah,"9""  Choc mousse cake",60.00,,N,,UUUCZOAG3OTUX4BL6F7XOM4T
+Holidays,Rosh Hashanah,Rosh Hashanah,"9"" fruit tart",50.00,,N,,F2VPJBND6XQD7URHLZ4YVYXE
+Holidays,Rosh Hashanah,Rosh Hashanah,"9"" Lady finger Choc cake",60.00,,N,,YRVUIPHVWDWSB6YJSJ3DYTBG
+Holidays,Rosh Hashanah,Rosh Hashanah,"9"" Mixed fruit mousse",67.95,,N,,RMXMQ2Z4FRV4Z3GDLOX37ULQ
+Holidays,Rosh Hashanah,Rosh Hashanah,apple loaf,12.95,,N,,FSDGMDKYCBNJZOBNQOAK42ZM
+Holidays,Rosh Hashanah,Rosh Hashanah,AppleCupcakes,3.95,,N,,OASXYZSZIFUC6BGZWPWSVTQN
+Holidays,Rosh Hashanah,Rosh Hashanah,Bee cookie,3.75,,N,,3OZ6D4O3AWBBVQERTKSP4XEJ
+Holidays,Rosh Hashanah,Rosh Hashanah,Cookie Kit,29.95,,Y,,YDMPDTSJZNNULZG5LCRMER7D
+Holidays,Rosh Hashanah,Rosh Hashanah,Crown Challah,16.95,,N,,6QVPONHGUOXOWBVFZFRZRRCI
+Holidays,Rosh Hashanah,Rosh Hashanah,fancy Honey cakes,45.00,,N,,AOPXBIEKZSLJWAQG2XK3I3SJ
+Holidays,Rosh Hashanah,Rosh Hashanah,fullslab honey,225.00,,N,,S5KS2X26WTK25VOUZDIH5Q67
+Holidays,Rosh Hashanah,Rosh Hashanah,Gift Basket,74.95,,Y,,XMZZ34NXJA3PBBDPONYQT375
+Holidays,Rosh Hashanah,Rosh Hashanah,Honey bundt  L,24.00,,N,,XBLQVN6QQQOY45B25HTZFAZX
+Holidays,Rosh Hashanah,Rosh Hashanah,Honey bundt M,21.00,,N,,6FBMOHCABA43TKTX26ANQZF3
+Holidays,Rosh Hashanah,Rosh Hashanah,Honey jar cookie,4.20,,N,,MUH76QRV6EVCS3GU6T77FXF3
+Holidays,Rosh Hashanah,Rosh Hashanah,Honey Loaf  L,15.50,,N,,HT3V5UQ4CXVEKLYXX2RZ2RHD
+Holidays,Rosh Hashanah,Rosh Hashanah,Honey Loaf  S,9.95,,N,,KGK6Q6A2W7TSJ4A2LWZIMGBX
+Holidays,Rosh Hashanah,Rosh Hashanah,Large Plate,54.95,,Y,,AGL7UZB6P7PONW2A72RYRKVI
+Holidays,Rosh Hashanah,Rosh Hashanah,Large round challah,7.95,,N,,KKNGFC5DQ33SXF3QALHP6I4C
+Holidays,Rosh Hashanah,Rosh Hashanah,Mini Honey Jars,12.95,,Y,,246FVSW4Q7BKY2SC4HDNSRTY
+Holidays,Rosh Hashanah,Rosh Hashanah,Mixed fruit honey cake,55.00,,N,,UZVC7UXUCYZQ6JJVFD5Z75AI
+Holidays,Rosh Hashanah,Rosh Hashanah,Mixed fruit PUFF cake,50.00,,N,,PYHFSKDBUH5J5JKSUEFYQBTM
+Holidays,Rosh Hashanah,Rosh Hashanah,Pack of 2 apple cookie,5.00,,N,,CR23W5L3OXO3MI5SE6PKJ4BH
+Holidays,Rosh Hashanah,Rosh Hashanah,Printed picture,4.25,,N,,BVJDXB6B2RRGIMJE44PWWHY2
+Holidays,Rosh Hashanah,Rosh Hashanah,Rectangle Cookie Box,24.95,,Y,,PWYLYUNKOWPURC6RRQ2UIDXA
+Holidays,Rosh Hashanah,Rosh Hashanah,Regular,variable,,N,,4JO44V364ATJASQLAZQRGWET
+Holidays,Rosh Hashanah,Rosh Hashanah,Regular,variable,,Y,,JMIOFKBLF3PXFYXIGCBXSWIT
+Holidays,Rosh Hashanah,Rosh Hashanah,seven layer long,38.00,,N,,4OWPCFUEWCWNYV7TXJS7MMX5
+Holidays,Rosh Hashanah,Rosh Hashanah,sliced honey cake,5.95,,N,,5QIZIEM5ONAAKPAXFFZ2AF6H
+Holidays,Rosh Hashanah,Rosh Hashanah,Small Plate,39.95,,Y,,6KRMZJRWUI7ILLUDM3USTUME
+Holidays,Rosh Hashanah,Rosh Hashanah,Small Round Challah,5.50,,N,,OLWMB34HDOBDHPZ2LVHIQWGB
+Holidays,Rosh Hashanah,Rosh Hashanah,Square Cookie Box,18.95,,Y,,ZY2F2Z7PG22IJPNVSHSB6ZNA
+Holidays,Rosh Hashanah,Rosh Hashanah,Written cookie,3.25,,N,,XYDAXFRZU32XVQHNKSVFTQXA
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,"12"" Choco chip Cookie gram",45.00,,Y,,26EK6WGWFNH2IBW7DDVDNPC5
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,"7"" graham cookie",30.75,,Y,,PJJDKBIZ4VYGYL4KRAUOGFZX
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Big basket,95.00,,Y,,XI3ZX5NROPEDGZR3BUZBXQGP
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Cookie kit,37.50,,Y,,7MCATTOI6LXQW5EMEF4VQ2EQ
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Large plate,59.95,,Y,,CQKNW5FKHRZ4SMZUKZK2B4GX
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Mini honey jars,14.95,,Y,,QE5FURIYWDVGLGQPJSAQ45FZ
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Rectangle cookie box,27.50,,Y,,JKINT66BRKNHPAF25NH5JZHN
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Regular,variable,,Y,,ODC7CJ6KLQXEDDGVUDEYRRY2
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Small gift basket,75.00,,Y,,EGVVCJAIE53VW2EANVFJL7CQ
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Small plate,44.95,,Y,,GFCQH7A5SROEEROVS6QLJPRL
+Holidays,Rosh Hashanah Baskets,Rosh Hashanah Baskets,Square cookie box,21.00,,Y,,A5YBDBXURTETDGAZJVNW47EE
+Holidays,Sukkot,Sukkot,Ginger house,65.00,,Y,,4IIC2E52KSKKDZ6ESQUQ7JUM
+Holidays,Sukkot,Sukkot,Mini sukkah,4.95,,Y,,SY2GTHA4S74QOTDZ2HBGFOZD
+Holidays,Sukkot,Sukkot,Regular,variable,,Y,,OQWSYDJ43JRKFUOEOPZ445PY
+Holidays,Sukkot,Sukkot,torah scroll cookie,3.50,,Y,,PEJ6KZVCHSCMDSDL5RHZ3DXV
+Holidays,Chanukah,Chanukah,Donuts-Assorted Iced,2.95,,N,,BG7SMFOI2OJQ74QYCMQEM76P
+Holidays,Chanukah,Chanukah,Sufganiyot/Jelly Donuts,2.95,,N,,TDUZ3VEOXN6TGGIGHGN6RUZP
+Holidays,Chanukah Cookies,Chanukah Cookies,4 dreidel pack,9.50,,Y,,AS2ODGNBYWVO7KCTDXS42LS2
+Holidays,Chanukah Cookies,Chanukah Cookies,Chanukah Cookie bite cup,7.50,,Y,,6XDSDII6A5Z6P3EGS3MYG2HX
+Holidays,Chanukah Cookies,Chanukah Cookies,Chanukah cookie kit,34.95,,Y,,UC5FHL5CE4MYZIIEQDTI23JA
+Holidays,Chanukah Cookies,Chanukah Cookies,Chanukah cookie kit,27.96,,Y,,W4HU5RFBRTBBTJVCDNKXPZFY
+Holidays,Chanukah Cookies,Chanukah Cookies,Chanukah printed picture,4.25,,Y,,KZIASXYFSGCX3IJ5H7PKYCW6
+Holidays,Chanukah Cookies,Chanukah Cookies,Chanukah written cookie,3.25,,Y,,6NNGKAVLAWPMX6QM3MGNXD2P
+Holidays,Chanukah Cookies,Chanukah Cookies,Chocolate&Sprinkle menorah/Dreidel,1.95,,Y,,XTCNG4ZESBVMU6EOM5XTBZMD
+Holidays,Chanukah Cookies,Chanukah Cookies,Cookie box,10.50,,Y,,I2GGPX7SQBULDNBEV3IJL3LN
+Holidays,Chanukah Cookies,Chanukah Cookies,Dreidel-Menorah Cookie Pack,5.00,,Y,,CL32XDQBICF3OQVGPUSCCLUJ
+Holidays,Chanukah Cookies,Chanukah Cookies,Large Dreidel/Menorah Cookie,3.50,,Y,,2G7XLLMTOULQGYNYXV7NZ77R
+Holidays,Chanukah Cookies,Chanukah Cookies,Rectang gift box,25.95,,Y,,NMNN6FXY5ISV3OPWV7H7FZYM
+Holidays,Chanukah Cookies,Chanukah Cookies,Small Menorah/Dreidel Cookie,2.50,,Y,,J4QIFSBE3IXSZEETKT7HFD6M
+Holidays,Chanukah Cookies,Chanukah Cookies,Square gift box,19.95,,Y,,Z6TO3PJEK2LCYVXIGNQ6CGCR
+Holidays,Sufganiyot & Latkes,Sufganiyot & Latkes,Boston cream,4.50,,N,,AQ247EYRE4K5DRQXXDZJPWYG
+Holidays,Sufganiyot & Latkes,Sufganiyot & Latkes,Fancy,6.95,,N,,MV2FPD3YKG2SRB5YWHB456BE
+Holidays,Sufganiyot & Latkes,Sufganiyot & Latkes,Latkes,3.50,,N,,BE7XKVU4VZGHCG6WC2VSOG6N
+Holidays,Sufganiyot & Latkes,Sufganiyot & Latkes,Regular,3.50,,N,,I6RYB46LJO7SHWK6IQ6PKUGA
+Holidays,Purim,Purim,Bag w/ juice,11.95,,N,,XGNDBOALC5XHWJXILF6TNDXP
+Holidays,Purim,Purim,Basket,45.00,,N,,NB43IMCJKQLTVN6FGY3DVQQ6
+Holidays,Purim,Purim,Big Basket,50.00,,N,,PLOQWYZ432HJBWMU7XZI56ZI
+Holidays,Purim,Purim,Fancy hamentashen,2.25,,N,,VHDHBJH4OQ3LW5GBNJKHPGYZ
+Holidays,Purim,Purim,Hamantosh,variable,,N,,L4CMCRVTW4UQS7NTYT6E4XLF
+Holidays,Purim,Purim,Hamentashen,1.95,,N,,I22IRLYMWIGJBDEQYEMAKWJ6
+Holidays,Purim,Purim,Hand Written - Square/Round/Star,3.50,,N,,SCJL3W4QX5UP4A4KEDK4GIUH
+Holidays,Purim,Purim,Individually packed hamentashen,2.20,,N,,CSUXWOJ6O7W7X3RB636SQESF
+Holidays,Purim,Purim,Large Bowl,29.95,,N,,S7GAFBFAFACFC5TQENVPRLER
+Holidays,Purim,Purim,Large Clown/Mask/Crown,4.25,,N,,WVJFTLARBUFW4Z6NC6KASNNQ
+Holidays,Purim,Purim,Medium  bowl,21.95,,N,,MT2FUS73OOWAQGVY35FCVZML
+Holidays,Purim,Purim,Printed cookie,4.25,,N,,SXA7HBBUP7DZP56O26X2CHJW
+Holidays,Purim,Purim,Purim Kit,variable,,N,,RSKKAQJJWINMXGQVRQLRREFW
+Holidays,Purim,Purim,Regular,variable,,N,,MLNJZXWE2HRGFVKTU42EFDTS
+Holidays,Purim,Purim,Small Bowl,18.95,,N,,QYFCAKJ44KM4JTV5RPUC5KOY
+Holidays,Purim,Purim,Small Clown,2.95,,N,,QDKASSWQTVV4EK3HREMSSUNG
+Holidays,Purim,Purim,Yeast hamantaschen,4.65,,N,,6R77ETB3BEW6WTYKEHEWZPWQ
+Holidays,Mishloach Manot,Mishloach Manot,Assorted x6,11.70,,Y,,C3H2PEBUABCZDVEW2CDQTS7V
+Holidays,Mishloach Manot,Mishloach Manot,Bag w/juice,10.00,,Y,,H4TWYZGXTBVL4IDA7XTHXZI2
+Holidays,Mishloach Manot,Mishloach Manot,Big Basket,95.00,,Y,,UFHNRZAZVEGSL52MKRLVLOAI
+Holidays,Mishloach Manot,Mishloach Manot,Hamentashen Kit,34.50,,Y,,6Q6LUGOEPPLJIKWXIYD7PC7J
+Holidays,Mishloach Manot,Mishloach Manot,Large Bowl,37.50,,Y,,CLKWZKWE5DZCPA7B5D6QAXAY
+Holidays,Mishloach Manot,Mishloach Manot,medium Basket,69.00,,Y,,ESZMRQ4UXT6RR3B36TEHKGS6
+Holidays,Mishloach Manot,Mishloach Manot,Medium Bowl,27.50,,Y,,HSOZXXPQPWBVV6ZVI2YLX7IN
+Holidays,Mishloach Manot,Mishloach Manot,Pack assorted x4,7.80,,Y,,5DFTA4AUGJOIPTTKQQP47HBH
+Holidays,Mishloach Manot,Mishloach Manot,Purim Cookie Kit,35.00,,Y,,OAYNS77XS5CQPNQLDCMEKEUQ
+Holidays,Mishloach Manot,Mishloach Manot,small basket,49.00,,Y,,ONPSU7MIXQI4UEVNZD5VTCAV
+Holidays,Mishloach Manot,Mishloach Manot,Small Bowl,18.50,,Y,,F4CUMBIXHHCSZN2ZTKIGPW3F
+Holidays,Shavuot,Shavuot,Cheesecake,50.00,,Y,,YZAMYTOYUFD5YXP237FJMFRQ
+Holidays,Shavuot,Shavuot,Cheesecake  mini toppings,16.00,,Y,,R5DWAASIBNGTW7ZDD2IBHMXO
+Holidays,Shavuot,Shavuot,Cheesecake loaf toppings,30.00,,Y,,A6PQKBRRDSY6BCURLEBIWTSL
+Holidays,Shavuot,Shavuot,Cheesecake toppings,55.00,,Y,,SKVDGUEJOFFWIPDCRGNG43CQ
+Holidays,Shavuot,Shavuot,Loaf cheesecake,25.00,,Y,,MFDG4C5S4GIHKFZXIVSALF6D
+Holidays,Shavuot,Shavuot,Mini Loaf,12.00,,Y,,M7RVKTBZZSGGG6LJ6I4KWEIO
+Holidays,Shavuot,Shavuot,Mixed fruit cheesecake,60.00,,Y,,NNLUOOHOZEJXCAJFK55L6R2X
+Holidays,Shavuot,Shavuot,Mixed Fruit loaf,35.00,,Y,,ZBEUI55BKTRCEWVY7JS5GUVK
+Holidays,Shavuot,Shavuot,Mixed Fruit mini,20.00,,Y,,C7ETOBY4HM6JAR6YTBOBCCK7
+Holidays,Shavuot,Shavuot,Printed picture,4.25,,Y,,U3NEAQGHEHOD6QB553LANVL2
+Holidays,Shavuot,Shavuot,Regular,variable,,Y,,NKDSP5IBT4OKT5E256UAV4MI
+Holidays,Shavuot,Shavuot,Sliced,5.25,,Y,,G3FAICEJL634G6FJPGZWRIK4
+Holidays,Shavuot,Shavuot,Torah Scroll,3.75,,Y,,UKJMTTBUC7FYFO2ZCZY3X4V5
+Holidays,Valentine's Day,Valentine's Day,2 hearts cookie,2.95,,N,,HHDOJYHAX22SWUQH5AT43PQP
+Holidays,Valentine's Day,Valentine's Day,Cookie Cup,4.95,,N,,XI3H6MM2RPJQNIM6GNHGK3E5
+Holidays,Valentine's Day,Valentine's Day,Heart strawberry jam filled,3.50,,N,,3VMZFWRYQDEA7QK4B3Z3SLYU
+Holidays,Valentine's Day,Valentine's Day,Heart written Cookie,3.25,,N,,2PAVULITTW6KN4NXVXJAKD2H
+Holidays,Valentine's Day,Valentine's Day,Heart written with ribbon,4.25,,N,,GCBUO6SSUDMDJZZWD6PQPPJ7
+Holidays,Mother's Day,Mother's Day,"7"" choco chip cookie",12.00,,N,,6IHPUQBPWACTJHZLMDL7HUIK
+Holidays,Mother's Day,Mother's Day,Cupcake bouquet,38.50,,N,,3ORGMXHXOUDPCB3NVN6SFXDG
+Holidays,Mother's Day,Mother's Day,Printed picture,4.25,,N,,ENRIQXYR2SC2OHVAPC7H5T7S
+Holidays,Mother's Day,Mother's Day,Square/heart written,3.95,,N,,XNWJKIDR62A5R2ZX454UTA2F
+Holidays,Father's Day,Father's Day,heart cookie,2.95,,Y,,OF3AZLRMG42VJHQGMFRKODIE
+Holidays,Father's Day,Father's Day,Heart/square Written cookie,3.75,,Y,,6S7DM5O65NRWGCHBUYWRURIF
+Holidays,Father's Day,Father's Day,Regular,variable,,Y,,2KTMRRI77SGCR7UGZPC3AEF5
+Holidays,Graduation cookie,Graduation cookie,2x pack,7.50,,Y,,2IXBGKV7I2PM2BXYFCPC33N4
+Holidays,Graduation cookie,Graduation cookie,badge/diploma,3.25,,Y,,6H7DPOZL2QF22NIW737ZBDPS
+Holidays,Graduation cookie,Graduation cookie,boy/girl,4.25,,Y,,NFNKMQEHE7TP5C3RZRZC6YXF
+Holidays,Graduation cookie,Graduation cookie,hat,3.75,,Y,,G2V5NK4DHZRYK6EDFEZ7AY3Z
+Holidays,Graduation cookie,Graduation cookie,rectangle large cookie,4.25,,Y,,Q3F3RGCK52BDLWHO44Z3KRMJ
+Holidays,Graduation cookie,Graduation cookie,Regular,variable,,Y,,K2IAGATKZFCCKUJNULMORMIW
+Holidays,Graduation cookie,Graduation cookie,written round,3.25,,Y,,CFJ5WKOTEDHFDQYLECYBCOWG
