@@ -61,6 +61,8 @@ export interface Product {
   isSeasonal?: boolean;
   isBestseller?: boolean;
   image?: string;
+  /** Square POS catalog Token — stable join key for price sync via scripts/sync-prices.mjs */
+  squareToken?: string;
 }
 
 export interface Category {

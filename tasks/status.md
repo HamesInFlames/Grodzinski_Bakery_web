@@ -1,9 +1,52 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-21 (Hybrid pricing model — Phase 1 wired)
+
+**Tool:** Claude Code (Opus 4.7)
+**Branch:** `chore/catalog-csv-migration`
+
+**What was done:**
+- Added `squareToken?: string` field to the `Product` interface in `src/data/products.ts`
+- Built a conservative slug → SquareToken mapping table (22 products) in the new `scripts/sync-prices.mjs`
+- Ran the sync: 22 products now carry a `squareToken` and have Square-current prices stamped in `src/data/products.generated.ts`
+- 19 real price changes applied to `products.generated.ts` (small adjustments — biggest deltas: rosh-hashanah-gift-basket -$10, lemon-meringue-pie -$5, icy-bun-tray -$4, mothers-day-cookie-bouquet +$3.50)
+- Deleted the orphan `scripts/generate-products.mjs` (broken since `src/menuData.js` was removed in c8b9851)
+- Added `npm run sync-prices` to package.json
+- Updated `products.generated.ts` header comment to reflect that it's now a curated source with CSV-driven price sync (not auto-generated)
+- All 66 Playwright tests pass on the new prices
+- Build clean
+
+**Conservative-mapping rationale:**
+- Only single-SKU-to-single-SKU matches are mapped. Curated trays / dozens / platters / boxes are intentionally NOT mapped to Square's per-piece SKUs (e.g. wedding-cookies tray $28 vs Square's per-cookie $3.95 would crash to a wrong price)
+- All 22 image-wired products in the priority set are mapped where a clean match exists; ambiguous cases stay on their curated price
+- Rerunning `npm run sync-prices` is idempotent — 0 changes second time through
+
+**What's next:**
+1. Carolina/Chris review of price deltas before merging to main
+2. Expand the SLUG_TO_SQUARE_TOKEN table as the bakery breaks out more single-SKU equivalents in Square (e.g. separate small/full-size pies, separate dozen/tray rows for cookies)
+3. Add `webServer` block to `playwright.config.ts` so the test suite is self-contained (currently requires `vite preview --port 4173` to be running)
+
+---
+
+## Session — 2026-05-21 (verification of catalog CSV migration)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `chore/catalog-csv-migration` (commit 3253dab)
+
+**Verification results (all pass):**
+1. CSV parse: 9-col header, 467 data rows, 2 blank dividers, 3 sections (Regular Menu 296, Friday 37, Holidays 134) — PASS
+2. `products.generated.ts` byte-identical to parent cf3d6ce: 130 products, 43 image slugs — PASS
+3. `npm run build`: clean, no warnings — PASS
+4. Playwright suite: 66/66 passed (note: needs `vite preview --port 4173` running; no `webServer` in config) — PASS
+5. Image cross-check: 43 referenced slugs ↔ 43 files on disk, zero orphans, zero missing — PASS
+6. `generate-products.mjs` still references deleted `src/menuData.js` (lines 84, 88) — confirmed known broken from c8b9851, not a regression — PASS
+
+---
+
 ## Session — 2026-05-21 (catalog CSV migration to Square POS export)
 
 **Tool:** Claude Code (Opus 4.7)
-**Branch:** working tree changes — not yet committed
+**Branch:** `chore/catalog-csv-migration` (commit 3253dab)
 
 **What was done:**
 - Took the Square POS catalog export `MLV1171MHFNF4_catalogue-2026-05-15-1828.csv` (545 rows, 36 cols) and produced a cleaned, sectioned 9-column file

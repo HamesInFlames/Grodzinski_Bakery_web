@@ -1,17 +1,24 @@
-// AUTO-GENERATED — do not edit manually
-// Run: node scripts/generate-products.mjs
-// Source: src/menuData.js
+// Curated product catalog with Square POS price sync.
+//
+// Edit slug / name / description / image / category / dietary / occasion here.
+// Prices for products that carry a squareToken field are overwritten from
+// grodzinski_products.csv each time scripts/sync-prices.mjs runs — do NOT
+// hand-edit those prices, they will be re-stamped.
+//
+// Run: node scripts/sync-prices.mjs
+
 
 import type { Product } from './products';
 
 export const GENERATED_PRODUCTS: Product[] = [
   {
     slug: "plain-challah-large",
+    squareToken: "LSKKNDVPOBRG6AXCV7DKUXW2",
     image: "/images/products/plain-challah-large.webp",
     name: "Plain Challah (Large)",
     category: "challah-bilkas",
     description: "Our signature beautifully braided challah with a soft, slightly sweet crumb and golden crust. The classic choice for Shabbat.",
-    price: 8.13,
+    price: 7.99,
     dietary: [
       "pareve",
       "contains-egg"
@@ -23,10 +30,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "plain-challah-small",
+    squareToken: "AU4DYHIEA7LJD4OHIH4REFV3",
     name: "Plain Challah (Small)",
     category: "challah-bilkas",
     description: "Perfect portion braided challah, ideal for smaller families or weeknight dinners.",
-    price: 5.56,
+    price: 5.79,
     dietary: [
       "pareve",
       "contains-egg"
@@ -53,11 +61,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "sesame-challah",
+    squareToken: "LSKKNDVPOBRG6AXCV7DKUXW2",
     image: "/images/products/sesame-challah.webp",
     name: "Sesame Challah",
     category: "challah-bilkas",
     description: "Classic braided challah generously topped with toasted sesame seeds for extra flavor and texture.",
-    price: 8.13,
+    price: 7.99,
     dietary: [
       "pareve",
       "contains-egg"
@@ -69,6 +78,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "whole-wheat-challah",
+    squareToken: "4375GQ4WLW25T2TSO3NFRXQ7",
     name: "Whole Wheat Challah",
     category: "challah-bilkas",
     description: "Wholesome braided challah made with whole wheat flour for a heartier, more nutritious option.",
@@ -84,10 +94,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "challah-seeds-square",
+    squareToken: "ZHAL4JXAEEE4ILFEEKCJWGSM",
     name: "Challah Seeds Square",
     category: "challah-bilkas",
     description: "Square-shaped challah topped with a blend of seeds — perfect for sandwiches and toast.",
-    price: 8.13,
+    price: 7.99,
     dietary: [
       "pareve",
       "contains-egg"
@@ -201,10 +212,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "multigrain-bread",
+    squareToken: "OA6XFATRJSRB4WFYF576C6J7",
     name: "Multigrain Bread",
     category: "bread-rolls",
     description: "Nutritious loaf made with a blend of grains and seeds for added texture and flavor.",
-    price: 8.14,
+    price: 7.55,
     dietary: [
       "pareve"
     ],
@@ -243,11 +255,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "plain-bagel",
+    squareToken: "JYQKXTB3WGJV4SYTWFUYCDCF",
     image: "/images/products/plain-bagel.webp",
     name: "Plain Bagel",
     category: "bread-rolls",
     description: "Classic chewy bagel with a crisp exterior. Baked fresh daily.",
-    price: 1.17,
+    price: 1.1,
     dietary: [
       "pareve"
     ],
@@ -258,11 +271,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "sesame-seed-bagel",
+    squareToken: "JYQKXTB3WGJV4SYTWFUYCDCF",
     image: "/images/products/sesame-seed-bagel.webp",
     name: "Sesame Seed Bagel",
     category: "bread-rolls",
     description: "Traditional bagel generously topped with toasted sesame seeds.",
-    price: 1.17,
+    price: 1.1,
     dietary: [
       "pareve"
     ],
@@ -273,11 +287,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "everything-bagel",
+    squareToken: "JYQKXTB3WGJV4SYTWFUYCDCF",
     image: "/images/products/everything-bagel.webp",
     name: "Everything Bagel",
     category: "bread-rolls",
     description: "Loaded with sesame, poppy seeds, onion, garlic, and salt. A flavor explosion.",
-    price: 1.35,
+    price: 1.1,
     dietary: [
       "pareve"
     ],
@@ -331,11 +346,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-crown-babka",
+    squareToken: "JGEYZVV7O77H6YZO72LIMNNC",
     image: "/images/products/chocolate-crown-babka.webp",
     name: "Chocolate Crown Babka",
     category: "babkas",
     description: "Our showpiece babka — a magnificent crown shape with rich chocolate swirled throughout. Perfect for celebrations.",
-    price: 23.34,
+    price: 24.99,
     dietary: [
       "dairy",
       "contains-egg"
@@ -347,10 +363,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-kokosh-babka",
+    squareToken: "CXJVD2XXHD5KPULWEYQIITIC",
     name: "Chocolate Kokosh Babka",
     category: "babkas",
     description: "Traditional Hungarian-style kokosh with layers of chocolate filling rolled into a tender dough.",
-    price: 21.06,
+    price: 20.99,
     dietary: [
       "dairy",
       "contains-egg"
@@ -362,10 +379,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-loaf-babka",
+    squareToken: "AWKEAY3ZBBF2ZU5R3CJNJ5JO",
     name: "Chocolate Loaf Babka",
     category: "babkas",
     description: "Classic chocolate babka in loaf form — easy to slice and perfect for sharing.",
-    price: 15.15,
+    price: 13.79,
     dietary: [
       "dairy",
       "contains-egg"
@@ -454,10 +472,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "icy-bun-tray",
+    squareToken: "2KEKUVX73XO4SATGZNMTEHMF",
     name: "Icy Bun Tray",
     category: "babkas",
     description: "Assortment of sweet iced buns — perfect for breakfast gatherings or brunch.",
-    price: 18,
+    price: 13.99,
     dietary: [
       "dairy",
       "contains-egg"
@@ -666,6 +685,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "custom-celebration-cake",
+    squareToken: "Z6N3USLAMPKXYCDLOGC2YDZQ",
     image: "/images/products/custom-celebration-cake.webp",
     name: "Custom Celebration Cake",
     category: "cakes",
@@ -680,6 +700,7 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "custom-wedding-cake",
+    squareToken: "Z6N3USLAMPKXYCDLOGC2YDZQ",
     name: "Custom Wedding Cake",
     category: "cakes",
     description: "Beautiful multi-tier wedding cakes designed to your specifications. Consultation required.",
@@ -907,11 +928,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-chip-cookies-dozen",
+    squareToken: "DM7HWOUEVM4CKE2BBGW5PHFJ",
     image: "/images/products/chocolate-chip-cookies-dozen.webp",
     name: "Chocolate Chip Cookies (Dozen)",
     category: "cookies",
     description: "Classic soft-baked cookies loaded with chocolate chips. A family favourite.",
-    price: 14,
+    price: 11.25,
     dietary: [
       "dairy",
       "contains-egg"
@@ -923,10 +945,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "chocolate-rogalach",
+    squareToken: "KM7TFWDHCZZXT4ACYBA7DGK4",
     name: "Chocolate Rogalach",
     category: "cookies",
     description: "Flaky crescent-shaped pastry filled with rich chocolate. Bite-sized perfection.",
-    price: 1.81,
+    price: 1.75,
     dietary: [
       "dairy",
       "contains-egg"
@@ -1116,11 +1139,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "cheese-danish",
+    squareToken: "7P6JN47KAEL5JOXF5QUERNNV",
     image: "/images/products/cheese-danish.webp",
     name: "Cheese Danish",
     category: "danishes-sweets",
     description: "Buttery, flaky pastry filled with sweet cream cheese. A morning favourite.",
-    price: 3.95,
+    price: 4.65,
     dietary: [
       "dairy"
     ],
@@ -1518,10 +1542,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "lemon-meringue-pie",
+    squareToken: "MTXEA5PD43746GAXUHLVZFO3",
     name: "Lemon Meringue Pie",
     category: "pies",
     description: "Tangy lemon curd topped with fluffy toasted meringue. Bright and beautiful.",
-    price: 26,
+    price: 21,
     dietary: [
       "dairy",
       "contains-egg"
@@ -1563,10 +1588,11 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "rosh-hashanah-gift-basket",
+    squareToken: "XMZZ34NXJA3PBBDPONYQT375",
     name: "Rosh Hashanah Gift Basket",
     category: "gifts-baskets",
     description: "Curated basket with grape juice, honey, honey cake, fresh apple, and assorted themed cookies for a sweet new year.",
-    price: 84.95,
+    price: 74.95,
     dietary: [],
     tags: [
       "Seasonal",
@@ -1699,11 +1725,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "rosh-hashanah-round-challah",
+    squareToken: "KKNGFC5DQ33SXF3QALHP6I4C",
     image: "/images/products/rosh-hashanah-round-challah.webp",
     name: "Rosh Hashanah Round Challah",
     category: "holiday-seasonal",
     description: "Traditional round challah symbolizing the cycle of the year. Often topped with raisins for a sweet new year.",
-    price: 9,
+    price: 7.95,
     dietary: [
       "pareve"
     ],
@@ -1943,11 +1970,12 @@ export const GENERATED_PRODUCTS: Product[] = [
   },
   {
     slug: "mothers-day-cookie-bouquet",
+    squareToken: "3ORGMXHXOUDPCB3NVN6SFXDG",
     image: "/images/products/mothers-day-cookie-bouquet.webp",
     name: "Mother's Day Cookie Bouquet",
     category: "holiday-seasonal",
     description: "Beautiful arrangement of flower-shaped decorated cookies. Perfect for mom.",
-    price: 35,
+    price: 38.5,
     dietary: [
       "dairy"
     ],
