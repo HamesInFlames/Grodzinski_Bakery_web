@@ -1,5 +1,107 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-21 (Visual verification of Hybrid pricing)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `chore/catalog-csv-migration` (commit a584807)
+
+**Verification results (all pass):**
+1. **19 price changes — ALL MATCH:** Playwright extracted `.pcard__price` text from each category page at 1440px viewport; all 19 rendered values match expected prices exactly.
+2. **3 zero-delta products — ALL RENDER:** `whole-wheat-challah` ($8.50, unchanged), `custom-celebration-cake` ("Call", price null), `custom-wedding-cake` ("Call", price null) — all render correctly on their respective category pages.
+3. **Image spot-check — 4/5 PASS:** `plain-challah-large`, `chocolate-crown-babka`, `chocolate-chip-cookies-dozen`, `mothers-day-cookie-bouquet` all load real `.webp` photos (naturalWidth 1122px). `lemon-meringue-pie` shows `coming-soon.png` — **not a regression** (this product has no `image` field in the catalog; it is not one of the 43 image-wired products).
+4. **Console errors — NONE:** Dev server output clean, no catalog-related warnings or errors.
+5. **Screenshots saved:** 12 full-page PNGs at `qa/screenshots/hybrid-pricing-verify/` covering all affected category pages + holiday pages + menu hub + cakes page.
+
+**No regressions detected.** Branch is visually clean for merge review.
+
+---
+
+## Session — 2026-05-21 (Hybrid pricing model — Phase 1 wired)
+
+**Tool:** Claude Code (Opus 4.7)
+**Branch:** `chore/catalog-csv-migration`
+
+**What was done:**
+- Added `squareToken?: string` field to the `Product` interface in `src/data/products.ts`
+- Built a conservative slug → SquareToken mapping table (22 products) in the new `scripts/sync-prices.mjs`
+- Ran the sync: 22 products now carry a `squareToken` and have Square-current prices stamped in `src/data/products.generated.ts`
+- 19 real price changes applied to `products.generated.ts` (small adjustments — biggest deltas: rosh-hashanah-gift-basket -$10, lemon-meringue-pie -$5, icy-bun-tray -$4, mothers-day-cookie-bouquet +$3.50)
+- Deleted the orphan `scripts/generate-products.mjs` (broken since `src/menuData.js` was removed in c8b9851)
+- Added `npm run sync-prices` to package.json
+- Updated `products.generated.ts` header comment to reflect that it's now a curated source with CSV-driven price sync (not auto-generated)
+- All 66 Playwright tests pass on the new prices
+- Build clean
+
+**Conservative-mapping rationale:**
+- Only single-SKU-to-single-SKU matches are mapped. Curated trays / dozens / platters / boxes are intentionally NOT mapped to Square's per-piece SKUs (e.g. wedding-cookies tray $28 vs Square's per-cookie $3.95 would crash to a wrong price)
+- All 22 image-wired products in the priority set are mapped where a clean match exists; ambiguous cases stay on their curated price
+- Rerunning `npm run sync-prices` is idempotent — 0 changes second time through
+
+**What's next:**
+1. Carolina/Chris review of price deltas before merging to main
+2. Expand the SLUG_TO_SQUARE_TOKEN table as the bakery breaks out more single-SKU equivalents in Square (e.g. separate small/full-size pies, separate dozen/tray rows for cookies)
+3. Add `webServer` block to `playwright.config.ts` so the test suite is self-contained (currently requires `vite preview --port 4173` to be running)
+
+---
+
+## Session — 2026-05-21 (verification of catalog CSV migration)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `chore/catalog-csv-migration` (commit 3253dab)
+
+**Verification results (all pass):**
+1. CSV parse: 9-col header, 467 data rows, 2 blank dividers, 3 sections (Regular Menu 296, Friday 37, Holidays 134) — PASS
+2. `products.generated.ts` byte-identical to parent cf3d6ce: 130 products, 43 image slugs — PASS
+3. `npm run build`: clean, no warnings — PASS
+4. Playwright suite: 66/66 passed (note: needs `vite preview --port 4173` running; no `webServer` in config) — PASS
+5. Image cross-check: 43 referenced slugs ↔ 43 files on disk, zero orphans, zero missing — PASS
+6. `generate-products.mjs` still references deleted `src/menuData.js` (lines 84, 88) — confirmed known broken from c8b9851, not a regression — PASS
+
+---
+
+## Session — 2026-05-21 (catalog CSV migration to Square POS export)
+
+**Tool:** Claude Code (Opus 4.7)
+**Branch:** `chore/catalog-csv-migration` (commit 3253dab)
+
+**What was done:**
+- Took the Square POS catalog export `MLV1171MHFNF4_catalogue-2026-05-15-1828.csv` (545 rows, 36 cols) and produced a cleaned, sectioned 9-column file
+- Replaced `grodzinski_products.csv` at the repo root (old: 4 cols / 538 rows → new: 9 cols / 467 rows + section dividers)
+- **New CSV schema:** `Section, Group, Category, Item, Price, Unit, Taxable, Description, SquareToken`
+- **Three sections:** Regular Menu (296 rows, 6 families: Breads · Cakes · Cookies · Pastries · Sandwiches & Savouries · Catering) · Friday (37, all challah + bilka) · Holidays (134, Jewish calendar order + civil holidays)
+- **Cleanups applied:** curly→ASCII quotes, Square POS shorthand renamed for readability (`Chan-Cookies`→`Chanukah Cookies`, `Roshashana`→`Rosh Hashanah`, `Cust.Cookie`→`Custom Cookie`, `Bubka\Chocolatestrip\`→`Bubka / Chocolate Strip`, etc.), back-of-house dropped (Ingredients · Coffee/Tea · Soft Drinks · Whipped cream · Meringue powder · Day old bag · Miscellaneous)
+- **Catering prices blanked** (quote-only on the site)
+- **SquareToken preserved** as the stable join key for future price syncs
+
+**Pictures stay connected:** `src/data/products.generated.ts` was NOT touched — the 43 wired product images remain linked via their existing curated slugs.
+
+**What's next (Hybrid pricing model — chosen direction):**
+1. Add a `squareToken: string` field to each entry in `src/data/products.generated.ts`, mapping each of the 130 curated products to a row in the new CSV (manual matching — slugs don't overlap; start with the 43 image-wired products as the priority set)
+2. Rewrite `scripts/generate-products.mjs` (currently broken — references deleted `src/menuData.js`) to:
+   - Use the curated catalog as the source of truth for slug / name / description / image / category / dietary tags / occasion
+   - Pull `price`, `priceUnit`, and tax flag from `grodzinski_products.csv` joined by `SquareToken`
+3. Add `npm run sync-prices` wiring so the catalog stays current with Square price changes (29 price deltas already observed in this export)
+
+---
+
+## Session — 2026-05-21 (repo cleanup)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `chore/cleanup-stale-docs` (1 commit, not pushed)
+
+**What was done:**
+- Deleted root `screenshots/` directory (12 PNGs, duplicate of `qa/screenshots/`)
+- Deleted `qa/READY-TO-MERGE.md` (merge guide for `design/heritage-pass`, already merged in eb6b120)
+- Deleted `cleanup-audit-phase-0.md`, `cleanup-phase-summary.md`, `final-launch-readiness.md` (stale audit docs from completed cleanup pass)
+- 16 files removed, 807 line deletions; working tree clean
+
+**Not touched (intentionally):**
+- `copy-revision-proposal.md` — still awaiting client signoff
+- `docs/archive/` — already properly archived
+- All config, source, and test files
+
+---
+
 ## Session — 2026-05-15 (portrait video layout fixes)
 
 **Tool:** Cursor Agent (Opus 4.6)
