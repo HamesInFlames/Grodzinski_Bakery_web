@@ -1,11 +1,6 @@
 // src/pages/Gallery.jsx
 import { ScrollReveal, FadeIn } from '../components/AnimationWrappers';
-import { Camera } from "lucide-react";
-
-// TODO: Re-enable these imports when photos are added
-// import { useState, useEffect } from 'react';
-// import { motion, AnimatePresence } from 'motion/react';
-// import { galleryCategories } from '../data/galleryCategories';
+import { GalleryCarousel } from '../components/gallery/GalleryCarousel';
 
 export default function Gallery() {
 
@@ -34,22 +29,11 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* TODO: Re-enable gallery filters and image grid once photos are added */}
-
-      {/* Coming Soon Placeholder */}
+      {/* Gallery carousel — replaces the prior "Coming Soon" placeholder */}
       <section className="gallery-content">
         <div className="gallery-content__inner">
-          <div className="gallery-empty">
-            <img
-              src="/images/coming-soon.png"
-              alt="Coming Soon"
-              className="gallery-empty__image"
-            />
-            <h3>Coming Soon</h3>
-            <p>
-              We're curating a beautiful collection of our custom creations —
-              cakes, cookies, platters, and more. Check back soon!
-            </p>
+          <div className="gallery-carousel-shell">
+            <GalleryCarousel />
           </div>
         </div>
       </section>
@@ -70,8 +54,6 @@ export default function Gallery() {
           </div>
         </section>
       </ScrollReveal>
-
-      {/* TODO: Re-enable lightbox when photos are added */}
     </div>
   );
 }

@@ -1,5 +1,86 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-21 (Merge AN_Branch → main)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+
+**What was done:**
+- Merged `AN_Branch` (commit 0e1ab0a by Cheezahh) into `main`
+- Brought in the Custom Creations gallery carousel, lightbox, 22 cake images, and `embla-carousel-react`
+- AN_Branch also reverted Square POS price sync (`squareToken` fields removed, `sync-prices.mjs` deleted, prices reverted to pre-sync values) and restored several previously cleaned-up files
+
+---
+
+## Session — 2026-05-21 (lightbox grid overflow fix)
+
+**Tool:** Claude Code (Opus 4.7)
+**Branch:** `AN_Branch`
+
+**Bug:** In the "View All" lightbox grid (`GalleryLightbox.tsx`), cells overflowed
+their grid row tracks vertically and overlapped the row below. Row tracks
+measured ~81px while cells rendered at their true ~271px 4:5 height.
+
+**Root cause:** `aspect-ratio: 4/5` was set on `.gallery-lightbox__cell`, a
+non-replaced grid item whose width is a flexible `1fr` track. `aspect-ratio`
+is resolved during final layout, *after* grid track-sizing — so the auto rows
+never received the ratio-derived height and collapsed. Confirmed via computed
+styles: in-flow `<img>`, aspect-ratio'd `<img>`, and absolute `<img>` all
+produced the identical 81px track.
+
+**Fix (`src/App.css`, `.gallery-lightbox__cell` + cell `> img`):**
+- Replaced cell `aspect-ratio` with the padding-bottom ratio hack
+  (`height: 0; padding: 0 0 125%`). Percentage padding resolves against the
+  already-sized column width, contributing real box height the row track measures.
+- Image is `position: absolute; inset: 0; object-fit: cover` so it fills the
+  frame without polluting the cell's intrinsic size.
+
+**Verified** on the running dev server: row tracks now equal cell height
+(no overlap) at all three breakpoints — 2-col/375px, 3-col, 4-col/1280px;
+cells are exact 4:5 (ratio 0.800), rounded corners on all sides, 18px row gaps.
+
+**Also:** `src/data/galleryItems.ts` titles + alt text were almost entirely
+mismatched to their images (e.g. cake-01 "Unicorn Cake" was actually the
+bumblebee/sunflower cake). Viewed all 22 `public/gallery/cake-XX.png` photos
+and rewrote every `alt`/`title` to match the actual cake. `npm run typecheck`
+clean. These descriptions still pending Carolina's final review per the
+carousel session below.
+
+---
+
+## Session — 2026-05-21 (Custom Creations gallery carousel)
+
+**Tool:** Cursor Agent (Claude Opus 4.7)
+**Branch:** `AN_Branch`
+
+**What was done:**
+- Replaced the "Photo Coming Soon" placeholder on `/gallery` with an interactive 22-image carousel that lives inside the existing cream container (heritage palette preserved, no new colors/fonts/layout introduced).
+- Architecture: parent `GalleryCarousel.tsx` owns `useEmblaCarousel` + active-index state; passes refs/callbacks to `GalleryHero` (large 4:5 image, ChevronLeft/Right arrows, 22-dot indicator, keyboard `Arrow`-key support), `GalleryThumbnails` (5-thumbs-visible scrollable strip with `scroll-snap-type: x mandatory` + auto-center-on-active via `Element.scrollBy`, plus a separate `LayoutGrid` "View All" tile in a 2nd grid column), and `GalleryLightbox` (full-screen modal: backdrop-blur + espresso 85% overlay, header w/ Cormorant title + close, responsive grid 2→3→4 cols, click-cell → single-image view w/ prev/next, ESC/Tab focus trap, body-scroll lock, focus returns to View All on close).
+- Typed manifest at `src/data/galleryItems.ts` (22 cakes, descriptive alt + optional title) — components are data-driven, no hardcoded paths.
+- 22 cake PNGs (819×1024, 4:5) copied to `public/gallery/cake-01.png … cake-22.png` and verified present in `dist/`.
+- Installed `embla-carousel-react` (~12 kB raw); `motion@12.38` (already present, the renamed framer-motion) drives lightbox open/close + enlarged-image cross-fade.
+- All styles appended to `src/App.css` under `.gallery-carousel-shell` / `.gallery-hero-carousel` / `.gallery-thumbs` / `.gallery-lightbox` namespaces. Heritage tokens only (`--color-bg-elevated`, `--bg-section`, `--color-primary`, `--color-accent`, `--color-rule`). Respects `prefers-reduced-motion`. Mobile breakpoint at 640px (thumbs reflow to ~30 % width, arrows tighten to image edges, modal goes full-viewport).
+- `npm run typecheck` → clean. `npm run build` → clean (`Gallery-*.js` 32.43 kB / 11.57 kB gzip).
+
+**Files changed:**
+- `src/data/galleryItems.ts` *(new)*
+- `src/components/gallery/GalleryCarousel.tsx` *(new)*
+- `src/components/gallery/GalleryHero.tsx` *(new)*
+- `src/components/gallery/GalleryThumbnails.tsx` *(new)*
+- `src/components/gallery/GalleryLightbox.tsx` *(new)*
+- `src/pages/Gallery.jsx` — swapped placeholder block for `<GalleryCarousel />`; surrounding hero + Ready-to-Order CTA untouched
+- `src/App.css` — appended ~480 lines under "GALLERY — Custom Creations Carousel" header
+- `public/gallery/cake-01.png … cake-22.png` *(new, 22 files, ~4.0 MB total)*
+- `package.json` / `package-lock.json` — `embla-carousel-react ^8.x` added
+
+**What's next:**
+1. James QA pass at 1440 px + 375 px viewports (hero touch-swipe, thumbnail auto-center under heavy navigation, lightbox focus trap + ESC, dot indicator wrap on narrow screens).
+2. Carolina to review the placeholder alt text in `src/data/galleryItems.ts` and replace with her preferred descriptions / occasion mappings.
+3. Compress the 22 cake PNGs to WebP (~70 % savings) before launch — current set totals ~4 MB.
+4. Optional follow-up: surface filter pills (re-use `galleryCategories.ts`) inside the carousel shell once Carolina tags each cake by occasion.
+
+---
+
 ## Session — 2026-05-21 (Visual verification of Hybrid pricing)
 
 **Tool:** Cursor Agent (Opus 4.6)
