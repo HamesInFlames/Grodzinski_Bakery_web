@@ -1203,3 +1203,355 @@ textarea:focus-visible {
   border-radius: var(--radius-md);
   display: inline-block;
 }
+
+/* ─── VARIANT IMAGE ─────────────────────────────────── */
+.variant-image {
+  position: relative;
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-rule);
+  background: var(--bg-section);
+}
+
+.variant-image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.variant-image__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--color-bg-elevated);
+  text-align: center;
+}
+
+.variant-image__placeholder span {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-ink-soft);
+  line-height: 1.3;
+}
+
+/* ─── VARIANT LIST (restaurant menu dotted leaders) ── */
+.variant-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.variant-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 10px 16px;
+  min-height: 44px;
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out;
+}
+
+.variant-row:hover {
+  background: var(--bg-section);
+}
+
+.variant-row--active {
+  border-left-color: var(--color-accent);
+  background: var(--color-bg-elevated);
+}
+
+.variant-row__name {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.variant-row__dots {
+  flex: 1;
+  min-width: 20px;
+  border-bottom: 2px dotted var(--color-rule);
+  align-self: center;
+  margin-bottom: 2px;
+}
+
+.variant-row__price {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-gold-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.variant-row:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── VARIANT CONFIGURATOR ──────────────────────────── */
+.variant-configurator {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .variant-configurator {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* ─── CATEGORY SECTION ──────────────────────────────── */
+.category-section {
+  margin-bottom: 48px;
+  scroll-margin-top: 100px;
+}
+
+.category-section__heading {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.category-section__dietary {
+  margin-top: 12px;
+}
+
+/* ─── DIETARY TAG ───────────────────────────────────── */
+.dietary-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: 999px;
+}
+
+.dietary-tag--pareve {
+  background: #ECFDF5;
+  color: #065F46;
+}
+
+.dietary-tag--dairy {
+  background: #EFF6FF;
+  color: #1E40AF;
+}
+
+/* ─── KOSHER BANNER (marquee) ───────────────────────── */
+.kosher-banner {
+  background: var(--color-primary);
+  overflow: hidden;
+  height: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.kosher-banner__track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+  animation: kosher-scroll 30s linear infinite;
+}
+
+@keyframes kosher-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.kosher-banner__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-bg-elevated);
+  padding: 0 12px;
+}
+
+.kosher-banner__dot {
+  color: var(--color-accent);
+  font-size: 1rem;
+  line-height: 1;
+  margin-right: 8px;
+}
+
+.kosher-banner__badge-img {
+  height: 18px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+  .kosher-banner { height: 28px; }
+  .kosher-banner__item { font-size: 0.6875rem; }
+  .kosher-banner__badge-img { height: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kosher-banner__track {
+    animation: none;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .kosher-banner {
+    height: auto;
+    padding: 6px 12px;
+  }
+}
+
+/* ─── TOVA BUTTON (fixed CTA) ───────────────────────── */
+.tova-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  min-height: 48px;
+  min-width: 48px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-bg-elevated);
+  background: var(--color-primary);
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 150ms ease-out, box-shadow 150ms ease-out;
+  text-decoration: none;
+}
+
+.tova-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tova-button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* ─── GROUP PAGE ────────────────────────────────────── */
+.group-page {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding) 80px;
+}
+
+.group-page--empty {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.group-page__not-found {
+  text-align: center;
+  max-width: 480px;
+}
+
+.group-page__not-found h1 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 12px;
+}
+
+.group-page__not-found p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 24px;
+}
+
+.group-page__back-link {
+  font-weight: 600;
+  color: var(--color-gold-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.group-page__back-link:hover {
+  color: var(--color-primary);
+}
+
+.group-page__header {
+  padding: 32px 0 24px;
+  border-bottom: 1px solid var(--color-rule);
+  margin-bottom: 40px;
+}
+
+.group-page__title {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin: 0 0 8px;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+
+.group-page__hebrew {
+  font-family: var(--font-display);
+  font-size: 0.75em;
+  font-weight: 400;
+  color: var(--color-gold-text);
+}
+
+.group-page__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--color-ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.group-page__notice {
+  margin-top: 16px;
+  padding: 12px 20px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-gold-text);
+  background: var(--accent-light);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-md);
+  display: inline-block;
+}
+
+.group-page__categories {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .group-page__title { font-size: 2rem; }
+  .group-page__header { padding: 24px 0 16px; margin-bottom: 24px; }
+}

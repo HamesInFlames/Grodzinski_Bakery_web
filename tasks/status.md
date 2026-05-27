@@ -1,5 +1,101 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-26 (CSV-to-TypeScript catalog generator)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+
+**What was done:**
+- Created `scripts/generate-catalog.mjs` — parses `grodzinski_products.csv` and generates `src/data/products.generated.ts` with three typed arrays: `GENERATED_GROUPS`, `GENERATED_CATEGORIES`, `GENERATED_ITEMS`
+- RFC 4180 CSV parser handles quoted fields, escaped double-quotes, and multi-line descriptions (lines 71-83 of CSV)
+- Business rules applied: excluded Catering/Gluten Free/RH Baskets; merged Chanukah+Chanukah Cookies+Sufganiyot & Latkes → Hanukkah; merged Purim+Mishloach Manot → Purim; merged civil holidays → Celebrations; Friday → Shabbat group; added Yom Kippur and Simchat Torah as empty placeholder groups
+- Photo matching via squareToken PHOTO_MAP (8 matches) + slug-based filesystem fallback
+- Output: 14 groups, 50 categories, 429 items, 8 photos matched
+- No npm dependencies added — CSV parser is inline
+
+**Files changed:**
+- `scripts/generate-catalog.mjs` *(new)*
+- `src/data/products.generated.ts` *(regenerated)*
+
+---
+
+## Session — 2026-05-26 (Menu revamp — full implementation)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+**Plan:** `tasks/menu-revamp-plan.md`
+
+### What was done (all 6 phases completed):
+
+**Phase 1 — Data Layer + CSV Ingestion:**
+- Rewrote `src/data/products.ts` with new hierarchical types: `MenuGroup`, `MenuCategory`, `MenuItem`, `HolidayMeta`, `DietaryLabel`
+- Created `scripts/generate-catalog.mjs` — CSV parser that generates `products.generated.ts` from `grodzinski_products.csv`
+- Generated 14 groups, 50 categories, 429 items across 3 sections (regular/friday/holidays)
+- Simplified `src/stores/filterStore.ts` to 2-value dietary toggle (pareve/dairy)
+- Updated `src/data/holidays.ts` to re-export from new products.ts
+- Added backward-compat exports (Product, Category, PRODUCTS, etc.) for gradual migration
+
+**Phase 2 — Configurator Components:**
+- Built `VariantConfigurator` with 4s auto-rotation, hover/click pause, prefers-reduced-motion
+- Built `VariantList` with roving tabindex, dotted-leader pricing, WCAG 2.5.8 touch targets
+- Built `VariantImage` with Motion crossfade and typographic placeholder fallback
+- Built `CategorySection` wrapper with dietary inference
+- Built `DietaryTag` pill component
+
+**Phase 3 — Menu Pages:**
+- Rewrote `MenuHub.tsx` — shows all regular + friday groups with item counts
+- Built `GroupPage.tsx` — displays categories/items per group with breadcrumbs
+- Updated routes: `/menu/:group` → GroupPage; `/menu/p/*` → redirect to `/menu`
+
+**Phase 4 — Holiday Pages:**
+- Rewrote `HolidaysHub.tsx` — holiday grid with Hebrew names and descriptions
+- Built `HolidayGroupPage.tsx` — holiday configurator with pre-order notices
+- Updated routes: `/holidays/:occasion` → HolidayGroupPage; old product pages redirect
+
+**Phase 5 — Site-wide UI:**
+- Built `KosherBanner.tsx` — CSS marquee with COR/Pas Yisroel/Chalav Yisroel badges
+- Built `TovaButton.tsx` — fixed cross-site button with external link icon
+- Built `NavDropdown.tsx` — desktop hover dropdown + `MobileNavAccordion` for mobile drawer
+- Integrated NavDropdown into `Navbar.jsx` for Menu and Holidays links
+
+**Phase 6 — Build Verification:**
+- `npm run build` passes cleanly (1.16s, 2177 modules)
+- All new imports resolve correctly
+- Old route files (CategoryPage, ProductPage, OccasionPage, HolidayProductPage) left in place for reference; no longer imported
+
+### Files created:
+- `scripts/generate-catalog.mjs`
+- `src/components/menu/VariantImage.tsx`
+- `src/components/menu/VariantList.tsx`
+- `src/components/menu/VariantConfigurator.tsx`
+- `src/components/menu/CategorySection.tsx`
+- `src/components/menu/DietaryTag.tsx`
+- `src/components/KosherBanner.tsx`
+- `src/components/TovaButton.tsx`
+- `src/components/NavDropdown.tsx`
+- `src/components/layout/Breadcrumb.tsx` (existed, unchanged)
+- `src/routes/GroupPage.tsx`
+- `src/routes/HolidayGroupPage.tsx`
+
+### Files modified:
+- `src/data/products.ts` — complete rewrite with new types + backward compat
+- `src/data/products.generated.ts` — regenerated from CSV (429 items)
+- `src/data/holidays.ts` — simplified to re-exports from products.ts
+- `src/stores/filterStore.ts` — simplified to 2-value DietaryLabel toggle
+- `src/App.jsx` — new routes, KosherBanner + TovaButton integration
+- `src/App.css` — added CSS for all new components + mobile accordion
+- `src/components/Navbar.jsx` — integrated NavDropdown for Menu/Holidays
+- `src/routes/MenuHub.tsx` — rewritten
+- `src/routes/HolidaysHub.tsx` — rewritten
+
+### Remaining work:
+- Photo coverage: 8/429 items have photos (1.9%) — need product photography
+- Old route files can be deleted once visual QA confirms new pages work
+- Test suite needs rewriting (not in scope for this session)
+- Visual QA at 1440px and 375px viewports
+
+---
+
 ## Session — 2026-05-26 (Home about snippet mobile fix)
 
 **Tool:** Cursor Agent (Opus 4.6)

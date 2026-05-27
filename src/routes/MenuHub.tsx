@@ -1,75 +1,73 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { CATEGORIES } from '@/data/products';
+import { getGroupsBySection, getItemsByGroup } from '@/data/products';
 import { ShieldCheck, Award } from 'lucide-react';
 
-const CATEGORY_IMAGES: Record<string, string> = {
-  'challah-bilkas': '/images/coming-soon.png',
-  'bread-rolls': '/images/coming-soon.png',
-  babkas: '/images/coming-soon.png',
-  cakes: '/images/coming-soon.png',
-  'bundt-cakes': '/images/coming-soon.png',
-  'loaf-cakes': '/images/coming-soon.png',
-  cookies: '/images/coming-soon.png',
-  'danishes-sweets': '/images/coming-soon.png',
-  'desserts-petits-fours': '/images/coming-soon.png',
-  pies: '/images/coming-soon.png',
-  'gifts-baskets': '/images/coming-soon.png',
-  'holiday-seasonal': '/images/coming-soon.png',
-};
-
 export default function MenuHub() {
-  const totalItems = CATEGORIES.reduce((sum, c) => sum + c.itemCount, 0);
+  const regularGroups = getGroupsBySection('regular').sort((a, b) => a.order - b.order);
+  const fridayGroups = getGroupsBySection('friday');
+  const allGroups = [...regularGroups, ...fridayGroups];
+
+  const totalItems = allGroups.reduce(
+    (sum, g) => sum + getItemsByGroup(g.slug).length,
+    0,
+  );
+
+  useEffect(() => {
+    document.title = 'Menu — Grodzinski Bakery, Toronto';
+    return () => {
+      document.title = "Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888";
+    };
+  }, []);
 
   return (
     <div className="menuhub">
       <section className="menuhub__hero">
-        <div className="menuhub__hero-bg">
-          <img
-            src="/images/home/thumbnail_slider (4).png"
-            alt=""
-            className="menuhub__hero-image"
-          />
-          <div className="menuhub__hero-overlay" />
-        </div>
-        <div className="menuhub__hero-inner">
-          <h1 className="menuhub__title">Our Menu</h1>
-          <p className="menuhub__subtitle">
-            {CATEGORIES.length} categories · {totalItems}+ items · 100% nut-free
-          </p>
-          <div className="menuhub__trust">
-            <span className="menuhub__trust-item">
-              <Award size={16} /> COR-certified kosher
-            </span>
-            <span className="menuhub__trust-item">
-              <ShieldCheck size={16} /> Toronto's heritage kosher bakery
-            </span>
-          </div>
+        <h1>Our Menu</h1>
+        <p>
+          {allGroups.length} categories &middot; {totalItems}+ items &middot; 100% nut-free
+        </p>
+        <div className="menuhub__trust">
+          <span className="menuhub__trust-badge">
+            <Award size={16} aria-hidden="true" />
+            COR-certified kosher
+          </span>
+          <span className="menuhub__trust-badge">
+            <ShieldCheck size={16} aria-hidden="true" />
+            Toronto&rsquo;s heritage kosher bakery
+          </span>
         </div>
       </section>
 
-      <section className="menuhub__grid-section">
-        <div className="menuhub__grid">
-          {CATEGORIES.map((cat) => (
+      <div className="menuhub__grid">
+        {regularGroups.map((group) => {
+          const itemCount = getItemsByGroup(group.slug).length;
+          return (
             <Link
-              key={cat.slug}
-              to={`/menu/${cat.slug}`}
+              key={group.slug}
+              to={`/menu/${group.slug}`}
               className="menuhub__card"
             >
-              <div className="menuhub__card-image">
-                <img
-                  src={CATEGORY_IMAGES[cat.slug] || '/images/coming-soon.png'}
-                  alt={cat.name}
-                  loading="lazy"
-                />
-              </div>
-              <div className="menuhub__card-content">
-                <h2 className="menuhub__card-name">{cat.name}</h2>
-                <p className="menuhub__card-count">{cat.itemCount} items</p>
-              </div>
+              <h2>{group.name}</h2>
+              <span className="menuhub__card-count">{itemCount} items</span>
             </Link>
-          ))}
-        </div>
-      </section>
+          );
+        })}
+
+        {fridayGroups.map((group) => {
+          const itemCount = getItemsByGroup(group.slug).length;
+          return (
+            <Link
+              key={group.slug}
+              to={`/menu/${group.slug}`}
+              className="menuhub__card menuhub__card--shabbat"
+            >
+              <h2>{group.name}</h2>
+              <span className="menuhub__card-count">{itemCount} items</span>
+            </Link>
+          );
+        })}
+      </div>
     </div>
   );
 }

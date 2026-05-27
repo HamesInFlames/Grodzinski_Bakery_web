@@ -1,9 +1,11 @@
 // src/App.jsx
 import { Suspense, lazy, useEffect } from "react";
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import KosherBanner from "./components/KosherBanner";
+import TovaButton from "./components/TovaButton";
 import ErrorBoundary from "./components/ErrorBoundary";
 import LoadingFallback from "./components/LoadingFallback";
 import { PageTransition } from "./components/AnimationWrappers";
@@ -15,12 +17,15 @@ const VisitUs = lazy(() => import("./pages/VisitUs"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const MenuLayout = lazy(() => import("./routes/MenuLayout"));
 const MenuHub = lazy(() => import("./routes/MenuHub"));
-const CategoryPage = lazy(() => import("./routes/CategoryPage"));
-const ProductPage = lazy(() => import("./routes/ProductPage"));
+const GroupPage = lazy(() => import("./routes/GroupPage"));
 const HolidaysLayout = lazy(() => import("./routes/HolidaysLayout"));
 const HolidaysHub = lazy(() => import("./routes/HolidaysHub"));
-const OccasionPage = lazy(() => import("./routes/OccasionPage"));
-const HolidayProductPage = lazy(() => import("./routes/HolidayProductPage"));
+const HolidayGroupPage = lazy(() => import("./routes/HolidayGroupPage"));
+
+function RedirectToOccasion() {
+  const { occasion } = useParams();
+  return <Navigate to={`/holidays/${occasion}`} replace />;
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -36,6 +41,7 @@ export default function App() {
   return (
     <div className="app">
       <a href="#main-content" className="skip-link">Skip to content</a>
+      <KosherBanner />
       <Navbar />
       <ScrollToTop />
       <main id="main-content">
@@ -46,13 +52,13 @@ export default function App() {
                 <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                 <Route path="/menu" element={<PageTransition><MenuLayout /></PageTransition>}>
                   <Route index element={<MenuHub />} />
-                  <Route path=":category" element={<CategoryPage />} />
-                  <Route path="p/:slug" element={<ProductPage />} />
+                  <Route path=":group" element={<GroupPage />} />
+                  <Route path="p/*" element={<Navigate to="/menu" replace />} />
                 </Route>
                 <Route path="/holidays" element={<PageTransition><HolidaysLayout /></PageTransition>}>
                   <Route index element={<HolidaysHub />} />
-                  <Route path=":occasion" element={<OccasionPage />} />
-                  <Route path=":occasion/p/:slug" element={<HolidayProductPage />} />
+                  <Route path=":occasion" element={<HolidayGroupPage />} />
+                  <Route path=":occasion/p/*" element={<RedirectToOccasion />} />
                 </Route>
                 <Route path="/gallery" element={<Navigate to="/" replace />} />
                 <Route path="/catering" element={<PageTransition><Catering /></PageTransition>} />
@@ -67,6 +73,7 @@ export default function App() {
         </ErrorBoundary>
       </main>
       <Footer />
+      <TovaButton />
     </div>
   );
 }

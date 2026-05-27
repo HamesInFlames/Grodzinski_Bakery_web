@@ -1,17 +1,127 @@
 // src/components/Navbar.jsx
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import NavDropdown, { MobileNavAccordion } from "./NavDropdown";
+import { getGroupsBySection } from "@/data/products";
 
-const NAV_LINKS = [
+const SIMPLE_LINKS = [
   ["Home", "/"],
-  ["Menu", "/menu"],
-  ["Holidays", "/holidays"],
   ["Catering", "/catering"],
   ["About", "/about"],
   ["Visit Us", "/visit"],
 ];
+
+function useNavDropdownItems() {
+  return useMemo(() => {
+    const menuGroups = [
+      ...getGroupsBySection("regular"),
+      ...getGroupsBySection("friday"),
+    ].sort((a, b) => a.order - b.order);
+
+    const holidayGroups = getGroupsBySection("holidays").sort(
+      (a, b) => a.order - b.order,
+    );
+
+    return {
+      menuItems: menuGroups.map((g) => ({ name: g.name, href: `/menu/${g.slug}` })),
+      holidayItems: holidayGroups.map((g) => ({
+        name: g.name,
+        href: `/holidays/${g.slug}`,
+      })),
+    };
+  }, []);
+}
+
+function DesktopNav({ location }) {
+  const { menuItems, holidayItems } = useNavDropdownItems();
+  const isMenuActive = location.pathname.startsWith("/menu");
+  const isHolidaysActive = location.pathname.startsWith("/holidays");
+
+  return (
+    <nav className="navbar__nav" aria-label="Primary">
+      <NavLink to="/" end className={({ isActive }) => `navbar__link ${isActive ? "navbar__link--active" : ""}`}>
+        Home
+      </NavLink>
+
+      <NavDropdown
+        label="Menu"
+        basePath="/menu"
+        items={menuItems}
+        isActive={isMenuActive}
+      />
+
+      <NavDropdown
+        label="Holidays"
+        basePath="/holidays"
+        items={holidayItems}
+        isActive={isHolidaysActive}
+      />
+
+      {SIMPLE_LINKS.filter(([, p]) => p !== "/").map(([label, path]) => (
+        <NavLink
+          key={path}
+          to={path}
+          className={({ isActive }) => `navbar__link ${isActive ? "navbar__link--active" : ""}`}
+        >
+          {label}
+        </NavLink>
+      ))}
+    </nav>
+  );
+}
+
+function MobileNav({ location, onNavigate }) {
+  const { menuItems, holidayItems } = useNavDropdownItems();
+  const isMenuActive = location.pathname.startsWith("/menu");
+  const isHolidaysActive = location.pathname.startsWith("/holidays");
+
+  return (
+    <nav className="mobile-menu__nav" aria-label="Mobile primary">
+      <ul className="mobile-menu__links">
+        <li>
+          <NavLink
+            to="/"
+            end
+            className={({ isActive }) => `mobile-menu__link ${isActive ? "mobile-menu__link--active" : ""}`}
+            onClick={onNavigate}
+          >
+            Home
+          </NavLink>
+        </li>
+
+        <MobileNavAccordion
+          label="Menu"
+          basePath="/menu"
+          items={menuItems}
+          isActive={isMenuActive}
+          onNavigate={onNavigate}
+        />
+
+        <MobileNavAccordion
+          label="Holidays"
+          basePath="/holidays"
+          items={holidayItems}
+          isActive={isHolidaysActive}
+          onNavigate={onNavigate}
+        />
+
+        {SIMPLE_LINKS.filter(([, p]) => p !== "/").map(([label, path]) => (
+          <li key={path}>
+            <NavLink
+              to={path}
+              className={({ isActive }) => `mobile-menu__link ${isActive ? "mobile-menu__link--active" : ""}`}
+              onClick={onNavigate}
+            >
+              {label}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+}
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -81,20 +191,7 @@ export default function Navbar() {
             </NavLink>
           </div>
 
-          <nav className="navbar__nav" aria-label="Primary">
-            {NAV_LINKS.map(([label, path]) => (
-              <NavLink
-                key={path}
-                to={path}
-                end={path === "/"}
-                className={({ isActive }) =>
-                  `navbar__link ${isActive ? "navbar__link--active" : ""}`
-                }
-              >
-                {label}
-              </NavLink>
-            ))}
-          </nav>
+          <DesktopNav location={location} />
 
           <div className="navbar__actions">
             <a href="tel:9058821350" className="navbar__phone">
@@ -161,24 +258,10 @@ export default function Navbar() {
               </button>
             </div>
 
-            <nav className="mobile-menu__nav" aria-label="Mobile primary">
-              <ul className="mobile-menu__links">
-                {NAV_LINKS.map(([label, path]) => (
-                  <li key={path}>
-                    <NavLink
-                      to={path}
-                      end={path === "/"}
-                      className={({ isActive }) =>
-                        `mobile-menu__link ${isActive ? "mobile-menu__link--active" : ""}`
-                      }
-                      onClick={() => setIsMobileMenuOpen(false)}
-                    >
-                      {label}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            <MobileNav
+              location={location}
+              onNavigate={() => setIsMobileMenuOpen(false)}
+            />
 
             <div className="mobile-menu__footer">
               <a href="tel:9058821350" className="mobile-menu__phone">

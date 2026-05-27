@@ -1,2014 +1,506 @@
-// Curated product catalog with Square POS price sync.
-//
-// Edit slug / name / description / image / category / dietary / occasion here.
-// Prices for products that carry a squareToken field are overwritten from
-// grodzinski_products.csv each time scripts/sync-prices.mjs runs — do NOT
-// hand-edit those prices, they will be re-stamped.
-//
-// Run: node scripts/sync-prices.mjs
+// Auto-generated from grodzinski_products.csv by scripts/generate-catalog.mjs
+// Do NOT edit manually — re-run: node scripts/generate-catalog.mjs
 
+import type { MenuGroup, MenuCategory, MenuItem } from './products';
 
-import type { Product } from './products';
+export const GENERATED_GROUPS: MenuGroup[] = [
+  { slug: "breads", name: "Breads", section: "regular", order: 1 },
+  { slug: "cakes", name: "Cakes", section: "regular", order: 2 },
+  { slug: "cookies", name: "Cookies", section: "regular", order: 3 },
+  { slug: "pastries", name: "Pastries", section: "regular", order: 4 },
+  { slug: "sandwiches-savouries", name: "Sandwiches & Savouries", section: "regular", order: 5 },
+  { slug: "shabbat", name: "Shabbat", section: "friday", order: 1 },
+  { slug: "rosh-hashanah", name: "Rosh Hashanah", section: "holidays", order: 1 },
+  { slug: "sukkot", name: "Sukkot", section: "holidays", order: 2 },
+  { slug: "yom-kippur", name: "Yom Kippur", section: "holidays", order: 3 },
+  { slug: "simchat-torah", name: "Simchat Torah", section: "holidays", order: 4 },
+  { slug: "hanukkah", name: "Hanukkah", section: "holidays", order: 5 },
+  { slug: "purim", name: "Purim", section: "holidays", order: 6 },
+  { slug: "shavuot", name: "Shavuot", section: "holidays", order: 7 },
+  { slug: "celebrations", name: "Celebrations", section: "holidays", order: 8 },
+];
 
-export const GENERATED_PRODUCTS: Product[] = [
-  {
-    slug: "plain-challah-large",
-    squareToken: "LSKKNDVPOBRG6AXCV7DKUXW2",
-    image: "/images/products/plain-challah-large.webp",
-    name: "Plain Challah (Large)",
-    category: "challah-bilkas",
-    description: "Our signature beautifully braided challah with a soft, slightly sweet crumb and golden crust. The classic choice for Shabbat.",
-    price: 7.99,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "plain-challah-small",
-    squareToken: "AU4DYHIEA7LJD4OHIH4REFV3",
-    name: "Plain Challah (Small)",
-    category: "challah-bilkas",
-    description: "Perfect portion braided challah, ideal for smaller families or weeknight dinners.",
-    price: 5.79,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "round-challah",
-    name: "Round Challah",
-    category: "challah-bilkas",
-    description: "Traditional round challah symbolizing continuity and the cycle of the year. Especially popular for Rosh Hashanah.",
-    price: 8.5,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "sesame-challah",
-    squareToken: "LSKKNDVPOBRG6AXCV7DKUXW2",
-    image: "/images/products/sesame-challah.webp",
-    name: "Sesame Challah",
-    category: "challah-bilkas",
-    description: "Classic braided challah generously topped with toasted sesame seeds for extra flavor and texture.",
-    price: 7.99,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "whole-wheat-challah",
-    squareToken: "4375GQ4WLW25T2TSO3NFRXQ7",
-    name: "Whole Wheat Challah",
-    category: "challah-bilkas",
-    description: "Wholesome braided challah made with whole wheat flour for a heartier, more nutritious option.",
-    price: 8.5,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "challah-seeds-square",
-    squareToken: "ZHAL4JXAEEE4ILFEEKCJWGSM",
-    name: "Challah Seeds Square",
-    category: "challah-bilkas",
-    description: "Square-shaped challah topped with a blend of seeds — perfect for sandwiches and toast.",
-    price: 7.99,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "challah-seeds-plain",
-    name: "Challah Seeds Plain",
-    category: "challah-bilkas",
-    description: "Traditional braided challah with a seeded top, combining classic shape with modern flavor.",
-    price: 8.13,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "challah-bika",
-    name: "Challah Bika",
-    category: "challah-bilkas",
-    description: "Individual-sized challah roll, perfect for personal servings or alongside meals.",
-    price: 1.76,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cinnamon-bilka",
-    name: "Cinnamon Bilka",
-    category: "challah-bilkas",
-    description: "Soft, pull-apart loaf swirled with sweet cinnamon sugar. A family favourite for breakfast or dessert.",
-    price: 12,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-bilka",
-    name: "Chocolate Bilka",
-    category: "challah-bilkas",
-    description: "Rich chocolate swirled through soft, pillowy dough. Irresistible warm from the oven.",
-    price: 12,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Challah & Bilkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "white-bread",
-    name: "White Bread",
-    category: "bread-rolls",
-    description: "Soft, classic white sandwich bread with a tender crumb. Perfect for sandwiches and toast.",
-    price: 6.14,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "french-bread",
-    name: "French Bread",
-    category: "bread-rolls",
-    description: "Crisp golden crust with a light, airy interior. Ideal for bruschetta or alongside soups.",
-    price: 6.14,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "whole-wheat-bread",
-    name: "Whole Wheat Bread",
-    category: "bread-rolls",
-    description: "Hearty whole wheat loaf packed with fiber and wholesome goodness.",
-    price: 6.14,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "multigrain-bread",
-    squareToken: "OA6XFATRJSRB4WFYF576C6J7",
-    name: "Multigrain Bread",
-    category: "bread-rolls",
-    description: "Nutritious loaf made with a blend of grains and seeds for added texture and flavor.",
-    price: 7.55,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "sandwich-rye-loaf",
-    name: "Sandwich Rye Loaf",
-    category: "bread-rolls",
-    description: "Traditional deli-style rye bread with authentic European flavor. A classic for sandwiches.",
-    price: 6.5,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "marble-rye",
-    name: "Marble Rye",
-    category: "bread-rolls",
-    description: "Beautiful swirl of light and dark rye doughs. Looks as good as it tastes.",
-    price: 7,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "plain-bagel",
-    squareToken: "JYQKXTB3WGJV4SYTWFUYCDCF",
-    image: "/images/products/plain-bagel.webp",
-    name: "Plain Bagel",
-    category: "bread-rolls",
-    description: "Classic chewy bagel with a crisp exterior. Baked fresh daily.",
-    price: 1.1,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "sesame-seed-bagel",
-    squareToken: "JYQKXTB3WGJV4SYTWFUYCDCF",
-    image: "/images/products/sesame-seed-bagel.webp",
-    name: "Sesame Seed Bagel",
-    category: "bread-rolls",
-    description: "Traditional bagel generously topped with toasted sesame seeds.",
-    price: 1.1,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "everything-bagel",
-    squareToken: "JYQKXTB3WGJV4SYTWFUYCDCF",
-    image: "/images/products/everything-bagel.webp",
-    name: "Everything Bagel",
-    category: "bread-rolls",
-    description: "Loaded with sesame, poppy seeds, onion, garlic, and salt. A flavor explosion.",
-    price: 1.1,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "assorted-dinner-rolls-dozen",
-    name: "Assorted Dinner Rolls (Dozen)",
-    category: "bread-rolls",
-    description: "A mix of soft white and whole wheat dinner rolls. Perfect for family dinners.",
-    price: 9.5,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "kaiser-rolls-6-pack",
-    name: "Kaiser Rolls (6 Pack)",
-    category: "bread-rolls",
-    description: "Classic crusty rolls with the traditional star pattern. Great for sandwiches.",
-    price: 6,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "onion-rolls-6-pack",
-    image: "/images/products/onion-rolls-6-pack.webp",
-    name: "Onion Rolls (6 Pack)",
-    category: "bread-rolls",
-    description: "Soft rolls topped with caramelized onions. Savory and delicious.",
-    price: 6.5,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Bread & Rolls"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-crown-babka",
-    squareToken: "JGEYZVV7O77H6YZO72LIMNNC",
-    image: "/images/products/chocolate-crown-babka.webp",
-    name: "Chocolate Crown Babka",
-    category: "babkas",
-    description: "Our showpiece babka — a magnificent crown shape with rich chocolate swirled throughout. Perfect for celebrations.",
-    price: 24.99,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-kokosh-babka",
-    squareToken: "CXJVD2XXHD5KPULWEYQIITIC",
-    name: "Chocolate Kokosh Babka",
-    category: "babkas",
-    description: "Traditional Hungarian-style kokosh with layers of chocolate filling rolled into a tender dough.",
-    price: 20.99,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-loaf-babka",
-    squareToken: "AWKEAY3ZBBF2ZU5R3CJNJ5JO",
-    name: "Chocolate Loaf Babka",
-    category: "babkas",
-    description: "Classic chocolate babka in loaf form — easy to slice and perfect for sharing.",
-    price: 13.79,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-3-strip-babka",
-    name: "Chocolate 3-Strip Babka",
-    category: "babkas",
-    description: "Three strips of chocolate-filled dough braided together. Beautiful and delicious.",
-    price: 14.63,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-ring-babka",
-    image: "/images/products/chocolate-ring-babka.webp",
-    name: "Chocolate Ring Babka",
-    category: "babkas",
-    description: "Elegant ring-shaped babka swirled with rich chocolate. A stunning centerpiece.",
-    price: 18,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cinnamon-babka",
-    name: "Cinnamon Babka",
-    category: "babkas",
-    description: "Sweet cinnamon sugar swirled through soft, buttery dough. Classic comfort.",
-    price: 15.15,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cinnamon-crown-babka",
-    name: "Cinnamon Crown Babka",
-    category: "babkas",
-    description: "Crown-shaped babka filled with sweet cinnamon. Impressive and irresistible.",
-    price: 23.34,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "poppy-seed-twist",
-    image: "/images/products/poppy-seed-twist.webp",
-    name: "Poppy Seed Twist",
-    category: "babkas",
-    description: "Traditional poppy seed filling twisted into flaky pastry. An old-world favourite.",
-    price: 16,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "icy-bun-tray",
-    squareToken: "2KEKUVX73XO4SATGZNMTEHMF",
-    name: "Icy Bun Tray",
-    category: "babkas",
-    description: "Assortment of sweet iced buns — perfect for breakfast gatherings or brunch.",
-    price: 13.99,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-babka-tray",
-    name: "Chocolate Babka Tray",
-    category: "babkas",
-    description: "Pre-sliced chocolate babka arranged on a tray. Ready to serve for any occasion.",
-    price: 22,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Babkas"
-    ],
-    inStock: true
-  },
-  {
-    slug: "7-layer-cake",
-    name: "7-Layer Cake",
-    category: "cakes",
-    description: "Our legendary seven thin layers of sponge cake with rich cream between each, topped with glossy chocolate. A customer favourite for decades.",
-    price: 34,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-mousse-cake",
-    name: "Chocolate Mousse Cake",
-    category: "cakes",
-    description: "Light-as-air chocolate mousse layered on a delicate cake base. Elegant and decadent.",
-    price: 38,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "ladyfinger-chocolate-mousse-cake",
-    name: "Ladyfinger Chocolate Mousse Cake",
-    category: "cakes",
-    description: "Dark chocolate frozen mousse cake decorated with half-dipped ladyfingers. Requires 2 days notice.",
-    price: 42,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "carrot-cake",
-    image: "/images/products/carrot-cake.webp",
-    name: "Carrot Cake",
-    category: "cakes",
-    description: "Moist, spiced carrot cake with cream cheese frosting. A timeless classic.",
-    price: 36,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "coconut-cake",
-    name: "Coconut Cake",
-    category: "cakes",
-    description: "White sponge cake layered with cream and toasted coconuts, sprinkled with coconut shavings.",
-    price: 36,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "mocha-cake",
-    name: "Mocha Cake",
-    category: "cakes",
-    description: "Layers of white sponge filled with mocha buttercream, decorated with whole coffee beans. Coffee lover's dream.",
-    price: 36,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "caramel-crunch-cake",
-    image: "/images/products/caramel-crunch-cake.webp",
-    name: "Caramel Crunch Cake",
-    category: "cakes",
-    description: "Vanilla sponge with caramel between layers, white icing on the outside topped with caramel and pumpkin seeds.",
-    price: 38,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "black-forest-cake",
-    name: "Black Forest Cake",
-    category: "cakes",
-    description: "Classic German-style chocolate cake with cherries and whipped cream. Rich and indulgent.",
-    price: 38,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cheesecake-plain",
-    name: "Cheesecake (Plain)",
-    category: "cakes",
-    description: "Rich, creamy New York-style cheesecake on a graham cracker crust.",
-    price: 32,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cheesecake-marble",
-    name: "Cheesecake (Marble)",
-    category: "cakes",
-    description: "Swirled chocolate and vanilla cheesecake — beautiful and delicious.",
-    price: 34,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "strawberry-shortcake",
-    name: "Strawberry Shortcake",
-    category: "cakes",
-    description: "Light sponge cake layered with fresh strawberries and whipped cream. Seasonal favourite.",
-    price: 36,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "tiramisu-cake",
-    name: "Tiramisu Cake",
-    category: "cakes",
-    description: "Italian-inspired layers of coffee-soaked sponge and mascarpone cream. Dusted with cocoa.",
-    price: 40,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "custom-celebration-cake",
-    squareToken: "Z6N3USLAMPKXYCDLOGC2YDZQ",
-    image: "/images/products/custom-celebration-cake.webp",
-    name: "Custom Celebration Cake",
-    category: "cakes",
-    description: "Personalized cakes for birthdays, bar/bat mitzvahs, anniversaries, and more. Call to discuss designs.",
-    price: null,
-    dietary: [],
-    tags: [
-      "Custom Order",
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "custom-wedding-cake",
-    squareToken: "Z6N3USLAMPKXYCDLOGC2YDZQ",
-    name: "Custom Wedding Cake",
-    category: "cakes",
-    description: "Beautiful multi-tier wedding cakes designed to your specifications. Consultation required.",
-    price: null,
-    dietary: [],
-    tags: [
-      "Custom Order",
-      "Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "large-chocolate-bundt-cake",
-    name: "Large Chocolate Bundt Cake",
-    category: "bundt-cakes",
-    description: "Rich, moist chocolate bundt cake with a beautiful ring shape. Serves 10-12.",
-    price: 23.34,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Bundt Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "large-apple-bundt-cake",
-    name: "Large Apple Bundt Cake",
-    category: "bundt-cakes",
-    description: "Moist apple cake with cinnamon spice in an elegant bundt shape. Serves 10-12.",
-    price: 23.34,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Bundt Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "large-marble-bundt-cake",
-    name: "Large Marble Bundt Cake",
-    category: "bundt-cakes",
-    description: "Swirled vanilla and chocolate in a classic bundt. Beautiful and delicious.",
-    price: 23.34,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Bundt Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "small-chocolate-bundt-cake",
-    name: "Small Chocolate Bundt Cake",
-    category: "bundt-cakes",
-    description: "Personal-sized chocolate bundt, perfect for smaller gatherings. Serves 4-6.",
-    price: 16,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Bundt Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "small-apple-bundt-cake",
-    name: "Small Apple Bundt Cake",
-    category: "bundt-cakes",
-    description: "Personal-sized apple bundt with cinnamon. Serves 4-6.",
-    price: 16,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Bundt Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "small-marble-bundt-cake",
-    name: "Small Marble Bundt Cake",
-    category: "bundt-cakes",
-    description: "Personal-sized marble bundt. Serves 4-6.",
-    price: 16,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Bundt Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "apple-loaf-cake",
-    image: "/images/products/apple-loaf-cake.webp",
-    name: "Apple Loaf Cake",
-    category: "loaf-cakes",
-    description: "Moist apple cake with cinnamon and real apple pieces throughout.",
-    price: 13.98,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Loaf Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cinnamon-loaf-cake",
-    name: "Cinnamon Loaf Cake",
-    category: "loaf-cakes",
-    description: "Tender cake with a sweet cinnamon swirl running through the center.",
-    price: 13.98,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Loaf Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-loaf-cake",
-    image: "/images/products/chocolate-loaf-cake.webp",
-    name: "Chocolate Loaf Cake",
-    category: "loaf-cakes",
-    description: "Rich chocolate loaf with an intense cocoa flavor. Chocolate lover's dream.",
-    price: 13.98,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Loaf Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "marble-loaf-cake",
-    image: "/images/products/marble-loaf-cake.webp",
-    name: "Marble Loaf Cake",
-    category: "loaf-cakes",
-    description: "Classic swirl of vanilla and chocolate cake marbled together beautifully.",
-    price: 13.98,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Loaf Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "lemon-loaf-cake",
-    name: "Lemon Loaf Cake",
-    category: "loaf-cakes",
-    description: "Bright, citrusy lemon cake with a light glaze. Refreshing and delicious.",
-    price: 13.98,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Loaf Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "banana-loaf-cake",
-    name: "Banana Loaf Cake",
-    category: "loaf-cakes",
-    description: "Moist banana bread-style loaf with hints of cinnamon. Comfort in every slice.",
-    price: 13.98,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Loaf Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "pound-cake",
-    name: "Pound Cake",
-    category: "loaf-cakes",
-    description: "Classic buttery pound cake with a dense, tender crumb. Timeless simplicity.",
-    price: 12,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Loaf Cakes"
-    ],
-    inStock: true
-  },
-  {
-    slug: "assorted-fancy-cookies-box",
-    image: "/images/products/assorted-fancy-cookies-box.webp",
-    name: "Assorted Fancy Cookies (Box)",
-    category: "cookies",
-    description: "Beautiful assortment of our finest decorated cookies. Perfect for entertaining or gifting.",
-    price: 22,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-chip-cookies-dozen",
-    squareToken: "DM7HWOUEVM4CKE2BBGW5PHFJ",
-    image: "/images/products/chocolate-chip-cookies-dozen.webp",
-    name: "Chocolate Chip Cookies (Dozen)",
-    category: "cookies",
-    description: "Classic soft-baked cookies loaded with chocolate chips. A family favourite.",
-    price: 11.25,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-rogalach",
-    squareToken: "KM7TFWDHCZZXT4ACYBA7DGK4",
-    name: "Chocolate Rogalach",
-    category: "cookies",
-    description: "Flaky crescent-shaped pastry filled with rich chocolate. Bite-sized perfection.",
-    price: 1.75,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cinnamon-rogalach",
-    name: "Cinnamon Rogalach",
-    category: "cookies",
-    description: "Traditional rogalach with sweet cinnamon filling wrapped in flaky dough.",
-    price: 1.81,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "rogalach-tray-assorted",
-    image: "/images/products/rogalach-tray-assorted.webp",
-    name: "Rogalach Tray (Assorted)",
-    category: "cookies",
-    description: "Assorted rogalach arranged on a serving tray. Perfect for events and holidays.",
-    price: 28,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "baby-shower-cookies",
-    image: "/images/products/baby-shower-cookies.webp",
-    name: "Baby Shower Cookies",
-    category: "cookies",
-    description: "Adorable decorated cookies in baby-themed shapes. Customizable colors available.",
-    price: 24,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Custom Order",
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "wedding-cookies",
-    name: "Wedding Cookies",
-    category: "cookies",
-    description: "Elegant decorated cookies perfect for bridal showers, weddings, and engagements.",
-    price: 28,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Custom Order",
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "birthday-cookies",
-    image: "/images/products/birthday-cookies.webp",
-    name: "Birthday Cookies",
-    category: "cookies",
-    description: "Fun, colorful decorated cookies for birthday celebrations. Can be customized.",
-    price: 24,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Custom Order",
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "hamantaschen-assorted",
-    image: "/images/products/hamantaschen-assorted.webp",
-    name: "Hamantaschen (Assorted)",
-    category: "cookies",
-    description: "Traditional triangular Purim cookies with various fillings: poppy, prune, apricot, or chocolate.",
-    price: 2.5,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "mandel-bread",
-    image: "/images/products/mandel-bread.webp",
-    name: "Mandel Bread",
-    category: "cookies",
-    description: "Traditional Jewish biscotti, twice-baked for perfect crunch. Great with tea or coffee.",
-    price: 16,
-    dietary: [
-      "pareve",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "linzer-cookies",
-    name: "Linzer Cookies",
-    category: "cookies",
-    description: "Delicate sandwich cookies with jam filling, dusted with powdered sugar.",
-    price: 3,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "black-white-cookies",
-    name: "Black & White Cookies",
-    category: "cookies",
-    description: "Classic New York-style cookie, half chocolate, half vanilla icing.",
-    price: 3.5,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "butter-cookies-box",
-    image: "/images/products/butter-cookies-box.webp",
-    name: "Butter Cookies (Box)",
-    category: "cookies",
-    description: "Delicate, melt-in-your-mouth butter cookies in assorted shapes.",
-    price: 18,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "sugar-cookies-decorated-dozen",
-    name: "Sugar Cookies (Decorated, Dozen)",
-    category: "cookies",
-    description: "Hand-decorated sugar cookies. Available in seasonal themes and custom designs.",
-    price: 26,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Custom Order",
-      "Cookies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cheese-danish",
-    squareToken: "7P6JN47KAEL5JOXF5QUERNNV",
-    image: "/images/products/cheese-danish.webp",
-    name: "Cheese Danish",
-    category: "danishes-sweets",
-    description: "Buttery, flaky pastry filled with sweet cream cheese. A morning favourite.",
-    price: 4.65,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "apple-danish",
-    image: "/images/products/apple-danish.webp",
-    name: "Apple Danish",
-    category: "danishes-sweets",
-    description: "Flaky layers of pastry wrapped around cinnamon-spiced apples.",
-    price: 3.95,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cherry-danish",
-    name: "Cherry Danish",
-    category: "danishes-sweets",
-    description: "Sweet cherry filling nestled in buttery danish pastry.",
-    price: 3.95,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "blueberry-danish",
-    name: "Blueberry Danish",
-    category: "danishes-sweets",
-    description: "Fresh blueberry filling in a golden flaky pastry shell.",
-    price: 3.95,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "mini-danish-each",
-    name: "Mini Danish (Each)",
-    category: "danishes-sweets",
-    description: "Bite-sized danish pastries, perfect for platters and events. Various flavors available.",
-    price: 1.64,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "mini-danish-tray",
-    name: "Mini Danish Tray",
-    category: "danishes-sweets",
-    description: "Assortment of mini danishes beautifully arranged for serving.",
-    price: 24,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cinnamon-bun",
-    image: "/images/products/cinnamon-bun.webp",
-    name: "Cinnamon Bun",
-    category: "danishes-sweets",
-    description: "Soft, gooey cinnamon roll with sweet glaze. Warm comfort in every bite.",
-    price: 3.95,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "croissant-plain",
-    image: "/images/products/croissant-plain.webp",
-    name: "Croissant (Plain)",
-    category: "danishes-sweets",
-    description: "Buttery, flaky French-style croissant. Perfect for breakfast.",
-    price: 3.5,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-croissant",
-    image: "/images/products/chocolate-croissant.webp",
-    name: "Chocolate Croissant",
-    category: "danishes-sweets",
-    description: "Flaky croissant filled with rich chocolate. Indulgent and delicious.",
-    price: 4,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "muffins-various",
-    name: "Muffins (Various)",
-    category: "danishes-sweets",
-    description: "Fresh-baked muffins in various flavors: blueberry, chocolate chip, bran, and more.",
-    price: 3.25,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "scone-plain-or-fruit",
-    name: "Scone (Plain or Fruit)",
-    category: "danishes-sweets",
-    description: "Traditional British-style scone, perfect with tea. Available plain or with fruit.",
-    price: 3.5,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "strudel-apple",
-    name: "Strudel (Apple)",
-    category: "danishes-sweets",
-    description: "Traditional apple strudel with flaky phyllo-style pastry. Serves 6-8.",
-    price: 16,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Danishes & Sweets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "opera-petit-fours",
-    image: "/images/products/opera-petit-fours.webp",
-    name: "Opera Petit Fours",
-    category: "desserts-petits-fours",
-    description: "Individual squares of almond sponge filled with mocha and heavy cream, topped with ganache.",
-    price: 3.5,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "petit-fours-assorted-box",
-    name: "Petit Fours (Assorted Box)",
-    category: "desserts-petits-fours",
-    description: "Beautiful assortment of bite-sized cakes covered with icing and decorations.",
-    price: 28,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-cigars",
-    name: "Chocolate Cigars",
-    category: "desserts-petits-fours",
-    description: "Rolled wafers filled with heavy cream, dipped on each end. Elegant and delicious.",
-    price: 2.5,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "mini-pastry-assortment",
-    image: "/images/products/mini-pastry-assortment.webp",
-    name: "Mini Pastry Assortment",
-    category: "desserts-petits-fours",
-    description: "Selection of miniature pastries perfect for dessert platters and events.",
-    price: 28,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "brownie-squares",
-    image: "/images/products/brownie-squares.webp",
-    name: "Brownie Squares",
-    category: "desserts-petits-fours",
-    description: "Rich, fudgy chocolate brownies cut into squares. Intensely chocolatey.",
-    price: 18,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "lemon-squares",
-    name: "Lemon Squares",
-    category: "desserts-petits-fours",
-    description: "Tangy lemon curd on a buttery shortbread base, dusted with powdered sugar.",
-    price: 18,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "nanaimo-bars",
-    name: "Nanaimo Bars",
-    category: "desserts-petits-fours",
-    description: "Classic Canadian three-layer no-bake bars with chocolate, custard, and coconut.",
-    price: 18,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "fruit-tarts-mini",
-    name: "Fruit Tarts (Mini)",
-    category: "desserts-petits-fours",
-    description: "Buttery tart shell filled with pastry cream and topped with fresh fruit.",
-    price: 4,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "clairs",
-    name: "Éclairs",
-    category: "desserts-petits-fours",
-    description: "Classic French pastry filled with vanilla cream and topped with chocolate glaze.",
-    price: 4.5,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cream-puffs",
-    name: "Cream Puffs",
-    category: "desserts-petits-fours",
-    description: "Light choux pastry filled with sweet whipped cream. Dusted with powdered sugar.",
-    price: 4,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Desserts & Petit Fours"
-    ],
-    inStock: true
-  },
-  {
-    slug: "apple-pie",
-    name: "Apple Pie",
-    category: "pies",
-    description: "Classic apple pie with cinnamon-spiced apples in a flaky, golden crust.",
-    price: 22,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "blueberry-pie",
-    image: "/images/products/blueberry-pie.webp",
-    name: "Blueberry Pie",
-    category: "pies",
-    description: "Sweet, juicy blueberry filling in a golden crust. Bursting with berry flavor.",
-    price: 24,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "cherry-pie",
-    image: "/images/products/cherry-pie.webp",
-    name: "Cherry Pie",
-    category: "pies",
-    description: "Tart cherry filling with a beautiful lattice top crust. A classic favourite.",
-    price: 24,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "peach-pie",
-    name: "Peach Pie",
-    category: "pies",
-    description: "Sweet peaches in a buttery crust. Seasonal favourite when peaches are at their best.",
-    price: 24,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "pumpkin-pie",
-    name: "Pumpkin Pie",
-    category: "pies",
-    description: "Smooth, spiced pumpkin custard in a flaky crust. Essential for fall celebrations.",
-    price: 22,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "lemon-meringue-pie",
-    squareToken: "MTXEA5PD43746GAXUHLVZFO3",
-    name: "Lemon Meringue Pie",
-    category: "pies",
-    description: "Tangy lemon curd topped with fluffy toasted meringue. Bright and beautiful.",
-    price: 21,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "coconut-cream-pie",
-    name: "Coconut Cream Pie",
-    category: "pies",
-    description: "Rich coconut custard topped with whipped cream and toasted coconut.",
-    price: 26,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "chocolate-cream-pie",
-    name: "Chocolate Cream Pie",
-    category: "pies",
-    description: "Silky chocolate pudding filling topped with fresh whipped cream.",
-    price: 26,
-    dietary: [
-      "dairy",
-      "contains-egg"
-    ],
-    tags: [
-      "Pies"
-    ],
-    inStock: true
-  },
-  {
-    slug: "rosh-hashanah-gift-basket",
-    squareToken: "XMZZ34NXJA3PBBDPONYQT375",
-    name: "Rosh Hashanah Gift Basket",
-    category: "gifts-baskets",
-    description: "Curated basket with grape juice, honey, honey cake, fresh apple, and assorted themed cookies for a sweet new year.",
-    price: 74.95,
-    dietary: [],
-    tags: [
-      "Seasonal",
-      "Gifts & Baskets"
-    ],
-    inStock: true,
-    occasion: "rosh-hashanah",
-    isSeasonal: true
-  },
-  {
-    slug: "holiday-gift-basket-standard",
-    name: "Holiday Gift Basket (Standard)",
-    category: "gifts-baskets",
-    description: "Beautiful basket with challah, cookies, and an assortment of baked sweets.",
-    price: 69,
-    dietary: [],
-    tags: [
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "holiday-gift-basket-deluxe",
-    name: "Holiday Gift Basket (Deluxe)",
-    category: "gifts-baskets",
-    description: "Premium basket with challah, babka, cookies, and a selection of our finest pastries.",
-    price: 95,
-    dietary: [],
-    tags: [
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "shiva-tray",
-    name: "Shiva Tray",
-    category: "gifts-baskets",
-    description: "Comforting assortment of baked goods suitable for condolence calls. Thoughtfully arranged.",
-    price: 59,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Pareve Options",
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "shiva-basket",
-    name: "Shiva Basket",
-    category: "gifts-baskets",
-    description: "Expanded shiva offering with a larger variety of breads, cakes, and cookies.",
-    price: 79,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Pareve Options",
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "corporate-gift-basket",
-    name: "Corporate Gift Basket",
-    category: "gifts-baskets",
-    description: "Professional presentation perfect for client gifts or office celebrations.",
-    price: 75,
-    dietary: [],
-    tags: [
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "celebration-cookie-platter",
-    name: "Celebration Cookie Platter",
-    category: "gifts-baskets",
-    description: "Fancy decorated cookies arranged on a beautiful serving tray. Perfect for parties.",
-    price: 55,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "breakfast-basket",
-    name: "Breakfast Basket",
-    category: "gifts-baskets",
-    description: "Morning treats including muffins, danishes, bagels, and spreads. Great for hosts.",
-    price: 65,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "sweet-treats-box",
-    name: "Sweet Treats Box",
-    category: "gifts-baskets",
-    description: "A curated box of our best cookies, brownies, and sweet treats.",
-    price: 45,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "custom-gift-basket",
-    name: "Custom Gift Basket",
-    category: "gifts-baskets",
-    description: "Create your own custom basket with your choice of bakery items. Call to discuss.",
-    price: null,
-    dietary: [],
-    tags: [
-      "Custom Order",
-      "Gifts & Baskets"
-    ],
-    inStock: true
-  },
-  {
-    slug: "rosh-hashanah-round-challah",
-    squareToken: "KKNGFC5DQ33SXF3QALHP6I4C",
-    image: "/images/products/rosh-hashanah-round-challah.webp",
-    name: "Rosh Hashanah Round Challah",
-    category: "holiday-seasonal",
-    description: "Traditional round challah symbolizing the cycle of the year. Often topped with raisins for a sweet new year.",
-    price: 7.95,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Rosh Hashanah",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "rosh-hashanah",
-    isSeasonal: true
-  },
-  {
-    slug: "honey-cake",
-    name: "Honey Cake",
-    category: "holiday-seasonal",
-    description: "Traditional honey cake for Rosh Hashanah — moist, aromatic, and perfectly sweet for the new year.",
-    price: 18,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Rosh Hashanah",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "rosh-hashanah",
-    isSeasonal: true
-  },
-  {
-    slug: "apple-cookies-rosh-hashanah",
-    image: "/images/products/apple-cookies-rosh-hashanah.webp",
-    name: "Apple Cookies (Rosh Hashanah)",
-    category: "holiday-seasonal",
-    description: "Decorated apple-shaped cookies for the Jewish New Year. Box of assorted designs.",
-    price: 24,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Rosh Hashanah",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "rosh-hashanah",
-    isSeasonal: true
-  },
-  {
-    slug: "chanukah-cookies-platter",
-    image: "/images/products/chanukah-cookies-platter.webp",
-    name: "Chanukah Cookies Platter",
-    category: "holiday-seasonal",
-    description: "Approximately 44 beautifully decorated cookies in dreidel, menorah, and Star of David shapes.",
-    price: 160,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Chanukah",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "hanukkah",
-    isSeasonal: true
-  },
-  {
-    slug: "sufganiyot-jelly-donuts",
-    name: "Sufganiyot (Jelly Donuts)",
-    category: "holiday-seasonal",
-    description: "Traditional Chanukah donuts filled with jelly and dusted with powdered sugar. Made fresh during holiday.",
-    price: 3.5,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Chanukah",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "hanukkah",
-    isSeasonal: true
-  },
-  {
-    slug: "chanukah-sugar-cookies-dozen",
-    image: "/images/products/chanukah-sugar-cookies-dozen.webp",
-    name: "Chanukah Sugar Cookies (Dozen)",
-    category: "holiday-seasonal",
-    description: "Hand-decorated sugar cookies in festive Chanukah shapes and colors.",
-    price: 28,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Chanukah",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "hanukkah",
-    isSeasonal: true
-  },
-  {
-    slug: "hamantaschen-dozen",
-    image: "/images/products/hamantaschen-dozen.webp",
-    name: "Hamantaschen (Dozen)",
-    category: "holiday-seasonal",
-    description: "Traditional triangular Purim cookies. Available in poppy, prune, apricot, chocolate, and more.",
-    price: 24,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Purim",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "purim",
-    isSeasonal: true
-  },
-  {
-    slug: "purim-gift-basket",
-    name: "Purim Gift Basket",
-    category: "holiday-seasonal",
-    description: "Festive mishloach manot basket with hamantaschen and assorted treats for Purim.",
-    price: 45,
-    dietary: [],
-    tags: [
-      "Purim",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    occasion: "purim",
-    isSeasonal: true
-  },
-  {
-    slug: "passover-sponge-cake",
-    name: "Passover Sponge Cake",
-    category: "holiday-seasonal",
-    description: "Light, fluffy sponge cake made without flour for Passover. Available during holiday.",
-    price: 28,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Passover",
-      "Kosher for Passover",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "passover-macaroons",
-    name: "Passover Macaroons",
-    category: "holiday-seasonal",
-    description: "Classic coconut macaroons, perfect for Passover. Box of assorted flavors.",
-    price: 16,
-    dietary: [
-      "pareve"
-    ],
-    tags: [
-      "Passover",
-      "Kosher for Passover",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "passover-cookie-assortment",
-    image: "/images/products/passover-cookie-assortment.webp",
-    name: "Passover Cookie Assortment",
-    category: "holiday-seasonal",
-    description: "Assorted Kosher for Passover cookies. Perfect for seders and holiday entertaining.",
-    price: 22,
-    dietary: [],
-    tags: [
-      "Passover",
-      "Kosher for Passover",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "shavuot-cheesecake",
-    name: "Shavuot Cheesecake",
-    category: "holiday-seasonal",
-    description: "Traditional cheesecake for Shavuot — rich, creamy, and perfect for the dairy holiday.",
-    price: 36,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Shavuot",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "cheese-blintzes",
-    name: "Cheese Blintzes",
-    category: "holiday-seasonal",
-    description: "Traditional cheese-filled crepes for Shavuot. Package of 6.",
-    price: 18,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Shavuot",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "valentines-day-cookies",
-    image: "/images/products/valentines-day-cookies.webp",
-    name: "Valentine's Day Cookies",
-    category: "holiday-seasonal",
-    description: "Heart-shaped decorated sugar cookies for Valentine's Day. Dozen assorted.",
-    price: 26,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Valentine's Day",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "mothers-day-cookie-bouquet",
-    squareToken: "3ORGMXHXOUDPCB3NVN6SFXDG",
-    image: "/images/products/mothers-day-cookie-bouquet.webp",
-    name: "Mother's Day Cookie Bouquet",
-    category: "holiday-seasonal",
-    description: "Beautiful arrangement of flower-shaped decorated cookies. Perfect for mom.",
-    price: 38.5,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Mother's Day",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "fathers-day-cookies",
-    image: "/images/products/fathers-day-cookies.webp",
-    name: "Father's Day Cookies",
-    category: "holiday-seasonal",
-    description: "Fun decorated cookies for dad. Ties, tools, and sports themes available.",
-    price: 26,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Father's Day",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  },
-  {
-    slug: "halloween-cookies",
-    image: "/images/products/halloween-cookies.webp",
-    name: "Halloween Cookies",
-    category: "holiday-seasonal",
-    description: "Spooky decorated sugar cookies — pumpkins, ghosts, bats, and more!",
-    price: 26,
-    dietary: [
-      "dairy"
-    ],
-    tags: [
-      "Halloween",
-      "Holiday & Seasonal Specials"
-    ],
-    inStock: true,
-    isSeasonal: true
-  }
+export const GENERATED_CATEGORIES: MenuCategory[] = [
+  { slug: "bagels", name: "Bagels", groupSlug: "breads", order: 1, fallbackImage: "/images/products/plain-bagel.webp" },
+  { slug: "baguettes-rolls-buns", name: "Baguettes/Rolls/Buns", groupSlug: "breads", order: 2, fallbackImage: "/images/products/onion-rolls-6-pack.webp" },
+  { slug: "bread", name: "Bread", groupSlug: "breads", order: 3 },
+  { slug: "bread-items", name: "Bread Items", groupSlug: "breads", order: 4 },
+  { slug: "spelt-bread", name: "Spelt bread", groupSlug: "breads", order: 5 },
+  { slug: "full-slab-focaccia", name: "Full Slab Focaccia", groupSlug: "breads", order: 6 },
+  { slug: "cakes", name: "Cakes", groupSlug: "cakes", order: 1, fallbackImage: "/images/products/carrot-cake.webp" },
+  { slug: "fancy-cakes", name: "Fancy Cakes", groupSlug: "cakes", order: 2, fallbackImage: "/images/products/caramel-crunch-cake.webp" },
+  { slug: "loaf-bundt-cakes", name: "Loaf/Bundt Cakes", groupSlug: "cakes", order: 3, fallbackImage: "/images/products/apple-loaf-cake.webp" },
+  { slug: "muffins-cupcakes", name: "Muffins/Cupcakes", groupSlug: "cakes", order: 4 },
+  { slug: "cupcake-no-icing", name: "Cupcake (No Icing)", groupSlug: "cakes", order: 5 },
+  { slug: "printed-picture-cupcake", name: "Printed Picture Cupcake", groupSlug: "cakes", order: 6 },
+  { slug: "cookies", name: "Cookies", groupSlug: "cookies", order: 1, fallbackImage: "/images/products/chocolate-chip-cookies-dozen.webp" },
+  { slug: "boxed-cookies", name: "Boxed cookies", groupSlug: "cookies", order: 2, fallbackImage: "/images/products/assorted-fancy-cookies-box.webp" },
+  { slug: "bow-ties-kichels", name: "Bow Ties / Kichels", groupSlug: "cookies", order: 3 },
+  { slug: "custom-cookie", name: "Custom Cookie", groupSlug: "cookies", order: 4 },
+  { slug: "rogallach-jam-chocolate-twist", name: "Rogallach/Jam & Chocolate Twist", groupSlug: "cookies", order: 5, fallbackImage: "/images/products/rogalach-tray-assorted.webp" },
+  { slug: "sugar-free", name: "Sugar Free", groupSlug: "cookies", order: 6 },
+  { slug: "bubka-chocolate-strip", name: "Bubka / Chocolate Strip", groupSlug: "pastries", order: 1, fallbackImage: "/images/products/chocolate-crown-babka.webp" },
+  { slug: "danish-croissant-bun", name: "Danish/Croissant/Bun", groupSlug: "pastries", order: 2, fallbackImage: "/images/products/cheese-danish.webp" },
+  { slug: "churros-donuts", name: "Churros/Donuts", groupSlug: "pastries", order: 3, fallbackImage: "/images/products/cinnamon-bun.webp" },
+  { slug: "turnover-horseshoe-pretzel", name: "Turnover/Horseshoe/Pretzel", groupSlug: "pastries", order: 4 },
+  { slug: "pastries", name: "Pastries", groupSlug: "pastries", order: 5, fallbackImage: "/images/products/mini-pastry-assortment.webp" },
+  { slug: "petit-fours-desserts", name: "Petit Fours & Desserts", groupSlug: "pastries", order: 6, fallbackImage: "/images/products/opera-petit-fours.webp" },
+  { slug: "pies-apple-strudel", name: "Pies/Apple Strudel", groupSlug: "pastries", order: 7, fallbackImage: "/images/products/blueberry-pie.webp" },
+  { slug: "sandwiches", name: "Sandwiches", groupSlug: "sandwiches-savouries", order: 1 },
+  { slug: "sandwich-fillings", name: "Sandwich & Fillings", groupSlug: "sandwiches-savouries", order: 2 },
+  { slug: "savouries", name: "Savouries", groupSlug: "sandwiches-savouries", order: 3 },
+  { slug: "elite-salads", name: "Elite salads", groupSlug: "sandwiches-savouries", order: 4 },
+  { slug: "la-briut-salads", name: "La Briut Salads", groupSlug: "sandwiches-savouries", order: 5 },
+  { slug: "yogurt-parfaits", name: "Yogurt Parfaits", groupSlug: "sandwiches-savouries", order: 6 },
+  { slug: "challah", name: "Challah", groupSlug: "shabbat", order: 1, fallbackImage: "/images/products/plain-challah-large.webp" },
+  { slug: "challah-multigrain", name: "Challah Multigrain", groupSlug: "shabbat", order: 2 },
+  { slug: "challah-spelt", name: "Challah Spelt", groupSlug: "shabbat", order: 3 },
+  { slug: "special-challah", name: "Special Challah", groupSlug: "shabbat", order: 4, fallbackImage: "/images/products/sesame-challah.webp" },
+  { slug: "pretzel-challah", name: "Pretzel Challah", groupSlug: "shabbat", order: 5 },
+  { slug: "simcha-challah", name: "Simcha Challah", groupSlug: "shabbat", order: 6 },
+  { slug: "bilka", name: "Bilka", groupSlug: "shabbat", order: 7 },
+  { slug: "rosh-hashanah", name: "Rosh Hashanah", groupSlug: "rosh-hashanah", order: 1, fallbackImage: "/images/products/rosh-hashanah-round-challah.webp" },
+  { slug: "sukkot", name: "Sukkot", groupSlug: "sukkot", order: 1 },
+  { slug: "chanukah", name: "Chanukah", groupSlug: "hanukkah", order: 1 },
+  { slug: "chanukah-cookies", name: "Chanukah Cookies", groupSlug: "hanukkah", order: 2, fallbackImage: "/images/products/chanukah-cookies-platter.webp" },
+  { slug: "sufganiyot-latkes", name: "Sufganiyot & Latkes", groupSlug: "hanukkah", order: 3, fallbackImage: "/images/products/cinnamon-bun.webp" },
+  { slug: "purim", name: "Purim", groupSlug: "purim", order: 1, fallbackImage: "/images/products/hamantaschen-assorted.webp" },
+  { slug: "mishloach-manot", name: "Mishloach Manot", groupSlug: "purim", order: 2, fallbackImage: "/images/products/hamantaschen-assorted.webp" },
+  { slug: "shavuot", name: "Shavuot", groupSlug: "shavuot", order: 1 },
+  { slug: "valentines-day", name: "Valentine's Day", groupSlug: "celebrations", order: 1, fallbackImage: "/images/products/valentines-day-cookies.webp" },
+  { slug: "mothers-day", name: "Mother's Day", groupSlug: "celebrations", order: 2, fallbackImage: "/images/products/mothers-day-cookie-bouquet.webp" },
+  { slug: "fathers-day", name: "Father's Day", groupSlug: "celebrations", order: 3, fallbackImage: "/images/products/fathers-day-cookies.webp" },
+  { slug: "graduation-cookie", name: "Graduation cookie", groupSlug: "celebrations", order: 4 },
+];
+
+export const GENERATED_ITEMS: MenuItem[] = [
+  { slug: "bagels-bagel-mezanot", name: "Bagel Mezanot", categorySlug: "bagels", groupSlug: "breads", section: "regular", price: 1.55, taxable: false, squareToken: "XGZIHATRIVMD7RFBAP44WAZV", hasPhoto: false },
+  { slug: "bagels-bagel-sliced", name: "Bagel Sliced", categorySlug: "bagels", groupSlug: "breads", section: "regular", price: 1.15, taxable: false, squareToken: "VSPH2FKTRF5MUM22TH47OXIA", image: "/images/products/sesame-seed-bagel.webp", hasPhoto: true },
+  { slug: "bagels-dozen-reg-sliced-bagel", name: "Dozen/reg sliced bagel", categorySlug: "bagels", groupSlug: "breads", section: "regular", price: 13.8, taxable: false, squareToken: "U3PBAXGB6HU4AN2KOMHHEEYN", hasPhoto: false },
+  { slug: "bagels-dozen-regular-bagels", name: "Dozen/regular bagels", categorySlug: "bagels", groupSlug: "breads", section: "regular", price: 13.2, taxable: false, squareToken: "43UE3JBRFH3YDA2KX7RC7OWI", hasPhoto: false },
+  { slug: "bagels-mini-bagels", name: "Mini Bagels", categorySlug: "bagels", groupSlug: "breads", section: "regular", price: 0.8, taxable: false, squareToken: "I3JKBHRSHG2FPO4HCAZBGGBN", hasPhoto: false },
+  { slug: "bagels-multigrain", name: "Multigrain", categorySlug: "bagels", groupSlug: "breads", section: "regular", price: 1.15, taxable: false, squareToken: "KCYCYJSVZJGKGAW2WT7LYP7O", image: "/images/products/everything-bagel.webp", hasPhoto: true },
+  { slug: "bagels-regular", name: "Regular", categorySlug: "bagels", groupSlug: "breads", section: "regular", price: 1.1, taxable: false, squareToken: "JYQKXTB3WGJV4SYTWFUYCDCF", image: "/images/products/plain-bagel.webp", hasPhoto: true },
+  { slug: "baguettes-rolls-buns-3-hotdog-buns", name: "3\" Hotdog Buns", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1, taxable: false, squareToken: "PTDLT47IYZRRAHMH6NWDDUWO", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-baguettes-large", name: "Baguettes Large", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 4.5, taxable: false, squareToken: "4YYXZLCRTS73QEA6COGCYIQO", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-baguettes-small", name: "Baguettes Small", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 3.5, taxable: false, squareToken: "TAF3C6MG3ISO222JK3CSII32", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-dinner-rolls-dozen", name: "Dinner rolls/dozen", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 13, taxable: false, squareToken: "EV5WLXE6GIHJQZ2G2LJTLBZ7", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-hamburger-hotdog-buns", name: "Hamburger/Hotdog buns", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.15, taxable: false, squareToken: "Z6UO6JVDE6R4TYBO6NX2HT6T", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-hot-dog-burger-sliced", name: "hot dog/burger sliced", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.2, taxable: false, squareToken: "KV5I6T67FPDDGWI2UY35VZH7", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-jumbo-burger", name: "Jumbo burger", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.25, taxable: false, squareToken: "B2EUNEZKRSE544MRI44ACAKX", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-jumbo-burger-sliced", name: "jumbo burger sliced", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.3, taxable: false, squareToken: "55MWRQ5HLND4K5HH3URAWJTX", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-mezanot-burger-hot-dog-cut", name: "Mezanot burger/hot dog CUT", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.8, taxable: false, squareToken: "7I4SU27UGW3O7KWINSYWBUHU", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-mezanot-burger-hotdog", name: "mezanot burger/hotdog", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.75, taxable: false, squareToken: "XGE3IO5YZBDRA7S753TTPREQ", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-mini-onion-pockets", name: "mini onion pockets", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.05, taxable: false, squareToken: "UKABZHLW3V56SCCT55RNC2KN", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-onion-pocket", name: "onion pocket", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.35, taxable: false, squareToken: "YEBCFZSD2QQNDHP2I7LHEEIL", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-rolls-onionbuns", name: "Rolls/OnionBuns", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.15, taxable: false, squareToken: "LHQL3Q3HHPUTNAH5JSUEYOVK", image: "/images/products/onion-rolls-6-pack.webp", hasPhoto: true },
+  { slug: "baguettes-rolls-buns-sour-dough-rolls", name: "Sour Dough Rolls", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.5, taxable: false, squareToken: "CVIH5LI7CBO7Q3UQQ562UI6R", hasPhoto: false },
+  { slug: "baguettes-rolls-buns-sub-buns-8", name: "sub buns 8\"", categorySlug: "baguettes-rolls-buns", groupSlug: "breads", section: "regular", price: 1.5, taxable: false, squareToken: "THMDNDEOWIWF27KJLJAGHXZW", hasPhoto: false },
+  { slug: "bread-1-2-mezanot-bread", name: "1/2 mezanot bread", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 3.75, taxable: false, squareToken: "I2BXBPZTDAXJEIRSZSNEDYKO", hasPhoto: false },
+  { slug: "bread-1-2-rye", name: "1/2 Rye", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 4.25, taxable: false, squareToken: "JY3HRNVFHH7Z25NFNAHEM2WC", hasPhoto: false },
+  { slug: "bread-croutons", name: "Croutons", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 2.5, taxable: false, squareToken: "6T3OE7MNP7WTYGGPIAMUE3ZQ", hasPhoto: false },
+  { slug: "bread-custom", name: "Custom", categorySlug: "bread", groupSlug: "breads", section: "regular", price: null, taxable: false, squareToken: "ALW53BPIKHXWEIDSBIKZCCD3", hasPhoto: false },
+  { slug: "bread-flat-bread-2xbag", name: "Flat Bread 2xbag", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 4, taxable: false, squareToken: "XUAPSTJ3UTSNRJZGWNIY6CXC", hasPhoto: false },
+  { slug: "bread-flat-bread-box", name: "Flat Bread-Box", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 7, taxable: false, squareToken: "U4RAKIFOENVKOVMAHMA3P4WW", hasPhoto: false },
+  { slug: "bread-french-white-whole-wheat", name: "French//White/Whole Wheat", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 5.75, taxable: false, squareToken: "TUYJZZ4JV5DX5KAVGQHAEPUZ", hasPhoto: false },
+  { slug: "bread-mezanot-bread", name: "Mezanot Bread", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 6.95, taxable: false, squareToken: "2PM3QD6FLC26HA25DPLF75XR", hasPhoto: false },
+  { slug: "bread-multigrain-rye-large", name: "Multigrain/Rye large", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 7.55, taxable: false, squareToken: "OA6XFATRJSRB4WFYF576C6J7", hasPhoto: false },
+  { slug: "bread-small-rye", name: "Small Rye", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 5.75, taxable: false, squareToken: "GFQP4ABHD4XGX6FK5ZYUBPH3", hasPhoto: false },
+  { slug: "bread-sour-dough", name: "Sour Dough", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 7.99, taxable: false, squareToken: "BWGZDPWOKEO3LJDY2BRAI2AA", hasPhoto: false },
+  { slug: "bread-sour-dough-challah", name: "Sour dough challah", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 9.25, taxable: false, squareToken: "MS4MCQIFABY4ST2CTEIY2NB4", hasPhoto: false },
+  { slug: "bread-sour-dough-plain-tovas", name: "Sour dough plain TOVAs", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 10.99, taxable: false, squareToken: "CNJNZIFOXWPKAOWUPBGALZ7X", hasPhoto: false },
+  { slug: "bread-sour-dough-rolls", name: "Sour dough rolls", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 2.25, taxable: false, squareToken: "2VSAYKEZOPE2PJI3X7LIFCO3", hasPhoto: false },
+  { slug: "bread-sour-dough-tovas", name: "Sour dough TOVAS", categorySlug: "bread", groupSlug: "breads", section: "regular", price: 12, taxable: false, squareToken: "KAWMIUHZO6P2HSIHTIULP33I", hasPhoto: false },
+  { slug: "bread-items-3-medium-hamburger-buns", name: "3\" (Medium) Hamburger Buns", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 1.25, taxable: false, squareToken: "K6QRLEQEGRXVESWQG7NPTRGE", hasPhoto: false },
+  { slug: "bread-items-dinner-rolls-dozen", name: "Dinner rolls-Dozen", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 12, taxable: false, squareToken: "TT42USNLH64CH32X2Z32TW6W", hasPhoto: false },
+  { slug: "bread-items-dome-slider-buns", name: "Dome Slider Buns", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 0.55, taxable: false, squareToken: "ZUL4AQU4HDQP5O4TSVQWJUB6", hasPhoto: false },
+  { slug: "bread-items-mezannot-roll", name: "Mezannot roll", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 1.25, taxable: false, squareToken: "STE2L3WKCHXF4NOPDVQCLE6D", hasPhoto: false },
+  { slug: "bread-items-mezanot-dome-slider-bun", name: "Mezanot dome slider bun", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 1.1, taxable: false, squareToken: "VG27LDTIRHYNBQS4QVOWUSK5", hasPhoto: false },
+  { slug: "bread-items-mezanot-toonie-buns", name: "Mezanot toonie buns", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 0.85, taxable: false, squareToken: "IMQWOPIBCPVV4NSHQE4IODD2", hasPhoto: false },
+  { slug: "bread-items-mezonot-hamburger-buns", name: "Mezonot Hamburger Buns", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 1.85, taxable: false, squareToken: "GB3E6A5WXGV56IWDU4KKRY35", hasPhoto: false },
+  { slug: "bread-items-mezonot-hotdog-buns", name: "Mezonot Hotdog Buns", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 1.85, taxable: false, squareToken: "KU3GW4XV666A4JMYEQFAUEFL", hasPhoto: false },
+  { slug: "bread-items-regular", name: "Regular", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: null, taxable: false, squareToken: "S4SSN6OLV5L2Z4PN2P3U2K6F", hasPhoto: false },
+  { slug: "bread-items-rolls", name: "Rolls", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 1.15, taxable: false, squareToken: "RXN7AC3FEP47PS5LTYPQH3Q5", hasPhoto: false },
+  { slug: "bread-items-toonie-buns", name: "Toonie Buns", categorySlug: "bread-items", groupSlug: "breads", section: "regular", price: 0.5, taxable: false, squareToken: "E3DR3LFXCGLCJVVAOQRRFVKM", hasPhoto: false },
+  { slug: "spelt-bread-regular", name: "Regular", categorySlug: "spelt-bread", groupSlug: "breads", section: "regular", price: 10.95, taxable: false, squareToken: "NWYCDNI53JZKFQPP6AZ3GLAN", hasPhoto: false },
+  { slug: "spelt-bread-spelt-rolls", name: "Spelt Rolls", categorySlug: "spelt-bread", groupSlug: "breads", section: "regular", price: 2.5, taxable: false, squareToken: "CNDPISMX4N2OUADA6IOVQDU3", hasPhoto: false },
+  { slug: "full-slab-focaccia-regular", name: "Regular", categorySlug: "full-slab-focaccia", groupSlug: "breads", section: "regular", price: 85, taxable: true, squareToken: "3DIWEITNN2R62AWVREETF5R6", hasPhoto: false },
+  { slug: "cakes-brownie-1-2-slab", name: "Brownie 1/2 Slab", categorySlug: "cakes", groupSlug: "cakes", section: "regular", price: 80, taxable: true, squareToken: "SBMJVQHNPOK64NQBLC7UQ7RL", image: "/images/products/brownie-squares.webp", hasPhoto: true },
+  { slug: "cakes-brownie-1-4-slab", name: "Brownie 1/4 Slab", categorySlug: "cakes", groupSlug: "cakes", section: "regular", price: 60, taxable: true, squareToken: "OOIOFSJNWKONHQOPYA2MZZSY", image: "/images/products/brownie-squares.webp", hasPhoto: true },
+  { slug: "cakes-brownie-full-slab", name: "Brownie Full Slab", categorySlug: "cakes", groupSlug: "cakes", section: "regular", price: 130, taxable: true, squareToken: "UFYZ6SWCJJBUQEAGW7SMUNCC", image: "/images/products/brownie-squares.webp", hasPhoto: true },
+  { slug: "cakes-napoleon-1-2-slab", name: "Napoleon 1/2 Slab", categorySlug: "cakes", groupSlug: "cakes", section: "regular", price: 80, taxable: true, squareToken: "5VRQWVXEBDRTWZFURNS3E5UN", hasPhoto: false },
+  { slug: "cakes-napoleon-1-4-slab", name: "Napoleon 1/4 Slab", categorySlug: "cakes", groupSlug: "cakes", section: "regular", price: 60, taxable: true, squareToken: "Q4VW3V5BUZ4FBWR77K7X344W", hasPhoto: false },
+  { slug: "cakes-napoleon-full-slab", name: "Napoleon Full Slab", categorySlug: "cakes", groupSlug: "cakes", section: "regular", price: 130, taxable: true, squareToken: "JW32S64VVD324LDIMCLXPJIL", hasPhoto: false },
+  { slug: "cakes-regular", name: "Regular", categorySlug: "cakes", groupSlug: "cakes", section: "regular", price: null, taxable: true, squareToken: "HVI3FCDLTWT3LCCVR43CUXCS", image: "/images/products/carrot-cake.webp", hasPhoto: true },
+  { slug: "fancy-cakes-1-2-slab", name: "1/2 Slab", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 90, taxable: false, squareToken: "BVIV7KZTIDMP6JWPNQPDR5C7", hasPhoto: false },
+  { slug: "fancy-cakes-1-2-slab-straw-caramel-blackf", name: "1/2 Slab  straw/caramel/blackf", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 110, taxable: false, squareToken: "5PFZK5T6ERNHR75LPHQ7EIM5", hasPhoto: false },
+  { slug: "fancy-cakes-1-2-slab-brownie-napoleon", name: "1/2 Slab Brownie/napoleon", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 75, taxable: false, squareToken: "366CU3NEI2ZMJDEHXK5LM7OW", hasPhoto: false },
+  { slug: "fancy-cakes-1-2-slab-chocomarble", name: "1/2 Slab Choco&Marble", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 55, taxable: false, squareToken: "6LFH7FTO46HHGNBMJJMAELEY", hasPhoto: false },
+  { slug: "fancy-cakes-1-4-slab", name: "1/4 Slab", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 70, taxable: false, squareToken: "X5OS6UDDB3U5NJJHJ6NYVMCW", hasPhoto: false },
+  { slug: "fancy-cakes-1-4-slab-brownie-napoleon", name: "1/4 Slab Brownie/napoleon", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 50, taxable: false, squareToken: "3FWASZV3UTKOXT2LCKYTMDKO", hasPhoto: false },
+  { slug: "fancy-cakes-1-4-slab-straw-caramel-blackf", name: "1/4 Slab straw/caramel/blackf", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 80, taxable: false, squareToken: "S6GNWORUXOYSTFK4UZFMS5RH", hasPhoto: false },
+  { slug: "fancy-cakes-10-round-cake", name: "10\" Round Cake", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 70, taxable: false, squareToken: "SFZTDBZPHAH5J6TOFZEX73A5", hasPhoto: false },
+  { slug: "fancy-cakes-10-round-cake-caramel-strawshort-blackforest", name: "10\" Round Cake Caramel/Strawshort/BlackForest", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 75, taxable: false, squareToken: "QTK5Z7UG67KYKG3VEY6EXEXO", hasPhoto: false },
+  { slug: "fancy-cakes-12-round-cake-caramel-strawshort-blackforest", name: "12 \" Round Cake Caramel/Strawshort/BlackForest", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 95, taxable: false, squareToken: "HFX5W6LGBUMGIPTY7CTUYFF2", hasPhoto: false },
+  { slug: "fancy-cakes-12-round-cake", name: "12\" Round Cake", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 85, taxable: false, squareToken: "Y3Z5KDFG6AVCQOXU4QJH2ZVR", hasPhoto: false },
+  { slug: "fancy-cakes-5-round-cake", name: "5\" Round Cake", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 25, taxable: false, description: "Checkerboard (Chocolate & White sponge with butter cream)\r\nChocolate Mouse (Chocolate sponge with mouse filling)\r\nChocolate Cake (Chocolate Sponge, Chocolate Filling covered in Chocolate ganache)\r\nChocolate Cake (Covered with white Chocolate)\r\nStrawberry Shortcake\r\nCaramel Crunch ( Chocolate sponge, caramel buttercream filling, butter cream all over, caramel and pumpkin seed brittle on top)\r\nLemon Mouse ( White sponge, lemon filling and buttercream)\r\n1/2 and 1/2 Cake (White & chocolate sponge, buttercream, chocolate on top)\r\nMocha cake (chocolate sponge, mocha buttercream filling, chocolate on top)\r\nBlack Forest cake ( chocolate sponge, buttercream, cherry filling)\r\nCookie cake (chocolate sponge, buttercream, chocolate cookie crumbs)\r\nRaspberries mouse cake ( chocolate sponge, raspberries buttercream)\r\nDoboush/7 layers (chocolate", squareToken: "OPP4ENGHZGX5IO4MWG2UDFVC", hasPhoto: false },
+  { slug: "fancy-cakes-5-round-cake-caramel-strawshort-blackforest", name: "5\" Round Cake Caramel/Strawshort/BlackForest", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 28, taxable: false, squareToken: "OUTNVPUNX5CPXKW53SF6VGAM", hasPhoto: false },
+  { slug: "fancy-cakes-7-purim-cake", name: "7\" Purim Cake", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 40, taxable: false, squareToken: "CSR6EJTKAXGOJOH5VNFRU7OY", hasPhoto: false },
+  { slug: "fancy-cakes-7-r-cake-caramel-strawshort-blackforest", name: "7\" R Cake Caramel/Strawshort/BlackForest", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 37.5, taxable: false, squareToken: "6ZUL4IHCHSM74TE6M5OTLADP", hasPhoto: false },
+  { slug: "fancy-cakes-7-round-cake", name: "7\" Round Cake", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 32.5, taxable: false, squareToken: "DB2VQZNVBBTRCLNFNJMKVBLU", hasPhoto: false },
+  { slug: "fancy-cakes-9-round-cake", name: "9\" Round Cake", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 55, taxable: false, squareToken: "OMLQW7RJV22U65C5HZPYAYOM", hasPhoto: false },
+  { slug: "fancy-cakes-9-round-cake-caramel-strawshort-blackforest", name: "9\" Round Cake Caramel/Strawshort/BlackForest", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 60, taxable: false, squareToken: "E76RIEJV3BMP5QAU2HJ5RO63", hasPhoto: false },
+  { slug: "fancy-cakes-caramel-brittle-small", name: "Caramel  brittle small", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 80, taxable: false, squareToken: "OJB26ZSVLIIF2NCAHUQED4SR", image: "/images/products/caramel-crunch-cake.webp", hasPhoto: true },
+  { slug: "fancy-cakes-caramel-brittle-1-2size", name: "Caramel brittle 1/2size", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 45, taxable: false, squareToken: "GPDTJRV3ZZRLD3IV42RFKTTZ", image: "/images/products/caramel-crunch-cake.webp", hasPhoto: true },
+  { slug: "fancy-cakes-caramel-brittle-large", name: "Caramel brittle Large", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 110, taxable: false, squareToken: "I3S7A4FYUWXCTSE6UWJHEZLB", image: "/images/products/caramel-crunch-cake.webp", hasPhoto: true },
+  { slug: "fancy-cakes-custom-cake", name: "Custom Cake", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: null, taxable: false, squareToken: "Z6N3USLAMPKXYCDLOGC2YDZQ", image: "/images/products/custom-celebration-cake.webp", hasPhoto: true },
+  { slug: "fancy-cakes-fs-barmitzvah-buttercream-fondantdetails", name: "FS Barmitzvah buttercream/fondantdetails", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 485, taxable: false, squareToken: "YET37A7BTFPWIAFR7XYTL6EB", hasPhoto: false },
+  { slug: "fancy-cakes-full-slab", name: "Full Slab", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 175, taxable: false, squareToken: "SZSGVFVOL7VXV7LSXSV3HD2I", hasPhoto: false },
+  { slug: "fancy-cakes-full-slab-chocomarble", name: "Full Slab  Choco&marble", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 100, taxable: false, squareToken: "ZGMT7234B4LY66QJKW7TCI3Q", hasPhoto: false },
+  { slug: "fancy-cakes-full-slab-brownie-napoleon", name: "Full Slab Brownie/napoleon", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 130, taxable: false, squareToken: "IC4NLZPBXEHFHEPA2B25LZVD", hasPhoto: false },
+  { slug: "fancy-cakes-full-slab-straw-caramel-blackf", name: "Full Slab straw/caramel/blackf", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 225, taxable: false, squareToken: "NRW4BIHJXX5G7M734YB3XK6R", hasPhoto: false },
+  { slug: "fancy-cakes-fullslab-fondant-torah-scroll", name: "fullslab fondant torah scroll", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 475, taxable: false, squareToken: "ALG6SDINKP3OEZ5FQAW5JMB6", hasPhoto: false },
+  { slug: "fancy-cakes-fullslab-icing-torah-scroll", name: "fullslab icing Torah scroll", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 325, taxable: false, squareToken: "2USEMAVKJNQ7IMMMQXVCRV4J", hasPhoto: false },
+  { slug: "fancy-cakes-printed-picture", name: "printed picture", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 20, taxable: false, squareToken: "ZRYKKUOAJTRDTDGJQSDTRZ6Z", hasPhoto: false },
+  { slug: "fancy-cakes-seven-layer", name: "Seven Layer", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 22.5, taxable: false, squareToken: "3XPZXKICNY7ME5WAYQTNOC64", hasPhoto: false },
+  { slug: "fancy-cakes-seven-layer-straw-caramel-blackforest", name: "seven layer straw/caramel/blackforest", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 25, taxable: false, squareToken: "AP5S6NTJWENTMMDT7F24KB3P", hasPhoto: false },
+  { slug: "fancy-cakes-swiss-roll-cake-strawberry-mousse", name: "Swiss Roll Cake Strawberry/Mousse", categorySlug: "fancy-cakes", groupSlug: "cakes", section: "regular", price: 22.5, taxable: false, squareToken: "OGK7RBHFYJZTEXC4M4LLGRQW", hasPhoto: false },
+  { slug: "loaf-bundt-cakes-bundt-10inch", name: "Bundt  10inch", categorySlug: "loaf-bundt-cakes", groupSlug: "cakes", section: "regular", price: 19.5, taxable: false, squareToken: "I7IUMZIU3GB2ARQVYI6QUXJV", hasPhoto: false },
+  { slug: "loaf-bundt-cakes-l-bundt-cake", name: "L Bundt Cake", categorySlug: "loaf-bundt-cakes", groupSlug: "cakes", section: "regular", price: 21.99, taxable: false, squareToken: "GC22GUMSVMT6SBO2JIYV6CUB", hasPhoto: false },
+  { slug: "loaf-bundt-cakes-loaf-cakes", name: "Loaf Cakes", categorySlug: "loaf-bundt-cakes", groupSlug: "cakes", section: "regular", price: 12.95, taxable: false, squareToken: "73IZEWVE4MKO5OKB2X7UTI2M", image: "/images/products/apple-loaf-cake.webp", hasPhoto: true },
+  { slug: "loaf-bundt-cakes-m-bundt-cake", name: "M Bundt Cake", categorySlug: "loaf-bundt-cakes", groupSlug: "cakes", section: "regular", price: 17.99, taxable: false, squareToken: "2OPLMS66V4HPKGBBDANTO4J3", hasPhoto: false },
+  { slug: "loaf-bundt-cakes-mini-loaf-cake", name: "mini loaf cake", categorySlug: "loaf-bundt-cakes", groupSlug: "cakes", section: "regular", price: 6.95, taxable: false, squareToken: "F4YS64TNUDPAJ3MKDVUVI735", image: "/images/products/marble-loaf-cake.webp", hasPhoto: true },
+  { slug: "muffins-cupcakes-cupcake", name: "Cupcake", categorySlug: "muffins-cupcakes", groupSlug: "cakes", section: "regular", price: 3.75, taxable: false, squareToken: "ZQSE7I45ZFJIWHUHFCCIPU6B", hasPhoto: false },
+  { slug: "muffins-cupcakes-cupcake-no-icing", name: "cupcake no icing", categorySlug: "muffins-cupcakes", groupSlug: "cakes", section: "regular", price: 3.25, taxable: false, squareToken: "FJCPDXFI4Z5VWR6L6IOSM3CQ", hasPhoto: false },
+  { slug: "muffins-cupcakes-muffin-speltsugar-free-muffins", name: "Muffin/Spelt&Sugar free Muffins", categorySlug: "muffins-cupcakes", groupSlug: "cakes", section: "regular", price: 3.5, taxable: false, squareToken: "X2FKLBSOP4Z7XTBJJR73O7OY", hasPhoto: false },
+  { slug: "muffins-cupcakes-printed-picture-cupcake", name: "Printed picture cupcake", categorySlug: "muffins-cupcakes", groupSlug: "cakes", section: "regular", price: 5.25, taxable: false, squareToken: "EDA74N25AWIJAQKNXVG634O4", hasPhoto: false },
+  { slug: "muffins-cupcakes-small-cupcakes", name: "Small Cupcakes", categorySlug: "muffins-cupcakes", groupSlug: "cakes", section: "regular", price: 1.75, taxable: false, squareToken: "6FHSA37PX7X4645BSYVFS7LI", hasPhoto: false },
+  { slug: "muffins-cupcakes-small-muffin", name: "Small Muffin", categorySlug: "muffins-cupcakes", groupSlug: "cakes", section: "regular", price: 1.95, taxable: false, squareToken: "6H3F5GHIK7XKZ2LNQ7ZHM7HK", hasPhoto: false },
+  { slug: "cupcake-no-icing-regular", name: "Regular", categorySlug: "cupcake-no-icing", groupSlug: "cakes", section: "regular", price: 3.25, taxable: true, squareToken: "EONC3HTK6L335DEKNUI5S2AT", hasPhoto: false },
+  { slug: "printed-picture-cupcake-regular", name: "Regular", categorySlug: "printed-picture-cupcake", groupSlug: "cakes", section: "regular", price: 4.25, taxable: true, squareToken: "S5JI4ZI46IRTWPBVUPBQIQDI", hasPhoto: false },
+  { slug: "cookies-assorted", name: "Assorted", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 20, priceUnit: "lb", taxable: false, squareToken: "UY6JSZ27Q75UAXX25MZHYPVK", hasPhoto: false },
+  { slug: "cookies-baby-cookies", name: "Baby Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3, taxable: false, squareToken: "FDACNVSUFZNXGNKQD7OC63WF", image: "/images/products/baby-shower-cookies.webp", hasPhoto: true },
+  { slug: "cookies-bear-cookie", name: "Bear Cookie", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 1.95, taxable: false, squareToken: "LFRKRXKETCV6ORAE4PHAQCMA", hasPhoto: false },
+  { slug: "cookies-biscotti", name: "Biscotti", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 2.75, taxable: false, squareToken: "4WBOTTIYASWQXXA3P2CHXRHN", hasPhoto: false },
+  { slug: "cookies-chocolate-chip-oatmeal-raisin", name: "Chocolate Chip /Oatmeal/Raisin", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 4.75, taxable: false, squareToken: "JP6RCOF2PWH7QHE2V5WXB6DH", image: "/images/products/chocolate-chip-cookies-dozen.webp", hasPhoto: true },
+  { slug: "cookies-cookie-on-a-stick", name: "Cookie on a Stick", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3.45, taxable: false, squareToken: "S3TYA4SLJ3RCK7ZHQ3TWSBKB", hasPhoto: false },
+  { slug: "cookies-cookies-with-ribbon", name: "Cookies With Ribbon", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 5.25, taxable: false, squareToken: "5W7PQDZGLEJO5SDURTDRORRJ", hasPhoto: false },
+  { slug: "cookies-custom-cookies", name: "Custom Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: null, taxable: false, squareToken: "5LKX43ART5WOKEQHUXCCK6UP", image: "/images/products/birthday-cookies.webp", hasPhoto: true },
+  { slug: "cookies-ginger-bread-peoplex2", name: "Ginger Bread  PeopleX2", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 5, taxable: false, squareToken: "WCHDAR2NDD5E7GVTOTYE54VQ", hasPhoto: false },
+  { slug: "cookies-ginger-bread-bride-groom", name: "Ginger Bread Bride &Groom", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3.5, taxable: false, squareToken: "66Q6CNK7BXWIBJXW22AUZOZY", hasPhoto: false },
+  { slug: "cookies-hand-written-cookies", name: "Hand Written Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3.5, taxable: false, squareToken: "TKZ4APLHCK36GAUJXJQNLVPK", hasPhoto: false },
+  { slug: "cookies-happy-bites", name: "Happy Bites", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 7.5, taxable: false, squareToken: "N7HL3LOPQZZYWCXHAJLYJQG6", hasPhoto: false },
+  { slug: "cookies-iced-cookie-gf", name: "iced cookie GF", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3.75, taxable: false, squareToken: "N6NQBBKQDTZ4I2I247BMXSN7", hasPhoto: false },
+  { slug: "cookies-individually-wrapped", name: "Individually wrapped", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 0.25, taxable: false, squareToken: "FO43F4MNLZHILHW7S5FJV2DO", hasPhoto: false },
+  { slug: "cookies-larger-cookies", name: "Larger Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3.5, taxable: false, squareToken: "VVVUDHAJWX42FNSCOPLYSW4J", hasPhoto: false },
+  { slug: "cookies-medium-size-cookies", name: "Medium Size Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 2.95, taxable: false, squareToken: "BS4ETRLC57WI6CICHFD3BHLI", hasPhoto: false },
+  { slug: "cookies-plain-cookies", name: "Plain Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 1.5, taxable: false, squareToken: "J74BOMPEZ65YBU72V4YXPISH", hasPhoto: false },
+  { slug: "cookies-printed-picture-cookie", name: "Printed picture cookie", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 4.25, taxable: false, squareToken: "JUUGGAVMISQYZWNV7TYXDQ57", hasPhoto: false },
+  { slug: "cookies-regular-iced-cookies", name: "Regular Iced Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 2.75, taxable: false, squareToken: "KEBJHBGF7V7EBSSQ56M22YN5", image: "/images/products/halloween-cookies.webp", hasPhoto: true },
+  { slug: "cookies-small-decorated-cookies", name: "Small Decorated Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 2.5, taxable: false, squareToken: "SWEJWBOGQTNP5DNLTQBG5Z7M", hasPhoto: false },
+  { slug: "cookies-smiley-face-cookie", name: "Smiley Face Cookie", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 2.95, taxable: false, squareToken: "TZGYGY74M3DRCMZMTF32I56D", hasPhoto: false },
+  { slug: "cookies-square-proposal-cookie", name: "Square Proposal Cookie", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 4.25, taxable: false, squareToken: "J5HL3H6ZDNLSYQ6K3ME2OX6Q", hasPhoto: false },
+  { slug: "cookies-wedding-cookies", name: "Wedding Cookies", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3.95, taxable: false, squareToken: "OROCB7L3EPTP727Y253SDVI2", hasPhoto: false },
+  { slug: "cookies-written-cookie-gf", name: "Written cookie GF", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 4.25, taxable: false, squareToken: "TYAYQAXRKS4T7RYPLTCLS2XP", hasPhoto: false },
+  { slug: "cookies-written-israel-flag", name: "written Israel flag", categorySlug: "cookies", groupSlug: "cookies", section: "regular", price: 3.75, taxable: false, squareToken: "T2CEILJHWKTZRQSJNSM3VIV3", hasPhoto: false },
+  { slug: "boxed-cookies-400grms-cookie-mixed", name: "400grms cookie mixed", categorySlug: "boxed-cookies", groupSlug: "cookies", section: "regular", price: 17.5, taxable: false, squareToken: "2MAISCGUBGUE3YCWFWZZROCT", image: "/images/products/assorted-fancy-cookies-box.webp", hasPhoto: true },
+  { slug: "boxed-cookies-boxed-cookies", name: "Boxed cookies", categorySlug: "boxed-cookies", groupSlug: "cookies", section: "regular", price: 10.99, taxable: false, squareToken: "3VSH2FBV6G7CRS65DPVRNT25", image: "/images/products/butter-cookies-box.webp", hasPhoto: true },
+  { slug: "boxed-cookies-choco-alfajor", name: "Choco Alfajor", categorySlug: "boxed-cookies", groupSlug: "cookies", section: "regular", price: 12.95, taxable: false, squareToken: "VHABS56THVEKHTPFQOQZEMNK", hasPhoto: false },
+  { slug: "boxed-cookies-chocolate-chip-cookies", name: "Chocolate Chip Cookies", categorySlug: "boxed-cookies", groupSlug: "cookies", section: "regular", price: 11.25, taxable: false, squareToken: "DM7HWOUEVM4CKE2BBGW5PHFJ", image: "/images/products/chocolate-chip-cookies-dozen.webp", hasPhoto: true },
+  { slug: "boxed-cookies-chocolate-drop-with-pumpkin", name: "Chocolate Drop with Pumpkin", categorySlug: "boxed-cookies", groupSlug: "cookies", section: "regular", price: 11.5, taxable: false, squareToken: "3VKEJ4QFAWQIHMELIBPCPVYE", hasPhoto: false },
+  { slug: "boxed-cookies-jam-regallach", name: "Jam Regallach", categorySlug: "boxed-cookies", groupSlug: "cookies", section: "regular", price: 13.5, taxable: false, squareToken: "7U27NWLDRMRHXL7SPPUC2NNC", hasPhoto: false },
+  { slug: "boxed-cookies-pumpkin-seed-mandel-bread-cookies", name: "Pumpkin seed Mandel bread cookies", categorySlug: "boxed-cookies", groupSlug: "cookies", section: "regular", price: 11.7, taxable: false, squareToken: "HIBAWR77QYGW3GYFHZULOIQE", image: "/images/products/mandel-bread.webp", hasPhoto: true },
+  { slug: "bow-ties-kichels-bowties-nothings", name: "bowties/nothings", categorySlug: "bow-ties-kichels", groupSlug: "cookies", section: "regular", price: 4.5, taxable: false, squareToken: "PJPD5FNZWE53OUETFUJIGRKW", hasPhoto: false },
+  { slug: "bow-ties-kichels-kichels", name: "kichels", categorySlug: "bow-ties-kichels", groupSlug: "cookies", section: "regular", price: 4.95, taxable: false, squareToken: "AO6M427JSHKNRMVRLUQ2TYDS", hasPhoto: false },
+  { slug: "custom-cookie-chocolate-chip-cookie-store-size", name: "Chocolate Chip Cookie - Store Size", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 4.95, taxable: false, squareToken: "DHILHL6YKQ3QFAT2X4XKKYNO", hasPhoto: false },
+  { slug: "custom-cookie-chocolate-chip-cookie-1-2-slab", name: "Chocolate Chip Cookie 1/2 Slab", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 95, taxable: false, squareToken: "PZM6VRE2YAO2AC6ZAZ4UIIKP", hasPhoto: false },
+  { slug: "custom-cookie-chocolate-chip-cookie-10", name: "Chocolate Chip Cookie 10\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 50, taxable: false, squareToken: "5WRXNMISMEWQITECKNZGLYG6", hasPhoto: false },
+  { slug: "custom-cookie-chocolate-chip-cookie-12", name: "Chocolate Chip Cookie 12\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 55, taxable: false, squareToken: "B7CBKF6MLDWIQWCDFA7IBOJQ", hasPhoto: false },
+  { slug: "custom-cookie-chocolate-chip-cookie-14", name: "Chocolate Chip Cookie 14\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 60, taxable: false, squareToken: "GJAKVB4LM7XBDZMCAKQY4GEZ", hasPhoto: false },
+  { slug: "custom-cookie-chocolate-chip-cookie-7", name: "Chocolate Chip Cookie 7\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 35, taxable: false, squareToken: "G62NBCAP4WJBORDFVWKV45QR", hasPhoto: false },
+  { slug: "custom-cookie-chocolate-chip-cookie-9", name: "Chocolate Chip Cookie 9\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 45, taxable: false, squareToken: "M6IXXYM6IUJFQ2AOGQ4IDRGM", hasPhoto: false },
+  { slug: "custom-cookie-fancy-cookies", name: "Fancy Cookies", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 1, taxable: false, squareToken: "LHSJ654VOI4WLBZGCM4TBGQ3", hasPhoto: false },
+  { slug: "custom-cookie-printed-logo-cookies", name: "Printed/Logo Cookies", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 4.25, taxable: false, squareToken: "PPPFEN7VUA3UYFQF5NHKJG2Z", hasPhoto: false },
+  { slug: "custom-cookie-regular", name: "Regular", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: null, taxable: false, squareToken: "EBLYBOYLFT45EH6MYXIGXOLQ", hasPhoto: false },
+  { slug: "custom-cookie-shortbread-cookie-decorated-10", name: "Shortbread Cookie Decorated 10\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 40, taxable: false, squareToken: "ZHJZQP666AW7M53FAH2TYQC6", hasPhoto: false },
+  { slug: "custom-cookie-shortbread-cookie-decorated-12", name: "Shortbread Cookie Decorated 12\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 45, taxable: false, squareToken: "LG7FW6BBTQ6JTXFTGAM4OP4E", hasPhoto: false },
+  { slug: "custom-cookie-shortbread-cookie-decorated-7", name: "Shortbread Cookie Decorated 7\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 30, taxable: false, squareToken: "4A7WM2U6U3PNYIJNL5BVRNNA", hasPhoto: false },
+  { slug: "custom-cookie-shortbread-cookie-decorated-9", name: "Shortbread Cookie Decorated 9\"", categorySlug: "custom-cookie", groupSlug: "cookies", section: "regular", price: 35, taxable: false, squareToken: "4EBQAOZ43HSLTBISLNLZNL5V", hasPhoto: false },
+  { slug: "rogallach-jam-chocolate-twist-jam-rogallach", name: "Jam Rogallach", categorySlug: "rogallach-jam-chocolate-twist", groupSlug: "cookies", section: "regular", price: 5.25, taxable: false, squareToken: "LPYL3RU4WD33BX4LKRTI6LEQ", image: "/images/products/rogalach-tray-assorted.webp", hasPhoto: true },
+  { slug: "rogallach-jam-chocolate-twist-jam-twist", name: "Jam Twist", categorySlug: "rogallach-jam-chocolate-twist", groupSlug: "cookies", section: "regular", price: 20, priceUnit: "lb", taxable: false, squareToken: "EJB7OVK2YS4VRKP5VZ4F2K7T", image: "/images/products/poppy-seed-twist.webp", hasPhoto: true },
+  { slug: "rogallach-jam-chocolate-twist-rogallach-choc-cinnamon", name: "Rogallach Choc & Cinnamon", categorySlug: "rogallach-jam-chocolate-twist", groupSlug: "cookies", section: "regular", price: 1.75, taxable: false, squareToken: "KM7TFWDHCZZXT4ACYBA7DGK4", image: "/images/products/rogalach-tray-assorted.webp", hasPhoto: true },
+  { slug: "sugar-free-apple-strudel", name: "Apple Strudel", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 12.5, taxable: false, squareToken: "3D3UE42CAZQHLGXJHN5NJYN6", hasPhoto: false },
+  { slug: "sugar-free-bowties-nothings", name: "Bowties-Nothings", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 20, priceUnit: "lb", taxable: false, squareToken: "IR3J33S6GDTJEKKEO4SEE2YP", hasPhoto: false },
+  { slug: "sugar-free-choco-drop-pumkin-seed-cookie", name: "Choco drop Pumkin seed cookie", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 11.5, taxable: false, squareToken: "Y47BXXCOO3EO2EGUC6BNXONG", hasPhoto: false },
+  { slug: "sugar-free-choco-swirll", name: "Choco Swirll", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 11.5, taxable: false, squareToken: "HBEI5S46G3P5GBFNDJQ7AN3W", hasPhoto: false },
+  { slug: "sugar-free-fruit-pies", name: "fruit Pies", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 24.95, taxable: false, squareToken: "5K5LNBWGZX6YFKX33SWQVIGA", hasPhoto: false },
+  { slug: "sugar-free-jam-rogollach", name: "Jam rogollach", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 5.25, taxable: false, squareToken: "52L6KHEOEBBYX22B63MKPBT7", hasPhoto: false },
+  { slug: "sugar-free-jam-rogollach-cookie", name: "Jam Rogollach cookie", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 11.5, taxable: false, squareToken: "QZRR7KDHQYRVMW4TD7SXT3G5", hasPhoto: false },
+  { slug: "sugar-free-jam-swrill", name: "Jam Swrill", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 11.5, taxable: false, squareToken: "LCUS4MMIN3FQCGNZA2XQRDQL", hasPhoto: false },
+  { slug: "sugar-free-kichel", name: "Kichel", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 20, priceUnit: "lb", taxable: false, squareToken: "Z3EXFHZ35YZX7WPBCNYXUPS2", hasPhoto: false },
+  { slug: "sugar-free-mandel-bread-tovas", name: "Mandel bread tovas", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 11.5, taxable: false, squareToken: "PCXCXK2HWKBWSTBD26QCLYVP", hasPhoto: false },
+  { slug: "sugar-free-sf-hamentashen", name: "SF Hamentashen", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 2, taxable: false, squareToken: "3HR5THVZPPDJJZPCH5US5QIS", image: "/images/products/hamantaschen-dozen.webp", hasPhoto: true },
+  { slug: "sugar-free-sf-hamentashen-x6", name: "SF Hamentashen x6", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 11.5, taxable: false, squareToken: "WTOIMU7WGWBKMHWL5CWVUSQG", image: "/images/products/hamantaschen-dozen.webp", hasPhoto: true },
+  { slug: "sugar-free-turnover", name: "Turnover", categorySlug: "sugar-free", groupSlug: "cookies", section: "regular", price: 5.25, taxable: false, squareToken: "5IGLNJFELDDWIFQ7O4VM5XXY", hasPhoto: false },
+  { slug: "bubka-chocolate-strip-3-strip-chocolate-tray", name: "3 Strip Chocolate Tray", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 13.99, taxable: false, squareToken: "BS5RKVSVFOVZD45DVN52BC53", hasPhoto: false },
+  { slug: "bubka-chocolate-strip-bubkah-weddingcake-14-10-7", name: "Bubkah weddingcake 14,10,7", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 595, taxable: false, squareToken: "4J5S4HJTOFNTCHXTMMKGCEXL", hasPhoto: false },
+  { slug: "bubka-chocolate-strip-chocolate-loaf-bubka", name: "Chocolate Loaf Bubka", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 13.79, taxable: false, squareToken: "AWKEAY3ZBBF2ZU5R3CJNJ5JO", image: "/images/products/chocolate-loaf-cake.webp", hasPhoto: true },
+  { slug: "bubka-chocolate-strip-chocolate-strip-kokosh", name: "Chocolate Strip/Kokosh", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 20.99, taxable: false, squareToken: "CXJVD2XXHD5KPULWEYQIITIC", image: "/images/products/chocolate-ring-babka.webp", hasPhoto: true },
+  { slug: "bubka-chocolate-strip-crown-bubka", name: "Crown Bubka", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 24.99, taxable: false, squareToken: "JGEYZVV7O77H6YZO72LIMNNC", image: "/images/products/chocolate-crown-babka.webp", hasPhoto: true },
+  { slug: "bubka-chocolate-strip-icy-bun-tray", name: "Icy Bun Tray", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 13.99, taxable: false, squareToken: "2KEKUVX73XO4SATGZNMTEHMF", hasPhoto: false },
+  { slug: "bubka-chocolate-strip-mini-bubkah", name: "Mini bubkah", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 4.99, taxable: false, squareToken: "VHYAXKXOSQRKUCIGRCICAE4G", image: "/images/products/chocolate-crown-babka.webp", hasPhoto: true },
+  { slug: "bubka-chocolate-strip-personal-bubkah", name: "Personal bubkah", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 3.99, taxable: false, squareToken: "IPOFXIFRCBBW4HATBZ3I5UPK", image: "/images/products/chocolate-crown-babka.webp", hasPhoto: true },
+  { slug: "bubka-chocolate-strip-round-choco-cheese-poppy-cinnamon", name: "Round Choco/cheese/poppy/cinnamon", categorySlug: "bubka-chocolate-strip", groupSlug: "pastries", section: "regular", price: 12.99, taxable: false, squareToken: "FF2J2UEVWEEHJTKM62B5NFDL", image: "/images/products/chocolate-ring-babka.webp", hasPhoto: true },
+  { slug: "danish-croissant-bun-cheese-danishcheese-croassaint", name: "Cheese Danish&cheese croassaint", categorySlug: "danish-croissant-bun", groupSlug: "pastries", section: "regular", price: 4.65, taxable: false, squareToken: "7P6JN47KAEL5JOXF5QUERNNV", image: "/images/products/cheese-danish.webp", hasPhoto: true },
+  { slug: "danish-croissant-bun-cheese-pastry", name: "Cheese pastry", categorySlug: "danish-croissant-bun", groupSlug: "pastries", section: "regular", price: 4.75, taxable: false, squareToken: "X5G6RKZQ3PIQWVOFQ42MMJLD", image: "/images/products/cheese-danish.webp", hasPhoto: true },
+  { slug: "danish-croissant-bun-croissant-danish-blueb-cherry-bun-choco-bufalo", name: "Croissant/Danish/BlueB/Cherry Bun/choco bufalo", categorySlug: "danish-croissant-bun", groupSlug: "pastries", section: "regular", price: 4.25, taxable: false, description: "Medium size", squareToken: "YCXHWUCZHCIGSXLVVISXY4Y6", image: "/images/products/chocolate-croissant.webp", hasPhoto: true },
+  { slug: "danish-croissant-bun-danish-medium-size", name: "Danish Medium size", categorySlug: "danish-croissant-bun", groupSlug: "pastries", section: "regular", price: 2.8, taxable: false, squareToken: "Q2PWASZVCECCHBQUEKSXTGDM", image: "/images/products/apple-danish.webp", hasPhoto: true },
+  { slug: "danish-croissant-bun-mini-cheese", name: "Mini cheese", categorySlug: "danish-croissant-bun", groupSlug: "pastries", section: "regular", price: 1.75, taxable: false, squareToken: "NLP4BU5SX6ACNO4STPYQLONO", image: "/images/products/cheese-danish.webp", hasPhoto: true },
+  { slug: "danish-croissant-bun-small-cheese-danish", name: "Small Cheese Danish", categorySlug: "danish-croissant-bun", groupSlug: "pastries", section: "regular", price: 2.25, taxable: false, squareToken: "DFAKA3PYUL2KXDMRBEPHVRDZ", image: "/images/products/cheese-danish.webp", hasPhoto: true },
+  { slug: "danish-croissant-bun-small-croissant-mini-danishes", name: "Small Croissant/ mini danishes", categorySlug: "danish-croissant-bun", groupSlug: "pastries", section: "regular", price: 1.99, taxable: false, squareToken: "5SH53J52TP5OCZZEFECT6BXM", image: "/images/products/croissant-plain.webp", hasPhoto: true },
+  { slug: "churros-donuts-churro-platter-100pcs", name: "Churro platter 100pcs", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: 120, taxable: false, squareToken: "O5WIXY5W5KBRGC5BVXKMI7UX", hasPhoto: false },
+  { slug: "churros-donuts-churro-regular", name: "Churro regular", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: 1.25, taxable: false, squareToken: "JB2ZOVJJ6C3QM5ZVOFU477OH", hasPhoto: false },
+  { slug: "churros-donuts-churros-pack", name: "Churros pack", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: 3.99, taxable: false, squareToken: "Z2REPIT356PCE2OJRRDUGCIE", hasPhoto: false },
+  { slug: "churros-donuts-cinnamonsugar-single", name: "Cinnamon&sugar single", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: 1.2, taxable: false, squareToken: "WE73UUGFN6FWZGK55Z2552UL", hasPhoto: false },
+  { slug: "churros-donuts-donuts", name: "Donuts", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: 1.4, taxable: false, squareToken: "YG35ST7NJB7PTWK7FFD44LVA", hasPhoto: false },
+  { slug: "churros-donuts-mini-churros", name: "Mini churros", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: 0.9, taxable: false, squareToken: "IUVUM33T5RARKSVEK74YUNHV", hasPhoto: false },
+  { slug: "churros-donuts-mini-donut", name: "Mini donut", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: 1, taxable: false, squareToken: "KZTJTTGN6H5IWVTFO54BJNMF", hasPhoto: false },
+  { slug: "churros-donuts-regular", name: "Regular", categorySlug: "churros-donuts", groupSlug: "pastries", section: "regular", price: null, taxable: false, squareToken: "RVA3MTPKS42KRPNALLMCNGPC", hasPhoto: false },
+  { slug: "turnover-horseshoe-pretzel-2xpack-palm-leave", name: "2xpack Palm Leave", categorySlug: "turnover-horseshoe-pretzel", groupSlug: "pastries", section: "regular", price: 2.95, taxable: false, squareToken: "XP4YKFB4TQGUJEIVVL5R5KLO", hasPhoto: false },
+  { slug: "turnover-horseshoe-pretzel-large-pretzel", name: "large pretzel", categorySlug: "turnover-horseshoe-pretzel", groupSlug: "pastries", section: "regular", price: 6, taxable: false, squareToken: "R54PLUBX22MMTNSZTZIEEDJN", hasPhoto: false },
+  { slug: "turnover-horseshoe-pretzel-pam-leaves-l-choco-strip", name: "Pam Leaves L/Choco strip", categorySlug: "turnover-horseshoe-pretzel", groupSlug: "pastries", section: "regular", price: 4.95, taxable: false, squareToken: "MIFMLOWYNSSVNXFY2QJQSHAL", hasPhoto: false },
+  { slug: "turnover-horseshoe-pretzel-turnovers-horseshoe-pretzel", name: "Turnovers/Horseshoe/Pretzel", categorySlug: "turnover-horseshoe-pretzel", groupSlug: "pastries", section: "regular", price: 4.99, taxable: false, squareToken: "T2D72WHRAOEG3HDDZYR5KXIQ", hasPhoto: false },
+  { slug: "pastries-1-2-sliced-napoleon", name: "1/2 sliced napoleon", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 2.25, taxable: false, squareToken: "YUYSMRXIS5K6JSEDGRUX7F77", hasPhoto: false },
+  { slug: "pastries-4inch-fruit-tarts", name: "4'Inch fruit Tarts", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 7.95, taxable: false, squareToken: "QKRMUB6T22ZC7BWRUF6BIRVT", hasPhoto: false },
+  { slug: "pastries-7inch-fruit-flan", name: "7'Inch Fruit Flan", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 35, taxable: false, squareToken: "SXKR6B3VZZHYS4CM4FYTJYPS", hasPhoto: false },
+  { slug: "pastries-9fruit-tart", name: "9\"fruit tart", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 50, taxable: false, squareToken: "LFHCAZG5LVAPSBFQFDVGB2ZH", hasPhoto: false },
+  { slug: "pastries-cake-pops-marshmellows", name: "Cake Pops/marshmellows", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 4.25, taxable: false, squareToken: "4ONNMSP7EQBU67MIWZN2KWLY", hasPhoto: false },
+  { slug: "pastries-chocolate-cigar", name: "Chocolate Cigar", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 4.5, taxable: false, squareToken: "IFANRI43RKZ7EIFMERHUPBMN", hasPhoto: false },
+  { slug: "pastries-ishler-cookie", name: "Ishler cookie", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 2.95, taxable: false, squareToken: "J3ISUM5AKGIO6GXPRE22G4G6", hasPhoto: false },
+  { slug: "pastries-mini-cupcake-pop", name: "Mini cupcake pop", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 2.49, taxable: false, squareToken: "6QARRT66OLDJMZJILFIZODZS", hasPhoto: false },
+  { slug: "pastries-mini-round-cake", name: "Mini round cake", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 4.95, taxable: false, squareToken: "KQC4TYOMKTUZRN4B65IZIL4X", hasPhoto: false },
+  { slug: "pastries-pastries", name: "Pastries", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 4.5, taxable: false, description: "Pastries-Brownie, Corn Flake Cluster, Cream Horn, Cream Puff and Éclair, Domino & Hockey Puck, Swiss Rolls, Napoleon, Strawberry Tart, Tarts & Bells, Upside Down Cupcake, Large Ishler cookie.", squareToken: "RKOQGNDO452XUUXUPOC6YQZQ", hasPhoto: false },
+  { slug: "pastries-rum-ball", name: "Rum Ball", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 3.5, taxable: false, squareToken: "WP2ZGVMZLQOHEVACRKERYUPB", hasPhoto: false },
+  { slug: "pastries-scone-fruit-tart-clairs", name: "Scone/fruit tart/éclairs", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 3.95, taxable: false, squareToken: "UVLTCP7N7YACQKWP2DGSMIWQ", hasPhoto: false },
+  { slug: "pastries-single-marshmallow", name: "Single marshmallow", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 1.95, taxable: false, squareToken: "TBIOKBOGBJ2PF245XBTEC2WF", hasPhoto: false },
+  { slug: "pastries-triffle-cake-cups-shooters", name: "Triffle cake cups/shooters", categorySlug: "pastries", groupSlug: "pastries", section: "regular", price: 3.95, taxable: false, squareToken: "3CVODEKBHZ44C53U2Y5UZI3A", hasPhoto: false },
+  { slug: "petit-fours-desserts-assorted-petit-fours-from", name: "Assorted Petit Fours - from", categorySlug: "petit-fours-desserts", groupSlug: "pastries", section: "regular", price: 2.5, taxable: false, squareToken: "OHLQ46KLF2ALZN4FHKHHGNMW", image: "/images/products/opera-petit-fours.webp", hasPhoto: true },
+  { slug: "petit-fours-desserts-brownie-pf-size-1-3-size", name: "Brownie PF Size 1/3 Size", categorySlug: "petit-fours-desserts", groupSlug: "pastries", section: "regular", price: 2.5, taxable: false, squareToken: "5S4E3OVWK26KPQINXANP5BYY", hasPhoto: false },
+  { slug: "petit-fours-desserts-chocolate-dipped-strawberries", name: "Chocolate Dipped Strawberries", categorySlug: "petit-fours-desserts", groupSlug: "pastries", section: "regular", price: 3.35, taxable: false, squareToken: "AXDD642K6EG657E6OHKO4VXU", hasPhoto: false },
+  { slug: "petit-fours-desserts-regular", name: "Regular", categorySlug: "petit-fours-desserts", groupSlug: "pastries", section: "regular", price: null, taxable: false, squareToken: "5RPCGMRWMTAPAU65PLTCP7F2", image: "/images/products/opera-petit-fours.webp", hasPhoto: true },
+  { slug: "petit-fours-desserts-swiss-roll-pf-size", name: "Swiss Roll PF Size", categorySlug: "petit-fours-desserts", groupSlug: "pastries", section: "regular", price: 2.75, taxable: false, squareToken: "GBPW4URDJ5Q7CRA3X53DKGOS", hasPhoto: false },
+  { slug: "petit-fours-desserts-tuxedo-strawberries", name: "Tuxedo Strawberries", categorySlug: "petit-fours-desserts", groupSlug: "pastries", section: "regular", price: 3.95, taxable: false, squareToken: "OYYYLSJCZMNG7WWPOMQOQITP", hasPhoto: false },
+  { slug: "pies-apple-strudel-1-2-slab-applestrudel", name: "1/2 slab applestrudel", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 80, taxable: false, squareToken: "RZDUU2ZIDS5ZUYS4NLCXYJ46", hasPhoto: false },
+  { slug: "pies-apple-strudel-9lemon-merengue", name: "9\"lemon  merengue", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 35, taxable: false, squareToken: "AKEGXI23NAK6CO6DQFISA3AY", hasPhoto: false },
+  { slug: "pies-apple-strudel-apple-cranberry", name: "Apple Cranberry", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 21, taxable: false, squareToken: "SNEMOBZUOL6GCHCMKUAXOEXB", hasPhoto: false },
+  { slug: "pies-apple-strudel-apple-strudel", name: "Apple Strudel", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 12.95, taxable: false, squareToken: "5ZOUJECKOBXAL4EXZF4IB7V4", image: "/images/products/mini-pastry-assortment.webp", hasPhoto: true },
+  { slug: "pies-apple-strudel-apple-strudel-sugar-free", name: "Apple Strudel Sugar Free", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 12, taxable: false, squareToken: "IKSDKK5BUECBAQ4J72CH22OF", hasPhoto: false },
+  { slug: "pies-apple-strudel-chocolate-or-caramelchip-cookie-pie", name: "Chocolate or caramelChip Cookie Pie", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 27.5, taxable: false, squareToken: "EY562LYP53VFS6ED4674ATBP", hasPhoto: false },
+  { slug: "pies-apple-strudel-crumble-fruit-pies", name: "Crumble & Fruit Pies", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 21, taxable: false, squareToken: "VZANYY2X4Y27MCYSQJ2GO424", image: "/images/products/blueberry-pie.webp", hasPhoto: true },
+  { slug: "pies-apple-strudel-full-slab-applestrudel", name: "Full slab applestrudel", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 175, taxable: false, squareToken: "HJWRMDIEKQQ4KIFD3YZS4ZD4", hasPhoto: false },
+  { slug: "pies-apple-strudel-full-slab-pie", name: "Full Slab Pie", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 130, taxable: false, squareToken: "RMRDAFTCYEMIBBDJBBU4U3PN", image: "/images/products/blueberry-pie.webp", hasPhoto: true },
+  { slug: "pies-apple-strudel-lemon-meringue-pie", name: "Lemon Meringue Pie", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 21, taxable: false, squareToken: "MTXEA5PD43746GAXUHLVZFO3", image: "/images/products/cherry-pie.webp", hasPhoto: true },
+  { slug: "pies-apple-strudel-small-apple-strudel", name: "Small apple strudel", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 6.95, taxable: false, squareToken: "S6PWXIRHDRPTQFVG53ZVB3RZ", hasPhoto: false },
+  { slug: "pies-apple-strudel-small-pie", name: "Small pie", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 7.5, taxable: false, squareToken: "TGC6OOAP5IPTAPTHNWVG26PQ", image: "/images/products/cherry-pie.webp", hasPhoto: true },
+  { slug: "pies-apple-strudel-sugar-free-pies", name: "Sugar Free Pies", categorySlug: "pies-apple-strudel", groupSlug: "pastries", section: "regular", price: 24.95, taxable: false, squareToken: "J7FATHKQGV6YSX7FQ5Z7AM6Z", hasPhoto: false },
+  { slug: "sandwiches-cream-cheese-vegetables", name: "Cream cheese & vegetables", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 5.5, taxable: true, squareToken: "VFINFZGMK33TLC3AWVXNYCDT", hasPhoto: false },
+  { slug: "sandwiches-cream-cheese-counter", name: "Cream cheese counter", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 5.25, taxable: true, squareToken: "FIMOQZVBQD5YROZAHQNZNVUH", hasPhoto: false },
+  { slug: "sandwiches-egg-pkg", name: "Egg pkg", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 6.5, taxable: true, squareToken: "GZRYMDAIOOVFA3INFDES2FEK", hasPhoto: false },
+  { slug: "sandwiches-egg-wrap", name: "Egg Wrap", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 7.5, taxable: true, squareToken: "LBLWQ3GVYAKYC5GUW3OWT5C2", hasPhoto: false },
+  { slug: "sandwiches-lox-and-cream-cheese-pkg", name: "Lox and cream cheese pkg", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 8.5, taxable: true, squareToken: "JRARE2WE6UCNJ5V6SC5D2QYR", hasPhoto: false },
+  { slug: "sandwiches-party-sandwich-x12", name: "party sandwich x12", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 17.95, taxable: true, squareToken: "5HLUQJRL2R6BWY223I3MTIHT", hasPhoto: false },
+  { slug: "sandwiches-party-sandwich-x9", name: "party sandwich x9", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 12.75, taxable: true, squareToken: "BFRVEHWD36B36JFTBSTNWYFF", hasPhoto: false },
+  { slug: "sandwiches-toppings", name: "Toppings", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 0.5, taxable: true, squareToken: "ERQ33SUR7YMQZVYTDQL66Z4K", hasPhoto: false },
+  { slug: "sandwiches-tuna-custom", name: "Tuna custom", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 7.5, taxable: true, squareToken: "RLDSUOIEZABGDMZJJRPVOFRL", hasPhoto: false },
+  { slug: "sandwiches-tuna-pkg", name: "Tuna pkg", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 7.5, taxable: true, squareToken: "3DA5L5P73O65ZDFRYXCTTYQU", hasPhoto: false },
+  { slug: "sandwiches-tuna-wrap", name: "Tuna wrap", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 8.5, taxable: true, squareToken: "4QJHWNACSBPCK5V4VTYTXO4W", hasPhoto: false },
+  { slug: "sandwiches-veggie-wrap", name: "Veggie wrap", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 8.5, taxable: true, squareToken: "BJUA5NLI7HD6T6VKVDCLCITD", hasPhoto: false },
+  { slug: "sandwiches-whole-egg", name: "Whole egg", categorySlug: "sandwiches", groupSlug: "sandwiches-savouries", section: "regular", price: 1.2, taxable: true, squareToken: "UXEVOP5SUVY7AALVS55ZEGNL", hasPhoto: false },
+  { slug: "sandwich-fillings-12-party-sandwiches-triangle", name: "12 Party Sandwiches triangle", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: 21.95, taxable: true, squareToken: "KCUGRQ37ZKGDK6CRRBKU4J27", hasPhoto: false },
+  { slug: "sandwich-fillings-12party-sandwiches-strips", name: "12party sandwiches strips", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: 28, taxable: true, squareToken: "X5I5HQIZA7J3QMJY4YJHFQMC", hasPhoto: false },
+  { slug: "sandwich-fillings-12swirl-party-sandwiches", name: "12swirl party sandwiches", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: 18.95, taxable: true, squareToken: "4AS4ETT425KA4IRBL6DG6XIN", hasPhoto: false },
+  { slug: "sandwich-fillings-baguette-sandwiches", name: "Baguette Sandwiches", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: 2.95, taxable: true, squareToken: "SNWOD3EQUDLSOY645GKDXJ64", hasPhoto: false },
+  { slug: "sandwich-fillings-croissant-sandwiches", name: "Croissant Sandwiches", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: 7.5, taxable: true, squareToken: "4VNSROROOBI4OFN7OQSJ3POU", hasPhoto: false },
+  { slug: "sandwich-fillings-egg-salad", name: "Egg Salad", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: null, priceUnit: "lb", taxable: true, squareToken: "QZLM5SYNI4MDIVOBHNTFEKEK", hasPhoto: false },
+  { slug: "sandwich-fillings-regular", name: "Regular", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: null, taxable: true, squareToken: "PQQHO7XQWTJESRDK5737WWVN", hasPhoto: false },
+  { slug: "sandwich-fillings-tuna-salad", name: "Tuna Salad", categorySlug: "sandwich-fillings", groupSlug: "sandwiches-savouries", section: "regular", price: null, priceUnit: "lb", taxable: true, squareToken: "5FI6UYSSMWQSMQE6VG7N73JE", hasPhoto: false },
+  { slug: "savouries-cheese-buroka", name: "Cheese buroka", categorySlug: "savouries", groupSlug: "sandwiches-savouries", section: "regular", price: 4.75, taxable: false, squareToken: "4ATQAY5P6JHZCRQN4JUJUIRC", hasPhoto: false },
+  { slug: "savouries-cheese-sticks", name: "Cheese sticks", categorySlug: "savouries", groupSlug: "sandwiches-savouries", section: "regular", price: 3.25, taxable: false, squareToken: "QBOZUXB5RWN3KARAB7XNMDHF", hasPhoto: false },
+  { slug: "savouries-mushroom", name: "Mushroom", categorySlug: "savouries", groupSlug: "sandwiches-savouries", section: "regular", price: 3.5, taxable: false, squareToken: "SRM2NV6QXNCZHSBT35K6FNBX", hasPhoto: false },
+  { slug: "savouries-potato", name: "Potato", categorySlug: "savouries", groupSlug: "sandwiches-savouries", section: "regular", price: 3.5, taxable: false, squareToken: "PGMNK7APGQFXG7DTWUJMVGLN", hasPhoto: false },
+  { slug: "savouries-round-pastry", name: "Round pastry", categorySlug: "savouries", groupSlug: "sandwiches-savouries", section: "regular", price: 4.25, taxable: false, squareToken: "PUFFJBO33ZOCX5MHWSR5THP4", hasPhoto: false },
+  { slug: "savouries-small-mushroom", name: "small mushroom", categorySlug: "savouries", groupSlug: "sandwiches-savouries", section: "regular", price: 3.25, taxable: false, squareToken: "UOL3UGQG3GJQO62ZNU7SOO4B", hasPhoto: false },
+  { slug: "savouries-small-potato", name: "small potato", categorySlug: "savouries", groupSlug: "sandwiches-savouries", section: "regular", price: 3.25, taxable: false, squareToken: "THM2M2ZFHWVJST6PZ3KVUMLZ", hasPhoto: false },
+  { slug: "elite-salads-black-olive-tapenade", name: "Black olive tapenade", categorySlug: "elite-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 4.3, taxable: true, squareToken: "VRZVYDDETS43BLQVSOAOPYFY", hasPhoto: false },
+  { slug: "elite-salads-manzanilla-olive-dip", name: "Manzanilla olive dip", categorySlug: "elite-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 4.3, taxable: true, squareToken: "LID2SX6ROT3KJQNFPGVXFPRZ", hasPhoto: false },
+  { slug: "elite-salads-spanish-eggplant", name: "Spanish eggplant", categorySlug: "elite-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 6.7, taxable: true, squareToken: "DJZWFHDWN2BQKEN66LYCN7OA", hasPhoto: false },
+  { slug: "elite-salads-white-fish", name: "White fish", categorySlug: "elite-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 9, taxable: true, squareToken: "U3GM5NZKNTN2E2MP5WFNMZGP", hasPhoto: false },
+  { slug: "la-briut-salads-babaganough", name: "Babaganough", categorySlug: "la-briut-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 3.99, taxable: true, squareToken: "PPP3IKNS27U5EBLWM2YD5SKU", hasPhoto: false },
+  { slug: "la-briut-salads-coleslaw", name: "Coleslaw", categorySlug: "la-briut-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 5.99, taxable: true, squareToken: "YTXZUHQ7NL6LNM7VHZNCPIZM", hasPhoto: false },
+  { slug: "la-briut-salads-eggplant", name: "Eggplant", categorySlug: "la-briut-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 3.99, taxable: true, squareToken: "XHUN2SQGBTBWYQ5M57NIIIZT", hasPhoto: false },
+  { slug: "la-briut-salads-hummus", name: "Hummus", categorySlug: "la-briut-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 2.99, taxable: true, squareToken: "CN2NWYZOIBIV3XRGA7324BSP", hasPhoto: false },
+  { slug: "la-briut-salads-salmon-pate", name: "Salmon pate", categorySlug: "la-briut-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 4.39, taxable: true, squareToken: "IGVMKV3VAEOFH7HEGZDENGSG", hasPhoto: false },
+  { slug: "la-briut-salads-spicy-carrot", name: "Spicy Carrot", categorySlug: "la-briut-salads", groupSlug: "sandwiches-savouries", section: "regular", price: 3.99, taxable: true, squareToken: "LW4UX7FDJOAGDQ4ITXGY3DRN", hasPhoto: false },
+  { slug: "yogurt-parfaits-granola-cups-small", name: "Granola Cups - Small", categorySlug: "yogurt-parfaits", groupSlug: "sandwiches-savouries", section: "regular", price: 5.25, taxable: true, squareToken: "UX3UCPBMTSOVZ27A4OECIVRH", hasPhoto: false },
+  { slug: "yogurt-parfaits-yogurt", name: "yogurt", categorySlug: "yogurt-parfaits", groupSlug: "sandwiches-savouries", section: "regular", price: 5.75, taxable: true, squareToken: "PS3TS52LPB5F4WNE4SULW7E5", hasPhoto: false },
+  { slug: "challah-frozen-challah-large", name: "Frozen challah large", categorySlug: "challah", groupSlug: "shabbat", section: "friday", price: 5.95, taxable: false, squareToken: "YI6BUJ2GVDF2BOBLCLQLKHNJ", image: "/images/products/plain-challah-large.webp", hasPhoto: true },
+  { slug: "challah-holiday-challah", name: "Holiday Challah", categorySlug: "challah", groupSlug: "shabbat", section: "friday", price: 14, taxable: false, squareToken: "TYD7LFW6WAYPBJ7YU2EABWRA", image: "/images/products/plain-challah-large.webp", hasPhoto: true },
+  { slug: "challah-large", name: "Large", categorySlug: "challah", groupSlug: "shabbat", section: "friday", price: 7.99, taxable: false, squareToken: "LSKKNDVPOBRG6AXCV7DKUXW2", image: "/images/products/plain-challah-large.webp", hasPhoto: true },
+  { slug: "challah-small", name: "Small", categorySlug: "challah", groupSlug: "shabbat", section: "friday", price: 5.79, taxable: false, squareToken: "AU4DYHIEA7LJD4OHIH4REFV3", image: "/images/products/plain-challah-large.webp", hasPhoto: true },
+  { slug: "challah-sour-dough-challa", name: "Sour Dough Challa", categorySlug: "challah", groupSlug: "shabbat", section: "friday", price: 8.75, taxable: false, squareToken: "EDGTWXUYD6GKP3OX4I5QURXX", hasPhoto: false },
+  { slug: "challah-square-challa", name: "Square challa", categorySlug: "challah", groupSlug: "shabbat", section: "friday", price: 7.99, taxable: false, squareToken: "ZHAL4JXAEEE4ILFEEKCJWGSM", hasPhoto: false },
+  { slug: "challah-water-challa", name: "Water challa", categorySlug: "challah", groupSlug: "shabbat", section: "friday", price: 7.99, taxable: false, squareToken: "LRKLRDC264KV4B2SXACBDAMA", hasPhoto: false },
+  { slug: "challah-multigrain-large", name: "Large", categorySlug: "challah-multigrain", groupSlug: "shabbat", section: "friday", price: 8.5, taxable: false, squareToken: "4375GQ4WLW25T2TSO3NFRXQ7", hasPhoto: false },
+  { slug: "challah-multigrain-small", name: "Small", categorySlug: "challah-multigrain", groupSlug: "shabbat", section: "friday", price: 6.5, taxable: false, squareToken: "4IUMAFUSSYNVPEPC7EZXHKN7", hasPhoto: false },
+  { slug: "challah-spelt-large", name: "Large", categorySlug: "challah-spelt", groupSlug: "shabbat", section: "friday", price: 11, taxable: false, squareToken: "4MKYVKGTERXDG2FQ63A6NOWX", hasPhoto: false },
+  { slug: "challah-spelt-small", name: "Small", categorySlug: "challah-spelt", groupSlug: "shabbat", section: "friday", price: 9, taxable: false, squareToken: "XEPKFX7CRXXCOFJIZXGGIYRW", hasPhoto: false },
+  { slug: "special-challah-large-challah", name: "Large challah", categorySlug: "special-challah", groupSlug: "shabbat", section: "friday", price: 4.5, taxable: false, squareToken: "J26NFFV3LOS3X4F4V33HHKKX", image: "/images/products/sesame-challah.webp", hasPhoto: true },
+  { slug: "special-challah-regular", name: "Regular", categorySlug: "special-challah", groupSlug: "shabbat", section: "friday", price: 4.5, taxable: true, squareToken: "N5FS24XDARAACQCUZYMJ66GO", image: "/images/products/sesame-challah.webp", hasPhoto: true },
+  { slug: "special-challah-regular-2", name: "Regular", categorySlug: "special-challah", groupSlug: "shabbat", section: "friday", price: 4.5, taxable: false, squareToken: "GOT735VY5XVBMGNJGJYUW5MT", hasPhoto: false },
+  { slug: "special-challah-shlisel-challah", name: "Shlisel challah", categorySlug: "special-challah", groupSlug: "shabbat", section: "friday", price: 8.5, taxable: false, squareToken: "TFSAUWOTITJ7SU5RZLPWYHMD", hasPhoto: false },
+  { slug: "pretzel-challah-pretzel-bread", name: "pretzel bread", categorySlug: "pretzel-challah", groupSlug: "shabbat", section: "friday", price: 2.05, taxable: false, squareToken: "G43EEO6X5X6XLT7NULM4BUB7", hasPhoto: false },
+  { slug: "pretzel-challah-pretzel-buns", name: "Pretzel buns", categorySlug: "pretzel-challah", groupSlug: "shabbat", section: "friday", price: 1.6, taxable: false, squareToken: "LANG42R2DO3GSJLKERNFRNSL", hasPhoto: false },
+  { slug: "pretzel-challah-pretzel-challah", name: "Pretzel challah", categorySlug: "pretzel-challah", groupSlug: "shabbat", section: "friday", price: 8.95, taxable: false, squareToken: "AQK3ROMPX3P5ZHOUHIAILHJ2", hasPhoto: false },
+  { slug: "pretzel-challah-pretzel-demi-baguette", name: "Pretzel Demi baguette", categorySlug: "pretzel-challah", groupSlug: "shabbat", section: "friday", price: 1.55, taxable: false, squareToken: "VXLE3GAXSSL7K6W7PSMSSMSY", hasPhoto: false },
+  { slug: "pretzel-challah-regular", name: "Regular", categorySlug: "pretzel-challah", groupSlug: "shabbat", section: "friday", price: null, taxable: false, squareToken: "EI37RKXBI6CMHMFVCUJIK7MC", hasPhoto: false },
+  { slug: "simcha-challah-2-lb", name: "2 lb.", categorySlug: "simcha-challah", groupSlug: "shabbat", section: "friday", price: 25, taxable: false, squareToken: "TPAWFSSDGKPFDONIPHTFDHBC", hasPhoto: false },
+  { slug: "simcha-challah-2-lb-simcha-25people", name: "2 lb. Simcha 25people", categorySlug: "simcha-challah", groupSlug: "shabbat", section: "friday", price: 30, taxable: false, squareToken: "FX6P2BLFU7HBVT5SXYED227W", hasPhoto: false },
+  { slug: "simcha-challah-3-lb", name: "3 lb.", categorySlug: "simcha-challah", groupSlug: "shabbat", section: "friday", price: 30, taxable: false, squareToken: "23HKFBWDXHZHUXKKQ4SYW5ZS", hasPhoto: false },
+  { slug: "simcha-challah-3-lb-simcha-50-people", name: "3 lb. Simcha 50 people", categorySlug: "simcha-challah", groupSlug: "shabbat", section: "friday", price: 35, taxable: false, squareToken: "ZG3DA3DD2QGV2ZUAEROBZDQ6", hasPhoto: false },
+  { slug: "simcha-challah-5-lb", name: "5 lb.", categorySlug: "simcha-challah", groupSlug: "shabbat", section: "friday", price: 50, taxable: false, squareToken: "6B3AWC2XRK7OMB3LGDHB2CWH", hasPhoto: false },
+  { slug: "simcha-challah-5-lb-simcha-100-people", name: "5 lb. Simcha 100 people", categorySlug: "simcha-challah", groupSlug: "shabbat", section: "friday", price: 55, taxable: false, squareToken: "RV7W5DMC7OGUH4BE4SK33LFP", hasPhoto: false },
+  { slug: "simcha-challah-regular", name: "Regular", categorySlug: "simcha-challah", groupSlug: "shabbat", section: "friday", price: null, taxable: false, squareToken: "EZYVDF57MNFT65GOKUEHVRXT", hasPhoto: false },
+  { slug: "bilka-challah-8", name: "Challah 8\"", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 2.45, taxable: false, squareToken: "CAQNJBJTQLTBDOZYMYWMFSDF", hasPhoto: false },
+  { slug: "bilka-cocktail", name: "Cocktail", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 1.15, taxable: false, squareToken: "J3RQOJVIQ6FAIEDSQ3RQJPDB", hasPhoto: false },
+  { slug: "bilka-long", name: "Long", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 1.99, taxable: false, squareToken: "FHVUMSS5TNICVCPQVVXCQNS5", hasPhoto: false },
+  { slug: "bilka-long-multigrain", name: "Long Multigrain", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 2.05, taxable: false, squareToken: "IFFZGQCQPIF7J5QRT4TTUWZ5", hasPhoto: false },
+  { slug: "bilka-regular", name: "Regular", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 1.65, taxable: false, squareToken: "PW6NDOW7VVXSBE5KD4FEGF6Z", hasPhoto: false },
+  { slug: "bilka-regular-multigrain", name: "Regular Multigrain", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 1.7, taxable: false, squareToken: "3MTKWYNA3ZCHU3AQUY2AD2UO", hasPhoto: false },
+  { slug: "bilka-spelt", name: "Spelt", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 2.5, taxable: false, squareToken: "Z77MOIPWN7JICZSI64NPMYIE", hasPhoto: false },
+  { slug: "bilka-square", name: "Square", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 2.45, taxable: false, squareToken: "PANNGIUGYILSWAC4D76DIKJ7", hasPhoto: false },
+  { slug: "bilka-square-chocolate-chips", name: "Square Chocolate Chips", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 4.99, taxable: false, squareToken: "DDLF6CPE44RV3FJDTNOJMTIZ", hasPhoto: false },
+  { slug: "bilka-square-multigrain", name: "Square Multigrain", categorySlug: "bilka", groupSlug: "shabbat", section: "friday", price: 2.5, taxable: false, squareToken: "VBPYKH54K2WUTXQBYUYJXYBJ", hasPhoto: false },
+  { slug: "rosh-hashanah-1-2slab-honey", name: "1/2slab honey", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 110, taxable: false, squareToken: "E3FVEIBH567S6KHQMFBJPJFK", hasPhoto: false },
+  { slug: "rosh-hashanah-1-4-slab-honey", name: "1/4 slab honey", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 80, taxable: false, squareToken: "KEQKPUAPKHEBJBTCPZVVOAFX", hasPhoto: false },
+  { slug: "rosh-hashanah-10-inch-honey-bundt", name: "10 inch honey bundt", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 26, taxable: false, squareToken: "6ICARRVLHZXBSAJ2Q3NZT4YP", hasPhoto: false },
+  { slug: "rosh-hashanah-12-inch-choco-cookie", name: "12\" Inch Choco Cookie", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 50, taxable: true, squareToken: "UNUL2TW4Y7JUR74UU3CLVC7C", hasPhoto: false },
+  { slug: "rosh-hashanah-7-choc-mousse-cake", name: "7\" Choc Mousse cake", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 37.5, taxable: false, squareToken: "IFXTBCFLE2DC5CZ7BOOO63FI", hasPhoto: false },
+  { slug: "rosh-hashanah-7-lady-finger-choc-cake", name: "7\" Lady finger Choc cake", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 37.5, taxable: false, squareToken: "KRFZQQM4BVAW7QXS373CI3K4", hasPhoto: false },
+  { slug: "rosh-hashanah-7-mixed-fruit-mousse", name: "7\" Mixed fruit mousse", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 45, taxable: false, squareToken: "LKLGLFTFGGJ3K3WXDH5KF25B", hasPhoto: false },
+  { slug: "rosh-hashanah-9-choc-mousse-cake", name: "9\"  Choc mousse cake", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 60, taxable: false, squareToken: "UUUCZOAG3OTUX4BL6F7XOM4T", hasPhoto: false },
+  { slug: "rosh-hashanah-9-fruit-tart", name: "9\" fruit tart", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 50, taxable: false, squareToken: "F2VPJBND6XQD7URHLZ4YVYXE", hasPhoto: false },
+  { slug: "rosh-hashanah-9-lady-finger-choc-cake", name: "9\" Lady finger Choc cake", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 60, taxable: false, squareToken: "YRVUIPHVWDWSB6YJSJ3DYTBG", hasPhoto: false },
+  { slug: "rosh-hashanah-9-mixed-fruit-mousse", name: "9\" Mixed fruit mousse", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 67.95, taxable: false, squareToken: "RMXMQ2Z4FRV4Z3GDLOX37ULQ", hasPhoto: false },
+  { slug: "rosh-hashanah-apple-loaf", name: "apple loaf", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 12.95, taxable: false, squareToken: "FSDGMDKYCBNJZOBNQOAK42ZM", image: "/images/products/apple-loaf-cake.webp", hasPhoto: true },
+  { slug: "rosh-hashanah-applecupcakes", name: "AppleCupcakes", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 3.95, taxable: false, squareToken: "OASXYZSZIFUC6BGZWPWSVTQN", hasPhoto: false },
+  { slug: "rosh-hashanah-bee-cookie", name: "Bee cookie", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 3.75, taxable: false, squareToken: "3OZ6D4O3AWBBVQERTKSP4XEJ", hasPhoto: false },
+  { slug: "rosh-hashanah-cookie-kit", name: "Cookie Kit", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 29.95, taxable: true, squareToken: "YDMPDTSJZNNULZG5LCRMER7D", hasPhoto: false },
+  { slug: "rosh-hashanah-crown-challah", name: "Crown Challah", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 16.95, taxable: false, squareToken: "6QVPONHGUOXOWBVFZFRZRRCI", image: "/images/products/rosh-hashanah-round-challah.webp", hasPhoto: true },
+  { slug: "rosh-hashanah-fancy-honey-cakes", name: "fancy Honey cakes", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 45, taxable: false, squareToken: "AOPXBIEKZSLJWAQG2XK3I3SJ", hasPhoto: false },
+  { slug: "rosh-hashanah-fullslab-honey", name: "fullslab honey", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 225, taxable: false, squareToken: "S5KS2X26WTK25VOUZDIH5Q67", hasPhoto: false },
+  { slug: "rosh-hashanah-gift-basket", name: "Gift Basket", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 74.95, taxable: true, squareToken: "XMZZ34NXJA3PBBDPONYQT375", hasPhoto: false },
+  { slug: "rosh-hashanah-honey-bundt-l", name: "Honey bundt  L", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 24, taxable: false, squareToken: "XBLQVN6QQQOY45B25HTZFAZX", hasPhoto: false },
+  { slug: "rosh-hashanah-honey-bundt-m", name: "Honey bundt M", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 21, taxable: false, squareToken: "6FBMOHCABA43TKTX26ANQZF3", hasPhoto: false },
+  { slug: "rosh-hashanah-honey-jar-cookie", name: "Honey jar cookie", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 4.2, taxable: false, squareToken: "MUH76QRV6EVCS3GU6T77FXF3", hasPhoto: false },
+  { slug: "rosh-hashanah-honey-loaf-l", name: "Honey Loaf  L", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 15.5, taxable: false, squareToken: "HT3V5UQ4CXVEKLYXX2RZ2RHD", image: "/images/products/marble-loaf-cake.webp", hasPhoto: true },
+  { slug: "rosh-hashanah-honey-loaf-s", name: "Honey Loaf  S", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 9.95, taxable: false, squareToken: "KGK6Q6A2W7TSJ4A2LWZIMGBX", image: "/images/products/marble-loaf-cake.webp", hasPhoto: true },
+  { slug: "rosh-hashanah-large-plate", name: "Large Plate", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 54.95, taxable: true, squareToken: "AGL7UZB6P7PONW2A72RYRKVI", hasPhoto: false },
+  { slug: "rosh-hashanah-large-round-challah", name: "Large round challah", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 7.95, taxable: false, squareToken: "KKNGFC5DQ33SXF3QALHP6I4C", image: "/images/products/rosh-hashanah-round-challah.webp", hasPhoto: true },
+  { slug: "rosh-hashanah-mini-honey-jars", name: "Mini Honey Jars", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 12.95, taxable: true, squareToken: "246FVSW4Q7BKY2SC4HDNSRTY", hasPhoto: false },
+  { slug: "rosh-hashanah-mixed-fruit-honey-cake", name: "Mixed fruit honey cake", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 55, taxable: false, squareToken: "UZVC7UXUCYZQ6JJVFD5Z75AI", hasPhoto: false },
+  { slug: "rosh-hashanah-mixed-fruit-puff-cake", name: "Mixed fruit PUFF cake", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 50, taxable: false, squareToken: "PYHFSKDBUH5J5JKSUEFYQBTM", hasPhoto: false },
+  { slug: "rosh-hashanah-pack-of-2-apple-cookie", name: "Pack of 2 apple cookie", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 5, taxable: false, squareToken: "CR23W5L3OXO3MI5SE6PKJ4BH", image: "/images/products/apple-cookies-rosh-hashanah.webp", hasPhoto: true },
+  { slug: "rosh-hashanah-printed-picture", name: "Printed picture", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 4.25, taxable: false, squareToken: "BVJDXB6B2RRGIMJE44PWWHY2", hasPhoto: false },
+  { slug: "rosh-hashanah-rectangle-cookie-box", name: "Rectangle Cookie Box", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 24.95, taxable: true, squareToken: "PWYLYUNKOWPURC6RRQ2UIDXA", hasPhoto: false },
+  { slug: "rosh-hashanah-regular", name: "Regular", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: null, taxable: false, squareToken: "4JO44V364ATJASQLAZQRGWET", hasPhoto: false },
+  { slug: "rosh-hashanah-regular-2", name: "Regular", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: null, taxable: true, squareToken: "JMIOFKBLF3PXFYXIGCBXSWIT", hasPhoto: false },
+  { slug: "rosh-hashanah-seven-layer-long", name: "seven layer long", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 38, taxable: false, squareToken: "4OWPCFUEWCWNYV7TXJS7MMX5", hasPhoto: false },
+  { slug: "rosh-hashanah-sliced-honey-cake", name: "sliced honey cake", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 5.95, taxable: false, squareToken: "5QIZIEM5ONAAKPAXFFZ2AF6H", hasPhoto: false },
+  { slug: "rosh-hashanah-small-plate", name: "Small Plate", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 39.95, taxable: true, squareToken: "6KRMZJRWUI7ILLUDM3USTUME", hasPhoto: false },
+  { slug: "rosh-hashanah-small-round-challah", name: "Small Round Challah", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 5.5, taxable: false, squareToken: "OLWMB34HDOBDHPZ2LVHIQWGB", image: "/images/products/rosh-hashanah-round-challah.webp", hasPhoto: true },
+  { slug: "rosh-hashanah-square-cookie-box", name: "Square Cookie Box", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 18.95, taxable: true, squareToken: "ZY2F2Z7PG22IJPNVSHSB6ZNA", hasPhoto: false },
+  { slug: "rosh-hashanah-written-cookie", name: "Written cookie", categorySlug: "rosh-hashanah", groupSlug: "rosh-hashanah", section: "holidays", price: 3.25, taxable: false, squareToken: "XYDAXFRZU32XVQHNKSVFTQXA", hasPhoto: false },
+  { slug: "sukkot-ginger-house", name: "Ginger house", categorySlug: "sukkot", groupSlug: "sukkot", section: "holidays", price: 65, taxable: true, squareToken: "4IIC2E52KSKKDZ6ESQUQ7JUM", hasPhoto: false },
+  { slug: "sukkot-mini-sukkah", name: "Mini sukkah", categorySlug: "sukkot", groupSlug: "sukkot", section: "holidays", price: 4.95, taxable: true, squareToken: "SY2GTHA4S74QOTDZ2HBGFOZD", hasPhoto: false },
+  { slug: "sukkot-regular", name: "Regular", categorySlug: "sukkot", groupSlug: "sukkot", section: "holidays", price: null, taxable: true, squareToken: "OQWSYDJ43JRKFUOEOPZ445PY", hasPhoto: false },
+  { slug: "sukkot-torah-scroll-cookie", name: "torah scroll cookie", categorySlug: "sukkot", groupSlug: "sukkot", section: "holidays", price: 3.5, taxable: true, squareToken: "PEJ6KZVCHSCMDSDL5RHZ3DXV", hasPhoto: false },
+  { slug: "chanukah-donuts-assorted-iced", name: "Donuts-Assorted Iced", categorySlug: "chanukah", groupSlug: "hanukkah", section: "holidays", price: 2.95, taxable: false, squareToken: "BG7SMFOI2OJQ74QYCMQEM76P", hasPhoto: false },
+  { slug: "chanukah-sufganiyot-jelly-donuts", name: "Sufganiyot/Jelly Donuts", categorySlug: "chanukah", groupSlug: "hanukkah", section: "holidays", price: 2.95, taxable: false, squareToken: "TDUZ3VEOXN6TGGIGHGN6RUZP", hasPhoto: false },
+  { slug: "chanukah-cookies-4-dreidel-pack", name: "4 dreidel pack", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 9.5, taxable: true, squareToken: "AS2ODGNBYWVO7KCTDXS42LS2", hasPhoto: false },
+  { slug: "chanukah-cookies-chanukah-cookie-bite-cup", name: "Chanukah Cookie bite cup", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 7.5, taxable: true, squareToken: "6XDSDII6A5Z6P3EGS3MYG2HX", hasPhoto: false },
+  { slug: "chanukah-cookies-chanukah-cookie-kit", name: "Chanukah cookie kit", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 34.95, taxable: true, squareToken: "UC5FHL5CE4MYZIIEQDTI23JA", hasPhoto: false },
+  { slug: "chanukah-cookies-chanukah-cookie-kit-2", name: "Chanukah cookie kit", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 27.96, taxable: true, squareToken: "W4HU5RFBRTBBTJVCDNKXPZFY", hasPhoto: false },
+  { slug: "chanukah-cookies-chanukah-printed-picture", name: "Chanukah printed picture", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 4.25, taxable: true, squareToken: "KZIASXYFSGCX3IJ5H7PKYCW6", hasPhoto: false },
+  { slug: "chanukah-cookies-chanukah-written-cookie", name: "Chanukah written cookie", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 3.25, taxable: true, squareToken: "6NNGKAVLAWPMX6QM3MGNXD2P", hasPhoto: false },
+  { slug: "chanukah-cookies-chocolatesprinkle-menorah-dreidel", name: "Chocolate&Sprinkle menorah/Dreidel", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 1.95, taxable: true, squareToken: "XTCNG4ZESBVMU6EOM5XTBZMD", image: "/images/products/chanukah-sugar-cookies-dozen.webp", hasPhoto: true },
+  { slug: "chanukah-cookies-cookie-box", name: "Cookie box", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 10.5, taxable: true, squareToken: "I2GGPX7SQBULDNBEV3IJL3LN", image: "/images/products/chanukah-cookies-platter.webp", hasPhoto: true },
+  { slug: "chanukah-cookies-dreidel-menorah-cookie-pack", name: "Dreidel-Menorah Cookie Pack", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 5, taxable: true, squareToken: "CL32XDQBICF3OQVGPUSCCLUJ", image: "/images/products/chanukah-sugar-cookies-dozen.webp", hasPhoto: true },
+  { slug: "chanukah-cookies-large-dreidel-menorah-cookie", name: "Large Dreidel/Menorah Cookie", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 3.5, taxable: true, squareToken: "2G7XLLMTOULQGYNYXV7NZ77R", image: "/images/products/chanukah-sugar-cookies-dozen.webp", hasPhoto: true },
+  { slug: "chanukah-cookies-rectang-gift-box", name: "Rectang gift box", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 25.95, taxable: true, squareToken: "NMNN6FXY5ISV3OPWV7H7FZYM", image: "/images/products/chanukah-cookies-platter.webp", hasPhoto: true },
+  { slug: "chanukah-cookies-small-menorah-dreidel-cookie", name: "Small Menorah/Dreidel Cookie", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 2.5, taxable: true, squareToken: "J4QIFSBE3IXSZEETKT7HFD6M", image: "/images/products/chanukah-sugar-cookies-dozen.webp", hasPhoto: true },
+  { slug: "chanukah-cookies-square-gift-box", name: "Square gift box", categorySlug: "chanukah-cookies", groupSlug: "hanukkah", section: "holidays", price: 19.95, taxable: true, squareToken: "Z6TO3PJEK2LCYVXIGNQ6CGCR", image: "/images/products/chanukah-cookies-platter.webp", hasPhoto: true },
+  { slug: "sufganiyot-latkes-boston-cream", name: "Boston cream", categorySlug: "sufganiyot-latkes", groupSlug: "hanukkah", section: "holidays", price: 4.5, taxable: false, squareToken: "AQ247EYRE4K5DRQXXDZJPWYG", hasPhoto: false },
+  { slug: "sufganiyot-latkes-fancy", name: "Fancy", categorySlug: "sufganiyot-latkes", groupSlug: "hanukkah", section: "holidays", price: 6.95, taxable: false, squareToken: "MV2FPD3YKG2SRB5YWHB456BE", hasPhoto: false },
+  { slug: "sufganiyot-latkes-latkes", name: "Latkes", categorySlug: "sufganiyot-latkes", groupSlug: "hanukkah", section: "holidays", price: 3.5, taxable: false, squareToken: "BE7XKVU4VZGHCG6WC2VSOG6N", hasPhoto: false },
+  { slug: "sufganiyot-latkes-regular", name: "Regular", categorySlug: "sufganiyot-latkes", groupSlug: "hanukkah", section: "holidays", price: 3.5, taxable: false, squareToken: "I6RYB46LJO7SHWK6IQ6PKUGA", hasPhoto: false },
+  { slug: "purim-bag-w-juice", name: "Bag w/ juice", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 11.95, taxable: false, squareToken: "XGNDBOALC5XHWJXILF6TNDXP", hasPhoto: false },
+  { slug: "purim-basket", name: "Basket", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 45, taxable: false, squareToken: "NB43IMCJKQLTVN6FGY3DVQQ6", hasPhoto: false },
+  { slug: "purim-big-basket", name: "Big Basket", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 50, taxable: false, squareToken: "PLOQWYZ432HJBWMU7XZI56ZI", hasPhoto: false },
+  { slug: "purim-fancy-hamentashen", name: "Fancy hamentashen", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 2.25, taxable: false, squareToken: "VHDHBJH4OQ3LW5GBNJKHPGYZ", image: "/images/products/hamantaschen-assorted.webp", hasPhoto: true },
+  { slug: "purim-hamantosh", name: "Hamantosh", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: null, taxable: false, squareToken: "L4CMCRVTW4UQS7NTYT6E4XLF", image: "/images/products/hamantaschen-dozen.webp", hasPhoto: true },
+  { slug: "purim-hamentashen", name: "Hamentashen", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 1.95, taxable: false, squareToken: "I22IRLYMWIGJBDEQYEMAKWJ6", image: "/images/products/hamantaschen-assorted.webp", hasPhoto: true },
+  { slug: "purim-hand-written-square-round-star", name: "Hand Written - Square/Round/Star", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 3.5, taxable: false, squareToken: "SCJL3W4QX5UP4A4KEDK4GIUH", hasPhoto: false },
+  { slug: "purim-individually-packed-hamentashen", name: "Individually packed hamentashen", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 2.2, taxable: false, squareToken: "CSUXWOJ6O7W7X3RB636SQESF", image: "/images/products/hamantaschen-dozen.webp", hasPhoto: true },
+  { slug: "purim-large-bowl", name: "Large Bowl", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 29.95, taxable: false, squareToken: "S7GAFBFAFACFC5TQENVPRLER", hasPhoto: false },
+  { slug: "purim-large-clown-mask-crown", name: "Large Clown/Mask/Crown", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 4.25, taxable: false, squareToken: "WVJFTLARBUFW4Z6NC6KASNNQ", hasPhoto: false },
+  { slug: "purim-medium-bowl", name: "Medium  bowl", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 21.95, taxable: false, squareToken: "MT2FUS73OOWAQGVY35FCVZML", hasPhoto: false },
+  { slug: "purim-printed-cookie", name: "Printed cookie", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 4.25, taxable: false, squareToken: "SXA7HBBUP7DZP56O26X2CHJW", hasPhoto: false },
+  { slug: "purim-purim-kit", name: "Purim Kit", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: null, taxable: false, squareToken: "RSKKAQJJWINMXGQVRQLRREFW", hasPhoto: false },
+  { slug: "purim-regular", name: "Regular", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: null, taxable: false, squareToken: "MLNJZXWE2HRGFVKTU42EFDTS", hasPhoto: false },
+  { slug: "purim-small-bowl", name: "Small Bowl", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 18.95, taxable: false, squareToken: "QYFCAKJ44KM4JTV5RPUC5KOY", hasPhoto: false },
+  { slug: "purim-small-clown", name: "Small Clown", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 2.95, taxable: false, squareToken: "QDKASSWQTVV4EK3HREMSSUNG", hasPhoto: false },
+  { slug: "purim-yeast-hamantaschen", name: "Yeast hamantaschen", categorySlug: "purim", groupSlug: "purim", section: "holidays", price: 4.65, taxable: false, squareToken: "6R77ETB3BEW6WTYKEHEWZPWQ", image: "/images/products/hamantaschen-dozen.webp", hasPhoto: true },
+  { slug: "mishloach-manot-assorted-x6", name: "Assorted x6", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 11.7, taxable: true, squareToken: "C3H2PEBUABCZDVEW2CDQTS7V", image: "/images/products/hamantaschen-assorted.webp", hasPhoto: true },
+  { slug: "mishloach-manot-bag-w-juice", name: "Bag w/juice", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 10, taxable: true, squareToken: "H4TWYZGXTBVL4IDA7XTHXZI2", hasPhoto: false },
+  { slug: "mishloach-manot-big-basket", name: "Big Basket", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 95, taxable: true, squareToken: "UFHNRZAZVEGSL52MKRLVLOAI", hasPhoto: false },
+  { slug: "mishloach-manot-hamentashen-kit", name: "Hamentashen Kit", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 34.5, taxable: true, squareToken: "6Q6LUGOEPPLJIKWXIYD7PC7J", hasPhoto: false },
+  { slug: "mishloach-manot-large-bowl", name: "Large Bowl", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 37.5, taxable: true, squareToken: "CLKWZKWE5DZCPA7B5D6QAXAY", hasPhoto: false },
+  { slug: "mishloach-manot-medium-basket", name: "medium Basket", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 69, taxable: true, squareToken: "ESZMRQ4UXT6RR3B36TEHKGS6", hasPhoto: false },
+  { slug: "mishloach-manot-medium-bowl", name: "Medium Bowl", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 27.5, taxable: true, squareToken: "HSOZXXPQPWBVV6ZVI2YLX7IN", hasPhoto: false },
+  { slug: "mishloach-manot-pack-assorted-x4", name: "Pack assorted x4", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 7.8, taxable: true, squareToken: "5DFTA4AUGJOIPTTKQQP47HBH", image: "/images/products/hamantaschen-assorted.webp", hasPhoto: true },
+  { slug: "mishloach-manot-purim-cookie-kit", name: "Purim Cookie Kit", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 35, taxable: true, squareToken: "OAYNS77XS5CQPNQLDCMEKEUQ", hasPhoto: false },
+  { slug: "mishloach-manot-small-basket", name: "small basket", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 49, taxable: true, squareToken: "ONPSU7MIXQI4UEVNZD5VTCAV", hasPhoto: false },
+  { slug: "mishloach-manot-small-bowl", name: "Small Bowl", categorySlug: "mishloach-manot", groupSlug: "purim", section: "holidays", price: 18.5, taxable: true, squareToken: "F4CUMBIXHHCSZN2ZTKIGPW3F", hasPhoto: false },
+  { slug: "shavuot-cheesecake", name: "Cheesecake", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 50, taxable: true, squareToken: "YZAMYTOYUFD5YXP237FJMFRQ", hasPhoto: false },
+  { slug: "shavuot-cheesecake-mini-toppings", name: "Cheesecake  mini toppings", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 16, taxable: true, squareToken: "R5DWAASIBNGTW7ZDD2IBHMXO", hasPhoto: false },
+  { slug: "shavuot-cheesecake-loaf-toppings", name: "Cheesecake loaf toppings", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 30, taxable: true, squareToken: "A6PQKBRRDSY6BCURLEBIWTSL", hasPhoto: false },
+  { slug: "shavuot-cheesecake-toppings", name: "Cheesecake toppings", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 55, taxable: true, squareToken: "SKVDGUEJOFFWIPDCRGNG43CQ", hasPhoto: false },
+  { slug: "shavuot-loaf-cheesecake", name: "Loaf cheesecake", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 25, taxable: true, squareToken: "MFDG4C5S4GIHKFZXIVSALF6D", hasPhoto: false },
+  { slug: "shavuot-mini-loaf", name: "Mini Loaf", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 12, taxable: true, squareToken: "M7RVKTBZZSGGG6LJ6I4KWEIO", hasPhoto: false },
+  { slug: "shavuot-mixed-fruit-cheesecake", name: "Mixed fruit cheesecake", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 60, taxable: true, squareToken: "NNLUOOHOZEJXCAJFK55L6R2X", hasPhoto: false },
+  { slug: "shavuot-mixed-fruit-loaf", name: "Mixed Fruit loaf", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 35, taxable: true, squareToken: "ZBEUI55BKTRCEWVY7JS5GUVK", hasPhoto: false },
+  { slug: "shavuot-mixed-fruit-mini", name: "Mixed Fruit mini", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 20, taxable: true, squareToken: "C7ETOBY4HM6JAR6YTBOBCCK7", hasPhoto: false },
+  { slug: "shavuot-printed-picture", name: "Printed picture", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 4.25, taxable: true, squareToken: "U3NEAQGHEHOD6QB553LANVL2", hasPhoto: false },
+  { slug: "shavuot-regular", name: "Regular", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: null, taxable: true, squareToken: "NKDSP5IBT4OKT5E256UAV4MI", hasPhoto: false },
+  { slug: "shavuot-sliced", name: "Sliced", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 5.25, taxable: true, squareToken: "G3FAICEJL634G6FJPGZWRIK4", hasPhoto: false },
+  { slug: "shavuot-torah-scroll", name: "Torah Scroll", categorySlug: "shavuot", groupSlug: "shavuot", section: "holidays", price: 3.75, taxable: true, squareToken: "UKJMTTBUC7FYFO2ZCZY3X4V5", hasPhoto: false },
+  { slug: "valentines-day-2-hearts-cookie", name: "2 hearts cookie", categorySlug: "valentines-day", groupSlug: "celebrations", section: "holidays", price: 2.95, taxable: false, squareToken: "HHDOJYHAX22SWUQH5AT43PQP", image: "/images/products/valentines-day-cookies.webp", hasPhoto: true },
+  { slug: "valentines-day-cookie-cup", name: "Cookie Cup", categorySlug: "valentines-day", groupSlug: "celebrations", section: "holidays", price: 4.95, taxable: false, squareToken: "XI3H6MM2RPJQNIM6GNHGK3E5", image: "/images/products/valentines-day-cookies.webp", hasPhoto: true },
+  { slug: "valentines-day-heart-strawberry-jam-filled", name: "Heart strawberry jam filled", categorySlug: "valentines-day", groupSlug: "celebrations", section: "holidays", price: 3.5, taxable: false, squareToken: "3VMZFWRYQDEA7QK4B3Z3SLYU", image: "/images/products/valentines-day-cookies.webp", hasPhoto: true },
+  { slug: "valentines-day-heart-written-cookie", name: "Heart written Cookie", categorySlug: "valentines-day", groupSlug: "celebrations", section: "holidays", price: 3.25, taxable: false, squareToken: "2PAVULITTW6KN4NXVXJAKD2H", image: "/images/products/valentines-day-cookies.webp", hasPhoto: true },
+  { slug: "valentines-day-heart-written-with-ribbon", name: "Heart written with ribbon", categorySlug: "valentines-day", groupSlug: "celebrations", section: "holidays", price: 4.25, taxable: false, squareToken: "GCBUO6SSUDMDJZZWD6PQPPJ7", image: "/images/products/valentines-day-cookies.webp", hasPhoto: true },
+  { slug: "mothers-day-7-choco-chip-cookie", name: "7\" choco chip cookie", categorySlug: "mothers-day", groupSlug: "celebrations", section: "holidays", price: 12, taxable: false, squareToken: "6IHPUQBPWACTJHZLMDL7HUIK", image: "/images/products/mothers-day-cookie-bouquet.webp", hasPhoto: true },
+  { slug: "mothers-day-cupcake-bouquet", name: "Cupcake bouquet", categorySlug: "mothers-day", groupSlug: "celebrations", section: "holidays", price: 38.5, taxable: false, squareToken: "3ORGMXHXOUDPCB3NVN6SFXDG", image: "/images/products/mothers-day-cookie-bouquet.webp", hasPhoto: true },
+  { slug: "mothers-day-printed-picture", name: "Printed picture", categorySlug: "mothers-day", groupSlug: "celebrations", section: "holidays", price: 4.25, taxable: false, squareToken: "ENRIQXYR2SC2OHVAPC7H5T7S", image: "/images/products/mothers-day-cookie-bouquet.webp", hasPhoto: true },
+  { slug: "mothers-day-square-heart-written", name: "Square/heart written", categorySlug: "mothers-day", groupSlug: "celebrations", section: "holidays", price: 3.95, taxable: false, squareToken: "XNWJKIDR62A5R2ZX454UTA2F", image: "/images/products/mothers-day-cookie-bouquet.webp", hasPhoto: true },
+  { slug: "fathers-day-heart-cookie", name: "heart cookie", categorySlug: "fathers-day", groupSlug: "celebrations", section: "holidays", price: 2.95, taxable: true, squareToken: "OF3AZLRMG42VJHQGMFRKODIE", image: "/images/products/fathers-day-cookies.webp", hasPhoto: true },
+  { slug: "fathers-day-heart-square-written-cookie", name: "Heart/square Written cookie", categorySlug: "fathers-day", groupSlug: "celebrations", section: "holidays", price: 3.75, taxable: true, squareToken: "6S7DM5O65NRWGCHBUYWRURIF", image: "/images/products/fathers-day-cookies.webp", hasPhoto: true },
+  { slug: "fathers-day-regular", name: "Regular", categorySlug: "fathers-day", groupSlug: "celebrations", section: "holidays", price: null, taxable: true, squareToken: "2KTMRRI77SGCR7UGZPC3AEF5", image: "/images/products/fathers-day-cookies.webp", hasPhoto: true },
+  { slug: "graduation-cookie-2x-pack", name: "2x pack", categorySlug: "graduation-cookie", groupSlug: "celebrations", section: "holidays", price: 7.5, taxable: true, squareToken: "2IXBGKV7I2PM2BXYFCPC33N4", hasPhoto: false },
+  { slug: "graduation-cookie-badge-diploma", name: "badge/diploma", categorySlug: "graduation-cookie", groupSlug: "celebrations", section: "holidays", price: 3.25, taxable: true, squareToken: "6H7DPOZL2QF22NIW737ZBDPS", hasPhoto: false },
+  { slug: "graduation-cookie-boy-girl", name: "boy/girl", categorySlug: "graduation-cookie", groupSlug: "celebrations", section: "holidays", price: 4.25, taxable: true, squareToken: "NFNKMQEHE7TP5C3RZRZC6YXF", hasPhoto: false },
+  { slug: "graduation-cookie-hat", name: "hat", categorySlug: "graduation-cookie", groupSlug: "celebrations", section: "holidays", price: 3.75, taxable: true, squareToken: "G2V5NK4DHZRYK6EDFEZ7AY3Z", hasPhoto: false },
+  { slug: "graduation-cookie-rectangle-large-cookie", name: "rectangle large cookie", categorySlug: "graduation-cookie", groupSlug: "celebrations", section: "holidays", price: 4.25, taxable: true, squareToken: "Q3F3RGCK52BDLWHO44Z3KRMJ", hasPhoto: false },
+  { slug: "graduation-cookie-regular", name: "Regular", categorySlug: "graduation-cookie", groupSlug: "celebrations", section: "holidays", price: null, taxable: true, squareToken: "K2IAGATKZFCCKUJNULMORMIW", hasPhoto: false },
+  { slug: "graduation-cookie-written-round", name: "written round", categorySlug: "graduation-cookie", groupSlug: "celebrations", section: "holidays", price: 3.25, taxable: true, squareToken: "CFJ5WKOTEDHFDQYLECYBCOWG", hasPhoto: false },
 ];
