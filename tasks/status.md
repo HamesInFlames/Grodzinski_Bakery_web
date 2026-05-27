@@ -1,5 +1,89 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-26 (Home about snippet mobile fix)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+
+**What was done:**
+- Improved the Home page "A Toronto Tradition Since 1888" section for mobile
+- Desktop: centered the video frame in its column (was right-aligned with a visual gap)
+- Tablet (1024px): switched video from tall 4:5 portrait to compact 16:9 landscape crop with 280px max-height
+- Mobile (768px): further tightened video to 220px max-height, reduced section gap
+- Removed center-aligned text on mobile — left-aligned reads more naturally for paragraphs
+- Build passes cleanly
+
+**Files changed:**
+- `src/App.css` — updated `.home-about__media-frame` alignment and responsive breakpoints
+
+---
+
+## Session — 2026-05-26 (About page UI/UX redesign)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+
+**What was done:**
+- Redesigned the About page layout from a two-column text-vs-video split into 3 alternating story sections
+- Each section pairs one video with its related narrative text side-by-side (desktop) or stacked (mobile)
+- Section 1 "A Toronto Tradition Since 1888" — challahs video + heritage story
+- Section 2 "Baked for Every Celebration" — cakes video + celebrations story (reversed layout)
+- Section 3 "Safe for Every Family" — cookies video + community/allergen story
+- Condensed 5 dense paragraphs into 3 focused blocks with section headings
+- Alternating cream/white backgrounds for visual rhythm between sections
+- Mobile: videos capped at 280px height (220px on small phones), single-column stacking with proper spacing
+- Removed all old `.about-content`, `.about-content__text`, `.about-content__images`, `.about-image-card` CSS
+- Switched videos from `backdrop` mode to `objectFit="cover"` in clean aspect-ratio containers
+- "Why Choose Grodzinski?" features section kept as-is
+- Build passes cleanly
+
+**Files changed:**
+- `src/pages/About.jsx` — replaced 2-column grid with 3 `about-story` sections
+- `src/App.css` — replaced `.about-content*` / `.about-image-card*` with `.about-story*` rules + responsive breakpoints
+
+---
+
+## Session — 2026-05-26 (Certification badges on homepage)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+
+**What was done:**
+- Replaced the old icon-based "Features" strip (100% Kosher, Nut-Free, Fresh Daily, Since 1888) with a professional **Certification Badges** strip
+- New badges: **Kosher** (COR logo), **Pas Yisroel** (OU mark), **Chalav Yisroel** (Dairy mark), **Nut Free** (stamp)
+- Each card shows the official certification badge image prominently with title and description
+- Badge images (brown/transparent variants) stored at `public/images/certifications/`
+- COR logo reused from existing `public/images/home/cor_logo.png`
+- Added responsive CSS (`.certifications-strip`, `.cert-badge`) — flexbox layout, centered, wraps on mobile
+- Build passes cleanly
+
+**Files changed:**
+- `src/pages/Home.jsx` — replaced `features` array + rendering with `certifications` badge cards
+- `src/App.css` — added `.certifications-section`, `.certifications-strip`, `.cert-badge*` styles + mobile overrides
+- `public/images/certifications/pas-yisroel.png` *(new)*
+- `public/images/certifications/dairy-chalav-yisroel.png` *(new)*
+- `public/images/certifications/nut-free.png` *(new)*
+
+---
+
+## Session — 2026-05-26 (Holiday section trimmed to 6 occasions)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+
+**What was done:**
+- Reduced holiday occasions from 11 to 6 per client request
+- Kept: Rosh Hashanah, Sukkot, Purim
+- Renamed: Chanukah → Hanukkah
+- Added: Yom Kippur, Simchat Torah
+- Removed: Pesach, Shavuot, Simchas & Celebrations, Father's Day, Mother's Day, Valentine's Day, Graduation
+- Updated `HOLIDAY_OCCASIONS` in `src/data/products.ts`
+- Updated `HOLIDAY_OCCASION_META` in `src/data/holidays.ts`
+- Removed `occasion` fields from products that referenced deleted occasions in `src/data/products.generated.ts`
+- Build passes cleanly
+
+---
+
 ## Session — 2026-05-21 (Merge AN_Branch → main)
 
 **Tool:** Cursor Agent (Opus 4.6)

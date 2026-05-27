@@ -7,9 +7,10 @@ import {
   StaggerItem,
 } from "../components/AnimationWrappers";
 import { VideoBackground } from "../components/VideoBackground";
+import { GalleryCarousel } from "../components/gallery/GalleryCarousel";
 // TODO: Re-enable ContactForm once backend endpoint is wired up
 // import ContactForm from "../components/ContactForm";
-import { Star, ShieldCheck, Wheat, Users, Heart, Baby, Cake, MapPin, Phone, Clock } from "lucide-react";
+import { MapPin, Phone, Clock } from "lucide-react";
 
 // TODO(phase-4.2): wire to Resend-backed /api/contact endpoint, then re-enable ContactForm.
 const handleHomeContactSubmit = async (_formData) => {
@@ -19,11 +20,10 @@ const handleHomeContactSubmit = async (_formData) => {
 export default function Home() {
   const navigate = useNavigate();
 
-  const features = [
-    { icon: <Star size={28} />, title: "100% Kosher", desc: "COR certified kosher bakery" },
-    { icon: <ShieldCheck size={28} />, title: "Nut-Free", desc: "Peanut & tree-nut free facility" },
-    { icon: <Wheat size={28} />, title: "Fresh Daily", desc: "Baked fresh every morning" },
-    { icon: <Users size={28} />, title: "Since 1888", desc: "A baking tradition over a century in the making" },
+  const certifications = [
+    { image: "/images/certifications/cor-kosher.png", title: "COR Kosher" },
+    { lines: ["Pas Yisroel", "Chalav Yisroel", "Dairy Chalav Yisroel"] },
+    { image: "/images/certifications/nut-free-black.png", title: "Nut Free" },
   ];
 
   const categoryImages = [
@@ -72,16 +72,29 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FEATURES */}
-      <section className="section">
+      {/* CERTIFICATIONS */}
+      <section className="section certifications-section">
         <div className="container">
-          <StaggerContainer className="grid grid--4" staggerDelay={0.12}>
-            {features.map((feature, i) => (
+          <StaggerContainer className="certifications-strip" staggerDelay={0.1}>
+            {certifications.map((cert, i) => (
               <StaggerItem key={i}>
-                <div className="feature-card">
-                  <div className="feature-card__icon">{feature.icon}</div>
-                  <h3 className="feature-card__title">{feature.title}</h3>
-                  <p className="feature-card__desc">{feature.desc}</p>
+                <div className="cert-badge">
+                  {cert.image ? (
+                    <div className="cert-badge__image-wrap">
+                      <img
+                        src={cert.image}
+                        alt={cert.title || ""}
+                        className="cert-badge__image"
+                      />
+                    </div>
+                  ) : (
+                    <div className="cert-badge__lines">
+                      {cert.lines.map((line, j) => (
+                        <span key={j} className="cert-badge__line">{line}</span>
+                      ))}
+                    </div>
+                  )}
+                  {cert.title && <span className="cert-badge__title">{cert.title}</span>}
                 </div>
               </StaggerItem>
             ))}
@@ -137,49 +150,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT SNIPPET */}
-      <section className="section">
-        <div className="container">
-          <div className="home-about">
-            <ScrollReveal direction="left" className="home-about__content">
-              <h2 className="home-about__title">
-                A Toronto Tradition Since 1888
-              </h2>
-              <p className="home-about__text">
-                What started as a small neighbourhood bakery has grown into a
-                beloved institution across the Greater Toronto Area. From the
-                earliest morning hours, our bakers are kneading dough, braiding
-                challahs, and hand-rolling pastries — just as the bakery has
-                done since 1888.
-              </p>
-              <p className="home-about__text">
-                We believe in simplicity: fresh ingredients, traditional techniques,
-                and no artificial preservatives. Every loaf of rye, every round
-                challah, and every buttery danish is made by hand using traditional
-                recipes rooted in over a century of baking.
-              </p>
-              <button
-                className="btn btn--secondary"
-                onClick={() => navigate("/about")}
-              >
-                Our Story
-              </button>
-            </ScrollReveal>
-            <ScrollReveal direction="right" delay={0.15} className="home-about__image">
-              <div className="home-about__media-frame">
-                <VideoBackground
-                  videoSrc="/videos/showcase.mp4"
-                  posterSrc="/videos/showcase-poster.jpg"
-                  alt="Grodzinski Bakery"
-                  objectFit="cover"
-                />
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
-      {/* CUSTOM ORDERS CTA */}
+      {/* CUSTOM ORDERS CTA + GALLERY */}
       <section className="section section--dark">
         <div className="container">
           <ScrollReveal>
@@ -192,35 +163,63 @@ export default function Home() {
             </div>
           </ScrollReveal>
 
-          <StaggerContainer className="home-occasions" staggerDelay={0.1}>
-            {[
-              { icon: <Heart size={24} />, label: "Weddings" },
-              { icon: <Baby size={24} />, label: "Baby Showers" },
-              { icon: <Cake size={24} />, label: "Birthdays" },
-              { icon: <Star size={24} />, label: "Holidays" },
-            ].map((item, i) => (
-              <StaggerItem key={i} direction="none">
-                <div className="home-occasion">
-                  <span className="home-occasion__icon">{item.icon}</span>
-                  <span className="home-occasion__label">{item.label}</span>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+          <div className="gallery-carousel-shell">
+            <GalleryCarousel />
+          </div>
 
           <ScrollReveal delay={0.2}>
-            <div className="text-center" style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="gallery-cta gallery-cta--embedded">
+              <div className="gallery-cta__inner">
+                <h2>Ready to Order?</h2>
+                <p>
+                  Contact us to discuss your custom cookie or cake order.
+                  We'll bring your vision to life!
+                </p>
+                <div className="gallery-cta__actions">
+                  <a href="/visit" className="btn btn--primary">Contact Us</a>
+                  <a href="tel:9058821350" className="btn btn--secondary">Call (905) 882-1350</a>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* ABOUT SNIPPET */}
+      <section className="about-story about-story--reverse">
+        <div className="about-story__inner">
+          <ScrollReveal direction="right">
+            <div className="about-story__media">
+              <VideoBackground
+                videoSrc="/videos/showcase.mp4"
+                posterSrc="/videos/showcase-poster.jpg"
+                alt="Grodzinski Bakery"
+                objectFit="cover"
+              />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="left" delay={0.1}>
+            <div className="about-story__body">
+              <h2>A Toronto Tradition Since 1888</h2>
+              <p>
+                What started as a small neighbourhood bakery has grown into a
+                beloved institution across the Greater Toronto Area. From the
+                earliest morning hours, our bakers are kneading dough, braiding
+                challahs, and hand-rolling pastries — just as the bakery has
+                done since 1888.
+              </p>
+              <p>
+                We believe in simplicity: fresh ingredients, traditional techniques,
+                and no artificial preservatives. Every loaf of rye, every round
+                challah, and every buttery danish is made by hand using traditional
+                recipes rooted in over a century of baking.
+              </p>
               <button
-                className="btn btn--primary btn--lg"
-                onClick={() => navigate("/holidays")}
+                className="btn btn--secondary"
+                onClick={() => navigate("/about")}
+                style={{ marginTop: '8px' }}
               >
-                See Holiday Menu
-              </button>
-              <button
-                className="btn btn--secondary btn--lg"
-                onClick={() => navigate("/gallery")}
-              >
-                View Custom Gallery
+                Our Story
               </button>
             </div>
           </ScrollReveal>
@@ -232,16 +231,6 @@ export default function Home() {
         <div className="container">
           <ScrollReveal direction="up">
             <div className="contact-card contact-card--horizontal">
-              <div className="contact-card__map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.0!2d-79.4631!3d43.8175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2c5a53c8f8e9%3A0x1234567890abcdef!2s1118%20Centre%20St%2C%20Thornhill%2C%20ON!5e0!3m2!1sen!2sca!4v1234567890"
-                  width="100%"
-                  height="100%"
-                  allowFullScreen=""
-                  loading="lazy"
-                  title="Grodzinski Bakery Location"
-                />
-              </div>
               <div className="contact-card__content">
                 <h3 className="contact-card__title">Visit Our Bakery</h3>
 
@@ -284,6 +273,16 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+              </div>
+              <div className="contact-card__map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.0!2d-79.4631!3d43.8175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2c5a53c8f8e9%3A0x1234567890abcdef!2s1118%20Centre%20St%2C%20Thornhill%2C%20ON!5e0!3m2!1sen!2sca!4v1234567890"
+                  width="100%"
+                  height="100%"
+                  allowFullScreen=""
+                  loading="lazy"
+                  title="Grodzinski Bakery Location"
+                />
               </div>
             </div>
           </ScrollReveal>

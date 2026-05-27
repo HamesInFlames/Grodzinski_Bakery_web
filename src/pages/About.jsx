@@ -1,5 +1,4 @@
-import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
-import { ShieldCheck, ChefHat, Wheat, UtensilsCrossed, Cake, Heart } from "lucide-react";
+import { ScrollReveal, FadeIn } from "../components/AnimationWrappers";
 import { VideoBackground } from "../components/VideoBackground";
 
 function About() {
@@ -27,111 +26,103 @@ function About() {
         </div>
       </section>
 
-      {/* MAIN CONTENT */}
-      <section className="section">
-        <div className="section__inner about-page">
-          <div className="about-content">
-            {/* LEFT: Text Content */}
-            <div className="about-content__text">
-              <ScrollReveal>
-                <p className="section__text">
-                  For over three generations, Grodzinski Bakery has been a cornerstone of
-                  Toronto's Jewish community — a place where tradition meets quality, and
-                  where every loaf, challah, and pastry is baked with pride and care.
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.1}>
-                <p className="section__text">
-                  What began as a small neighbourhood bakery has grown into a beloved institution
-                  across the Greater Toronto Area. From the earliest morning hours, our bakers
-                  arrive to knead dough, braid challahs, and hand-roll pastries using recipes
-                  that have been passed down through our family for generations. We believe in
-                  doing things the right way: fresh ingredients, traditional European techniques,
-                  and absolutely no artificial preservatives.
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.15}>
-                <p className="section__text">
-                  Our commitment to quality extends beyond our recipes. Grodzinski Bakery is
-                  proudly certified as a 100% peanut- and tree-nut-free facility. We understand
-                  how important allergen safety is for families, schools, and community events —
-                  which is why we've made this commitment a foundational part of who we are.
-                  Every product we bake is safe for those with nut allergies, giving families
-                  complete peace of mind.
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.2}>
-                <p className="section__text">
-                  We specialize in traditional Jewish baking: from fresh Shabbat challahs to
-                  holiday round challahs, from seven-layer cakes for simchas to everyday breads
-                  for your table. Our selection includes dairy, pareve, vegetarian, and vegan
-                  options, ensuring that everyone can find something delicious. Whether you're
-                  preparing for a milestone celebration, hosting a community event, or simply
-                  picking up your weekly challah, we're honoured to be part of your tradition.
-                </p>
-              </ScrollReveal>
-
-              <ScrollReveal delay={0.25}>
-                <p className="section__text">
-                  At Grodzinski, we don't just bake bread — we bake memories. Every braided
-                  challah reminds families of Shabbat dinners together. Every birthday cake
-                  marks a milestone. Every rugelach brings back the flavours of childhood.
-                  We're grateful to serve this community, and we look forward to being part
-                  of your family's table for generations to come.
-                </p>
-              </ScrollReveal>
+      {/* STORY SECTION 1 — Heritage */}
+      <section className="about-story about-story--cream">
+        <div className="about-story__inner">
+          <ScrollReveal direction="left">
+            <div className="about-story__media">
+              <VideoBackground
+                videoSrc="/videos/challahs.mp4"
+                posterSrc="/videos/challahs-poster.jpg"
+                alt="Fresh challahs at Grodzinski Bakery"
+                objectFit="cover"
+              />
             </div>
-
-            {/* RIGHT: Video Gallery */}
-            <div className="about-content__images">
-              {[
-                { videoSrc: "/videos/challahs.mp4", posterSrc: "/videos/challahs-poster.jpg", alt: "Fresh challahs at Grodzinski Bakery", caption: "Fresh challahs, baked daily" },
-                { videoSrc: "/videos/cakes-pastry.mp4", posterSrc: "/videos/cakes-pastry-poster.jpg", alt: "Celebration cakes", caption: "Celebration cakes for every occasion" },
-                { videoSrc: "/videos/cookies-loaves.mp4", posterSrc: "/videos/cookies-loaves-poster.jpg", alt: "Handcrafted cookies", caption: "Handcrafted cookies and pastries" },
-              ].map((item, i) => (
-                <ScrollReveal key={i} direction="right" delay={i * 0.12}>
-                  <div className="about-image-card">
-                    <VideoBackground
-                      videoSrc={item.videoSrc}
-                      posterSrc={item.posterSrc}
-                      alt={item.alt}
-                      className="about-image-card__img"
-                      backdrop
-                    />
-                    <p className="about-image-card__caption">{item.caption}</p>
-                  </div>
-                </ScrollReveal>
-              ))}
+          </ScrollReveal>
+          <ScrollReveal direction="right" delay={0.1}>
+            <div className="about-story__body">
+              <h2>A Toronto Tradition Since 1888</h2>
+              <p>
+                For over three generations, Grodzinski Bakery has been a cornerstone of
+                Toronto's Jewish community — a place where tradition meets quality, and
+                where every loaf, challah, and pastry is baked with pride and care.
+              </p>
+              <p>
+                What began as a small neighbourhood bakery has grown into a beloved
+                institution across the Greater Toronto Area. From the earliest morning
+                hours, our bakers arrive to knead dough, braid challahs, and hand-roll
+                pastries using recipes passed down through our family. Fresh ingredients,
+                traditional European techniques, and absolutely no artificial preservatives.
+              </p>
             </div>
-          </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
-          {/* WHY CHOOSE US SECTION */}
-          <div className="about-features">
-            <ScrollReveal>
-              <h2>Why Choose Grodzinski?</h2>
-            </ScrollReveal>
-            <StaggerContainer className="about-features__grid" staggerDelay={0.1}>
-              {[
-                { icon: <ShieldCheck size={28} />, title: "100% Nut-Free Facility", desc: "Complete allergen safety for families, schools, and anyone with nut allergies." },
-                { icon: <ChefHat size={28} />, title: "Traditional Recipes", desc: "European recipes passed down through generations, made with care and expertise." },
-                { icon: <Wheat size={28} />, title: "Fresh Daily", desc: "No artificial preservatives — everything is baked fresh every single day." },
-                { icon: <UtensilsCrossed size={28} />, title: "Dietary Options", desc: "Full range of options: dairy, pareve, vegetarian, and vegan products available." },
-                { icon: <Cake size={28} />, title: "Custom Orders", desc: "Custom cakes and catering for events of all sizes — from intimate to grand." },
-                { icon: <Heart size={28} />, title: "Community Focus", desc: "Serving the Toronto Jewish community with warmth and dedication since day one." },
-              ].map((feature, i) => (
-                <StaggerItem key={i}>
-                  <div className="about-feature-card">
-                    <div className="about-feature-card__icon">{feature.icon}</div>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.desc}</p>
-                  </div>
-                </StaggerItem>
-              ))}
-            </StaggerContainer>
-          </div>
+      {/* STORY SECTION 2 — Celebrations (reversed) */}
+      <section className="about-story about-story--reverse">
+        <div className="about-story__inner">
+          <ScrollReveal direction="right">
+            <div className="about-story__media">
+              <VideoBackground
+                videoSrc="/videos/cakes-pastry.mp4"
+                posterSrc="/videos/cakes-pastry-poster.jpg"
+                alt="Celebration cakes and pastries"
+                objectFit="cover"
+              />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="left" delay={0.1}>
+            <div className="about-story__body">
+              <h2>Baked for Every Celebration</h2>
+              <p>
+                We specialize in traditional Jewish baking: from fresh Shabbat challahs
+                to holiday round challahs, from seven-layer cakes for simchas to everyday
+                breads for your table.
+              </p>
+              <p>
+                Our selection includes dairy, pareve, vegetarian, and vegan options,
+                ensuring that everyone can find something delicious. Whether you're
+                preparing for a milestone celebration, hosting a community event, or
+                simply picking up your weekly challah, we're honoured to be part of
+                your tradition.
+              </p>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* STORY SECTION 3 — Community & Safety */}
+      <section className="about-story about-story--cream">
+        <div className="about-story__inner">
+          <ScrollReveal direction="left">
+            <div className="about-story__media">
+              <VideoBackground
+                videoSrc="/videos/cookies-loaves.mp4"
+                posterSrc="/videos/cookies-loaves-poster.jpg"
+                alt="Handcrafted cookies and pastries"
+                objectFit="cover"
+              />
+            </div>
+          </ScrollReveal>
+          <ScrollReveal direction="right" delay={0.1}>
+            <div className="about-story__body">
+              <h2>Safe for Every Family</h2>
+              <p>
+                Grodzinski Bakery is proudly certified as a 100% peanut- and
+                tree-nut-free facility. We understand how important allergen safety is
+                for families, schools, and community events — which is why we've made
+                this commitment a foundational part of who we are.
+              </p>
+              <p>
+                At Grodzinski, we don't just bake bread — we bake memories. Every
+                braided challah reminds families of Shabbat dinners together. Every
+                birthday cake marks a milestone. Every rugelach brings back the
+                flavours of childhood. We're grateful to serve this community for
+                generations to come.
+              </p>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </div>

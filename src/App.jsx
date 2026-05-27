@@ -12,7 +12,6 @@ const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
 const Catering = lazy(() => import("./pages/Catering"));
 const VisitUs = lazy(() => import("./pages/VisitUs"));
-const Gallery = lazy(() => import("./pages/Gallery"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const MenuLayout = lazy(() => import("./routes/MenuLayout"));
 const MenuHub = lazy(() => import("./routes/MenuHub"));
@@ -55,7 +54,7 @@ export default function App() {
                   <Route path=":occasion" element={<OccasionPage />} />
                   <Route path=":occasion/p/:slug" element={<HolidayProductPage />} />
                 </Route>
-                <Route path="/gallery" element={<PageTransition><Gallery /></PageTransition>} />
+                <Route path="/gallery" element={<Navigate to="/" replace />} />
                 <Route path="/catering" element={<PageTransition><Catering /></PageTransition>} />
                 <Route path="/about" element={<PageTransition><About /></PageTransition>} />
                 <Route path="/visit" element={<PageTransition><VisitUs /></PageTransition>} />

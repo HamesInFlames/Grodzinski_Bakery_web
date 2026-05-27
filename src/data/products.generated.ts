@@ -1005,8 +1005,7 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Custom Order",
       "Cookies"
     ],
-    inStock: true,
-    occasion: "simchas"
+    inStock: true
   },
   {
     slug: "wedding-cookies",
@@ -1022,8 +1021,7 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Custom Order",
       "Cookies"
     ],
-    inStock: true,
-    occasion: "simchas"
+    inStock: true
   },
   {
     slug: "birthday-cookies",
@@ -1040,8 +1038,7 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Custom Order",
       "Cookies"
     ],
-    inStock: true,
-    occasion: "simchas"
+    inStock: true
   },
   {
     slug: "hamantaschen-assorted",
@@ -1792,7 +1789,7 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "chanukah",
+    occasion: "hanukkah",
     isSeasonal: true
   },
   {
@@ -1809,7 +1806,7 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "chanukah",
+    occasion: "hanukkah",
     isSeasonal: true
   },
   {
@@ -1827,7 +1824,7 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "chanukah",
+    occasion: "hanukkah",
     isSeasonal: true
   },
   {
@@ -1878,7 +1875,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "pesach",
     isSeasonal: true
   },
   {
@@ -1896,7 +1892,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "pesach",
     isSeasonal: true
   },
   {
@@ -1913,7 +1908,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "pesach",
     isSeasonal: true
   },
   {
@@ -1930,7 +1924,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "shavuot",
     isSeasonal: true
   },
   {
@@ -1947,7 +1940,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "shavuot",
     isSeasonal: true
   },
   {
@@ -1965,7 +1957,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "valentines",
     isSeasonal: true
   },
   {
@@ -1984,7 +1975,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "mothers-day",
     isSeasonal: true
   },
   {
@@ -2002,7 +1992,6 @@ export const GENERATED_PRODUCTS: Product[] = [
       "Holiday & Seasonal Specials"
     ],
     inStock: true,
-    occasion: "fathers-day",
     isSeasonal: true
   },
   {

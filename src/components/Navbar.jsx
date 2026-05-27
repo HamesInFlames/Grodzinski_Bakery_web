@@ -9,7 +9,6 @@ const NAV_LINKS = [
   ["Menu", "/menu"],
   ["Holidays", "/holidays"],
   ["Catering", "/catering"],
-  ["Gallery", "/gallery"],
   ["About", "/about"],
   ["Visit Us", "/visit"],
 ];

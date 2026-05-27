@@ -15,17 +15,12 @@ export type DietaryTag = typeof DIETARY_TAGS[number];
 
 // Holiday occasions — these become /holidays/:occasion routes.
 export const HOLIDAY_OCCASIONS = [
-  { slug: 'rosh-hashanah',  name: 'Rosh Hashanah',              hebrew: 'ראש השנה',  order: 1 },
-  { slug: 'sukkot',         name: 'Sukkot',                     hebrew: 'סוכות',     order: 2 },
-  { slug: 'chanukah',       name: 'Chanukah',                   hebrew: 'חנוכה',     order: 3 },
-  { slug: 'purim',          name: 'Purim',                      hebrew: 'פורים',     order: 4 },
-  { slug: 'pesach',         name: 'Pesach',                     hebrew: 'פסח',       order: 5 },
-  { slug: 'shavuot',        name: 'Shavuot',                    hebrew: 'שבועות',    order: 6 },
-  { slug: 'simchas',        name: 'Simchas & Celebrations',     hebrew: null,        order: 7 },
-  { slug: 'fathers-day',    name: "Father's Day",               hebrew: null,        order: 8 },
-  { slug: 'mothers-day',    name: "Mother's Day",               hebrew: null,        order: 9 },
-  { slug: 'valentines',     name: "Valentine's Day",            hebrew: null,        order: 10 },
-  { slug: 'graduation',     name: 'Graduation',                 hebrew: null,        order: 11 },
+  { slug: 'rosh-hashanah',  name: 'Rosh Hashanah',   hebrew: 'ראש השנה',     order: 1 },
+  { slug: 'sukkot',         name: 'Sukkot',          hebrew: 'סוכות',        order: 2 },
+  { slug: 'yom-kippur',     name: 'Yom Kippur',      hebrew: 'יום כיפור',    order: 3 },
+  { slug: 'simchat-torah',  name: 'Simchat Torah',   hebrew: 'שמחת תורה',    order: 4 },
+  { slug: 'hanukkah',       name: 'Hanukkah',        hebrew: 'חנוכה',        order: 5 },
+  { slug: 'purim',          name: 'Purim',           hebrew: 'פורים',        order: 6 },
 ] as const;
 export type OccasionSlug = typeof HOLIDAY_OCCASIONS[number]['slug'];
 
