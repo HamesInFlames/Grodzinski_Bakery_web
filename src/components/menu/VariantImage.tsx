@@ -51,6 +51,13 @@ export default function VariantImage({
             exit="exit"
             transition={{ duration: 0.4 }}
           >
+            <img
+              src="/images/home/logo_trensparent.png"
+              alt=""
+              aria-hidden="true"
+              className="variant-image__brand"
+              draggable={false}
+            />
             <span>{placeholderText ?? alt}</span>
           </motion.div>
         ) : (

@@ -1225,11 +1225,21 @@ textarea:focus-visible {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  gap: 20px;
+  padding: 32px;
   background: var(--color-bg-elevated);
   text-align: center;
+}
+
+.variant-image__brand {
+  width: 70%;
+  max-width: 220px;
+  height: auto;
+  opacity: 0.5;
+  object-fit: contain;
 }
 
 .variant-image__placeholder span {
@@ -1310,6 +1320,17 @@ textarea:focus-visible {
   .variant-configurator {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  /* Single-column on mobile: centre the portrait image and enlarge it
+     so products read clearly on phones (older-demographic friendly).
+     The grid auto-row pins the block size, so we drive the HEIGHT and let
+     the 4/5 aspect ratio derive the width (capped to stay within column). */
+  .variant-image {
+    justify-self: center;
+    width: auto;
+    height: min(58vh, 420px);
+    max-width: 100%;
   }
 }
 
@@ -1458,9 +1479,11 @@ textarea:focus-visible {
 
 /* ─── GROUP PAGE ────────────────────────────────────── */
 .group-page {
+  width: 100%;
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding) 80px;
+  box-sizing: border-box;
 }
 
 .group-page--empty {
@@ -1554,4 +1577,203 @@ textarea:focus-visible {
 @media (max-width: 768px) {
   .group-page__title { font-size: 2rem; }
   .group-page__header { padding: 24px 0 16px; margin-bottom: 24px; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   HUB RECONCILIATION — align Menu/Holidays hubs with their text-only markup.
+   The hub rules above were authored for an image-led layout the live JSX never
+   renders, which left the hero laid out as a flex row and the cards with a tall
+   empty image region (title pinned to the bottom). These overrides restore a
+   compact, centered hero and content-sized cards.
+═══════════════════════════════════════════════════════════════════════════ */
+/* Image-led hero banner — mirrors the Catering hero treatment, kept as a
+   contained, rounded banner with animated text and clear separation from
+   the card grid below. */
+/* The hero renders as a direct child of the full-width .menu-layout /
+   .holidays-layout (outside the padded .menuhub / .holidays-hub wrapper),
+   so it spans the full content width edge-to-edge like the Catering hero —
+   no 100vw trick needed, which avoids the scrollbar-width overhang. */
+.menuhub__hero,
+.holidays-hub__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 380px;
+  margin: 0 0 56px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.menuhub__hero-bg,
+.holidays-hub__hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.menuhub__hero-image,
+.holidays-hub__hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menuhub__hero-overlay,
+.holidays-hub__hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(61, 42, 34, 0.5) 0%,
+    rgba(61, 42, 34, 0.78) 100%
+  );
+}
+
+.menuhub__hero-inner,
+.holidays-hub__hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 64px 32px;
+}
+
+.menuhub__hero h1,
+.holidays-hub__hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.menuhub__hero p,
+.holidays-hub__hero p {
+  font-size: 1.0625rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 560px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.menuhub__hero .menuhub__trust,
+.holidays-hub__hero .menuhub__trust {
+  margin-top: 24px;
+}
+
+.menuhub__hero .menuhub__trust-badge,
+.holidays-hub__hero .menuhub__trust-badge {
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 6px 14px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+/* Breathing room above the first row of cards so the hero never touches them. */
+.menuhub__grid,
+.holidays-hub__grid {
+  margin-top: 8px;
+}
+
+.menuhub__card,
+.holidays-hub__card {
+  min-height: 0;
+  justify-content: flex-start;
+  gap: 6px;
+  padding: 22px;
+}
+
+/* Restore the highlighted Shabbat card: the generic .menuhub__card rule above
+   overrides its dark background, which left light text on a light card (blank).
+   Re-assert the dark fill + light text here so it wins the cascade. */
+.menuhub__card--shabbat {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.menuhub__card--shabbat h2,
+.menuhub__card--shabbat .menuhub__card-count {
+  color: var(--color-bg-elevated);
+}
+
+@media (max-width: 480px) {
+  .menuhub__hero,
+  .holidays-hub__hero {
+    min-height: 280px;
+    margin-bottom: 40px;
+  }
+
+  .menuhub__hero-inner,
+  .holidays-hub__hero-inner { padding: 44px 20px; }
+
+  .menuhub__card,
+  .holidays-hub__card { padding: 18px; }
+}
+
+/* ─── EMPTY HOLIDAY STATE (no products yet) ─────────────
+   On-brand card for holidays awaiting their seasonal menu
+   (e.g. Yom Kippur, Simchat Torah) instead of a sparse note. */
+.group-page__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 520px;
+  margin: 8px auto 0;
+  padding: 56px 32px;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.group-page__empty-brand {
+  width: 200px;
+  max-width: 70%;
+  height: auto;
+  opacity: 0.5;
+  margin-bottom: 4px;
+}
+
+.group-page__empty-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+.group-page__empty-text {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--color-ink-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.group-page__empty-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-bg-elevated);
+  background: var(--color-primary);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background-color 150ms ease-out;
+}
+
+.group-page__empty-cta:hover {
+  background: var(--primary-hover);
 }

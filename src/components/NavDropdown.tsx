@@ -49,17 +49,18 @@ export default function NavDropdown({
     scheduleClose();
   };
 
-  const handleToggle = () => {
-    setIsOpen((v) => !v);
+  // Open on focus so keyboard users get the same disclosure as hover.
+  const handleFocus = () => {
+    clearCloseTimer();
+    setIsOpen(true);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
+  const handleBlur = () => {
+    scheduleClose();
+  };
+
+  const handleTriggerKeyDown = (e: React.KeyboardEvent) => {
     switch (e.key) {
-      case 'Enter':
-      case ' ':
-        e.preventDefault();
-        setIsOpen((v) => !v);
-        break;
       case 'ArrowDown':
         e.preventDefault();
         setIsOpen(true);
@@ -111,14 +112,22 @@ export default function NavDropdown({
       className={`nav-dropdown ${isOpen ? 'nav-dropdown--open' : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     >
-      <button
-        type="button"
-        className={`navbar__link nav-dropdown__trigger ${isActive ? 'navbar__link--active' : ''}`}
+      <NavLink
+        to={basePath}
+        end
+        className={({ isActive: linkActive }) =>
+          `navbar__link nav-dropdown__trigger ${linkActive || isActive ? 'navbar__link--active' : ''}`
+        }
         aria-haspopup="true"
         aria-expanded={isOpen}
-        onClick={handleToggle}
-        onKeyDown={handleKeyDown}
+        onClick={() => {
+          setIsOpen(false);
+          onNavigate?.();
+        }}
+        onKeyDown={handleTriggerKeyDown}
       >
         {label}
         <ChevronDown
@@ -126,7 +135,7 @@ export default function NavDropdown({
           className={`nav-dropdown__chevron ${isOpen ? 'nav-dropdown__chevron--open' : ''}`}
           aria-hidden="true"
         />
-      </button>
+      </NavLink>
 
       {isOpen && (
         <div className="nav-dropdown__panel" role="menu" aria-label={label}>

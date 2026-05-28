@@ -66,15 +66,33 @@ export default function HolidayGroupPage() {
 
       {categories.length === 0 ? (
         <div className="group-page__empty">
-          <p>Items for {group.name} will be available closer to the holiday.</p>
-          <p>Please call us at <a href="tel:9058821350">(905) 882-1350</a> for pre-orders.</p>
+          <img
+            src="/images/home/logo_trensparent.png"
+            alt=""
+            aria-hidden="true"
+            className="group-page__empty-brand"
+          />
+          <h2 className="group-page__empty-title">Pre-orders open soon</h2>
+          <p className="group-page__empty-text">
+            Our {group.name} selection is baked fresh closer to the holiday.
+            Call us to arrange a pre-order and we&rsquo;ll make sure you&rsquo;re
+            taken care of.
+          </p>
+          <a href="tel:9058821350" className="group-page__empty-cta">
+            Call (905) 882-1350
+          </a>
         </div>
       ) : (
         <div className="group-page__categories">
           {categories.map((cat) => {
             const items = getItemsByCategory(cat.slug, group.slug);
             return (
-              <CategorySection key={cat.slug} category={cat} items={items} />
+              <CategorySection
+                key={cat.slug}
+                category={cat}
+                items={items}
+                showHeading={cat.slug !== group.slug}
+              />
             );
           })}
         </div>

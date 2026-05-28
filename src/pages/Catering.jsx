@@ -7,37 +7,37 @@ export default function Catering() {
       title: "Breakfast & Brunch Platters",
       description: "Start your morning event with our fresh breakfast selection: assorted bagels with cream cheese and spreads, danishes, muffins, croissants, and fresh fruit platters. Add yogurt parfaits or mini quiches for a complete spread.",
       idealFor: "morning meetings, brunch events, office gatherings",
-      image: "/images/home/thumbnail_assorted_bagles_creamcheese.jpg"
+      image: "/images/home/breakfast_brunch_bagels.png"
     },
     {
       title: "Sandwich & Wrap Platters",
       description: "Freshly prepared sandwiches and wraps made with our signature breads. Choose from a variety of fillings: deli meats, vegetarian, dairy, or vegan options. All sandwiches include fresh vegetables and are cut for easy serving.",
       idealFor: "lunch meetings, picnics, casual events",
-      image: "/images/home/thumbnail_assorted_wraps.jpg"
+      image: "/images/home/sandwich_wrap_platter.png"
     },
     {
       title: "Baked Goods & Cookie Trays",
       description: "Impress your guests with beautifully arranged trays of our finest cookies, rugelach, brownies, and mini pastries. Perfect for dessert tables, afternoon gatherings, or as a sweet finish to any meal.",
       idealFor: "dessert tables, celebrations, office parties",
-      image: "/images/home/thumbnail_large_cookie_platter.jpg"
+      image: "/images/home/baked_goods_cookie_tray.png"
     },
     {
       title: "Challah & Bread Baskets",
       description: "Beautifully arranged baskets featuring our famous challahs, specialty loaves, dinner rolls, and artisan breads. Perfect for Shabbat dinners, holiday meals, or any gathering where fresh bread is a must.",
       idealFor: "Shabbat dinners, holiday tables, family gatherings",
-      image: "/images/home/thumbnail_challahs.jpg"
+      image: "/images/home/challah_bread_basket.png"
     },
     {
       title: "Fruit & Vegetable Platters",
       description: "Fresh, colorful fruit platters and vegetable crudité arrangements with dips. A healthy and refreshing addition to any event, beautifully presented and ready to serve.",
       idealFor: "health-conscious events, buffets, summer gatherings",
-      image: "/images/home/thumbnail_fruit_platter.jpg"
+      image: "/images/home/fruit_vegetable_platter.png"
     },
     {
       title: "Custom Event Packages",
       description: "Planning a large event or need something specific? We'll work with you to create a custom catering package that fits your needs, budget, and dietary requirements. Just give us a call to discuss the details.",
       idealFor: "weddings, bar/bat mitzvahs, corporate events",
-      image: "/images/home/thumbnail_gift_basket.jpg"
+      featured: true
     }
   ];
 
@@ -84,15 +84,17 @@ export default function Catering() {
           <StaggerContainer className="catering-grid" staggerDelay={0.1}>
             {cateringOptions.map((option, index) => (
               <StaggerItem key={index}>
-                <div className="catering-card">
-                  <div className="catering-card__image">
-                    <img
-                      src={option.image}
-                      alt={option.title}
-                      loading="lazy"
-                      className="catering-card__img"
-                    />
-                  </div>
+                <div className={`catering-card ${option.featured ? "catering-card--feature" : ""}`}>
+                  {!option.featured && (
+                    <div className="catering-card__image">
+                      <img
+                        src={option.image}
+                        alt={option.title}
+                        loading="lazy"
+                        className="catering-card__img"
+                      />
+                    </div>
+                  )}
                   <div className="catering-card__content">
                     <h3>{option.title}</h3>
                     <p className="catering-card__description">{option.description}</p>
@@ -138,7 +140,7 @@ export default function Catering() {
             <ScrollReveal direction="right" delay={0.2}>
               <div className="catering-order-info__image">
                 <img
-                  src="/images/home/thumbnail_large_cookie_danish_platter.jpg"
+                  src="/images/home/large_cookie_danish_platter.png"
                   alt="Beautiful catering platter"
                   loading="lazy"
                   className="catering-order-info__img"

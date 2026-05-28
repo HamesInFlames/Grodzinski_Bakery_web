@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getGroupsBySection, getItemsByGroup } from '@/data/products';
 import { ShieldCheck, Award } from 'lucide-react';
+import { FadeIn } from '@/components/AnimationWrappers';
 
 export default function MenuHub() {
   const regularGroups = getGroupsBySection('regular').sort((a, b) => a.order - b.order);
@@ -21,25 +22,42 @@ export default function MenuHub() {
   }, []);
 
   return (
-    <div className="menuhub">
+    <>
       <section className="menuhub__hero">
-        <h1>Our Menu</h1>
-        <p>
-          {allGroups.length} categories &middot; {totalItems}+ items &middot; 100% nut-free
-        </p>
-        <div className="menuhub__trust">
-          <span className="menuhub__trust-badge">
-            <Award size={16} aria-hidden="true" />
-            COR-certified kosher
-          </span>
-          <span className="menuhub__trust-badge">
-            <ShieldCheck size={16} aria-hidden="true" />
-            Toronto&rsquo;s heritage kosher bakery
-          </span>
+        <div className="menuhub__hero-bg">
+          <img
+            src="/images/home/thumbnail_slider (3).png"
+            alt="An assortment of freshly baked goods at Grodzinski Bakery"
+            className="menuhub__hero-image"
+          />
+          <div className="menuhub__hero-overlay" />
+        </div>
+        <div className="menuhub__hero-inner">
+          <FadeIn delay={0.1}>
+            <h1>Our Menu</h1>
+          </FadeIn>
+          <FadeIn delay={0.25}>
+            <p>
+              {allGroups.length} categories &middot; {totalItems}+ items &middot; 100% nut-free
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <div className="menuhub__trust">
+              <span className="menuhub__trust-badge">
+                <Award size={16} aria-hidden="true" />
+                COR-certified kosher
+              </span>
+              <span className="menuhub__trust-badge">
+                <ShieldCheck size={16} aria-hidden="true" />
+                Toronto&rsquo;s heritage kosher bakery
+              </span>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
-      <div className="menuhub__grid">
+      <div className="menuhub">
+        <div className="menuhub__grid">
         {regularGroups.map((group) => {
           const itemCount = getItemsByGroup(group.slug).length;
           return (
@@ -67,7 +85,8 @@ export default function MenuHub() {
             </Link>
           );
         })}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -351,7 +351,7 @@ main {
 
 .navbar {
   position: fixed;
-  top: 0;
+  top: 32px;
   left: 0;
   right: 0;
   z-index: 100;
@@ -686,8 +686,8 @@ main {
 
 .hero--heritage {
   position: relative;
-  background: var(--color-ink);
-  padding: 128px 0 96px;
+  background-color: var(--color-ink);
+  padding: 88px 0 96px;
   overflow: hidden;
 }
 
@@ -777,7 +777,12 @@ main {
   min-height: 0;
   display: block;
   align-items: initial;
-  background: var(--color-ink);
+  background-color: var(--color-ink);
+  background-image:
+    linear-gradient(rgba(31, 20, 16, 0.7), rgba(31, 20, 16, 0.82)),
+    url('/images/home/thumbnail_slider (4).png');
+  background-size: cover;
+  background-position: center;
 }
 
 .hero__bg {
@@ -851,7 +856,7 @@ main {
 
 @media (max-width: 768px) {
   .hero--heritage {
-    padding: 96px 0 72px;
+    padding: 64px 0 72px;
   }
   .hero__title--heritage {
     font-size: 2.5rem;
@@ -1838,6 +1843,33 @@ a.footer__link:hover { opacity: 0.72; }
 
 .catering-card__ideal strong {
   color: var(--text-secondary);
+}
+
+/* Featured / no-image card: dark contrast block, title + description only */
+.catering-card--feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.catering-card--feature .catering-card__content {
+  padding: 32px 28px;
+}
+
+.catering-card--feature .catering-card__content h3,
+.catering-card--feature .catering-card__description {
+  color: var(--color-bg-elevated);
+}
+
+.catering-card--feature .catering-card__ideal {
+  color: rgba(255, 255, 255, 0.78);
+  border-top-color: rgba(255, 255, 255, 0.22);
+}
+
+.catering-card--feature .catering-card__ideal strong {
+  color: var(--color-bg-elevated);
 }
 
 /* How to Order */
@@ -4161,7 +4193,11 @@ html, body {
   background: var(--color-primary);
   height: 32px;
   overflow: hidden;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
 }
 
 .kosher-banner__track {
@@ -4218,6 +4254,7 @@ html, body {
   .kosher-banner { height: 28px; }
   .kosher-banner__item { font-size: 11px; padding: 0 14px; }
   .kosher-banner__badge-img { height: 15px; }
+  .navbar { top: 28px; }
   main { padding-top: 108px; }
 }
 
@@ -4316,7 +4353,7 @@ html, body {
 
 @media (max-width: 768px) {
   .variant-image {
-    max-height: 300px;
+    max-height: 440px;
   }
 }
 
@@ -4380,11 +4417,6 @@ html, body {
 /* Category section */
 .category-section {
   padding: 32px 0;
-  border-bottom: 1px solid var(--color-rule);
-}
-
-.category-section:last-child {
-  border-bottom: none;
 }
 
 .category-section__heading {

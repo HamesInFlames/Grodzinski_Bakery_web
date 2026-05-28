@@ -5,6 +5,7 @@ import DietaryTag from './DietaryTag';
 interface CategorySectionProps {
   category: MenuCategory;
   items: MenuItem[];
+  showHeading?: boolean;
 }
 
 function inferDietary(items: MenuItem[]): 'pareve' | 'dairy' | null {
@@ -28,12 +29,15 @@ function inferDietary(items: MenuItem[]): 'pareve' | 'dairy' | null {
 export default function CategorySection({
   category,
   items,
+  showHeading = true,
 }: CategorySectionProps) {
   const dietaryLabel = inferDietary(items);
 
   return (
     <section className="category-section" id={`category-${category.slug}`}>
-      <h3 className="category-section__heading">{category.name}</h3>
+      {showHeading && (
+        <h3 className="category-section__heading">{category.name}</h3>
+      )}
       <VariantConfigurator
         items={items}
         fallbackImage={category.fallbackImage}
