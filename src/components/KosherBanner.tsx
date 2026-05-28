@@ -7,6 +7,7 @@ interface Badge {
 
 const BADGES: Badge[] = [
   { label: 'COR Certified Kosher', image: '/images/certifications/cor-kosher.png' },
+  { label: 'Nut Free' },
   { label: 'Pas Yisroel' },
   { label: 'Chalav Yisroel' },
   { label: 'Dairy Chalav Yisroel' },
