@@ -14,8 +14,9 @@
 // The access key is PUBLIC by design — it only permits sending to the inbox it
 // was registered for, so it is safe to commit and ship in the frontend bundle.
 
+// Registered to info@grodzbakery.com — submissions are emailed there.
 const ACCESS_KEY =
-  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "PASTE-YOUR-WEB3FORMS-ACCESS-KEY-HERE";
+  import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "317a2563-3578-4ae4-bc7a-1e9736073d61";
 
 const WEB3FORMS_ENDPOINT = "https://api.web3forms.com/submit";
 
