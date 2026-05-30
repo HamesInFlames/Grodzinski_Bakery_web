@@ -6,6 +6,8 @@ import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../componen
 import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, Store, ShoppingCart, Handshake } from "lucide-react";
 
 function VisitUs() {
+  const todayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+
   const handleContactSubmit = async (formData) => {
     await sendContactMessage(formData, {
       subject: "New enquiry from the Grodzinski Bakery website (Visit Us)",
@@ -55,10 +57,10 @@ function VisitUs() {
         </div>
       </section>
 
-      {/* MAP + INFO */}
+      {/* MAP (full-width) */}
       <section className="section">
         <div className="section__inner">
-          <ScrollReveal>
+          <FadeIn>
             <div className="visit-map visit-map--full">
               <GoogleMap
                 address={bakeryInfo.address}
@@ -69,72 +71,103 @@ function VisitUs() {
                 placeName={bakeryInfo.name}
               />
             </div>
-          </ScrollReveal>
+          </FadeIn>
 
-          <ScrollReveal delay={0.1}>
-            <div className="visit-details">
-              <div className="visit-details__card">
-                <div className="visit-details__icon"><MapPin size={22} /></div>
-                <strong>Address</strong>
-                <p>{bakeryInfo.address}</p>
-              </div>
+          {/* Info + Form two-column below map */}
+          <div className="visit-two-col">
+            <div className="visit-two-col__left">
+              <FadeIn delay={0.1} className="visit-two-col__left-inner">
+                <div className="visit-details visit-details--stacked">
+                  <div className="visit-details__card">
+                    <div className="visit-details__icon"><MapPin size={22} /></div>
+                    <strong>Address</strong>
+                    <p>{bakeryInfo.address}</p>
+                  </div>
 
-              <div className="visit-details__card">
-                <div className="visit-details__icon"><Phone size={22} /></div>
-                <strong>Phone</strong>
-                <p>
-                  <a href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`} className="visit-link">
-                    {bakeryInfo.phone}
-                  </a>
-                </p>
-              </div>
+                  <div className="visit-details__card">
+                    <div className="visit-details__icon"><Phone size={22} /></div>
+                    <strong>Phone</strong>
+                    <p>
+                      <a href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`} className="visit-link">
+                        {bakeryInfo.phone}
+                      </a>
+                    </p>
+                  </div>
 
-              <div className="visit-details__card">
-                <div className="visit-details__icon"><Mail size={22} /></div>
-                <strong>Email</strong>
-                <p>
-                  <a href={`mailto:${bakeryInfo.email}`} className="visit-link">
-                    {bakeryInfo.email}
-                  </a>
-                </p>
-              </div>
+                  <div className="visit-details__card">
+                    <div className="visit-details__icon"><Mail size={22} /></div>
+                    <strong>Email</strong>
+                    <p>
+                      <a href={`mailto:${bakeryInfo.email}`} className="visit-link">
+                        {bakeryInfo.email}
+                      </a>
+                    </p>
+                  </div>
 
-              <div className="visit-details__card visit-details__card--hours">
-                <div className="visit-details__icon"><Clock size={22} /></div>
-                <strong>Hours</strong>
-                <div className="visit-hours-grid">
-                  {bakeryInfo.hours.map(({ day, time }) => (
-                    <div
-                      key={day}
-                      className={`visit-hours-row ${day === 'Saturday' ? 'visit-hours-row--closed' : ''}`}
-                    >
-                      <span className="visit-hours-day">{day}</span>
-                      <span className="visit-hours-time">{time}</span>
+                  <div className="visit-details__card visit-details__card--hours">
+                    <div className="visit-hours-head">
+                      <div className="visit-details__icon"><Clock size={22} /></div>
+                      <strong>Hours</strong>
                     </div>
-                  ))}
+                    <div className="visit-hours-grid">
+                      {bakeryInfo.hours.map(({ day, time }) => {
+                        const isClosed = time.toLowerCase() === 'closed';
+                        const isToday = day === todayName;
+                        return (
+                          <div
+                            key={day}
+                            className={`visit-hours-row ${isClosed ? 'visit-hours-row--closed' : ''} ${isToday ? 'visit-hours-row--today' : ''}`}
+                          >
+                            <span className="visit-hours-day">
+                              {day}
+                              {isToday && <span className="visit-hours-today-tag">Today</span>}
+                            </span>
+                            <span className="visit-hours-time">{time}</span>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </ScrollReveal>
 
-          <ScrollReveal delay={0.15}>
-            <div className="visit-actions visit-actions--centered">
-              <a
-                href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
-                className="visit-action-btn visit-action-btn--primary"
-              >
-                <Phone size={16} /> Call Now
-              </a>
-              <a
-                href={`https://www.google.com/maps/place/?q=place_id:${bakeryInfo.placeId}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="visit-action-btn visit-action-btn--secondary"
-              >
-                <Map size={16} /> Get Directions
-              </a>
+                <div className="visit-actions visit-actions--stacked">
+                  <a
+                    href={`tel:${bakeryInfo.phone.replace(/[^0-9]/g, '')}`}
+                    className="visit-action-btn visit-action-btn--primary"
+                  >
+                    <Phone size={16} /> Call Now
+                  </a>
+                  <a
+                    href={`https://www.google.com/maps/place/?q=place_id:${bakeryInfo.placeId}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="visit-action-btn visit-action-btn--secondary"
+                  >
+                    <Map size={16} /> Get Directions
+                  </a>
+                </div>
+              </FadeIn>
             </div>
-          </ScrollReveal>
+
+            <div className="visit-two-col__right">
+              <FadeIn delay={0.15}>
+                <div className="visit-form-panel">
+                  <h2 className="visit-form-panel__title">Send Us a Message</h2>
+                  <p className="visit-form-panel__subtitle">
+                    Have a question about an order, our products, or a special
+                    request? Fill out the form below and we'll get back to you.
+                  </p>
+                  <ContactForm
+                    onSubmit={handleContactSubmit}
+                    showExtendedFields={true}
+                    submitButtonText="Send Message"
+                    successMessage="Thank you for contacting us. A team member will follow up shortly."
+                    title=""
+                  />
+                </div>
+              </FadeIn>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -237,33 +270,6 @@ function VisitUs() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-        </div>
-      </section>
-
-      {/* CONTACT FORM */}
-      <section className="section section--alt">
-        <div className="section__inner">
-          <ScrollReveal>
-            <div className="section__header">
-              <h2 className="section__title">Send Us a Message</h2>
-              <p className="section__subtitle">
-                Have a question about an order, our products, or a special
-                request? Fill out the form below and we'll get back to you.
-              </p>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.1}>
-            <div className="home-contact-form">
-              <ContactForm
-                onSubmit={handleContactSubmit}
-                showExtendedFields={true}
-                submitButtonText="Send Message"
-                successMessage="Thank you for contacting us. A team member will follow up shortly."
-                title=""
-              />
-            </div>
-          </ScrollReveal>
         </div>
       </section>
     </div>
