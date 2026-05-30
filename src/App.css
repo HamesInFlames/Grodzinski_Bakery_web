@@ -2327,12 +2327,206 @@ a.footer__link:hover { opacity: 0.72; }
   margin-bottom: 32px;
 }
 
+/* Two-column layout: info left, form right */
+.visit-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 40px;
+  align-items: stretch;
+  margin-bottom: 40px;
+}
+
+.visit-two-col__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.visit-two-col__left-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Action buttons stacked in the left column, anchored to the bottom
+   so the column fills the form's height with no empty gap */
+.visit-actions--stacked {
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.visit-actions--stacked .visit-action-btn {
+  flex: 0 0 auto;
+}
+
+.visit-form-panel {
+  background: var(--bg-card, #fff);
+  border: 1px solid var(--border-light, #e8e0d4);
+  border-radius: var(--radius-lg, 12px);
+  padding: 36px 32px;
+}
+
+.visit-form-panel__title {
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin: 0 0 10px;
+}
+
+.visit-form-panel__subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0 0 28px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-light, #e8e0d4);
+}
+
+@media (max-width: 768px) {
+  .visit-form-panel {
+    padding: 28px 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .visit-two-col {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .visit-two-col__right {
+    position: static;
+  }
+}
+
 /* Details grid: 3 cards + hours card */
 .visit-details {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 32px;
+}
+
+/* Stacked variant for two-col layout */
+.visit-details.visit-details--stacked {
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--border-light, #e8e0d4);
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  background: var(--bg-card, #fff);
+}
+
+.visit-details--stacked .visit-details__card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  border: none;
+  border-bottom: 1px solid var(--border-light, #e8e0d4);
+  border-radius: 0;
+  background: transparent;
+}
+
+.visit-details--stacked .visit-details__card:last-child {
+  border-bottom: none;
+}
+
+.visit-details--stacked .visit-details__card .visit-details__icon {
+  margin-bottom: 0;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+}
+
+.visit-details--stacked .visit-details__card strong {
+  margin-bottom: 2px;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted, #888);
+}
+
+.visit-details--stacked .visit-details__card p {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.visit-details--stacked .visit-details__card--hours {
+  grid-column: auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 14px;
+  padding: 20px 24px 24px;
+}
+
+.visit-details--stacked .visit-details__card--hours .visit-details__icon {
+  margin-bottom: 0;
+}
+
+/* Hours header row (icon + label inline) */
+.visit-details--stacked .visit-details__card--hours .visit-hours-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Clean hours list inside the stacked info card */
+.visit-details--stacked .visit-hours-grid {
+  gap: 0;
+  margin-top: 0;
+}
+
+.visit-details--stacked .visit-hours-row {
+  background: transparent;
+  border-radius: 0;
+  padding: 9px 0;
+  gap: 24px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.visit-details--stacked .visit-hours-row:last-child {
+  border-bottom: none;
+}
+
+.visit-details--stacked .visit-hours-row--closed {
+  background: transparent;
+}
+
+.visit-details--stacked .visit-hours-time {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.visit-details--stacked .visit-hours-row--today {
+  font-weight: 600;
+}
+
+.visit-details--stacked .visit-hours-row--today .visit-hours-day,
+.visit-details--stacked .visit-hours-row--today .visit-hours-time {
+  color: var(--color-gold-text);
+  font-weight: 600;
+}
+
+.visit-hours-day {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.visit-hours-today-tag {
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 2px 8px;
+  border-radius: 999px;
 }
 
 .visit-details__card {
@@ -2812,35 +3006,35 @@ a.footer__link:hover { opacity: 0.72; }
   color: #991B1B;
 }
 
-/* Contact Form Submit Button - Distinct Accent Color */
+/* Contact Form Submit Button - Heritage gold accent */
 .contact-form .btn--primary {
-  background: #2563EB;
-  border-color: #2563EB;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
   color: #FFFFFF;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .contact-form .btn--primary:hover {
-  background: #1D4ED8;
-  border-color: #1D4ED8;
+  background: var(--color-amber);
+  border-color: var(--color-amber);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 8px 22px rgba(184, 134, 11, 0.28);
 }
 
 .contact-form .btn--primary:focus {
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.4), var(--shadow-md);
+  box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.35), var(--shadow-md);
 }
 
 .contact-form .btn--primary:active {
-  background: #1E40AF;
-  border-color: #1E40AF;
+  background: var(--color-gold-text);
+  border-color: var(--color-gold-text);
   transform: translateY(0);
 }
 
 .contact-form .btn--primary:disabled {
-  background: #93C5FD;
-  border-color: #93C5FD;
+  background: var(--brown-400);
+  border-color: var(--brown-400);
   color: #FFFFFF;
   cursor: not-allowed;
   transform: none;
