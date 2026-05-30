@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://grodzinskibakery.com/sitemap.xml
+Sitemap: https://grodzinskinorthbakery.com/sitemap.xml
