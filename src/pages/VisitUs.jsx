@@ -4,6 +4,7 @@ import { sendContactMessage } from "../lib/sendContactMessage";
 import GoogleMap from "../components/GoogleMap";
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, Store, ShoppingCart, Handshake } from "lucide-react";
+import { BAKERY_GOOGLE_MAPS_URL, BAKERY_PLACE_ID, BAKERY_COORDINATES } from "@/data/bakeryLocation";
 
 function VisitUs() {
   const todayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
@@ -19,8 +20,8 @@ function VisitUs() {
     address: "1118 Centre St #3, Thornhill, ON L4J 7R9",
     phone: "(905) 882-1350",
     email: "info@grodzbakery.com",
-    placeId: "0x882b2c25a865754b:0xdd3938687e717ea9",
-    coordinates: { lat: 43.8089597, lng: -79.4622583 },
+    placeId: BAKERY_PLACE_ID,
+    coordinates: BAKERY_COORDINATES,
     hours: [
       { day: "Sunday", time: "6:00 AM – 3:00 PM" },
       { day: "Monday", time: "6:00 AM – 4:00 PM" },
@@ -138,7 +139,7 @@ function VisitUs() {
                     <Phone size={16} /> Call Now
                   </a>
                   <a
-                    href={`https://www.google.com/maps/place/?q=place_id:${bakeryInfo.placeId}`}
+                    href={BAKERY_GOOGLE_MAPS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="visit-action-btn visit-action-btn--secondary"

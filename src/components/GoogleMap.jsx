@@ -1,5 +1,7 @@
 // src/components/GoogleMap.jsx
 
+import { BAKERY_GOOGLE_MAPS_URL, BAKERY_PLACE_ID } from '@/data/bakeryLocation';
+
 export default function GoogleMap({
   address, 
   title = "Location Map",
@@ -16,7 +18,9 @@ export default function GoogleMap({
   if (placeId) {
     // Use Place ID for most accurate location
     embedUrl = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d${coordinates?.lng || -79.4622583}!3d${coordinates?.lat || 43.8089597}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s${placeId}!2s${encodeURIComponent(placeName || address)}!5e0!3m2!1sen!2sca!4v1706000000000!5m2!1sen!2sca`;
-    mapsLink = `https://www.google.com/maps/place/?q=place_id:${placeId}`;
+    mapsLink = placeId === BAKERY_PLACE_ID
+      ? BAKERY_GOOGLE_MAPS_URL
+      : `https://www.google.com/maps/place/?q=place_id:${placeId}`;
   } else if (coordinates) {
     // Use coordinates
     embedUrl = `https://www.google.com/maps?q=${coordinates.lat},${coordinates.lng}&output=embed`;
