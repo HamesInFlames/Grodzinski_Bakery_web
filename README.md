@@ -112,9 +112,9 @@ add them under the service's Variables tab.
    port or a separate static-host service — pick whichever your Railway
    project is configured for. (If running an Express server for the
    contact form, point Railway at that entry point instead.)
-4. Domain: `grodzinskibakery.com` (or `grodzinskinorthbakery.com` for the
-   north location's site). Update `index.html` canonical URL and
-   `sitemap.xml` accordingly.
+4. Domain: `grodzinskinorthbakery.com` (canonical, shown in the address bar).
+   `grodzbakery.com` 301-redirects to it at the DNS layer (Cloudflare). The
+   `index.html` canonical/OG tags and `sitemap.xml` are already set to it.
 
 ## Production checklist (favicon, etc.)
 
