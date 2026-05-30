@@ -43,7 +43,7 @@ export default function Footer() {
               <li>Sun 6&ndash;3</li>
               <li>Mon&ndash;Wed 6&ndash;4</li>
               <li>Thu 6&ndash;5</li>
-              <li>Fri 6&ndash;3</li>
+              <li>Fri 6&ndash;4</li>
               <li>Sat Closed</li>
             </ul>
           </div>
@@ -53,7 +53,7 @@ export default function Footer() {
             <h4 className="footer__title">Contact</h4>
             <ul className="footer__links">
               <li><a href="tel:9058821350" className="footer__link">(905) 882-1350</a></li>
-              <li><a href="mailto:info@grodzinskibakery.com" className="footer__link">info@grodzinskibakery.com</a></li>
+              <li><a href="mailto:info@grodzbakery.com" className="footer__link">info@grodzbakery.com</a></li>
               <li><span className="footer__link">1118 Centre St #3</span></li>
               <li><span className="footer__link">Thornhill, ON L4J 7R9</span></li>
             </ul>

@@ -6,7 +6,8 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "../components/AnimationWrappers";
-import { VideoBackground } from "../components/VideoBackground";
+import { PhotoSlideshow } from "../components/PhotoSlideshow";
+import { SHOWCASE_PHOTOS } from "../data/slideshowPhotos";
 import { GalleryCarousel } from "../components/gallery/GalleryCarousel";
 // TODO: Re-enable ContactForm once backend endpoint is wired up
 // import ContactForm from "../components/ContactForm";
@@ -190,12 +191,7 @@ export default function Home() {
         <div className="about-story__inner">
           <ScrollReveal direction="right">
             <div className="about-story__media">
-              <VideoBackground
-                videoSrc="/videos/showcase.mp4"
-                posterSrc="/videos/showcase-poster.jpg"
-                alt="Grodzinski Bakery"
-                objectFit="cover"
-              />
+              <PhotoSlideshow photos={SHOWCASE_PHOTOS} interval={5000} />
             </div>
           </ScrollReveal>
           <ScrollReveal direction="left" delay={0.1}>
@@ -267,7 +263,7 @@ export default function Home() {
                       <span>Tue</span><span>6AM – 4PM</span>
                       <span>Wed</span><span>6AM – 4PM</span>
                       <span>Thu</span><span>6AM – 5PM</span>
-                      <span>Fri</span><span>6AM – 3PM</span>
+                      <span>Fri</span><span>6AM – 4PM</span>
                       <span className="contact-card__closed">Sat</span>
                       <span className="contact-card__closed">Closed</span>
                     </div>

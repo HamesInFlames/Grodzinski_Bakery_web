@@ -1,5 +1,10 @@
 import { ScrollReveal, FadeIn } from "../components/AnimationWrappers";
-import { VideoBackground } from "../components/VideoBackground";
+import { PhotoSlideshow } from "../components/PhotoSlideshow";
+import {
+  HERITAGE_PHOTOS,
+  CELEBRATION_PHOTOS,
+  FAMILY_PHOTOS,
+} from "../data/slideshowPhotos";
 
 function About() {
   return (
@@ -31,12 +36,7 @@ function About() {
         <div className="about-story__inner">
           <ScrollReveal direction="left">
             <div className="about-story__media">
-              <VideoBackground
-                videoSrc="/videos/challahs.mp4"
-                posterSrc="/videos/challahs-poster.jpg"
-                alt="Fresh challahs at Grodzinski Bakery"
-                objectFit="cover"
-              />
+              <PhotoSlideshow photos={HERITAGE_PHOTOS} interval={5000} />
             </div>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={0.1}>
@@ -64,12 +64,7 @@ function About() {
         <div className="about-story__inner">
           <ScrollReveal direction="right">
             <div className="about-story__media">
-              <VideoBackground
-                videoSrc="/videos/cakes-pastry.mp4"
-                posterSrc="/videos/cakes-pastry-poster.jpg"
-                alt="Celebration cakes and pastries"
-                objectFit="cover"
-              />
+              <PhotoSlideshow photos={CELEBRATION_PHOTOS} interval={5000} startIndex={1} />
             </div>
           </ScrollReveal>
           <ScrollReveal direction="left" delay={0.1}>
@@ -97,12 +92,7 @@ function About() {
         <div className="about-story__inner">
           <ScrollReveal direction="left">
             <div className="about-story__media">
-              <VideoBackground
-                videoSrc="/videos/cookies-loaves.mp4"
-                posterSrc="/videos/cookies-loaves-poster.jpg"
-                alt="Handcrafted cookies and pastries"
-                objectFit="cover"
-              />
+              <PhotoSlideshow photos={FAMILY_PHOTOS} interval={5000} />
             </div>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={0.1}>

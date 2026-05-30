@@ -1,5 +1,69 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-29 (Email + hours update)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main`
+
+**What was done:**
+- Changed all email addresses from `info@grodzinskibakery.com` to `info@grodzbakery.com`
+- Updated Friday hours from 6 AM–3 PM to 6 AM–4 PM (all other days unchanged)
+- Build passes cleanly
+
+**Files changed:**
+- `index.html` — JSON-LD email + Friday closing time
+- `src/components/Footer.jsx` — email + Friday hours
+- `src/pages/VisitUs.jsx` — email + Friday hours
+- `src/pages/Catering.jsx` — email in ordering instructions
+- `src/pages/Home.jsx` — Friday hours in contact card
+
+---
+
+## Session — 2026-05-29 (Photo slideshows on Home + About)
+
+**Tool:** Claude Code (Opus 4.8)
+**Branch:** `main`
+
+**What was done:**
+- Built reusable `src/components/PhotoSlideshow.tsx` — crossfading Ken Burns pan/zoom slideshow (alternating zoom-in/out per frame), `motion/react` `AnimatePresence`, falls back to a single static image under `prefers-reduced-motion`. Props: `photos`, `interval`, `startIndex`.
+- **4-photo** library at `public/images/slideshow/` (WebP, ~190–220 KB each): shelves-breads, cookies-table, cakes-case, fridge-cakes — all from the shoot **stills** (the `.jpg` files). **Excluded** the wide-shelf still (`...165358243.jpg`) for Tova's branding. (Tried adding video-extracted frames for more variety, but per client direction reverted to stills only — video pans were sign/packaging-focused.)
+- Centralized photo defs + themed groupings in `src/data/slideshowPhotos.js` (SHOWCASE / HERITAGE / CELEBRATION / FAMILY arrays), imported by both pages.
+- Replaced `VideoBackground` with `PhotoSlideshow` in the Home "A Toronto Tradition Since 1888" section (all 4 photos) and all 3 About story sections (themed pairs, varied `startIndex`).
+- Added `.photo-slideshow` CSS reusing the existing `.about-story__media` 4:3 frame + 768/480 mobile height caps.
+- Created `.claude/launch.json` (dev server preset) for preview verification.
+- Verified in dev: both pages render, slideshows crossfade/pan, no Tova imagery, zero console errors. `npm run build` clean.
+
+**Files changed:**
+- `src/components/PhotoSlideshow.tsx` *(new)*
+- `public/images/slideshow/*.webp` *(new, 4 files)*
+- `src/pages/Home.jsx`, `src/pages/About.jsx` — swapped video → slideshow
+- `src/App.css` — `.photo-slideshow` rules
+- `.claude/launch.json` *(new)*
+
+**Note:** `VideoBackground.tsx` and the `/videos/*` assets are now unused by Home/About but left in place (no other consumers checked beyond these two pages).
+
+---
+
+## Session — 2026-05-29 (Kosher banner polish)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `main` (pushed)
+
+**What was done:**
+- Slowed kosher banner marquee scroll from 30s → 36s for readability
+- Increased badge repeats from 2× to 6× for seamless looping on wide viewports
+- Shortened "COR Certified Kosher" → "COR Certified"
+- Removed duplicate "Dairy Chalav Yisroel" badge from banner and Home certifications (Chalav Yisroel already covers it)
+- Removed dot separators between banner items
+- Build passes cleanly
+
+**Files changed:**
+- `src/App.css` — marquee duration 30s → 36s
+- `src/components/KosherBanner.tsx` — 6× repeat, label trim, removed dots
+- `src/pages/Home.jsx` — removed "Dairy Chalav Yisroel" from certifications
+
+---
+
 ## Session — 2026-05-26 (CSV-to-TypeScript catalog generator)
 
 **Tool:** Cursor Agent (Opus 4.6)
