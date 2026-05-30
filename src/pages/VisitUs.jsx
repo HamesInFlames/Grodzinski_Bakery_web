@@ -1,11 +1,17 @@
 //src/pages/VisitUs.jsx
-// TODO: Re-enable ContactForm once backend endpoint is wired up
-// import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/ContactForm";
+import { sendContactMessage } from "../lib/sendContactMessage";
 import GoogleMap from "../components/GoogleMap";
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, Store, ShoppingCart, Handshake } from "lucide-react";
 
 function VisitUs() {
+  const handleContactSubmit = async (formData) => {
+    await sendContactMessage(formData, {
+      subject: "New enquiry from the Grodzinski Bakery website (Visit Us)",
+    });
+  };
+
   const bakeryInfo = {
     name: "Grodzinski North",
     address: "1118 Centre St #3, Thornhill, ON L4J 7R9",
@@ -234,7 +240,32 @@ function VisitUs() {
         </div>
       </section>
 
-      {/* TODO: Re-enable ContactForm section once backend endpoint is wired up */}
+      {/* CONTACT FORM */}
+      <section className="section section--alt">
+        <div className="section__inner">
+          <ScrollReveal>
+            <div className="section__header">
+              <h2 className="section__title">Send Us a Message</h2>
+              <p className="section__subtitle">
+                Have a question about an order, our products, or a special
+                request? Fill out the form below and we'll get back to you.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={0.1}>
+            <div className="home-contact-form">
+              <ContactForm
+                onSubmit={handleContactSubmit}
+                showExtendedFields={true}
+                submitButtonText="Send Message"
+                successMessage="Thank you for contacting us. A team member will follow up shortly."
+                title=""
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
     </div>
   );
 }

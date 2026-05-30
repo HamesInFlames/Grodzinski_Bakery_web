@@ -1689,8 +1689,12 @@ a.footer__link:hover { opacity: 0.72; }
 
 @media (max-width: 640px) {
   .footer__grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 32px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
   }
   
   .footer__bottom {
@@ -3000,6 +3004,12 @@ a.footer__link:hover { opacity: 0.72; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
+}
+
+/* Standalone contact form (Home "Get in Touch" + Visit Us message section) */
+.home-contact-form {
+  max-width: 640px;
+  margin: 40px auto 0;
 }
 
 @media (max-width: 1024px) {
@@ -4972,4 +4982,63 @@ html, body {
 
 .mobile-accordion__links li:last-child .mobile-accordion__link {
   border-bottom: none;
+}
+
+/* ==============================
+   COMING SOON — Placeholder pages
+   ============================== */
+
+.coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 80px 24px;
+  background: var(--bg-section, #FAF6EE);
+}
+
+.coming-soon__inner {
+  text-align: center;
+  max-width: 520px;
+}
+
+.coming-soon__icon {
+  color: var(--color-accent, #B8860B);
+  margin-bottom: 24px;
+}
+
+.coming-soon h1 {
+  font-family: var(--font-heading, 'Cormorant Garamond', serif);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 600;
+  color: var(--color-primary, #0E2A47);
+  margin: 0 0 16px;
+}
+
+.coming-soon__message {
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: var(--text-secondary, #4a4a4a);
+  margin: 0 0 32px;
+}
+
+.coming-soon__cta {
+  display: inline-block;
+  padding: 12px 32px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-primary, #0E2A47);
+  border-radius: 6px;
+  transition: background 200ms ease, transform 150ms ease;
+}
+
+.coming-soon__cta:hover {
+  background: var(--color-accent, #B8860B);
+  transform: translateY(-1px);
 }
