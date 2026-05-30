@@ -15,6 +15,7 @@ export default function ContactForm({
     location: "",
     details: "",
     message: "",
+    botcheck: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,6 +44,7 @@ export default function ContactForm({
         location: "",
         details: "",
         message: "",
+        botcheck: "",
       });
 
       // Clear success message after 5 seconds
@@ -58,7 +60,19 @@ export default function ContactForm({
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
       {title && <h3>{title}</h3>}
-      
+
+      {/* Honeypot — hidden from people, catches spam bots. Do not remove. */}
+      <input
+        type="text"
+        name="botcheck"
+        value={formState.botcheck}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1 }}
+      />
+
       <label>
         Name *
         <input

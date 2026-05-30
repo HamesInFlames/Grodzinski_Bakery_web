@@ -9,14 +9,7 @@ import {
 import { PhotoSlideshow } from "../components/PhotoSlideshow";
 import { SHOWCASE_PHOTOS } from "../data/slideshowPhotos";
 import { GalleryCarousel } from "../components/gallery/GalleryCarousel";
-// TODO: Re-enable ContactForm once backend endpoint is wired up
-// import ContactForm from "../components/ContactForm";
 import { MapPin, Phone, Clock } from "lucide-react";
-
-// TODO(phase-4.2): wire to Resend-backed /api/contact endpoint, then re-enable ContactForm.
-const handleHomeContactSubmit = async (_formData) => {
-  return;
-};
 
 export default function Home() {
   const navigate = useNavigate();
@@ -282,7 +275,6 @@ export default function Home() {
               </div>
             </div>
           </ScrollReveal>
-          {/* TODO: Re-enable ContactForm once backend endpoint is wired up */}
         </div>
       </section>
     </>
