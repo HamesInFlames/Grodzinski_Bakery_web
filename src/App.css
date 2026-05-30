@@ -1434,6 +1434,20 @@ main {
 .contact-card__map {
   height: 300px;
   background: var(--bg-section);
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card__map .google-map-wrapper {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-card__map .google-map__iframe {
+  flex: 1;
+  min-height: 280px;
 }
 
 .contact-card__map iframe {
@@ -1480,9 +1494,39 @@ main {
 }
 
 .contact-card__title {
-  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  font-size: 1.625rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.contact-card__subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.contact-card__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
+  margin-top: 24px;
+  padding: 12px 24px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  border-radius: var(--radius-md);
+  transition: background 200ms ease, transform 150ms ease;
+}
+
+.contact-card__cta:hover {
+  background: var(--color-amber);
+  transform: translateY(-2px);
 }
 
 .contact-card__item {
@@ -2941,13 +2985,13 @@ a.footer__link:hover { opacity: 0.72; }
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--primary);
-  background: var(--bg-section);
+  background: var(--color-bg);
   text-align: center;
   transition: all var(--transition);
 }
 
 .google-map__link:hover {
-  background: var(--accent-light);
+  background: var(--bg-section);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

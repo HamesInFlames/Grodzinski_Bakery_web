@@ -9,10 +9,29 @@ import {
 import { PhotoSlideshow } from "../components/PhotoSlideshow";
 import { SHOWCASE_PHOTOS } from "../data/slideshowPhotos";
 import { GalleryCarousel } from "../components/gallery/GalleryCarousel";
-import { MapPin, Phone, Clock } from "lucide-react";
+import GoogleMap from "../components/GoogleMap";
+import { MapPin, Phone, Clock, Navigation } from "lucide-react";
+import {
+  BAKERY_GOOGLE_MAPS_URL,
+  BAKERY_PLACE_ID,
+  BAKERY_COORDINATES,
+  BAKERY_ADDRESS,
+  BAKERY_NAME,
+} from "../data/bakeryLocation";
 
 export default function Home() {
   const navigate = useNavigate();
+  const todayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+
+  const hours = [
+    { day: "Sunday", time: "6:00 AM – 3:00 PM" },
+    { day: "Monday", time: "6:00 AM – 4:00 PM" },
+    { day: "Tuesday", time: "6:00 AM – 4:00 PM" },
+    { day: "Wednesday", time: "6:00 AM – 4:00 PM" },
+    { day: "Thursday", time: "6:00 AM – 5:00 PM" },
+    { day: "Friday", time: "6:00 AM – 4:00 PM" },
+    { day: "Saturday", time: "Closed" },
+  ];
 
   const certifications = [
     { image: "/images/certifications/cor-kosher.png", title: "COR Kosher" },
@@ -222,55 +241,67 @@ export default function Home() {
             <div className="contact-card contact-card--horizontal">
               <div className="contact-card__content">
                 <h3 className="contact-card__title">Visit Our Bakery</h3>
+                <p className="contact-card__subtitle">
+                  Stop by for fresh bread, cakes, and pastries — or call ahead
+                  for custom orders.
+                </p>
 
-                <div className="contact-card__row">
-                  <div className="contact-card__item">
-                    <div className="contact-card__icon"><MapPin size={20} /></div>
-                    <div>
-                      <div className="contact-card__label">Address</div>
-                      <div className="contact-card__value">
-                        1118 Centre St #3<br />
-                        Thornhill, ON L4J 7R9
-                      </div>
-                    </div>
+                <div className="visit-details visit-details--stacked">
+                  <div className="visit-details__card">
+                    <div className="visit-details__icon"><MapPin size={22} /></div>
+                    <strong>Address</strong>
+                    <p>1118 Centre St #3, Thornhill, ON L4J 7R9</p>
                   </div>
 
-                  <div className="contact-card__item">
-                    <div className="contact-card__icon"><Phone size={20} /></div>
-                    <div>
-                      <div className="contact-card__label">Phone</div>
-                      <div className="contact-card__value">
-                        <a href="tel:9058821350">(905) 882-1350</a>
-                      </div>
+                  <div className="visit-details__card">
+                    <div className="visit-details__icon"><Phone size={22} /></div>
+                    <strong>Phone</strong>
+                    <p><a href="tel:9058821350" className="visit-link">(905) 882-1350</a></p>
+                  </div>
+
+                  <div className="visit-details__card visit-details__card--hours">
+                    <div className="visit-hours-head">
+                      <div className="visit-details__icon"><Clock size={22} /></div>
+                      <strong>Hours</strong>
+                    </div>
+                    <div className="visit-hours-grid">
+                      {hours.map(({ day, time }) => {
+                        const isClosed = time.toLowerCase() === 'closed';
+                        const isToday = day === todayName;
+                        return (
+                          <div
+                            key={day}
+                            className={`visit-hours-row ${isClosed ? 'visit-hours-row--closed' : ''} ${isToday ? 'visit-hours-row--today' : ''}`}
+                          >
+                            <span className="visit-hours-day">
+                              {day}
+                              {isToday && <span className="visit-hours-today-tag">Today</span>}
+                            </span>
+                            <span className="visit-hours-time">{time}</span>
+                          </div>
+                        );
+                      })}
                     </div>
                   </div>
                 </div>
 
-                <div className="contact-card__item contact-card__item--hours">
-                  <div className="contact-card__icon"><Clock size={20} /></div>
-                  <div>
-                    <div className="contact-card__label">Hours</div>
-                    <div className="contact-card__hours-grid">
-                      <span>Sun</span><span>6AM – 3PM</span>
-                      <span>Mon</span><span>6AM – 4PM</span>
-                      <span>Tue</span><span>6AM – 4PM</span>
-                      <span>Wed</span><span>6AM – 4PM</span>
-                      <span>Thu</span><span>6AM – 5PM</span>
-                      <span>Fri</span><span>6AM – 4PM</span>
-                      <span className="contact-card__closed">Sat</span>
-                      <span className="contact-card__closed">Closed</span>
-                    </div>
-                  </div>
-                </div>
+                <a
+                  href={BAKERY_GOOGLE_MAPS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-card__cta"
+                >
+                  <Navigation size={16} /> Get Directions
+                </a>
               </div>
               <div className="contact-card__map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2879.0!2d-79.4631!3d43.8175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b2c5a53c8f8e9%3A0x1234567890abcdef!2s1118%20Centre%20St%2C%20Thornhill%2C%20ON!5e0!3m2!1sen!2sca!4v1234567890"
-                  width="100%"
+                <GoogleMap
+                  address={BAKERY_ADDRESS}
+                  title={`${BAKERY_NAME} Location`}
                   height="100%"
-                  allowFullScreen=""
-                  loading="lazy"
-                  title="Grodzinski Bakery Location"
+                  placeId={BAKERY_PLACE_ID}
+                  coordinates={BAKERY_COORDINATES}
+                  placeName={BAKERY_NAME}
                 />
               </div>
             </div>

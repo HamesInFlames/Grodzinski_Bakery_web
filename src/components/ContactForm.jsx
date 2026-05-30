@@ -12,7 +12,6 @@ export default function ContactForm({
     name: "",
     email: "",
     phone: "",
-    location: "",
     details: "",
     message: "",
     botcheck: "",
@@ -41,7 +40,6 @@ export default function ContactForm({
         name: "",
         email: "",
         phone: "",
-        location: "",
         details: "",
         message: "",
         botcheck: "",
@@ -111,18 +109,6 @@ export default function ContactForm({
               required
               disabled={isSubmitting}
               placeholder="(416) 123-4567"
-            />
-          </label>
-
-          <label>
-            Preferred Location
-            <input
-              type="text"
-              name="location"
-              value={formState.location}
-              onChange={handleChange}
-              disabled={isSubmitting}
-              placeholder="e.g., Toronto, Thornhill"
             />
           </label>
 
