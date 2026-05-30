@@ -1,5 +1,55 @@
 # Session status — Grodzinski website
 
+## Session — 2026-05-29 (Temp Web — Menu & Holidays coming soon)
+
+**Tool:** Cursor Agent (Opus 4.6)
+**Branch:** `Temp-Web`
+
+**What was done:**
+- Created `Temp-Web` branch for the initial live launch while Menu and Holidays content is still being finalized
+- Replaced `MenuHub.tsx` with a "Coming Soon" placeholder page (clock icon, friendly message, link to Visit Us)
+- Replaced `HolidaysHub.tsx` with a matching "Coming Soon" placeholder page
+- All `/menu/*` and `/holidays/*` sub-routes now redirect to their respective hub (no broken pages)
+- Removed unused lazy imports (`GroupPage`, `HolidayGroupPage`) and `RedirectToOccasion` helper from `App.jsx`
+- Added `.coming-soon` CSS (centered, responsive, uses existing design tokens)
+- Build passes cleanly
+
+**Files changed:**
+- `src/routes/MenuHub.tsx` — replaced with coming-soon placeholder
+- `src/routes/HolidaysHub.tsx` — replaced with coming-soon placeholder
+- `src/App.jsx` — simplified menu/holidays routes to catch-all redirects, removed dead imports
+- `src/App.css` — added `.coming-soon*` styles
+
+**To restore full menu/holidays:** switch back to `main` branch or merge `main` into this branch once the content is ready.
+
+---
+
+## Session — 2026-05-29 (Contact form wired to Web3Forms)
+
+**Tool:** Claude Code (Opus 4.8)
+**Branch:** `main`
+
+**What was done:**
+- Re-enabled the commented-out `ContactForm` on the **Visit Us** page, delivering submissions to `info@grodzbakery.com` via **Web3Forms** (hosted form-to-email — no backend/server, works with the current static Railway deploy). (Form lives on Visit Us only — per client direction, not on Home.)
+- New `src/lib/sendContactMessage.js` — POSTs submissions to the Web3Forms API; sets `replyto` to the customer's email; setup instructions in the file header.
+- Added a hidden honeypot (`botcheck`) field to `ContactForm.jsx` for spam protection.
+- Added `.home-contact-form` CSS (centered, max-width 640px) for the standalone form.
+- Verified in dev: form renders on both pages, submit chain reaches the helper, no crashes. `npm run build` clean.
+
+**Files changed:**
+- `src/lib/sendContactMessage.js` *(new)*
+- `src/components/ContactForm.jsx` — honeypot field
+- `src/pages/Home.jsx`, `src/pages/VisitUs.jsx` — re-enabled form + wired handler
+- `src/App.css` — `.home-contact-form`
+
+**⚠️ ONE MANUAL STEP REMAINING (only the inbox owner can do this):**
+1. Go to https://web3forms.com, enter `info@grodzbakery.com`, click "Create Access Key".
+2. Web3Forms emails an access key to that inbox — copy it.
+3. Paste it into `ACCESS_KEY` in `src/lib/sendContactMessage.js` (or set `VITE_WEB3FORMS_ACCESS_KEY` in Railway Variables).
+4. Commit + push. The form goes live on deploy. Send a test submission to confirm it lands in the inbox.
+
+---
+
 ## Session — 2026-05-29 (Email + hours update)
 
 **Tool:** Cursor Agent (Opus 4.6)
