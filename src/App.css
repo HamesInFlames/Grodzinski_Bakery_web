@@ -4234,7 +4234,7 @@ html, body {
 .kosher-banner__track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 36s linear infinite;
+  animation: marquee-scroll 50s linear infinite;
   height: 100%;
   align-items: center;
 }
@@ -4988,16 +4988,26 @@ html, body {
    COMING SOON — Placeholder pages
    ============================== */
 
+.menu-layout,
+.holidays-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 112px);
+}
+
 .coming-soon {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 60vh;
-  padding: 80px 24px;
+  flex: 1;
+  padding: 64px 24px;
   background: var(--bg-section, #FAF6EE);
 }
 
 .coming-soon__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   max-width: 520px;
 }
@@ -5041,4 +5051,19 @@ html, body {
 .coming-soon__cta:hover {
   background: var(--color-accent, #B8860B);
   transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .coming-soon {
+    padding: 48px 20px;
+  }
+
+  .coming-soon__message {
+    font-size: 0.9375rem;
+  }
+
+  .coming-soon__cta {
+    padding: 14px 36px;
+    font-size: 0.8125rem;
+  }
 }

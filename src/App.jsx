@@ -1,6 +1,6 @@
 // src/App.jsx
 import { Suspense, lazy, useEffect } from "react";
-import { Routes, Route, Navigate, useLocation, useParams } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "motion/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -17,15 +17,8 @@ const VisitUs = lazy(() => import("./pages/VisitUs"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const MenuLayout = lazy(() => import("./routes/MenuLayout"));
 const MenuHub = lazy(() => import("./routes/MenuHub"));
-const GroupPage = lazy(() => import("./routes/GroupPage"));
 const HolidaysLayout = lazy(() => import("./routes/HolidaysLayout"));
 const HolidaysHub = lazy(() => import("./routes/HolidaysHub"));
-const HolidayGroupPage = lazy(() => import("./routes/HolidayGroupPage"));
-
-function RedirectToOccasion() {
-  const { occasion } = useParams();
-  return <Navigate to={`/holidays/${occasion}`} replace />;
-}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -52,13 +45,11 @@ export default function App() {
                 <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                 <Route path="/menu" element={<PageTransition><MenuLayout /></PageTransition>}>
                   <Route index element={<MenuHub />} />
-                  <Route path=":group" element={<GroupPage />} />
-                  <Route path="p/*" element={<Navigate to="/menu" replace />} />
+                  <Route path="*" element={<Navigate to="/menu" replace />} />
                 </Route>
                 <Route path="/holidays" element={<PageTransition><HolidaysLayout /></PageTransition>}>
                   <Route index element={<HolidaysHub />} />
-                  <Route path=":occasion" element={<HolidayGroupPage />} />
-                  <Route path=":occasion/p/*" element={<RedirectToOccasion />} />
+                  <Route path="*" element={<Navigate to="/holidays" replace />} />
                 </Route>
                 <Route path="/gallery" element={<Navigate to="/" replace />} />
                 <Route path="/catering" element={<PageTransition><Catering /></PageTransition>} />
