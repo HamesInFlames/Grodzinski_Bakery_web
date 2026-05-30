@@ -22,7 +22,7 @@ export default function Home() {
 
   const certifications = [
     { image: "/images/certifications/cor-kosher.png", title: "COR Kosher" },
-    { lines: ["Pas Yisroel", "Chalav Yisroel", "Dairy Chalav Yisroel"] },
+    { lines: ["Pas Yisroel", "Chalav Yisroel"] },
     { image: "/images/certifications/nut-free-black.png", title: "Nut Free" },
   ];
 

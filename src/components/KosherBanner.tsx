@@ -1,27 +1,27 @@
 interface Badge {
   label: string;
-  // Only genuine transparent PNGs belong here; the other certs ship as
-  // opaque JPEGs that render as solid white blocks under the banner filter.
   image?: string;
 }
 
 const BADGES: Badge[] = [
-  { label: 'COR Certified Kosher', image: '/images/certifications/cor-kosher.png' },
+  { label: 'COR Certified', image: '/images/certifications/cor-kosher.png' },
   { label: 'Nut Free' },
   { label: 'Pas Yisroel' },
   { label: 'Chalav Yisroel' },
-  { label: 'Dairy Chalav Yisroel' },
 ];
 
+// Repeat enough times so each half overflows the widest viewport.
+const REPEAT = 6;
+
 export default function KosherBanner() {
-  const items = [...BADGES, ...BADGES];
+  const half = Array.from({ length: REPEAT }, () => BADGES).flat();
 
   return (
     <div className="kosher-banner" aria-hidden="true">
       <div className="kosher-banner__track">
-        {items.map((badge, i) => (
-          <span key={`${badge.label}-${i}`} className="kosher-banner__item">
-            {i > 0 && <span className="kosher-banner__dot">&middot;</span>}
+        {/* Two identical halves — animation scrolls -50% then resets seamlessly */}
+        {[half, half].flat().map((badge, i) => (
+          <span key={i} className="kosher-banner__item">
             {badge.image && (
               <img
                 src={badge.image}

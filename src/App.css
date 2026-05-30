@@ -4203,7 +4203,7 @@ html, body {
 .kosher-banner__track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 30s linear infinite;
+  animation: marquee-scroll 36s linear infinite;
   height: 100%;
   align-items: center;
 }
