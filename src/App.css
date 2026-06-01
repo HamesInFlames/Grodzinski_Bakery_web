@@ -3716,41 +3716,6 @@ html, body {
   }
 }
 
-/* --- VideoBackground: blurred-backdrop mode --- */
-.video-bg--backdrop {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.video-bg__blur-layer {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transform: scale(1.1);
-  filter: blur(20px);
-  opacity: 0.6;
-}
-
-.video-bg__main-layer {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.video-bg__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.35));
-  pointer-events: none;
-  z-index: 2;
-}
-
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GALLERY — Custom Creations Carousel
