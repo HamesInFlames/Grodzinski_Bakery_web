@@ -1,8 +1,19 @@
 import { useEffect } from 'react';
-import { Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { getGroupsBySection, getItemsByGroup } from '@/data/products';
+import { ShieldCheck, Award } from 'lucide-react';
 import { FadeIn } from '@/components/AnimationWrappers';
 
 export default function MenuHub() {
+  const regularGroups = getGroupsBySection('regular').sort((a, b) => a.order - b.order);
+  const fridayGroups = getGroupsBySection('friday');
+  const allGroups = [...regularGroups, ...fridayGroups];
+
+  const totalItems = allGroups.reduce(
+    (sum, g) => sum + getItemsByGroup(g.slug).length,
+    0,
+  );
+
   useEffect(() => {
     document.title = 'Menu — Grodzinski Bakery, Toronto';
     return () => {
@@ -11,26 +22,71 @@ export default function MenuHub() {
   }, []);
 
   return (
-    <section className="coming-soon">
-      <div className="coming-soon__inner">
-        <FadeIn delay={0.1}>
-          <Clock size={48} className="coming-soon__icon" aria-hidden="true" />
-        </FadeIn>
-        <FadeIn delay={0.2}>
-          <h1>Our Menu</h1>
-        </FadeIn>
-        <FadeIn delay={0.35}>
-          <p className="coming-soon__message">
-            Our full menu is coming soon. In the meantime, please visit us
-            in-store or give us a call to ask about our selection.
-          </p>
-        </FadeIn>
-        <FadeIn delay={0.5}>
-          <a href="/visit" className="coming-soon__cta">
-            Visit Us
-          </a>
-        </FadeIn>
+    <>
+      <section className="menuhub__hero">
+        <div className="menuhub__hero-bg">
+          <img
+            src="/images/home/thumbnail_slider (3).png"
+            alt="An assortment of freshly baked goods at Grodzinski Bakery"
+            className="menuhub__hero-image"
+          />
+          <div className="menuhub__hero-overlay" />
+        </div>
+        <div className="menuhub__hero-inner">
+          <FadeIn delay={0.1}>
+            <h1>Our Menu</h1>
+          </FadeIn>
+          <FadeIn delay={0.25}>
+            <p>
+              {allGroups.length} categories &middot; {totalItems}+ items &middot; 100% nut-free
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <div className="menuhub__trust">
+              <span className="menuhub__trust-badge">
+                <Award size={16} aria-hidden="true" />
+                COR-certified kosher
+              </span>
+              <span className="menuhub__trust-badge">
+                <ShieldCheck size={16} aria-hidden="true" />
+                Toronto&rsquo;s heritage kosher bakery
+              </span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <div className="menuhub">
+        <div className="menuhub__grid">
+        {regularGroups.map((group) => {
+          const itemCount = getItemsByGroup(group.slug).length;
+          return (
+            <Link
+              key={group.slug}
+              to={`/menu/${group.slug}`}
+              className="menuhub__card"
+            >
+              <h2>{group.name}</h2>
+              <span className="menuhub__card-count">{itemCount} items</span>
+            </Link>
+          );
+        })}
+
+        {fridayGroups.map((group) => {
+          const itemCount = getItemsByGroup(group.slug).length;
+          return (
+            <Link
+              key={group.slug}
+              to={`/menu/${group.slug}`}
+              className="menuhub__card menuhub__card--shabbat"
+            >
+              <h2>{group.name}</h2>
+              <span className="menuhub__card-count">{itemCount} items</span>
+            </Link>
+          );
+        })}
+        </div>
       </div>
-    </section>
+    </>
   );
 }
