@@ -1405,15 +1405,13 @@ main {
 ═══════════════════════════════════════════════════════════════════════════ */
 
 .contact-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border-light);
-  overflow: hidden;
+  /* layout wrapper only; visual styling lives on the inner panels */
 }
 
 .contact-card--horizontal {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 24px;
 }
 
 .contact-card--horizontal .contact-card__map {
@@ -1436,6 +1434,9 @@ main {
   background: var(--bg-section);
   display: flex;
   flex-direction: column;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
 }
 
 .contact-card__map .google-map-wrapper {
@@ -1461,6 +1462,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
 }
 
 .contact-card__row {
