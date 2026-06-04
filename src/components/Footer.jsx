@@ -1,5 +1,6 @@
 // src/components/Footer.jsx
 import { Link } from "react-router-dom";
+import { BAKERY_EMAIL } from "@/data/bakeryLocation";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -53,7 +54,7 @@ export default function Footer() {
             <h4 className="footer__title">Contact</h4>
             <ul className="footer__links">
               <li><a href="tel:9058821350" className="footer__link">(905) 882-1350</a></li>
-              <li><a href="mailto:info@grodzbakery.com" className="footer__link">info@grodzbakery.com</a></li>
+              <li><a href={`mailto:${BAKERY_EMAIL}`} className="footer__link">{BAKERY_EMAIL}</a></li>
               <li><span className="footer__link">1118 Centre St #3</span></li>
               <li><span className="footer__link">Thornhill, ON L4J 7R9</span></li>
             </ul>

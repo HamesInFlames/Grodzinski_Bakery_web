@@ -1,19 +1,10 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { getGroupsBySection, getItemsByGroup } from '@/data/products';
+import { MENU_GROUPS } from '@/data/menuDisplay';
 import { ShieldCheck, Award } from 'lucide-react';
 import { FadeIn } from '@/components/AnimationWrappers';
 
 export default function MenuHub() {
-  const regularGroups = getGroupsBySection('regular').sort((a, b) => a.order - b.order);
-  const fridayGroups = getGroupsBySection('friday');
-  const allGroups = [...regularGroups, ...fridayGroups];
-
-  const totalItems = allGroups.reduce(
-    (sum, g) => sum + getItemsByGroup(g.slug).length,
-    0,
-  );
-
   useEffect(() => {
     document.title = 'Menu — Grodzinski Bakery, Toronto';
     return () => {
@@ -38,7 +29,7 @@ export default function MenuHub() {
           </FadeIn>
           <FadeIn delay={0.25}>
             <p>
-              {allGroups.length} categories &middot; {totalItems}+ items &middot; 100% nut-free
+              {MENU_GROUPS.length} categories &middot; 100% nut-free
             </p>
           </FadeIn>
           <FadeIn delay={0.4}>
@@ -58,33 +49,15 @@ export default function MenuHub() {
 
       <div className="menuhub">
         <div className="menuhub__grid">
-        {regularGroups.map((group) => {
-          const itemCount = getItemsByGroup(group.slug).length;
-          return (
+          {MENU_GROUPS.map((group) => (
             <Link
-              key={group.slug}
-              to={`/menu/${group.slug}`}
+              key={group.id}
+              to={`/menu/${group.id}`}
               className="menuhub__card"
             >
-              <h2>{group.name}</h2>
-              <span className="menuhub__card-count">{itemCount} items</span>
+              <h2>{group.title}</h2>
             </Link>
-          );
-        })}
-
-        {fridayGroups.map((group) => {
-          const itemCount = getItemsByGroup(group.slug).length;
-          return (
-            <Link
-              key={group.slug}
-              to={`/menu/${group.slug}`}
-              className="menuhub__card menuhub__card--shabbat"
-            >
-              <h2>{group.name}</h2>
-              <span className="menuhub__card-count">{itemCount} items</span>
-            </Link>
-          );
-        })}
+          ))}
         </div>
       </div>
     </>

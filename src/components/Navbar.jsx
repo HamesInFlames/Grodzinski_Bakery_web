@@ -1,43 +1,28 @@
-// src/components/Navbar.jsx
 import { useState, useEffect, useRef, useMemo } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import NavDropdown, { MobileNavAccordion } from "./NavDropdown";
-import { getGroupsBySection } from "@/data/products";
+import { getMenuNavItems } from "@/data/menuDisplay";
 
 const SIMPLE_LINKS = [
   ["Home", "/"],
+  ["Holidays", "/holidays"],
   ["Catering", "/catering"],
+  ["Price List", "/price-list"],
   ["About", "/about"],
   ["Visit Us", "/visit"],
 ];
 
-function useNavDropdownItems() {
+function useMenuDropdownItems() {
   return useMemo(() => {
-    const menuGroups = [
-      ...getGroupsBySection("regular"),
-      ...getGroupsBySection("friday"),
-    ].sort((a, b) => a.order - b.order);
-
-    const holidayGroups = getGroupsBySection("holidays").sort(
-      (a, b) => a.order - b.order,
-    );
-
-    return {
-      menuItems: menuGroups.map((g) => ({ name: g.name, href: `/menu/${g.slug}` })),
-      holidayItems: holidayGroups.map((g) => ({
-        name: g.name,
-        href: `/holidays/${g.slug}`,
-      })),
-    };
+    return getMenuNavItems();
   }, []);
 }
 
 function DesktopNav({ location }) {
-  const { menuItems, holidayItems } = useNavDropdownItems();
+  const menuItems = useMenuDropdownItems();
   const isMenuActive = location.pathname.startsWith("/menu");
-  const isHolidaysActive = location.pathname.startsWith("/holidays");
 
   return (
     <nav className="navbar__nav" aria-label="Primary">
@@ -50,13 +35,6 @@ function DesktopNav({ location }) {
         basePath="/menu"
         items={menuItems}
         isActive={isMenuActive}
-      />
-
-      <NavDropdown
-        label="Holidays"
-        basePath="/holidays"
-        items={holidayItems}
-        isActive={isHolidaysActive}
       />
 
       {SIMPLE_LINKS.filter(([, p]) => p !== "/").map(([label, path]) => (
@@ -73,9 +51,8 @@ function DesktopNav({ location }) {
 }
 
 function MobileNav({ location, onNavigate }) {
-  const { menuItems, holidayItems } = useNavDropdownItems();
+  const menuItems = useMenuDropdownItems();
   const isMenuActive = location.pathname.startsWith("/menu");
-  const isHolidaysActive = location.pathname.startsWith("/holidays");
 
   return (
     <nav className="mobile-menu__nav" aria-label="Mobile primary">
@@ -96,14 +73,6 @@ function MobileNav({ location, onNavigate }) {
           basePath="/menu"
           items={menuItems}
           isActive={isMenuActive}
-          onNavigate={onNavigate}
-        />
-
-        <MobileNavAccordion
-          label="Holidays"
-          basePath="/holidays"
-          items={holidayItems}
-          isActive={isHolidaysActive}
           onNavigate={onNavigate}
         />
 
@@ -145,7 +114,6 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [isMobileMenuOpen]);
 
-  // Focus trap + Escape for the mobile drawer.
   useEffect(() => {
     if (!isMobileMenuOpen) return;
     const drawer = drawerRef.current;

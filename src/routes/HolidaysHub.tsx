@@ -1,14 +1,46 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { getGroupsBySection, getItemsByGroup, getHolidayMeta } from '@/data/products';
+import { useEffect, useState } from 'react';
+import { HOLIDAY_SECTIONS } from '@/data/menuDisplay';
 import { ShieldCheck, Award } from 'lucide-react';
-import { FadeIn } from '@/components/AnimationWrappers';
+import { FadeIn, ScrollReveal } from '@/components/AnimationWrappers';
+
+function HolidaySectionCard({ section }: { section: typeof HOLIDAY_SECTIONS[number] }) {
+  const [imgError, setImgError] = useState(false);
+
+  return (
+    <section className="holidays-hub__section" id={`holiday-${section.id}`}>
+      <h2 className="holidays-hub__section-title">{section.title}</h2>
+      <div className="holidays-hub__section-body">
+        <div className="holidays-hub__section-photo">
+          {!imgError ? (
+            <img
+              src={`/images/holidays/${section.photo}`}
+              alt={section.title}
+              className="group-page__hero-img"
+              onError={() => setImgError(true)}
+            />
+          ) : (
+            <div className="group-page__photo-placeholder" aria-hidden="true">
+              <img
+                src="/images/home/logo_trensparent.png"
+                alt=""
+                className="group-page__empty-brand"
+              />
+            </div>
+          )}
+        </div>
+        <ul className="variant-list" role="list">
+          {section.items.map((item) => (
+            <li key={item} className="variant-row">
+              <span className="variant-row__name">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
 export default function HolidaysHub() {
-  const holidayGroups = getGroupsBySection('holidays').sort(
-    (a, b) => a.order - b.order,
-  );
-
   useEffect(() => {
     document.title = 'Holidays — Grodzinski Bakery, Toronto';
     return () => {
@@ -33,7 +65,7 @@ export default function HolidaysHub() {
           </FadeIn>
           <FadeIn delay={0.25}>
             <p>
-              Traditional baked goods for Jewish holidays and celebrations —
+              Traditional baked goods for Jewish holidays and celebrations &mdash;
               handcrafted with the same recipes we&rsquo;ve used since 1888.
             </p>
           </FadeIn>
@@ -53,33 +85,11 @@ export default function HolidaysHub() {
       </section>
 
       <div className="holidays-hub">
-        <div className="holidays-hub__grid">
-        {holidayGroups.map((group) => {
-          const meta = getHolidayMeta(group.slug);
-          const itemCount = getItemsByGroup(group.slug).length;
-
-          return (
-            <Link
-              key={group.slug}
-              to={`/holidays/${group.slug}`}
-              className="holidays-hub__card"
-            >
-              <h2>{group.name}</h2>
-              {meta?.hebrew && (
-                <span className="holidays-hub__card-hebrew" lang="he" dir="rtl">
-                  {meta.hebrew}
-                </span>
-              )}
-              <p className="holidays-hub__card-desc">
-                {meta?.description ?? ''}
-              </p>
-              <span className="holidays-hub__card-count">
-                {itemCount} {itemCount === 1 ? 'item' : 'items'}
-              </span>
-            </Link>
-          );
-        })}
-        </div>
+        {HOLIDAY_SECTIONS.map((section, i) => (
+          <ScrollReveal key={section.id} delay={i * 0.05}>
+            <HolidaySectionCard section={section} />
+          </ScrollReveal>
+        ))}
       </div>
     </>
   );

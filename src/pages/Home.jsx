@@ -115,6 +115,20 @@ export default function Home() {
         </div>
       </section>
 
+      {/* STOCKISTS */}
+      <section className="section stockists-section">
+        <div className="container">
+          <p className="stockists-eyebrow">Also Available At</p>
+          <StaggerContainer className="stockists-strip" staggerDelay={0.1}>
+            {["Longo\u2019s", "Pusateri\u2019s", "Vince\u2019s Market"].map((name) => (
+              <StaggerItem key={name}>
+                <span className="stockist-badge">{name}</span>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
       {/* CATEGORIES */}
       <section className="section section--alt">
         <div className="container">

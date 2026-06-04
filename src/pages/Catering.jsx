@@ -1,5 +1,6 @@
 //src/pages/Catering.jsx
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
+import { BAKERY_EMAIL } from "@/data/bakeryLocation";
 
 export default function Catering() {
   const cateringOptions = [
@@ -119,7 +120,7 @@ export default function Catering() {
               </ScrollReveal>
               <div className="catering-order-steps">
                 {[
-                  { num: "1", title: "Contact Us", text: <>Call us at <a href="tel:9058821350" className="catering-link">(905) 882-1350</a> or email <a href="mailto:info@grodzbakery.com" className="catering-link">info@grodzbakery.com</a> to discuss your event needs.</> },
+                  { num: "1", title: "Contact Us", text: <>Call us at <a href="tel:9058821350" className="catering-link">(905) 882-1350</a> or email <a href={`mailto:${BAKERY_EMAIL}`} className="catering-link">{BAKERY_EMAIL}</a> to discuss your event needs.</> },
                   { num: "2", title: "Plan Ahead", text: "We recommend ordering at least 48-72 hours in advance for catering orders. For large events or custom requests, more notice is appreciated." },
                   { num: "3", title: "Pickup or Delivery", text: "Choose pickup from our Thornhill location or inquire about delivery options for your area. Delivery fees may apply based on distance and order size." },
                   { num: "4", title: "Dietary Needs", text: "Let us know about any dietary restrictions or preferences. We offer dairy, pareve, vegetarian, and vegan options, and everything is baked in our 100% nut-free facility." },

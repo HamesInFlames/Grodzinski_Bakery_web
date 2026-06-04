@@ -1118,6 +1118,69 @@ main {
   display: none;
 }
 
+/* ─── Stockists Strip ─────────────────────────────────────────────────────── */
+
+.stockists-section {
+  padding: 24px 0;
+}
+
+.stockists-eyebrow {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 12px;
+}
+
+.stockists-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.stockist-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 36px;
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.stockist-badge + .stockist-badge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: var(--color-rule);
+}
+
+@media (max-width: 600px) {
+  .stockists-strip {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stockist-badge {
+    padding: 8px 16px;
+  }
+
+  .stockist-badge + .stockist-badge::before {
+    display: none;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    GALLERY
 ═══════════════════════════════════════════════════════════════════════════ */
@@ -4807,6 +4870,49 @@ html, body {
 .dietary-tag--dairy {
   color: #1E40AF;
   background: #DBEAFE;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   PRICE LIST
+═══════════════════════════════════════════════════════════════════════════ */
+
+.price-list__group {
+  padding: 24px 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.price-list__group:first-child {
+  border-top: none;
+}
+
+.price-list__group-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.price-list__section-note {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: -12px 0 16px;
+}
+
+/* Allow an optional note to wrap onto its own line beneath the price row. */
+.price-list .variant-row,
+.group-page .variant-row {
+  flex-wrap: wrap;
+}
+
+.price-list__note {
+  flex-basis: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  opacity: 0.85;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
