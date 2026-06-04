@@ -1,26 +1,42 @@
 import { useEffect } from 'react';
-import { FadeIn, ScrollReveal } from '@/components/AnimationWrappers';
+import { FadeIn } from '@/components/AnimationWrappers';
 import {
   PRICE_GROUPS,
   PRICE_HOLIDAY_SECTIONS,
   type PriceItem,
 } from '@/data/priceList';
 
-function PriceRows({ items }: { items: PriceItem[] }) {
-  return (
-    <ul className="variant-list" role="list">
-      {items.map((item) => (
-        <li key={item.name} className="variant-row">
-          <span className="variant-row__name">{item.name}</span>
-          <span className="variant-row__dots" aria-hidden="true" />
-          <span className="variant-row__price">{item.price}</span>
-          {item.note && (
-            <span className="price-list__note">{item.note}</span>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
+interface PriceCard {
+  key: string;
+  eyebrow: string;
+  heading: string;
+  note?: string;
+  items: PriceItem[];
+}
+
+function buildCards(): PriceCard[] {
+  const cards: PriceCard[] = [];
+  for (const group of PRICE_GROUPS) {
+    for (const section of group.sections) {
+      cards.push({
+        key: `${group.id}-${section.heading}`,
+        eyebrow: group.title,
+        heading: section.heading,
+        note: section.note,
+        items: section.items,
+      });
+    }
+  }
+  for (const section of PRICE_HOLIDAY_SECTIONS) {
+    cards.push({
+      key: `holiday-${section.id}`,
+      eyebrow: 'Holidays',
+      heading: section.title,
+      note: section.note,
+      items: section.items,
+    });
+  }
+  return cards;
 }
 
 export default function PriceList() {
@@ -30,6 +46,8 @@ export default function PriceList() {
       document.title = "Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888";
     };
   }, []);
+
+  const cards = buildCards();
 
   return (
     <div className="group-page">
@@ -45,38 +63,24 @@ export default function PriceList() {
         </FadeIn>
       </header>
 
-      <div className="group-page__categories">
-        {PRICE_GROUPS.map((group, gi) => (
-          <ScrollReveal key={group.id} delay={gi * 0.05}>
-            <section className="price-list__group">
-              <h2 className="price-list__group-title">{group.title}</h2>
-              {group.sections.map((section) => (
-                <div key={section.heading} className="category-section">
-                  <h3 className="category-section__heading">{section.heading}</h3>
-                  {section.note && (
-                    <p className="price-list__section-note">{section.note}</p>
-                  )}
-                  <PriceRows items={section.items} />
-                </div>
+      <div className="price-board">
+        {cards.map((card) => (
+          <section key={card.key} className="price-card">
+            <p className="price-card__eyebrow">{card.eyebrow}</p>
+            <h3 className="price-card__heading">{card.heading}</h3>
+            {card.note && <p className="price-card__note">{card.note}</p>}
+            <ul className="variant-list" role="list">
+              {card.items.map((item) => (
+                <li key={item.name} className="variant-row">
+                  <span className="variant-row__name">{item.name}</span>
+                  <span className="variant-row__dots" aria-hidden="true" />
+                  <span className="variant-row__price">{item.price}</span>
+                  {item.note && <span className="price-list__note">{item.note}</span>}
+                </li>
               ))}
-            </section>
-          </ScrollReveal>
-        ))}
-
-        <ScrollReveal delay={0.05}>
-          <section className="price-list__group">
-            <h2 className="price-list__group-title">Holidays</h2>
-            {PRICE_HOLIDAY_SECTIONS.map((section) => (
-              <div key={section.id} className="category-section">
-                <h3 className="category-section__heading">{section.title}</h3>
-                {section.note && (
-                  <p className="price-list__section-note">{section.note}</p>
-                )}
-                <PriceRows items={section.items} />
-              </div>
-            ))}
+            </ul>
           </section>
-        </ScrollReveal>
+        ))}
       </div>
     </div>
   );

@@ -4876,43 +4876,84 @@ html, body {
    PRICE LIST
 ═══════════════════════════════════════════════════════════════════════════ */
 
-.price-list__group {
-  padding: 24px 0;
-  border-top: 1px solid var(--color-rule);
+/* Compact multi-column board so the whole list fits with minimal scrolling. */
+.price-board {
+  columns: 300px 3;
+  column-gap: 36px;
+  margin-top: 8px;
 }
 
-.price-list__group:first-child {
-  border-top: none;
+.price-card {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin: 0 0 26px;
 }
 
-.price-list__group-title {
+.price-card__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 2px;
+}
+
+.price-card__heading {
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-rule);
 }
 
-.price-list__section-note {
+.price-card__note {
   font-family: var(--font-sans);
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-style: italic;
   color: var(--text-secondary);
-  margin: -12px 0 16px;
+  margin: 0 0 6px;
 }
 
-/* Allow an optional note to wrap onto its own line beneath the price row. */
-.price-list .variant-row,
-.group-page .variant-row {
+/* Tighten rows inside the board (the menu pages keep the roomier default). */
+.price-board .variant-row {
   flex-wrap: wrap;
+  min-height: 0;
+  padding: 3px 0;
+  cursor: default;
+  border-left: none;
+  border-radius: 0;
+}
+
+.price-board .variant-row:hover {
+  background: transparent;
+}
+
+.price-board .variant-row__name {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  max-width: none;
+  flex: 0 1 auto;
+}
+
+.price-board .variant-row__dots {
+  margin-bottom: 5px;
+}
+
+.price-board .variant-row__price {
+  flex: 0 0 auto;
 }
 
 .price-list__note {
   flex-basis: 100%;
   font-family: var(--font-sans);
-  font-size: 0.8125rem;
+  font-size: 0.75rem;
   color: var(--text-secondary);
   opacity: 0.85;
+  margin-top: -1px;
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
