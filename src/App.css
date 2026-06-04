@@ -49,7 +49,7 @@
 .skip-link:focus,
 .skip-link:focus-visible {
   transform: translateY(0);
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-blue);
   outline-offset: 2px;
 }
 
@@ -136,6 +136,12 @@
   --color-gold-text: #765306;      /* darker gold — gold-as-text on oat (5.60:1 on #F0E5D5) */
   --color-rule: #D9CFB8;           /* warm rule line for dividers */
   --color-warm: #5C4033;           /* legacy brown — warm-tone surfaces (catering hero etc.) */
+
+  /* PMS 277 blue — cool accent for interactive + decorative elements */
+  --color-blue: #ABCAE9;           /* base PMS 277 — soft cyan-blue */
+  --color-blue-dark: #6BA3D4;      /* darker — links/text with better contrast */
+  --color-blue-light: #D5E4F4;     /* tinted — subtle backgrounds/hover fills */
+  --color-blue-deep: #4A87BD;      /* deepest — WCAG AA on light surfaces */
 
   /* Legacy brown scale (still consumed by gallery + catering surfaces) */
   --brown-900: #3D2A22;
@@ -239,6 +245,10 @@ a {
   text-decoration: none;
 }
 
+.section a:not(.btn):hover {
+  color: var(--color-blue-deep);
+}
+
 button {
   font-family: inherit;
   cursor: pointer;
@@ -280,6 +290,18 @@ main {
   color: var(--text-inverse);
 }
 
+/* PMS 277 accent line — auto-inserted between every section site-wide */
+#main-content > * > section + section,
+#main-content > * > section + div,
+#main-content > * > div + section,
+.about-page-wrapper > section + section,
+.catering-page > section + section,
+.visit-page > section + section,
+.menu-layout > * + *:not(.menu-layout__bottom-slot),
+.holidays-layout > * + * {
+  border-top: 4px solid var(--color-blue);
+}
+
 .section__header {
   text-align: center;
   max-width: 700px;
@@ -293,6 +315,20 @@ main {
   color: var(--text-primary);
   margin-bottom: 16px;
   line-height: 1.2;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .section--dark .section__title {
@@ -412,10 +448,10 @@ main {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-primary);
-  transition: opacity 150ms ease-out;
+  transition: color 150ms ease-out, opacity 150ms ease-out;
 }
 
-.navbar__link:hover { opacity: 0.7; }
+.navbar__link:hover { color: var(--color-blue-deep); opacity: 1; }
 
 .navbar__link--active {
   opacity: 1;
@@ -426,8 +462,8 @@ main {
   left: 0;
   right: 0;
   bottom: -4px;
-  height: 1px;
-  background: var(--color-gold);
+  height: 2px;
+  background: var(--color-blue);
 }
 
 .navbar__actions {
@@ -626,7 +662,7 @@ main {
 }
 
 .btn--primary:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-blue);
   outline-offset: 2px;
 }
 
@@ -638,18 +674,19 @@ main {
 }
 
 .btn--secondary {
-  color: var(--color-primary);
+  color: var(--color-blue-deep);
   background: transparent;
-  border-color: var(--color-primary);
+  border-color: var(--color-blue);
 }
 
 .btn--secondary:hover {
-  color: var(--color-bg);
-  background: var(--color-primary);
+  color: #fff;
+  background: var(--color-blue-deep);
+  border-color: var(--color-blue-deep);
 }
 
 .btn--secondary:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-blue);
   outline-offset: 2px;
 }
 
@@ -662,16 +699,16 @@ main {
 .btn--ghost {
   color: var(--color-bg);
   background: transparent;
-  border-color: rgba(250, 246, 238, 0.5);
+  border-color: var(--color-blue);
 }
 
 .btn--ghost:hover {
-  background: rgba(250, 246, 238, 0.12);
-  border-color: var(--color-bg);
+  background: rgba(171, 202, 233, 0.15);
+  border-color: var(--color-blue);
 }
 
 .btn--ghost:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-blue);
   outline-offset: 2px;
 }
 
@@ -732,7 +769,9 @@ main {
   font-size: 1.5rem;
   letter-spacing: 0.01em;
   color: var(--color-bg);
-  display: block;
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-blue);
 }
 
 .hero__subtitle--heritage {
@@ -915,6 +954,12 @@ main {
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 150ms ease-out;
+}
+
+.category-card:hover {
+  border-color: var(--color-blue);
 }
 
 .category-card__image {
@@ -962,6 +1007,11 @@ main {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
+  transition: border-color 150ms ease-out;
+}
+
+.feature-card:hover {
+  border-color: var(--color-blue);
 }
 
 .feature-card__icon {
@@ -972,7 +1022,7 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  background: var(--accent-light);
+  background: var(--color-blue-light);
   border-radius: var(--radius-lg);
 }
 
@@ -1164,13 +1214,13 @@ main {
 }
 
 .gallery-filter-btn:hover {
-  color: var(--primary);
-  background: var(--primary-light);
+  color: var(--color-blue-deep);
+  background: var(--color-blue-light);
 }
 
 .gallery-filter-btn--active {
   color: #FFFFFF;
-  background: var(--primary);
+  background: var(--color-blue-deep);
 }
 
 .gallery-filter-btn__icon {
@@ -1503,6 +1553,19 @@ main {
   font-weight: 600;
   color: var(--color-primary);
   margin-bottom: 6px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.contact-card__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .contact-card__subtitle {
@@ -1615,8 +1678,8 @@ main {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(92, 64, 51, 0.1);
+  border-color: var(--color-blue-dark);
+  box-shadow: 0 0 0 3px rgba(171, 202, 233, 0.3);
 }
 
 .form-textarea {
@@ -1672,7 +1735,7 @@ main {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);  /* marzipan on navy = 8.87:1 */
+  color: var(--color-blue);
   margin: 0 0 20px;
 }
 
@@ -1694,12 +1757,12 @@ main {
 }
 
 a.footer__link { color: var(--color-bg); }
-a.footer__link:hover { opacity: 0.72; }
+a.footer__link:hover { color: var(--color-blue); opacity: 1; }
 
 .footer__rule {
   height: 1px;
   border: 0;
-  background: var(--color-gold);
+  background: var(--color-blue);
   opacity: 0.7;
   margin: 32px 0 24px;
 }
@@ -1937,6 +2000,19 @@ a.footer__link:hover { opacity: 0.72; }
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 32px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.catering-order-info__content h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .catering-order-steps {
@@ -2010,6 +2086,20 @@ a.footer__link:hover { opacity: 0.72; }
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.catering-cta h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .catering-cta__text {
@@ -2185,6 +2275,19 @@ a.footer__link:hover { opacity: 0.72; }
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.about-story__body h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .about-story__body p {
@@ -2842,6 +2945,19 @@ a.footer__link:hover { opacity: 0.72; }
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.visit-planning__content h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .visit-planning__intro {
@@ -4463,7 +4579,7 @@ html, body {
 .kosher-banner__item::after {
   content: "·";
   margin-left: 20px;
-  color: var(--color-accent);
+  color: var(--color-blue);
   font-size: 16px;
 }
 
@@ -4879,6 +4995,20 @@ html, body {
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.holidays-hub__hero h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .holidays-hub__hero p {

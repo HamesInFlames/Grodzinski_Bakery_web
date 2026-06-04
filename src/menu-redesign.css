@@ -61,6 +61,20 @@
   color: #fff;
   margin: 0 0 16px;
   letter-spacing: -0.005em;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.menuhub__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue);
+  border-radius: 2px;
 }
 
 .menuhub__subtitle {
