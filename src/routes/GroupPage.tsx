@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getMenuGroupById } from '@/data/menuDisplay';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import { ScrollReveal } from '@/components/AnimationWrappers';
+import ProductShowcase from '@/components/menu/ProductShowcase';
 
 export default function GroupPage() {
   const { group: groupId } = useParams<{ group: string }>();
@@ -47,12 +48,15 @@ export default function GroupPage() {
 
       <header className="group-page__header">
         <h1 className="group-page__title">{group.title}</h1>
+        <Link to="/price-list" className="group-page__pricelink">
+          View Price List &rarr;
+        </Link>
       </header>
 
       <div className="group-page__photo">
-        {!imgError ? (
+        {group.image && !imgError ? (
           <img
-            src={`/images/menu/${group.photo}`}
+            src={group.image}
             alt={group.title}
             className="group-page__hero-img"
             onError={() => setImgError(true)}
@@ -68,21 +72,16 @@ export default function GroupPage() {
         )}
       </div>
 
-      <div className="group-page__categories">
+      <div className="group-page__showcases">
         {group.sections.map((section, i) => (
           <ScrollReveal key={section.heading} delay={i * 0.05}>
-            <section className="category-section">
-              {group.sections.length > 1 && (
-                <h3 className="category-section__heading">{section.heading}</h3>
-              )}
-              <ul className="variant-list" role="list">
-                {section.items.map((item) => (
-                  <li key={item} className="variant-row">
-                    <span className="variant-row__name">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
+            <ProductShowcase
+              heading={section.heading}
+              flavours={section.items}
+              groupId={group.id}
+              assortedImage={section.assortedImage}
+              groupImage={group.image}
+            />
           </ScrollReveal>
         ))}
       </div>

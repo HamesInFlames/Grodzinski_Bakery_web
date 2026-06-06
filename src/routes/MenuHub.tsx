@@ -47,17 +47,33 @@ export default function MenuHub() {
         </div>
       </section>
 
-      <div className="menuhub">
+      <div className="menuhub menuhub__grid-section">
         <div className="menuhub__grid">
-          {MENU_GROUPS.map((group) => (
-            <Link
-              key={group.id}
-              to={`/menu/${group.id}`}
-              className="menuhub__card"
-            >
-              <h2>{group.title}</h2>
-            </Link>
-          ))}
+          {MENU_GROUPS.map((group) => {
+            const count = group.sections.reduce(
+              (sum, s) => sum + s.items.length,
+              0,
+            );
+            return (
+              <Link
+                key={group.id}
+                to={`/menu/${group.id}`}
+                className="menuhub__card"
+              >
+                <div className="menuhub__card-image">
+                  <img
+                    src={group.image || '/images/home/logo_trensparent.png'}
+                    alt={group.title}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="menuhub__card-content">
+                  <h2 className="menuhub__card-name">{group.title}</h2>
+                  <span className="menuhub__card-count">{count} varieties</span>
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </>

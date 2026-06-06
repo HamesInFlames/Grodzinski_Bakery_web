@@ -40,12 +40,12 @@ export default function Home() {
   ];
 
   const categoryImages = [
-    { name: "Challah & Bilkas", image: "/images/home/thumbnail_challahs.png", count: 14 },
-    { name: "Cakes", image: "/images/home/thumbnail_cakes.png", count: 20 },
-    { name: "Cookies", image: "/images/home/thumbnail_cookies.png", count: 30 },
-    { name: "Babkas", image: "/images/home/thumbnail_babkas.png", count: 10 },
-    { name: "Breads", image: "/images/home/thumbnail_breaks_rolls.png", count: 17 },
-    { name: "Pastries", image: "/images/home/thumbnail_danishes_sweets.png", count: 16 },
+    { name: "Challah & Bilkas", image: "/images/home/thumbnail_challahs.png", count: 14, href: "/menu/challah" },
+    { name: "Cakes", image: "/images/home/thumbnail_cakes.png", count: 20, href: "/menu/cakes-loaf" },
+    { name: "Cookies", image: "/images/home/thumbnail_cookies.png", count: 30, href: "/menu/cookies-sweets" },
+    { name: "Babkas", image: "/images/home/thumbnail_babkas.png", count: 10, href: "/menu/danishes-babkas" },
+    { name: "Breads", image: "/images/home/thumbnail_breaks_rolls.png", count: 17, href: "/menu/breads" },
+    { name: "Pastries", image: "/images/home/thumbnail_danishes_sweets.png", count: 16, href: "/menu/danishes-babkas" },
   ];
 
   return (
@@ -147,7 +147,7 @@ export default function Home() {
               <StaggerItem key={i}>
                 <div
                   className="category-card"
-                  onClick={() => navigate("/menu")}
+                  onClick={() => navigate(cat.href)}
                 >
                   <img
                     src={cat.image}

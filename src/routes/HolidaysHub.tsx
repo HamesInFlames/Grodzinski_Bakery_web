@@ -1,44 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { HOLIDAY_SECTIONS } from '@/data/menuDisplay';
 import { ShieldCheck, Award } from 'lucide-react';
-import { FadeIn, ScrollReveal } from '@/components/AnimationWrappers';
-
-function HolidaySectionCard({ section }: { section: typeof HOLIDAY_SECTIONS[number] }) {
-  const [imgError, setImgError] = useState(false);
-
-  return (
-    <section className="holidays-hub__section" id={`holiday-${section.id}`}>
-      <h2 className="holidays-hub__section-title">{section.title}</h2>
-      <div className="holidays-hub__section-body">
-        <div className="holidays-hub__section-photo">
-          {!imgError ? (
-            <img
-              src={`/images/holidays/${section.photo}`}
-              alt={section.title}
-              className="group-page__hero-img"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <div className="group-page__photo-placeholder" aria-hidden="true">
-              <img
-                src="/images/home/logo_trensparent.png"
-                alt=""
-                className="group-page__empty-brand"
-              />
-            </div>
-          )}
-        </div>
-        <ul className="variant-list" role="list">
-          {section.items.map((item) => (
-            <li key={item} className="variant-row">
-              <span className="variant-row__name">{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
-  );
-}
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimationWrappers';
 
 export default function HolidaysHub() {
   useEffect(() => {
@@ -84,12 +48,34 @@ export default function HolidaysHub() {
         </div>
       </section>
 
-      <div className="holidays-hub">
-        {HOLIDAY_SECTIONS.map((section, i) => (
-          <ScrollReveal key={section.id} delay={i * 0.05}>
-            <HolidaySectionCard section={section} />
-          </ScrollReveal>
-        ))}
+      <div className="holidays-hub holidays-hub__grid-section">
+        <StaggerContainer className="holidays-hub__grid" staggerDelay={0.08}>
+          {HOLIDAY_SECTIONS.map((section) => (
+            <StaggerItem key={section.id}>
+              <Link to={`/holidays/${section.id}`} className="holidays-hub__card">
+                <div className="holidays-hub__card-image">
+                  <img
+                    src={section.image || '/images/home/logo_trensparent.png'}
+                    alt={section.title}
+                    loading="lazy"
+                  />
+                </div>
+                <div className="holidays-hub__card-content">
+                  <h2 className="holidays-hub__card-name">{section.title}</h2>
+                  {section.hebrew && (
+                    <span className="holidays-hub__card-hebrew" lang="he" dir="rtl">
+                      {section.hebrew}
+                    </span>
+                  )}
+                  <span className="holidays-hub__card-count">
+                    {section.items.length}{' '}
+                    {section.items.length === 1 ? 'specialty' : 'specialties'}
+                  </span>
+                </div>
+              </Link>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </div>
     </>
   );

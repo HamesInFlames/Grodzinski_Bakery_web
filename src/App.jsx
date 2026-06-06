@@ -19,6 +19,7 @@ const MenuLayout = lazy(() => import("./routes/MenuLayout"));
 const MenuHub = lazy(() => import("./routes/MenuHub"));
 const GroupPage = lazy(() => import("./routes/GroupPage"));
 const HolidaysHub = lazy(() => import("./routes/HolidaysHub"));
+const HolidayDetailPage = lazy(() => import("./routes/HolidayDetailPage"));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -49,7 +50,7 @@ export default function App() {
                   <Route path="p/*" element={<Navigate to="/menu" replace />} />
                 </Route>
                 <Route path="/holidays" element={<PageTransition><HolidaysHub /></PageTransition>} />
-                <Route path="/holidays/:occasion" element={<Navigate to="/holidays" replace />} />
+                <Route path="/holidays/:occasion" element={<PageTransition><HolidayDetailPage /></PageTransition>} />
                 <Route path="/holidays/:occasion/p/*" element={<Navigate to="/holidays" replace />} />
                 <Route path="/gallery" element={<Navigate to="/" replace />} />
                 <Route path="/catering" element={<PageTransition><Catering /></PageTransition>} />
