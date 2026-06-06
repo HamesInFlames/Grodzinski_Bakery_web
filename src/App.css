@@ -1129,6 +1129,23 @@ main {
 
 /* ─── Stockists Strip ─────────────────────────────────────────────────────── */
 
+/* Stockists now live inside the certifications band as a compact line. */
+.stockists-inline {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.stockists-list {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.6;
+  margin: 0;
+}
+
 .stockists-section {
   padding: 24px 0;
 }
