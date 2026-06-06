@@ -73,7 +73,7 @@
   transform: translateX(-50%);
   width: 48px;
   height: 3px;
-  background: var(--color-blue);
+  background: var(--color-blue-deep);
   border-radius: 2px;
 }
 
