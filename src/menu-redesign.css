@@ -1538,6 +1538,37 @@ textarea:focus-visible {
   color: var(--color-primary);
 }
 
+/* Slim hero banner — the square source images are cropped to a wide band so
+   the page leads with a taste of the category, not a giant square. */
+.group-page__photo {
+  width: 100%;
+  height: clamp(160px, 24vw, 260px);
+  margin-bottom: 48px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-section);
+}
+
+.group-page__hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.group-page__photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-elevated);
+}
+
+@media (max-width: 768px) {
+  .group-page__photo { margin-bottom: 32px; }
+}
+
 .group-page__header {
   display: flex;
   align-items: baseline;
@@ -1894,11 +1925,17 @@ textarea:focus-visible {
 
 .product-showcase__frame {
   position: relative;
-  aspect-ratio: 16 / 10;
+  /* Taller on mobile (near-square), a shorter cinematic band on wider
+     screens so the image and the flavour strip stay visible together. */
+  aspect-ratio: 4 / 3;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--bg-section);
   border: 1px solid var(--color-rule);
+}
+
+@media (min-width: 700px) {
+  .product-showcase__frame { aspect-ratio: 16 / 7; }
 }
 
 .product-showcase__image {
