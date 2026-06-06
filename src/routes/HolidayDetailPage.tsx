@@ -1,13 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getHolidaySectionById } from '@/data/menuDisplay';
 import Breadcrumb from '@/components/layout/Breadcrumb';
 import { ScrollReveal } from '@/components/AnimationWrappers';
+import ProductShowcase from '@/components/menu/ProductShowcase';
 
 export default function HolidayDetailPage() {
   const { occasion } = useParams<{ occasion: string }>();
   const section = occasion ? getHolidaySectionById(occasion) : undefined;
-  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     if (section) {
@@ -17,10 +17,6 @@ export default function HolidayDetailPage() {
       document.title = "Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888";
     };
   }, [section]);
-
-  useEffect(() => {
-    setImgError(false);
-  }, [occasion]);
 
   if (!section) {
     return (
@@ -59,36 +55,16 @@ export default function HolidayDetailPage() {
         </Link>
       </header>
 
-      <div className="group-page__photo">
-        {section.image && !imgError ? (
-          <img
-            src={section.image}
-            alt={section.title}
-            className="group-page__hero-img"
-            onError={() => setImgError(true)}
-          />
-        ) : (
-          <div className="group-page__photo-placeholder" aria-hidden="true">
-            <img
-              src="/images/home/logo_trensparent.png"
-              alt=""
-              className="group-page__empty-brand"
-            />
-          </div>
-        )}
-      </div>
-
-      <div className="group-page__categories">
+      <div className="group-page__showcases">
         <ScrollReveal>
-          <section className="category-section">
-            <ul className="variant-list" role="list">
-              {section.items.map((item) => (
-                <li key={item} className="variant-row">
-                  <span className="variant-row__name">{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          <ProductShowcase
+            heading="Our Selection"
+            flavours={section.items}
+            groupId={section.id}
+            assortedImage={section.image}
+            imageBase="/images/holidays"
+            flavourNoun="specialty"
+          />
         </ScrollReveal>
       </div>
     </div>

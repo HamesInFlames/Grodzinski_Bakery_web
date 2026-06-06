@@ -52,6 +52,10 @@ export interface ProductShowcaseProps {
   groupId: string;
   assortedImage?: string;
   groupImage?: string;
+  /** Directory the per-flavour photos are derived from. */
+  imageBase?: string;
+  /** Noun used in the "— N flavours" subhead (e.g. "specialty"). */
+  flavourNoun?: string;
 }
 
 export default function ProductShowcase({
@@ -60,12 +64,14 @@ export default function ProductShowcase({
   groupId,
   assortedImage,
   groupImage,
+  imageBase = '/images/menu',
+  flavourNoun = 'flavour',
 }: ProductShowcaseProps) {
   const slides: Slide[] = [
     { label: 'Assorted', src: assortedImage || groupImage || PLACEHOLDER },
     ...flavours.map((name) => ({
       label: name,
-      src: `/images/menu/${groupId}/${slugify(name)}.webp`,
+      src: `${imageBase}/${groupId}/${slugify(name)}.webp`,
     })),
   ];
 
@@ -100,7 +106,12 @@ export default function ProductShowcase({
           {heading}
           <span className="product-showcase__flavour-count">
             {' — '}
-            {flavours.length} {flavours.length === 1 ? 'flavour' : 'flavours'}
+            {flavours.length}{' '}
+            {flavours.length === 1
+              ? flavourNoun
+              : flavourNoun.endsWith('y')
+                ? `${flavourNoun.slice(0, -1)}ies`
+                : `${flavourNoun}s`}
           </span>
         </h3>
       </header>
