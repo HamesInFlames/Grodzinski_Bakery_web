@@ -166,8 +166,8 @@
 .menuhub__card-count {
   font-family: var(--font-sans);
   font-size: 0.8125rem;
-  font-weight: 400;
-  color: var(--text-secondary);
+  font-weight: 600;
+  color: var(--color-blue-ink);
 }
 
 @media (max-width: 480px) {
@@ -1084,8 +1084,8 @@ textarea:focus-visible {
 .holidays-hub__card-count {
   font-family: var(--font-sans);
   font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--color-gold-text);
+  font-weight: 600;
+  color: var(--color-blue-ink);
 }
 
 @media (max-width: 480px) {

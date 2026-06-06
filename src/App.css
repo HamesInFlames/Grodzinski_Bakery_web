@@ -138,10 +138,12 @@
   --color-warm: #5C4033;           /* legacy brown — warm-tone surfaces (catering hero etc.) */
 
   /* PMS 277 blue — cool accent for interactive + decorative elements */
-  --color-blue: #ABCAE9;           /* base PMS 277 — soft cyan-blue */
+  --color-blue: #ABCAE9;           /* base PMS 277 — soft cyan-blue (accents on dark) */
   --color-blue-dark: #6BA3D4;      /* darker — links/text with better contrast */
   --color-blue-light: #D5E4F4;     /* tinted — subtle backgrounds/hover fills */
-  --color-blue-deep: #4A87BD;      /* deepest — WCAG AA on light surfaces */
+  --color-blue-deep: #4A87BD;      /* graphical accents on light (bars, borders) */
+  --color-blue-ink: #2F6090;       /* accessible blue for TEXT/labels + button fills (AA on oat) */
+  --color-blue-night: #22425E;     /* deep navy — footer surface + button hover/press */
 
   /* Legacy brown scale (still consumed by gallery + catering surfaces) */
   --brown-900: #3D2A22;
@@ -658,14 +660,14 @@ main {
 }
 
 .btn--primary {
-  color: var(--color-bg);
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  color: #fff;
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
 }
 
 .btn--primary:hover {
-  background: var(--primary-hover);
-  border-color: var(--primary-hover);
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
 }
 
 .btn--primary:focus-visible {
@@ -800,14 +802,14 @@ main {
 
 /* Espresso-ground variant of the primary button: invert to cream + accent */
 .hero--heritage .btn--primary {
-  color: var(--color-ink);
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  color: #fff;
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
 }
 .hero--heritage .btn--primary:hover {
-  color: var(--color-ink);
-  background: var(--color-amber);
-  border-color: var(--color-amber);
+  color: #fff;
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
 }
 
 /* Legacy hero rules kept for any non-heritage hero (e.g. catering) */
@@ -1138,7 +1140,7 @@ main {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
+  color: var(--color-blue-ink);
   margin: 0 0 12px;
 }
 
@@ -1449,14 +1451,14 @@ main {
 }
 
 .gallery-cta--embedded .btn--primary {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
   color: #fff;
 }
 
 .gallery-cta--embedded .btn--primary:hover {
-  background: var(--color-amber);
-  border-color: var(--color-amber);
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
 }
 
 .gallery-cta--embedded .btn--secondary {
@@ -1762,7 +1764,7 @@ main {
 ═══════════════════════════════════════════════════════════════════════════ */
 
 .footer {
-  background: var(--color-primary);
+  background: var(--color-blue-night);
   color: var(--color-bg);
   padding: 64px 0 32px;
 }
@@ -2942,11 +2944,11 @@ a.footer__link:hover { color: var(--color-blue); opacity: 1; }
 
 .visit-action-btn--primary {
   color: #FFFFFF;
-  background: var(--primary);
+  background: var(--color-blue-ink);
 }
 
 .visit-action-btn--primary:hover {
-  background: var(--primary-hover);
+  background: var(--color-blue-night);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -3242,18 +3244,18 @@ a.footer__link:hover { color: var(--color-blue); opacity: 1; }
 
 /* Contact Form Submit Button - Heritage gold accent */
 .contact-form .btn--primary {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
   color: #FFFFFF;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .contact-form .btn--primary:hover {
-  background: var(--color-amber);
-  border-color: var(--color-amber);
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(184, 134, 11, 0.28);
+  box-shadow: 0 8px 22px rgba(34, 66, 94, 0.28);
 }
 
 .contact-form .btn--primary:focus {
@@ -4902,7 +4904,7 @@ html, body {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);
+  color: var(--color-blue-ink);
   margin-bottom: 2px;
 }
 
