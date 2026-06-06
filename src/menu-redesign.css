@@ -109,18 +109,19 @@
   padding: 48px var(--container-padding) 96px;
 }
 
+/* Match the Holidays hub grid so menu cards are the same size. */
 .menuhub__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
 }
 
 @media (min-width: 640px) {
-  .menuhub__grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .menuhub__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 
 @media (min-width: 1024px) {
-  .menuhub__grid { grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .menuhub__grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
 }
 
 .menuhub__card {
