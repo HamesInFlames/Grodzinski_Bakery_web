@@ -2,6 +2,12 @@ export interface MenuDisplaySection {
   heading: string;
   /** Hero "assorted of all flavours" image for this product's showcase. */
   assortedImage?: string;
+  /**
+   * Photo-map namespace override for per-flavour lookups. Use when two sections
+   * in the same group share flavour names but need different photos (e.g.
+   * Bagels vs Breads). Defaults to the parent group id.
+   */
+  photoGroupId?: string;
   items: string[];
 }
 
@@ -36,18 +42,19 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Bagels',
-        assortedImage: '/images/products/sesame-seed-bagel.webp',
+        assortedImage: '/images/products/assorted-bagels.webp',
+        photoGroupId: 'breads-bagels',
         items: ['Plain', 'Multigrain', 'Sesame', 'Everything', 'Wholewheat', 'Mezonot'],
       },
       {
         heading: 'Breads',
-        assortedImage: '/images/home/thumbnail_breaks_rolls.png',
+        assortedImage: '/images/products/assorted-breads.webp',
         items: ['Wholewheat', 'White', 'Multigrain', 'Rye', 'Plain', 'Rye Kemo', 'Rye Marble', 'Rye Pumpernickel', 'French'],
       },
       {
         heading: 'Buns & Rolls',
         assortedImage: '/images/products/onion-rolls-6-pack.webp',
-        items: ['Italian Rolls', 'Rye Rolls', 'Onion Packets', 'Onion Buns', 'Baguettes', 'Slider Buns', 'Pretzel Demi Baguettes'],
+        items: ['Italian Rolls', 'Rye Rolls', 'Onion Packets & Buns', 'Baguettes', 'Slider Buns', 'Pretzel Demi Baguettes'],
       },
     ],
   },
@@ -78,6 +85,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       {
         heading: 'Loaf',
         assortedImage: '/images/products/marble-loaf-cake.webp',
+        photoGroupId: 'loaf',
         items: ['Poppy Lemon', 'Orange', 'Apple', 'Cherry', 'Marble', 'Chocolate', 'Berry'],
       },
     ],

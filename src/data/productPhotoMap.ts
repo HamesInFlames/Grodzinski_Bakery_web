@@ -31,6 +31,16 @@ const PRODUCT_IMAGE_BASE = '/images/products';
  */
 const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   // ----- Menu groups -----------------------------------------------------
+  // Bagels share the `breads` group but need their own photos (the `breads`
+  // block below serves the Breads / Buns & Rolls sections).
+  'breads-bagels': {
+    Plain: 'plain-bagel.webp',
+    Multigrain: 'multigrain-bagel.webp',
+    Sesame: 'sesame-seed-bagel.webp',
+    Everything: 'everything-bagel.webp',
+    Wholewheat: 'wholewheat-bagel.webp',
+    Mezonot: 'mezonot-bagel.webp',
+  },
   breads: {
     Plain: 'plain-bagel.webp',
     Multigrain: 'multigrain-bread.webp',
@@ -44,13 +54,12 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Rye Marble': 'marble-rye-bread.webp',
     'Rye Pumpernickel': 'pumpernickel-bread.webp',
     French: 'french-bread.webp',
-    'Italian Rolls': 'onion-rolls-6-pack.webp',
+    'Italian Rolls': 'italian-rolls.webp',
     'Rye Rolls': 'rye-roll.webp',
-    'Onion Packets': 'onion-rolls-6-pack.webp',
-    'Onion Buns': 'onion-rolls-6-pack.webp',
+    'Onion Packets & Buns': 'onion-rolls-6-pack.webp',
     Baguettes: 'french-bread.webp',
-    'Slider Buns': 'onion-rolls-6-pack.webp',
-    'Pretzel Demi Baguettes': 'onion-rolls-6-pack.webp',
+    'Slider Buns': 'slider-buns.webp',
+    'Pretzel Demi Baguettes': 'pretzel-demi-baguettes.webp',
   },
   challah: {
     Square: 'square-challah.webp',
@@ -62,6 +71,8 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Twisted: 'twisted-challah.webp',
     Water: 'water-challah.webp',
   },
+  // Cakes section (the Loaf section shares this group but uses the `loaf`
+  // block below so shared names like Chocolate/Marble stay independent).
   'cakes-loaf': {
     Chocolate: 'chocolate-cake.webp',
     Vanilla: 'vanilla-cake.webp',
@@ -70,10 +81,14 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Black Forest': 'custom-celebration-cake.webp',
     'Caramel Crunch': 'caramel-crunch-bundt.webp',
     'Custom Cakes': 'custom-birthday-cake.webp',
+  },
+  loaf: {
     'Poppy Lemon': 'marble-loaf-cake.webp',
-    Orange: 'apple-loaf-cake.webp',
+    Orange: 'orange-loaf.webp',
     Apple: 'apple-loaf-cake.webp',
-    Cherry: 'apple-loaf-cake.webp',
+    Cherry: 'cherry-loaf.webp',
+    Marble: 'marble-loaf-cake.webp',
+    Chocolate: 'chocolate-loaf.webp',
     Berry: 'berry-muffin.webp',
   },
   'cookies-sweets': {
@@ -84,8 +99,8 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Rugelach: 'rugelach-strawberry.webp',
     Pretzel: 'mini-pastry-assortment.webp',
     'Cheese Sticks': 'cheese-stick.webp',
-    Churros: 'cinnamon-bun.webp',
-    Sandwiches: 'croissant-plain.webp',
+    Churros: 'churros.webp',
+    Sandwiches: 'sandwich.webp',
     'Yogurt Parfait': 'mini-pastry-assortment.webp',
   },
   'danishes-babkas': {

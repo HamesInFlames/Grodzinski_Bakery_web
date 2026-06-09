@@ -79,6 +79,7 @@ export default function GroupPage() {
               heading={section.heading}
               flavours={section.items}
               groupId={group.id}
+              photoGroupId={section.photoGroupId}
               assortedImage={section.assortedImage}
               groupImage={group.image}
             />

@@ -59,6 +59,12 @@ export interface ProductShowcaseProps {
   heading: string;
   flavours: string[];
   groupId: string;
+  /**
+   * Photo-map namespace for per-flavour lookups. Defaults to `groupId`, but a
+   * section can override it when several sections share one group yet need
+   * independent photos (e.g. Bagels vs Breads both live in `breads`).
+   */
+  photoGroupId?: string;
   assortedImage?: string;
   groupImage?: string;
   /** Directory the per-flavour photos are derived from. */
@@ -71,18 +77,20 @@ export default function ProductShowcase({
   heading,
   flavours,
   groupId,
+  photoGroupId,
   assortedImage,
   groupImage,
   imageBase = '/images/menu',
   flavourNoun = 'flavour',
 }: ProductShowcaseProps) {
+  const photoKey = photoGroupId ?? groupId;
   const slides: Slide[] = [
     { label: 'Assorted', src: assortedImage || groupImage || PLACEHOLDER },
     ...flavours.map((name) => ({
       label: name,
       src:
-        getItemPhoto(groupId, name) ??
-        `${imageBase}/${groupId}/${slugify(name)}.webp`,
+        getItemPhoto(photoKey, name) ??
+        `${imageBase}/${photoKey}/${slugify(name)}.webp`,
     })),
   ];
 
