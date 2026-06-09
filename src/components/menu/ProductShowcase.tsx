@@ -1,8 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
+import { AnimatePresence, motion } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { getItemPhoto } from '@/data/productPhotoMap';
 
 const PLACEHOLDER = '/images/home/logo_trensparent.png';
+
+/** Slide the main image in/out along the direction of travel (next = +1). */
+const slideVariants = {
+  enter: (dir: number) => ({ x: dir >= 0 ? '100%' : '-100%', opacity: 0 }),
+  center: { x: '0%', opacity: 1 },
+  exit: (dir: number) => ({ x: dir >= 0 ? '-100%' : '100%', opacity: 0 }),
+};
 
 function slugify(name: string): string {
   return name
@@ -79,21 +87,39 @@ export default function ProductShowcase({
   ];
 
   const [active, setActive] = useState(0);
+  // Travel direction of the last change (+1 next, -1 prev) drives the slide.
+  const [direction, setDirection] = useState(0);
   const stripRef = useRef<HTMLDivElement | null>(null);
   const itemRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const count = slides.length;
-  const prev = () => setActive((i) => (i - 1 + count) % count);
-  const next = () => setActive((i) => (i + 1) % count);
+  const go = (target: number, dir: number) => {
+    setDirection(dir);
+    setActive(target);
+  };
+  const prev = () => go((active - 1 + count) % count, -1);
+  const next = () => go((active + 1) % count, 1);
+  const select = (idx: number) => {
+    if (idx !== active) go(idx, idx > active ? 1 : -1);
+  };
 
-  // Keep the active flavour visible within the (vertical) list as it changes.
+  // Keep the active flavour in view as it changes — the list is a horizontal
+  // carousel on phones and a vertical list on wider screens, so detect which
+  // axis actually scrolls and nudge along that one.
   useEffect(() => {
     const strip = stripRef.current;
     const target = itemRefs.current[active];
     if (!strip || !target) return;
     const stripRect = strip.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
-    if (targetRect.top < stripRect.top || targetRect.bottom > stripRect.bottom) {
+    const horizontal = strip.scrollWidth > strip.clientWidth + 1;
+    if (horizontal) {
+      if (targetRect.left < stripRect.left || targetRect.right > stripRect.right) {
+        const delta =
+          targetRect.left + targetRect.width / 2 - (stripRect.left + stripRect.width / 2);
+        strip.scrollBy({ left: delta, behavior: 'smooth' });
+      }
+    } else if (targetRect.top < stripRect.top || targetRect.bottom > stripRect.bottom) {
       const delta =
         targetRect.top + targetRect.height / 2 - (stripRect.top + stripRect.height / 2);
       strip.scrollBy({ top: delta, behavior: 'smooth' });
@@ -121,17 +147,33 @@ export default function ProductShowcase({
 
       <div className="product-showcase__stage">
         <div className="product-showcase__frame">
-          <ShowcaseImage
-            src={activeSlide.src}
-            alt={
-              active === 0
-                ? `Assorted ${heading.toLowerCase()}`
-                : `${activeSlide.label} — ${heading}`
-            }
-            className="product-showcase__image"
-            eager
-          />
-          <span className="product-showcase__caption">{activeSlide.label}</span>
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={active}
+              className="product-showcase__slide"
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{
+                x: { type: 'tween', duration: 0.45, ease: [0.22, 0.61, 0.36, 1] },
+                opacity: { duration: 0.25 },
+              }}
+            >
+              <ShowcaseImage
+                src={activeSlide.src}
+                alt={
+                  active === 0
+                    ? `Assorted ${heading.toLowerCase()}`
+                    : `${activeSlide.label} — ${heading}`
+                }
+                className="product-showcase__image"
+                eager
+              />
+              <span className="product-showcase__caption">{activeSlide.label}</span>
+            </motion.div>
+          </AnimatePresence>
 
           <button
             type="button"
@@ -170,7 +212,7 @@ export default function ProductShowcase({
                 aria-selected={isActive}
                 aria-label={`Show ${slide.label}`}
                 className={`product-showcase__option${isActive ? ' is-active' : ''}`}
-                onClick={() => setActive(idx)}
+                onClick={() => select(idx)}
               >
                 <span className="product-showcase__option-chip">
                   <ShowcaseImage

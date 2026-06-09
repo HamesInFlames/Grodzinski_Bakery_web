@@ -1959,6 +1959,14 @@ textarea:focus-visible {
   border: 1px solid var(--color-rule);
 }
 
+/* Each slide fills the frame and is absolutely stacked so the entering and
+   exiting images can slide across each other (frame clips the overflow). */
+.product-showcase__slide {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
 .product-showcase__image {
   width: 100%;
   height: 100%;
@@ -2030,36 +2038,42 @@ textarea:focus-visible {
 
 /* Flavour list (right column): one selectable row per slide, the active one
    tinted with the PMS 277 blue accent. Scrolls within the frame height. */
+/* Flavour list — mobile-first as a HORIZONTAL carousel of flavour cards below
+   the image. At >=700px it flips to the vertical editorial list beside the
+   image (override block further down). The JS keeps the active item in view in
+   whichever orientation is active. */
 .product-showcase__list {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-  max-height: clamp(360px, 56vw, 520px);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-width: thin;
-  padding: 2px;
+  flex-direction: row;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 4px 2px;
+  scroll-snap-type: x proximity;
+}
+
+.product-showcase__list::-webkit-scrollbar {
+  display: none;
 }
 
 .product-showcase__option {
+  flex: 0 0 auto;
+  width: 88px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  width: 100%;
-  padding: 8px 12px 8px 9px;
+  gap: 6px;
+  padding: 6px;
   border: 0;
-  border-left: 3px solid transparent;
   border-radius: var(--radius-md);
   background: transparent;
-  text-align: left;
+  text-align: center;
   cursor: pointer;
-  transition: background-color 150ms ease-out, border-color 150ms ease-out;
-}
-
-@media (hover: hover) {
-  .product-showcase__option:hover {
-    background: var(--color-bg-elevated);
-  }
+  scroll-snap-align: center;
+  transition: background-color 150ms ease-out;
 }
 
 .product-showcase__option:focus-visible {
@@ -2068,13 +2082,13 @@ textarea:focus-visible {
 }
 
 .product-showcase__option-chip {
-  flex: 0 0 54px;
-  width: 54px;
-  height: 54px;
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
   border-radius: 8px;
   overflow: hidden;
   background: var(--bg-section);
-  border: 1px solid var(--color-rule);
+  border: 2px solid transparent;
   transition: border-color 150ms ease-out;
 }
 
@@ -2087,15 +2101,18 @@ textarea:focus-visible {
 
 .product-showcase__option-label {
   font-family: var(--font-sans);
-  font-size: 0.9375rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-secondary);
-  line-height: 1.3;
+  line-height: 1.25;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .product-showcase__option.is-active {
   background: var(--color-blue-light);
-  border-left-color: var(--color-blue-deep);
 }
 
 .product-showcase__option.is-active .product-showcase__option-chip {
@@ -2107,8 +2124,59 @@ textarea:focus-visible {
   font-weight: 600;
 }
 
+/* >=700px: vertical editorial list beside the image. */
+@media (min-width: 700px) {
+  .product-showcase__list {
+    flex-direction: column;
+    gap: 4px;
+    max-height: clamp(360px, 56vw, 520px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    padding: 2px;
+    scroll-snap-type: none;
+  }
+
+  .product-showcase__option {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px 8px 9px;
+    border-left: 3px solid transparent;
+    text-align: left;
+    scroll-snap-align: none;
+    transition: background-color 150ms ease-out, border-color 150ms ease-out;
+  }
+
+  .product-showcase__option-chip {
+    width: 54px;
+    height: 54px;
+    border-width: 1px;
+    border-color: var(--color-rule);
+  }
+
+  .product-showcase__option-label {
+    font-size: 0.9375rem;
+    line-height: 1.3;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .product-showcase__option.is-active {
+    border-left-color: var(--color-blue-deep);
+  }
+}
+
+@media (min-width: 700px) and (hover: hover) {
+  .product-showcase__option:hover {
+    background: var(--color-bg-elevated);
+  }
+}
+
 @media (max-width: 480px) {
   .product-showcase__arrow { width: 36px; height: 36px; }
   .product-showcase__title { font-size: 1.375rem; }
-  .product-showcase__option-chip { flex-basis: 46px; width: 46px; height: 46px; }
 }
