@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="footer__brand">
             <img
-              src="/images/home/logo.png"
+              src="/images/home/logo_white.png"
               alt="Grodzinski Bakery"
               className="footer__wordmark-img"
               loading="lazy"

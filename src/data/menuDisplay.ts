@@ -19,6 +19,8 @@ export interface HolidayDisplaySection {
   title: string;
   /** Hebrew name shown on the holiday card and detail page. */
   hebrew?: string;
+  /** Short blurb on the hub card summarising this holiday's selections. */
+  description?: string;
   photo: string;
   /** Existing asset used for the hub card and detail hero. */
   image?: string;
@@ -131,6 +133,8 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     id: 'rosh-sukkot-simchat',
     title: 'Rosh Hashanah / Sukkot / Simchat Torah',
     hebrew: '\u05e8\u05d0\u05e9 \u05d4\u05e9\u05e0\u05d4 \u00b7 \u05e1\u05d5\u05db\u05d5\u05ea \u00b7 \u05e9\u05de\u05d7\u05ea \u05ea\u05d5\u05e8\u05d4',
+    description:
+      'Round and crown challahs, honey loaf and cake, gift baskets and cookie boxes, plus festive Sukkah houses and Torah cookies for the High Holidays.',
     photo: 'holiday-rosh-sukkot-simchat.jpg',
     image: '/images/products/rosh-hashanah-round-challah.webp',
     items: ['Round Challah', 'Crown Challah', 'Honey Loaf', 'Honey Cake', 'Gift Baskets', 'Gift Cookie Boxes', 'Sukkah House', 'Torah Cookie'],
@@ -139,6 +143,8 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     id: 'yom-kippur',
     title: 'Yom Kippur',
     hebrew: '\u05d9\u05d5\u05dd \u05db\u05d9\u05e4\u05d5\u05e8',
+    description:
+      'Crown babka, honey loaf and cake, and thoughtful gift baskets and cookie boxes to share before and after the fast.',
     photo: 'holiday-yom-kippur.jpg',
     image: '/images/home/thumbnail_babkas.png',
     items: ['Crown Babka', 'Honey Loaf', 'Honey Cake', 'Gift Baskets', 'Gift Cookie Boxes'],
@@ -147,6 +153,8 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     id: 'hanukkah',
     title: 'Hanukkah',
     hebrew: '\u05d7\u05e0\u05d5\u05db\u05d4',
+    description:
+      'Jelly-filled sufganiyot, golden latkes, and festive cookie boxes for the Festival of Lights.',
     photo: 'holiday-hanukkah.jpg',
     image: '/images/products/chanukah-cookies-platter.webp',
     items: ['Sufganiyot', 'Cookie Boxes', 'Latkes'],
@@ -155,6 +163,8 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     id: 'purim',
     title: 'Purim',
     hebrew: '\u05e4\u05d5\u05e8\u05d9\u05dd',
+    description:
+      'Assorted hamantaschen in every flavour and ready-to-give mishloach manot for the Purim feast.',
     photo: 'holiday-purim.jpg',
     image: '/images/products/hamantaschen-assorted.webp',
     items: ['Hamantaschen (Assorted Flavours)', 'Mishloach Manot'],
@@ -163,6 +173,8 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     id: 'shavuot',
     title: 'Shavuot',
     hebrew: '\u05e9\u05d1\u05d5\u05e2\u05d5\u05ea',
+    description:
+      'Cheesecake, and only cheesecake \u2014 every variety we make for the dairy holiday.',
     photo: 'holiday-shavuot.jpg',
     image: '/images/home/thumbnail_cakes.png',
     items: ['Cheesecake only \u2014 all cheese, every cheese'],
@@ -171,6 +183,8 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     id: 'celebration',
     title: 'Celebration',
     hebrew: '\u05d7\u05d2\u05d9\u05d2\u05d4',
+    description:
+      'Custom holiday cookies and cakes, made to order for any simcha or celebration.',
     photo: 'holiday-celebration.jpg',
     image: '/images/products/custom-celebration-cake.webp',
     items: ['Custom Holiday Cookies', 'Custom Holiday Cakes'],

@@ -1088,6 +1088,21 @@ textarea:focus-visible {
   color: var(--color-blue-ink);
 }
 
+/* Celebration card: differentiated PMS 277 blue accent so it stands apart
+   from the holiday cards (which keep the default oat/espresso treatment). */
+.holidays-hub__card--celebration {
+  background: var(--color-blue-light);
+  border-color: var(--color-blue-deep);
+}
+
+.holidays-hub__card--celebration:hover {
+  border-color: var(--color-blue-ink);
+}
+
+.holidays-hub__card--celebration .holidays-hub__card-name {
+  color: var(--color-blue-ink);
+}
+
 @media (max-width: 480px) {
   .holidays-hub__hero { min-height: auto; padding-top: 80px; padding-bottom: 40px; }
   .holidays-hub__title { font-size: 2.25rem; }
@@ -1915,27 +1930,33 @@ textarea:focus-visible {
   white-space: nowrap;
 }
 
-/* Main stage: arrow · framed image · arrow */
+/* Editorial split stage: framed product image (left) + flavour list (right).
+   Stacks to a single column on narrow screens. */
 .product-showcase__stage {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
 }
 
+@media (min-width: 700px) {
+  .product-showcase__stage {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+    gap: 28px;
+  }
+}
+
+/* Frame is sized by height so the portrait (4:5) photo shows in full without
+   cover-cropping; width follows the aspect ratio and the frame centers. */
 .product-showcase__frame {
   position: relative;
-  /* Taller on mobile (near-square), a shorter cinematic band on wider
-     screens so the image and the flavour strip stay visible together. */
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 5;
+  height: clamp(360px, 56vw, 520px);
+  justify-self: center;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--bg-section);
   border: 1px solid var(--color-rule);
-}
-
-@media (min-width: 700px) {
-  .product-showcase__frame { aspect-ratio: 16 / 7; }
 }
 
 .product-showcase__image {
@@ -1947,7 +1968,7 @@ textarea:focus-visible {
 
 /* Missing-photo placeholder (brand logo) sits centered, not cover-stretched. */
 .product-showcase__image.is-placeholder,
-.product-showcase__thumb-image.is-placeholder {
+.product-showcase__option-image.is-placeholder {
   object-fit: contain;
   padding: 12%;
   opacity: 0.45;
@@ -1959,30 +1980,37 @@ textarea:focus-visible {
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 24px 16px 12px;
+  padding: 28px 16px 14px;
   font-family: var(--font-sans);
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
   background: linear-gradient(to top, rgba(31, 20, 16, 0.78), rgba(31, 20, 16, 0));
 }
 
+/* Arrows overlay the image, vertically centered on its edges. */
 .product-showcase__arrow {
-  flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-bg-elevated);
+  background: rgba(250, 246, 238, 0.86);
   color: var(--color-primary);
   border: 1px solid var(--color-rule);
   border-radius: 999px;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
+  z-index: 2;
   transition: transform 150ms ease-out, background-color 150ms ease-out,
     border-color 150ms ease-out;
 }
+
+.product-showcase__arrow--prev { left: 10px; }
+.product-showcase__arrow--next { right: 10px; }
 
 .product-showcase__arrow:focus-visible {
   outline: 2px solid var(--color-blue-deep);
@@ -1991,98 +2019,96 @@ textarea:focus-visible {
 
 @media (hover: hover) {
   .product-showcase__arrow:hover {
-    background: #EDDDBE;
+    background: #fff;
     border-color: var(--color-accent);
-    transform: translateY(-1px);
+    transform: translateY(-50%) scale(1.06);
   }
   .product-showcase__arrow:active {
-    transform: scale(0.96);
+    transform: translateY(-50%) scale(0.96);
   }
 }
 
-/* Thumbnail strip */
-.product-showcase__thumbs {
+/* Flavour list (right column): one selectable row per slide, the active one
+   tinted with the PMS 277 blue accent. Scrolls within the frame height. */
+.product-showcase__list {
   display: flex;
-  gap: 12px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  flex-direction: column;
+  gap: 4px;
+  max-height: clamp(360px, 56vw, 520px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
   padding: 2px;
 }
 
-.product-showcase__thumbs::-webkit-scrollbar {
-  display: none;
-}
-
-.product-showcase__thumb {
-  flex: 0 0 96px;
+.product-showcase__option {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: opacity 150ms ease-out, transform 150ms ease-out;
-}
-
-.product-showcase__thumb-image {
+  align-items: center;
+  gap: 12px;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 2px solid transparent;
-  background: var(--bg-section);
-  transition: border-color 150ms ease-out;
-}
-
-.product-showcase__thumb-label {
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  text-align: center;
-  line-height: 1.25;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.product-showcase__thumb:focus-visible {
-  outline: none;
-  opacity: 1;
-}
-
-.product-showcase__thumb:focus-visible .product-showcase__thumb-image {
-  border-color: var(--color-blue-deep);
+  padding: 8px 12px 8px 9px;
+  border: 0;
+  border-left: 3px solid transparent;
+  border-radius: var(--radius-md);
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 150ms ease-out, border-color 150ms ease-out;
 }
 
 @media (hover: hover) {
-  .product-showcase__thumb:hover {
-    opacity: 0.95;
-    transform: translateY(-1px);
+  .product-showcase__option:hover {
+    background: var(--color-bg-elevated);
   }
 }
 
-.product-showcase__thumb.is-active {
-  opacity: 1;
+.product-showcase__option:focus-visible {
+  outline: 2px solid var(--color-blue-deep);
+  outline-offset: 2px;
 }
 
-.product-showcase__thumb.is-active .product-showcase__thumb-image {
-  border-color: var(--color-primary);
+.product-showcase__option-chip {
+  flex: 0 0 54px;
+  width: 54px;
+  height: 54px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-section);
+  border: 1px solid var(--color-rule);
+  transition: border-color 150ms ease-out;
 }
 
-.product-showcase__thumb.is-active .product-showcase__thumb-label {
-  color: var(--color-primary);
+.product-showcase__option-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-showcase__option-label {
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.3;
+}
+
+.product-showcase__option.is-active {
+  background: var(--color-blue-light);
+  border-left-color: var(--color-blue-deep);
+}
+
+.product-showcase__option.is-active .product-showcase__option-chip {
+  border-color: var(--color-blue-deep);
+}
+
+.product-showcase__option.is-active .product-showcase__option-label {
+  color: var(--color-blue-ink);
   font-weight: 600;
 }
 
 @media (max-width: 480px) {
-  .product-showcase__arrow { width: 38px; height: 38px; }
-  .product-showcase__stage { gap: 8px; }
-  .product-showcase__thumb { flex-basis: 80px; }
+  .product-showcase__arrow { width: 36px; height: 36px; }
   .product-showcase__title { font-size: 1.375rem; }
+  .product-showcase__option-chip { flex-basis: 46px; width: 46px; height: 46px; }
 }

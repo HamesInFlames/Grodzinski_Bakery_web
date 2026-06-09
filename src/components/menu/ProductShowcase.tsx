@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { getItemPhoto } from '@/data/productPhotoMap';
 
 const PLACEHOLDER = '/images/home/logo_trensparent.png';
 
@@ -71,7 +72,9 @@ export default function ProductShowcase({
     { label: 'Assorted', src: assortedImage || groupImage || PLACEHOLDER },
     ...flavours.map((name) => ({
       label: name,
-      src: `${imageBase}/${groupId}/${slugify(name)}.webp`,
+      src:
+        getItemPhoto(groupId, name) ??
+        `${imageBase}/${groupId}/${slugify(name)}.webp`,
     })),
   ];
 
@@ -83,17 +86,17 @@ export default function ProductShowcase({
   const prev = () => setActive((i) => (i - 1 + count) % count);
   const next = () => setActive((i) => (i + 1) % count);
 
-  // Keep the active thumbnail centered within the strip (port of GalleryThumbnails).
+  // Keep the active flavour visible within the (vertical) list as it changes.
   useEffect(() => {
     const strip = stripRef.current;
     const target = itemRefs.current[active];
     if (!strip || !target) return;
     const stripRect = strip.getBoundingClientRect();
     const targetRect = target.getBoundingClientRect();
-    const delta =
-      targetRect.left + targetRect.width / 2 - (stripRect.left + stripRect.width / 2);
-    if (Math.abs(delta) > 1) {
-      strip.scrollBy({ left: delta, behavior: 'smooth' });
+    if (targetRect.top < stripRect.top || targetRect.bottom > stripRect.bottom) {
+      const delta =
+        targetRect.top + targetRect.height / 2 - (stripRect.top + stripRect.height / 2);
+      strip.scrollBy({ top: delta, behavior: 'smooth' });
     }
   }, [active]);
 
@@ -117,15 +120,6 @@ export default function ProductShowcase({
       </header>
 
       <div className="product-showcase__stage">
-        <button
-          type="button"
-          className="product-showcase__arrow product-showcase__arrow--prev"
-          onClick={prev}
-          aria-label="Previous flavour"
-        >
-          <ChevronLeft size={28} strokeWidth={1.75} aria-hidden="true" />
-        </button>
-
         <div className="product-showcase__frame">
           <ShowcaseImage
             src={activeSlide.src}
@@ -138,48 +132,58 @@ export default function ProductShowcase({
             eager
           />
           <span className="product-showcase__caption">{activeSlide.label}</span>
+
+          <button
+            type="button"
+            className="product-showcase__arrow product-showcase__arrow--prev"
+            onClick={prev}
+            aria-label="Previous flavour"
+          >
+            <ChevronLeft size={24} strokeWidth={1.75} aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className="product-showcase__arrow product-showcase__arrow--next"
+            onClick={next}
+            aria-label="Next flavour"
+          >
+            <ChevronRight size={24} strokeWidth={1.75} aria-hidden="true" />
+          </button>
         </div>
 
-        <button
-          type="button"
-          className="product-showcase__arrow product-showcase__arrow--next"
-          onClick={next}
-          aria-label="Next flavour"
+        <div
+          className="product-showcase__list"
+          ref={stripRef}
+          role="tablist"
+          aria-label={`${heading} flavours`}
         >
-          <ChevronRight size={28} strokeWidth={1.75} aria-hidden="true" />
-        </button>
-      </div>
-
-      <div
-        className="product-showcase__thumbs"
-        ref={stripRef}
-        role="tablist"
-        aria-label={`${heading} flavours`}
-      >
-        {slides.map((slide, idx) => {
-          const isActive = idx === active;
-          return (
-            <button
-              key={slide.label}
-              ref={(el) => {
-                itemRefs.current[idx] = el;
-              }}
-              type="button"
-              role="tab"
-              aria-selected={isActive}
-              aria-label={`Show ${slide.label}`}
-              className={`product-showcase__thumb${isActive ? ' is-active' : ''}`}
-              onClick={() => setActive(idx)}
-            >
-              <ShowcaseImage
-                src={slide.src}
-                alt=""
-                className="product-showcase__thumb-image"
-              />
-              <span className="product-showcase__thumb-label">{slide.label}</span>
-            </button>
-          );
-        })}
+          {slides.map((slide, idx) => {
+            const isActive = idx === active;
+            return (
+              <button
+                key={slide.label}
+                ref={(el) => {
+                  itemRefs.current[idx] = el;
+                }}
+                type="button"
+                role="tab"
+                aria-selected={isActive}
+                aria-label={`Show ${slide.label}`}
+                className={`product-showcase__option${isActive ? ' is-active' : ''}`}
+                onClick={() => setActive(idx)}
+              >
+                <span className="product-showcase__option-chip">
+                  <ShowcaseImage
+                    src={slide.src}
+                    alt=""
+                    className="product-showcase__option-image"
+                  />
+                </span>
+                <span className="product-showcase__option-label">{slide.label}</span>
+              </button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

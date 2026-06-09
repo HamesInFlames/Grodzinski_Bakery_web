@@ -52,20 +52,21 @@ export default function HolidaysHub() {
         <StaggerContainer className="holidays-hub__grid" staggerDelay={0.08}>
           {HOLIDAY_SECTIONS.map((section) => (
             <StaggerItem key={section.id}>
-              <Link to={`/holidays/${section.id}`} className="holidays-hub__card">
-                <div className="holidays-hub__card-image">
-                  <img
-                    src={section.image || '/images/home/logo_trensparent.png'}
-                    alt={section.title}
-                    loading="lazy"
-                  />
-                </div>
+              <Link
+                to={`/holidays/${section.id}`}
+                className={`holidays-hub__card${
+                  section.id === 'celebration' ? ' holidays-hub__card--celebration' : ''
+                }`}
+              >
                 <div className="holidays-hub__card-content">
                   <h2 className="holidays-hub__card-name">{section.title}</h2>
                   {section.hebrew && (
                     <span className="holidays-hub__card-hebrew" lang="he" dir="rtl">
                       {section.hebrew}
                     </span>
+                  )}
+                  {section.description && (
+                    <p className="holidays-hub__card-desc">{section.description}</p>
                   )}
                   <span className="holidays-hub__card-count">
                     {section.items.length}{' '}
