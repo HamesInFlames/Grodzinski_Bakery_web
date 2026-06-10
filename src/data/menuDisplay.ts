@@ -42,18 +42,18 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Bagels',
-        assortedImage: '/images/products/assorted-bagels.webp',
+        assortedImage: '/images/products/menu/breads/assorted-bagels.webp',
         photoGroupId: 'breads-bagels',
         items: ['Plain', 'Multigrain', 'Sesame', 'Everything', 'Wholewheat', 'Mezonot'],
       },
       {
         heading: 'Breads',
-        assortedImage: '/images/products/assorted-breads.webp',
+        assortedImage: '/images/products/menu/breads/assorted-breads.webp',
         items: ['Wholewheat', 'White', 'Multigrain', 'Rye', 'Plain', 'Rye Kemo', 'Rye Marble', 'Rye Pumpernickel', 'French'],
       },
       {
         heading: 'Buns & Rolls',
-        assortedImage: '/images/products/onion-rolls-6-pack.webp',
+        assortedImage: '/images/products/menu/breads/onion-rolls-6-pack.webp',
         items: ['Italian Rolls', 'Rye Rolls', 'Onion Packets & Buns', 'Baguettes', 'Slider Buns', 'Pretzel Demi Baguettes'],
       },
     ],
@@ -84,7 +84,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       },
       {
         heading: 'Loaf',
-        assortedImage: '/images/products/marble-loaf-cake.webp',
+        assortedImage: '/images/products/menu/cakes-loaf/marble-loaf-cake.webp',
         photoGroupId: 'loaf',
         items: ['Poppy Lemon', 'Orange', 'Apple', 'Cherry', 'Marble', 'Chocolate', 'Berry'],
       },
@@ -103,7 +103,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       },
       {
         heading: 'Sweets / Savories',
-        assortedImage: '/images/products/rogalach-tray-assorted.webp',
+        assortedImage: '/images/products/menu/cookies-sweets/rogalach-tray-assorted.webp',
         items: ['Turnovers', 'Rugelach', 'Pretzel', 'Cheese Sticks', 'Churros', 'Sandwiches', 'Yogurt Parfait'],
       },
     ],
@@ -125,11 +125,11 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     id: 'pies',
     title: 'Pies',
     photo: 'pies-buns.jpg',
-    image: '/images/products/blueberry-pie.webp',
+    image: '/images/products/menu/pies/blueberry-pie.webp',
     sections: [
       {
         heading: 'Pies & Buns',
-        assortedImage: '/images/products/blueberry-pie.webp',
+        assortedImage: '/images/products/menu/pies/blueberry-pie.webp',
         items: ['Lemon Meringue', 'Fruit Pies', 'Fruit Tarts'],
       },
     ],
@@ -144,7 +144,7 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     description:
       'Round and crown challahs, honey loaf and cake, gift baskets and cookie boxes, plus festive Sukkah houses and Torah cookies for the High Holidays.',
     photo: 'holiday-rosh-sukkot-simchat.jpg',
-    image: '/images/products/rosh-hashanah-round-challah.webp',
+    image: '/images/products/holiday/rosh-sukkot-simchat/rosh-hashanah-round-challah.webp',
     items: ['Round Challah', 'Crown Challah', 'Honey Loaf', 'Honey Cake', 'Gift Baskets', 'Gift Cookie Boxes', 'Sukkah House', 'Torah Cookie'],
   },
   {
@@ -164,7 +164,7 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     description:
       'Jelly-filled sufganiyot, golden latkes, and festive cookie boxes for the Festival of Lights.',
     photo: 'holiday-hanukkah.jpg',
-    image: '/images/products/chanukah-cookies-platter.webp',
+    image: '/images/products/holiday/hanukkah/chanukah-cookies-platter.webp',
     items: ['Sufganiyot', 'Cookie Boxes', 'Latkes'],
   },
   {
@@ -174,7 +174,7 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     description:
       'Assorted hamantaschen in every flavour and ready-to-give mishloach manot for the Purim feast.',
     photo: 'holiday-purim.jpg',
-    image: '/images/products/hamantaschen-assorted.webp',
+    image: '/images/products/holiday/purim/hamantaschen-assorted.webp',
     items: ['Hamantaschen (Assorted Flavours)', 'Mishloach Manot'],
   },
   {
@@ -194,7 +194,7 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     description:
       'Custom holiday cookies and cakes, made to order for any simcha or celebration.',
     photo: 'holiday-celebration.jpg',
-    image: '/images/products/custom-celebration-cake.webp',
+    image: '/images/products/menu/cakes-loaf/custom-celebration-cake.webp',
     items: ['Custom Holiday Cookies', 'Custom Holiday Cakes'],
   },
 ];
