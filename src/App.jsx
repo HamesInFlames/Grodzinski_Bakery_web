@@ -46,6 +46,7 @@ export default function App() {
                 <Route path="/" element={<PageTransition><Home /></PageTransition>} />
                 <Route path="/menu" element={<PageTransition><MenuLayout /></PageTransition>}>
                   <Route index element={<MenuHub />} />
+                  <Route path="challah" element={<Navigate to="/menu/challah-bilkas" replace />} />
                   <Route path=":group" element={<GroupPage />} />
                   <Route path="p/*" element={<Navigate to="/menu" replace />} />
                 </Route>

@@ -65,7 +65,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     ],
   },
   {
-    id: 'challah',
+    id: 'challah-bilkas',
     title: 'Challahs & Bilkas',
     photo: 'challah.jpg',
     image: '/images/home/thumbnail_challahs.png',
@@ -88,7 +88,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       {
         heading: 'Bilkas',
         assortedImage: '/images/products/menu/challah/sesame-challah-small.webp',
-        photoGroupId: 'challah-bilkas',
+        photoGroupId: 'bilkas',
         items: ['Egg', 'Water', 'Whole Wheat', 'Multigrain', 'Sourdough', 'Raisin', 'Streusel'],
       },
     ],

@@ -61,7 +61,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Slider Buns': 'menu/breads/slider-buns.webp',
     'Pretzel Buns & Demi Baguettes': 'menu/breads/pretzel-demi-baguettes.webp',
   },
-  challah: {
+  'challah-bilkas': {
     'Square — Plain': 'menu/challah/square-challah.webp',
     'Square — Sesame': 'menu/challah/square-challah.webp',
     'Braided — Egg': 'menu/challah/twisted-challah.webp',
@@ -69,7 +69,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Braided — Whole Wheat': 'menu/challah/wholewheat-challah.webp',
     'Braided — Multigrain': 'menu/challah/sesame-challah.webp',
   },
-  'challah-bilkas': {
+  bilkas: {
     Egg: 'menu/challah/sesame-challah-small.webp',
     Water: 'menu/challah/sesame-challah-small.webp',
     'Whole Wheat': 'menu/challah/sesame-challah-small.webp',
