@@ -8,6 +8,12 @@ export interface MenuDisplaySection {
    * Bagels vs Breads). Defaults to the parent group id.
    */
   photoGroupId?: string;
+  /**
+   * Noun used in the showcase "— N flavours" subhead. Defaults to "flavour".
+   * Set to "shape" for babka sections, where the items are shapes (Crown,
+   * Round, Loaf…) of a single flavour rather than flavours.
+   */
+  flavourNoun?: string;
   items: string[];
 }
 
@@ -49,25 +55,41 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       {
         heading: 'Breads',
         assortedImage: '/images/products/menu/breads/assorted-breads.webp',
-        items: ['Wholewheat', 'White', 'Multigrain', 'Rye', 'Plain', 'Rye Kemo', 'Rye Marble', 'Rye Pumpernickel', 'French'],
+        items: ['Wholewheat', 'White', 'Multigrain', 'Rye Plain', 'Rye Kemo', 'Rye Marble', 'Rye Pumpernickel', 'French'],
       },
       {
         heading: 'Buns & Rolls',
         assortedImage: '/images/products/menu/breads/onion-rolls-6-pack.webp',
-        items: ['Italian Rolls', 'Rye Rolls', 'Onion Packets & Buns', 'Baguettes', 'Slider Buns', 'Pretzel Demi Baguettes'],
+        items: ['Italian Rolls', 'Rye Rolls', 'Onion Packets & Buns', 'Baguettes', 'Slider Buns', 'Pretzel Buns & Demi Baguettes'],
       },
     ],
   },
   {
     id: 'challah',
-    title: 'Challah',
+    title: 'Challahs & Bilkas',
     photo: 'challah.jpg',
     image: '/images/home/thumbnail_challahs.png',
     sections: [
       {
         heading: 'Challah',
         assortedImage: '/images/home/thumbnail_challahs.png',
-        items: ['Square', 'Mini', 'Bilkas', 'Pretzel', 'Wholewheat', 'Multigrain', 'Twisted', 'Water'],
+        items: [
+          'Square — Plain',
+          'Square — Sesame',
+          'Braided — Egg',
+          'Braided — Water',
+          'Braided — Whole Wheat',
+          'Braided — Multigrain',
+          'Braided — Sourdough',
+          'Braided — Raisin',
+          'Braided — Streusel',
+        ],
+      },
+      {
+        heading: 'Bilkas',
+        assortedImage: '/images/products/menu/challah/sesame-challah-small.webp',
+        photoGroupId: 'challah-bilkas',
+        items: ['Egg', 'Water', 'Whole Wheat', 'Multigrain', 'Sourdough', 'Raisin', 'Streusel'],
       },
     ],
   },
@@ -104,7 +126,26 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       {
         heading: 'Sweets / Savories',
         assortedImage: '/images/products/menu/cookies-sweets/rogalach-tray-assorted.webp',
-        items: ['Turnovers', 'Rugelach', 'Pretzel', 'Cheese Sticks', 'Churros', 'Sandwiches', 'Yogurt Parfait'],
+        items: [
+          'Cheese Bourekas',
+          'Mushroom Bourekas',
+          'Potato Bourekas',
+          'Plain Croissant',
+          'Chocolate Croissant',
+          'Cheese Croissant',
+          'Cheese Sticks',
+          'Turnovers',
+          'Apple Streusel',
+          'Cookie-Dough Rugelach — Jam',
+          'Danish Rugelach — Chocolate',
+          'Danish Rugelach — Cinnamon',
+          'Danish Rugelach — Raisin',
+          'Pretzel',
+          'Poppy Horseshoe Rolls',
+          'Churros',
+          'Sandwiches',
+          'Yogurt Parfait',
+        ],
       },
     ],
   },
@@ -115,9 +156,46 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     image: '/images/home/thumbnail_danishes_sweets.png',
     sections: [
       {
-        heading: 'Danishes / Babkas',
+        heading: 'Danishes',
+        assortedImage: '/images/products/menu/danishes-babkas/apple-danish.webp',
+        items: [
+          'Chocolate Danish',
+          'Cheese Danish',
+          'Icy Buns',
+          'Bufolo Danish',
+          'Circle Danish — Apple',
+          'Circle Danish — Blueberry',
+          'Circle Danish — Chocolate',
+          'Circle Danish — Cinnamon',
+        ],
+      },
+      {
+        heading: 'Chocolate Babka',
+        assortedImage: '/images/products/menu/danishes-babkas/chocolate-babka.webp',
+        photoGroupId: 'babka-chocolate',
+        flavourNoun: 'shape',
+        items: ['Crown', 'Round', 'Loaf', 'Mini', 'Kokosh', '3-Strip'],
+      },
+      {
+        heading: 'Cinnamon Babka',
         assortedImage: '/images/home/thumbnail_babkas.png',
-        items: ['Chocolate', 'Cinnamon', 'Assorted Berries', 'Icy Buns', 'Cheese Danishes', 'Poppy Seed'],
+        photoGroupId: 'babka-cinnamon',
+        flavourNoun: 'shape',
+        items: ['Crown', 'Round', 'Loaf', 'Mini', 'Kokosh', '3-Strip'],
+      },
+      {
+        heading: 'Raisin Babka',
+        assortedImage: '/images/home/thumbnail_babkas.png',
+        photoGroupId: 'babka-raisin',
+        flavourNoun: 'shape',
+        items: ['Crown', 'Round', 'Loaf', 'Mini', 'Kokosh', '3-Strip'],
+      },
+      {
+        heading: 'Poppy Babka',
+        assortedImage: '/images/products/menu/danishes-babkas/poppy-seed-roll.webp',
+        photoGroupId: 'babka-poppy',
+        flavourNoun: 'shape',
+        items: ['Crown', 'Round', 'Loaf', 'Mini', 'Kokosh', '3-Strip'],
       },
     ],
   },

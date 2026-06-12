@@ -82,6 +82,7 @@ export default function GroupPage() {
               photoGroupId={section.photoGroupId}
               assortedImage={section.assortedImage}
               groupImage={group.image}
+              flavourNoun={section.flavourNoun}
             />
           </ScrollReveal>
         ))}
