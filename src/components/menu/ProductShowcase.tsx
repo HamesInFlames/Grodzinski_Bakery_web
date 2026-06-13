@@ -65,8 +65,8 @@ export interface ProductShowcaseProps {
    * independent photos (e.g. Bagels vs Breads both live in `breads`).
    */
   photoGroupId?: string;
+  /** Hero "assorted" slide image. When omitted, the section has no Assorted slide. */
   assortedImage?: string;
-  groupImage?: string;
   /** Directory the per-flavour photos are derived from. */
   imageBase?: string;
   /** Noun used in the "— N flavours" subhead (e.g. "specialty"). */
@@ -79,13 +79,12 @@ export default function ProductShowcase({
   groupId,
   photoGroupId,
   assortedImage,
-  groupImage,
   imageBase = '/images/menu',
   flavourNoun = 'flavour',
 }: ProductShowcaseProps) {
   const photoKey = photoGroupId ?? groupId;
   const slides: Slide[] = [
-    { label: 'Assorted', src: assortedImage || groupImage || PLACEHOLDER },
+    ...(assortedImage ? [{ label: 'Assorted', src: assortedImage }] : []),
     ...flavours.map((name) => ({
       label: name,
       src:
@@ -172,7 +171,7 @@ export default function ProductShowcase({
               <ShowcaseImage
                 src={activeSlide.src}
                 alt={
-                  active === 0
+                  activeSlide.label === 'Assorted'
                     ? `Assorted ${heading.toLowerCase()}`
                     : `${activeSlide.label} — ${heading}`
                 }
