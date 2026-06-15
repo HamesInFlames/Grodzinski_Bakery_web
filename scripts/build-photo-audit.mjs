@@ -99,7 +99,7 @@ function walk(dir, prefix = '') {
     const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
     if (entry.isDirectory()) {
       out.push(...walk(resolve(dir, entry.name), rel));
-    } else if (/\.(webp|png|jpe?g|avif)$/i.test(entry.name)) {
+    } else if (/\.(webp|png|jpe?g|avif|svg)$/i.test(entry.name)) {
       out.push(rel);
     }
   }
