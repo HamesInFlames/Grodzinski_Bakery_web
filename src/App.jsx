@@ -22,10 +22,39 @@ const HolidaysHub = lazy(() => import("./routes/HolidaysHub"));
 const HolidayDetailPage = lazy(() => import("./routes/HolidayDetailPage"));
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   useEffect(() => {
+    if (hash) {
+      // Target a section by id. Content is lazy-loaded and images above the
+      // target shift layout as they load, so: wait for the element to mount
+      // (up to ~6s for a cold chunk), then re-assert the scroll a few times as
+      // the layout settles. Use instant scrolling — a smooth animation here is
+      // interrupted by re-renders/layout shifts and intermittently lands at 0.
+      const id = hash.slice(1);
+      let cancelled = false;
+      let waited = 0;
+      const jumpTo = () => {
+        const el = document.getElementById(id);
+        if (!el) return false;
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY, behavior: "auto" });
+        return true;
+      };
+      const settle = (n) => {
+        if (cancelled || n <= 0) return;
+        jumpTo();
+        setTimeout(() => settle(n - 1), 200);
+      };
+      const waitForEl = () => {
+        if (cancelled) return;
+        if (jumpTo()) { settle(5); return; }
+        waited += 100;
+        if (waited < 6000) setTimeout(waitForEl, 100);
+      };
+      waitForEl();
+      return () => { cancelled = true; };
+    }
     window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, hash]);
   return null;
 }
 

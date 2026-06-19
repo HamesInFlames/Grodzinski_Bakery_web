@@ -171,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* CUSTOM ORDERS CTA + GALLERY */}
-      <section className="section section--dark">
+      <section id="custom-cakes" className="section section--dark">
         <div className="container">
           <ScrollReveal>
             <div className="section__header">

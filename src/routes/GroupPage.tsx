@@ -86,6 +86,26 @@ export default function GroupPage() {
           </ScrollReveal>
         ))}
       </div>
+
+      {group.id === 'cakes-loaf' && (
+        <ScrollReveal>
+          {/* Plain anchor (full navigation) so the home page loads fresh and
+              reliably scrolls to #custom-cakes — an in-app transition races the
+              page-transition animation and lands at the wrong scroll position. */}
+          <a href="/#custom-cakes" className="group-page__custom-cta">
+            <span className="group-page__custom-cta-eyebrow">Custom Orders</span>
+            <h2>Custom Cakes &amp; Cookies</h2>
+            <p>
+              Planning a wedding, bar mitzvah, baby shower, or special
+              celebration? Our custom creations are made to order and designed
+              to delight.
+            </p>
+            <span className="group-page__custom-cta-link">
+              Explore custom orders &rarr;
+            </span>
+          </a>
+        </ScrollReveal>
+      )}
     </div>
   );
 }

@@ -95,7 +95,6 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Caramel Crunch': 'menu/cakes-loaf/caramel-crunch-cake.webp',
     Checkerboard: 'menu/cakes-loaf/checkerboard-cake.webp',
     Sprinkles: 'menu/cakes-loaf/sprinkles-cake.webp',
-    'Custom Cakes': 'menu/cakes-loaf/custom-birthday-cake.webp',
   },
   loaf: {
     'Poppy Lemon': 'menu/cakes-loaf/poppy-lemon-loaf.webp',

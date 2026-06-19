@@ -100,7 +100,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Cakes',
-        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Caramel Crunch', 'Checkerboard', 'Sprinkles', 'Custom Cakes'],
+        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Caramel Crunch', 'Checkerboard', 'Sprinkles'],
       },
       {
         heading: 'Loaf',

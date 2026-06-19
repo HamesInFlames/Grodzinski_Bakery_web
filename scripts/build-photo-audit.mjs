@@ -292,6 +292,40 @@ const html = `<!doctype html>
   .saved { color: var(--good); font-size:12px; margin-left:8px; }
   footer { padding: 10px 24px; color: var(--muted); font-size:11.5px; border-top:1px solid var(--line); background:#fff; }
   @media (max-width: 820px){ .layout{ grid-template-columns:1fr; } .tree{ max-height:none; } }
+  /* view toggle */
+  .viewtoggle { display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+  .viewtoggle button { padding:7px 14px; border:0; border-right:1px solid var(--line); background:#fff;
+            cursor:pointer; font:600 13px/1 inherit; color:var(--muted); }
+  .viewtoggle button:last-child { border-right:0; }
+  .viewtoggle button.on { background:var(--gold); color:#fff; }
+  /* gallery */
+  .gallery { padding: 14px 24px 80px; max-height: calc(100vh - 150px); overflow-y:auto; }
+  .gallery__cat { font:700 12px/1 inherit; text-transform:uppercase; letter-spacing:.7px;
+            color:var(--gold); margin:26px 0 2px; }
+  .gallery__scope:first-child .gallery__cat { margin-top:6px; }
+  .gallery__group { font:600 18px/1.2 Georgia, serif; color:var(--ink); margin:16px 0 2px; }
+  .gsec { margin-top:12px; }
+  .gallery__sec { font:600 14px/1.2 inherit; color:#5a5444; margin:10px 0 8px; }
+  .gallery__grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap:14px; }
+  .gcard { border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff;
+            cursor:pointer; transition: box-shadow .15s ease, transform .15s ease; }
+  .gcard:hover { box-shadow:0 6px 18px rgba(0,0,0,.12); transform:translateY(-2px); }
+  .gcard__imgwrap { position:relative; aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
+            background:#fff repeating-linear-gradient(45deg,#fafafa,#fafafa 10px,#f3f3f3 10px,#f3f3f3 20px); overflow:hidden; }
+  .gcard__imgwrap img { width:100%; height:100%; object-fit:cover; }
+  .gcard__noimg { color:var(--muted); font-size:12px; }
+  .gcard__flags { position:absolute; top:6px; right:6px; display:flex; gap:4px; }
+  .gcard__flag { background:rgba(28,26,23,.72); color:#fff; font-size:12px; line-height:1; border-radius:5px; padding:3px 5px; }
+  .gcard__body { display:flex; align-items:center; gap:7px; padding:8px 10px; }
+  .gcard__name { flex:1; font-size:12.5px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  /* modal */
+  .modal-backdrop { position:fixed; inset:0; background:rgba(20,16,10,.55); display:flex;
+            align-items:center; justify-content:center; z-index:50; padding:24px; }
+  .modal { position:relative; background:#fff; border-radius:14px; max-width:760px; width:100%;
+            max-height:90vh; overflow-y:auto; padding:26px 28px; box-shadow:0 20px 60px rgba(0,0,0,.3); }
+  .modal__close { position:absolute; top:10px; right:14px; border:0; background:none; font-size:26px;
+            line-height:1; cursor:pointer; color:var(--muted); }
+  .modal__close:hover { color:var(--ink); }
 </style>
 </head>
 <body>
@@ -300,6 +334,10 @@ const html = `<!doctype html>
   <div class="sub">Generated __GENERATED__ · <span id="genfacts"></span></div>
   <div class="stats" id="stats"></div>
   <div class="toolbar">
+    <span class="viewtoggle">
+      <button type="button" data-view="tree" class="on">Tree</button>
+      <button type="button" data-view="gallery">Gallery</button>
+    </span>
     <input type="search" id="search" placeholder="Search products…" />
     <button class="act" id="expandAll">Expand all</button>
     <button class="act" id="collapseAll">Collapse all</button>
@@ -309,10 +347,12 @@ const html = `<!doctype html>
     <input type="file" id="importFile" accept="application/json" class="hidden" />
   </div>
 </header>
-<div class="layout">
+<div class="layout" id="treeLayout">
   <div class="tree" id="tree"></div>
   <div class="detail empty" id="detail">Select a product on the left to review its photo.</div>
 </div>
+<div class="gallery hidden" id="gallery"></div>
+<div id="modalRoot"></div>
 <footer id="footer"></footer>
 
 <script>
@@ -422,6 +462,15 @@ function applyFilter(){
     var anyVisible = n.querySelectorAll(".leaf:not(.hidden)").length > 0;
     n.classList.toggle("hidden", !anyVisible);
   });
+  // gallery cards + empty sections
+  document.querySelectorAll(".gcard").forEach(function(c){
+    var key = c.dataset.key;
+    var ok = itemMatchesFilter(key) && (!q || c.dataset.name.indexOf(q) !== -1);
+    c.classList.toggle("hidden", !ok);
+  });
+  document.querySelectorAll(".gsec").forEach(function(s){
+    s.classList.toggle("hidden", s.querySelectorAll(".gcard:not(.hidden)").length === 0);
+  });
 }
 
 function refreshLeafDot(key){
@@ -430,22 +479,16 @@ function refreshLeafDot(key){
   });
 }
 
-// ---- Detail ----
-function selectItem(key){
-  selectedKey = key;
-  document.querySelectorAll(".leaf").forEach(function(l){ l.classList.toggle("selected", l.dataset.key === key); });
+// ---- Detail (shared by the side panel and the gallery modal) ----
+function detailInner(key){
   var it = DATA.items[key];
-  var d = document.getElementById("detail");
-  d.classList.remove("empty");
-
   var imgHtml;
   if (it.photoRel){
     imgHtml = '<img src="'+esc(it.photoRel)+'" alt="" data-fallback="'+esc(it.photoAbs)+'" '+
-              'onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src=this.dataset.fallback;}else{this.style.display=\\'none\\';this.parentNode.innerHTML=\\'<div class=noimg>Image not found.<br>'+esc(it.file||"")+'</div>\\';}">';
+              'onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src=this.dataset.fallback;}else{this.style.display=\\'none\\';this.parentNode.innerHTML=\\'<div class=noimg>Image not found.</div>\\';}">';
   } else {
     imgHtml = '<div class="noimg">No photo linked to this product.</div>';
   }
-
   var badges = "";
   if (it.file){
     badges += it.exists ? '<span class="badge b-ok">✓ File on disk</span>' : '<span class="badge b-bad">✗ File missing</span>';
@@ -453,21 +496,17 @@ function selectItem(key){
   } else {
     badges += '<span class="badge b-bad">No photo mapped</span>';
   }
-
   var sharedHtml = "";
   if (it.shared){
     sharedHtml = '<div class="sharedlist">This same photo is also used by:<ul>' +
       it.sharedWith.map(function(s){ return "<li>"+esc(s)+"</li>"; }).join("") +
       '</ul>Likely a placeholder — each probably needs its own photo.</div>';
   }
-
   var statusBtns = STATUS_ORDER.map(function(s){
     var on = getStatus(key) === s ? " on " + STATUS[s].cls : "";
     return '<button class="sbtn'+on+'" data-status="'+s+'"><span class="sdot '+STATUS[s].cls+'"></span>'+STATUS[s].label+'</button>';
   }).join("");
-
-  d.innerHTML =
-    '<div class="crumb">'+esc(it.breadcrumb)+'</div>' +
+  return '<div class="crumb">'+esc(it.breadcrumb)+'</div>' +
     '<h2>'+esc(it.name)+'</h2>' +
     '<div class="preview">' +
       '<div class="photoframe">'+imgHtml+'</div>' +
@@ -478,19 +517,100 @@ function selectItem(key){
         '<div class="field"><label>Review status</label><div class="statusbtns">'+statusBtns+'</div></div>' +
       '</div>' +
     '</div>' +
-    '<div class="field"><label>Notes <span class="saved" id="savedFlag"></span></label>' +
-      '<textarea id="noteBox" placeholder="e.g. \\'Real Honey Cake photo needed — currently showing carrot cake.\\'">'+esc(getNote(key))+'</textarea></div>';
-
-  d.querySelectorAll(".sbtn").forEach(function(b){
+    '<div class="field"><label>Notes <span class="saved js-saved"></span></label>' +
+      '<textarea class="js-note" placeholder="Notes about this photo…">'+esc(getNote(key))+'</textarea></div>';
+}
+function wireDetail(root, key){
+  root.querySelectorAll(".sbtn").forEach(function(b){
     b.onclick = function(){ setStatus(key, b.dataset.status); };
   });
-  var box = document.getElementById("noteBox");
+  var box = root.querySelector(".js-note");
+  if (!box) return;
   var t;
   box.addEventListener("input", function(){
     clearTimeout(t);
-    t = setTimeout(function(){ setNote(key, box.value); flashSaved(); }, 350);
+    t = setTimeout(function(){
+      setNote(key, box.value);
+      var f = root.querySelector(".js-saved");
+      if (f){ f.textContent = "saved ✓"; setTimeout(function(){ if (f) f.textContent = ""; }, 1400); }
+    }, 350);
   });
 }
+function selectItem(key){
+  selectedKey = key;
+  document.querySelectorAll(".leaf").forEach(function(l){ l.classList.toggle("selected", l.dataset.key === key); });
+  var d = document.getElementById("detail");
+  d.classList.remove("empty");
+  d.innerHTML = detailInner(key);
+  wireDetail(d, key);
+}
+
+// ---- Gallery view (every photo per category, click a card to review) ----
+var view = "tree";
+function setView(v){
+  view = v;
+  document.getElementById("treeLayout").classList.toggle("hidden", v !== "tree");
+  document.getElementById("gallery").classList.toggle("hidden", v !== "gallery");
+  document.querySelectorAll(".viewtoggle button").forEach(function(b){ b.classList.toggle("on", b.dataset.view === v); });
+  applyFilter();
+}
+function galleryCard(key){
+  var it = DATA.items[key];
+  var img;
+  if (it.photoRel){
+    img = '<img src="'+esc(it.photoRel)+'" alt="" loading="lazy" data-fallback="'+esc(it.photoAbs)+'" '+
+          'onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src=this.dataset.fallback;}else{this.parentNode.innerHTML=\\'<div class=gcard__noimg>Image not found</div>\\';}">';
+  } else {
+    img = '<div class="gcard__noimg">No photo</div>';
+  }
+  var flags = "";
+  if (it.shared) flags += '<span class="gcard__flag" title="Shared stand-in">♻︎</span>';
+  if (it.file && !it.exists) flags += '<span class="gcard__flag" title="File missing">⚠︎</span>';
+  if (!it.file) flags += '<span class="gcard__flag" title="No photo mapped">∅</span>';
+  return '<div class="gcard" data-key="'+esc(key)+'" data-name="'+esc(it.name.toLowerCase())+'">' +
+      '<div class="gcard__imgwrap">'+img+(flags?'<div class="gcard__flags">'+flags+'</div>':"")+'</div>' +
+      '<div class="gcard__body"><span class="sdot '+STATUS[getStatus(key)].cls+'"></span>' +
+        '<span class="gcard__name">'+esc(it.name)+'</span></div>' +
+    '</div>';
+}
+function gallerySection(sec){
+  var cards = (sec.children||[]).map(function(item){ return galleryCard(item.key); }).join("");
+  return '<div class="gsec"><div class="gallery__sec">'+esc(sec.label)+'</div><div class="gallery__grid">'+cards+'</div></div>';
+}
+function buildGallery(){
+  var g = document.getElementById("gallery");
+  var html = "";
+  DATA.tree.forEach(function(scope){
+    html += '<div class="gallery__scope"><div class="gallery__cat">'+esc(scope.label)+'</div>';
+    scope.children.forEach(function(node){
+      if (node.type === "group"){
+        html += '<div class="gallery__group">'+esc(node.label)+'</div>';
+        (node.children||[]).forEach(function(sec){ html += gallerySection(sec); });
+      } else {
+        html += gallerySection(node);
+      }
+    });
+    html += '</div>';
+  });
+  g.innerHTML = html;
+  g.querySelectorAll(".gcard").forEach(function(c){ c.onclick = function(){ openModal(c.dataset.key); }; });
+}
+function refreshCardDot(key){
+  document.querySelectorAll('.gcard[data-key="'+cssEsc(key)+'"] .sdot').forEach(function(d){
+    d.className = "sdot " + STATUS[getStatus(key)].cls;
+  });
+}
+function openModal(key){
+  var root = document.getElementById("modalRoot");
+  root.innerHTML = '<div class="modal-backdrop"><div class="modal"><button class="modal__close" title="Close">×</button><div class="modal__body"></div></div></div>';
+  var body = root.querySelector(".modal__body");
+  body.innerHTML = detailInner(key);
+  wireDetail(body, key);
+  selectedKey = key;
+  root.querySelector(".modal__close").onclick = closeModal;
+  root.querySelector(".modal-backdrop").onclick = function(e){ if (e.target === this) closeModal(); };
+}
+function closeModal(){ document.getElementById("modalRoot").innerHTML = ""; }
 
 function flashSaved(){
   var f = document.getElementById("savedFlag");
@@ -500,7 +620,13 @@ function flashSaved(){
 }
 
 function ensure(key){ if (!notes[key]) notes[key] = { status:"unreviewed", note:"" }; return notes[key]; }
-function setStatus(key, s){ ensure(key).status = s; ensure(key).updated = nowStr(); saveNotes(notes); refreshLeafDot(key); renderStats(); applyFilter(); if (selectedKey===key) selectItem(key); }
+function setStatus(key, s){
+  ensure(key).status = s; ensure(key).updated = nowStr(); saveNotes(notes);
+  refreshLeafDot(key); refreshCardDot(key); renderStats(); applyFilter();
+  var modalBody = document.querySelector("#modalRoot .modal__body");
+  if (modalBody){ modalBody.innerHTML = detailInner(key); wireDetail(modalBody, key); }
+  else if (selectedKey === key){ selectItem(key); }
+}
 function setNote(key, v){ ensure(key).note = v; ensure(key).updated = nowStr(); saveNotes(notes); }
 
 function nowStr(){ return new Date().toISOString().slice(0,16).replace("T"," "); }
@@ -569,8 +695,11 @@ function cssEsc(s){ return String(s).replace(/"/g,'\\\\"'); }
 // ---- boot ----
 document.getElementById("footer").textContent =
   "Tip: open this file by double-clicking it. Notes are saved in this browser only — use Export to share, Import to merge a colleague's review.";
+document.querySelectorAll(".viewtoggle button").forEach(function(b){ b.onclick = function(){ setView(b.dataset.view); }; });
+document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeModal(); });
 renderStats();
 buildTree();
+buildGallery();
 applyFilter();
 </script>
 </body>
