@@ -84,15 +84,17 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   // Cakes section (the Loaf section shares this group but uses the `loaf`
   // block below so shared names like Chocolate/Marble stay independent).
   'cakes-loaf': {
-    Chocolate: 'photo-coming-soon.svg',
-    Vanilla: 'menu/cakes-loaf/vanilla-cake.webp',
+    Chocolate: 'menu/cakes-loaf/chocolate-cake.webp',
+    Vanilla: 'photo-coming-soon.svg',
     Marble: 'photo-coming-soon.svg',
-    Lemon: 'photo-coming-soon.svg',
+    Lemon: 'menu/cakes-loaf/lemon-cake.webp',
     'Red Velvet': 'photo-coming-soon.svg',
-    Carrot: 'menu/cakes-loaf/carrot-cake.webp',
+    Carrot: 'photo-coming-soon.svg', // photo removed at owner's request.
     'Strawberry Shortcake': 'menu/cakes-loaf/strawberry-shortcake.webp',
     'Black Forest': 'menu/cakes-loaf/custom-celebration-cake.webp',
-    'Caramel Crunch': 'photo-coming-soon.svg',
+    'Caramel Crunch': 'menu/cakes-loaf/caramel-crunch-cake.webp',
+    Checkerboard: 'menu/cakes-loaf/checkerboard-cake.webp',
+    Sprinkles: 'menu/cakes-loaf/sprinkles-cake.webp',
     'Custom Cakes': 'menu/cakes-loaf/custom-birthday-cake.webp',
   },
   loaf: {
@@ -112,6 +114,12 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Orange: 'photo-coming-soon.svg',
     'Lemon Poppy': 'photo-coming-soon.svg',
   },
+  // Desserts section (Cakes & Loaf). All awaiting real photos.
+  desserts: {
+    'Personal Desserts': 'menu/cakes-loaf/personal-desserts.webp',
+    'Cake Pop': 'menu/cakes-loaf/cake-pop.webp',
+    'Cupcakes/Muffins': 'menu/cakes-loaf/cupcakes-muffins.webp',
+  },
   'cookies-sweets': {
     Cookies: 'menu/cookies-sweets/chocolate-chip-cookies-dozen.webp',
     Mandel: 'menu/cookies-sweets/mandel-bread.webp',
@@ -120,7 +128,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Assorted Cheese': 'menu/cookies-sweets/assorted-cheese.webp',
     Croissants: 'menu/cookies-sweets/croissants.webp',
     Turnovers: 'menu/cookies-sweets/turnovers.webp',
-    'Apple Streusel': 'photo-coming-soon.svg',
+    'Apple Streusel': 'menu/cookies-sweets/apple-streusel.webp',
     'Assorted Rugelach': 'menu/cookies-sweets/assorted-rugelach.webp',
     Pretzel: 'menu/cookies-sweets/pretzel.webp',
     'Poppy Horseshoe Rolls': 'menu/cookies-sweets/poppy-horseshoe-rolls.webp',
@@ -133,11 +141,10 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Chocolate Danish': 'menu/danishes-babkas/chocolate-pastry.webp',
     'Icy Buns': 'menu/danishes-babkas/cinnamon-bun.webp',
     // The four Circle Danishes are merged into one "Assorted Danish" tile.
-    'Assorted Danish': 'menu/danishes-babkas/mini-pastry-assortment.webp',
-    'Bufolo Danish': 'photo-coming-soon.svg', // TODO: needs a real photo.
-    // Babka section is a single "Assorted" tile (chocolate ring babka is the
-    // stand-in until a true assorted-babkas photo exists).
-    Assorted: 'menu/danishes-babkas/chocolate-ring-babka.webp',
+    'Assorted Danish': 'menu/danishes-babkas/assorted-danish.webp',
+    'Bufolo Danish': 'menu/danishes-babkas/bufolo-danish.webp',
+    // Babka section is a single "Assorted" tile.
+    Assorted: 'menu/danishes-babkas/assorted-babkas.webp',
   },
   pies: {
     // Pies section is a single "Assorted" tile.
@@ -172,7 +179,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Mishloach Manot': 'menu/cookies-sweets/assorted-fancy-cookies-box.webp',
   },
   shavuot: {
-    'Cheesecake only — all cheese, every cheese': 'holiday/shavuot/cheesecake-classic.webp',
+    'Assorted Cheesecake': 'holiday/shavuot/assorted-cheesecake.webp',
   },
   celebration: {
     'Custom Holiday Cookies': 'holiday/celebration/graduation-cookies.webp',

@@ -64,7 +64,7 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'marble-loaf-cake': 'menu/cakes-loaf',
   'orange-loaf': 'menu/cakes-loaf',
   'red-velvet-cupcakes': 'menu/cakes-loaf',
-  'vanilla-cake': 'menu/cakes-loaf',
+  'lemon-cake': 'menu/cakes-loaf',
 
   // menu/cookies-sweets
   'assorted-fancy-cookies-box': 'menu/cookies-sweets',

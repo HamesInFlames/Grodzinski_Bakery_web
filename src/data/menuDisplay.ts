@@ -100,8 +100,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Cakes',
-        assortedImage: '/images/home/thumbnail_cakes.png',
-        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Caramel Crunch', 'Custom Cakes'],
+        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Caramel Crunch', 'Checkerboard', 'Sprinkles', 'Custom Cakes'],
       },
       {
         heading: 'Loaf',
@@ -113,6 +112,11 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
         heading: 'Bundt Cake',
         photoGroupId: 'bundt',
         items: ['Chocolate', 'Apple', 'Marble', 'Mixed Berry', 'Orange', 'Lemon Poppy'],
+      },
+      {
+        heading: 'Desserts',
+        photoGroupId: 'desserts',
+        items: ['Personal Desserts', 'Cake Pop', 'Cupcakes/Muffins'],
       },
     ],
   },
@@ -228,8 +232,8 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     description:
       'Cheesecake, and only cheesecake \u2014 every variety we make for the dairy holiday.',
     photo: 'holiday-shavuot.jpg',
-    image: '/images/home/thumbnail_cakes.png',
-    items: ['Cheesecake only \u2014 all cheese, every cheese'],
+    image: '/images/products/holiday/shavuot/assorted-cheesecake.webp',
+    items: ['Assorted Cheesecake'],
   },
   {
     id: 'celebration',
