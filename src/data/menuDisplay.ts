@@ -158,22 +158,11 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Danishes',
-        assortedImage: '/images/products/menu/danishes-babkas/apple-danish.webp',
-        items: [
-          'Chocolate Danish',
-          'Cheese Danish',
-          'Icy Buns',
-          'Bufolo Danish',
-          'Circle Danish — Apple',
-          'Circle Danish — Blueberry',
-          'Circle Danish — Chocolate',
-          'Circle Danish — Cinnamon',
-        ],
+        items: ['Chocolate Danish', 'Icy Buns', 'Assorted Danish', 'Bufolo Danish'],
       },
       {
         heading: 'Babka',
-        assortedImage: '/images/home/thumbnail_babkas.png',
-        items: ['Chocolate Babka', 'Cinnamon Babka', 'Raisin Babka', 'Poppy Babka'],
+        items: ['Assorted'],
       },
     ],
   },
@@ -181,12 +170,11 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     id: 'pies',
     title: 'Pies',
     photo: 'pies-buns.jpg',
-    image: '/images/products/menu/pies/blueberry-pie.webp',
+    image: '/images/products/menu/pies/assorted-pies.webp',
     sections: [
       {
-        heading: 'Pies & Buns',
-        assortedImage: '/images/products/menu/pies/blueberry-pie.webp',
-        items: ['Lemon Meringue', 'Fruit Pies', 'Fruit Tarts'],
+        heading: 'Pies',
+        items: ['Assorted'],
       },
     ],
   },

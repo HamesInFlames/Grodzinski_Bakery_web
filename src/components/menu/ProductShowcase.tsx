@@ -83,6 +83,9 @@ export default function ProductShowcase({
   flavourNoun = 'flavour',
 }: ProductShowcaseProps) {
   const photoKey = photoGroupId ?? groupId;
+  // Sections that are just a single "Assorted" tile (e.g. Babka, Pies) read
+  // badly with a "— 1 flavour" subhead, so we drop the count for them.
+  const assortedOnly = flavours.length === 1 && flavours[0] === 'Assorted';
   const slides: Slide[] = [
     ...(assortedImage ? [{ label: 'Assorted', src: assortedImage }] : []),
     ...flavours.map((name) => ({
@@ -140,15 +143,17 @@ export default function ProductShowcase({
       <header className="product-showcase__header">
         <h3 className="product-showcase__title">
           {heading}
-          <span className="product-showcase__flavour-count">
-            {' — '}
-            {flavours.length}{' '}
-            {flavours.length === 1
-              ? flavourNoun
-              : flavourNoun.endsWith('y')
-                ? `${flavourNoun.slice(0, -1)}ies`
-                : `${flavourNoun}s`}
-          </span>
+          {!assortedOnly && (
+            <span className="product-showcase__flavour-count">
+              {' — '}
+              {flavours.length}{' '}
+              {flavours.length === 1
+                ? flavourNoun
+                : flavourNoun.endsWith('y')
+                  ? `${flavourNoun.slice(0, -1)}ies`
+                  : `${flavourNoun}s`}
+            </span>
+          )}
         </h3>
       </header>
 

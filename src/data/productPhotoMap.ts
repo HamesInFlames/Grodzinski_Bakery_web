@@ -130,19 +130,18 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Yogurt Parfait': 'photo-coming-soon.svg',
   },
   'danishes-babkas': {
-    'Cheese Danish': 'menu/danishes-babkas/cheese-danish.webp',
+    'Chocolate Danish': 'menu/danishes-babkas/chocolate-pastry.webp',
     'Icy Buns': 'menu/danishes-babkas/cinnamon-bun.webp',
-    'Circle Danish — Apple': 'menu/danishes-babkas/apple-danish.webp',
-    'Circle Danish — Blueberry': 'menu/danishes-babkas/apple-danish.webp',
-    'Circle Danish — Cinnamon': 'menu/danishes-babkas/cinnamon-bun.webp',
-    'Chocolate Babka': 'menu/danishes-babkas/chocolate-babka.webp',
-    'Cinnamon Babka': 'menu/danishes-babkas/cinnamon-bun.webp',
-    'Poppy Babka': 'menu/danishes-babkas/poppy-seed-roll.webp',
+    // The four Circle Danishes are merged into one "Assorted Danish" tile.
+    'Assorted Danish': 'menu/danishes-babkas/mini-pastry-assortment.webp',
+    'Bufolo Danish': 'photo-coming-soon.svg', // TODO: needs a real photo.
+    // Babka section is a single "Assorted" tile (chocolate ring babka is the
+    // stand-in until a true assorted-babkas photo exists).
+    Assorted: 'menu/danishes-babkas/chocolate-ring-babka.webp',
   },
   pies: {
-    'Lemon Meringue': 'menu/pies/blueberry-pie.webp',
-    'Fruit Pies': 'menu/pies/cherry-pie.webp',
-    'Fruit Tarts': 'menu/danishes-babkas/mini-pastry-assortment.webp',
+    // Pies section is a single "Assorted" tile.
+    Assorted: 'menu/pies/assorted-pies.webp',
   },
 
   // ----- Holiday sections ------------------------------------------------

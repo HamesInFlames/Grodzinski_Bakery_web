@@ -69,7 +69,9 @@ export default function MenuHub() {
                 </div>
                 <div className="menuhub__card-content">
                   <h2 className="menuhub__card-name">{group.title}</h2>
-                  <span className="menuhub__card-count">{count} varieties</span>
+                  <span className="menuhub__card-count">
+                    {count} {count === 1 ? 'variety' : 'varieties'}
+                  </span>
                 </div>
               </Link>
             );
