@@ -57,13 +57,12 @@ export default function HolidayDetailPage() {
 
       <div className="group-page__showcases">
         <ScrollReveal>
-          {/* Skip the redundant "Assorted" hero slide when there's only one
-              item (e.g. Shavuot's single "Assorted Cheesecake"). */}
+          {/* No "Assorted" hero slide on holiday pages — only Shavuot offers an
+              assortment, and that's already its single "Assorted Cheesecake" item. */}
           <ProductShowcase
             heading="Our Selection"
             flavours={section.items}
             groupId={section.id}
-            assortedImage={section.items.length > 1 ? section.image : undefined}
             imageBase="/images/holidays"
             flavourNoun="specialty"
           />

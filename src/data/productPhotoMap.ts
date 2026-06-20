@@ -151,31 +151,33 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   },
 
   // ----- Holiday sections ------------------------------------------------
+  // Reviewed in the photo audit: items flagged "missing" (wrong stand-in)
+  // now show the photo-coming-soon placeholder until real photos exist.
   'rosh-sukkot-simchat': {
-    'Round Challah': 'holiday/rosh-sukkot-simchat/rosh-hashanah-round-challah.webp',
-    'Crown Challah': 'menu/challah/sesame-challah-large.webp',
-    'Honey Loaf': 'menu/cakes-loaf/apple-loaf-cake.webp',
-    'Honey Cake': 'menu/cakes-loaf/carrot-cake.webp',
-    'Gift Baskets': 'menu/cookies-sweets/assorted-fancy-cookies-box.webp',
-    'Gift Cookie Boxes': 'menu/cookies-sweets/butter-cookies-box.webp',
-    'Sukkah House': 'menu/cookies-sweets/assorted-fancy-cookies-box.webp',
-    'Torah Cookie': 'holiday/rosh-sukkot-simchat/apple-cookies-rosh-hashanah.webp',
+    'Round Challah': 'photo-coming-soon.svg',
+    'Crown Challah': 'holiday/rosh-sukkot-simchat/crown-challah.webp',
+    'Honey Loaf': 'photo-coming-soon.svg',
+    'Honey Cake': 'photo-coming-soon.svg',
+    'Gift Baskets': 'photo-coming-soon.svg',
+    'Gift Cookie Boxes': 'photo-coming-soon.svg',
+    'Sukkah House': 'photo-coming-soon.svg',
+    'Torah Cookie': 'photo-coming-soon.svg',
   },
   'yom-kippur': {
-    'Crown Babka': 'menu/danishes-babkas/chocolate-crown-babka.webp',
-    'Honey Loaf': 'menu/cakes-loaf/apple-loaf-cake.webp',
-    'Honey Cake': 'menu/cakes-loaf/carrot-cake.webp',
-    'Gift Baskets': 'menu/cookies-sweets/assorted-fancy-cookies-box.webp',
-    'Gift Cookie Boxes': 'menu/cookies-sweets/butter-cookies-box.webp',
+    'Crown Babka': 'holiday/yom-kippur/crown-babka.webp',
+    'Honey Loaf': 'photo-coming-soon.svg',
+    'Honey Cake': 'photo-coming-soon.svg',
+    'Gift Baskets': 'photo-coming-soon.svg',
+    'Gift Cookie Boxes': 'photo-coming-soon.svg',
   },
   hanukkah: {
     Sufganiyot: 'holiday/hanukkah/sufganiyot.webp',
-    'Cookie Boxes': 'holiday/hanukkah/chanukah-cookies-platter.webp',
-    Latkes: 'holiday/hanukkah/chanukah-cookies-platter.webp',
+    'Cookie Boxes': 'photo-coming-soon.svg',
+    Latkes: 'photo-coming-soon.svg',
   },
   purim: {
     'Hamantaschen (Assorted Flavours)': 'holiday/purim/hamantaschen-assorted.webp',
-    'Mishloach Manot': 'menu/cookies-sweets/assorted-fancy-cookies-box.webp',
+    'Mishloach Manot': 'photo-coming-soon.svg',
   },
   shavuot: {
     'Assorted Cheesecake': 'holiday/shavuot/assorted-cheesecake.webp',
