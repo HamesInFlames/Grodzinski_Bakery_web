@@ -90,11 +90,14 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     // Owner identified the decorated cake photo as marble / half-and-half.
     Marble: 'menu/cakes-loaf/custom-celebration-cake.webp',
     Lemon: 'menu/cakes-loaf/lemon-cake.webp',
-    'Red Velvet': 'photo-coming-soon.svg',
-    Carrot: 'photo-coming-soon.svg', // photo removed at owner's request.
+    'Red Velvet': 'menu/cakes-loaf/red-velvet-cake.webp',
+    Carrot: 'menu/cakes-loaf/carrot-cake.webp',
     'Strawberry Shortcake': 'menu/cakes-loaf/strawberry-shortcake.webp',
     'Black Forest': 'photo-coming-soon.svg',
     'Caramel Crunch': 'menu/cakes-loaf/caramel-crunch-cake.webp',
+    Oreo: 'menu/cakes-loaf/oreo-cake.webp',
+    Napoleon: 'menu/cakes-loaf/napoleon.webp',
+    'Fruit Cake': 'menu/cakes-loaf/fruit-cake.webp',
     Checkerboard: 'menu/cakes-loaf/checkerboard-cake.webp',
   },
   loaf: {
@@ -150,6 +153,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   pies: {
     // Pies section is a single "Assorted" tile.
     Assorted: 'menu/pies/assorted-pies.webp',
+    'Fruit Tarts': 'menu/pies/fruit-tarts.webp',
   },
 
   // ----- Holiday sections ------------------------------------------------
