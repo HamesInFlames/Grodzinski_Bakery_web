@@ -100,7 +100,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Cakes',
-        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Caramel Crunch', 'Checkerboard', 'Sprinkles'],
+        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Caramel Crunch', 'Checkerboard'],
       },
       {
         heading: 'Loaf',
@@ -129,7 +129,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       {
         heading: 'Cookies',
         assortedImage: '/images/products/menu/cookies-sweets/assorted-cookies-platter.webp',
-        items: ['Icing Cookies'],
+        items: ['Icing Cookies', 'Bow Ties / Nothings'],
       },
       {
         heading: 'Savories',
