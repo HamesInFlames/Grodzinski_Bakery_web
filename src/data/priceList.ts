@@ -147,6 +147,7 @@ export const PRICE_GROUPS: PriceGroup[] = [
           { name: 'Cookies', price: '$20.00 / lb', note: 'Plain cookies $1.50 each.' },
           { name: 'Mandel', price: '$11.50' },
           { name: 'Icing Cookies', price: '$2.75' },
+          { name: 'Bow Ties / Nothings', price: '$4.50' },
         ],
       },
       {

@@ -52,6 +52,7 @@ const ITEM_PHOTO_MAP = {
   'cookies-custom-cookies':                      IMG('birthday-cookies'),
   'cookies-regular-iced-cookies':                IMG('halloween-cookies'),
   'cookies-chocolate-chip-oatmeal-raisin':       IMG('chocolate-chip-cookies-dozen'),
+  'bow-ties-kichels-bowties-nothings':           IMG('bow-ties-nothings'),
 
   // ── Boxed Cookies ──
   'boxed-cookies-400grms-cookie-mixed':          IMG('assorted-fancy-cookies-box'),

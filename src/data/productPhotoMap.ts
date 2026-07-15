@@ -54,7 +54,8 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Rye Marble': 'menu/breads/rye-marble-bread.webp',
     'Rye Pumpernickel': 'menu/breads/pumpernickel-bread.webp',
     French: 'menu/breads/french-bread.webp',
-    'Italian Rolls': 'menu/breads/italian-rolls.webp',
+    // Previous photo was actually bow ties/nothings (owner review); awaiting a real Italian Rolls photo.
+    'Italian Rolls': 'photo-coming-soon.svg',
     'Rye Rolls': 'menu/breads/rye-rolls.webp',
     'Onion Packets & Buns': 'menu/breads/onion-rolls-6-pack.webp',
     Baguettes: 'menu/breads/baguette.webp',
@@ -85,16 +86,16 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   // block below so shared names like Chocolate/Marble stay independent).
   'cakes-loaf': {
     Chocolate: 'menu/cakes-loaf/chocolate-cake.webp',
-    Vanilla: 'photo-coming-soon.svg',
-    Marble: 'photo-coming-soon.svg',
+    Vanilla: 'menu/cakes-loaf/vanilla-cake.webp',
+    // Owner identified the decorated cake photo as marble / half-and-half.
+    Marble: 'menu/cakes-loaf/custom-celebration-cake.webp',
     Lemon: 'menu/cakes-loaf/lemon-cake.webp',
     'Red Velvet': 'photo-coming-soon.svg',
     Carrot: 'photo-coming-soon.svg', // photo removed at owner's request.
     'Strawberry Shortcake': 'menu/cakes-loaf/strawberry-shortcake.webp',
-    'Black Forest': 'menu/cakes-loaf/custom-celebration-cake.webp',
+    'Black Forest': 'photo-coming-soon.svg',
     'Caramel Crunch': 'menu/cakes-loaf/caramel-crunch-cake.webp',
     Checkerboard: 'menu/cakes-loaf/checkerboard-cake.webp',
-    Sprinkles: 'menu/cakes-loaf/sprinkles-cake.webp',
   },
   loaf: {
     'Poppy Lemon': 'menu/cakes-loaf/poppy-lemon-loaf.webp',
@@ -123,6 +124,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Cookies: 'menu/cookies-sweets/chocolate-chip-cookies-dozen.webp',
     Mandel: 'menu/cookies-sweets/mandel-bread.webp',
     'Icing Cookies': 'menu/cookies-sweets/icing-cookies.webp',
+    'Bow Ties / Nothings': 'menu/cookies-sweets/bow-ties-nothings.webp',
     'Assorted Bourekas': 'menu/cookies-sweets/assorted-bourekas.webp',
     'Assorted Cheese': 'menu/cookies-sweets/assorted-cheese.webp',
     Croissants: 'menu/cookies-sweets/croissants.webp',

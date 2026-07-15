@@ -13,7 +13,6 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'assorted-breads': 'menu/breads',
   'everything-bagel': 'menu/breads',
   'french-bread': 'menu/breads',
-  'italian-rolls': 'menu/breads',
   'marble-rye-bread': 'menu/breads',
   'mezonot-bagel': 'menu/breads',
   'mini-roll': 'menu/breads',
@@ -65,11 +64,13 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'orange-loaf': 'menu/cakes-loaf',
   'red-velvet-cupcakes': 'menu/cakes-loaf',
   'lemon-cake': 'menu/cakes-loaf',
+  'vanilla-cake': 'menu/cakes-loaf',
 
   // menu/cookies-sweets
   'assorted-fancy-cookies-box': 'menu/cookies-sweets',
   'baby-shower-cookies': 'menu/cookies-sweets',
   'birthday-cookies': 'menu/cookies-sweets',
+  'bow-ties-nothings': 'menu/cookies-sweets',
   'butter-cookies-box': 'menu/cookies-sweets',
   'cheese-stick': 'menu/cookies-sweets',
   'chocolate-chip-cookies-dozen': 'menu/cookies-sweets',
