@@ -55,11 +55,11 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       {
         heading: 'Breads',
         assortedImage: '/images/products/menu/breads/assorted-breads.webp',
-        items: ['Wholewheat', 'White', 'Multigrain', 'Rye Plain', 'Rye Kemo', 'Rye Marble', 'Rye Pumpernickel', 'French'],
+        items: ['Wholewheat', 'White', 'Multigrain', 'Rye Plain', 'Rye Kemo', 'Rye Marble', 'Rye Pumpernickel', 'French', 'Flatbread'],
       },
       {
         heading: 'Buns & Rolls',
-        items: ['Italian Rolls', 'Rye Rolls', 'Onion Packets & Buns', 'Baguettes', 'Slider Buns', 'Pretzel Buns & Demi Baguettes'],
+        items: ['Hotdog Buns', 'Rye Rolls', 'Hamburger Buns', 'Onion Packets & Buns', 'Baguettes', 'Slider Buns', 'Pretzel Buns & Demi Baguettes'],
       },
     ],
   },
@@ -162,7 +162,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Danishes',
-        items: ['Chocolate Danish', 'Icy Buns', 'Assorted Danish', 'Bufolo Danish'],
+        items: ['Chocolate Danish', 'Icy Buns', 'Assorted Danish', 'Bufolo Danish', 'Conchas'],
       },
       {
         heading: 'Babka',

@@ -54,13 +54,14 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Rye Marble': 'menu/breads/rye-marble-bread.webp',
     'Rye Pumpernickel': 'menu/breads/pumpernickel-bread.webp',
     French: 'menu/breads/french-bread.webp',
-    // Previous photo was actually bow ties/nothings (owner review); awaiting a real Italian Rolls photo.
-    'Italian Rolls': 'photo-coming-soon.svg',
+    'Hotdog Buns': 'menu/breads/hotdog-buns.webp',
     'Rye Rolls': 'menu/breads/rye-rolls.webp',
+    'Hamburger Buns': 'menu/breads/hamburger-buns.webp',
     'Onion Packets & Buns': 'menu/breads/onion-rolls-6-pack.webp',
     Baguettes: 'menu/breads/baguette.webp',
     'Slider Buns': 'menu/breads/slider-buns.webp',
     'Pretzel Buns & Demi Baguettes': 'menu/breads/pretzel-demi-baguettes.webp',
+    Flatbread: 'menu/breads/flatbread.webp',
   },
   'challah-bilkas': {
     Square: 'menu/challah/square-plain-challah.webp',
@@ -110,9 +111,9 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Berry: 'menu/cakes-loaf/berry-loaf.webp',
   },
   bundt: {
-    Chocolate: 'menu/cakes-loaf/chocolate-glazed-ring-cake.webp',
-    Apple: 'photo-coming-soon.svg',
-    Marble: 'photo-coming-soon.svg',
+    Chocolate: 'menu/cakes-loaf/chocolate-bundt.webp',
+    Apple: 'menu/cakes-loaf/apple-bundt.webp',
+    Marble: 'menu/cakes-loaf/marble-bundt.webp',
     'Mixed Berry': 'photo-coming-soon.svg',
     Orange: 'photo-coming-soon.svg',
     'Lemon Poppy': 'photo-coming-soon.svg',
@@ -147,6 +148,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     // The four Circle Danishes are merged into one "Assorted Danish" tile.
     'Assorted Danish': 'menu/danishes-babkas/assorted-danish.webp',
     'Bufolo Danish': 'menu/danishes-babkas/bufolo-danish.webp',
+    Conchas: 'menu/danishes-babkas/concha-assorted.webp',
     // Babka section is a single "Assorted" tile.
     Assorted: 'menu/danishes-babkas/assorted-babkas.webp',
   },
