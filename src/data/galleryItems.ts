@@ -167,4 +167,10 @@ export const galleryItems: GalleryItem[] = [
     alt: 'Square upsherin cake with a turquoise shell border, gold fondant scissors and kippah — "Ilay\'s Halakeh 3"',
     title: 'Upsherin / Halakeh Cake — Ilay',
   },
+  {
+    id: 'cake-27',
+    src: '/gallery/cake-27.png',
+    alt: 'Four-tier white buttercream wedding cake with cascading blush, ivory and taupe sugar roses on a beaded base',
+    title: 'Four-Tier Blush Rose Wedding Cake',
+  },
 ];
