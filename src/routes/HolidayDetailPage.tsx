@@ -56,17 +56,22 @@ export default function HolidayDetailPage() {
       </header>
 
       <div className="group-page__showcases">
-        <ScrollReveal>
-          {/* No "Assorted" hero slide on holiday pages — only Shavuot offers an
-              assortment, and that's already its single "Assorted Cheesecake" item. */}
-          <ProductShowcase
-            heading="Our Selection"
-            flavours={section.items}
-            groupId={section.id}
-            imageBase="/images/holidays"
-            flavourNoun="specialty"
-          />
-        </ScrollReveal>
+        {/* No "Assorted" hero slide on holiday pages — only Shavuot offers an
+            assortment, and that's already its single "Assorted Cheesecake" item. */}
+        {(
+          section.showcases ?? [{ heading: 'Our Selection', items: section.items }]
+        ).map((showcase) => (
+          <ScrollReveal key={showcase.heading}>
+            <ProductShowcase
+              heading={showcase.heading}
+              flavours={showcase.items}
+              groupId={section.id}
+              photoGroupId={showcase.photoGroupId}
+              imageBase="/images/holidays"
+              flavourNoun={showcase.flavourNoun ?? 'specialty'}
+            />
+          </ScrollReveal>
+        ))}
       </div>
     </div>
   );

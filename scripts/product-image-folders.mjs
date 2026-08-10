@@ -24,7 +24,7 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'pumpernickel-bread-sliced': 'menu/breads',
   'pumpernickel-bread': 'menu/breads',
   'rye-bread-sliced': 'menu/breads',
-  'rye-kemo-bread': 'menu/breads',
+  'rye-kimmel-bread': 'menu/breads',
   'rye-roll': 'menu/breads',
   'sesame-seed-bagel': 'menu/breads',
   'slider-buns': 'menu/breads',

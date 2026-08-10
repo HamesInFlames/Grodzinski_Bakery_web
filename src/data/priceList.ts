@@ -67,7 +67,7 @@ export const PRICE_GROUPS: PriceGroup[] = [
           { name: 'Multigrain', price: '$7.55' },
           { name: 'Rye', price: '$7.55' },
           { name: 'Plain', price: '$5.75' },
-          { name: 'Rye Kemo', price: '$7.55' },
+          { name: 'Rye Kimmel', price: '$7.55' },
           { name: 'Rye Marble', price: '$7.55' },
           { name: 'Rye Pumpernickel', price: '$7.55' },
           { name: 'French', price: '$5.75' },

@@ -50,7 +50,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Mezonot: 'menu/breads/plain-bagel.webp',
     White: 'menu/breads/white-bread.webp',
     'Rye Plain': 'menu/breads/rye-plain-bread.webp',
-    'Rye Kemo': 'menu/breads/rye-kemo-bread.webp',
+    'Rye Kimmel': 'menu/breads/rye-kimmel-bread.webp',
     'Rye Marble': 'menu/breads/rye-marble-bread.webp',
     'Rye Pumpernickel': 'menu/breads/pumpernickel-bread.webp',
     French: 'menu/breads/french-bread.webp',
@@ -182,6 +182,11 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Sufganiyot: 'holiday/hanukkah/sufganiyot.webp',
     'Cookie Boxes': 'photo-coming-soon.svg',
     Latkes: 'photo-coming-soon.svg',
+  },
+  // Dedicated Sufganiyot showcase on the Hanukkah detail page.
+  'hanukkah-sufganiyot': {
+    'Classic Jelly': 'holiday/hanukkah/sufganiyot.webp',
+    Specialty: 'holiday/hanukkah/sufganiyot-specialty.webp',
   },
   purim: {
     'Hamantaschen (Assorted Flavours)': 'holiday/purim/hamantaschen-assorted.webp',

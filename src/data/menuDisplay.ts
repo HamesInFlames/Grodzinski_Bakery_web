@@ -26,6 +26,15 @@ export interface MenuDisplayGroup {
   sections: MenuDisplaySection[];
 }
 
+export interface HolidayShowcase {
+  heading: string;
+  /** Photo-map namespace for per-item lookups. Defaults to the holiday id. */
+  photoGroupId?: string;
+  /** Noun used in the showcase "— N …" subhead. Defaults to "specialty". */
+  flavourNoun?: string;
+  items: string[];
+}
+
 export interface HolidayDisplaySection {
   id: string;
   title: string;
@@ -37,6 +46,12 @@ export interface HolidayDisplaySection {
   /** Existing asset used for the hub card and detail hero. */
   image?: string;
   items: string[];
+  /**
+   * Optional split of the detail page into multiple showcases (e.g. Hanukkah's
+   * dedicated Sufganiyot showcase). When absent, the page renders a single
+   * "Our Selection" showcase from `items`.
+   */
+  showcases?: HolidayShowcase[];
 }
 
 export const MENU_GROUPS: MenuDisplayGroup[] = [
@@ -55,7 +70,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
       {
         heading: 'Breads',
         assortedImage: '/images/products/menu/breads/assorted-breads.webp',
-        items: ['Wholewheat', 'White', 'Multigrain', 'Rye Plain', 'Rye Kemo', 'Rye Marble', 'Rye Pumpernickel', 'French', 'Flatbread'],
+        items: ['Wholewheat', 'White', 'Multigrain', 'Rye Plain', 'Rye Kimmel', 'Rye Marble', 'Rye Pumpernickel', 'French', 'Flatbread'],
       },
       {
         heading: 'Buns & Rolls',
@@ -214,6 +229,18 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     photo: 'holiday-hanukkah.jpg',
     image: '/images/products/holiday/hanukkah/chanukah-cookies-platter.webp',
     items: ['Sufganiyot', 'Cookie Boxes', 'Latkes'],
+    showcases: [
+      {
+        heading: 'Sufganiyot',
+        photoGroupId: 'hanukkah-sufganiyot',
+        flavourNoun: 'variety',
+        items: ['Classic Jelly', 'Specialty'],
+      },
+      {
+        heading: 'Our Selection',
+        items: ['Cookie Boxes', 'Latkes'],
+      },
+    ],
   },
   {
     id: 'purim',
