@@ -49,18 +49,22 @@ export const PRODUCT_IMAGE_FOLDERS = {
   // menu/cakes-loaf
   'apple-loaf-cake': 'menu/cakes-loaf',
   'berry-muffin': 'menu/cakes-loaf',
+  'black-forest-cake': 'menu/cakes-loaf',
   'brownie-squares': 'menu/cakes-loaf',
   'caramel-crunch-bundt': 'menu/cakes-loaf',
   'caramel-crunch-cake': 'menu/cakes-loaf',
   'carrot-cake': 'menu/cakes-loaf',
   'cherry-loaf': 'menu/cakes-loaf',
   'chocolate-cake': 'menu/cakes-loaf',
+  'chocolate-fudge-cake': 'menu/cakes-loaf',
   'chocolate-glazed-ring-cake': 'menu/cakes-loaf',
   'chocolate-loaf-cake': 'menu/cakes-loaf',
   'chocolate-loaf': 'menu/cakes-loaf',
   'custom-birthday-cake': 'menu/cakes-loaf',
   'custom-celebration-cake': 'menu/cakes-loaf',
   'marble-loaf-cake': 'menu/cakes-loaf',
+  'mixed-berry-bundt': 'menu/cakes-loaf',
+  'mocha-cake': 'menu/cakes-loaf',
   'orange-loaf': 'menu/cakes-loaf',
   'red-velvet-cupcakes': 'menu/cakes-loaf',
   'lemon-cake': 'menu/cakes-loaf',
@@ -80,6 +84,8 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'rogalach-tray-assorted': 'menu/cookies-sweets',
   'rugelach-strawberry': 'menu/cookies-sweets',
   'sandwich': 'menu/cookies-sweets',
+  'sandwiches-assorted': 'menu/cookies-sweets',
+  'yogurt-parfait': 'menu/cookies-sweets',
 
   // menu/danishes-babkas
   'apple-danish': 'menu/danishes-babkas',
@@ -87,7 +93,9 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'chocolate-babka': 'menu/danishes-babkas',
   'chocolate-chip-croissant': 'menu/danishes-babkas',
   'chocolate-croissant': 'menu/danishes-babkas',
+  'chocolate-bufolo-danish': 'menu/danishes-babkas',
   'chocolate-crown-babka': 'menu/danishes-babkas',
+  'chocolate-danish': 'menu/danishes-babkas',
   'chocolate-pastry': 'menu/danishes-babkas',
   'chocolate-ring-babka': 'menu/danishes-babkas',
   'cinnamon-bun': 'menu/danishes-babkas',
@@ -100,6 +108,7 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'funfetti-babka': 'menu/danishes-babkas',
   'mini-pastry-assortment': 'menu/danishes-babkas',
   'opera-petit-fours': 'menu/danishes-babkas',
+  'poppy-danish': 'menu/danishes-babkas',
   'poppy-seed-roll': 'menu/danishes-babkas',
   'poppy-seed-twist': 'menu/danishes-babkas',
   'raisin-twist': 'menu/danishes-babkas',
@@ -107,6 +116,7 @@ export const PRODUCT_IMAGE_FOLDERS = {
   // menu/pies
   'blueberry-pie': 'menu/pies',
   'cherry-pie': 'menu/pies',
+  'lemon-meringue-pie': 'menu/pies',
 
   // ── Holiday menu ──────────────────────────────────────────────────────
   // holiday/rosh-sukkot-simchat

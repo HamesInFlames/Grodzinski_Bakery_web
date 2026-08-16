@@ -115,7 +115,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Cakes',
-        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Caramel Crunch', 'Oreo', 'Napoleon', 'Fruit Cake', 'Checkerboard'],
+        items: ['Chocolate', 'Vanilla', 'Marble', 'Lemon', 'Red Velvet', 'Carrot', 'Strawberry Shortcake', 'Black Forest', 'Mocha', 'Chocolate Fudge', 'Caramel Crunch', 'Oreo', 'Napoleon', 'Fruit Cake', 'Checkerboard'],
       },
       {
         heading: 'Loaf',
@@ -177,7 +177,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Danishes',
-        items: ['Chocolate Danish', 'Icy Buns', 'Assorted Danish', 'Bufolo Danish', 'Conchas'],
+        items: ['Chocolate Danish', 'Icy Buns', 'Assorted Danish', 'Bufolo Danish', 'Poppy Danish', 'Conchas'],
       },
       {
         heading: 'Babka',
@@ -193,7 +193,7 @@ export const MENU_GROUPS: MenuDisplayGroup[] = [
     sections: [
       {
         heading: 'Pies',
-        items: ['Assorted', 'Fruit Tarts'],
+        items: ['Assorted', 'Lemon Meringue', 'Fruit Tarts'],
       },
     ],
   },

@@ -119,6 +119,8 @@ export const PRICE_GROUPS: PriceGroup[] = [
           { name: 'Marble', price: 'from $25.00' },
           { name: 'Strawberry Shortcake', price: 'from $28.00' },
           { name: 'Black Forest', price: 'from $28.00' },
+          { name: 'Mocha', price: 'from $25.00' },
+          { name: 'Chocolate Fudge', price: 'from $25.00' },
           { name: 'Caramel Crunch', price: 'from $28.00' },
           { name: 'Oreo', price: 'Custom' },
           { name: 'Napoleon', price: 'from $60.00', note: '1/4 slab $60 · 1/2 slab $80 · Full slab $130' },

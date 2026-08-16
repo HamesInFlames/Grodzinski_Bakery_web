@@ -94,7 +94,9 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Red Velvet': 'menu/cakes-loaf/red-velvet-cake.webp',
     Carrot: 'menu/cakes-loaf/carrot-cake.webp',
     'Strawberry Shortcake': 'menu/cakes-loaf/strawberry-shortcake.webp',
-    'Black Forest': 'photo-coming-soon.svg',
+    'Black Forest': 'menu/cakes-loaf/black-forest-cake.webp',
+    Mocha: 'menu/cakes-loaf/mocha-cake.webp',
+    'Chocolate Fudge': 'menu/cakes-loaf/chocolate-fudge-cake.webp',
     'Caramel Crunch': 'menu/cakes-loaf/caramel-crunch-cake.webp',
     Oreo: 'menu/cakes-loaf/oreo-cake.webp',
     Napoleon: 'menu/cakes-loaf/napoleon.webp',
@@ -114,7 +116,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     Chocolate: 'menu/cakes-loaf/chocolate-bundt.webp',
     Apple: 'menu/cakes-loaf/apple-bundt.webp',
     Marble: 'menu/cakes-loaf/marble-bundt.webp',
-    'Mixed Berry': 'photo-coming-soon.svg',
+    'Mixed Berry': 'menu/cakes-loaf/mixed-berry-bundt.webp',
     Orange: 'photo-coming-soon.svg',
     'Lemon Poppy': 'photo-coming-soon.svg',
   },
@@ -139,15 +141,16 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Poppy Horseshoe Rolls': 'menu/cookies-sweets/poppy-horseshoe-rolls.webp',
     'Cheese Sticks': 'menu/cookies-sweets/cheese-stick.webp',
     Churros: 'menu/cookies-sweets/churros.webp',
-    Sandwiches: 'menu/cookies-sweets/sandwich.webp',
-    'Yogurt Parfait': 'photo-coming-soon.svg',
+    Sandwiches: 'menu/cookies-sweets/sandwiches-assorted.webp',
+    'Yogurt Parfait': 'menu/cookies-sweets/yogurt-parfait.webp',
   },
   'danishes-babkas': {
-    'Chocolate Danish': 'menu/danishes-babkas/chocolate-pastry.webp',
+    'Chocolate Danish': 'menu/danishes-babkas/chocolate-danish.webp',
     'Icy Buns': 'menu/danishes-babkas/cinnamon-bun.webp',
     // The four Circle Danishes are merged into one "Assorted Danish" tile.
     'Assorted Danish': 'menu/danishes-babkas/assorted-danish.webp',
-    'Bufolo Danish': 'menu/danishes-babkas/bufolo-danish.webp',
+    'Bufolo Danish': 'menu/danishes-babkas/chocolate-bufolo-danish.webp',
+    'Poppy Danish': 'menu/danishes-babkas/poppy-danish.webp',
     Conchas: 'menu/danishes-babkas/concha-assorted.webp',
     // Babka section is a single "Assorted" tile.
     Assorted: 'menu/danishes-babkas/assorted-babkas.webp',
@@ -155,6 +158,7 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   pies: {
     // Pies section is a single "Assorted" tile.
     Assorted: 'menu/pies/assorted-pies.webp',
+    'Lemon Meringue': 'menu/pies/lemon-meringue-pie.webp',
     'Fruit Tarts': 'menu/pies/fruit-tarts.webp',
   },
 
