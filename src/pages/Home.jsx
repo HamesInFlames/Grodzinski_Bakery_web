@@ -8,6 +8,7 @@ import {
 } from "../components/AnimationWrappers";
 import { PhotoSlideshow } from "../components/PhotoSlideshow";
 import { SHOWCASE_PHOTOS } from "../data/slideshowPhotos";
+import { MENU_GROUPS } from "../data/menuDisplay";
 import { GalleryCarousel } from "../components/gallery/GalleryCarousel";
 import GoogleMap from "../components/GoogleMap";
 import { MapPin, Phone, Clock, Navigation } from "lucide-react";
@@ -39,14 +40,13 @@ export default function Home() {
     { image: "/images/certifications/nut-free-black.png", title: "Nut Free" },
   ];
 
-  const categoryImages = [
-    { name: "Challah & Bilkas", image: "/images/home/thumbnail_challahs.png", count: 14 },
-    { name: "Cakes", image: "/images/home/thumbnail_cakes.png", count: 20 },
-    { name: "Cookies", image: "/images/home/thumbnail_cookies.png", count: 30 },
-    { name: "Babkas", image: "/images/home/thumbnail_babkas.png", count: 10 },
-    { name: "Breads", image: "/images/home/thumbnail_breaks_rolls.png", count: 17 },
-    { name: "Pastries", image: "/images/home/thumbnail_danishes_sweets.png", count: 16 },
-  ];
+  // Mirror the menu category selection so the titles always correspond.
+  const categoryImages = MENU_GROUPS.map((group) => ({
+    name: group.title,
+    image: group.image || "/images/home/logo_trensparent.png",
+    count: group.sections.reduce((sum, s) => sum + s.items.length, 0),
+    href: `/menu/${group.id}`,
+  }));
 
   return (
     <>
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CERTIFICATIONS */}
+      {/* CERTIFICATIONS + STOCKISTS \u2014 combined trust band */}
       <section className="section certifications-section">
         <div className="container">
           <StaggerContainer className="certifications-strip" staggerDelay={0.1}>
@@ -112,6 +112,13 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
+
+          <div className="stockists-inline">
+            <p className="stockists-eyebrow">Also Available At</p>
+            <p className="stockists-list">
+              Longo&rsquo;s &middot; Pusateri&rsquo;s &middot; Vince&rsquo;s Market
+            </p>
+          </div>
         </div>
       </section>
 
@@ -133,7 +140,7 @@ export default function Home() {
               <StaggerItem key={i}>
                 <div
                   className="category-card"
-                  onClick={() => navigate("/menu")}
+                  onClick={() => navigate(cat.href)}
                 >
                   <img
                     src={cat.image}
@@ -143,7 +150,7 @@ export default function Home() {
                   />
                   <div className="category-card__overlay">
                     <h3 className="category-card__name">{cat.name}</h3>
-                    <span className="category-card__count">{cat.count}+ items</span>
+                    <span className="category-card__count">{cat.count} varieties</span>
                   </div>
                 </div>
               </StaggerItem>
@@ -164,7 +171,7 @@ export default function Home() {
       </section>
 
       {/* CUSTOM ORDERS CTA + GALLERY */}
-      <section className="section section--dark">
+      <section id="custom-cakes" className="section section--dark">
         <div className="container">
           <ScrollReveal>
             <div className="section__header">

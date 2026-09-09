@@ -9,3 +9,5 @@ export const BAKERY_COORDINATES = { lat: 43.8089597, lng: -79.4622583 };
 export const BAKERY_ADDRESS = '1118 Centre St #3, Thornhill, ON L4J 7R9';
 
 export const BAKERY_NAME = 'Grodzinski North';
+
+export const BAKERY_EMAIL = 'north@grodzbakery.com';

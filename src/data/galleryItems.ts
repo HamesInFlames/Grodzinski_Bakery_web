@@ -143,4 +143,34 @@ export const galleryItems: GalleryItem[] = [
     alt: 'White fondant Bar Mitzvah Torah-scroll cake with silver scrollwork and a navy Star of David — "Mazal Tov Ronen"',
     title: 'Bar Mitzvah Torah Cake — Ronen',
   },
+  {
+    id: 'cake-23',
+    src: '/gallery/cake-23.png',
+    alt: 'Three-tier chocolate babka wedding cake with a dark chocolate drizzle and dusting of icing sugar',
+    title: 'Chocolate Babka Wedding Cake',
+  },
+  {
+    id: 'cake-24',
+    src: '/gallery/cake-24.png',
+    alt: 'Royal-blue Bar Mitzvah cake with a fondant tallit drape and a blue kippah topped with a silver Star of David — "Mazel Tov Oliver Saul"',
+    title: 'Tallit & Kippah Bar Mitzvah Cake — Oliver Saul',
+  },
+  {
+    id: 'cake-25',
+    src: '/gallery/cake-25.png',
+    alt: 'Giant chocolate-chip cookie cake with a yellow buttercream dump truck and floral border — "Happy Birthday Ben!"',
+    title: 'Dump Truck Cookie Cake — Ben',
+  },
+  {
+    id: 'cake-26',
+    src: '/gallery/cake-26.png',
+    alt: 'Square upsherin cake with a turquoise shell border, gold fondant scissors and kippah — "Ilay\'s Halakeh 3"',
+    title: 'Upsherin / Halakeh Cake — Ilay',
+  },
+  {
+    id: 'cake-27',
+    src: '/gallery/cake-27.png',
+    alt: 'Four-tier white buttercream wedding cake with cascading blush, ivory and taupe sugar roses on a beaded base',
+    title: 'Four-Tier Blush Rose Wedding Cake',
+  },
 ];

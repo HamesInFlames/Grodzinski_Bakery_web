@@ -4,7 +4,7 @@ import { sendContactMessage } from "../lib/sendContactMessage";
 import GoogleMap from "../components/GoogleMap";
 import { ScrollReveal, FadeIn, StaggerContainer, StaggerItem } from "../components/AnimationWrappers";
 import { MapPin, Phone, Mail, Clock, Map, Sparkles, Cake, Car, Star, Calendar, Store, ShoppingCart, Handshake } from "lucide-react";
-import { BAKERY_GOOGLE_MAPS_URL, BAKERY_PLACE_ID, BAKERY_COORDINATES } from "@/data/bakeryLocation";
+import { BAKERY_GOOGLE_MAPS_URL, BAKERY_PLACE_ID, BAKERY_COORDINATES, BAKERY_EMAIL } from "@/data/bakeryLocation";
 
 function VisitUs() {
   const todayName = new Date().toLocaleDateString('en-US', { weekday: 'long' });
@@ -19,7 +19,7 @@ function VisitUs() {
     name: "Grodzinski North",
     address: "1118 Centre St #3, Thornhill, ON L4J 7R9",
     phone: "(905) 882-1350",
-    email: "info@grodzbakery.com",
+    email: BAKERY_EMAIL,
     placeId: BAKERY_PLACE_ID,
     coordinates: BAKERY_COORDINATES,
     hours: [

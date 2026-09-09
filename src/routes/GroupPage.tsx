@@ -1,26 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import {
-  getGroupBySlug,
-  getCategoriesByGroup,
-  getItemsByCategory,
-} from '@/data/products';
-import CategorySection from '@/components/menu/CategorySection';
+import { getMenuGroupById } from '@/data/menuDisplay';
 import Breadcrumb from '@/components/layout/Breadcrumb';
+import { ScrollReveal } from '@/components/AnimationWrappers';
+import ProductShowcase from '@/components/menu/ProductShowcase';
 
 export default function GroupPage() {
-  const { group: groupSlug } = useParams<{ group: string }>();
-  const group = groupSlug ? getGroupBySlug(groupSlug) : undefined;
-  const categories = group ? getCategoriesByGroup(group.slug) : [];
+  const { group: groupId } = useParams<{ group: string }>();
+  const group = groupId ? getMenuGroupById(groupId) : undefined;
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     if (group) {
-      document.title = `${group.name} — Grodzinski Bakery, Toronto`;
+      document.title = `${group.title} — Grodzinski Bakery, Toronto`;
     }
     return () => {
       document.title = "Grodzinski Bakery — Toronto's Heritage Kosher Bakery Since 1888";
     };
   }, [group]);
+
+  useEffect(() => {
+    setImgError(false);
+  }, [groupId]);
 
   if (!group) {
     return (
@@ -41,25 +42,70 @@ export default function GroupPage() {
       <Breadcrumb
         items={[
           { label: 'Menu', href: '/menu' },
-          { label: group.name },
+          { label: group.title },
         ]}
       />
 
       <header className="group-page__header">
-        <h1 className="group-page__title">{group.name}</h1>
-        {group.tagline && (
-          <p className="group-page__tagline">{group.tagline}</p>
-        )}
+        <h1 className="group-page__title">{group.title}</h1>
+        <Link to="/price-list" className="group-page__pricelink">
+          View Price List &rarr;
+        </Link>
       </header>
 
-      <div className="group-page__categories">
-        {categories.map((cat) => {
-          const items = getItemsByCategory(cat.slug, group.slug);
-          return (
-            <CategorySection key={cat.slug} category={cat} items={items} />
-          );
-        })}
+      <div className="group-page__photo">
+        {group.image && !imgError ? (
+          <img
+            src={group.image}
+            alt={group.title}
+            className="group-page__hero-img"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="group-page__photo-placeholder" aria-hidden="true">
+            <img
+              src="/images/home/logo_trensparent.png"
+              alt=""
+              className="group-page__empty-brand"
+            />
+          </div>
+        )}
       </div>
+
+      <div className="group-page__showcases">
+        {group.sections.map((section, i) => (
+          <ScrollReveal key={section.heading} delay={i * 0.05}>
+            <ProductShowcase
+              heading={section.heading}
+              flavours={section.items}
+              groupId={group.id}
+              photoGroupId={section.photoGroupId}
+              assortedImage={section.assortedImage}
+              flavourNoun={section.flavourNoun}
+            />
+          </ScrollReveal>
+        ))}
+      </div>
+
+      {group.id === 'cakes-loaf' && (
+        <ScrollReveal>
+          {/* Plain anchor (full navigation) so the home page loads fresh and
+              reliably scrolls to #custom-cakes — an in-app transition races the
+              page-transition animation and lands at the wrong scroll position. */}
+          <a href="/#custom-cakes" className="group-page__custom-cta">
+            <span className="group-page__custom-cta-eyebrow">Custom Orders</span>
+            <h2>Custom Cakes &amp; Cookies</h2>
+            <p>
+              Planning a wedding, bar mitzvah, baby shower, or special
+              celebration? Our custom creations are made to order and designed
+              to delight.
+            </p>
+            <span className="group-page__custom-cta-link">
+              Explore custom orders &rarr;
+            </span>
+          </a>
+        </ScrollReveal>
+      )}
     </div>
   );
 }

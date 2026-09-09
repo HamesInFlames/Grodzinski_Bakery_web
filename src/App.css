@@ -49,7 +49,7 @@
 .skip-link:focus,
 .skip-link:focus-visible {
   transform: translateY(0);
-  outline: 3px solid var(--color-accent);
+  outline: 3px solid var(--color-blue-deep);
   outline-offset: 2px;
 }
 
@@ -136,6 +136,14 @@
   --color-gold-text: #765306;      /* darker gold — gold-as-text on oat (5.60:1 on #F0E5D5) */
   --color-rule: #D9CFB8;           /* warm rule line for dividers */
   --color-warm: #5C4033;           /* legacy brown — warm-tone surfaces (catering hero etc.) */
+
+  /* PMS 277 blue — cool accent for interactive + decorative elements */
+  --color-blue: #ABCAE9;           /* base PMS 277 — soft cyan-blue (accents on dark) */
+  --color-blue-dark: #6BA3D4;      /* darker — links/text with better contrast */
+  --color-blue-light: #D5E4F4;     /* tinted — subtle backgrounds/hover fills */
+  --color-blue-deep: #4A87BD;      /* graphical accents on light (bars, borders) */
+  --color-blue-ink: #2F6090;       /* accessible blue for TEXT/labels + button fills (AA on oat) */
+  --color-blue-night: #22425E;     /* deep navy — footer surface + button hover/press */
 
   /* Legacy brown scale (still consumed by gallery + catering surfaces) */
   --brown-900: #3D2A22;
@@ -239,6 +247,10 @@ a {
   text-decoration: none;
 }
 
+.section a:not(.btn):hover {
+  color: var(--color-blue-deep);
+}
+
 button {
   font-family: inherit;
   cursor: pointer;
@@ -280,6 +292,20 @@ main {
   color: var(--text-inverse);
 }
 
+/* Subtle hairline between stacked sections. A thick coloured band here read
+   as heavy and fought the warm palette; sections are already separated by
+   their alternating backgrounds, so a 1px warm rule is all that's needed. */
+#main-content > * > section + section,
+#main-content > * > section + div,
+#main-content > * > div + section,
+.about-page-wrapper > section + section,
+.catering-page > section + section,
+.visit-page > section + section,
+.menu-layout > * + *:not(.menu-layout__bottom-slot),
+.holidays-layout > * + * {
+  border-top: 1px solid var(--color-rule);
+}
+
 .section__header {
   text-align: center;
   max-width: 700px;
@@ -293,10 +319,29 @@ main {
   color: var(--text-primary);
   margin-bottom: 16px;
   line-height: 1.2;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue-deep);
+  border-radius: 2px;
 }
 
 .section--dark .section__title {
   color: var(--text-inverse);
+}
+
+/* On the espresso section the deep blue goes muddy — use the light PMS 277. */
+.section--dark .section__title::after {
+  background: var(--color-blue);
 }
 
 .section__subtitle {
@@ -412,10 +457,10 @@ main {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-primary);
-  transition: opacity 150ms ease-out;
+  transition: color 150ms ease-out, opacity 150ms ease-out;
 }
 
-.navbar__link:hover { opacity: 0.7; }
+.navbar__link:hover { color: var(--color-blue-deep); opacity: 1; }
 
 .navbar__link--active {
   opacity: 1;
@@ -426,8 +471,8 @@ main {
   left: 0;
   right: 0;
   bottom: -4px;
-  height: 1px;
-  background: var(--color-gold);
+  height: 2px;
+  background: var(--color-blue-deep);
 }
 
 .navbar__actions {
@@ -615,18 +660,18 @@ main {
 }
 
 .btn--primary {
-  color: var(--color-bg);
-  background: var(--color-primary);
-  border-color: var(--color-primary);
+  color: #fff;
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
 }
 
 .btn--primary:hover {
-  background: var(--primary-hover);
-  border-color: var(--primary-hover);
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
 }
 
 .btn--primary:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-blue-deep);
   outline-offset: 2px;
 }
 
@@ -638,18 +683,19 @@ main {
 }
 
 .btn--secondary {
-  color: var(--color-primary);
+  color: var(--color-blue-deep);
   background: transparent;
-  border-color: var(--color-primary);
+  border-color: var(--color-blue-deep);
 }
 
 .btn--secondary:hover {
-  color: var(--color-bg);
-  background: var(--color-primary);
+  color: #fff;
+  background: var(--color-blue-deep);
+  border-color: var(--color-blue-deep);
 }
 
 .btn--secondary:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-blue-deep);
   outline-offset: 2px;
 }
 
@@ -662,16 +708,16 @@ main {
 .btn--ghost {
   color: var(--color-bg);
   background: transparent;
-  border-color: rgba(250, 246, 238, 0.5);
+  border-color: var(--color-blue);
 }
 
 .btn--ghost:hover {
-  background: rgba(250, 246, 238, 0.12);
-  border-color: var(--color-bg);
+  background: rgba(171, 202, 233, 0.15);
+  border-color: var(--color-blue);
 }
 
 .btn--ghost:focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-blue);
   outline-offset: 2px;
 }
 
@@ -732,7 +778,9 @@ main {
   font-size: 1.5rem;
   letter-spacing: 0.01em;
   color: var(--color-bg);
-  display: block;
+  display: inline-block;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-blue);
 }
 
 .hero__subtitle--heritage {
@@ -754,14 +802,14 @@ main {
 
 /* Espresso-ground variant of the primary button: invert to cream + accent */
 .hero--heritage .btn--primary {
-  color: var(--color-ink);
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  color: #fff;
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
 }
 .hero--heritage .btn--primary:hover {
-  color: var(--color-ink);
-  background: var(--color-amber);
-  border-color: var(--color-amber);
+  color: #fff;
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
 }
 
 /* Legacy hero rules kept for any non-heritage hero (e.g. catering) */
@@ -915,6 +963,12 @@ main {
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 150ms ease-out;
+}
+
+.category-card:hover {
+  border-color: var(--color-blue-deep);
 }
 
 .category-card__image {
@@ -962,6 +1016,11 @@ main {
   background: var(--bg-card);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-light);
+  transition: border-color 150ms ease-out;
+}
+
+.feature-card:hover {
+  border-color: var(--color-blue-deep);
 }
 
 .feature-card__icon {
@@ -972,7 +1031,7 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  background: var(--accent-light);
+  background: var(--color-blue-light);
   border-radius: var(--radius-lg);
 }
 
@@ -1066,6 +1125,86 @@ main {
 
 .cert-badge__desc {
   display: none;
+}
+
+/* ─── Stockists Strip ─────────────────────────────────────────────────────── */
+
+/* Stockists now live inside the certifications band as a compact line. */
+.stockists-inline {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.stockists-list {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stockists-section {
+  padding: 24px 0;
+}
+
+.stockists-eyebrow {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-blue-ink);
+  margin: 0 0 12px;
+}
+
+.stockists-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.stockist-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 36px;
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-ink);
+  white-space: nowrap;
+}
+
+.stockist-badge + .stockist-badge::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 60%;
+  background: var(--color-rule);
+}
+
+@media (max-width: 600px) {
+  .stockists-strip {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stockist-badge {
+    padding: 8px 16px;
+  }
+
+  .stockist-badge + .stockist-badge::before {
+    display: none;
+  }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1164,13 +1303,13 @@ main {
 }
 
 .gallery-filter-btn:hover {
-  color: var(--primary);
-  background: var(--primary-light);
+  color: var(--color-blue-deep);
+  background: var(--color-blue-light);
 }
 
 .gallery-filter-btn--active {
   color: #FFFFFF;
-  background: var(--primary);
+  background: var(--color-blue-deep);
 }
 
 .gallery-filter-btn__icon {
@@ -1329,14 +1468,14 @@ main {
 }
 
 .gallery-cta--embedded .btn--primary {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
   color: #fff;
 }
 
 .gallery-cta--embedded .btn--primary:hover {
-  background: var(--color-amber);
-  border-color: var(--color-amber);
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
 }
 
 .gallery-cta--embedded .btn--secondary {
@@ -1503,6 +1642,19 @@ main {
   font-weight: 600;
   color: var(--color-primary);
   margin-bottom: 6px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+.contact-card__title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue-deep);
+  border-radius: 2px;
 }
 
 .contact-card__subtitle {
@@ -1615,8 +1767,8 @@ main {
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(92, 64, 51, 0.1);
+  border-color: var(--color-blue-dark);
+  box-shadow: 0 0 0 3px rgba(171, 202, 233, 0.3);
 }
 
 .form-textarea {
@@ -1629,7 +1781,7 @@ main {
 ═══════════════════════════════════════════════════════════════════════════ */
 
 .footer {
-  background: var(--color-primary);
+  background: var(--color-blue-night);
   color: var(--color-bg);
   padding: 64px 0 32px;
 }
@@ -1653,7 +1805,7 @@ main {
 
 .footer__wordmark-img {
   display: block;
-  width: 120px;
+  width: 200px;
   height: auto;
   margin-bottom: 16px;
 }
@@ -1672,7 +1824,7 @@ main {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-accent);  /* marzipan on navy = 8.87:1 */
+  color: var(--color-blue);
   margin: 0 0 20px;
 }
 
@@ -1694,12 +1846,12 @@ main {
 }
 
 a.footer__link { color: var(--color-bg); }
-a.footer__link:hover { opacity: 0.72; }
+a.footer__link:hover { color: var(--color-blue); opacity: 1; }
 
 .footer__rule {
   height: 1px;
   border: 0;
-  background: var(--color-gold);
+  background: var(--color-blue);
   opacity: 0.7;
   margin: 32px 0 24px;
 }
@@ -1937,6 +2089,19 @@ a.footer__link:hover { opacity: 0.72; }
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 32px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.catering-order-info__content h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue-deep);
+  border-radius: 2px;
 }
 
 .catering-order-steps {
@@ -2010,6 +2175,20 @@ a.footer__link:hover { opacity: 0.72; }
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.catering-cta h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue-deep);
+  border-radius: 2px;
 }
 
 .catering-cta__text {
@@ -2185,6 +2364,19 @@ a.footer__link:hover { opacity: 0.72; }
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.about-story__body h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue-deep);
+  border-radius: 2px;
 }
 
 .about-story__body p {
@@ -2769,11 +2961,11 @@ a.footer__link:hover { opacity: 0.72; }
 
 .visit-action-btn--primary {
   color: #FFFFFF;
-  background: var(--primary);
+  background: var(--color-blue-ink);
 }
 
 .visit-action-btn--primary:hover {
-  background: var(--primary-hover);
+  background: var(--color-blue-night);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
@@ -2842,6 +3034,19 @@ a.footer__link:hover { opacity: 0.72; }
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 16px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.visit-planning__content h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue-deep);
+  border-radius: 2px;
 }
 
 .visit-planning__intro {
@@ -3056,18 +3261,18 @@ a.footer__link:hover { opacity: 0.72; }
 
 /* Contact Form Submit Button - Heritage gold accent */
 .contact-form .btn--primary {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
+  background: var(--color-blue-ink);
+  border-color: var(--color-blue-ink);
   color: #FFFFFF;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .contact-form .btn--primary:hover {
-  background: var(--color-amber);
-  border-color: var(--color-amber);
+  background: var(--color-blue-night);
+  border-color: var(--color-blue-night);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(184, 134, 11, 0.28);
+  box-shadow: 0 8px 22px rgba(34, 66, 94, 0.28);
 }
 
 .contact-form .btn--primary:focus {
@@ -4463,7 +4668,7 @@ html, body {
 .kosher-banner__item::after {
   content: "·";
   margin-left: 20px;
-  color: var(--color-accent);
+  color: var(--color-blue);
   font-size: 16px;
 }
 
@@ -4694,6 +4899,90 @@ html, body {
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
+   PRICE LIST
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* Compact multi-column board so the whole list fits with minimal scrolling. */
+.price-board {
+  columns: 300px 3;
+  column-gap: 36px;
+  margin-top: 8px;
+}
+
+.price-card {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin: 0 0 26px;
+}
+
+.price-card__eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-blue-ink);
+  margin-bottom: 2px;
+}
+
+.price-card__heading {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.price-card__note {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin: 0 0 6px;
+}
+
+/* Tighten rows inside the board (the menu pages keep the roomier default). */
+.price-board .variant-row {
+  flex-wrap: wrap;
+  min-height: 0;
+  padding: 3px 0;
+  cursor: default;
+  border-left: none;
+  border-radius: 0;
+}
+
+.price-board .variant-row:hover {
+  background: transparent;
+}
+
+.price-board .variant-row__name {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  max-width: none;
+  flex: 0 1 auto;
+}
+
+.price-board .variant-row__dots {
+  margin-bottom: 5px;
+}
+
+.price-board .variant-row__price {
+  flex: 0 0 auto;
+}
+
+.price-list__note {
+  flex-basis: 100%;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  opacity: 0.85;
+  margin-top: -1px;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
    GROUP PAGE — Menu group layout
 ═══════════════════════════════════════════════════════════════════════════ */
 
@@ -4879,6 +5168,20 @@ html, body {
   font-weight: 600;
   color: var(--text-primary);
   margin-bottom: 12px;
+  position: relative;
+  padding-bottom: 16px;
+}
+
+.holidays-hub__hero h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 3px;
+  background: var(--color-blue-deep);
+  border-radius: 2px;
 }
 
 .holidays-hub__hero p {

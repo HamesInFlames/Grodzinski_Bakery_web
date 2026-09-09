@@ -5,6 +5,7 @@
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { PRODUCT_IMAGE_FOLDERS } from './product-image-folders.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -13,8 +14,13 @@ const OUTPUT_PATH = resolve(ROOT, 'src/data/products.generated.ts');
 const PHOTOS_DIR = resolve(ROOT, 'public/images/products');
 
 // ─── Photo mapping: item slug → image path ──────────────────────────────────
-// Maps generated item slugs to the 43 product photos in public/images/products/
-const IMG = (name) => `/images/products/${name}.webp`;
+// Maps generated item slugs to the product photos in public/images/products/.
+// Photos live in menu/ and holiday/ sub-folders (see product-image-folders.mjs);
+// IMG() resolves the right sub-folder for each filename.
+const IMG = (name) => {
+  const folder = PRODUCT_IMAGE_FOLDERS[name];
+  return `/images/products/${folder ? `${folder}/` : ''}${name}.webp`;
+};
 
 const ITEM_PHOTO_MAP = {
   // ── Breads: Bagels ──
@@ -46,6 +52,7 @@ const ITEM_PHOTO_MAP = {
   'cookies-custom-cookies':                      IMG('birthday-cookies'),
   'cookies-regular-iced-cookies':                IMG('halloween-cookies'),
   'cookies-chocolate-chip-oatmeal-raisin':       IMG('chocolate-chip-cookies-dozen'),
+  'bow-ties-kichels-bowties-nothings':           IMG('bow-ties-nothings'),
 
   // ── Boxed Cookies ──
   'boxed-cookies-400grms-cookie-mixed':          IMG('assorted-fancy-cookies-box'),
@@ -373,8 +380,10 @@ for (const row of dataRows) {
   // Photo matching: by item slug map first, then by filename on disk
   let imagePath = ITEM_PHOTO_MAP[baseSlug] ?? undefined;
   if (!imagePath) {
-    const diskPath = resolve(PHOTOS_DIR, `${baseSlug}.webp`);
-    if (existsSync(diskPath)) {
+    const folder = PRODUCT_IMAGE_FOLDERS[baseSlug];
+    if (folder && existsSync(resolve(PHOTOS_DIR, folder, `${baseSlug}.webp`))) {
+      imagePath = `/images/products/${folder}/${baseSlug}.webp`;
+    } else if (existsSync(resolve(PHOTOS_DIR, `${baseSlug}.webp`))) {
       imagePath = `/images/products/${baseSlug}.webp`;
     }
   }

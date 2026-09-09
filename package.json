@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "sync-prices": "node scripts/sync-prices.mjs"
+    "sync-prices": "node scripts/sync-prices.mjs",
+    "audit-photos": "node scripts/build-photo-audit.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.11.3",

@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
-import { Clock } from 'lucide-react';
-import { FadeIn } from '@/components/AnimationWrappers';
+import { Link } from 'react-router-dom';
+import { HOLIDAY_SECTIONS } from '@/data/menuDisplay';
+import { ShieldCheck, Award } from 'lucide-react';
+import { FadeIn, StaggerContainer, StaggerItem } from '@/components/AnimationWrappers';
 
 export default function HolidaysHub() {
   useEffect(() => {
@@ -11,26 +13,71 @@ export default function HolidaysHub() {
   }, []);
 
   return (
-    <section className="coming-soon">
-      <div className="coming-soon__inner">
-        <FadeIn delay={0.1}>
-          <Clock size={48} className="coming-soon__icon" aria-hidden="true" />
-        </FadeIn>
-        <FadeIn delay={0.2}>
-          <h1>Holiday Menu</h1>
-        </FadeIn>
-        <FadeIn delay={0.35}>
-          <p className="coming-soon__message">
-            Our holiday menu is coming soon. In the meantime, please visit us
-            in-store or give us a call to ask about our seasonal offerings.
-          </p>
-        </FadeIn>
-        <FadeIn delay={0.5}>
-          <a href="/visit" className="coming-soon__cta">
-            Visit Us
-          </a>
-        </FadeIn>
+    <>
+      <section className="holidays-hub__hero">
+        <div className="holidays-hub__hero-bg">
+          <img
+            src="/images/home/thumbnail_slider (3).png"
+            alt="Freshly baked goods and platters at Grodzinski Bakery"
+            className="holidays-hub__hero-image"
+          />
+          <div className="holidays-hub__hero-overlay" />
+        </div>
+        <div className="holidays-hub__hero-inner">
+          <FadeIn delay={0.1}>
+            <h1>Holidays</h1>
+          </FadeIn>
+          <FadeIn delay={0.25}>
+            <p>
+              Traditional baked goods for Jewish holidays and celebrations &mdash;
+              handcrafted with the same recipes we&rsquo;ve used since 1888.
+            </p>
+          </FadeIn>
+          <FadeIn delay={0.4}>
+            <div className="menuhub__trust">
+              <span className="menuhub__trust-badge">
+                <Award size={16} aria-hidden="true" />
+                COR-certified kosher
+              </span>
+              <span className="menuhub__trust-badge">
+                <ShieldCheck size={16} aria-hidden="true" />
+                Pre-orders available
+              </span>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <div className="holidays-hub holidays-hub__grid-section">
+        <StaggerContainer className="holidays-hub__grid" staggerDelay={0.08}>
+          {HOLIDAY_SECTIONS.map((section) => (
+            <StaggerItem key={section.id}>
+              <Link
+                to={`/holidays/${section.id}`}
+                className={`holidays-hub__card${
+                  section.id === 'celebration' ? ' holidays-hub__card--celebration' : ''
+                }`}
+              >
+                <div className="holidays-hub__card-content">
+                  <h2 className="holidays-hub__card-name">{section.title}</h2>
+                  {section.hebrew && (
+                    <span className="holidays-hub__card-hebrew" lang="he" dir="rtl">
+                      {section.hebrew}
+                    </span>
+                  )}
+                  {section.description && (
+                    <p className="holidays-hub__card-desc">{section.description}</p>
+                  )}
+                  <span className="holidays-hub__card-count">
+                    {section.items.length}{' '}
+                    {section.items.length === 1 ? 'specialty' : 'specialties'}
+                  </span>
+                </div>
+              </Link>
+            </StaggerItem>
+          ))}
+        </StaggerContainer>
       </div>
-    </section>
+    </>
   );
 }
