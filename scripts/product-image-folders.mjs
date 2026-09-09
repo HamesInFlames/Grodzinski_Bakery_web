@@ -122,6 +122,11 @@ export const PRODUCT_IMAGE_FOLDERS = {
   // holiday/rosh-sukkot-simchat
   'apple-cookies-rosh-hashanah': 'holiday/rosh-sukkot-simchat',
   'rosh-hashanah-round-challah': 'holiday/rosh-sukkot-simchat',
+  'crown-challah': 'holiday/rosh-sukkot-simchat',
+  'honey-loaf': 'holiday/rosh-sukkot-simchat',
+  'gift-basket': 'holiday/rosh-sukkot-simchat',
+  'cookie-gift-box-rectangle': 'holiday/rosh-sukkot-simchat',
+  'cookie-gift-box-square': 'holiday/rosh-sukkot-simchat',
 
   // holiday/hanukkah
   'chanukah-cookies-platter': 'holiday/hanukkah',

@@ -208,7 +208,7 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
       'Round and crown challahs, honey loaf and cake, gift baskets and cookie boxes, plus festive Sukkah houses and Torah cookies for the High Holidays.',
     photo: 'holiday-rosh-sukkot-simchat.jpg',
     image: '/images/products/holiday/rosh-sukkot-simchat/rosh-hashanah-round-challah.webp',
-    items: ['Round Challah', 'Crown Challah', 'Honey Loaf', 'Honey Cake', 'Gift Baskets', 'Gift Cookie Boxes', 'Sukkah House', 'Torah Cookie'],
+    items: ['Round Challah', 'Crown Challah', 'Honey Loaf', 'Honey Cake', 'Gift Baskets', 'Rectangle Cookie Box', 'Square Cookie Box', 'Sukkah House', 'Torah Cookie'],
   },
   {
     id: 'yom-kippur',
