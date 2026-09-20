@@ -211,7 +211,7 @@ export const PRICE_HOLIDAY_SECTIONS: PriceHolidaySection[] = [
       { name: 'Crown Challah', price: '$16.95' },
       { name: 'Honey Loaf', price: 'from $9.95', note: 'Small $9.95 · Large $15.50' },
       { name: 'Honey Cake', price: 'from $21.00', note: 'Bundt from $21.00; slabs available.' },
-      { name: 'Gift Baskets', price: 'from $74.95' },
+      { name: 'Gift Baskets', price: 'from $74.95', note: 'Square, rectangle and classic baskets' },
       { name: 'Gift Cookie Boxes', price: 'from $18.95', note: 'Square $18.95 · Rectangle $24.95' },
       { name: 'Sukkah House', price: '$65.00', note: 'Mini sukkah $4.95' },
       { name: 'Torah Cookie', price: '$3.50' },

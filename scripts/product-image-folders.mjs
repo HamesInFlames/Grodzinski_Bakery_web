@@ -125,6 +125,13 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'crown-challah': 'holiday/rosh-sukkot-simchat',
   'honey-loaf': 'holiday/rosh-sukkot-simchat',
   'gift-basket': 'holiday/rosh-sukkot-simchat',
+  'gift-basket-square': 'holiday/rosh-sukkot-simchat',
+  'gift-basket-rectangle': 'holiday/rosh-sukkot-simchat',
+  'gift-plate-shana-tova': 'holiday/rosh-sukkot-simchat',
+  'gift-plate-honeycomb': 'holiday/rosh-sukkot-simchat',
+  'round-challah': 'holiday/rosh-sukkot-simchat',
+  'honey-bundt-cake': 'holiday/rosh-sukkot-simchat',
+  'fancy-honey-cake': 'holiday/rosh-sukkot-simchat',
   'cookie-gift-box-rectangle': 'holiday/rosh-sukkot-simchat',
   'cookie-gift-box-square': 'holiday/rosh-sukkot-simchat',
 

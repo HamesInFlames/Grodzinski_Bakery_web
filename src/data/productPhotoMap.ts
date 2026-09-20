@@ -166,11 +166,16 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   // Reviewed in the photo audit: items flagged "missing" (wrong stand-in)
   // now show the photo-coming-soon placeholder until real photos exist.
   'rosh-sukkot-simchat': {
-    'Round Challah': 'photo-coming-soon.svg',
+    'Round Challah': 'holiday/rosh-sukkot-simchat/round-challah.webp',
     'Crown Challah': 'holiday/rosh-sukkot-simchat/crown-challah.webp',
     'Honey Loaf': 'holiday/rosh-sukkot-simchat/honey-loaf.webp',
-    'Honey Cake': 'photo-coming-soon.svg',
-    'Gift Baskets': 'holiday/rosh-sukkot-simchat/gift-basket.webp',
+    'Honey Bundt Cake': 'holiday/rosh-sukkot-simchat/honey-bundt-cake.webp',
+    'Fancy Honey Cake': 'holiday/rosh-sukkot-simchat/fancy-honey-cake.webp',
+    'Gift Basket': 'holiday/rosh-sukkot-simchat/gift-basket.webp',
+    'Gift Basket Square': 'holiday/rosh-sukkot-simchat/gift-basket-square.webp',
+    'Gift Basket Rectangle': 'holiday/rosh-sukkot-simchat/gift-basket-rectangle.webp',
+    'Gift Plate': 'holiday/rosh-sukkot-simchat/gift-plate-shana-tova.webp',
+    'Honeycomb Gift Plate': 'holiday/rosh-sukkot-simchat/gift-plate-honeycomb.webp',
     'Rectangle Cookie Box': 'holiday/rosh-sukkot-simchat/cookie-gift-box-rectangle.webp',
     'Square Cookie Box': 'holiday/rosh-sukkot-simchat/cookie-gift-box-square.webp',
     'Sukkah House': 'photo-coming-soon.svg',
