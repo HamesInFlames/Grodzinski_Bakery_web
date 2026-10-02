@@ -11,6 +11,12 @@ export default function Catering() {
       image: "/images/home/breakfast_brunch_bagels.png"
     },
     {
+      title: "Scoop Platters",
+      description: "Scoops of cream cheese, egg salad, tuna salad and smoked salmon (lox), arranged with fresh sliced tomato and cucumber. Two scoops per portion; bagels and rolls are extra.",
+      idealFor: "brunches, shivas, kiddush, office lunches",
+      image: "/images/products/menu/catering/scoop-platter.webp"
+    },
+    {
       title: "Sandwich & Wrap Platters",
       description: "Freshly prepared sandwiches and wraps made with our signature breads. Choose from a variety of fillings: deli meats, vegetarian, dairy, or vegan options. All sandwiches include fresh vegetables and are cut for easy serving.",
       idealFor: "lunch meetings, picnics, casual events",
@@ -84,7 +90,7 @@ export default function Catering() {
 
           <StaggerContainer className="catering-grid" staggerDelay={0.1}>
             {cateringOptions.map((option, index) => (
-              <StaggerItem key={index}>
+              <StaggerItem key={index} className={option.featured ? "catering-grid__full" : ""}>
                 <div className={`catering-card ${option.featured ? "catering-card--feature" : ""}`}>
                   {!option.featured && (
                     <div className="catering-card__image">

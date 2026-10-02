@@ -178,8 +178,8 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Honeycomb Gift Plate': 'holiday/rosh-sukkot-simchat/gift-plate-honeycomb.webp',
     'Rectangle Cookie Box': 'holiday/rosh-sukkot-simchat/cookie-gift-box-rectangle.webp',
     'Square Cookie Box': 'holiday/rosh-sukkot-simchat/cookie-gift-box-square.webp',
-    'Sukkah House': 'photo-coming-soon.svg',
-    'Torah Cookie': 'photo-coming-soon.svg',
+    'Sukkah House': 'holiday/rosh-sukkot-simchat/sukkah-house-chag-sameach.webp',
+    'Sukkot & Simchat Torah Cookies': 'holiday/rosh-sukkot-simchat/torah-sukkot-cookies.webp',
   },
   'yom-kippur': {
     'Crown Babka': 'holiday/yom-kippur/crown-babka.webp',

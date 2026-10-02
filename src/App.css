@@ -2049,6 +2049,11 @@ a.footer__link:hover { color: var(--color-blue); opacity: 1; }
   color: var(--text-secondary);
 }
 
+/* Featured card spans the full row so it never sits alone in one column */
+.catering-grid__full {
+  grid-column: 1 / -1;
+}
+
 /* Featured / no-image card: dark contrast block, title + description only */
 .catering-card--feature {
   display: flex;

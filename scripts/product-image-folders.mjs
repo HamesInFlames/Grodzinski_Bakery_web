@@ -118,6 +118,9 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'cherry-pie': 'menu/pies',
   'lemon-meringue-pie': 'menu/pies',
 
+  // menu/catering (Catering page, not the menu grid)
+  'scoop-platter': 'menu/catering',
+
   // ── Holiday menu ──────────────────────────────────────────────────────
   // holiday/rosh-sukkot-simchat
   'apple-cookies-rosh-hashanah': 'holiday/rosh-sukkot-simchat',
@@ -134,6 +137,8 @@ export const PRODUCT_IMAGE_FOLDERS = {
   'fancy-honey-cake': 'holiday/rosh-sukkot-simchat',
   'cookie-gift-box-rectangle': 'holiday/rosh-sukkot-simchat',
   'cookie-gift-box-square': 'holiday/rosh-sukkot-simchat',
+  'sukkah-house-chag-sameach': 'holiday/rosh-sukkot-simchat',
+  'torah-sukkot-cookies': 'holiday/rosh-sukkot-simchat',
 
   // holiday/hanukkah
   'chanukah-cookies-platter': 'holiday/hanukkah',

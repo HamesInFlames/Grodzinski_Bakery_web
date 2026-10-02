@@ -205,7 +205,7 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
     title: 'Rosh Hashanah / Sukkot / Simchat Torah',
     hebrew: '\u05e8\u05d0\u05e9 \u05d4\u05e9\u05e0\u05d4 \u00b7 \u05e1\u05d5\u05db\u05d5\u05ea \u00b7 \u05e9\u05de\u05d7\u05ea \u05ea\u05d5\u05e8\u05d4',
     description:
-      'Round and crown challahs, honey loaf and honey cakes, gift baskets, gift plates and cookie boxes, plus festive Sukkah houses and Torah cookies for the High Holidays.',
+      'Round and crown challahs, honey loaf and honey cakes, gift baskets, gift plates and cookie boxes, plus festive Sukkah houses and Sukkot & Simchat Torah cookies for the High Holidays.',
     photo: 'holiday-rosh-sukkot-simchat.jpg',
     image: '/images/products/holiday/rosh-sukkot-simchat/round-challah.webp',
     items: [
@@ -222,7 +222,7 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
       'Rectangle Cookie Box',
       'Square Cookie Box',
       'Sukkah House',
-      'Torah Cookie',
+      'Sukkot & Simchat Torah Cookies',
     ],
   },
   {
