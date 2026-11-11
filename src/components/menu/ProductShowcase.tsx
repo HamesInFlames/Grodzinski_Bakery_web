@@ -21,6 +21,8 @@ function slugify(name: string): string {
 }
 
 interface Slide {
+  /** Unique id for React keys — labels may repeat when `itemLabel` is set. */
+  key: string;
   label: string;
   src: string;
 }
@@ -71,6 +73,8 @@ export interface ProductShowcaseProps {
   imageBase?: string;
   /** Noun used in the "— N flavours" subhead (e.g. "specialty"). */
   flavourNoun?: string;
+  /** Shown for every flavour instead of its own name (names stay as keys). */
+  itemLabel?: string;
 }
 
 export default function ProductShowcase({
@@ -81,15 +85,17 @@ export default function ProductShowcase({
   assortedImage,
   imageBase = '/images/menu',
   flavourNoun = 'flavour',
+  itemLabel,
 }: ProductShowcaseProps) {
   const photoKey = photoGroupId ?? groupId;
   // Sections that are just a single "Assorted" tile (e.g. Babka, Pies) read
   // badly with a "— 1 flavour" subhead, so we drop the count for them.
   const assortedOnly = flavours.length === 1 && flavours[0] === 'Assorted';
   const slides: Slide[] = [
-    ...(assortedImage ? [{ label: 'Assorted', src: assortedImage }] : []),
+    ...(assortedImage ? [{ key: 'Assorted', label: 'Assorted', src: assortedImage }] : []),
     ...flavours.map((name) => ({
-      label: name,
+      key: name,
+      label: itemLabel ?? name,
       src:
         getItemPhoto(photoKey, name) ??
         `${imageBase}/${photoKey}/${slugify(name)}.webp`,
@@ -215,14 +221,14 @@ export default function ProductShowcase({
             const isActive = idx === active;
             return (
               <button
-                key={slide.label}
+                key={slide.key}
                 ref={(el) => {
                   itemRefs.current[idx] = el;
                 }}
                 type="button"
                 role="tab"
                 aria-selected={isActive}
-                aria-label={`Show ${slide.label}`}
+                aria-label={itemLabel ? `Show ${slide.label} photo ${idx + 1}` : `Show ${slide.label}`}
                 className={`product-showcase__option${isActive ? ' is-active' : ''}`}
                 onClick={() => select(idx)}
               >

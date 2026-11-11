@@ -189,18 +189,16 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
     'Gift Cookie Boxes': 'photo-coming-soon.svg',
   },
   hanukkah: {
-    Sufganiyot: 'holiday/hanukkah/sufganiyot.webp',
+    Sufganiyot: 'holiday/hanukkah/donuts-4.webp',
     'Cookie Boxes': 'photo-coming-soon.svg',
     Latkes: 'photo-coming-soon.svg',
   },
   // Dedicated Sufganiyot showcase on the Hanukkah detail page.
   'hanukkah-sufganiyot': {
-    'Classic Jelly': 'holiday/hanukkah/sufganiyot.webp',
-    Specialty: 'holiday/hanukkah/sufganiyot-specialty.webp',
-    'Specialty Trio': 'holiday/hanukkah/sufganiyot-specialty-trio.webp',
-    'Specialty Assortment': 'holiday/hanukkah/sufganiyot-specialty-assortment.webp',
-    'Specialty Plate': 'holiday/hanukkah/sufganiyot-specialty-plate.webp',
-    'Festive Platter': 'holiday/hanukkah/sufganiyot-festive-platter.webp',
+    'Donuts 1': 'holiday/hanukkah/donuts-1.webp',
+    'Donuts 2': 'holiday/hanukkah/donuts-2.webp',
+    'Donuts 3': 'holiday/hanukkah/donuts-3.webp',
+    'Donuts 4': 'holiday/hanukkah/donuts-4.webp',
   },
   purim: {
     'Hamantaschen (Assorted Flavours)': 'holiday/purim/hamantaschen-assorted.webp',

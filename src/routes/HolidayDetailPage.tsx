@@ -67,6 +67,7 @@ export default function HolidayDetailPage() {
               flavours={showcase.items}
               groupId={section.id}
               photoGroupId={showcase.photoGroupId}
+              itemLabel={showcase.itemLabel}
               imageBase="/images/holidays"
               flavourNoun={showcase.flavourNoun ?? 'specialty'}
             />

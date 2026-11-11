@@ -143,10 +143,10 @@ export const PRODUCT_IMAGE_FOLDERS = {
   // holiday/hanukkah
   'chanukah-cookies-platter': 'holiday/hanukkah',
   'chanukah-sugar-cookies-dozen': 'holiday/hanukkah',
-  'sufganiyot-specialty-trio': 'holiday/hanukkah',
-  'sufganiyot-specialty-assortment': 'holiday/hanukkah',
-  'sufganiyot-specialty-plate': 'holiday/hanukkah',
-  'sufganiyot-festive-platter': 'holiday/hanukkah',
+  'donuts-1': 'holiday/hanukkah',
+  'donuts-2': 'holiday/hanukkah',
+  'donuts-3': 'holiday/hanukkah',
+  'donuts-4': 'holiday/hanukkah',
 
   // holiday/purim
   'hamantaschen-assorted': 'holiday/purim',

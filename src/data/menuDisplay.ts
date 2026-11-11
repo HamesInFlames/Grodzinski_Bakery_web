@@ -32,6 +32,12 @@ export interface HolidayShowcase {
   photoGroupId?: string;
   /** Noun used in the showcase "— N …" subhead. Defaults to "specialty". */
   flavourNoun?: string;
+  /**
+   * Single label shown for every item in place of its own name (e.g. a set of
+   * unnamed photos that should all just read "Donuts"). `items` still supplies
+   * the unique keys used for photo lookups.
+   */
+  itemLabel?: string;
   items: string[];
 }
 
@@ -248,15 +254,9 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
       {
         heading: 'Sufganiyot',
         photoGroupId: 'hanukkah-sufganiyot',
-        flavourNoun: 'variety',
-        items: [
-          'Classic Jelly',
-          'Specialty',
-          'Specialty Trio',
-          'Specialty Assortment',
-          'Specialty Plate',
-          'Festive Platter',
-        ],
+        flavourNoun: 'photo',
+        itemLabel: 'Donuts',
+        items: ['Donuts 1', 'Donuts 2', 'Donuts 3', 'Donuts 4'],
       },
       {
         heading: 'Our Selection',
