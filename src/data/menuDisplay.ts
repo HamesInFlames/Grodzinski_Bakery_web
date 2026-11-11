@@ -249,7 +249,14 @@ export const HOLIDAY_SECTIONS: HolidayDisplaySection[] = [
         heading: 'Sufganiyot',
         photoGroupId: 'hanukkah-sufganiyot',
         flavourNoun: 'variety',
-        items: ['Classic Jelly', 'Specialty'],
+        items: [
+          'Classic Jelly',
+          'Specialty',
+          'Specialty Trio',
+          'Specialty Assortment',
+          'Specialty Plate',
+          'Festive Platter',
+        ],
       },
       {
         heading: 'Our Selection',
