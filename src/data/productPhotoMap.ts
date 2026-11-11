@@ -192,6 +192,10 @@ const PHOTO_BY_ID: Record<string, Record<string, string>> = {
   'hanukkah-sufganiyot': {
     'Classic Jelly': 'holiday/hanukkah/sufganiyot.webp',
     Specialty: 'holiday/hanukkah/sufganiyot-specialty.webp',
+    'Specialty Trio': 'holiday/hanukkah/sufganiyot-specialty-trio.webp',
+    'Specialty Assortment': 'holiday/hanukkah/sufganiyot-specialty-assortment.webp',
+    'Specialty Plate': 'holiday/hanukkah/sufganiyot-specialty-plate.webp',
+    'Festive Platter': 'holiday/hanukkah/sufganiyot-festive-platter.webp',
   },
   purim: {
     'Hamantaschen (Assorted Flavours)': 'holiday/purim/hamantaschen-assorted.webp',
